@@ -49,7 +49,7 @@ $CONFIG->dbpass = '';
  *
  * @global string $CONFIG->dbname
  */
-$CONFIG->dbname = 'boopwine_db';
+$CONFIG->dbname = 'boopvin_db';
 
 /**
  * The database host.
@@ -107,7 +107,7 @@ $CONFIG->broken_mta = FALSE;
  *
  * Elgg stores each query and its results in a query cache.
  * On large sites or long-running scripts, this cache can grow to be
- * large.  To disable query caching, set this to FALSE.
+ * large.  To disable query caching, set this to TRUE.
  *
  * @global bool $CONFIG->db_disable_query_cache
  */
