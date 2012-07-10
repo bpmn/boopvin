@@ -157,4 +157,4 @@ $french = array(
 
 add_translation("fr", $french);
 
-?>
+

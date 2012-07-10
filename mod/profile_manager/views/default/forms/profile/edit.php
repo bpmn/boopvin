@@ -198,10 +198,18 @@
 					$field_result .= "<span class='custom_fields_more_info_text' id='text_more_info_" . $metadata_name . "'>" . $hint . "</span>";
 				}
 				
-				$field_result .= elgg_view("input/" . $valtype, array(
+				
+                                /* rajout de la traduction multilanguages pour le type de vue radio...modif de l'option*/
+                                
+                                $options_mutliL=array();
+                                foreach($options as $label=>$value){
+                                    $options_mutliL[elgg_echo("profile:$label")]=$value;
+                                }
+                                
+                                $field_result .= elgg_view("input/" . $valtype, array(
 																'name' => $metadata_name,
 																'value' => $value,
-																'options' => $options
+																'options' => $options_mutliL
 																));
 				
 				$field_result .= elgg_view('input/access', array('name' => 'accesslevel[' . $metadata_name . ']', 'value' => $access_id)); 
