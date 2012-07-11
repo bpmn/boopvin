@@ -63,6 +63,10 @@ elgg.overlay.init = function() {
             $(".elgg-menu-site").css({"z-index":" 1"});
         }
     }
+   // anim: {
+   //     resize:false
+        
+   // }
 }
     
 
