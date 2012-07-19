@@ -480,7 +480,7 @@ function wine_create_event_listener($event, $object_type, $object) {
 	$ac_name = elgg_echo('wine:wine') . ": " . $object->name;
 	$wine_id = create_access_collection($ac_name, $object->guid);
 	if ($wine_id) {
-		$object->group_acl = $group_id;
+		$object->group_acl = $wine_id;
 	} else {
 		// delete wine if access creation fails
 		return false;

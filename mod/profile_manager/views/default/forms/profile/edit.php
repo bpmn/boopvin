@@ -188,7 +188,7 @@
 				if($hide_non_editables == "yes" && ($valtype == "non_editable")){
 					$field_result = "<div class='hidden_non_editable'>";
 				} else {
-					$field_result = "<div>";
+					$field_result = "<div id=\"{$metadata_name}\">";
 				}	
 				
 				$field_result .= "<label>" . $title . "</label>";
@@ -202,8 +202,8 @@
                                 /* rajout de la traduction multilanguages pour le type de vue radio...modif de l'option*/
                                 
                                 $options_mutliL=array();
-                                foreach($options as $label=>$value){
-                                    $options_mutliL[elgg_echo("profile:$label")]=$value;
+                                foreach($options as $label=>$valeur){
+                                    $options_mutliL[elgg_echo("profile:$label")]=$valeur;
                                 }
                                 
                                 $field_result .= elgg_view("input/" . $valtype, array(

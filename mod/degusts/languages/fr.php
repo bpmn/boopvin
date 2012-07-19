@@ -149,7 +149,8 @@ $french = array(
     'degust:evolution:use' => 'usé',
     
     'degust:module:title'=> "Millésime %s",
-    'degust:post'=>"dégustation postée %s par %s",
+    'degust:post_profile'=>"posté %s",
+    'degust:post_wine'=>"posté %s par %s",
     
     'degust:link'=>"voir la fiche",
     

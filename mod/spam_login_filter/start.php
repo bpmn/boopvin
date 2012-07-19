@@ -17,14 +17,14 @@ function spam_login_filter_init() {
 	
 	elgg_register_action('spam_login_filter/delete_ip', "$action_path/delete_ip.php", 'admin');
 	
-	register_elgg_event_handler('pagesetup', 'system', 'spam_login_filter_pagesetup');
+	elgg_register_event_handler('pagesetup', 'system', 'spam_login_filter_pagesetup');
 	
 	if(elgg_get_plugin_setting("use_ip_blacklist_cache") == "yes"){
 		elgg_extend_view('forms/register', 'spam_login_filter/register', 100);
 	}
 	
 	// Extend context menu with admin links
-	if (isadminloggedin()){
+	if (elgg_is_admin_logged_in()){
 		if (elgg_is_active_plugin('tracker')){
 			elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'spam_login_filter_hover_menu', 1000);
 			//elgg_register_action("spam_login_filter/delete", false, "$action_path/delete.php", true);
@@ -341,4 +341,4 @@ function customStripTags($content) {
 	return $content;
 }
 
-register_elgg_event_handler('init', 'system', 'spam_login_filter_init');
+elgg_register_event_handler('init', 'system', 'spam_login_filter_init');

@@ -12,3 +12,5 @@ $body = elgg_view_form('wines/find', array(
 ));
 
 echo elgg_view_module('aside', elgg_echo('wine:searchtag'), $body);
+
+

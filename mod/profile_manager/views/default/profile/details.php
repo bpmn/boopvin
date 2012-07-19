@@ -86,8 +86,16 @@
 			
 			foreach($fields[$cat_guid] as $field){
 				
+                            
+                                //on affiche pas la question êtes vous un pro
 				$metadata_name = $field->metadata_name;
+                                if ($metadata_name == 'pro')
+                                    continue;
 				
+                                if ($metadata_name == 'job' and $user->pro == "no")
+                                    continue;
+                                
+                                
 				if($metadata_name != "description"){
 					// give correct class
 					if($even_odd != "even"){
@@ -117,7 +125,7 @@
 					}
 					
 					// build result
-					$field_result .= "<div class='" . $even_odd . "'>";
+					$field_result .= "<div  class='" . $even_odd . "'>";
 					$field_result .= "<b>" . $title . "</b>:&nbsp;";
 					$field_result .= elgg_view("output/" . $output_type, array("value" =>  $value, "target" => $target));
 					$field_result .= "</div>\n";

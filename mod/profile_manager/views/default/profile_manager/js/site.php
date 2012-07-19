@@ -2,6 +2,18 @@
 ?>
 // Profile Manager More Info tooltips
 $(document).ready(function(){
+
+       $("div#pro input:radio").change( function() {
+        
+              valeur= $('div#pro input:radio:checked').val();
+                if(valeur == "yes"){
+                    $("div#job").css({"display":"block"}); 
+                }else{
+                    $("div#job").css({"display":"none"}); 
+                }
+        
+        });
+
 	$("span.custom_fields_more_info").live('mouseover', function(e) {
 			var tooltip = $("#text_" + $(this).attr('id'));
 			$("body").append("<p id='custom_fields_more_info_tooltip'>"+ $(tooltip).html() + "</p>");

@@ -61,7 +61,7 @@ function search_objects_hook($hook, $type, $value, $params) {
  * @param unknown_type $params
  * @return unknown_type
  */
-function search_groups_hook($hook, $type, $value, $params) {
+function search_wines_hook($hook, $type, $value, $params) {
 	$db_prefix = elgg_get_config('dbprefix');
 
 	$query = sanitise_string($params['query']);
@@ -78,7 +78,7 @@ function search_groups_hook($hook, $type, $value, $params) {
 	$params['wheres'] = array($where);
 
 	// override subtype -- All groups should be returned regardless of subtype.
-	$params['subtype'] = ELGG_ENTITIES_ANY_VALUE;
+	//$params['subtype'] = ELGG_ENTITIES_ANY_VALUE;
 
 	$params['count'] = TRUE;
 	$count = elgg_get_entities($params);

@@ -10,7 +10,9 @@ $params = array(
 	'class' => 'elgg-input-search mbm',
 	'value' => $tag_string,
 );
+
 echo elgg_view('input/text', $params);
+
 
 echo elgg_view('input/hidden', array(
 	'name' => 'container_guid',

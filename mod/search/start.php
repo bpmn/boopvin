@@ -19,7 +19,7 @@ function search_init() {
 	// register some default search hooks
 	elgg_register_plugin_hook_handler('search', 'object', 'search_objects_hook');
 	elgg_register_plugin_hook_handler('search', 'user', 'search_users_hook');
-	elgg_register_plugin_hook_handler('search', 'group', 'search_groups_hook');
+	elgg_register_plugin_hook_handler('search', 'group:wine', 'search_wines_hook');
 
 	// tags and comments are a bit different.
 	// register a search types and a hooks for them.

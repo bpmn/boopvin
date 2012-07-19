@@ -124,3 +124,22 @@
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 }
+
+
+div#job{
+        display:none;
+}
+
+
+/* Mise en page du profile d'un utilisateur*/
+/*60% pour les infos 40% liste des degusts */
+
+#list_user_degust {
+        width: 35%;
+        float: left;
+        
+}
+
+.elgg-col-2of3 {
+    width: 65%;
+}

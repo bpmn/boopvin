@@ -187,7 +187,7 @@ function degust_entity_menu_setup($hook, $type, $return, $params) {
 	}
 
 	// membership type
-	$membership = $entity->membership;
+	/*$membership = $entity->membership;
 	if ($membership == ACCESS_PUBLIC) {
 		$mem = elgg_echo("wine:open");
 	} else {
@@ -199,10 +199,10 @@ function degust_entity_menu_setup($hook, $type, $return, $params) {
 		'href' => false,
 		'priority' => 100,
 	);
-	$return[] = ElggMenuItem::factory($options);
+	$return[] = ElggMenuItem::factory($options);*/
 
 	// number of members
-	$num_members = get_group_members($entity->guid, 10, 0, 0, true);
+	/*$num_members = get_group_members($entity->guid, 10, 0, 0, true);
 	$members_string = elgg_echo('wine:member');
 	$options = array(
 		'name' => 'members',
@@ -210,10 +210,10 @@ function degust_entity_menu_setup($hook, $type, $return, $params) {
 		'href' => false,
 		'priority' => 200,
 	);
-	$return[] = ElggMenuItem::factory($options);
+	$return[] = ElggMenuItem::factory($options);*/
 
 	// feature link
-	if (elgg_is_admin_logged_in()) {
+	/*if (elgg_is_admin_logged_in()) {
 		if ($entity->featured_group == "yes") {
 			$url = "action/wine/featured?wine_guid={$entity->guid}&action_type=unfeature";
 			$wording = elgg_echo("wine:makeunfeatured");
@@ -229,7 +229,7 @@ function degust_entity_menu_setup($hook, $type, $return, $params) {
 			'is_action' => true
 		);
 		$return[] = ElggMenuItem::factory($options);
-	}
+	}*/
 
 	return $return;
 }

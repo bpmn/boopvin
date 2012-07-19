@@ -77,14 +77,34 @@ function profile_page_handler($page) {
 	}
 
 	// main profile page
-	$params = array(
-		'content' => elgg_view('profile/wrapper'),
-		'num_columns' => 3,
-	);
-	$content = elgg_view_layout('widgets', $params);
+	//$params = array(
+	//	'content' => elgg_view('profile/wrapper'),
+	//	'num_columns' => 3,
+	//);
+	//$content = elgg_view_layout('widgets', $params);
 
-	$body = elgg_view_layout('one_column', array('content' => $content));
-	echo elgg_view_page($user->name, $body);
+	$content=elgg_view('profile/wrapper');
+        
+        
+        $options = array(
+	'type' => 'object',
+	'subtype' => 'degust',
+	'owner_guid' => $user->getGUID(),
+	'limit' => 30,
+	'full_view' => false,
+	'pagination' => true
+);
+         
+        //des degustations de l'utilisateur encadré d'un div
+        $list_user_degust=elgg_list_entities($options);
+        $content.="<div id=\"list_user_degust\">".$list_user_degust."</div>" ;
+        
+      
+        
+        $body = elgg_view_layout('one_column', array('content' => $content));
+        $dummy=0;
+	$body= elgg_view_page($user->name, $body);
+        echo $body;
 	return true;
 }
 

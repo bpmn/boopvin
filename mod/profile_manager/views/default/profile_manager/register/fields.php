@@ -93,6 +93,8 @@
 			$fields_result = "";
 			foreach($fields[$cat_guid] as $field){
 				$metadata_type = $field->metadata_type;
+                                $metadata_name = $field->metadata_name;
+                                
 				if($metadata_type == "longtext"){
 					// bug when showing tinymce on register page (when moving) newer versions of tinymce are working correctly
 					$metadata_type = "plaintext";
@@ -110,7 +112,7 @@
 					$class = " class='mandatory'";
 				} 
 				
-				$fields_result .= "<div" . $class . ">";
+				$fields_result .= "<div" . $class . " id=\"{$metadata_name}\">";
 				$fields_result .= "<label>" . $field->getTitle() . "</label>";
 				
 				if($hint = $field->getHint()){ 
