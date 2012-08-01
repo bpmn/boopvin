@@ -27,6 +27,12 @@ function degust_init(){
         elgg_extend_view('wines/tool_latest', 'degusts/module');
         
 	//elgg_register_js('elgg.degust', 'js/degusts/degust.js', 'footer');
+        
+        $url = 'mod/degusts/vendors/jquery.validate.min.js';
+	elgg_register_js('elgg.validate', $url, 'head');
+	elgg_load_js('elgg.validate');
+        
+        
         $url = 'mod/degusts/views/default/js/degusts/degust.js';
 	elgg_register_js('elgg.degust', $url, 'footer');
 	elgg_load_js('elgg.degust');

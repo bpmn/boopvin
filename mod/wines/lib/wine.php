@@ -503,7 +503,7 @@ function wine_register_profile_buttons($wine) {
 				'href' => $url,
 				'text' => elgg_echo($text),
 				'link_class' => 'elgg-button elgg-button-action elgg-overlay',
-                                
+                                //'target' =>"_blank",
                                 //'rel'=>'#overlay',
 			));}
                     

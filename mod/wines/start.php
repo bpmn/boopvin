@@ -820,7 +820,7 @@ function wine_discussion_comment_override($hook, $type, $return, $params) {
  * Add owner block link
  */
 function wine_discussion_owner_block_menu($hook, $type, $return, $params) {
-	if (elgg_instanceof($params['entity'], 'group')) {
+	if (elgg_instanceof($params['entity'], 'group','wine')) {
 		if ($params['entity']->forum_enable != "no") {
 			$url = "wine_discussion/owner/{$params['entity']->guid}";
 			$item = new ElggMenuItem('wine_discussion', elgg_echo('discussion:wine'), $url);

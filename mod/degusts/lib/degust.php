@@ -143,7 +143,8 @@ function degust_handle_edit_page($page, $guid = 0) {
 		'content' => $content,
 		'title' => $title,
                 'sidebar'=>$sidebar,
-		'filter' => ''
+		'filter' => '',
+                //'class'=>'elgg-overlay'
                 
 	);
         	
@@ -153,7 +154,7 @@ function degust_handle_edit_page($page, $guid = 0) {
         //echo $body;
 
 	echo elgg_view_page($title, $body,'overlay');
-        
+        //echo elgg_view_page($title, $body);
 }
 
 

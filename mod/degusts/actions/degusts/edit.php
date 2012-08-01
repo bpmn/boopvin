@@ -68,8 +68,10 @@ $degust->save();
 
 system_message(elgg_echo("degust:saved"));
 
-forward($degust->getUrl());
+$container=  get_entity($container_guid);
 
+forward($container->getUrl());
+//forward();
 
 
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * Wines plugin
+ * Restobars plugin
  *
- * @package Elggwine
+ * @package ElggRestobar
  */
 
 elgg_register_event_handler('init', 'system', 'restobar_init');
@@ -11,13 +11,13 @@ elgg_register_event_handler('init', 'system', 'restobar_init');
 elgg_register_event_handler('init', 'system', 'restobar_fields_setup', 10000);
 
 /**
- * Initialize the wine plugin.
+ * Initialize the restobars plugin.
  */
-function wine_init() {
+function restobar_init() {
 
-	elgg_register_library('restobar', elgg_get_plugins_path() . 'wines/lib/restobar.php');
+	elgg_register_library('restobar', elgg_get_plugins_path() . 'restobars/lib/restobar.php');
 
-	// register wine entities for search
+	// register restobar entities for search
 	elgg_register_entity_type('group','restobar');
         add_subtype('group', 'restobar', 'ElggRestobar');
 
@@ -28,11 +28,11 @@ function wine_init() {
 	// Register a page handler, so we can have nice URLs
 	elgg_register_page_handler('restobar', 'restobar_page_handler');
 
-	// Register URL handlers for wine
+	// Register URL handlers for restobar
 	elgg_register_entity_url_handler('group', 'restobar', 'restobar_url');
 	elgg_register_plugin_hook_handler('entity:icon:url', 'group', 'restobar_icon_url_override');
 
-	// Register an icon handler for wine
+	// Register an icon handler for restobar
 	elgg_register_page_handler('restobaricon', 'restobar_icon_handler');
 
 	// Register some actions
@@ -54,8 +54,8 @@ function wine_init() {
 	elgg_register_widget_type('a_users_restobars', elgg_echo('restobar:widget:membership'), elgg_echo('restobar:widgets:description'));
 
 	// add group activity tool option
-	//add_group_tool_option('activity', elgg_echo('wine:enableactivity'), true);
-	//elgg_extend_view('wines/tool_latest', 'wines/profile/activity_module');
+	//add_group_tool_option('activity', elgg_echo('restobar:enableactivity'), true);
+	//elgg_extend_view('restobars/tool_latest', 'restobars/profile/activity_module');
 
 	// add link to owner block
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'restobar_activity_owner_block_menu');
@@ -75,20 +75,20 @@ function wine_init() {
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'restobar_write_acl_plugin_hook');
-	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'wine_read_acl_plugin_hook');
+	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'restobar_read_acl_plugin_hook');
 
 	// Register profile menu hook
 	//elgg_register_plugin_hook_handler('profile_menu', 'profile', 'forum_profile_menu');
 	elgg_register_plugin_hook_handler('profile_menu', 'profile', 'restobar_activity_profile_menu');
 
-	// allow ecml in discussion and profiles
+	// allow ecml in news and profiles
 	elgg_register_plugin_hook_handler('get_views', 'ecml', 'restobar_ecml_views_hook');
 	elgg_register_plugin_hook_handler('get_views', 'ecml', 'restobarprofile_ecml_views_hook');
 
-	// Register a handler for create wine
+	// Register a handler for create restobar
 	elgg_register_event_handler('create', 'group', 'restobar_create_event_listener');
 
-	// Register a handler for delete wine
+	// Register a handler for delete restobar
 	elgg_register_event_handler('delete', 'group', 'restobar_delete_event_listener');
 	
 	elgg_register_event_handler('join', 'group', 'restobar_user_join_event_listener');
@@ -113,9 +113,9 @@ function wine_init() {
 function restobar_fields_setup() {
 
 	$profile_defaults = array(
-		'description' => 'text',    //appellation
-                'adresse'=>'text',          //cuvée
-		'website' => 'url',
+		'description' => 'longtext',    //description de l'activité
+                'adresse'=>'text',              //adresse de l'établissement lien google map
+		'website' => 'url',             //lien vers le website de l'établissement
  
 	);
 
@@ -136,10 +136,10 @@ function restobar_fields_setup() {
 }
 
 /**
- * Configure the wine sidebar menu. Triggered on page setup
+ * Configure the restobar sidebar menu. Triggered on page setup
  *
  */
-function wine_setup_sidebar_menus() {
+function restobar_setup_sidebar_menus() {
 
 	// Get the page owner entity
 	$page_owner = elgg_get_page_owner_entity();
@@ -178,20 +178,20 @@ function wine_setup_sidebar_menus() {
 }
 
 /**
- * Wine page handler
+ * restobar page handler
  *
  * URLs take the form of
- *  All wine:           wine/all
- *  User's owned wine:  wine/owner/<username>
- *  User's member wine: wine/member/<username>
- *  wine profile:        wine/profile/<guid>/<title>
- *  New wine:            wine/add/<guid>
- *  Edit wine:           wine/edit/<guid>
- *  wine invitations:    wine/invitations/<username>
- *  Invite to wine:      wine/invite/<guid>
- *  Membership requests:  wine/requests/<guid>
- *  wine activity:       wine/activity/<guid>
- *  wine members:        wine/members/<guid>
+ *  All restobar:           restobar/all
+ *  User's owned restobar:  restobar/owner/<username>
+ *  User's member restobar: restobar/member/<username>
+ *  restobar profile:        restobar/profile/<guid>/<title>
+ *  New restobar:            restobar/add/<guid>
+ *  Edit restobar:           restobar/edit/<guid>
+ *  restobar invitations:    restobar/invitations/<username>
+ *  Invite to restobar:      restobar/invite/<guid>
+ *  Membership requests:  restobar/requests/<guid>
+ *  restobar activity:       restobar/activity/<guid>
+ *  restobar members:        restobar/members/<guid>
  *
  * @param array $page Array of url segments for routing
  * @return bool
@@ -248,7 +248,7 @@ function restobar_page_handler($page) {
 }
 
 /**
- * Handle wine icons.
+ * Handle restobar icons.
  *
  * @param array $page
  * @return void
@@ -269,7 +269,7 @@ function restobar_icon_handler($page) {
 }
 
 /**
- * Populates the ->getUrl() method for wine objects
+ * Populates the ->getUrl() method for restobar objects
  *
  * @param ElggEntity $entity File entity
  * @return string File URL
@@ -281,7 +281,7 @@ function restobar_url($entity) {
 }
 
 /**
- * Override the default entity icon for wine
+ * Override the default entity icon for restobar
  *
  * @return string Relative URL
  */
@@ -316,7 +316,7 @@ function restobar_activity_owner_block_menu($hook, $type, $return, $params) {
 }
 
 /**
- * Add links/info to entity menu particular to wine entities
+ * Add links/info to entity menu particular to restobar entities
  */
 function restobar_entity_menu_setup($hook, $type, $return, $params) {
 	if (elgg_in_context('widgets')) {
@@ -384,25 +384,25 @@ function restobar_entity_menu_setup($hook, $type, $return, $params) {
 }
 
 /**
- * Add a remove user link to user hover menu when the page owner is a wine
+ * Add a remove user link to user hover menu when the page owner is a restobar
  */
 function restobar_user_entity_menu_setup($hook, $type, $return, $params) {
 	if (elgg_is_logged_in()) {
 		$restobar = elgg_get_page_owner_entity();
 		
-		// Check for valid wine
+		// Check for valid restobar
 		if (!elgg_instanceof($restobar, 'group')) {
 			return $return;
 		}
 	
 		$entity = $params['entity'];
 		
-		// Make sure we have a user and that user is a member of the wine
+		// Make sure we have a user and that user is a member of the restobar
 		if (!elgg_instanceof($entity, 'user') || !$restobar->isMember($entity)) {
 			return $return;
 		}
 
-		// Add remove link if we can edit the wine, and if we're not trying to remove the wine owner
+		// Add remove link if we can edit the restobar, and if we're not trying to remove the restobar owner
 		if ($restobar->canEdit() && $restobar->getOwnerGUID() != $entity->guid) {
 			$remove = elgg_view('output/confirmlink', array(
 				'href' => "action/restobar/remove?user_guid={$entity->guid}&restobar_guid={$restobar->guid}",
@@ -436,7 +436,7 @@ function restobar_annotation_menu_setup($hook, $type, $return, $params) {
 	}
 
 	if ($annotation->canEdit()) {
-		$url = elgg_http_add_url_query_elements('action/restobar_discussion/reply/delete', array(
+		$url = elgg_http_add_url_query_elements('action/restobar_news/reply/delete', array(
 			'annotation_id' => $annotation->id,
 		));
 
@@ -449,7 +449,7 @@ function restobar_annotation_menu_setup($hook, $type, $return, $params) {
 		);
 		$return[] = ElggMenuItem::factory($options);
 
-		$url = elgg_http_add_url_query_elements('restobar_discussion', array(
+		$url = elgg_http_add_url_query_elements('restobar_news', array(
 			'annotation_id' => $annotation->id,
 		));
 
@@ -467,15 +467,15 @@ function restobar_annotation_menu_setup($hook, $type, $return, $params) {
 }
 
 /**
- * wine created so create an access list for it
+ * restobar created so create an access list for it
  */
-function wine_create_event_listener($event, $object_type, $object) {
+function restobar_create_event_listener($event, $object_type, $object) {
 	$ac_name = elgg_echo('restobar:restobar') . ": " . $object->name;
 	$restobar_id = create_access_collection($ac_name, $object->guid);
 	if ($restobar_id) {
 		$object->group_acl = $restobar_id;
 	} else {
-		// delete wine if access creation fails
+		// delete restobar if access creation fails
 		return false;
 	}
 
@@ -483,14 +483,14 @@ function wine_create_event_listener($event, $object_type, $object) {
 }
 
 /**
- * Hook to listen to read access control requests and return all the wine you are a member of.
+ * Hook to listen to read access control requests and return all the restobar you are a member of.
  */
 function restobar_read_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) {
 	//error_log("READ: " . var_export($returnvalue));
 	$user = elgg_get_logged_in_user_entity();
 	if ($user) {
 		// Not using this because of recursion.
-		// Joining a wine automatically add user to ACL,
+		// Joining a restobar automatically add user to ACL,
 		// So just see if they're a member of the ACL.
 		//$membership = get_users_membership($user->guid);
 
@@ -500,16 +500,16 @@ function restobar_read_acl_plugin_hook($hook, $entity_type, $returnvalue, $param
 
 		if ($membership) {
 			foreach ($membership as $restobar)
-				$returnvalue[$user->guid][$restobar->group_acl] = elgg_echo('restobar:restobar') . ": " . $wine->name;
+				$returnvalue[$user->guid][$restobar->group_acl] = elgg_echo('restobar:restobar') . ": " . $restobar->name;
 			return $returnvalue;
 		}
 	}
 }
 
 /**
- * Return the write access for the current wine if the user has write access to it.
+ * Return the write access for the current restobar if the user has write access to it.
  */
-function wine_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) {
+function restobar_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) {
 	$page_owner = elgg_get_page_owner_entity();
 	$user_guid = $params['user_id'];
 	$user = get_entity($user_guid);
@@ -517,26 +517,26 @@ function wine_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) 
 		return $returnvalue;
 	}
 
-	// only insert wine access for current wine
+	// only insert restobar access for current restobar
 	if ($page_owner instanceof ElggGroup) {
 		if ($page_owner->canWriteToContainer($user_guid)) {
-			$returnvalue[$page_owner->group_acl] = elgg_echo('wine:wine') . ': ' . $page_owner->name;
+			$returnvalue[$page_owner->group_acl] = elgg_echo('restobar:restobar') . ': ' . $page_owner->name;
 
 			unset($returnvalue[ACCESS_FRIENDS]);
 		}
 	} else {
-		// if the user owns the wine, remove all access collections manually
-		// this won't be a problem once the wine itself owns the acl.
-		$wine = elgg_get_entities_from_relationship(array(
+		// if the user owns the restobar, remove all access collections manually
+		// this won't be a problem once the restobar itself owns the acl.
+		$restobar = elgg_get_entities_from_relationship(array(
 					'relationship' => 'member',
 					'relationship_guid' => $user_guid,
 					'inverse_relationship' => FALSE,
 					'limit' => 999
 				));
 
-		if ($wine) {
-			foreach ($wine as $vin) {
-				unset($returnvalue[$vin->group_acl]);
+		if ($restobar) {
+			foreach ($restobar as $bar) {
+				unset($returnvalue[$bar->group_acl]);
 			}
 		}
 	}
@@ -545,23 +545,23 @@ function wine_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) 
 }
 
 /**
- * wine deleted, so remove access lists.
+ * restobar deleted, so remove access lists.
  */
-function wine_delete_event_listener($event, $object_type, $object) {
+function restobar_delete_event_listener($event, $object_type, $object) {
 	delete_access_collection($object->group_acl);
 
 	return true;
 }
 
 /**
- * Listens to a wine join event and adds a user to the wine's access control
+ * Listens to a restobar join event and adds a user to the restobar's access control
  *
  */
-function wine_user_join_event_listener($event, $object_type, $object) {
+function restobar_user_join_event_listener($event, $object_type, $object) {
 
-	$wine = $object['group'];
+	$restobar = $object['group'];
 	$user = $object['user'];
-	$acl = $wine->group_acl;
+	$acl = $restobar->group_acl;
 
 	add_user_to_access_collection($user->guid, $acl);
 
@@ -571,7 +571,7 @@ function wine_user_join_event_listener($event, $object_type, $object) {
 /**
  * Make sure users are added to the access collection
  */
-function wine_access_collection_override($hook, $entity_type, $returnvalue, $params) {
+function restobar_access_collection_override($hook, $entity_type, $returnvalue, $params) {
 	if (isset($params['collection'])) {
 		if (elgg_instanceof(get_entity($params['collection']->owner_guid), 'group')) {
 			return true;
@@ -580,14 +580,14 @@ function wine_access_collection_override($hook, $entity_type, $returnvalue, $par
 }
 
 /**
- * Listens to a wine leave event and removes a user from the wine's access control
+ * Listens to a restobar leave event and removes a user from the restobar's access control
  *
  */
-function wine_user_leave_event_listener($event, $object_type, $object) {
+function restobar_user_leave_event_listener($event, $object_type, $object) {
 
-	$wine = $object['group'];
+	$restobar = $object['group'];
 	$user = $object['user'];
-	$acl = $wine->group_acl;
+	$acl = $restobar->group_acl;
 
 	remove_user_from_access_collection($user->guid, $acl);
 
@@ -595,17 +595,17 @@ function wine_user_leave_event_listener($event, $object_type, $object) {
 }
 
 /**
- * Grabs wine by invitations
+ * Grabs restobar by invitations
  * Have to override all access until there's a way override access to getter functions.
  *
  * @param int  $user_guid    The user's guid
  * @param bool $return_guids Return guids rather than ElggGroup objects
  *
- * @return array Elggwine or guids depending on $return_guids
+ * @return array ElggRestobar or guids depending on $return_guids
  */
-function wine_get_invited_wine($user_guid, $return_guids = FALSE) {
+function restobar_get_invited_restobar($user_guid, $return_guids = FALSE) {
 	$ia = elgg_set_ignore_access(TRUE);
-	$wine = elgg_get_entities_from_relationship(array(
+	$restobar = elgg_get_entities_from_relationship(array(
 		'relationship' => 'invited',
 		'relationship_guid' => $user_guid,
 		'inverse_relationship' => TRUE,
@@ -615,28 +615,28 @@ function wine_get_invited_wine($user_guid, $return_guids = FALSE) {
 
 	if ($return_guids) {
 		$guids = array();
-		foreach ($wine as $vin) {
-			$guids[] = $vin->getGUID();
+		foreach ($restobar as $bar) {
+			$guids[] = $bar->getGUID();
 		}
 
 		return $guids;
 	}
 
-	return $wine;
+	return $restobar;
 }
 
 /**
- * Join a user to a wine, add river event, clean-up invitations
+ * Join a user to a restobar, add river event, clean-up invitations
  *
- * @param ElggWine $wine
+ * @param ElggRestobar $restobar
  * @param ElggUser  $user
  * @return bool
  */
-function wines_join_wine($wine, $user) {
+function restobars_join_restobar($restobar, $user) {
 
-	// access ignore so user can be added to access collection of invisible wine
+	// access ignore so user can be added to access collection of invisible restobar
 	$ia = elgg_set_ignore_access(TRUE);
-	$result = $wine->join($user);
+	$result = $restobar->join($user);
 	elgg_set_ignore_access($ia);
 	
 	if ($result) {
@@ -644,10 +644,10 @@ function wines_join_wine($wine, $user) {
 		get_access_list($user->guid, 0, true);
 
 		// Remove any invite or join request flags
-		remove_entity_relationship($wine->guid, 'invited', $user->guid);
-		remove_entity_relationship($user->guid, 'membership_request', $wine->guid);
+		remove_entity_relationship($restobar->guid, 'invited', $user->guid);
+		remove_entity_relationship($user->guid, 'membership_request', $restobar->guid);
 
-		add_to_river('river/relationship/member/create', 'join', $user->guid, $wine->guid);
+		add_to_river('river/relationship/member/create', 'join', $user->guid, $restobar->guid);
 
 		return true;
 	}
@@ -656,47 +656,47 @@ function wines_join_wine($wine, $user) {
 }
 
 /**
- * Function to use on wine for access. It will house private, loggedin, public,
- * and the wine itself. This is when you don't want other wine or access lists
+ * Function to use on restobar for access. It will house private, loggedin, public,
+ * and the restobar itself. This is when you don't want other restobar or access lists
  * in the access options available.
  *
  * @return array
  */
-function wine_access_options($wine) {
+function restobar_access_options($restobar) {
 	$access_array = array(
 		ACCESS_PRIVATE => 'private',
 		ACCESS_LOGGED_IN => 'logged in users',
 		ACCESS_PUBLIC => 'public',
-		$wine->group_acl => elgg_echo('wine:acl', array($wine->name)),
+		$restobar->group_acl => elgg_echo('restobar:acl', array($restobar->name)),
 	);
 	return $access_array;
 }
 
-function wine_activity_profile_menu($hook, $entity_type, $return_value, $params) {
-
+function restobar_activity_profile_menu($hook, $entity_type, $return_value, $params) {
+ 
 	if ($params['owner'] instanceof ElggGroup) {
 		$return_value[] = array(
 			'text' => elgg_echo('Activity'),
-			'href' => "wine/activity/{$params['owner']->getGUID()}"
+			'href' => "restobar/activity/{$params['owner']->getGUID()}"
 		);
 	}
 	return $return_value;
 }
 
 /**
- * Parse ECML on group discussion views
+ * Parse ECML on group news views
  */
-function wine_ecml_views_hook($hook, $entity_type, $return_value, $params) {
-	$return_value['forum/viewposts'] = elgg_echo('wine:ecml:discussion');
+function restobar_ecml_views_hook($hook, $entity_type, $return_value, $params) {
+	$return_value['forum/viewposts'] = elgg_echo('restobar:ecml:news');
 
 	return $return_value;
 }
 
 /**
- * Parse ECML on wine profiles
+ * Parse ECML on restobar profiles
  */
-function wineprofile_ecml_views_hook($hook, $entity_type, $return_value, $params) {
-	$return_value['wine/wineprofile'] = elgg_echo('wine:ecml:wineprofile');
+function restobarprofile_ecml_views_hook($hook, $entity_type, $return_value, $params) {
+	$return_value['restobar/restobarprofile'] = elgg_echo('restobar:ecml:restobarprofile');
 
 	return $return_value;
 }
@@ -704,86 +704,76 @@ function wineprofile_ecml_views_hook($hook, $entity_type, $return_value, $params
 
 
 /**
- * Discussion
+ * News
  *
  */
 
-elgg_register_event_handler('init', 'system', 'wine_discussion_init');
+elgg_register_event_handler('init', 'system', 'restobar_news_init');
 
 /**
- * Initialize the discussion component
+ * Initialize the News component
  */
-function wine_discussion_init() {
+function restobar_news_init() {
 
-	elgg_register_library('elgg:wine_discussion', elgg_get_plugins_path() . 'wines/lib/wine_discussion.php');
+	elgg_register_library('elgg:restobar_news', elgg_get_plugins_path() . 'restobars/lib/restobar_news.php');
 
-	elgg_register_page_handler('wine_discussion', 'wine_discussion_page_handler');
+	elgg_register_page_handler('restobar_news', 'restobar_news_page_handler');
 
-	elgg_register_entity_url_handler('object', 'wineforumtopic', 'wine_discussion_override_topic_url');
+	elgg_register_entity_url_handler('object', 'restobarnews', 'restobar_news_override_url');
 
-	// commenting not allowed on discussion topics (use a different annotation)
-	elgg_register_plugin_hook_handler('permissions_check:comment', 'object', 'wine_discussion_comment_override');
+	// commenting not allowed on News topics (use a different annotation)
+	elgg_register_plugin_hook_handler('permissions_check:comment', 'object', 'restobar_news_comment_override');
 	
-	$action_base = elgg_get_plugins_path() . 'wines/actions/wine_discussion';
-	elgg_register_action('wine_discussion/save', "$action_base/save.php");
-	elgg_register_action('wine_discussion/delete', "$action_base/delete.php");
-	elgg_register_action('wine_discussion/reply/save', "$action_base/reply/save.php");
-	elgg_register_action('wine_discussion/reply/delete', "$action_base/reply/delete.php");
+	$action_base = elgg_get_plugins_path() . 'restobars/actions/restobar_news';
+	elgg_register_action('restobar_news/save', "$action_base/save.php");
+	elgg_register_action('restobar_news/edit', "$action_base/edit.php");
+	
 
 	// add link to owner block
-	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'wine_discussion_owner_block_menu');
+	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'restobar_news_owner_block_menu');
 
 	// Register for search.
-	elgg_register_entity_type('object', 'wineforumtopic');
+	elgg_register_entity_type('object', 'restobarnews');
+        add_subtype('object', 'restobarnews', 'ElggRestobarnews');
 
 	// because replies are not comments, need of our menu item
-	elgg_register_plugin_hook_handler('register', 'menu:river', 'wine_discussion_add_to_river_menu');
+	elgg_register_plugin_hook_handler('register', 'menu:river', 'restobar_news_add_to_river_menu');
 
 	// add the forum tool option
-	add_group_tool_option('forum', elgg_echo('wine:enableforum'), true);
-	elgg_extend_view('wines/tool_latest', 'wine_discussion/module');
+	add_group_tool_option('forum', elgg_echo('restobar:enableforum'), true);
+	elgg_extend_view('restobars/tool_latest', 'restobar_news/module');
 
 	// notifications
-	register_notification_object('object', 'wineforumtopic', elgg_echo('wineforumtopic:new'));
-	elgg_register_plugin_hook_handler('object:notifications', 'object', 'wine_object_notifications_intercept');
-	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'wineforumtopic_notify_message');
+	register_notification_object('object', 'restobarnews', elgg_echo('restobarnews:new'));
+	elgg_register_plugin_hook_handler('object:notifications', 'object', 'restobar_object_notifications_intercept');
+	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'restobarnews_notify_message');
 }
 
 /**
- * Discussion page handler
+ * news page handler
  *
  * URLs take the form of
- *  All topics in site:    discussion/all
- *  List topics in forum:  discussion/owner/<guid>
- *  View discussion topic: discussion/view/<guid>
- *  Add discussion topic:  discussion/add/<guid>
- *  Edit discussion topic: discussion/edit/<guid>
+ *  All topics in site:    news/all
+ *  List topics in forum:  news/owner/<guid>
+ *  View news topic: news/view/<guid>
+ *  Add news topic:  news/add/<guid>
+ *  Edit news topic: news/edit/<guid>
  *
  * @param array $page Array of url segments for routing
  * @return bool
  */
-function wine_discussion_page_handler($page) {
+function restobar_news_page_handler($page) {
 
-	elgg_load_library('elgg:wine_discussion');
+	elgg_load_library('elgg:restobar_news');
 
-	elgg_push_breadcrumb(elgg_echo('discussion'), 'wine_discussion/all');
+	elgg_push_breadcrumb(elgg_echo('news'), 'restobar_news/edit');
 
 	switch ($page[0]) {
-		case 'all':
-			wine_discussion_handle_all_page();
-			break;
-		case 'owner':
-			wine_discussion_handle_list_page($page[1]);
-			break;
-		case 'add':
-			wine_discussion_handle_edit_page('add', $page[1]);
-			break;
+		
 		case 'edit':
-			wine_discussion_handle_edit_page('edit', $page[1]);
+			restobar_news_handle_edit_page();
 			break;
-		case 'view':
-			wine_discussion_handle_view_page($page[1]);
-			break;
+		
 		default:
 			return false;
 	}
@@ -791,53 +781,40 @@ function wine_discussion_page_handler($page) {
 }
 
 /**
- * Override the wine_discussion topic url
+ * Override the restobar_news topic url
  *
- * @param ElggObject $entity Discussion topic
+ * @param ElggObject $entity News topic
  * @return string
  */
-function wine_discussion_override_topic_url($entity) {
-	return 'wine_discussion/view/' . $entity->guid;
+function restobar_news_override_topic_url($entity) {
+	return 'restobar_news/view/' . $entity->guid;
 }
 
 /**
  * We don't want people commenting on topics in the river
  */
-function wine_discussion_comment_override($hook, $type, $return, $params) {
-	if (elgg_instanceof($params['entity'], 'object', 'wineforumtopic')) {
+function restobar_news_comment_override($hook, $type, $return, $params) {
+	if (elgg_instanceof($params['entity'], 'object', 'restobarnews')) {
 		return false;
 	}
 }
 
-/**
- * Add owner block link
- */
-function wine_discussion_owner_block_menu($hook, $type, $return, $params) {
-	if (elgg_instanceof($params['entity'], 'group')) {
-		if ($params['entity']->forum_enable != "no") {
-			$url = "wine_discussion/owner/{$params['entity']->guid}";
-			$item = new ElggMenuItem('wine_discussion', elgg_echo('discussion:wine'), $url);
-			$return[] = $item;
-		}
-	}
 
-	return $return;
-}
 
 /**
  * Add the reply button for the river
  */
-function wine_discussion_add_to_river_menu($hook, $type, $return, $params) {
+function restobar_news_add_to_river_menu($hook, $type, $return, $params) {
 	if (elgg_is_logged_in() && !elgg_in_context('widgets')) {
 		$item = $params['item'];
 		$object = $item->getObjectEntity();
-		if (elgg_instanceof($object, 'object', 'wineforumtopic')) {
+		if (elgg_instanceof($object, 'object', 'restobarnews')) {
 			if ($item->annotation_id == 0) {
-				$wine = $object->getContainerEntity();
-				if ($wine && ($wine->canWriteToContainer() || elgg_is_admin_logged_in())) {
+				$restobar = $object->getContainerEntity();
+				if ($restobar && ($restobar->canWriteToContainer() || elgg_is_admin_logged_in())) {
 					$options = array(
 						'name' => 'reply',
-						'href' => "#wine-reply-$object->guid",
+						'href' => "#restobar-reply-$object->guid",
 						'text' => elgg_view_icon('speech-bubble'),
 						'title' => elgg_echo('reply:this'),
 						'rel' => 'toggle',
@@ -853,10 +830,10 @@ function wine_discussion_add_to_river_menu($hook, $type, $return, $params) {
 }
 
 /**
- * Event handler for wine forum posts
+ * Event handler for restobar forum posts
  *
  */
-function wine_object_notifications($event, $object_type, $object) {
+function restobar_object_notifications($event, $object_type, $object) {
 
 	static $flag;
 	if (!isset($flag))
@@ -864,8 +841,8 @@ function wine_object_notifications($event, $object_type, $object) {
 
 	if (is_callable('object_notifications'))
 		if ($object instanceof ElggObject) {
-			if ($object->getSubtype() == 'wineforumtopic') {
-				//if ($object->countAnnotations('wine_topic_post') > 0) {
+			if ($object->getSubtype() == '$restobarforumtopic') {
+				//if ($object->countAnnotations('restobar_topic_post') > 0) {
 				if ($flag == 0) {
 					$flag = 1;
 					object_notifications($event, $object_type, $object);
@@ -876,7 +853,7 @@ function wine_object_notifications($event, $object_type, $object) {
 }
 
 /**
- * Intercepts the notification on wine topic creation and prevents a notification from going out
+ * Intercepts the notification on restobar topic creation and prevents a notification from going out
  * (because one will be sent on the annotation)
  *
  * @param unknown_type $hook
@@ -885,10 +862,10 @@ function wine_object_notifications($event, $object_type, $object) {
  * @param unknown_type $params
  * @return unknown
  */
-function wine_object_notifications_intercept($hook, $entity_type, $returnvalue, $params) {
+function restobar_object_notifications_intercept($hook, $entity_type, $returnvalue, $params) {
 	if (isset($params)) {
 		if ($params['event'] == 'create' && $params['object'] instanceof ElggObject) {
-			if ($params['object']->getSubtype() == 'wineforumtopic') {
+			if ($params['object']->getSubtype() == 'restobarforumtopic') {
 				return true;
 			}
 		}
@@ -904,11 +881,11 @@ function wine_object_notifications_intercept($hook, $entity_type, $returnvalue, 
  * @param unknown_type $returnvalue
  * @param unknown_type $params
  */
-function wineforumtopic_notify_message($hook, $entity_type, $returnvalue, $params) {
+function restobarnews_notify_message($hook, $entity_type, $returnvalue, $params) {
 	$entity = $params['entity'];
 	$to_entity = $params['to_entity'];
 	$method = $params['method'];
-	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'wineforumtopic')) {
+	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'restobarforumtopic')) {
 
 		$descr = $entity->description;
 		$title = $entity->title;
@@ -923,26 +900,26 @@ function wineforumtopic_notify_message($hook, $entity_type, $returnvalue, $param
 
 		$owner = get_entity($entity->container_guid);
 		if ($method == 'sms') {
-			return elgg_echo("wineforumtopic:new") . ': ' . $url . " ({$owner->name}: {$title})";
+			return elgg_echo("restobarforumtopic:new") . ': ' . $url . " ({$owner->name}: {$title})";
 		} else {
-			return elgg_get_logged_in_user_entity()->name . ' ' . elgg_echo("wine:viawine") . ': ' . $title . "\n\n" . $msg . "\n\n" . $entity->getURL();
+			return elgg_get_logged_in_user_entity()->name . ' ' . elgg_echo("restobar:viarestobar") . ': ' . $title . "\n\n" . $msg . "\n\n" . $entity->getURL();
 		}
 	}
 	return null;
 }
 
 /**
- * A simple function to see who can edit a wine discussion post
+ * A simple function to see who can edit a restobar news post
  * @param the comment $entity
- * @param user who owns the wine $wine_owner
+ * @param user who owns the restobar $restobar_owner
  * @return boolean
  */
-function wine_can_edit_discussion($entity, $wine_owner) {
+function restobar_can_edit_news($entity, $restobar_owner) {
 
 	//logged in user
 	$user = elgg_get_logged_in_user_guid();
 
-	if (($entity->owner_guid == $user) || $wine_owner == $user || elgg_is_admin_logged_in()) {
+	if (($entity->owner_guid == $user) || $restobar_owner == $user || elgg_is_admin_logged_in()) {
 		return true;
 	} else {
 		return false;
@@ -950,10 +927,10 @@ function wine_can_edit_discussion($entity, $wine_owner) {
 }
 
 /**
- * Process upgrades for the wine plugin
+ * Process upgrades for the restobar plugin
  */
-function wine_run_upgrades() {
-	$path = elgg_get_plugins_path() . 'wine/upgrades/';
+function restobar_run_upgrades() {
+	$path = elgg_get_plugins_path() . 'restobar/upgrades/';
 	$files = elgg_get_upgrade_files($path);
 	foreach ($files as $file) {
 		include "$path{$file}";

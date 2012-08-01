@@ -42,9 +42,11 @@ elgg.overlay.init = function() {
     
     
  
-     $(function() {
-	$(".elgg-overlay").nyroModal({
+  $(function() {
+        $(".elgg-overlay").nyroModal({
             
+     //$(".elgg-overlay").nmCall({  
+          
     callbacks: {
         
         initElts: function() {
@@ -52,21 +54,19 @@ elgg.overlay.init = function() {
             $(".elgg-menu-site").css({"z-index":" 0"}); 
        
         },
-        //load: function(){
+        
         filledContent: function(){
-        //size: function(){
+        
            $( "#tabs" ).tabs();
            $(degust_button);
+           
         },
         afterClose: function() {
             $(".elgg-page-topbar").css({"z-index":" 9000"});
             $(".elgg-menu-site").css({"z-index":" 1"});
         }
     }
-   // anim: {
-   //     resize:false
-        
-   // }
+   
 }
     
 
@@ -74,11 +74,19 @@ elgg.overlay.init = function() {
 );
 	});
     
+    $("#degustform").validate({
     
-    
-  //   $(function() {
-//	$(".elgg-overlay").nyroModal();
-//	});
+        
+        rules: {
+                couleur_intensity: "required",
+                couleur: "required",
+                nez:"required",
+                nez_intensity:"required",
+                note: "required"
+                }
+});
+      
+  
    
 }
 
