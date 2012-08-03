@@ -36,7 +36,11 @@ for ($note=1;$note<=20;$note++) {
  
  ?>
 
+   <div class="error" style="display:none;">
+      <img src="images/warning.gif" alt="Warning!" width="24" height="24" style="float:left; margin: -5px 10px 0px 0px; " />
 
+      <span></span>.<br clear="all"/>
+    </div>
 
 <?php
 
@@ -49,6 +53,8 @@ foreach ($degust_profile_fields as $section => $elts) {
      echo '<div><fieldset id="testfield"><legend>';
      echo elgg_echo("degust:{$section}");
      echo '</legend>';
+     
+
      foreach($elts as $shortname=>$valtype){
          eval('$options=$options_'.$shortname.';');
          eval('$option_values=$option_values_'.$shortname.';');
@@ -56,9 +62,13 @@ foreach ($degust_profile_fields as $section => $elts) {
          if ($options || $option_values || $valtype=='text' || $valtype=='longtext'){
             
             echo "<center>" ;
+            echo "<div class=\"validate_error_label\">";
+                
             echo '<label>';
             echo elgg_echo("degust:{$shortname}");
             echo '</label>';
+                        echo "</div>";
+
             echo "</center>" ;
 
 
@@ -67,14 +77,16 @@ foreach ($degust_profile_fields as $section => $elts) {
                         'align'=>'horizontal',
                         'options'=>$options,
                         'option_values'=>$option_values,
-                        'class'=>'input-degust'
+                        'class'=>'input-degust required'
               );
+            
             
             echo '<div id="button_select'.$shortname.'">';
          
             echo elgg_view("input/{$valtype}",$variables);
             
             echo "</div>";
+
 
             
             
@@ -83,7 +95,7 @@ foreach ($degust_profile_fields as $section => $elts) {
          }
            
 
-         
+
          
     echo '</fieldset>
 </div>';          

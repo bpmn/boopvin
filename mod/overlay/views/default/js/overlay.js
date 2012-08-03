@@ -74,19 +74,58 @@ elgg.overlay.init = function() {
 );
 	});
     
+ 
+    
+    jQuery.validator.messages.required = "";
+    
+
+
+
     $("#degustform").validate({
     
+        highlight: function(element, errorClass) {
+            $(element).parent().css({"border":"2px solid red"});
+
         
-        rules: {
-                couleur_intensity: "required",
-                couleur: "required",
-                nez:"required",
-                nez_intensity:"required",
-                note: "required"
-                }
+        },
+        
+        unhighlight: function(element, errorClass) {
+            $(element).parent().css({"border":"none"});
+
+        
+        },
+        invalidHandler: function(e, validator) {
+			var errors = validator.numberOfInvalids();
+			if (errors) {
+				var message = errors == 1
+					? 'You missed 1 field. It has been highlighted below'
+					: 'You missed ' + errors + ' fields.  They have been highlighted below';
+				$("div.error span").html(message);
+				$("div.error").show();
+                                //$("div.validate_error_label label").css("color", "red");
+                                                             
+
+			} else {
+				$("div.error").hide();
+                                //$("div.validate_error_label label").css("color", "black");
+
+			}
+		}
+        //rules: {
+        //        couleur_intensity: "required",
+        //        couleur: "required",
+         //       nez:"required",
+         //       nez_intensity:"required",
+         //       note: "required"
+         //       },
+       
+                
+           
+                
+                
 });
       
-  
+ 
    
 }
 
