@@ -84,13 +84,14 @@ elgg.overlay.init = function() {
     $("#degustform").validate({
     
         highlight: function(element, errorClass) {
-            $(element).parent().css({"border":"2px solid red"});
+            $(element).parent().css({"border-radius":"5px"});
+            $(element).parent().css({"box-shadow":"0px 0px 5px #ff0000"});
 
-        
+       
         },
         
         unhighlight: function(element, errorClass) {
-            $(element).parent().css({"border":"none"});
+            $(element).parent().css({"box-shadow":"none"});
 
         
         },
@@ -100,13 +101,14 @@ elgg.overlay.init = function() {
 				var message = errors == 1
 					? 'You missed 1 field. It has been highlighted below'
 					: 'You missed ' + errors + ' fields.  They have been highlighted below';
-				$("div.error span").html(message);
-				$("div.error").show();
+				alert(message);
+                                //$("div.error span").html(message);
+				//$("div.error").show();
                                 //$("div.validate_error_label label").css("color", "red");
                                                              
 
 			} else {
-				$("div.error").hide();
+				//$("div.error").hide();
                                 //$("div.validate_error_label label").css("color", "black");
 
 			}

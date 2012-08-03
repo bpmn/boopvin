@@ -121,7 +121,7 @@ function wine_fields_setup() {
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
                 'vintage'=>'radio',
-                'country'=>'text'           //pays
+                'country'=>'dropdown'           //pays
 		//'website' => 'url',
  
 	);
