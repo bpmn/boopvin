@@ -145,7 +145,7 @@ if (isset($vars['entity'])) {
 echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
 if (isset($vars['entity'])) {
-	$delete_url = 'action/restobar/delete?guid=' . $vars['entity']->getGUID();
+	$delete_url = 'action/restobars/delete?guid=' . $vars['entity']->getGUID();
 	echo elgg_view('output/confirmlink', array(
 		'text' => elgg_echo('restobar:delete'),
 		'href' => $delete_url,

@@ -771,7 +771,7 @@ function restobar_news_page_handler($page) {
 	switch ($page[0]) {
 		
 		case 'edit':
-			restobar_news_handle_edit_page();
+			restobar_news_handle_edit_page($page[1]);
 			break;
 		
 		default:

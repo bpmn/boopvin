@@ -163,7 +163,7 @@ if (isset($vars['entity'])) {
 echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
 if (isset($vars['entity'])) {
-	$delete_url = 'action/wine/delete?guid=' . $vars['entity']->getGUID();
+	$delete_url = 'action/wines/delete?guid=' . $vars['entity']->getGUID();
 	echo elgg_view('output/confirmlink', array(
 		'text' => elgg_echo('wine:delete'),
 		'href' => $delete_url,
