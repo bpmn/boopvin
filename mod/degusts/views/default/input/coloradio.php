@@ -78,7 +78,7 @@ if ($options && count($options) > 0) {
 		//ANCIEN CODE 
                 //echo "<li><label><input type=\"radio\" $attributes />$label</label></li>";
 
-                echo "<input id=\"$myid.$label\" type=\"radio\" $attributes />";               
+                echo "<input class=\"required\" id=\"$myid.$label\" type=\"radio\" $attributes />";               
                 
                 echo "<label for=\"$myid.$label\">";
                 

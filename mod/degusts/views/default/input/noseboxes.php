@@ -93,7 +93,7 @@ if (count($vars['options']) > 0) {
 		$input = elgg_view('input/checkbox', $input_vars);
                 
 		//echo "<li><label>$input$label</label></li>";
-                echo "<input type=\"checkbox\" {$attributes} />";               
+                echo "<input type=\"checkbox\" {$attributes} class=\"required\"/>";               
                
               
                 //echo "<li>{$input}<label for=\"$id\">$label</label></li>";

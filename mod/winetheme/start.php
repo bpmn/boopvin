@@ -25,6 +25,13 @@ function winetheme_init() {
     elgg_unregister_css('hj.framework.jquitheme');
     
     //elgg_register_css('winetheme.jquitheme', $winetheme_jq);
+    
+    
+    elgg_extend_view('css/elgg', 'winetheme/css');
+    
+    
+    
+
 }
 
 

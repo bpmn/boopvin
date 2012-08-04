@@ -69,11 +69,13 @@ $close = elgg_normalize_url($close);
 .nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
 	position: relative;
 	padding: 10px;
-	//min-height: 250px;
-	//min-width: 250px;
-        min-width: 1000px;
-        min-height: 500px;
-	max-width: 1000px;
+        
+        min-height: 250px;
+	min-width: 250px;
+        //min-width: 1000px;
+        //min-height: 500px;
+	//max-width: 1000px;
+
 }
 .nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {
 	position: relative;
