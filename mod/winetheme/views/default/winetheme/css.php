@@ -16,197 +16,82 @@ div.error a {
 
 
 
-/* Z-INDEX */
- .formError { z-index: 990; }
-    .formError .formErrorContent { z-index: 991; }
-    .formError .formErrorArrow { z-index: 996; }
-    
-    .formErrorInsideDialog.formError { z-index: 5000; }
-    .formErrorInsideDialog.formError .formErrorContent { z-index: 5001; }
-    .formErrorInsideDialog.formError .formErrorArrow { z-index: 5006; }
-
-
-
-
-.inputContainer {
-	position: relative;
-	float: left;
-}
-
-.formError {
-	position: absolute;
-	top: 300px;
-	left: 300px;
-	display: block;
-	cursor: pointer;
-}
-
-.ajaxSubmit {
-	padding: 20px;
-	background: #55ea55;
-	border: 1px solid #999;
-	display: none
-}
-
-.formError .formErrorContent {
-	width: 100%;
-	background: #ee0101;
-	position:relative;
-	color: #fff;
-	width: 150px;
-	font-size: 11px;
-	border: 2px solid #ddd;
-	box-shadow: 0 0 6px #000;
-	-moz-box-shadow: 0 0 6px #000;
-	-webkit-box-shadow: 0 0 6px #000;
-	padding: 4px 10px 4px 10px;
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-}
-
-.greenPopup .formErrorContent {
-	background: #33be40;
-}
-
-.blackPopup .formErrorContent {
-	background: #393939;
-	color: #FFF;
-}
-
-.formError .formErrorArrow {
-	width: 15px;
-	margin: -2px 0 0 13px;
-	position:relative;
-}
-body[dir='rtl'] .formError .formErrorArrow,
-body.rtl .formError .formErrorArrow {
-	margin: -2px 13px 0 0;
-}
-
-.formError .formErrorArrowBottom {
-	box-shadow: none;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	margin: 0px 0 0 12px;
-	top:2px;
-}
-
-.formError .formErrorArrow div {
-	border-left: 2px solid #ddd;
-	border-right: 2px solid #ddd;
-	box-shadow: 0 2px 3px #444;
-	-moz-box-shadow: 0 2px 3px #444;
-	-webkit-box-shadow: 0 2px 3px #444;
-	font-size: 0px;
-	height: 1px;
-	background: #ee0101;
-	margin: 0 auto;
-	line-height: 0;
-	font-size: 0;
-	display: block;
-}
-
-.formError .formErrorArrowBottom div {
-	box-shadow: none;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-}
-
-.greenPopup .formErrorArrow div {
-	background: #33be40;
-}
-
-.blackPopup .formErrorArrow div {
-	background: #393939;
-	color: #FFF;
-}
-
-.formError .formErrorArrow .line10 {
-	width: 15px;
-	border: none;
-}
-
-.formError .formErrorArrow .line9 {
-	width: 13px;
-	border: none;
-}
-
-.formError .formErrorArrow .line8 {
-	width: 11px;
-}
-
-.formError .formErrorArrow .line7 {
-	width: 9px;
-}
-
-.formError .formErrorArrow .line6 {
-	width: 7px;
-}
-
-.formError .formErrorArrow .line5 {
-	width: 5px;
-}
-
-.formError .formErrorArrow .line4 {
-	width: 3px;
-}
-
-.formError .formErrorArrow .line3 {
-	width: 1px;
-	border-left: 2px solid #ddd;
-	border-right: 2px solid #ddd;
-	border-bottom: 0 solid #ddd;
-}
-
-.formError .formErrorArrow .line2 {
-	width: 3px;
-	border: none;
-	background: #ddd;
-}
-
-.formError .formErrorArrow .line1 {
-	width: 1px;
-	border: none;
-	background: #ddd;
-}
-
-
-
-
 .elgg-page-header {
 
-background: #FF6060;
+background: #800000;
 
 }
+
+
+
 
 
 .nyroModalCont {
 	position: absolute;
-	border: 4px solid #FF6000;
-	margin: 5px;
-	background: #fffafa;
+	border: 4px solid #ffffff;
+	margin: 25px;
+	background: #800000;
        	width: 1000px;
- 
+    border-radius: 5px;
+
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjYiLz4KICAgIDxzdG9wIG9mZnNldD0iNTYlIiBzdG9wLWNvbG9yPSIjOGYwMjIyIiBzdG9wLW9wYWNpdHk9IjAuODIiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2E5MDMyOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  rgba(128,0,0,0.6) 0%, rgba(143,2,34,0.82) 56%, rgba(169,3,41,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(128,0,0,0.6)), color-stop(56%,rgba(143,2,34,0.82)), color-stop(100%,rgba(169,3,41,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(128,0,0,0.6) 0%,rgba(143,2,34,0.82) 56%,rgba(169,3,41,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(128,0,0,0.6) 0%,rgba(143,2,34,0.82) 56%,rgba(169,3,41,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(128,0,0,0.6) 0%,rgba(143,2,34,0.82) 56%,rgba(169,3,41,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(128,0,0,0.6) 0%,rgba(143,2,34,0.82) 56%,rgba(169,3,41,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99800000', endColorstr='#a90329',GradientType=0 ); /* IE6-8 */
+
         
 }
 
+.elgg-search input[type="text"] {
+border:1px solid white;
+
+}
+.elgg-form-degusts-edit fieldset fieldset {
+padding: 5px;
+
+
+
+border-color: #800000;
+border-width: 1px;
+border-style: solid;
+border-radius: 5px;
+background: #ffffff;
+
+}
+
+
+.elgg-form-degusts-edit fieldset fieldset legend{
+padding-left: 10px;
+padding-right: 10px;
+
+border-width: 1px;
+border-style: solid;
+border-radius: 5px;
+background: #ffffff;
+
+}
 
 .nyroModalCont iframe {
-	border: 1px solid #0000FF;
+	border: 1px none #0000FF;
 
 	width: 1000px;
 	height: 400px;
 }
 
 .nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
-	border: 1px solid #00FF00;
+	border: 1px none #00FF00;
 
 	position: relative;
-	padding: 10px;
+	padding: 5px;
 	min-height: 250px;
-	width: 900px;
+	width: 960px;
 }
+
 
 
 .degust-main {
@@ -215,19 +100,33 @@ margin-right: 5px;
 
 }
 
+.degust-side-head {
+background: #ffffff;
+padding-top:20px;
+border-color: #800000;
+border-width: 1px;
+border-style: solid;
+border-radius: 5px;
+background: #ffffff;
+margin-bottom: 25px;
+height: 177px;
+
+}
+
+
 
 .degust-sidebar {
     float: right;
     margin-bottom: 5px;
     margin-left: 5px;
-    margin-right: 10px;
+    margin-right: 0px;
     margin-top: 8px;
     padding-bottom:10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
     position: relative;
     border-width: 1px;
-    border-style: solid;
+    border-style: none;
     width: 270px;
 }
