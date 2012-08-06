@@ -26,8 +26,20 @@ function winetheme_init() {
     
     //elgg_register_css('winetheme.jquitheme', $winetheme_jq);
     
+    $jquery_UI_css = elgg_get_simplecache_url('css', 'winetheme/JqueryUI_css');
+    elgg_register_css('winetheme.jqueryUI_css', $jquery_UI_css,'head',1000);
+    elgg_load_css('winetheme.jqueryUI_css');
     
-    elgg_extend_view('css/elgg', 'winetheme/css');
+    
+
+    // Now, override some default
+
+    //$css = elgg_get_simplecache_url('css', 'winetheme/css');
+    //elgg_register_css('winetheme.css', $css,'head',1000);
+    //elgg_load_css('winetheme.css');
+    
+    // override some default
+    elgg_extend_view('css/elgg', 'css/winetheme/css');
     
     
     
