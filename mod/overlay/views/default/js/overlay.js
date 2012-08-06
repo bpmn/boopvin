@@ -12,6 +12,25 @@ elgg.overlay.init = function() {
     
     
     
+  var note_slider = function() {
+		var select = $( "#note" );
+		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 20,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#note" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
+	}
+    
+    
+    
+    
   var degust_button = function() {
              // visuelle
                 $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("167.5").css("font-size", "100%").css("font-weight", "normal");
@@ -86,6 +105,7 @@ elgg.overlay.init = function() {
         
            $( "#tabs" ).tabs();
            $(degust_button);
+           $(note_slider);
            
         },
         afterClose: function() {
