@@ -17,7 +17,7 @@ $poster_link = elgg_view('output/url', array(
 
 $date = elgg_view_friendly_time($degust->time_updated);
 
-echo elgg_echo('degust:post', array($date,$poster_link)) ;
+echo elgg_echo('degust:post_wine', array($date,$poster_link)) ;
 
 echo elgg_view_comments($degust);
 
