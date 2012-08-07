@@ -1,3 +1,9 @@
+<?php
+/*
+ * Winetheme css
+ */
+?>
+
 /*!
  * jQuery UI CSS Framework 1.8.22
  *
@@ -47,7 +53,7 @@
  *
  * http://docs.jquery.com/UI/Theming/API
  *
- * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=5px&bgColorHeader=cccccc&bgTextureHeader=04_highlight_hard.png&bgImgOpacityHeader=100&borderColorHeader=601818&fcHeader=031138&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=04_highlight_hard.png&bgImgOpacityContent=75&borderColorContent=601818&fcContent=222222&iconColorContent=222222&bgColorDefault=800000&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=601818&fcDefault=ffffff&iconColorDefault=ffffff&bgColorHover=c05656&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=c03030&fcHover=031138&iconColorHover=454545&bgColorActive=c0be30&bgTextureActive=02_glass.png&bgImgOpacityActive=75&borderColorActive=c0be56&fcActive=031138&iconColorActive=454545&bgColorHighlight=c0be30&bgTextureHighlight=03_highlight_soft.png&bgImgOpacityHighlight=75&borderColorHighlight=c0be56&fcHighlight=031138&iconColorHighlight=800000&bgColorError=fef1ec&bgTextureError=05_inset_soft.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=800000&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=800000&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=5px&bgColorHeader=cccccc&bgTextureHeader=04_highlight_hard.png&bgImgOpacityHeader=100&borderColorHeader=601818&fcHeader=031138&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=04_highlight_hard.png&bgImgOpacityContent=75&borderColorContent=530000&fcContent=003232&iconColorContent=003232&bgColorDefault=99bb54&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=344e00&fcDefault=003232&iconColorDefault=003232&bgColorHover=c05656&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=c03030&fcHover=003232&iconColorHover=454545&bgColorActive=800000&bgTextureActive=02_glass.png&bgImgOpacityActive=75&borderColorActive=530000&fcActive=ffffff&iconColorActive=ffffff&bgColorHighlight=99bb54&bgTextureHighlight=03_highlight_soft.png&bgImgOpacityHighlight=75&borderColorHighlight=8cbb2f&fcHighlight=530000&iconColorHighlight=800000&bgColorError=fef1ec&bgTextureError=05_inset_soft.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=99bb54&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=800000&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
  */
 
 
@@ -56,25 +62,25 @@
 .ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #601818; background: #ffffff url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_75_ffffff_1x100.png) 50% top repeat-x; color: #222222; }
-.ui-widget-content a { color: #222222; }
+.ui-widget-content { border: 1px solid #530000; background: #ffffff url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_75_ffffff_1x100.png) 50% top repeat-x; color: #003232; }
+.ui-widget-content a { color: #003232; }
 .ui-widget-header { border: 1px solid #601818; background: #cccccc url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_100_cccccc_1x100.png) 50% 50% repeat-x; color: #031138; font-weight: bold; }
 .ui-widget-header a { color: #031138; }
 
 /* Interaction states
 ----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #601818; background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
-.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #ffffff; text-decoration: none; }
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_c05656_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #031138; }
-.ui-state-hover a, .ui-state-hover a:hover { color: #031138; text-decoration: none; }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #c0be56; background: #c0be30 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_c0be30_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #031138; }
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #031138; text-decoration: none; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_99bb54_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #003232; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_c05656_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #003232; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #530000; background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #ffffff; text-decoration: none; }
 .ui-widget :active { outline: none; }
 
 /* Interaction Cues
 ----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #c0be56; background: #c0be30 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-soft_75_c0be30_1x100.png) 50% top repeat-x; color: #031138; }
-.ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #031138; }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #8cbb2f; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-soft_75_99bb54_1x100.png) 50% top repeat-x; color: #530000; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #530000; }
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_inset-soft_95_fef1ec_1x100.png) 50% bottom repeat-x; color: #cd0a0a; }
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
 .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #cd0a0a; }
@@ -86,12 +92,12 @@
 ----------------------------------*/
 
 /* states and images */
-.ui-icon { width: 16px; height: 16px; background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_222222_256x240.png); }
-.ui-widget-content .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_222222_256x240.png); }
+.ui-icon { width: 16px; height: 16px; background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
+.ui-widget-content .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
 .ui-widget-header .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_222222_256x240.png); }
-.ui-state-default .ui-icon { background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_ffffff_256x240.png); }
+.ui-state-default .ui-icon { background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_454545_256x240.png); }
-.ui-state-active .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_454545_256x240.png); }
+.ui-state-active .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_ffffff_256x240.png); }
 .ui-state-highlight .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_800000_256x240.png); }
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_cd0a0a_256x240.png); }
 
@@ -283,7 +289,7 @@
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
 
 /* Overlays */
-.ui-widget-overlay { background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_800000_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.ui-widget-overlay { background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_99bb54_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
 .ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_800000_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/*!
  * jQuery UI Resizable 1.8.22
  *

@@ -4,6 +4,12 @@
  */
 ?>
 
+#tabs {
+
+position:absolute;
+top:231px;
+
+}
 div.error {
 	color: red;
 }
@@ -76,6 +82,12 @@ border-top-style: solid;
 border-radius: 5px;
 background: #ffffff;
 
+}
+
+.elgg-form-degusts-edit label {
+text-align: center;
+margin-left: auto ;
+  margin-right: auto ;
 }
 
 .nyroModalCont iframe {
