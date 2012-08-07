@@ -37,8 +37,7 @@ $close = elgg_normalize_url($close);
 	background: url(<?php echo $close ?>);
 }
 .nyroModalTitle {
-	//top: -26px;
-        top:-10px;
+	top: -26px;   
 	left: 0;
 	margin: 0;
     font-size: 1.1em;
