@@ -38,9 +38,9 @@ function degust_init(){
 	elgg_load_js('elgg.degust');
         //elgg_extend_view('js/elgg', 'degusts/js');
         
-        $jquery_UI = elgg_get_simplecache_url('css', 'degusts/JqueryUI_css');
-        elgg_register_css('degust.jqueryUI', $jquery_UI,'head',1000);
-        elgg_load_css('degust.jqueryUI');
+        //$jquery_UI = elgg_get_simplecache_url('css', 'degusts/JqueryUI_css');
+        //elgg_register_css('degust.jqueryUI', $jquery_UI,'head',1000);
+        //elgg_load_css('degust.jqueryUI');
         
         elgg_register_plugin_hook_handler('register', 'menu:entity', 'degust_entity_menu_setup');
         elgg_register_plugin_hook_handler('permissions_check', 'object', 'degust_override_permissions');

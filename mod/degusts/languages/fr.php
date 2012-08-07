@@ -10,149 +10,149 @@ $french = array(
   
   //Visuel   
     
-    'degust:visuel' => "Analyse Visuelle",
-    'degust:olfactif' => "Analyse Olfactive",
-    'degust:gustatif' => "Analyse Gustative",
-    'degust:comment' => "Commentaires et notes",
+    'degust:visuel' => "ANALYSE VISUELLE",
+    'degust:olfactif' => "ANALYSE OFALCTIVE",
+    'degust:gustatif' => "ANALYSE GUSTATIVE",
+    'degust:comment' => "COMMENTAIRES ET NOTES",
     
     
-    'degust:couleur_intensity'=>'Intensité de la robe',             
-    'degust:couleur'=>'Le couleur',
-    'degust:reflet'=>'Les Reflets',
-    'degust:bulle'=>'La Bulle',
+    'degust:couleur_intensity'=>'INTENSITE DE LA ROBE',             
+    'degust:couleur'=>'LA COULEUR',
+    'degust:reflet'=>'LES REFLETS',
+    'degust:bulle'=>'LA BULLE',
     
     
-    'degust:couleur_intensity:pale' => 'pâle',
-    'degust:couleur_intensity:claire' => 'claire',
-    'degust:couleur_intensity:soutenue' => 'soutenue',
-    'degust:couleur_intensity:sombre' => 'sombre',
+    'degust:couleur_intensity:pale' => 'Pâle',
+    'degust:couleur_intensity:claire' => 'Claire',
+    'degust:couleur_intensity:soutenue' => 'Soutenue',
+    'degust:couleur_intensity:sombre' => 'Sombre',
 
     
   
-    'degust:couleur:grenat' => 'grenat',
-    'degust:couleur:carmin' => 'carmin',
-    'degust:couleur:pourpre' => 'pourpre',
-    'degust:couleur:rubis'=> 'rubis',
-    'degust:couleur:tuile' => 'tuile',
+    'degust:couleur:grenat' => 'Grenat',
+    'degust:couleur:carmin' => 'Carmin',
+    'degust:couleur:pourpre' => 'Pourpre',
+    'degust:couleur:rubis'=> 'Rubis',
+    'degust:couleur:tuile' => 'Tuile',
 
 
-    'degust:color:jaune_pale' => 'jaune pâle',
-    'degust:color:or_pale' => 'or pâle',
-    'degust:color:or' => 'or',
-    'degust:color:cuivre' => 'cuivre',
-    'degust:color:ambre' => 'ambre',
+    'degust:color:jaune_pale' => 'Jaune Pâle',
+    'degust:color:or_pale' => 'Or Pâle',
+    'degust:color:or' => 'Or',
+    'degust:color:cuivre' => 'Cuivre',
+    'degust:color:ambre' => 'Ambre',
   
-    'degust:color:rose_pale' => 'rose pâle',
-    'degust:color:rose' => 'rose',
-    'degust:color:saumon'=> 'saumon',
-    'degust:color:rubis' => 'rubis',
-    'degust:color:oignon' => 'oignon',
-    'degust:color:orange' => 'orange',
-    'degust:color:cuivre' => 'cuivre',
+    'degust:color:rose_pale' => 'Rose Pâle',
+    'degust:color:rose' => 'Rose',
+    'degust:color:saumon'=> 'Saumon',
+    'degust:color:rubis' => 'Rubis',
+    'degust:color:oignon' => 'Oignon',
+    'degust:color:orange' => 'Orange',
+    'degust:color:cuivre' => 'Cuivre',
     
     
-    'degust:reflet:violace_jeune'=>'violacé jeune',
-    'degust:reflet:violine' => 'violine',
-    'degust:reflet:grenat' => 'grenat',
-    'degust:reflet:carmin' => 'carmin',
-    'degust:reflet:brique' => 'brique',
-    'degust:reflet:brun' => 'brun',
+    'degust:reflet:violace_jeune'=>'Ciolacé Jeune',
+    'degust:reflet:violine' => 'Cioline',
+    'degust:reflet:grenat' => 'Grenat',
+    'degust:reflet:carmin' => 'Carmin',
+    'degust:reflet:brique' => 'Brique',
+    'degust:reflet:brun' => 'Brun',
     
-    'degust:reflet:vert' => 'vert',
-    'degust:reflet:gris' => 'gris',
-    'degust:reflet:or' => 'or',
-    'degust:reflet:dore' => 'doré',
+    'degust:reflet:vert' => 'Vert',
+    'degust:reflet:gris' => 'Gris',
+    'degust:reflet:or' => 'Or',
+    'degust:reflet:dore' => 'Doré',
     
              
 //Olfactif
-    'degust:nez_intensity'=>'L\'intensité',
-    'degust:nez'=>'Les arômes',    // résultat des checkboxes sous forme de tableau
-    'degust:arome'=>'text',        // description texte des arôme
-    'degust:complexity'=>'Complexité',   // en fonction du nombres de checkbox cochées.
+    'degust:nez_intensity'=>'L\'INTENSITE',
+    'degust:nez'=>'LES AROMES',    // résultat des checkboxes sous forme de tableau
+    'degust:arome'=>'COMMENTAIRES',        // description texte des arôme
+    'degust:complexity'=>'COMPLEXITE',   // en fonction du nombres de checkbox cochées.
     
   
-    'degust:nez_intensity:ferme'=>'fermé',
-    'degust:nez_intensity:discret' => 'discret',
-    'degust:nez_intensity:ouvert' => 'ouvert',
-    'degust:nez_intensity:expressif' => 'expressif',
-    'degust:nez_intensity:exuberant' => 'exubérant',
+    'degust:nez_intensity:ferme'=>'Fermé',
+    'degust:nez_intensity:discret' => 'Discret',
+    'degust:nez_intensity:ouvert' => 'Ouvert',
+    'degust:nez_intensity:expressif' => 'Expressif',
+    'degust:nez_intensity:exuberant' => 'Exubérant',
                                 
 
 
-    'degust:nez:fruit'=>'fruit',
-    'degust:nez:floral' => 'floral',
-    'degust:nez:vegetal' => 'végétal',
-    'degust:nez:mineral' => 'minéral',
-    'degust:nez:epice' => 'épicé',
-    'degust:nez:fermentaire' => 'fermentaire',
-    'degust:nez:animal' => 'animal',
-    'degust:nez:bois' =>'bois',
-    'degust:nez:chimique'=>'chimique',
+    'degust:nez:fruit'=>'Fruit',
+    'degust:nez:floral' => 'Floral',
+    'degust:nez:vegetal' => 'Végétal',
+    'degust:nez:mineral' => 'Minéral',
+    'degust:nez:epice' => 'Epicé',
+    'degust:nez:fermentaire' => 'Fermentaire',
+    'degust:nez:animal' => 'Animal',
+    'degust:nez:bois' =>'Bois',
+    'degust:nez:chimique'=>'Chimique',
 
 //gustatif
 
-    'degust:rondeur:fluide'=>'fluide',
-    'degust:rondeur:souple' => 'souple',
-    'degust:rondeur:rond' => 'rond',
-    'degust:rondeur:plein'=> 'plein',
-    'degust:rondeur:volumineux' => 'volumineux',
-    'degust:rondeur:opulent' => 'opulent',
+    'degust:rondeur:fluide'=>'Fluide',
+    'degust:rondeur:souple' => 'Souple',
+    'degust:rondeur:rond' => 'Rond',
+    'degust:rondeur:plein'=> 'Plein',
+    'degust:rondeur:volumineux' => 'Volumineux',
+    'degust:rondeur:opulent' => 'Opulent',
      
 
-    'degust:acidity:mou'=>'mou',
-    'degust:acidity:frais' => 'frais',
-    'degust:acidity:droit' => 'droit',
-    'degust:acidity:mineral' => 'nerveux',
-    'degust:acidity:vert' => 'vert',
+    'degust:acidity:mou'=>'Mou',
+    'degust:acidity:frais' => 'Frais',
+    'degust:acidity:droit' => 'Droit',
+    'degust:acidity:mineral' => 'Nerveux',
+    'degust:acidity:vert' => 'Vert',
                             
-    'degust:alcool:leger'=>'léger',
-    'degust:alcool:integre' => 'intégré',
-    'degust:alcool:genereux' => 'généreux',
-    'degust:alcool:trop_genereux' => 'trop généreux',
+    'degust:alcool:leger'=>'Léger',
+    'degust:alcool:integre' => 'Intégré',
+    'degust:alcool:genereux' => 'Généreux',
+    'degust:alcool:trop_genereux' => 'Trop Généreux',
                                              
-    'degust:tanin:souple'=>'souples',
-    'degust:tanin:fondu' => 'fondus',
-    'degust:tanin:serre' => 'serrés',
-    'degust:tanin:rustique' => 'rustiques',
-    'degust:tanin:astringent' => 'astringents',
+    'degust:tanin:souple'=>'Souples',
+    'degust:tanin:fondu' => 'Fondus',
+    'degust:tanin:serre' => 'Serrés',
+    'degust:tanin:rustique' => 'Rustiques',
+    'degust:tanin:astringent' => 'Astringents',
 
 
-    'degust:longueur:tres_court'=>'très court',
-    'degust:longueur:court' => 'court',
-    'degust:longueur:moyen' => 'moyen',
-    'degust:longueur:long' => 'long',
-    'degust:longueur:tres_long' => 'très long',
+    'degust:longueur:tres_court'=>'Très court',
+    'degust:longueur:court' => 'Court',
+    'degust:longueur:moyen' => 'Moyen',
+    'degust:longueur:long' => 'Long',
+    'degust:longueur:tres_long' => 'Très Long',
 
  
 //Gustatif
-    'degust:rondeur'=>'Attaque et Rondeur',
-    'degust:acidity'=>'L\'acidité',
-    'degust:alcool'=>'L\'alcool',
-    'degust:tanin'=>'Texture et Tannins',
-    'degust:moelleux'=>'Le moelleux',
-    'degust:retro'=>'Retro olfaction',
-    'degust:longueur'=>'Longueur en Bouche',
+    'degust:rondeur'=>'ATTAQUE ET RONDEUR',
+    'degust:acidity'=>'L\'ACIDITE',
+    'degust:alcool'=>'L\'ALCOOL',
+    'degust:tanin'=>'TEXTURE ET TANNINS',
+    'degust:moelleux'=>'LE MOELLEUX',
+    'degust:retro'=>'RETRO OLFACTION',
+    'degust:longueur'=>'LONGEUR EN BOUCHE',
  
  //Commentaire final
-    'degust:evolution'=>'L\'évolution',
-    'degust:comment'=>'Commentaire final',   //commentaire finale
-    'degust:accord'=>'Accord mets et Vin',        //proposition accord mets vins
-    'degust:note'=>'Note générale',
+    'degust:evolution'=>'L\'EVOLUTION',
+    'degust:comment'=>'COMMENTAIRE FINAL',   //commentaire finale
+    'degust:accord'=>'ACCORD METS ET VIN',        //proposition accord mets vins
+    'degust:note'=>'NOTE GENERALE',
     
     //comment
                     
-    'degust:evolution:tres_jeune'=>'très jeune',
-    'degust:evolution:jeune' => 'jeune',
-    'degust:evolution:amorce' => 'amorce',
-    'degust:evolution:mature' => 'mature',
-    'degust:evolution:evolue' => 'evolué',
-    'degust:evolution:use' => 'usé',
+    'degust:evolution:tres_jeune'=>'Très Jeune',
+    'degust:evolution:jeune' => 'Jeune',
+    'degust:evolution:amorce' => 'Amorce',
+    'degust:evolution:mature' => 'Mature',
+    'degust:evolution:evolue' => 'Evolué',
+    'degust:evolution:use' => 'Usé',
     
     'degust:module:title'=> "Millésime %s",
     'degust:post_profile'=>"posté %s",
     'degust:post_wine'=>"posté %s par %s",
     
-    'degust:link'=>"voir la fiche",
+    'degust:link'=>"Voir la fiche",
     
 );
 

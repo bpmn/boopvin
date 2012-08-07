@@ -31,6 +31,8 @@ $defaults = array(
 );
 
 $vars = array_merge($defaults, $vars);
+$myid = $vars['name'];
+
 
 $options_values = $vars['options_values'];
 unset($vars['options_values']);
@@ -41,10 +43,10 @@ unset($vars['options']);
 $value = $vars['value'];
 unset($vars['value']);
 
-?>
-<p>
-<select <?php echo elgg_format_attributes($vars); ?>>
-<?php
+
+
+$my_attributes = elgg_format_attributes($vars);
+echo "<p><select id=\"$myid\" $my_attributes >";
 
 if ($options_values) {
 	foreach ($options_values as $opt_value => $option) {
