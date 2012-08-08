@@ -18,8 +18,8 @@ if (sizeof($restobar_guid)) {
 		$restobar = get_entity($restobar_id);
 
 		if ($wine && $restobar && $restobar->canEdit()) {
-			if (!$restobar->inCave($wine)) {
-				if (add_entity_relationship($restobar, 'incave', $wine);
+			if (!$restobar->isIncave($wine)) {
+				if (add_entity_relationship($restobar, 'incave', $wine)){
 					// send welcome email to user
 					/*notify_user($user->getGUID(), $restobar->owner_guid,
 							elgg_echo('restobar:incave:subject', array($restobar->name)),
@@ -31,12 +31,12 @@ if (sizeof($restobar_guid)) {
                                         /*todo peut être add to river s'inspirer de la fonction join*/
 
 					system_message(elgg_echo('restobar:addedtocave'));
-				} else {
+				}else{
 					// huh
 				}
 			}
-		}
-	}
+                }
+        }
 }
 
 forward(REFERER);

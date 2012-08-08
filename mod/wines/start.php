@@ -40,6 +40,9 @@ function wine_init() {
 	elgg_register_action("wines/edit", "$action_base/edit.php");
 	elgg_register_action("wines/delete", "$action_base/delete.php");
 	elgg_register_action("wines/featured", "$action_base/featured.php", 'admin');
+        
+        $action_incave = $action_base.'/cave';
+        elgg_register_action("wines/cave/addtocave", "$action_incave/addtocave.php");
 
 	$action_base .= '/membership';
 	elgg_register_action("wines/invite", "$action_base/invite.php");
@@ -248,6 +251,9 @@ function wine_page_handler($page) {
 		case 'requests':
 			wine_handle_requests_page($page[1]);
 			break;
+                case 'addtocave':
+			wine_handle_addtocave_page($page[1]);
+			break;        
 		default:
 			return false;
 	}
@@ -739,6 +745,7 @@ function wine_discussion_init() {
 
 	// add link to owner block
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'wine_discussion_owner_block_menu');
+        elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'addtocave_owner_block_menu');
 
 	// Register for search.
 	elgg_register_entity_type('object', 'wineforumtopic');
@@ -825,6 +832,21 @@ function wine_discussion_owner_block_menu($hook, $type, $return, $params) {
 			$url = "wine_discussion/owner/{$params['entity']->guid}";
 			$item = new ElggMenuItem('wine_discussion', elgg_echo('discussion:wine'), $url);
 			$return[] = $item;
+		}
+	}
+
+	return $return;
+}
+
+function addtocave_owner_block_menu($hook, $type, $return, $params) {
+        $user=  elgg_get_logged_in_user_entity();
+	if (elgg_instanceof($params['entity'], 'group','wine')) {
+		if ($user->pro != "no") {
+			$url = "wine/addtocave/{$params['entity']->guid}";
+                        $text= "addtocave";				
+			$menu_item=array('name' => $text,'text' => elgg_echo($text),'href' => $url,'link_class' => 'elgg-overlay');
+			$item = ElggMenuItem::factory($menu_item);
+                        $return[] = $item;
 		}
 	}
 

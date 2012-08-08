@@ -105,7 +105,7 @@ elgg.overlay.init = function() {
         
            $( "#tabs" ).tabs();
            $(degust_button);
-           $(note_slider);
+           //$(note_slider);
            
         },
         afterClose: function() {

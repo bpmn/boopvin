@@ -41,15 +41,17 @@ function restobar_init() {
 	elgg_register_action("restobars/delete", "$action_base/delete.php");
 	elgg_register_action("restobars/featured", "$action_base/featured.php", 'admin');
 
-	$action_base .= '/membership';
-	elgg_register_action("restobars/invite", "$action_base/invite.php");
-	elgg_register_action("restobars/join", "$action_base/join.php");
-	elgg_register_action("restobars/leave", "$action_base/leave.php");
-	elgg_register_action("restobars/remove", "$action_base/remove.php");
-	elgg_register_action("restobars/killrequest", "$action_base/delete_request.php");
-	elgg_register_action("restobars/killinvitation", "$action_base/delete_invite.php");
-	elgg_register_action("restobars/addtogroup", "$action_base/add.php");
+	$action_membership = $action_base.'/membership';
+	elgg_register_action("restobars/invite", "$action_membership/invite.php");
+	elgg_register_action("restobars/join", "$action_membership/join.php");
+	elgg_register_action("restobars/leave", "$action_membership/leave.php");
+	elgg_register_action("restobars/remove", "$action_membership/remove.php");
+	elgg_register_action("restobars/killrequest", "$action_membership/delete_request.php");
+	elgg_register_action("restobars/killinvitation", "$action_membership/delete_invite.php");
+	elgg_register_action("restobars/addtogroup", "$action_membership/add.php");
 
+       
+        
 	// Add some widgets
 	elgg_register_widget_type('a_users_restobars', elgg_echo('restobar:widget:membership'), elgg_echo('restobar:widgets:description'));
 
