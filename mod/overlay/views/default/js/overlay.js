@@ -12,23 +12,7 @@ elgg.overlay.init = function() {
     
     
     
-  var note_slider = function() {
-		var select = $( "#note" );
-		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-			min: 1,
-			max: 20,
-			range: "min",
-			value: select[ 0 ].selectedIndex + 1,
-			slide: function( event, ui ) {
-				select[ 0 ].selectedIndex = ui.value - 1;
-			}
-		});
-		$( "#note" ).change(function() {
-			slider.slider( "value", this.selectedIndex + 1 );
-		});
-	}
-    
-    
+ 
     
     
   var degust_button = function() {
@@ -83,6 +67,22 @@ elgg.overlay.init = function() {
                 $( "#button_selectevolution" ).buttonset().find('label').width("111.6").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
+                
+                
+                
+                var select = $( "#note" );
+		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+			min: 1,
+			max: 20,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#note" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});
               }
               
     
@@ -105,7 +105,6 @@ elgg.overlay.init = function() {
         
            $( "#tabs" ).tabs();
            $(degust_button);
-           //$(note_slider);
            
         },
         afterClose: function() {
@@ -121,12 +120,14 @@ elgg.overlay.init = function() {
 );
 	});
     
- 
+   //$(function(){
+   // $(#nyroModalCont > div).scroll(function(){
+   //     $('#tabs').animate({top:$(#nyroModalCont > div).scrollTop()+30},500);
+   // });
+//});
+    
     
     jQuery.validator.messages.required = "";
-    
-
-
 
     $("#degustform").validate({
     
@@ -160,13 +161,14 @@ elgg.overlay.init = function() {
 
 			}
 		}
+                
         //rules: {
         //        couleur_intensity: "required",
         //        couleur: "required",
-         //       nez:"required",
-         //       nez_intensity:"required",
-         //       note: "required"
-         //       },
+        //        nez:"required",
+        //        nez_intensity:"required",
+        //        note: "required"
+        //        }
        
                 
            

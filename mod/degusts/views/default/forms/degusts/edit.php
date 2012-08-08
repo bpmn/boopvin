@@ -61,7 +61,7 @@ foreach ($degust_profile_fields as $section => $elts) {
          
          if ($options || $option_values || $valtype=='text' || $valtype=='longtext'){
             
-            echo "<center>" ;
+            //echo "<center>" ;
             echo "<div class=\"validate_error_label\">";
                 
             echo '<label>';
@@ -69,7 +69,7 @@ foreach ($degust_profile_fields as $section => $elts) {
             echo '</label>';
                         echo "</div>";
 
-            echo "</center>" ;
+            //echo "</center>" ;
 
 
             $variables=array('name'=>$shortname,
@@ -77,7 +77,7 @@ foreach ($degust_profile_fields as $section => $elts) {
                         'align'=>'horizontal',
                         'options'=>$options,
                         'option_values'=>$option_values,
-                        'class'=>'input-degust required'
+                        'class'=>'input-degust'
               );
             
             
