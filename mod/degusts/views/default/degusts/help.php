@@ -7,7 +7,7 @@
 
 ?>
 
-    <div id="tabs">
+    <div id="tabs-help">
 	<ul>
 		<li><a href="#tabs-1">Visuel</a></li>
 		<li><a href="#tabs-2">Olfactif</a></li>
