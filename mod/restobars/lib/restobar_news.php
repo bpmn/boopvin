@@ -24,7 +24,8 @@ function restobar_news_handle_edit_page($guid) {
 	);
 	$body = elgg_view_layout('one_column', $params);
         
-	echo elgg_view_page($title, $body,'overlay');
+	//echo elgg_view_page($title, $body,'overlay');
+        echo elgg_view_page($title, $content,'overlay');
 }
 
 /**

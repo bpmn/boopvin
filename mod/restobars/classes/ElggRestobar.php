@@ -45,8 +45,7 @@ class ElggRestobar extends ElggGroup {
 		if (!(elgg_instanceof($wine, 'group', 'wine'))) {
 			return false;
 		}
-		
-			$object = check_entity_relationship($this, 'incave', $wine);
+			$object = check_entity_relationship($this->getGUID(), 'incave', $wine->getGUID());
 	if ($object) {
 		return true;
 	} else {

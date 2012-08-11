@@ -57,7 +57,7 @@ function restobar_init() {
 
 	// add group activity tool option
 	//add_group_tool_option('activity', elgg_echo('restobar:enableactivity'), true);
-	//elgg_extend_view('restobars/tool_latest', 'restobars/profile/activity_module');
+	elgg_extend_view('restobars/tool_latest', 'restobars/profile/cave_module');
 
 	// add link to owner block
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'restobar_activity_owner_block_menu');

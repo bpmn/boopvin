@@ -19,7 +19,7 @@ if (sizeof($restobar_guid)) {
 
 		if ($wine && $restobar && $restobar->canEdit()) {
 			if (!$restobar->isIncave($wine)) {
-				if (add_entity_relationship($restobar, 'incave', $wine)){
+				if (add_entity_relationship($restobar->getGUID(), 'incave', $wine->getGUID())){
 					// send welcome email to user
 					/*notify_user($user->getGUID(), $restobar->owner_guid,
 							elgg_echo('restobar:incave:subject', array($restobar->name)),

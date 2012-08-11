@@ -12,8 +12,6 @@ elgg.overlay.init = function() {
     
     
     
- 
-    
     
   var degust_button = function() {
              // visuelle
@@ -68,12 +66,12 @@ elgg.overlay.init = function() {
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
                 
-                
-                
+             
+                /*
                 var select = $( "#note" );
 		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
 			min: 1,
-			max: 20,
+                	max: 20,
 			range: "min",
 			value: select[ 0 ].selectedIndex + 1,
 			slide: function( event, ui ) {
@@ -82,10 +80,25 @@ elgg.overlay.init = function() {
 		});
 		$( "#note" ).change(function() {
 			slider.slider( "value", this.selectedIndex + 1 );
-		});
+		});*/
+               
+                
+               
               }
               
     
+		          
+              
+  
+  
+  if ((navigator.userAgent.indexOf('iPhone') != -1) && (navigator.userAgent.indexOf('iPod') != -1) && (navigator.userAgent.indexOf('iPad') != -1)) {
+                $( "#tabs" ).tabs();
+                $(degust_button); 
+                //$("#note" ).change(function() {
+			//slider.slider( "value", this.selectedIndex + 1 );
+		//});  
+	} // ]]>
+  
     
  
   $(function() {
@@ -98,15 +111,22 @@ elgg.overlay.init = function() {
         initElts: function() {
             $(".elgg-page-topbar").css({"z-index":" 0"});
             $(".elgg-menu-site").css({"z-index":" 0"}); 
+          
+
        
         },
         
         filledContent: function(){
-        
+            
            $( "#tabs" ).tabs();
            $(degust_button);
+           /*$("#note" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});*/
            
         },
+       
+        
         afterClose: function() {
             $(".elgg-page-topbar").css({"z-index":" 9000"});
             $(".elgg-menu-site").css({"z-index":" 1"});

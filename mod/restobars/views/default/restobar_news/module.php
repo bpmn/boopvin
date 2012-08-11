@@ -25,7 +25,7 @@ $edit_link = elgg_view('output/url', array(
 $content = $restobarnews->description;
 
 
-echo elgg_view('restobars/profile/module', array(
+echo elgg_view('restobars/profile/module_news', array(
 	'title' => elgg_echo('news:restobar'),
 	'content' => $content,
 	'all_link' => $edit_link,
