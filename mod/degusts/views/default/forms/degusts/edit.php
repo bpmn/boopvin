@@ -42,6 +42,15 @@ for ($note=1;$note<=20;$note++) {
       <span></span>.<br clear="all"/>
     </div>
 
+
+    <div id="vtab">
+        <ul>
+		<li class="home"></li>
+		<li class="support"></li>
+	</ul>
+        
+        
+	<div id="vtab-1"><h4>Degustation</h4>
 <?php
 
 
@@ -50,9 +59,9 @@ for ($note=1;$note<=20;$note++) {
             
 // creation de la liste
 foreach ($degust_profile_fields as $section => $elts) {
-     echo '<div><fieldset id="testfield"><legend>';
+     echo '<div><fieldset id="testfield"><legend><div class="legend_class">';
      echo elgg_echo("degust:{$section}");
-     echo '</legend>';
+     echo '</div></legend>';
      
 
      foreach($elts as $shortname=>$valtype){
@@ -65,8 +74,10 @@ foreach ($degust_profile_fields as $section => $elts) {
             echo "<div class=\"validate_error_label\">";
                 
             echo '<label>';
+            echo '<h2>';
             echo elgg_echo("degust:{$shortname}");
             echo '</label>';
+            echo '</h2>';
                         echo "</div>";
 
             //echo "</center>" ;
@@ -138,3 +149,9 @@ if (isset($vars['entity']) && $degust->canEdit()) {
 }
 ?>
 </div>
+        </div> <!-- for Tab 1-->
+        <div id="vtab-2"><h4>Help</h4>
+		<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+	</div>
+    </div> <!-- for Tabs-->
+

@@ -138,7 +138,7 @@ function degust_handle_edit_page($page, $guid = 0) {
 	}
 	
         
-        $sidebar=elgg_view('degusts/help');
+        //$sidebar=elgg_view('degusts/help');
 	$params = array(
 		'content' => $content,
 		'title' => $title,

@@ -15,12 +15,12 @@ $french = array(
     'degust:gustatif' => "ANALYSE GUSTATIVE",
     'degust:comment' => "COMMENTAIRES ET NOTES",
     
-    
-    'degust:couleur_intensity'=>'INTENSITE DE LA ROBE',             
-    'degust:couleur'=>'LA COULEUR',
-    'degust:reflet'=>'LES REFLETS',
-    'degust:bulle'=>'LA BULLE',
-    
+    'degust:couleur_intensity'=>'Intensité De La Robe',             
+    'degust:couleur'=>'La Couleur',
+    'degust:reflet'=>'Les Reflets',
+    'degust:bulle'=>'La Bulle',
+
+   
     
     'degust:couleur_intensity:pale' => 'Pâle',
     'degust:couleur_intensity:claire' => 'Claire',
@@ -65,11 +65,13 @@ $french = array(
     
              
 //Olfactif
-    'degust:nez_intensity'=>'L\'INTENSITE',
-    'degust:nez'=>'LES AROMES',    // résultat des checkboxes sous forme de tableau
-    'degust:arome'=>'COMMENTAIRES',        // description texte des arôme
-    'degust:complexity'=>'COMPLEXITE',   // en fonction du nombres de checkbox cochées.
     
+     'degust:nez_intensity'=>'L\'Intensité',
+    'degust:nez'=>'Les Arômes',    // résultat des checkboxes sous forme de tableau
+    'degust:arome'=>'Commentaires',        // description texte des arôme
+    'degust:complexity'=>'Complexité',   // en fonction du nombres de checkbox cochées.
+    
+
   
     'degust:nez_intensity:ferme'=>'Fermé',
     'degust:nez_intensity:discret' => 'Discret',
@@ -123,21 +125,22 @@ $french = array(
     'degust:longueur:long' => 'Long',
     'degust:longueur:tres_long' => 'Très Long',
 
- 
-//Gustatif
-    'degust:rondeur'=>'ATTAQUE ET RONDEUR',
-    'degust:acidity'=>'L\'ACIDITE',
-    'degust:alcool'=>'L\'ALCOOL',
-    'degust:tanin'=>'TEXTURE ET TANNINS',
-    'degust:moelleux'=>'LE MOELLEUX',
-    'degust:retro'=>'RETRO OLFACTION',
-    'degust:longueur'=>'LONGEUR EN BOUCHE',
+ //Gustatif
+    'degust:rondeur'=>'Attaque Et Rondeur',
+    'degust:acidity'=>'L\'Acidité',
+    'degust:alcool'=>'L\'Alcool',
+    'degust:tanin'=>'Texture Et Tannins',
+    'degust:moelleux'=>'Le Moelleux',
+    'degust:retro'=>'Retro Olfaction',
+    'degust:longueur'=>'Longueur En Bouche',
  
  //Commentaire final
-    'degust:evolution'=>'L\'EVOLUTION',
-    'degust:comment'=>'COMMENTAIRE FINAL',   //commentaire finale
-    'degust:accord'=>'ACCORD METS ET VIN',        //proposition accord mets vins
-    'degust:note'=>'NOTE GENERALE',
+    'degust:evolution'=>'L\'Evolution',
+    'degust:comment'=>'Commentaire Final',   //commentaire finale
+    'degust:accord'=>'Accord Mets Et Vin',        //proposition accord mets vins
+    'degust:note'=>'Note Générale',
+
+
     
     //comment
                     

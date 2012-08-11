@@ -11,7 +11,15 @@ elgg.provide('elgg.overlay');
 elgg.overlay.init = function() {
     
     
-    
+    var $items = $('#vtab>ul>li');
+$items.click(function() {
+    $items.removeClass('selected');
+    $(this).addClass('selected');
+
+    var index = $items.index($(this));
+    $('#vtab>div').hide().eq(index).show();
+}).eq(1).click();
+
  
     
     
@@ -68,8 +76,7 @@ elgg.overlay.init = function() {
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
                 
-                
-                
+              
                 var select = $( "#note" );
 		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
 			min: 1,
@@ -120,11 +127,7 @@ elgg.overlay.init = function() {
 );
 	});
     
-   //$(function(){
-   // $(#nyroModalCont > div).scroll(function(){
-   //     $('#tabs').animate({top:$(#nyroModalCont > div).scrollTop()+30},500);
-   // });
-//});
+  
     
     
     jQuery.validator.messages.required = "";
