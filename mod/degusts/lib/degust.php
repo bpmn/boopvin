@@ -138,11 +138,11 @@ function degust_handle_edit_page($page, $guid = 0) {
 	}
 	
         
-        //$sidebar=elgg_view('degusts/help');
+        $help=elgg_view('degusts/help');
 	$params = array(
-		'content' => $content,
-		'title' => $title,
-                'sidebar'=>$sidebar,
+		'tab1' => $content,
+		'tab2' => $help,
+                
 		'filter' => '',
                 //'class'=>'elgg-overlay'
                 
@@ -150,7 +150,7 @@ function degust_handle_edit_page($page, $guid = 0) {
         	
 	
 
-	$body = elgg_view_layout('degust_one_sidebar', $params);
+	$body = elgg_view_layout('degust_one_column', $params);
         //echo $body;
 
 	echo elgg_view_page($title, $body,'overlay');

@@ -223,16 +223,15 @@ margin-right: 5px;
 }
 
 .degust-side-head {
-background: #ffffff;
-padding-top:20px;
-border-color: #800000;
-border-width: 1px;
-border-style: solid;
-border-radius: 5px;
-background: #ffffff;
-margin-bottom: 23px;
-height: 177px;
-
+padding-top:10px;
+//border-color: #800000;
+//border-width: 1px;
+//border-style: solid;
+//border-radius: 5px;
+//background: #ffffff;
+//margin-bottom: 23px;
+//height: 177px;
+height: 110px;
 }
 
 

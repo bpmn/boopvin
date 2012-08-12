@@ -9,7 +9,7 @@ $french = array(
     
   
   //Visuel   
-    
+    'degust'=>"Dégustation",
     'degust:visuel' => "ANALYSE VISUELLE",
     'degust:olfactif' => "ANALYSE OFALCTIVE",
     'degust:gustatif' => "ANALYSE GUSTATIVE",
