@@ -16,11 +16,15 @@ $restobar = $vars['entity'];
 $owner = $restobar->getOwnerEntity();
 
 ?>
-<div class="groups-profile clearfix elgg-image-block">
+<div class="groups-profile clearfix elgg-image-block resto_background">
+    
+    
 	<div class="elgg-image">
 		<div class="groups-profile-icon">
+                    <div class="resto_icon">
 			<?php echo elgg_view_entity_icon($restobar, 'large', array('href' => '')); ?>
-		</div>
+                    </div>
+                </div>
 		<div class="groups-stats">
 			<p>
 				<b><?php echo elgg_echo("restobar:owner"); ?>: </b>
@@ -47,7 +51,6 @@ $owner = $restobar->getOwnerEntity();
 		?>
             
             </div>
-   
 </div>
 <?php
 ?>

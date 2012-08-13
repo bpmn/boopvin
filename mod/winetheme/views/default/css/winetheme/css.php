@@ -11,17 +11,21 @@
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/resto-50op.png') no-repeat;
 background-size: cover;
 border: 1px solid #800000;
-
+margin-top: 20px;
   
 }
 
 .resto_background img {
-	border: 4px solid #ffffff;
+	border: 4px solid #800000;
 border-top-right-radius: 5px;
 border-top-left-radius: 5px;
 
 border-bottom-right-radius: 5px;
 border-bottom-left-radius: 5px;
+position: relative;
+
+top: -15px;
+left: -3px;
 
 
 }
