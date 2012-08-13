@@ -15,17 +15,16 @@ margin-top: 20px;
   
 }
 
-.resto_background img {
-	border: 4px solid #800000;
-border-top-right-radius: 5px;
-border-top-left-radius: 5px;
 
-border-bottom-right-radius: 5px;
-border-bottom-left-radius: 5px;
+.resto_background img {
+	border: 4px solid #ffffff;
+        outline: 1px solid #800000;
+        
+
 position: relative;
 
 top: -15px;
-left: -3px;
+left: 0px;
 
 
 }
@@ -33,7 +32,7 @@ left: -3px;
 
 #vtab {
     margin: auto;
-    width: 800px;
+    width: 820px;
     height: 100%;
 }
 #vtab > ul > li {
@@ -99,7 +98,7 @@ left: -3px;
 #vtab > div > h4 {
     font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
     color: #800;
-    font-size: 200%;
+    font-size: 300%;
     font-weight: normal;
     border-bottom: 1px solid #800000;
     padding-top: 5px;
@@ -154,7 +153,7 @@ background: #800000;
 	border: 6px solid #800000;
 	margin: 25px;
 	background: #ffffff;
-       	width: 1000px;
+       	width: 930px;
     border-radius: 5px;
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -175,6 +174,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc05656', e
 
 .elgg-search input[type="text"] {
 border:1px solid white;
+float: right;
 
 }
 .elgg-form-degusts-edit fieldset fieldset {
@@ -228,7 +228,7 @@ text-align: center;
 .nyroModalCont iframe {
 	border: 1px none #0000FF;
 
-	width: 1000px;
+	width: 930px;
 	height: 400px;
 }
 
@@ -238,7 +238,7 @@ text-align: center;
 	position: relative;
 	padding: 5px;
 	min-height: 250px;
-	width: 960px;
+	width: 900px;
 }
 
 

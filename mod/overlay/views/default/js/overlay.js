@@ -26,54 +26,54 @@ $items.click(function() {
     
   var degust_button = function() {
              // visuelle
-                $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("167.5").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
 
-                $( "#button_selectcouleur" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
                 
-                $( "#button_selectreflet" ).buttonset().find('label').width("111.6").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectreflet" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");
                     
                 // offalctive
                 
-                $( "#button_selectnez_intensity" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectnez_intensity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectnez_intensity" ).buttonset().css("margin-right", "0px");
                     
-                $( "#button_selectnez" ).buttonset().find('label').width("75.3").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectnez" ).buttonset().find('label').width("81").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectnez" ).buttonset().css("margin-right", "0px");
                 $( "#button_selectnez" ).buttonset().find('span').css("padding", "0.4em 0.3em");
 
                     
                 // gustative
 
-                $( "#button_selectrondeur" ).buttonset().find('label').width("111.6").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectrondeur" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectrondeur" ).buttonset().css("margin-right", "0px");
                     
 
-                $( "#button_selectacidity" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectacidity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectacidity" ).buttonset().css("margin-right", "0px");
                     
-                $( "#button_selectalcool" ).buttonset().find('label').width("167.5").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectalcool" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectalcool" ).buttonset().css("margin-right", "0px");
                     
                     
                     
                     
-                $( "#button_selecttanin" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selecttanin" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selecttanin" ).buttonset().css("margin-right", "0px");
                 
                 
                     
-                $( "#button_selectretro" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectretro" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectretro" ).buttonset().css("margin-right", "0px");
                     
 
-                $( "#button_selectlongueur" ).buttonset().find('label').width("134").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectlongueur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectlongueur" ).buttonset().css("margin-right", "0px");
                     
                 // final
-                $( "#button_selectevolution" ).buttonset().find('label').width("111.6").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectevolution" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
                 
