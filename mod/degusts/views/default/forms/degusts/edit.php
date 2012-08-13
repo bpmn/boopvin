@@ -36,21 +36,7 @@ for ($note=1;$note<=20;$note++) {
  
  ?>
 
-   <div class="error" style="display:none;">
-      <img src="images/warning.gif" alt="Warning!" width="24" height="24" style="float:left; margin: -5px 10px 0px 0px; " />
-
-      <span></span>.<br clear="all"/>
-    </div>
-
-
-    <div id="vtab">
-        <ul>
-		<li class="home"></li>
-		<li class="support"></li>
-	</ul>
-        
-        
-	<div id="vtab-1"><h4>Degustation</h4>
+   
 <?php
 
 
@@ -148,10 +134,5 @@ if (isset($vars['entity']) && $degust->canEdit()) {
 	));
 }
 ?>
-</div>
-        </div> <!-- for Tab 1-->
-        <div id="vtab-2"><h4>Help</h4>
-		<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-	</div>
-    </div> <!-- for Tabs-->
+
 

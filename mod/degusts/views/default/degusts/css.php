@@ -38,7 +38,11 @@
 }
 
 
-.degust-side-head { height: 120px;}
+.degust-side-head { 
+width: auto;
+max-height: auto;
+
+padding: 5px;}
 
 .degust-side-head img {
             margin-right: 3px;

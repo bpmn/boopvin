@@ -6,17 +6,15 @@
 /**
  * List all News topics
  */
-function restobar_news_handle_edit_page() {
+function restobar_news_handle_edit_page($guid) {
 
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('news'));
         
-        $restobar_guid=elgg_get_page_owner_guid();
         
-        $options=array('type_subtype_pairs'=>array('object'=>'restobarnews'),'container_guids'=>$restobar_guid);
-        $restobarnews= elgg_get_entities($options);
-    
-	$content = elgg_view('restobar_news/edit',array('entity'=>$restobarnews[0]));
+      
+        $restobarnews= get_entity($guid);
+	$content = elgg_view('restobar_news/edit',array('entity'=>$restobarnews));
 	
 
 	$params = array(
@@ -24,9 +22,10 @@ function restobar_news_handle_edit_page() {
 		'title' => elgg_echo('restobarnews:edit'),
 		'filter' => '',
 	);
-	$body = elgg_view_layout('content', $params);
-
-	echo elgg_view_page($title, $body);
+	$body = elgg_view_layout('one_column', $params);
+        
+	//echo elgg_view_page($title, $body,'overlay');
+        echo elgg_view_page($title, $content,'overlay');
 }
 
 /**

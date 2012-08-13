@@ -36,7 +36,11 @@ if (isset($degust->comment)){
     }
     
    
-
+$title_link=$wine->name;
+if ($wine->cuvee)
+    $title_link.= "  \"{$wine->cuvee}\"";
+if ($degust->annee)
+    $title_link.= "  {$degust->annee}";
 
 
 /***********************************************************************************************************/   
@@ -62,11 +66,7 @@ $date = elgg_view_friendly_time($degust->time_updated);
  liste des vins dans le module groupe du profile d'un vin on affiche juste le millésime                     */
 /************************************************************************************************************/
 
-$title_link=$wine->name;
-if ($wine->cuvee)
-    $title_link.= "  \"{$wine->cuvee}\"";
-if ($degust->annee)
-    $title_link.= "  {$degust->annee}";
+
 
 if (elgg_in_context('profile')){
     

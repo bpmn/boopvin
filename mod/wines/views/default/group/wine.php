@@ -32,7 +32,7 @@ if ($vars['full_view']) {
 		'subtitle' => $wine->briefdescription,
 	);
 	$params = $params + $vars;
-	$list_body = elgg_view('group/elements/summary', $params);
+	$list_body = elgg_view('wines/elements/summary', $params);
 
 	echo elgg_view_image_block($icon, $list_body, $vars);
 }

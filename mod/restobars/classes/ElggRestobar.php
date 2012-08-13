@@ -32,6 +32,26 @@ class ElggRestobar extends ElggGroup {
         public function __construct($guid = null) {
 		parent::__construct($guid);
 	}
+        
+        
+        	/**
+	 * Return whether a given user is a member of this group or not.
+	 *
+	 * @param ElggUser $user The user
+	 *
+	 * @return bool
+	 */
+	public function isIncave($wine = 0) {
+		if (!(elgg_instanceof($wine, 'group', 'wine'))) {
+			return false;
+		}
+			$object = check_entity_relationship($this->getGUID(), 'incave', $wine->getGUID());
+	if ($object) {
+		return true;
+	} else {
+		return false;
+	}
+	}
 }
 
 

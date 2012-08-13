@@ -8,9 +8,10 @@
  * @uses $vars['add_link'] A link to create content
  */
 
-$group = elgg_get_page_owner_entity();
+$restobar = elgg_get_page_owner_entity();
 
-$header = "<span class=\"groups-widget-viewall\">{$vars['all_link']}</span>";
+if ($restobar->canWriteToContainer() && isset($vars['all_link'])) {
+$header = "<span class=\"groups-widget-viewall\">{$vars['all_link']}</span>";}
 $header .= '<h3>' . $vars['title'] . '</h3>';
 
 

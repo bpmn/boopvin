@@ -492,17 +492,21 @@ function wine_register_profile_buttons($wine) {
         //elgg_load_css('lightbox');
         
 
-        
 
 	if ($actions) {
 		foreach ($actions as $url => $text) {
                     
                     if ($text == 'degust:add'){
+                        if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPod') || strstr($_SERVER['HTTP_USER_AGENT'],'iPad')  || strstr($_SERVER['HTTP_USER_AGENT'],'BlackBerry')) {
+                            $link_class='elgg-button elgg-button-action';
+                        }else{
+                            $link_class='elgg-button elgg-button-action elgg-overlay';
+                        }
                         elgg_register_menu_item('title', array(
 				'name' => $text,
 				'href' => $url,
 				'text' => elgg_echo($text),
-				'link_class' => 'elgg-button elgg-button-action elgg-overlay',
+				'link_class' => $link_class,
                                 //'target' =>"_blank",
                                 //'rel'=>'#overlay',
 			));}
@@ -516,4 +520,29 @@ function wine_register_profile_buttons($wine) {
 			));}
 		}
 	}
-}?>
+}
+
+function wine_handle_addtocave_page($entity_guid){
+ 
+	elgg_pop_breadcrumb();
+	elgg_push_breadcrumb(elgg_echo('addtocave'));
+        
+        $entity=get_entity($entity_guid);
+          
+        $restobarnews= get_entity($guid);
+	$content = elgg_view('wines/addtocave',array('entity'=>$entity));
+	
+
+	$params = array(
+		'content' => $content,
+		'title' => elgg_echo('wines:addtocave'),
+		'filter' => '',
+	);
+	$body = elgg_view_layout('one_column', $params);
+        
+	echo elgg_view_page($title, $body,'overlay');   
+    
+}
+
+
+?>

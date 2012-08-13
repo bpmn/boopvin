@@ -115,6 +115,7 @@ if ($new_restobar_flag) {
 // création de l'Objet restobarnews rattaché au restobar.
         $restobarnews=new ElggRestobarnews();
         $restobarnews->setContainerGUID($restobar->getGUID());
+        $restobarnews->access_id=$restobar->access_id;
         $restobarnews->save();
         
 }
