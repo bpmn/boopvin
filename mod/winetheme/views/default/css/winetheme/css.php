@@ -4,6 +4,29 @@
  */
 ?>
 
+
+
+.resto_background {
+
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/resto-50op.png') no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+
+  
+}
+
+.resto_background img {
+	border: 4px solid #ffffff;
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;
+
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+
+
+}
+
+
 #vtab {
     margin: auto;
     width: 800px;
