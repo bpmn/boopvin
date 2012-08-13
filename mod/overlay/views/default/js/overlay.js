@@ -10,7 +10,8 @@ elgg.provide('elgg.overlay');
 
 elgg.overlay.init = function() {
     
-    // tabs code for degust
+    
+
     var $items = $('#vtab>ul>li');
 $items.click(function() {
     $items.removeClass('selected');
@@ -20,51 +21,11 @@ $items.click(function() {
     $('#vtab>div').hide().eq(index).show();
 }).eq(1).click();
 
- // note slider
  
- $(function() {
- var select = $( "#id_note" );
- 
- /*
- var slider = slider({
-			min: 1,
-			max: 20,
-			range: "min",
-			value: select[ 0 ].selectedIndex + 1,
-			slide: function( event, ui ) {
-				select[ 0 ].selectedIndex = ui.value - 1;
-			}
-		});
-                
-$('#id_note').change(function() {
-			slider.slider( "value", this.selectedIndex + 1 );
-		});
- });
- 
-*/
-              
+
     
-    
- 
-  $(function() {
-        $(".elgg-overlay").nyroModal({
-            
-     //$(".elgg-overlay").nmCall({  
-          
-    callbacks: {
-        
-        initElts: function() {
-            $(".elgg-page-topbar").css({"z-index":" 0"});
-            $(".elgg-menu-site").css({"z-index":" 0"}); 
-       
-        },
-        
-        filledContent: function(){
-        
-           //$( "#tabs" ).tabs();
-           //$(degust_button);
-           
-                     // visuelle
+  var degust_button = function() {
+             // visuelle
                 $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("167.5").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
 
@@ -116,8 +77,70 @@ $('#id_note').change(function() {
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
                 
+
+             
+                /*
+
+              
+
+                var select = $( "#note" );
+		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+			min: 1,
+                	max: 20,
+			range: "min",
+			value: select[ 0 ].selectedIndex + 1,
+			slide: function( event, ui ) {
+				select[ 0 ].selectedIndex = ui.value - 1;
+			}
+		});
+		$( "#note" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});*/
+               
+                
+               
+              }
+              
+    
+
+              
+  
+  
+  if ((navigator.userAgent.indexOf('iPhone') != -1) && (navigator.userAgent.indexOf('iPod') != -1) && (navigator.userAgent.indexOf('iPad') != -1)) {
+                $( "#tabs" ).tabs();
+                $(degust_button); 
+                //$("#note" ).change(function() {
+			//slider.slider( "value", this.selectedIndex + 1 );
+		//});  
+	} // ]]>
+  
+    
+ 
+  $(function() {
+        $(".elgg-overlay").nyroModal({
+            
+     //$(".elgg-overlay").nmCall({  
+          
+    callbacks: {
+        
+        initElts: function() {
+            $(".elgg-page-topbar").css({"z-index":" 0"});
+            $(".elgg-menu-site").css({"z-index":" 0"}); 
+          
+
+       
+        },
+        
+        filledContent: function(){
+            
+           $( "#tabs" ).tabs();
+           $(degust_button);
+           /*$("#note" ).change(function() {
+			slider.slider( "value", this.selectedIndex + 1 );
+		});*/
            
         },
+       
         
         afterClose: function() {
             $(".elgg-page-topbar").css({"z-index":" 9000"});
@@ -189,4 +212,3 @@ $('#id_note').change(function() {
 }
 
 elgg.register_hook_handler('init', 'system', elgg.overlay.init);
-
