@@ -8,6 +8,8 @@
 
 elgg.provide('elgg.overlay');
 
+
+
 elgg.overlay.init = function() {
     
     
@@ -21,10 +23,10 @@ $items.click(function() {
     $('#vtab>div').hide().eq(index).show();
 }).eq(1).click();
 
- 
 
-    
-  var degust_button = function() {
+//  var degust_button = function() {
+
+  function degust_button() {
              // visuelle
                 $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
@@ -79,11 +81,11 @@ $items.click(function() {
                 
 
              
-                /*
-
+                
+  }
               
-
-                var select = $( "#note" );
+/*
+                var select = $( "#id_note" );
 		var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
 			min: 1,
                 	max: 20,
@@ -93,24 +95,26 @@ $items.click(function() {
 				select[ 0 ].selectedIndex = ui.value - 1;
 			}
 		});
-		$( "#note" ).change(function() {
+                
+		$( "#id_note" ).change(function() {
 			slider.slider( "value", this.selectedIndex + 1 );
-		});*/
+		});
                
                 
                
               }
-              
+              */
    
   
+if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
+             //alert("iPhone or iPod or Ipad detected");
+             
+             degust_button(); 
+		
+	}
   
-  if ((navigator.userAgent.indexOf('iPhone') != -1) && (navigator.userAgent.indexOf('iPod') != -1) && (navigator.userAgent.indexOf('iPad') != -1)) {
-                $( "#tabs" ).tabs();
-                $(degust_button); 
-                //$("#note" ).change(function() {
-			//slider.slider( "value", this.selectedIndex + 1 );
-		//});  
-	} // ]]>
+      
+
   
     
  
@@ -131,11 +135,8 @@ $items.click(function() {
         
         filledContent: function(){
             
-           $( "#tabs" ).tabs();
-           $(degust_button);
-           /*$("#note" ).change(function() {
-			slider.slider( "value", this.selectedIndex + 1 );
-		});*/
+             degust_button(); 
+           
            
         },
        
@@ -191,13 +192,7 @@ $items.click(function() {
 			}
 		}
                 
-        //rules: {
-        //        couleur_intensity: "required",
-        //        couleur: "required",
-        //        nez:"required",
-        //        nez_intensity:"required",
-        //        note: "required"
-        //        }
+   
        
                 
            

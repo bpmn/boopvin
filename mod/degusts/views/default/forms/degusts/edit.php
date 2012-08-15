@@ -26,7 +26,7 @@ $degust_profile_fields = elgg_get_config('degust');
 
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/fiche/{$container->kind}.php");
 
-
+$notes[]=" ";
 for ($note=1;$note<=20;$note++) {   
     $notes[]=$note;
  }
