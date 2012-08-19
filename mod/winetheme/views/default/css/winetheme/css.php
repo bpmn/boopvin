@@ -15,17 +15,16 @@ margin-top: 20px;
   
 }
 
-.resto_background img {
-	border: 4px solid #800000;
-border-top-right-radius: 5px;
-border-top-left-radius: 5px;
 
-border-bottom-right-radius: 5px;
-border-bottom-left-radius: 5px;
+.resto_background img {
+	border: 4px solid #ffffff;
+        outline: 1px solid #800000;
+        
+
 position: relative;
 
 top: -15px;
-left: -3px;
+left: 0px;
 
 
 }
@@ -33,7 +32,7 @@ left: -3px;
 
 #vtab {
     margin: auto;
-    width: 800px;
+    width: 820px;
     height: 100%;
 }
 #vtab > ul > li {
@@ -99,7 +98,7 @@ left: -3px;
 #vtab > div > h4 {
     font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
     color: #800;
-    font-size: 200%;
+    font-size: 300%;
     font-weight: normal;
     border-bottom: 1px solid #800000;
     padding-top: 5px;
@@ -154,27 +153,15 @@ background: #800000;
 	border: 6px solid #800000;
 	margin: 25px;
 	background: #ffffff;
-       	width: 1000px;
+       	width: 930px;
     border-radius: 5px;
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-
-/*
-background: (<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2MwNTY1NiIgc3RvcC1vcGFjaXR5PSIwLjgiLz4KICAgIDxzdG9wIG9mZnNldD0iOTklIiBzdG9wLWNvbG9yPSIjZmVmZGZkIiBzdG9wLW9wYWNpdHk9IjAuOCIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuOCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top,  rgba(192,86,86,0.8) 0%, rgba(254,253,253,0.8) 99%, rgba(255,255,255,0.8) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(192,86,86,0.8)), color-stop(99%,rgba(254,253,253,0.8)), color-stop(100%,rgba(255,255,255,0.8))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(192,86,86,0.8) 0%,rgba(254,253,253,0.8) 99%,rgba(255,255,255,0.8) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(192,86,86,0.8) 0%,rgba(254,253,253,0.8) 99%,rgba(255,255,255,0.8) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(192,86,86,0.8) 0%,rgba(254,253,253,0.8) 99%,rgba(255,255,255,0.8) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(192,86,86,0.8) 0%,rgba(254,253,253,0.8) 99%,rgba(255,255,255,0.8) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc05656', endColorstr='#ccffffff',GradientType=0 ); /* IE6-8 */
-
-*/        
+ 
         
 }
 
 .elgg-search input[type="text"] {
 border:1px solid white;
+float: right;
 
 }
 .elgg-form-degusts-edit fieldset fieldset {
@@ -228,7 +215,7 @@ text-align: center;
 .nyroModalCont iframe {
 	border: 1px none #0000FF;
 
-	width: 1000px;
+	width: 930px;
 	height: 400px;
 }
 
@@ -238,7 +225,7 @@ text-align: center;
 	position: relative;
 	padding: 5px;
 	min-height: 250px;
-	width: 960px;
+	width: 900px;
 }
 
 

@@ -46,7 +46,7 @@ unset($vars['value']);
 
 
 $my_attributes = elgg_format_attributes($vars);
-echo "<form id=\"form_$myid\"><p><label for=\"id_$myid\">toto</label><select id=\"id_$myid\" $my_attributes >";
+echo "<form id=\"form_$myid\"><p><label for=\"id_$myid\">toto</label><select class=\"required\" id=\"id_$myid\" $my_attributes >";
 
 if ($options_values) {
 	foreach ($options_values as $opt_value => $option) {
