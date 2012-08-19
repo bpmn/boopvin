@@ -13,7 +13,7 @@ elgg.provide('elgg.overlay');
 elgg.overlay.init = function() {
     
     
-
+function degust_tab() {
             var $items = $('#vtab>ul>li');
             $items.click(function() {
             $items.removeClass('selected');
@@ -22,7 +22,7 @@ elgg.overlay.init = function() {
             var index = $items.index($(this));
             $('#vtab>div').hide().eq(index).show();
             }).eq(1).click();
-
+}
 
 
 //  var degust_button = function() {
@@ -111,7 +111,7 @@ if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexO
              //alert("iPhone or iPod or Ipad detected");
              
              degust_button(); 
-		
+             degust_tab();
 	}
   
 
@@ -138,7 +138,7 @@ if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexO
         
         filledContent: function(){
             
-
+             degust_tab();
              degust_button(); 
            
 
