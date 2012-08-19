@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Forum topic entity view

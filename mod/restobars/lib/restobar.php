@@ -236,7 +236,7 @@ function restobar_handle_invitations_page() {
 function restobar_handle_profile_page($guid) {
 	elgg_set_page_owner_guid($guid);
 
-	elgg_push_context('restobar_profile');
+	elgg_push_context('restobar');
        
 
 	// turn this into a core function
@@ -436,6 +436,35 @@ function restobar_handle_requests_page($guid) {
 	$body = elgg_view_layout('content', $params);
 
 	echo elgg_view_page($title, $body);
+}
+function restobar_handle_cave_page($restobar_guid) {
+        elgg_set_page_owner_guid($restobar_guid);
+        elgg_push_context('restobar');
+             $content = elgg_list_entities_from_relationship(array(
+                            'types'=>'group',
+                            'subtypes'=>'wine',
+                            'limit' => 100,
+                            'pagination' => true,
+                            'relationship' => 'incave',
+                            'relationship_guid' => $restobar_guid,
+                            'inverse_relationship' => FALSE,
+                            'full_view'=>FALSE
+                    ));
+
+        elgg_pop_context('restobar');
+        
+        $params = array(
+		'content' => $content,
+		'sidebar' => $sidebar,
+		'filter' => false,
+		'title' => $title,
+	);
+        
+        $body = elgg_view_layout('content', $params);
+        $restobar=get_entity($restobar_guid);
+
+	echo elgg_view_page(elgg_echo('restobar:cave',array("$restobar->name")), $body);
+
 }
 
 /**

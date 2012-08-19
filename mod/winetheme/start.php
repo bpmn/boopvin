@@ -24,6 +24,10 @@ function winetheme_init() {
     
     elgg_unregister_css('hj.framework.jquitheme');
     
+    // pouvoir réecrire ds le plugin la fonction friends_page_handler sans toucher au core Elgg 
+    elgg_unregister_page_handler('friends') ;
+    elgg_register_page_handler('friends','friends_winetheme_page_handler') ;
+    
     //elgg_register_css('winetheme.jquitheme', $winetheme_jq);
     
     $jquery_UI_css = elgg_get_simplecache_url('css', 'winetheme/JqueryUI_css');
@@ -46,6 +50,28 @@ function winetheme_init() {
 
 }
 
+function friends_winetheme_page_handler($page_elements, $handler) {
+	elgg_set_context('friends');
+	
+	if (isset($page_elements[0]) && $user = get_user_by_username($page_elements[0])) {
+		elgg_set_page_owner_guid($user->getGUID());
+	}
+	if (elgg_get_logged_in_user_guid() == elgg_get_page_owner_guid()) {
+		collections_submenu_items();
+	}
+
+	switch ($handler) {
+		case 'friends':
+			require_once (dirname(__FILE__) . "/pages/friends/index.php");
+			break;
+		case 'friendsof':
+			require_once(dirname(dirname(dirname(__FILE__))) . "/pages/friends/of.php");
+			break;
+		default:
+			return false;
+	}
+	return true;
+}
 
 
 ?>

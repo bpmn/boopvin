@@ -263,6 +263,19 @@ or click below to view the restobar's join requests:
 	// ecml
 	'restobar:ecml:discussion' => 'restobar Discussions',
 	'restobar:ecml:restobarprofile' => 'restobar profiles',
+    
+        //gestion de cave
+    
+        'restobar:cave'=>'la cave de %s',
+        
+         //module profile
+        'restobar:cave:news'=>'Les nouveautés en cave',
+        'link:cave:all'=>'Toute la cave',
+    
+        'removecave:this' => 'Retirer ce vin de la cave',
+        'removecaveconfirm'=> 'Voulez-vous retirer ce vin de la cave ?',
+        'cave:removed' => 'Le vin a été retiré de la cave',
+        'cave:cantremove'=> 'Ce Vin ne peut être retiré de la cave'
 
 );
 

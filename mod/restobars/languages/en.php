@@ -277,6 +277,18 @@ or click below to view the restobar's join requests:
 	// ecml
 	'restobar:ecml:discussion' => 'restobar Discussions',
 	'restobar:ecml:restobarprofile' => 'restobar profiles',
+    
+        //gestion de cave
+        'restobar:cave'=>'%s\'s cellar',
+    
+        //module profile
+        'restobar:cave:news'=>'News wines in our cellar',
+        'link:cave:all'=>'All the cellar',
+    
+        'removecave:this' => 'Remove the wine from the cellar',
+        'removecaveconfirm'=> 'Do you want to remove this wine from the cellar ?',
+        'cave:removed' => ' The wine has been removed from the cellar',
+        'cave:cantremove'=> 'This wine cannot be removed from the cellar'
 
 );
 

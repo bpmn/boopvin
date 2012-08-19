@@ -16,7 +16,7 @@ if (!$restobar) {
 
 $all_link = elgg_view('output/url', array(
 	'href' => "restobar/cave/{$restobar->getGUID()}",
-	'text' => elgg_echo('link:view:all'),
+	'text' => elgg_echo('link:cave:all'),
 	'is_trusted' => true,
 ));
 
@@ -30,7 +30,8 @@ $content = elgg_list_entities_from_relationship(array(
 	'pagination' => false,
 	'relationship' => 'incave',
         'relationship_guid' => $restobar->getGUID(),
-	'inverse_relationship' => FALSE
+	'inverse_relationship' => FALSE,
+        'full_view'=>FALSE
 ));
 //elgg_pop_context();
 
@@ -39,7 +40,7 @@ if (!$content) {
 }
 
 echo elgg_view('restobars/profile/module', array(
-	'title' => elgg_echo('restobar:cave'),
+	'title' => elgg_echo('restobar:cave:news'),
 	'content' => $content,
 	'all_link' => $all_link,
 ));

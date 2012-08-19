@@ -43,6 +43,7 @@ function wine_init() {
         
         $action_incave = $action_base.'/cave';
         elgg_register_action("wines/cave/addtocave", "$action_incave/addtocave.php");
+        elgg_register_action("wines/cave/remove_cave", "$action_incave/remove.php");
 
 	$action_base .= '/membership';
 	elgg_register_action("wines/invite", "$action_base/invite.php");
@@ -335,7 +336,9 @@ function wine_entity_menu_setup($hook, $type, $return, $params) {
 	if (elgg_in_context('widgets')) {
 		return $return;
 	}
-
+        
+        $page_owner=  elgg_get_page_owner_entity();
+        
 	$entity = $params['entity'];
 	$handler = elgg_extract('handler', $params, false);
 	if ($handler != 'wine') {
@@ -349,7 +352,7 @@ function wine_entity_menu_setup($hook, $type, $return, $params) {
 	}
 
 	// membership type
-	$membership = $entity->membership;
+	/*$membership = $entity->membership;
 	if ($membership == ACCESS_PUBLIC) {
 		$mem = elgg_echo("wine:open");
 	} else {
@@ -391,8 +394,22 @@ function wine_entity_menu_setup($hook, $type, $return, $params) {
 			'is_action' => true
 		);
 		$return[] = ElggMenuItem::factory($options);
-	}
+	}*/
+       if (elgg_in_context('restobar')&& $page_owner->canEdit()) {
 
+        // delete link
+		$options = array(
+			'name' => 'removecave',
+			'text' => elgg_view_icon('delete'),
+			'title' => elgg_echo('removecave:this'),
+			'href' => "action/wines/cave/remove_cave?wine_guid={$entity->getGUID()}&restobar_guid={$page_owner->getGUID()}",
+			'confirm' => elgg_echo('removecaveconfirm'),
+			'priority' => 300,
+		);
+		$return[] = ElggMenuItem::factory($options);
+                
+                }
+                
 	return $return;
 }
 

@@ -40,6 +40,10 @@ function restobar_init() {
 	elgg_register_action("restobars/edit", "$action_base/edit.php");
 	elgg_register_action("restobars/delete", "$action_base/delete.php");
 	elgg_register_action("restobars/featured", "$action_base/featured.php", 'admin');
+        
+        $action_friends = $action_base.'/friends';
+        elgg_register_action("restobars/friends/add", "$action_friends/add.php");
+        elgg_register_action("restobars/friends/remove", "$action_friends/remove.php");
 
 	$action_membership = $action_base.'/membership';
 	elgg_register_action("restobars/invite", "$action_membership/invite.php");
@@ -243,6 +247,9 @@ function restobar_page_handler($page) {
 		case 'requests':
 			restobar_handle_requests_page($page[1]);
 			break;
+                case 'cave':
+                        restobar_handle_cave_page($page[1]);
+			break;
 		default:
 			return false;
 	}
@@ -338,7 +345,7 @@ function restobar_entity_menu_setup($hook, $type, $return, $params) {
 	}
 
 	// membership type
-	$membership = $entity->membership;
+	/*$membership = $entity->membership;
 	if ($membership == ACCESS_PUBLIC) {
 		$mem = elgg_echo("restobar:open");
 	} else {
@@ -380,8 +387,11 @@ function restobar_entity_menu_setup($hook, $type, $return, $params) {
 			'is_action' => true
 		);
 		$return[] = ElggMenuItem::factory($options);
-	}
+	}*/
 
+        	
+        
+        
 	return $return;
 }
 

@@ -10,18 +10,18 @@ elgg.provide('elgg.overlay');
 
 elgg.overlay.init = function() {
     
-    
+    var degust_tab = function(){
 
-    var $items = $('#vtab>ul>li');
-$items.click(function() {
-    $items.removeClass('selected');
-    $(this).addClass('selected');
+            var $items = $('#vtab>ul>li');
+            $items.click(function() {
+            $items.removeClass('selected');
+            $(this).addClass('selected');
 
-    var index = $items.index($(this));
-    $('#vtab>div').hide().eq(index).show();
-}).eq(1).click();
+            var index = $items.index($(this));
+            $('#vtab>div').hide().eq(index).show();
+            }).eq(1).click();
 
- 
+    }
 
     
   var degust_button = function() {
@@ -105,7 +105,7 @@ $items.click(function() {
   
   
   if ((navigator.userAgent.indexOf('iPhone') != -1) && (navigator.userAgent.indexOf('iPod') != -1) && (navigator.userAgent.indexOf('iPad') != -1)) {
-                $( "#tabs" ).tabs();
+                $(degust_tab);
                 $(degust_button); 
                 //$("#note" ).change(function() {
 			//slider.slider( "value", this.selectedIndex + 1 );
@@ -131,7 +131,7 @@ $items.click(function() {
         
         filledContent: function(){
             
-           $( "#tabs" ).tabs();
+           $(degust_tab);
            $(degust_button);
            /*$("#note" ).change(function() {
 			slider.slider( "value", this.selectedIndex + 1 );

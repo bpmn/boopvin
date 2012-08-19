@@ -25,11 +25,17 @@ if ($vars['full_view']) {
 	echo elgg_view("wines/profile/profile_block", $vars);
 } else {
 	// brief view
-
+    
+    
+        if ($wine->description)
+            $subtitle=$wine->description.", ";
+        if ($wine->region)
+            $subtitle.=$wine->region.", ";
+        $subtitle.=$wine->country;
 	$params = array(
 		'entity' => $wine,
 		'metadata' => $metadata,
-		'subtitle' => $wine->briefdescription,
+		'subtitle' => $subtitle,
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('wines/elements/summary', $params);

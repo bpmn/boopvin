@@ -39,7 +39,31 @@ $owner = $restobar->getOwnerEntity();
 			<p>
 			<?php
 				echo elgg_echo('restobar:members') . ": " . $restobar->getMembers(0, 0, TRUE);
-			?>
+			
+                                if (elgg_is_logged_in()) {
+                                    if (!$restobar->isMember()) {
+                                        if ($restobar->isFriend()) {
+                                            $url = "action/restobars/friends/remove?friend={$restobar->getGUID()}";
+                                            $text = elgg_echo('friend:remove');
+                                            $name = 'remove_friend_restobar';
+                                    } else {
+                                            $url = "action/restobars/friends/add?friend={$restobar->getGUID()}";
+                                            $text = elgg_echo('friend:add');
+                                            $name = 'add_friend_restobar';
+                                }
+                            
+                            $url = elgg_add_action_tokens_to_url($url);
+                            $item = new ElggMenuItem($name, $text, $url);
+                            echo "</br>";
+                            echo($item->getContent(array('class' => 'elgg-button elgg-button-action')));
+                            
+		} 
+                
+              }
+                          
+                        
+                                
+                         ?>
 			</p>
 		</div>
 	</div>
