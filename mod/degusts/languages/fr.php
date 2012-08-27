@@ -10,10 +10,10 @@ $french = array(
   
   //Visuel   
     'degust'=>"Dégustation",
-    'degust:visuel' => "ANALYSE VISUELLE",
-    'degust:olfactif' => "ANALYSE OFALCTIVE",
-    'degust:gustatif' => "ANALYSE GUSTATIVE",
-    'degust:comment' => "COMMENTAIRES ET NOTES",
+    'degust:visuel' => "Analyse Visuelle",
+    'degust:olfactif' => "Analyse Ofalctive",
+    'degust:gustatif' => "Analyse Gustative",
+    'degust:comment' => "Commentaires et Notes",
     
     'degust:couleur_intensity'=>'Intensité De La Robe',             
     'degust:couleur'=>'La Couleur',
@@ -51,8 +51,8 @@ $french = array(
     'degust:color:cuivre' => 'Cuivre',
     
     
-    'degust:reflet:violace_jeune'=>'Ciolacé Jeune',
-    'degust:reflet:violine' => 'Cioline',
+    'degust:reflet:violace_jeune'=>'Violacé Jeune',
+    'degust:reflet:violine' => 'Violine',
     'degust:reflet:grenat' => 'Grenat',
     'degust:reflet:carmin' => 'Carmin',
     'degust:reflet:brique' => 'Brique',

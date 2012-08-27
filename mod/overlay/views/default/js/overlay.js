@@ -34,10 +34,12 @@ function degust_tab() {
 
                 $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
-                
+                $( "<div id='couleurs_rouge'></div>" ).insertBefore('#button_selectcouleur');
+
                 $( "#button_selectreflet" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");
-                    
+                $( "<div id='reflets_rouge'></div>" ).insertBefore('#button_selectreflet');
+
                 // offalctive
                 
                 $( "#button_selectnez_intensity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
