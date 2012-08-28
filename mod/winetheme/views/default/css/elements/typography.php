@@ -166,12 +166,12 @@ font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-seri
 
 @font-face {
 	font-family: 'TangerineRegular';
-	src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/Tangerine_Regular-webfont.eot');
+	src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.eot');
 	
-    src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/Tangerine_Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/Tangerine_Regular-webfont.woff') format('woff'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/Tangerine_Regular-webfont.ttf') format('truetype'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontfacekit/Tangerine_Regular-webfont.svg#TangerineRegular') format('svg');
+    src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.woff') format('woff'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.ttf') format('truetype'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.svg#TangerineRegular') format('svg');
     font-weight: normal;
     font-style: normal;
                          
