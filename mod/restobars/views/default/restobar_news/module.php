@@ -22,7 +22,7 @@ $edit_link = elgg_view('output/url', array(
 	'is_trusted' => true,
 ));
 
-$content = $restobarnews->description;
+$content = elgg_view('output/longtext',array('value'=>$restobarnews->description));
 
 
 echo elgg_view('restobars/profile/module_news', array(

@@ -31,6 +31,12 @@ function restobar_init() {
 	// Register URL handlers for restobar
 	elgg_register_entity_url_handler('group', 'restobar', 'restobar_url');
 	elgg_register_plugin_hook_handler('entity:icon:url', 'group', 'restobar_icon_url_override');
+        
+        // Extend avatar hover menu
+	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'restobar_user_hover_menu');
+        
+        // Extend edit permission to members
+        elgg_register_plugin_hook_handler('permissions_check', 'group', 'restobar_override_permissions');
 
 	// Register an icon handler for restobar
 	elgg_register_page_handler('restobaricon', 'restobar_icon_handler');
@@ -52,7 +58,7 @@ function restobar_init() {
 	elgg_register_action("restobars/remove", "$action_membership/remove.php");
 	elgg_register_action("restobars/killrequest", "$action_membership/delete_request.php");
 	elgg_register_action("restobars/killinvitation", "$action_membership/delete_invite.php");
-	elgg_register_action("restobars/addtogroup", "$action_membership/add.php");
+	elgg_register_action("restobars/addmember", "$action_membership/add.php");
 
        
         
@@ -119,9 +125,9 @@ function restobar_init() {
 function restobar_fields_setup() {
 
 	$profile_defaults = array(
-		'description' => 'longtext',    //description de l'activité
-                'adresse'=>'text',              //adresse de l'établissement lien google map
-		'website' => 'url',             //lien vers le website de l'établissement
+		'description' => 'longtext',    //description de l'activitÃ©
+                'adresse'=>'text',              //adresse de l'Ã©tablissement lien google map
+		'website' => 'url',             //lien vers le website de l'Ã©tablissement
  
 	);
 
@@ -249,6 +255,9 @@ function restobar_page_handler($page) {
 			break;
                 case 'cave':
                         restobar_handle_cave_page($page[1]);
+			break;
+                case 'addmember':
+                        restobar_handle_addmember_page($page[1]);
 			break;
 		default:
 			return false;
@@ -403,7 +412,7 @@ function restobar_user_entity_menu_setup($hook, $type, $return, $params) {
 		$restobar = elgg_get_page_owner_entity();
 		
 		// Check for valid restobar
-		if (!elgg_instanceof($restobar, 'group')) {
+		if (!elgg_instanceof($restobar, 'group','restobar','ElggRestobar')) {
 			return $return;
 		}
 	
@@ -417,7 +426,7 @@ function restobar_user_entity_menu_setup($hook, $type, $return, $params) {
 		// Add remove link if we can edit the restobar, and if we're not trying to remove the restobar owner
 		if ($restobar->canEdit() && $restobar->getOwnerGUID() != $entity->guid) {
 			$remove = elgg_view('output/confirmlink', array(
-				'href' => "action/restobar/remove?user_guid={$entity->guid}&restobar_guid={$restobar->guid}",
+				'href' => "action/restobars/remove?user_guid={$entity->guid}&restobar_guid={$restobar->guid}",
 				'text' => elgg_echo('restobar:removeuser'),
 			));
 
@@ -947,4 +956,31 @@ function restobar_run_upgrades() {
 	foreach ($files as $file) {
 		include "$path{$file}";
 	}
+}
+
+function restobar_override_permissions($hook, $entity_type, $returnvalue, $params){
+    $restobar=elgg_extract('entity', $params);
+    $user=elgg_extract('user', $params);
+    if ($restobar->getSubtype()== 'restobar'){
+	if ($restobar->isMember($user)) {
+			return true;
+	}
+    }
+}
+
+function restobar_user_hover_menu($hook, $type, $return, $params) {
+	$user = $params['entity'];
+        $login_user=  elgg_get_logged_in_user_entity();
+        
+	if (elgg_is_logged_in() && ($login_user->getGUID() != $user->getGUID()) && ($login_user->pro == "yes" )) {
+		          
+                $url = "restobar/addmember/{$user->getGUID()}";
+                $text= 'restobar:addmember';				
+		$menu_item=array('name' => 'addmember','text' => elgg_echo($text,array("{$user->name}")),'href' => $url,'link_class' => 'elgg-overlay');
+		$item = ElggMenuItem::factory($menu_item);
+                $item->setSection('action');
+		$return[] = $item;
+	}
+
+	return $return;
 }
