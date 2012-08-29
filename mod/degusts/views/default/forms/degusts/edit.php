@@ -47,6 +47,7 @@ for ($note=1;$note<=20;$note++) {
 foreach ($degust_profile_fields as $section => $elts) {
      echo '<div><fieldset id="testfield"><legend><div class="legend_class">';
      echo elgg_echo("degust:{$section}");
+
      echo '</div></legend>';
      
 
