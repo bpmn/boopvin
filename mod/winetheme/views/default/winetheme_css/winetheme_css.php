@@ -2,21 +2,25 @@
 /*
  * Winetheme css
  */
+
+
 $couleurs_rouge = '/mod/winetheme/views/default/css/winetheme/images/couleurs_rouge.jpg';
 $couleurs_rouge = elgg_normalize_url($couleurs_rouge);
 
 $reflets_rouge = '/mod/winetheme/views/default/css/winetheme/images/reflets_rouge.png';
-$reflets_rouge = elgg_normalize_url($reflets_rouge );
+$reflets_rouge = elgg_normalize_url($reflets_rouge);
 
+$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.png';
+$resto_background = elgg_normalize_url($resto_background);
 ?>
 
-
-#couleurs_rouge {
-height:75px;
-background: url(<?php echo $couleurs_rouge; ?>) no-repeat;
-background-position: center center;
+.resto_background {
+background: url(<?php echo $resto_background; ?>) no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+margin-top: 20px;
+  
 }
-
 
 #reflets_rouge {
 height:75px;
@@ -24,14 +28,12 @@ background: url(<?php echo $reflets_rouge; ?>) no-repeat;
 background-position: center center;
 }
 
-.resto_background {
-
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/resto-50op.png') no-repeat;
-background-size: cover;
-border: 1px solid #800000;
-margin-top: 20px;
-  
+#couleurs_rouge {
+height:75px;
+background: url(<?php echo $couleurs_rouge; ?>) no-repeat;
+background-position: center center;
 }
+
 
 
 .resto_background img {
@@ -70,16 +72,34 @@ left: 0px;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
 }
 
+
+<?php
+/*
+ * Winetheme css
+ */
+
+/****************************/
+/* Nyromodal */
+
+$degust = '/mod/winetheme/views/default/css/winetheme/images/degust.jpg';
+$degust = elgg_normalize_url($degust);
+
+$help = '/mod/winetheme/views/default/css/winetheme/images/help.jpg';
+$help = elgg_normalize_url($help);
+
+
+?>
+
 #vtab > ul > li.home {
-    background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/degust.jpg') no-repeat;
+    background: url(<?php echo $degust; ?>) no-repeat;
 }
 
 #vtab > ul > li.login {
-    background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/help.jpg') no-repeat;
+    background: url(<?php echo $help; ?>) no-repeat;
 }
 
 #vtab > ul > li.support {
-    background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/help.jpg') no-repeat;
+    background: url(<?php echo $help; ?>) no-repeat;
 
 }
 #vtab > ul > li.selected {
@@ -141,13 +161,6 @@ div.error a {
 }
 
 
-
-
-
-
-
-
-
 .nyroModalCont {
 	position: absolute;
 	border: 6px solid #800000;
@@ -159,9 +172,12 @@ div.error a {
         
 }
 
+<?php
 /**********************************
 Search plugin
 ***********************************/
+?>
+
 .elgg-search-header {
 	bottom: 5px;
 	height: 23px;

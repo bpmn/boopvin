@@ -38,14 +38,12 @@ function winetheme_init() {
 
     // Now, override some default
 
-    //$css = elgg_get_simplecache_url('css', 'winetheme/css');
-    //elgg_register_css('winetheme.css', $css,'head',1000);
-    //elgg_load_css('winetheme.css');
-    
     // override some default
-    elgg_extend_view('css/elgg', 'css/winetheme/css');
+    //$winetheme_css = elgg_get_simplecache_url('css', 'winetheme/winetheme_css');
+    //elgg_register_css('winetheme.winetheme_css', $winetheme_css,'head',1000);
+    //elgg_load_css('winetheme.winetheme_css');
+    elgg_extend_view('css/elgg', 'winetheme_css/winetheme_css');
 
-    
     
 
 }
@@ -74,4 +72,4 @@ function friends_winetheme_page_handler($page_elements, $handler) {
 }
 
 
-?>
+

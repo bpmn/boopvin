@@ -66,3 +66,4 @@ echo elgg_view('css/elements/helpers', $vars);
 
 // in case plugins are still extending the old 'css' view, display it
 echo elgg_view('css', $vars);
+
