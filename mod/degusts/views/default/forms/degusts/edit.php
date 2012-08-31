@@ -63,9 +63,10 @@ foreach ($degust_profile_fields as $section => $elts) {
             echo '<label>';
             echo '<h2>';
             echo elgg_echo("degust:{$shortname}");
-            echo '</label>';
             echo '</h2>';
-                        echo "</div>";
+            echo '</label>';
+            
+            echo "</div>";
 
             //echo "</center>" ;
 

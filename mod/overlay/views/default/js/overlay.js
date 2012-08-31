@@ -108,20 +108,7 @@ function degust_tab() {
               }
               */
    
-  
-if ((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
-             //alert("iPhone or iPod or Ipad detected");
-             degust_tab();
-             degust_button(); 
-             
-	}
-  
-
-      
-
-
-  
-    
+     
  
   $(function() {
         $(".elgg-overlay").nyroModal({

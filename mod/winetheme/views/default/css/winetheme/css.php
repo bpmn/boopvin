@@ -2,19 +2,25 @@
 /*
  * Winetheme css
  */
+$couleurs_rouge = '/mod/winetheme/views/default/css/winetheme/images/couleurs_rouge.jpg';
+$couleurs_rouge = elgg_normalize_url($couleurs_rouge);
+
+$reflets_rouge = '/mod/winetheme/views/default/css/winetheme/images/reflets_rouge.png';
+$reflets_rouge = elgg_normalize_url($reflets_rouge );
+
 ?>
 
 
 #couleurs_rouge {
 height:75px;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/couleurs_rouge.jpg') no-repeat;
+background: url(<?php echo $couleurs_rouge; ?>) no-repeat;
 background-position: center center;
 }
 
 
 #reflets_rouge {
 height:75px;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/reflets_rouge.png') no-repeat;
+background: url(<?php echo $reflets_rouge; ?>) no-repeat;
 background-position: center center;
 }
 
