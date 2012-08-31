@@ -41,11 +41,14 @@ for ($note=1;$note<=20;$note++) {
 
 
 
-                      
+$metadata=$container->kind;
+
+echo "<div data-winetype=\"$metadata\" id=\"metadatafield\"></div>";
+
             
 // creation de la liste
 foreach ($degust_profile_fields as $section => $elts) {
-     echo '<div><fieldset id="testfield"><legend><div class="legend_class">';
+     echo "<div><fieldset id=\"testfield\"><legend><div class=\"legend_class\">";
      echo elgg_echo("degust:{$section}");
 
      echo '</div></legend>';

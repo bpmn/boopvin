@@ -39,9 +39,9 @@ $french = array(
     'degust:color:jaune_pale' => 'Jaune Pâle',
     'degust:color:or_pale' => 'Or Pâle',
     'degust:color:or' => 'Or',
-    'degust:color:cuivre' => 'Cuivre',
     'degust:color:ambre' => 'Ambre',
-  
+    'degust:color:cuivre' => 'Cuivré',
+
     'degust:color:rose_pale' => 'Rose Pâle',
     'degust:color:rose' => 'Rose',
     'degust:color:saumon'=> 'Saumon',
