@@ -452,7 +452,8 @@ function restobar_handle_cave_page($restobar_guid) {
                     ));
 
         elgg_pop_context('restobar');
-        
+        $restobar=get_entity($restobar_guid);
+        $title=elgg_echo('restobar:cave',array("{$restobar->name}"));
         $params = array(
 		'content' => $content,
 		'sidebar' => $sidebar,
@@ -461,9 +462,30 @@ function restobar_handle_cave_page($restobar_guid) {
 	);
         
         $body = elgg_view_layout('content', $params);
-        $restobar=get_entity($restobar_guid);
+        
 
-	echo elgg_view_page(elgg_echo('restobar:cave',array("$restobar->name")), $body);
+	echo elgg_view_page($title, $body);
+
+}
+
+
+function restobar_handle_addmember_page($user_guid) {
+        elgg_set_page_owner_guid($restobar_guid);
+    
+        $user=get_entity($user_guid);
+        $title=elgg_echo('restobar:addmember',array("{$user->name}"));
+      
+	$content = elgg_view('restobars/addmember',array('entity'=>$user));
+	
+
+	$params = array(
+		'content' => $content,
+		'title' => $title,
+		'filter' => '',
+	);
+	$body = elgg_view_layout('one_column', $params);
+        
+	echo elgg_view_page($title, $body,'overlay');   
 
 }
 

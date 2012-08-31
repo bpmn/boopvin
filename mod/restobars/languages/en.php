@@ -288,7 +288,11 @@ or click below to view the restobar's join requests:
         'removecave:this' => 'Remove the wine from the cellar',
         'removecaveconfirm'=> 'Do you want to remove this wine from the cellar ?',
         'cave:removed' => ' The wine has been removed from the cellar',
-        'cave:cantremove'=> 'This wine cannot be removed from the cellar'
+        'cave:cantremove'=> 'This wine cannot be removed from the cellar',
+    
+        'restobar:addmember'=>'Add %s to my business',
+        'restobar:addmember:inallbusiness'=>'This user is already a member of all your businesses',
+        'restobar:addmember:nobusiness'=>"you haven't create any page business",
 
 );
 

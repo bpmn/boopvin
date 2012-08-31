@@ -497,11 +497,10 @@ function wine_register_profile_buttons($wine) {
 		foreach ($actions as $url => $text) {
                     
                     if ($text == 'degust:add'){
-                        if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPod') || strstr($_SERVER['HTTP_USER_AGENT'],'iPad')  || strstr($_SERVER['HTTP_USER_AGENT'],'BlackBerry')) {
-                            $link_class='elgg-button elgg-button-action';
-                        }else{
-                            $link_class='elgg-button elgg-button-action elgg-overlay';
-                        }
+                        
+                        $link_class='elgg-button elgg-button-action elgg-overlay';
+                        
+                        
                         elgg_register_menu_item('title', array(
 				'name' => $text,
 				'href' => $url,
