@@ -44,6 +44,7 @@ for ($note=1;$note<=20;$note++) {
 $metadata=$container->kind;
 
 echo "<div data-winetype=\"$metadata\" id=\"metadatafield\"></div>";
+echo "<div data-overlay=\"overlay_degustation\" id=\"metadatafield_overlay\"></div>";
 
             
 // creation de la liste

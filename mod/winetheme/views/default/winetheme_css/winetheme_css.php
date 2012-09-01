@@ -7,11 +7,24 @@
 $couleurs_rouge = '/mod/winetheme/views/default/css/winetheme/images/couleurs_rouge.jpg';
 $couleurs_rouge = elgg_normalize_url($couleurs_rouge);
 
+$couleurs_blanc = '/mod/winetheme/views/default/css/winetheme/images/couleurs_blanc.jpg';
+$couleurs_blanc = elgg_normalize_url($couleurs_blanc);
+
+$couleurs_rose = '/mod/winetheme/views/default/css/winetheme/images/couleurs_rose.jpg';
+$couleurs_rose = elgg_normalize_url($couleurs_rose);
+
 $reflets_rouge = '/mod/winetheme/views/default/css/winetheme/images/reflets_rouge.png';
 $reflets_rouge = elgg_normalize_url($reflets_rouge);
 
-$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.png';
+$reflets_blanc = '/mod/winetheme/views/default/css/winetheme/images/reflets_blanc.png';
+$reflets_blanc = elgg_normalize_url($reflets_blanc);
+
+$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.jpg';
 $resto_background = elgg_normalize_url($resto_background);
+
+
+$degust_header = '/mod/winetheme/views/default/css/winetheme/images/degustation_header3.png';
+$degust_header = elgg_normalize_url($degust_header);
 ?>
 
 .resto_background {
@@ -28,12 +41,44 @@ background: url(<?php echo $reflets_rouge; ?>) no-repeat;
 background-position: center center;
 }
 
+#reflets_blanc {
+height:75px;
+background: url(<?php echo $reflets_blanc; ?>) no-repeat;
+background-position: center center;
+}
+
 #couleurs_rouge {
 height:75px;
 background: url(<?php echo $couleurs_rouge; ?>) no-repeat;
 background-position: center center;
 }
 
+#couleurs_blanc {
+height:75px;
+background: url(<?php echo $couleurs_blanc; ?>) no-repeat;
+background-position: center center;
+}
+
+#couleurs_rose {
+height:75px;
+background: url(<?php echo $couleurs_rose; ?>) no-repeat;
+background-position: center center;
+}
+
+
+.help_paragraph {
+        text-transform:none;
+}
+
+.help_paragraph h1 {
+        text-transform:none;
+}
+
+.help_picture img {
+display: block;
+margin-left:auto;
+margin-right:auto;
+}
 
 
 .resto_background img {
@@ -109,7 +154,7 @@ $help = elgg_normalize_url($help);
     border: 1px solid #ddd;
     border-right: none;
     z-index: 10;
-    background-color: #fafafa !important;
+    background-color: #ffffff !important;
     position: relative;
 }
 #vtab > ul {
@@ -123,7 +168,7 @@ $help = elgg_normalize_url($help);
     top: 30px;
 }
 #vtab > div {
-    background-color: #fafafa;
+    background-color: #ffffff;
     
     margin-left: 60px;
     border: 1px solid #ddd;
@@ -311,6 +356,10 @@ margin-right: 5px;
 .degust-side-head {
 padding-top:10px;
 height: 110px;
+font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 175%; text-transform:capitalize;  
+background: url(<?php echo $degust_header; ?>) no-repeat;
+background-position: right center;
 }
 
 
@@ -571,7 +620,7 @@ $close = elgg_normalize_url($close);
 	position: absolute;
 	border: 4px solid #600000;
 	margin: 25px;
-	background: #fffafa;
+	background: rgb(233,224,209);
         
         
 }

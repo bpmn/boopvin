@@ -35,7 +35,7 @@ $french = array(
     'degust:couleur:rubis'=> 'Rubis',
     'degust:couleur:tuile' => 'Tuile',
 
-
+    
     'degust:color:jaune_pale' => 'Jaune Pâle',
     'degust:color:or_pale' => 'Or Pâle',
     'degust:color:or' => 'Or',
@@ -58,8 +58,8 @@ $french = array(
     'degust:reflet:brique' => 'Brique',
     'degust:reflet:brun' => 'Brun',
     
-    'degust:reflet:vert' => 'Vert',
     'degust:reflet:gris' => 'Gris',
+    'degust:reflet:vert' => 'Vert',
     'degust:reflet:or' => 'Or',
     'degust:reflet:dore' => 'Doré',
     

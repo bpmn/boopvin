@@ -30,6 +30,9 @@ function degust_tab() {
 
 
   function degust_button() {
+  
+
+          
       
       var winefield = document.getElementById('metadatafield');
       var winecolor = winefield.getAttribute('data-winetype'); // winetype = "red"
@@ -37,11 +40,22 @@ function degust_tab() {
                 $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
 
-                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
-                $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
+                if (winecolor == "rose") {
+                $( "#button_selectcouleur" ).buttonset().find('label').width("103").css("font-size", "100%").css("font-weight", "normal");
+                $( "<div id='couleurs_rose'></div>" ).insertBefore('#button_selectcouleur');
+                }
                 if (winecolor == "red") {
+                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_rouge'></div>" ).insertBefore('#button_selectcouleur');
                 }
+                if (winecolor == "white"){
+                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
+                $( "<div id='couleurs_blanc'></div>" ).insertBefore('#button_selectcouleur');
+                }
+                              
+                $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
+                
+                
 
                 if (winecolor == "red") {
                 $( "#button_selectreflet" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
@@ -50,7 +64,9 @@ function degust_tab() {
                 }
                 if (winecolor == "white"){
                 $( "#button_selectreflet" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
-                $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");    
+                $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");  
+                $( "<div id='reflets_blanc'></div>" ).insertBefore('#button_selectreflet');
+
                 }
             
 
@@ -96,7 +112,7 @@ function degust_tab() {
                 $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
                 
                 
-
+      
              
                 
   }
@@ -141,10 +157,18 @@ function degust_tab() {
         
         filledContent: function(){
             
-             degust_tab();
-             degust_button(); 
-           
+            if ($("#metadatafield_overlay").length > 0){
+            // do something here
 
+                  var overlayfield = document.getElementById('metadatafield_overlay');
+                  var overlaydegustation = overlayfield.getAttribute('data-overlay'); // check if we are in degustation mode
+      
+                  if(overlaydegustation == "overlay_degustation") {
+                    degust_tab();
+                    degust_button(); 
+           
+                  } else {alert("not degust");}
+            }
            
         },
        

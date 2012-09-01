@@ -15,11 +15,12 @@ $options_couleur = array(
 				elgg_echo('degust:color:jaune_pale') => 'jaune_pale',
 				elgg_echo('degust:color:or_pale') => 'or_pale',
                                 elgg_echo('degust:color:or') => 'or',
-                                elgg_echo('degust:color:cuivre') => 'cuivre',
-                                elgg_echo('degust:color:ambre') => 'ambre');
+                                elgg_echo('degust:color:ambre') => 'ambre',
+                                elgg_echo('degust:color:cuivre') => 'cuivre');
+
 $options_reflet = array(
-				elgg_echo('degust:reflet:vert') => 'vert',
 				elgg_echo('degust:reflet:gris') => 'gris',
+				elgg_echo('degust:reflet:vert') => 'vert',
                                 elgg_echo('degust:reflet:or') => 'or',
                                 elgg_echo('degust:reflet:dore') => 'dore');
 
