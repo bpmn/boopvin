@@ -1,3 +1,349 @@
+2012-07-11  Cash Costello <cash.costello@gmail.com>
+
+  	* CHANGES.txt, version.php: Updated for the 1.8.8 release
+
+2012-07-10  cash <cash.costello@gmail.com>
+
+  	* mod/thewire/actions/delete.php: Fixes #4690 fixes deprecation warning
+
+2012-07-10  Miguel Rodríguez Pérez <Miguel.Rodriguez@det.uvigo.es>
+
+  	* mod/htmlawed/start.php: Prevent inserting duplicated tags  When
+  htmlawed_tag_post_processor gets called, we check $attributed to be passed.
+  If it is not, then it is a closing tag. Return it without further processing.
+
+  	* mod/htmlawed/start.php, mod/htmlawed/tests/tags.php: Add test case to
+  htmlawed for detecting duplicated tags
+
+2012-07-09  Cash Costello <cash.costello@gmail.com>
+
+  	* engine/classes/ElggPluginManifest.php: Fixes #4685 display proper error on
+  invalid requirement
+
+  	* engine/lib/navigation.php: Refs #4631 $object->canEdit() check not
+  necessary and added a confirm popup on delete to prevent accidental deletes
+
+  	* version.php: 1.8.7 version for tagging
+
+2012-07-08  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/groups/lib/discussion.php: 40 discussion topics was too many
+
+2012-07-07  Sem <sembrestels@riseup.net>
+
+  	* actions/river/delete.php, engine/lib/navigation.php, engine/lib/river.php,
+  languages/en.php: Fixes #4631. Admins are now able to delete river items.
+
+2012-07-06  Cash Costello <cash.costello@gmail.com>
+
+  	* CHANGES.txt: updated changes for 1.8.7 release
+
+  	* engine/lib/metadata.php, engine/lib/relationships.php: Fixes #3046 adds
+  documentation for requesting entities that do not have metadata or
+  relationships
+
+2012-07-06  Evan Winslow <evan@elgg.org>
+
+  	* views/default/css/admin.php: Some cleanup for admin css. Removing outlines
+  is bad for accessibility.
+
+2012-07-06  Sem <sembrestels@riseup.net>
+
+  	* languages/en.php, .../views/default/expages/wrapper.php: Fixes #4635.
+  Added 'back' translation for external pages.
+
+2012-07-06  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/tinymce/README.txt, mod/tinymce/activate.php,
+  mod/tinymce/languages/en.php: Refs #1852 adds readme with language
+  instructions for TinyMCE
+
+2012-07-06  Sem <sembrestels@riseup.net>
+
+  	* mod/tinymce/activate.php, mod/tinymce/languages/en.php: Refs #1852. Added
+  admin notice on activate.
+
+  	* mod/tinymce/start.php, mod/tinymce/views/default/js/tinymce.php: Refs
+  #1852. Tinymce detects if site language is installed in its languages path.
+
+2012-07-05  Cash Costello <cash.costello@gmail.com>
+
+  	* engine/lib/pagehandler.php: Fixes #4438 using request language to clear up
+  confusion
+
+  	* engine/lib/views.php: fixed typo in comment
+
+  	* mod/groups/languages/en.php, mod/groups/lib/groups.php: Fixes #4522 fixes
+  titles on group list pages
+
+  	* views/default/output/location.php: Fixes #4566 handling array in
+  output/location
+
+  	* mod/groups/lib/groups.php, mod/groups/start.php: Fixes #4362 better
+  solution to registering menu items for group pages
+
+  	* views/default/page/components/list.php: added to comment to help people
+  understand that limit does not limit what is shown
+
+  	* .../default/widgets/reportedcontent/content.php,
+  views/default/widgets/new_users/content.php,
+  views/default/widgets/online_users/content.php: Fixes #4627 removes
+  pagination
+
+  	* actions/admin/plugins/activate.php, actions/admin/plugins/deactivate.php:
+  fixed plugin activate not loading page with that plugin at top
+
+  	* engine/tests/api/metadata.php: added different comment so I don't break
+  this test again
+
+  	* engine/classes/ElggTranslit.php: Refs #2276 made the new class private
+
+2012-07-04  Cash Costello <cash.costello@gmail.com>
+
+  	* engine/lib/users.php: stop double encoding the ban reason
+
+  	* mod/pages/start.php: pages does not have a welcome message anymore
+
+  	* mod/profile/icondirect.php: user avatar direct serves 404 if no
+  identifiying information sent
+
+2012-07-02  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/htmlawed/start.php: htmlawed calls the tag attributes code for closing
+  tags now so we set default value for 2nd parameter
+
+  	* mod/pages/lib/pages.php: removed a warning when creating the pages menu
+  tree
+
+2012-07-01  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/htmlawed/manifest.xml: Refs #4609 made the version 1.8 since users get
+  confused with other version numbers on bundled plugins
+
+  	* engine/classes/ElggSite.php, engine/lib/elgglib.php: Fixes #3955 removes
+  public access from walled gardens - maintains groups functionality
+
+  	* mod/groups/views/default/forms/groups/edit.php: Refs #3955 use
+  input/dropdown for group membership since it is not technically an access and
+  cause issues with removing public access
+
+  	* mod/groups/start.php: Refs #4642 need to filter annotations by name
+
+2012-07-01  Sem <sembrestels@riseup.net>
+
+  	* mod/messages/pages/messages/read.php: Fixes #4652. Redirecting to inbox
+  when trying to open a deleted message.
+
+  	* mod/htmlawed/manifest.xml, mod/htmlawed/vendors/htmLawed/htmLawed.php,
+  mod/htmlawed/vendors/htmLawed/htmLawedTest.php,
+  mod/htmlawed/vendors/htmLawed/htmLawed_README.htm,
+  mod/htmlawed/vendors/htmLawed/htmLawed_README.txt,
+  .../vendors/htmLawed/htmLawed_TESTCASE.txt: Fixes #4609. Ugraded htmlawed
+  lib.
+
+2012-07-01  Cash Costello <cash.costello@gmail.com>
+
+  	* views/default/css/admin.php, views/default/css/elements/forms.php: fixes
+  spaces/tabs issues with date picker css
+
+2012-06-29  Cash Costello <cash.costello@gmail.com>
+
+  	* .../notifications/subscriptions/collections.php: Refs #4580 - cleaned up
+  the spaces/tabs issue with the pull request and no longer imploding a false
+  (though the access collections method really should return an empty array so
+  this isn't an issue)
+
+  	* .../views/default/page/theme_preview.php,
+  .../views/default/theme_preview/components.php,
+  .../default/theme_preview/components/tagcloud.php,
+  .../default/theme_preview/components/tags.php,
+  .../views/default/theme_preview/general.php,
+  .../views/default/theme_preview/navigation.php: Fixes #3041 adds tags and
+  tagcloud to theme sandbox
+
+2012-06-29  Matt Beckett <beck24@gmail.com>
+
+  	* mod/notifications/start.php: fixes plugin hook for friend collections
+  notifications
+
+2012-06-28  Cash Costello <cash.costello@gmail.com>
+
+  	* actions/friends/collections/add.php: removed deprecate function and url
+  from friends collections add action
+
+  	* mod/notifications/languages/en.php: updated the language for the change in
+  notifications functionality
+
+2012-06-28  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggGroup.php, mod/groups/icon.php, mod/groups/start.php:
+  Fixes #4634: Restores pre 1.7 group profile pics after update
+
+2012-06-28  cash <cash.costello@gmail.com>
+
+  	* engine/lib/notification.php, mod/groups/languages/en.php,
+  mod/groups/start.php: Fixes #4642 group discussion replies work now
+
+  	* upgrade.php: Fixes #4641 setting timeout for plugin upgrades
+
+2012-06-28  Matt Beckett <beck24@gmail.com>
+
+  	* languages/en.php: fixed language string - elgg doesn't send verification
+  emails for changes made to user settings
+
+2012-06-28  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/groups/topicposts.php: forward to correct URL for view discussion
+
+2012-06-27  Matt Beckett <beck24@gmail.com>
+
+  	* .../notifications/subscriptions/collections.php: Changed logged in user to
+  contextual user as per Steve Clays fix for admin editing user notifications
+
+  	* js/lib/ui.widgets.js: Fixes #4607 - Adds confirmation on widget deletion
+
+  	* .../notifications/subscriptions/collections.php: Empty collections now
+  report 0 members instead of 1
+
+  	* .../notifications/subscriptions/collections.php: Uncommented friend
+  collections notification code
+
+2012-06-27  Cash Costello <cash.costello@gmail.com>
+
+  	* views/default/river/elements/summary.php: Fixes #4339 for real this time -
+  adds default for the subtype
+
+2012-06-26  cash <cash.costello@gmail.com>
+
+  	* mod/groups/start.php: Fixes #4632: Adds 301 redirects for /forum/topic/...
+  urls. - from Evan
+
+2012-06-26  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggTranslit.php, engine/tests/regression/trac_bugs.php:
+  Added NFC conversion where available
+
+2012-06-25  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggTranslit.php, engine/lib/output.php,
+  engine/tests/api/metadata.php, engine/tests/regression/trac_bugs.php: Fixes
+  #2276: Better friendly titles, portable ElggTranslit class, better units
+
+2012-06-24  Cash Costello <cash.costello@gmail.com>
+
+  	* mod/groups/topicposts.php: updated library name
+
+  	* .../views/default/theme_preview/navigation.php,
+  .../theme_preview/navigation/breadcrumbs.php,
+  .../default/theme_preview/navigation/default.php,
+  .../default/theme_preview/navigation/entity.php,
+  .../default/theme_preview/navigation/extras.php,
+  .../default/theme_preview/navigation/filter.php,
+  .../default/theme_preview/navigation/footer.php,
+  .../theme_preview/navigation/horizontal.php,
+  .../theme_preview/navigation/owner_block.php,
+  .../default/theme_preview/navigation/page.php,
+  .../default/theme_preview/navigation/site.php,
+  .../default/theme_preview/navigation/tabs.php: Refs #3041 adds footer and
+  entity menu. Fixes several issues with other menus.
+
+  	* .../views/default/theme_preview/typography.php,
+  .../default/theme_preview/typography/fonts.php: Refs #3401 adds fonts like
+  .elgg-text-help to the typography page
+
+  	* mod/thewire/start.php: updated thewire to extend the correct css view
+
+  	* .../default/notifications/subscriptions/form.php: passing user as body
+  variable to elgg_view_form()
+
+2012-06-24  Steve Clay <steve@mrclay.org>
+
+  	* mod/notifications/groups.php, mod/notifications/index.php: fixed owner
+  block display
+
+  	* mod/notifications/actions/groupsave.php,
+  mod/notifications/actions/save.php, mod/notifications/groups.php,
+  mod/notifications/index.php, mod/notifications/start.php,
+  .../forms/notificationsettings/groupsave.php,
+  .../default/forms/notificationsettings/save.php,
+  .../notifications/subscriptions/collections.php,
+  .../default/notifications/subscriptions/form.php,
+  .../notifications/subscriptions/forminternals.php,
+  .../notifications/subscriptions/personal.php: Fixes #4138: Admin can edit any
+  users' notifications
+
+2012-06-23  Steve Clay <steve@mrclay.org>
+
+  	* languages/en.php, views/default/object/plugin/invalid.php: Fixes #2893:
+  More visible invalid plugin errors
+
+2012-06-23  Cash Costello <cash.costello@gmail.com>
+
+  	* views/default/css/admin.php, views/default/css/elements/forms.php,
+  views/default/input/friendspicker.php: Fixes #4547 adds userpicker and
+  friendpicker support to admin area
+
+  	* mod/groups/start.php: added slug to url of discussion forum topic
+
+  	* mod/thewire/start.php: added missing break in the wire's page handler
+
+  	* languages/en.php, mod/blog/lib/blog.php,
+  mod/bookmarks/pages/bookmarks/view.php, mod/file/pages/file/view.php,
+  mod/groups/lib/discussion.php, mod/pages/pages/pages/view.php,
+  mod/thewire/pages/thewire/view.php: Fixes #4610 better handling of content
+  requiring a logged in user
+
+  	* engine/lib/elgglib.php: Fixes #4428 functions deprecated for current
+  version logged at WARNING. They become visual for everyone when the site's
+  trace level is set to WARNING or lower
+
+  	* views/json/export/entity.php: Refs #4504 made it easier to detect any
+  problems caused by hack for json duplicate issue
+
+2012-05-07  Sem <sembrestels@riseup.net>
+
+  	* views/json/export/entity.php, views/json/group/default.php,
+  views/json/object/default.php, views/json/site/default.php,
+  views/json/user/default.php: Fixes #4504. Entity duplicates in json views.
+
+2012-06-23  Cash Costello <cash.costello@gmail.com>
+
+  	* engine/lib/elgglib.php, engine/lib/views.php: Fixes #4168 returning
+  default value from elgg_extract if non-array passed - not removing type hint
+  since we downgraded it from an error to a warning
+
+  	* engine/lib/elgglib.php: Fixes #4619 downgraded type violations to warnings
+
+2012-06-22  Cash Costello <cash.costello@gmail.com>
+
+  	* views/default/core/friends/collection.php,
+  views/default/input/friendspicker.php: Fixes #4537, #4617 made
+  input/friendspicker i18n compliant
+
+2012-06-21  cash <cash.costello@gmail.com>
+
+  	* engine/lib/input.php: Fixes #4165 livesearch now returns people based on
+  last names
+
+2012-06-20  Jerome Bakker <jeabakker@coldtrick.com>
+
+  	* mod/pages/start.php, .../views/default/pages/sidebar/navigation.php:
+  changed: loading of jQuery treeview library to prevent potential unnecessary
+  loading
+
+2012-06-19  cash <cash.costello@gmail.com>
+
+  	* engine/lib/database.php, languages/en.php: Fixes #4382 catches lost
+  connection to database - from Paweł
+
+  	* mod/messages/start.php: Fixes #4608 optimizes messages_count_unread() -
+  from Jeroen
+
+  	* mod/likes/actions/likes/delete.php, mod/likes/languages/en.php,
+  mod/likes/views/default/annotation/likes.php,
+  mod/likes/views/default/likes/button.php: Fixes #4606 made unlike code
+  consistent and functional
+
 2012-06-18  Cash Costello <cash.costello@gmail.com>
 
   	* version.php: Elgg 1.8.6
@@ -172,6 +518,13 @@
 
   	* languages/en.php: Refs #2411 removed <code> in warning as it was causing a
   display issue in server info table
+
+2012-05-31  Miguel Rodríguez Pérez <Miguel.Rodriguez@det.uvigo.es>
+
+  	* js/lib/languages.js, views/default/js/elgg.php: Respect site default
+  language from javascript elgg_echo  The current implementation hardcoded 'en'
+  as the site default language. This patch uses the site's configure default
+  language as the default one.
 
 2012-05-16  Jeff Tilson <jtilson@thinkglobalschool.com>
 
@@ -380,6 +733,14 @@
   	* engine/lib/users.php, languages/en.php: fixes #4406: validate username for
   max chars
 
+  	* engine/classes/ElggMemcache.php, languages/en.php: fixes #3405 Memcache:
+  fault in contructor can cause site to go into English language
+
+2012-04-17  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/entities.php: Fixes #4432: Do not escape ORDER BY/GROUP BY
+  clauses in elgg_get_entities
+
 2012-04-16  Steve Clay <steve@mrclay.org>
 
   	* engine/lib/users.php: Fixes #4414: Corrected name of river friend create
@@ -392,6 +753,11 @@
 
   	* mod/likes/views/default/likes/button.php: Removes superfluous array
   declaration
+
+2012-04-05  Ismayil Khayredinov <ismayil.khayredinov@gmail.com>
+
+  	* mod/groups/lib/groups.php: Fixes #4395: Register group profile title
+  buttons earlier
 
 2012-03-25  Evan Winslow <evan@elgg.org>
 
