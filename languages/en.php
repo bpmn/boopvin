@@ -56,6 +56,7 @@ $english = array(
 	'DatabaseException:DBSetupIssues' => "There were a number of issues: ",
 	'DatabaseException:ScriptNotFound' => "Elgg couldn't find the requested database script at %s.",
 	'DatabaseException:InvalidQuery' => "Invalid query",
+	'DatabaseException:InvalidDBLink' => "Connection to database was lost.",
 
 	'IOException:FailedToLoadGUID' => "Failed to load new %s from GUID:%d",
 	'InvalidParameterException:NonElggObject' => "Passing a non-ElggObject to an ElggObject constructor!",
@@ -75,10 +76,10 @@ $english = array(
 	'ElggPlugin:MissingID' => 'Missing plugin ID (guid %s)',
 	'ElggPlugin:NoPluginPackagePackage' => 'Missing ElggPluginPackage for plugin ID %s (guid %s)',
 
-	'ElggPluginPackage:InvalidPlugin:MissingFile' => 'Missing file %s in package',
-	'ElggPluginPackage:InvalidPlugin:InvalidDependency' => 'Invalid dependency type "%s"',
-	'ElggPluginPackage:InvalidPlugin:InvalidProvides' => 'Invalid provides type "%s"',
-	'ElggPluginPackage:InvalidPlugin:CircularDep' => 'Invalid %s dependency "%s" in plugin %s.  Plugins cannot conflict with or require something they provide!',
+	'ElggPluginPackage:InvalidPlugin:MissingFile' => 'The required file "%s" is missing.',
+	'ElggPluginPackage:InvalidPlugin:InvalidDependency' => 'Its manifest contains an invalid dependency type "%s".',
+	'ElggPluginPackage:InvalidPlugin:InvalidProvides' => 'Its manifest contains an invalid provides type "%s".',
+	'ElggPluginPackage:InvalidPlugin:CircularDep' => 'There is an invalid %s dependency "%s" in plugin %s.  Plugins cannot conflict with or require something they provide!',
 
 	'ElggPlugin:Exception:CannotIncludeFile' => 'Cannot include %s for plugin %s (guid: %s) at %s.',
 	'ElggPlugin:Exception:CannotRegisterViews' => 'Cannot open views dir for plugin %s (guid: %s) at %s.',
@@ -229,17 +230,12 @@ $english = array(
 	'LoginException:AccountLocked' => 'Your account has been locked for too many log in failures.',
 	'LoginException:ChangePasswordFailure' => 'Failed current password check.',
 
-	'memcache:notinstalled' => 'PHP memcache module not installed, you must install php5-memcache',
-	'memcache:noservers' => 'No memcache servers defined, please populate the $CONFIG->memcache_servers variable',
-	'memcache:versiontoolow' => 'Memcache needs at least version %s to run, you are running %s',
-	'memcache:noaddserver' => 'Multiple server support disabled, you may need to upgrade your PECL memcache library',
-
 	'deprecatedfunction' => 'Warning: This code uses the deprecated function \'%s\' and is not compatible with this version of Elgg',
 
 	'pageownerunavailable' => 'Warning: The page owner %d is not accessible!',
 	'viewfailure' => 'There was an internal failure in the view %s',
 	'changebookmark' => 'Please change your bookmark for this page',
-	'noaccess' => 'The content you were trying to view has been removed or you do not have permission to view it.',
+	'noaccess' => 'You need to login to view this content or the content has been removed or you do not have permission to view it.',
 	'error:missing_data' => 'There was some data missing in your request',
 
 	'error:default' => 'Oops...something went wrong.',
@@ -441,6 +437,8 @@ $english = array(
 	'river:ingroup' => 'in the group %s',
 	'river:none' => 'No activity',
 	'river:update' => 'Update for %s',
+	'river:delete:success' => 'River item has been deleted',
+	'river:delete:fail' => 'River item could not be deleted',
 
 	'river:widget:title' => "Activity",
 	'river:widget:description' => "Display latest activity",
@@ -697,7 +695,8 @@ $english = array(
 
 	'admin:plugins:warning:elgg_version_unknown' => 'This plugin uses a legacy manifest file and does not specify a compatible Elgg version. It probably will not work!',
 	'admin:plugins:warning:unmet_dependencies' => 'This plugin has unmet dependencies and cannot be activated. Check dependencies under more info.',
-	'admin:plugins:warning:invalid' => '%s is not a valid Elgg plugin.  Check <a href="http://docs.elgg.org/Invalid_Plugin">the Elgg documentation</a> for troubleshooting tips.',
+	'admin:plugins:warning:invalid' => 'This plugin is invalid: %s',
+	'admin:plugins:warning:invalid:check_docs' => 'Check <a href="http://docs.elgg.org/Invalid_Plugin">the Elgg documentation</a> for troubleshooting tips.',
 	'admin:plugins:cannot_activate' => 'cannot activate',
 
 	'admin:plugins:set_priority:yes' => "Reordered %s.",
@@ -878,6 +877,7 @@ $english = array(
 	'down' => 'Down',
 	'top' => 'Top',
 	'bottom' => 'Bottom',
+	'back' => 'Back',
 
 	'invite' => "Invite",
 
@@ -1079,7 +1079,7 @@ Once you have logged in, we highly recommend that you change your password.
 	'email:settings' => "Email settings",
 	'email:address:label' => "Your email address",
 
-	'email:save:success' => "New email address saved. Verification is requested.",
+	'email:save:success' => "New email address saved.",
 	'email:save:fail' => "Your new email address could not be saved.",
 
 	'friend:newfriend:subject' => "%s has made you a friend!",
