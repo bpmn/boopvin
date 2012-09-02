@@ -22,6 +22,11 @@ $reflets_blanc = elgg_normalize_url($reflets_blanc);
 $resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.jpg';
 $resto_background = elgg_normalize_url($resto_background);
 
+$vigne_separator = '/mod/winetheme/views/default/css/winetheme/images/vigne.png';
+$vigne_separator = elgg_normalize_url($vigne_separator);
+
+$fiche = '/mod/winetheme/views/default/css/winetheme/images/fiche.png';
+$fiche = elgg_normalize_url($fiche);
 
 $degust_header = '/mod/winetheme/views/default/css/winetheme/images/degustation_header3.png';
 $degust_header = elgg_normalize_url($degust_header);
@@ -33,6 +38,75 @@ background-size: cover;
 border: 1px solid #800000;
 margin-top: 20px;
   
+}
+
+<!--/* fiche degustation deja remplie */-->
+
+
+
+
+#degust-fiche-left {
+padding-top: 10px;
+width: 630px;
+margin: 8px 0 5px 0px;
+background: #ffffff url(<?php echo $fiche; ?>) no-repeat;
+background-position: right top;
+
+border: 1px none #800000;
+
+}
+
+.degust-feuille-header {
+border-bottom: 1px none #800000;
+margin-bottom: 0px;
+padding-left: 5px;
+
+}
+
+.degust-feuille-header h1 {
+color: #000000;
+    font-weight: normal;
+font-size: 200%;
+border-bottom: 1px solid #800000;
+width: 60%;
+}
+
+.vigne_separator {
+clear:left;
+height: 33px;
+background: url(<?php echo $vigne_separator; ?>) no-repeat;
+background-position: center bottom;
+margin-bottom: 10px;
+}
+
+
+.degust-feuille-content {
+margin-bottom: 5px;
+min-height: 10px;
+display:block;
+}
+
+.degust-feuille-content-title {
+float:left;
+width: 200px;
+border: 1px none #590000;
+display:block;
+text-align: left;
+font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+color: #800000;
+font-size: 175%;
+
+}
+
+.degust-feuille-content-value {
+float:left;
+width: 100px;
+display:block;
+text-align: left;
+}
+
+.degust-feuille-content-clear {
+clear:left;
 }
 
 #reflets_rouge {
@@ -349,7 +423,7 @@ text-align: center;
 
 .degust-main {
 
-margin-right: 5px;
+margin-right: 0px;
 
 }
 
@@ -369,7 +443,7 @@ background-position: right center;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 0px;
-    margin-top: 8px;
+    margin-top: 0px;
     padding-bottom:10px;
     padding-left: 0px;
     padding-right: 0px;
@@ -377,7 +451,7 @@ background-position: right center;
     position: relative;
     border-width: 1px;
     border-style: none;
-    width: 270px;
+    width: 250px;
 }
 
 
@@ -613,7 +687,8 @@ $close = elgg_normalize_url($close);
 	top: -26px;   
 	left: 0;
 	margin: 0;
-    font-size: 1.1em;
+    font-size: 175%;
+    font-weight:normal;
 	color: #ddd;
 }
 .nyroModalCont {

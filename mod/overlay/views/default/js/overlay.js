@@ -168,6 +168,9 @@ function degust_tab() {
                     degust_button(); 
            
                   } else {alert("not degust");}
+            } else {
+                $( ".degust-side-head").css("background", "#ffffff");
+
             }
            
         },
