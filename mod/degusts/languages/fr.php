@@ -35,13 +35,13 @@ $french = array(
     'degust:couleur:rubis'=> 'Rubis',
     'degust:couleur:tuile' => 'Tuile',
 
-
+    
     'degust:color:jaune_pale' => 'Jaune Pâle',
     'degust:color:or_pale' => 'Or Pâle',
     'degust:color:or' => 'Or',
-    'degust:color:cuivre' => 'Cuivre',
     'degust:color:ambre' => 'Ambre',
-  
+    'degust:color:cuivre' => 'Cuivré',
+
     'degust:color:rose_pale' => 'Rose Pâle',
     'degust:color:rose' => 'Rose',
     'degust:color:saumon'=> 'Saumon',
@@ -58,8 +58,8 @@ $french = array(
     'degust:reflet:brique' => 'Brique',
     'degust:reflet:brun' => 'Brun',
     
-    'degust:reflet:vert' => 'Vert',
     'degust:reflet:gris' => 'Gris',
+    'degust:reflet:vert' => 'Vert',
     'degust:reflet:or' => 'Or',
     'degust:reflet:dore' => 'Doré',
     
