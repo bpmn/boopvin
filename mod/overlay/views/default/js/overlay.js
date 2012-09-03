@@ -163,7 +163,7 @@ function degust_tab() {
                   var overlayfield = document.getElementById('metadatafield_overlay');
                   var overlaydegustation = overlayfield.getAttribute('data-overlay'); // check if we are in degustation mode
       
-                  if(overlaydegustation == "overlay_degustation") {
+                   if(overlaydegustation == "overlay_degustation") {
                     degust_tab();
                     degust_button(); 
            
@@ -189,12 +189,10 @@ function degust_tab() {
 );
 	});
     
-  
-    
-    
-    jQuery.validator.messages.required = "";
+     
+   jQuery.validator.messages.required = "";
 
-    $("#degustform").validate({
+   $("#degustform").validate({
     
         highlight: function(element, errorClass) {
             $(element).parent().css({"border-radius":"5px"});
@@ -226,14 +224,7 @@ function degust_tab() {
 
 			}
 		}
-                
-   
-       
-                
-           
-                
-                
-});
+              });
       
  
    

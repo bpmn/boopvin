@@ -25,7 +25,7 @@ $success = false;
 
 $filehandler = new ElggFile();
 $filehandler->owner_guid = $restobar->owner_guid;
-$filehandler->setFilename("restobar/" . $restobar->guid . $size . ".jpg");
+$filehandler->setFilename("restobars/" . $restobar->guid . $size . ".jpg");
 
 $success = false;
 if ($filehandler->open("read")) {

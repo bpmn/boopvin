@@ -25,7 +25,7 @@ $success = false;
 
 $filehandler = new ElggFile();
 $filehandler->owner_guid = $wine->owner_guid;
-$filehandler->setFilename("wine/" . $wine->guid . $size . ".jpg");
+$filehandler->setFilename("wines/" . $wine->guid . $size . ".jpg");
 
 $success = false;
 if ($filehandler->open("read")) {
