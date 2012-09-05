@@ -32,6 +32,22 @@ $degust_header = '/mod/winetheme/views/default/css/winetheme/images/degustation_
 $degust_header = elgg_normalize_url($degust_header);
 ?>
 
+
+#avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
+  display: none;
+  margin: 0 0 15px;
+  padding: 0 0 15px;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
 .resto_background {
 background: url(<?php echo $resto_background; ?>) no-repeat;
 background-size: cover;

@@ -22,6 +22,15 @@ function winetheme_init() {
 	//elgg_extend_view('css/elgg', 'winetheme/css');
     //$winetheme_jq = elgg_get_simplecache_url('css', 'vendors/jquery/ui/theme');
     
+    
+    elgg_unregister_page_handler('activity');
+    elgg_register_page_handler ('activity','winetheme_river_page_handler');
+
+        $url = 'mod/winetheme/vendors/winetheme/winetheme.js';
+        elgg_register_js('jquery.winetheme', $url,'footer');
+        elgg_load_js('jquery.winetheme');
+    
+    
     elgg_unregister_css('hj.framework.jquitheme');
     
     // pouvoir réecrire ds le plugin la fonction friends_page_handler sans toucher au core Elgg 
@@ -46,6 +55,13 @@ function winetheme_init() {
 
     
 
+}
+
+function winetheme_river_page_handler() {
+	
+	require_once (dirname(__FILE__) . "/pages/river.php");
+			
+	return true;
 }
 
 function friends_winetheme_page_handler($page_elements, $handler) {
