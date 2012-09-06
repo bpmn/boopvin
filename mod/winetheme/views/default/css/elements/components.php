@@ -140,7 +140,7 @@
 	River
 *************************************** */
 .elgg-list-river {
-	border-top: 1px solid #CCC;
+	border-top: 1px none #CCC;
 }
 .elgg-list-river > li {
 	border-bottom: 1px solid #CCC;

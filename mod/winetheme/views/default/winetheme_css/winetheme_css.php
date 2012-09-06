@@ -35,8 +35,8 @@ $degust_header = elgg_normalize_url($degust_header);
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
   display: none;
-  margin: 0 0 15px;
-  padding: 0 0 15px;
+  margin: 0 0 0px;
+  padding: 0 0 0px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
 }
