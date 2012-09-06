@@ -83,7 +83,12 @@ function restobar_init() {
 
 	//extend some views
 	elgg_extend_view('css/elgg', 'restobars/css');
-	elgg_extend_view('js/elgg', 'restobars/js');
+        elgg_extend_view('js/elgg', 'restobars/js');
+	
+        // register the restobar's JavaScript
+	$restobar_js = elgg_get_simplecache_url('js', 'restobar_map');
+	elgg_register_simplecache_view('js/restobar_map');
+	elgg_register_js('elgg.restobar', $restobar_js);
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'restobar_write_acl_plugin_hook');
@@ -125,9 +130,9 @@ function restobar_init() {
 function restobar_fields_setup() {
 
 	$profile_defaults = array(
-		'description' => 'longtext',    //description de l'activitÃ©
+		'description' => 'longtext',    //description de l'activité
                 'adresse'=>'text',              //adresse de l'Ã©tablissement lien google map
-		'website' => 'url',             //lien vers le website de l'Ã©tablissement
+		'website' => 'url',             //lien vers le website de l'établissement
  
 	);
 
@@ -259,6 +264,20 @@ function restobar_page_handler($page) {
                 case 'addmember':
                         restobar_handle_addmember_page($page[1]);
 			break;
+                case 'map':
+                    
+                        $content = elgg_view('restobars/map',array());
+                        $title=elgg_echo('restobar:map');
+                        $params = array(
+                            'content' => $content,
+                            'title' => $title,
+                            'filter' => '',
+                        );
+                        $body = elgg_view_layout('one_column', $params);
+        
+	//echo elgg_view_page($title, $body,'overlay');
+                        echo elgg_view_page($title, $content,'overlay');
+                        break;
 		default:
 			return false;
 	}
@@ -304,22 +323,29 @@ function restobar_url($entity) {
  * @return string Relative URL
  */
 function restobar_icon_url_override($hook, $type, $returnvalue, $params) {
-	$restobar = $params['entity'];
-	$size = $params['size'];
-        $classe=get_class($restobar);
-        if (elgg_instanceof ($restobar,'group','restobar')) {
-            if (isset($restobar->icontime)) {
-		// return thumbnail
-		$icontime = $restobar->icontime;
-		return "restobaricon/$restobar->guid/$size/$icontime.jpg";
-            }
-
-            return "mod/restobars/graphics/default{$size}.gif";
+    /* @var ElggGroup $group */
+    $restobar = $params['entity'];
+    $size = $params['size'];
+    if (elgg_instanceof($restobar, 'group', 'restobar')) {
+        $icontime = $restobar->icontime;
+        // handle missing metadata (pre 1.7 installations)
+        if (null === $icontime) {
+            $file = new ElggFile();
+            $file->owner_guid = $restobar->owner_guid;
+            $file->setFilename("restobars/" . $restobar->guid . "large.jpg");
+            $icontime = $file->exists() ? time() : 0;
+            create_metadata($restobar->guid, 'icontime', $icontime, 'integer', $restobar->owner_guid, ACCESS_PUBLIC);
         }
+        if ($icontime) {
+            // return thumbnail
+            return "restobaricon/$restobar->guid/$size/$icontime.jpg";
+        }
+
+        return "mod/restobars/graphics/default{$size}.gif";
+    }
 }
 
-/**
- * Add owner block link
+ /* Add owner block link
  */
 function restobar_activity_owner_block_menu($hook, $type, $return, $params) {
 	if (elgg_instanceof($params['entity'], 'restobar')) {

@@ -2,13 +2,19 @@
 /**
  * Icon display
  *
- * @package Elggrestobars
+ * @package ElggGroups
  */
 
 require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
 
 $restobar_guid = get_input('restobar_guid');
+
+/* @var ElggRestobar $restobar */
 $restobar = get_entity($restobar_guid);
+if (!($restobar instanceof ElggGroup)) {
+	header("HTTP/1.1 404 Not Found");
+	exit;
+}
 
 // If is the same ETag, content didn't changed.
 $etag = $restobar->icontime . $restobar_guid;
@@ -25,7 +31,7 @@ $success = false;
 
 $filehandler = new ElggFile();
 $filehandler->owner_guid = $restobar->owner_guid;
-$filehandler->setFilename("restobar/" . $restobar->guid . $size . ".jpg");
+$filehandler->setFilename("restobars/" . $restobar->guid . $size . ".jpg");
 
 $success = false;
 if ($filehandler->open("read")) {
@@ -35,7 +41,7 @@ if ($filehandler->open("read")) {
 }
 
 if (!$success) {
-	$location = elgg_get_plugins_path() . "restobars/graphics/default{$size}.jpg";
+	$location = elgg_get_plugins_path() . "restobars/graphics/default{$size}.gif";
 	$contents = @file_get_contents($location);
 }
 

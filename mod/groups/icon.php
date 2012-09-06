@@ -8,7 +8,13 @@
 require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
 
 $group_guid = get_input('group_guid');
+
+/* @var ElggGroup $group */
 $group = get_entity($group_guid);
+if (!($group instanceof ElggGroup)) {
+	header("HTTP/1.1 404 Not Found");
+	exit;
+}
 
 // If is the same ETag, content didn't changed.
 $etag = $group->icontime . $group_guid;
@@ -35,7 +41,7 @@ if ($filehandler->open("read")) {
 }
 
 if (!$success) {
-	$location = elgg_get_plugins_path() . "groups/graphics/default{$size}.jpg";
+	$location = elgg_get_plugins_path() . "groups/graphics/default{$size}.gif";
 	$contents = @file_get_contents($location);
 }
 

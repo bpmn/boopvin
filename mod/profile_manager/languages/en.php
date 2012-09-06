@@ -12,8 +12,7 @@
 
 	$english = array(
 	
-		// Generic action words 
-		'add' => "Add",
+		
 		
 		// entity names
 		'item:object:custom_profile_field' => 'Custom Profile Field',
@@ -365,5 +364,5 @@
 
 	);
 	
-	add_translation("en", $english);
+add_translation("en", $english);
 	

@@ -44,8 +44,34 @@ if ($restobar_profile_fields > 0) {
 		echo elgg_echo("restobar:{$shortname}");
 		echo "</label>$line_break";
                 
-              switch ($shortname) {         
-             
+              switch ($shortname) { 
+                case 'adresse': 
+                    echo elgg_view("input/{$valtype}", array(
+                            'name' => $shortname,
+                            'id'=>$shortname,
+                            'value' => $vars['entity']->$shortname,
+                    ));
+                    
+                    $url = 'restobar/map';
+                    $text = elgg_echo('restobar:address');
+                    $name = 'confirm_address';
+                                   
+                    $item = new ElggMenuItem($name, $text, $url);
+                    echo($item->getContent(array('id'=>'GetMaps','class' => 'elgg-button elgg-button-action elgg-overlay-map')));
+                    
+                    
+                    /*$url = "restobar/map";
+                    $text= elgg_echo('restobar:address');;				
+                    $menu_item=array('name' => 'confirm_address','text' => $text,'href' => $url,'link_class' => 'elgg-overlay');
+                    $item = ElggMenuItem::factory($menu_item);
+                    $item->setSection('action');
+                    echo($item->getContent(array('class' => 'elgg-button elgg-button-action')));*/
+                    
+                    
+                    
+                    
+                    break;
+               
                 default:
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
