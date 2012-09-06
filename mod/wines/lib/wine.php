@@ -236,7 +236,7 @@ function wine_handle_invitations_page() {
 function wine_handle_profile_page($guid,$annee) {
 	elgg_set_page_owner_guid($guid);
 
-	elgg_push_context('wine_profile');
+	
         
         
         if (!$annee)
@@ -247,6 +247,8 @@ function wine_handle_profile_page($guid,$annee) {
 	// turn this into a core function
 	global $autofeed;
 	$autofeed = true;
+        
+        elgg_push_context('wine_profile');
 
 	$wine = get_entity($guid);
 	if (!$wine) {

@@ -182,11 +182,7 @@ function degust_tab() {
         }
     }
    
-}
-    
-
-
-);
+});
 	});
     
      

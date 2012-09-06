@@ -1,34 +1,27 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 $french = array(
-    /**
+       /**
      * Comments
      */
-    'hj:alive:comments:likebutton' => "J'aime",
-    'hj:alive:comments:unlikebutton' => "Je n'aime plus",
-    'hj:alive:comments:commentsbutton' => 'Commenter',
-    'hj:alive:comments:sharebutton' => 'Partager',
+    'hj:alive:comments:likebutton' => 'Like',
+    'hj:alive:comments:unlikebutton' => 'Unlike',
+    'hj:alive:comments:commentsbutton' => 'Comment',
+    'hj:alive:comments:sharebutton' => 'Share',
     'hj:alive:comments:viewall' => 'View all %s comments',
     'hj:alive:comments:remainder' => 'View remaining %s comments',
     'hj:alive:comments:nocomments' => 'Be first to comment',
     'hj:comment:commenton' => 'Comment on %s',
     'hj:alive:comments:valuecantbeblank' => 'Comment can not be blank',
 
-    'hj:alive:comments:lang:you' => 'Vous ',
-    'hj:alive:comments:lang:and' => 'et ',
-    'hj:alive:comments:lang:others' => "d'autres personnes ",
-    'hj:alive:comments:lang:othersone' => 'une autre personne ',
+    'hj:alive:comments:lang:you' => 'You ',
+    'hj:alive:comments:lang:and' => 'and ',
+    'hj:alive:comments:lang:others' => 'other people ',
+    'hj:alive:comments:lang:othersone' => 'other person ',
     'hj:alive:comments:lang:people' => 'people ',
-    'hj:alive:comments:lang:peopleone' => 'personne ',
-    'hj:alive:comments:lang:likethis' => 'aiment',
-    'hj:alive:comments:lang:likesthis' => 'aime',
+    'hj:alive:comments:lang:peopleone' => 'person ',
+    'hj:alive:comments:lang:likethis' => 'like this',
+    'hj:alive:comments:lang:likesthis' => 'likes this',
 
 
     'hj:alive:comments:count' => 'comments',
@@ -128,7 +121,7 @@ $french = array(
     /**
      * LiveSearch
      */
-    'hj:alive:search:user' => 'Dégustateurs',
+    'hj:alive:search:user' => 'Users',
     'hj:alive:search:group' => 'Groups',
     'hj:alive:search:blog' => 'Blogs',
     'hj:alive:search:bookmarks' => 'Bookmarks',
@@ -136,10 +129,10 @@ $french = array(
 
 	'search_types:group_topic_posts' => 'Discussion posts',
 	'hj:alive:reply_to' => 'Reply to topic "%s" in group "%s"',
-);
+    
+    );
 
 add_translation("fr", $french);
 
-?>
 
 

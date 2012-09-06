@@ -34,7 +34,8 @@ function winetheme_init() {
     elgg_register_css('winetheme.jqueryUI_css', $jquery_UI_css,'head',1000);
     elgg_load_css('winetheme.jqueryUI_css');
     
-    
+    $googlemap_url="http://maps.google.com/maps/api/js?sensor=true";
+    elgg_register_js('elgg.googlemap',$googlemap_url);
 
     // Now, override some default
 

@@ -147,9 +147,10 @@ function wine_discussion_handle_view_page($guid) {
 	$autofeed = true;
 
 	$topic = get_entity($guid);
-	if (!$topic) {
-		register_error(elgg_echo('discussion:topic:notfound'));
-		forward();
+		if (!$topic) {
+		register_error(elgg_echo('noaccess'));
+		$_SESSION['last_forward_from'] = current_page_url();
+		forward('');
 	}
 
 	$group = $topic->getContainerEntity();

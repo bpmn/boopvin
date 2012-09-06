@@ -282,3 +282,5 @@ or click below to view the wine's join requests:
 );
 
 add_translation("fr", $french);
+
+?>

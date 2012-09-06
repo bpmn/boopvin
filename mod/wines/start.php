@@ -300,14 +300,22 @@ function wine_url($entity) {
  * @return string Relative URL
  */
 function wine_icon_url_override($hook, $type, $returnvalue, $params) {
+/* @var ElggGroup $group */
 	$wine = $params['entity'];
 	$size = $params['size'];
-        $classe=get_class($wine);
         if (elgg_instanceof ($wine,'group','wine')) {
-            if (isset($wine->icontime)) {
-		// return thumbnail
-		$icontime = $wine->icontime;
-		return "wineicon/$wine->guid/$size/$icontime.jpg";
+            $icontime = $wine->icontime;
+            // handle missing metadata (pre 1.7 installations)
+            if (null === $icontime) {
+                    $file = new ElggFile();
+                    $file->owner_guid = $wine->owner_guid;
+                    $file->setFilename("wines/" . $wine->guid . "large.jpg");
+                    $icontime = $file->exists() ? time() : 0;
+                    create_metadata($wine->guid, 'icontime', $icontime, 'integer', $wine->owner_guid, ACCESS_PUBLIC);
+            }
+            if ($icontime) {
+                    // return thumbnail
+                	return "wineicon/$wine->guid/$size/$icontime.jpg";
             }
 
             return "mod/wines/graphics/default{$size}.gif";
