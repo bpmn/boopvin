@@ -40,7 +40,11 @@ switch ($page_type) {
 		break;
 }
 
+$options['pagination']=FALSE;
+$options['limit']=20;
+
 $activity = elgg_list_river($options);
+
 if (!$activity) {
 	$activity = elgg_echo('river:none');
 }

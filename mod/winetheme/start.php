@@ -13,10 +13,14 @@
 elgg_register_event_handler('init', 'system', 'winetheme_init');
 
 
+
+
+
 /**
  * Initialize the wine plugin.
  */
 function winetheme_init() {
+    
 
 	//extend some views
 	//elgg_extend_view('css/elgg', 'winetheme/css');
@@ -53,6 +57,7 @@ function winetheme_init() {
     //elgg_register_css('winetheme.winetheme_css', $winetheme_css,'head',1000);
     //elgg_load_css('winetheme.winetheme_css');
     elgg_extend_view('css/elgg', 'winetheme_css/winetheme_css');
+    elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
 
     elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
 

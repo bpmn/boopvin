@@ -1,12 +1,19 @@
 <?php
 /**
- * Elgg custom index page
- * 
+ * Elgg index page for web-based applications
+ *
+ * @package Elgg
+ * @subpackage Core
  */
 
-$content = elgg_view_title(elgg_echo('content:latest'));
-$content .= elgg_list_river();
+$options = array();
+$options['pagination']=FALSE;
+$options['limit']=20;
 
+$content = elgg_view_title(elgg_echo('content:latest'));
+$content .= elgg_list_river($options);
+
+$content = "<div id=\"avenue_activity\">".$content."</div>";
 
 
 $params = array(

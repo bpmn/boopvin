@@ -20,9 +20,9 @@
 	padding: 5px;
 	margin-bottom: 10px;
 	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 }
 .elgg-module-info > .elgg-head * {
 	color: #333;
@@ -36,9 +36,9 @@
 	z-index: 9999;
 	margin-bottom: 0;
 	padding: 5px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	
 	-webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
@@ -54,11 +54,11 @@
 /* Dropdown */
 .elgg-module-dropdown {
 	background-color:white;
-	border:5px solid #CCC;
+	border:3px solid #590000;
 	
-	-webkit-border-radius: 5px 0 5px 5px;
-	-moz-border-radius: 5px 0 5px 5px;
-	border-radius: 5px 0 5px 5px;
+	-webkit-border-radius: 0px 0 0px px;
+	-moz-border-radius: 0px 0 0px 0px;
+	border-radius: 0px 0 0px 0px;
 	
 	display:none;
 	
@@ -80,9 +80,9 @@
 .elgg-module-featured {
 	border: 1px solid #4690D6;
 	
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 }
 .elgg-module-featured > .elgg-head {
 	padding: 5px;
