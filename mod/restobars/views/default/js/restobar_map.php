@@ -1,6 +1,8 @@
 <?php
+
 /*
- * Maps script
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 ?>
 <?php if (FALSE) : ?>
@@ -11,63 +13,66 @@ elgg.provide('elgg.restobar');
 
     elgg.restobar.init = function() { 
         
-        
-       // $("#GetMaps").click(function(){
-            // city must defined
-            //var input_address = jQuery.trim( $("#adresse").val() );
-         /*   if( input_address == '' ){
-                alert('Compile the field address!');
-                elgg.forward();
-                return FALSE;
+                
+        $("#GetMaps").click(function(e){
+            e.preventDefault();
+   
+            var input_address = jQuery.trim( $("#adresse").val() );
+            
+        if( input_address == '' ){
+            alert('Compile the field address!');     
+            return false;
+        }else{
+            
+          
+            var url=elgg.normalize_url('restobar/map');
+            $.nmManual(url,{
                 
                 
-            }else{*/
-                
-                $(".elgg-overlay-map").nyroModal({
+                callbacks: {
                     
-                    //$(".elgg-overlay").nmCall({  
-                    //                  
-                    callbacks: {
+                    initElts: function() {
+                        $(".elgg-page-topbar").css({"z-index":" 0"});
+                        $(".elgg-menu-site").css({"z-index":" 0"}); 
                         
-                        initElts: function() {
-                            $(".elgg-page-topbar").css({"z-index":" 0"});
-                            $(".elgg-menu-site").css({"z-index":" 0"}); 
-                     },
+                    },
+                    
+                    filledContent: function(){
                         
-                        filledContent: function(){
-                            
-                         get_restobar_address();   
-                            
-                        },
-                                               
-                        afterClose: function() {
-                            $(".elgg-page-topbar").css({
-                                "z-index":" 9000"
-                            });
-                            $(".elgg-menu-site").css({
-                                "z-index":" 1"
-                            });
-                        }
+                        get_restobar_address();   
+                        
+                    },
+                    
+                    afterClose: function() {
+                        $(".elgg-page-topbar").css({
+                            "z-index":" 9000"
+                        });
+                        $(".elgg-menu-site").css({
+                            "z-index":" 1"
+                        });
                     }
-                    
-                });
-           // }
-      //  }); 
-        
-        
-        
+                }
+                
+            });
+            
+            
+            
+        }
+            
+            
+            
+            
+        });
+                
+                
+               
+      
         
         get_restobar_address =function() {
             
             // geocoder
+           
             var input_address = jQuery.trim( $("#adresse").val() );
-            
-            if( input_address == '' ){
-                alert('Compile the field address!');
-                $.nmTop().close();
-                return false;
-            }
-            
             var geocoder = new google.maps.Geocoder(); 
             geocoder.geocode( { address: input_address }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {

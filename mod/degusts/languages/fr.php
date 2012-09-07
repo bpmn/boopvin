@@ -10,16 +10,16 @@ $french = array(
   
   //Visuel   
     
-    'degust:visuel' => "ANALYSE VISUELLE",
-    'degust:olfactif' => "ANALYSE OFALCTIVE",
-    'degust:gustatif' => "ANALYSE GUSTATIVE",
-    'degust:comment' => "COMMENTAIRES ET NOTES",
+    'degust:visuel' => "Analyse Visuelle",
+    'degust:olfactif' => "Analyse Olfactive",
+    'degust:gustatif' => "Analyse Gustative",
+    'degust:comment' => "Commentaires et notes",
     
     
-    'degust:couleur_intensity'=>'INTENSITE DE LA ROBE',             
-    'degust:couleur'=>'LA COULEUR',
-    'degust:reflet'=>'LES REFLETS',
-    'degust:bulle'=>'LA BULLE',
+    'degust:couleur_intensity'=>'Intensité de la robe',             
+    'degust:couleur'=>'La couleur',
+    'degust:reflet'=>'Les Reflets',
+    'degust:bulle'=>'La Bulle',
     
     
     'degust:couleur_intensity:pale' => 'Pâle',
@@ -65,10 +65,10 @@ $french = array(
     
              
 //Olfactif
-    'degust:nez_intensity'=>'L\'INTENSITE',
-    'degust:nez'=>'LES AROMES',    // résultat des checkboxes sous forme de tableau
-    'degust:arome'=>'COMMENTAIRES',        // description texte des arôme
-    'degust:complexity'=>'COMPLEXITE',   // en fonction du nombres de checkbox cochées.
+    'degust:nez_intensity'=>'L\'intensité',
+    'degust:nez'=>'Famille d\'arômes',    // résultat des checkboxes sous forme de tableau
+    'degust:arome'=>'Arômes',        // description texte des arôme
+    'degust:complexity'=>'Complexité',   // en fonction du nombres de checkbox cochées.
     
   
     'degust:nez_intensity:ferme'=>'Fermé',
@@ -125,20 +125,19 @@ $french = array(
 
  
 //Gustatif
-    'degust:rondeur'=>'ATTAQUE ET RONDEUR',
-    'degust:acidity'=>'L\'ACIDITE',
-    'degust:alcool'=>'L\'ALCOOL',
-    'degust:tanin'=>'TEXTURE ET TANNINS',
-    'degust:moelleux'=>'LE MOELLEUX',
-    'degust:retro'=>'RETRO OLFACTION',
-    'degust:longueur'=>'LONGEUR EN BOUCHE',
+    'degust:rondeur'=>'Attaque et rondeur',
+    'degust:acidity'=>'L\'acidité',
+    'degust:alcool'=>'L\'alcool',
+    'degust:tanin'=>'Textute et tannins',
+    'degust:moelleux'=>'Le moelleux',
+    'degust:retro'=>'Retro olfaction',
+    'degust:longueur'=>'Longueur en bouche',
  
  //Commentaire final
-    'degust:evolution'=>'L\'EVOLUTION',
-    'degust:comment'=>'COMMENTAIRE FINAL',   //commentaire finale
-    'degust:accord'=>'ACCORD METS ET VIN',        //proposition accord mets vins
-    'degust:note'=>'NOTE GENERALE',
-    
+    'degust:evolution'=>'L\'évolution',
+    'degust:comment'=>'Commentaire final',   //commentaire finale
+    'degust:accord'=>'Accord mets et vin',        //proposition accord mets vins
+    'degust:note'=>'Note générale',
     //comment
                     
     'degust:evolution:tres_jeune'=>'Très Jeune',

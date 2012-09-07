@@ -10,9 +10,9 @@
 $form_vars = array(
 	'enctype' => 'multipart/form-data',
 	'class' => 'elgg-form-alt',
-        'id'=>  "MapsForm"
+        'id'=>  "MapForm"
 );
 
-$body_vars=array();
+$body_vars=array('id'=>"MapForm2");
 
 echo elgg_view_form('restobars/map', $form_vars, $body_vars);
