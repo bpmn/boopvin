@@ -21,6 +21,11 @@ if (elgg_in_context('owner_block') || elgg_in_context('widgets')) {
 }
 
 
+if (elgg_in_context('distance')){
+    $dist_display=round($restobar->dist,1)." km";
+    $restobar->__unset("dist");
+}
+
 if ($vars['full_view']) {
 	echo elgg_view("restobars/profile/summary", $vars);
 } else {
@@ -33,6 +38,6 @@ if ($vars['full_view']) {
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('group/elements/summary', $params);
-
+        $vars['image_alt']=$dist_display;
 	echo elgg_view_image_block($icon, $list_body, $vars);
 }

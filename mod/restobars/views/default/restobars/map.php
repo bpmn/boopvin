@@ -13,6 +13,6 @@ $form_vars = array(
         'id'=>  "MapForm"
 );
 
-$body_vars=array('id'=>"MapForm2");
+$body_vars=array();
 
 echo elgg_view_form('restobars/map', $form_vars, $body_vars);

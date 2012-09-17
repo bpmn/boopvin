@@ -34,6 +34,12 @@ foreach ($CONFIG->restobar as $shortname => $valuetype) {
 $input['name'] = get_input('name');
 $input['name'] = html_entity_decode($input['name'], ENT_COMPAT, 'UTF-8');
 
+$input['geo:lat']=get_input('latitude');
+$input['geo:lat'] = (float)html_entity_decode($input['geo:lat'], ENT_COMPAT, 'UTF-8');
+
+$input['geo:long']=get_input('longitude');
+$input['geo:long'] = (float)html_entity_decode($input['geo:long'], ENT_COMPAT, 'UTF-8');
+
 $user = elgg_get_logged_in_user_entity();
 
 $restobar_guid = (int)get_input('restobar_guid');

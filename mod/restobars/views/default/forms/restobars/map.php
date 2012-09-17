@@ -3,41 +3,54 @@
  * Form pour confirmer l'adresse et récupérer les coordonnées lat et long
  */
 ?>
-<fieldset>
-    <div>
+
+    <div id="maps_canvas"></div>
+    <div id="map_fields">
         <label for="street">
-            Street
+            <?php echo elgg_echo('restobar:street'); ?>
             <input id="street" type="text" name="street">
         </label>
         <label for="city">
-            City
+            <?php echo elgg_echo('restobar:city'); ?>
             <input id="city" type="text" name="city">
         </label>
         <label for="cap">
-            CAP
+            <?php echo elgg_echo('restobar:cap'); ?>
             <input id="cap" type="text" name="cap">
         </label>
         <label for="prov">
-            Province
+            <?php echo elgg_echo('restobar:prov'); ?>
             <input id="prov" type="text" name="prov">
         </label>
         <label for="region">
-            Region
+            <?php echo elgg_echo('restobar:region'); ?>
             <input id="region" type="text" name="region">
         </label>
         <label for="nation">
-            Nation
+            <?php echo elgg_echo('restobar:nation'); ?>
             <input id="nation" type="text" name="nation">
         </label>
         <label for="latitude">
-            Latitude
+            <?php echo elgg_echo('restobar:latitude'); ?>
             <input id="latitude" type="text" name="latitude">
         </label>
         <label for="longitude">
-            Longitude
+            <?php echo elgg_echo('restobar:longitude'); ?>
             <input id="longitude" type="text" name="longitude">
         </label>
     </div>
-</fieldset> 
+    
+ 
 
+
+<div class="elgg-foot">
+    
+<?php
+
+
+echo elgg_view('input/submit', array('value' => elgg_echo('save'),'id'=>'map_submit'));
+
+
+?>
+</div>
 

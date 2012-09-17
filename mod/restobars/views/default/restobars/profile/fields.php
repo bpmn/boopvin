@@ -27,13 +27,22 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 			$options['tag_names'] = $key;
 		}
                 
-                
+                if ($key == 'location'){
+                    $options=array( 'url'=>'#',
+                                    'data-lat'=>$restobar->getLatitude(),
+                                    'data-lng'=>$restobar->getLongitude(),
+                                    'text'=>$restobar->getLocation(),
+                                    'id'=>'showmap',
+                                    'title'=>elgg_echo('restobar:clickmap'));
+                }
 
 		echo "<div class=\"{$even_odd}\">";
 		echo "<b>";
 		echo elgg_echo("restobar:$key");
 		echo ": </b>";
 		echo elgg_view("output/$valtype", $options);
+         
+                    
 		echo "</div>";
 
 		$even_odd = ($even_odd == 'even') ? 'odd' : 'even';

@@ -1,6 +1,6 @@
 <?php
 /**
- * Elgg Groups css
+ * Elgg RestoBar css
  * 
  * @package groups
  */
@@ -8,54 +8,31 @@
 ?>
 
 
-// Mise en commentaire car redondance avec la définition des css dans le plugin Wines
+#maps_canvas {
 
-/*
-.groups-profile > .elgg-image {
-	margin-right: 10px;
+    height: 450px;
+    width:450px;
 }
 
-.groups-stats {
-	background: #eeeeee;
-	padding: 5px;
-	margin-top: 10px;
-	
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+
+#map_fields {
+    width:300px;
+    clear:none;
+
 }
 
-.groups-profile-fields .odd,
-.groups-profile-fields .even {
-	background: #f4f4f4;
-	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	
-	padding: 2px 4px;
-	margin-bottom: 7px;
+#maps_canvas {
+    float:right;
+    height: 400px;
+    width:450px;
+
 }
 
-.groups-profile-fields .elgg-output {
-	margin: 0;
+#MapForm {
+    width:770px;
 }
 
-#groups-tools > li {
-	width: 48%;
-	min-height: 200px;
-	margin-bottom: 40px;
+#showmap_pop {
+    height: 450px;
+    width:450px;
 }
-
-#groups-tools > li:nth-child(odd) {
-	margin-right: 4%;
-}
-
-.groups-widget-viewall {
-	float: right;
-	font-size: 85%;
-}
-
-.groups-latest-reply {
-	float: right;
-}*/

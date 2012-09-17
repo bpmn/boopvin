@@ -59,8 +59,6 @@ function winetheme_init() {
     elgg_extend_view('css/elgg', 'winetheme_css/winetheme_css');
     elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
 
-    elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
-
 }
 
 function custom_index($hook, $type, $return, $params) {

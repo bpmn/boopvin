@@ -76,6 +76,13 @@ function wine_init() {
 	//extend some views
 	elgg_extend_view('css/elgg', 'wines/css');
 	elgg_extend_view('js/elgg', 'wines/js');
+        
+        elgg_register_ajax_view('wines/ajax/dist_restobar');
+        
+        // register the restobar's JavaScript
+	$wine_js = elgg_get_simplecache_url('js', 'wine_map');
+	elgg_register_simplecache_view('js/wine_map');
+	elgg_register_js('elgg.wine', $wine_js);
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');

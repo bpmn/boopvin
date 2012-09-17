@@ -61,6 +61,7 @@ function restobar_init() {
 	elgg_register_action("restobars/addmember", "$action_membership/add.php");
 
        
+        elgg_register_ajax_view('restobars/ajax/showmap');
         
 	// Add some widgets
 	elgg_register_widget_type('a_users_restobars', elgg_echo('restobar:widget:membership'), elgg_echo('restobar:widgets:description'));
@@ -130,8 +131,9 @@ function restobar_init() {
 function restobar_fields_setup() {
 
 	$profile_defaults = array(
+                'briefdescription' => 'text',
 		'description' => 'longtext',    //description de l'activité
-                'adresse'=>'text',              //adresse de l'Ã©tablissement lien google map
+                'location'=>'url',              //adresse de l'établissement lien google map
 		'website' => 'url',             //lien vers le website de l'établissement
  
 	);
@@ -162,7 +164,7 @@ function restobar_setup_sidebar_menus() {
 	$page_owner = elgg_get_page_owner_entity();
         $context=elgg_get_context();
 	if (elgg_get_context() == 'restobar') {
-		if ($page_owner instanceof ElggGroup) {
+		/*if ( elgg_instanceof($page_owner,'group','restobar','ElggRestobar')) {
 			if (elgg_is_logged_in() && $page_owner->canEdit() && !$page_owner->isPublicMembership()) {
 				$url = elgg_get_site_url() . "restobar/requests/{$page_owner->getGUID()}";
 				elgg_register_menu_item('page', array(
@@ -171,7 +173,7 @@ function restobar_setup_sidebar_menus() {
 					'href' => $url,
 				));
 			}
-		} else {
+		} else {*/
 			elgg_register_menu_item('page', array(
 				'name' => 'restobar:all',
 				'text' => elgg_echo('restobar:all'),
@@ -180,18 +182,18 @@ function restobar_setup_sidebar_menus() {
 
 			$user = elgg_get_logged_in_user_entity();
 			if ($user) {
-				$url =  "restobar/owner/$user->username";
+				/*$url =  "restobar/owner/$user->username";
 				$item = new ElggMenuItem('restobar:owned', elgg_echo('restobar:owned'), $url);
-				elgg_register_menu_item('page', $item);
+				elgg_register_menu_item('page', $item);*/
 				$url = "restobar/member/$user->username";
 				$item = new ElggMenuItem('restobar:member', elgg_echo('restobar:yours'), $url);
 				elgg_register_menu_item('page', $item);
-				$url = "restobar/invitations/$user->username";
+				/*$url = "restobar/invitations/$user->username";
 				$item = new ElggMenuItem('restobar:user:invites', elgg_echo('restobar:invitations'), $url);
-				elgg_register_menu_item('page', $item);
+				elgg_register_menu_item('page', $item);*/
 			}
-		}
-	}
+		//}
+            }
 }
 
 /**
@@ -378,6 +380,8 @@ function restobar_entity_menu_setup($hook, $type, $return, $params) {
 			unset($return[$index]);
 		}
 	}
+        
+        
 
 	// membership type
 	/*$membership = $entity->membership;
@@ -424,8 +428,6 @@ function restobar_entity_menu_setup($hook, $type, $return, $params) {
 		$return[] = ElggMenuItem::factory($options);
 	}*/
 
-        	
-        
         
 	return $return;
 }

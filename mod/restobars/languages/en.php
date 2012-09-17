@@ -293,7 +293,17 @@ or click below to view the restobar's join requests:
         'restobar:addmember'=>'Add %s to my business',
         'restobar:addmember:inallbusiness'=>'This user is already a member of all your businesses',
         'restobar:addmember:nobusiness'=>"you haven't create any page business",
-
+    
+        //restobar Map
+        'restobar:street'=>'Street',
+        'restobar:city'=>'City',
+        'restobar:cap'=>'CAP',
+        'restobar:prov'=>'Province',
+        'restobar:region'=>'Region',
+        'restobar:nation'=>'Country',
+        'restobar:latitude'=>'Latitude',
+        'restobar:longitude'=>'Longitude',
+        'restobar:clickmap'=>"Click to see the map"
 );
 
 add_translation("en", $english);
