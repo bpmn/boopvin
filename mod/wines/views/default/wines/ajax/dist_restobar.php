@@ -39,10 +39,21 @@ foreach($restobars as $elts){
     if (empty($list_restobar)) {
         echo elgg_echo("wine:restobar:nosuggestion");
     } else {
+        usort($list_restobar, "dist_cmp");
         echo elgg_view_entity_list($list_restobar, array("limit" => 10000, 'full_view' => FALSE, 'pagination' => false));
     }
 
 
 elgg_pop_context();
+
+
+function dist_cmp($a, $b) {
+    $al = (int) $a->dist;
+    $bl = (int) $b->dist;
+    if ($al == $bl) {
+        return 0;
+    }
+    return ($al < $bl) ? -1 : +1;
+}
 
 ?>

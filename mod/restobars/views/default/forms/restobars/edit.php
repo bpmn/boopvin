@@ -52,6 +52,7 @@ if ($restobar_profile_fields > 0) {
                             'value' => $vars['entity']->$shortname,
                     ));
                     
+                    /* création de bouton pour confirmer l'adresse*/
                     $url = 'restobar/map';
                     $text = elgg_echo('restobar:address');
                     $name = 'confirm_address';
@@ -151,8 +152,7 @@ if ($tools) {
 <div class="elgg-foot">
 <?php
 
-echo elgg_view('input/hidden', array('name' => 'latitude','id'=>'lat'));
-echo elgg_view('input/hidden', array('name' => 'longitude','id'=>'long'));
+
 
 echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
@@ -161,8 +161,17 @@ if (isset($vars['entity'])) {
 		'name' => 'restobar_guid',
 		'value' => $vars['entity']->getGUID(),
 	));
+
+        $lat_value=$vars['entity']->getLatitude();
+        $long_value=$vars['entity']->getLongitude();
+               
+}else{
+    $lat_value='';
+    $long_value='';
 }
 
+echo elgg_view('input/hidden', array('name' => 'latitude','id'=>'lat','value' => $lat_value));
+echo elgg_view('input/hidden', array('name' => 'longitude','id'=>'long','value' => $long_value));
 
 if (isset($vars['entity'])) {
 	$delete_url = 'action/restobars/delete?guid=' . $vars['entity']->getGUID();
