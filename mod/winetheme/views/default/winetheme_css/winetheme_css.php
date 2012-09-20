@@ -32,6 +32,22 @@ $degust_header = '/mod/winetheme/views/default/css/winetheme/images/degustation_
 $degust_header = elgg_normalize_url($degust_header);
 ?>
 
+.resto_background {
+background: url(<?php echo $resto_background; ?>) no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+margin-top: 20px;
+  
+}
+
+.resto_background {
+background: url(<?php echo $resto_background; ?>) no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+margin-top: 20px;
+  
+}
+
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
   display: none;
@@ -48,13 +64,7 @@ $degust_header = elgg_normalize_url($degust_header);
 }
 
 
-.resto_background {
-background: url(<?php echo $resto_background; ?>) no-repeat;
-background-size: cover;
-border: 1px solid #800000;
-margin-top: 20px;
-  
-}
+
 
 <!--/* fiche degustation deja remplie */-->
 
@@ -683,7 +693,7 @@ $close = elgg_normalize_url($close);
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: #000;
+	background: #ffffff;
 	opacity: 0.7;
         //z-index: 0;
 }
@@ -705,11 +715,14 @@ $close = elgg_normalize_url($close);
 	margin: 0;
     font-size: 175%;
     font-weight:normal;
-	color: #ddd;
+	color: #000000;
+text-shadow:5px 3px 5px #ffffff;
 }
 .nyroModalCont {
 	position: absolute;
 	border: 4px solid #600000;
+        outline: 4px solid #323232;
+
 	margin: 25px;
 	background: rgb(233,224,209);
         

@@ -8,7 +8,7 @@ elgg.winetheme.init = function() {
 var delay = 3000,
     speed = 1000,
     fade_speed = 1500,
-    showing = 3;
+    showing = 5;
 
     
 function moveLast() {
@@ -19,8 +19,9 @@ function moveLast() {
 function shift() {
   //$('#myDiv').stop(true, true).fadeIn({ duration: slideDuration, queue: false }).css('display', 'none').slideDown(slideDuration);    
 
-    
-  $("#avenue_activity > ul > li:visible").last().slideUp(speed, moveLast());
+  $("#avenue_activity > ul > li:visible").last().fadeOut({ duration: fade_speed, queue: false }).slideUp(speed, moveLast());
+  
+  //$("#avenue_activity > ul > li:visible").last().slideUp(speed, moveLast());
   //$("#avenue_activity > ul > li:first-child").slideDown(speed);
   $("#avenue_activity > ul > li:first-child").fadeIn({ duration: fade_speed, queue: false }).css('display', 'none').slideDown(speed);
 
