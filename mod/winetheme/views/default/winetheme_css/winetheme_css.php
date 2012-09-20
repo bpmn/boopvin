@@ -49,6 +49,29 @@ margin-top: 20px;
 }
 
 
+.resto_background {
+background: url(<?php echo $resto_background; ?>) no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+margin-top: 20px;
+  
+}
+
+.resto_background {
+background: url(<?php echo $resto_background; ?>) no-repeat;
+background-size: cover;
+border: 1px solid #800000;
+margin-top: 20px;
+  
+}
+
+
+
+
+
+
+
+
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
   display: none;
   margin: 0 0 0px;
@@ -725,7 +748,7 @@ text-shadow:5px 3px 5px #ffffff;
 
 	margin: 25px;
 	background: rgb(233,224,209);
-        
+  
         
 }
 .nyroModalCont iframe {

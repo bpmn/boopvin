@@ -45,31 +45,22 @@ if ($restobar_profile_fields > 0) {
 		echo "</label>$line_break";
                 
               switch ($shortname) { 
-                case 'adresse': 
+                case 'location': 
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
                             'id'=>$shortname,
                             'value' => $vars['entity']->$shortname,
                     ));
                     
+                    /* création de bouton pour confirmer l'adresse*/
                     $url = 'restobar/map';
                     $text = elgg_echo('restobar:address');
                     $name = 'confirm_address';
                                    
                     $item = new ElggMenuItem($name, $text, $url);
-                    echo($item->getContent(array('id'=>'GetMaps','class' => 'elgg-button elgg-button-action elgg-overlay-map')));
+                    echo($item->getContent(array('id'=>'GetMaps','class' => 'elgg-button elgg-button-action ')));
                     
-                    
-                    /*$url = "restobar/map";
-                    $text= elgg_echo('restobar:address');;				
-                    $menu_item=array('name' => 'confirm_address','text' => $text,'href' => $url,'link_class' => 'elgg-overlay');
-                    $item = ElggMenuItem::factory($menu_item);
-                    $item->setSection('action');
-                    echo($item->getContent(array('class' => 'elgg-button elgg-button-action')));*/
-                    
-                    
-                    
-                    
+             
                     break;
                
                 default:
@@ -161,14 +152,26 @@ if ($tools) {
 <div class="elgg-foot">
 <?php
 
+
+
+echo elgg_view('input/submit', array('value' => elgg_echo('save')));
+
 if (isset($vars['entity'])) {
 	echo elgg_view('input/hidden', array(
 		'name' => 'restobar_guid',
 		'value' => $vars['entity']->getGUID(),
 	));
+
+        $lat_value=$vars['entity']->getLatitude();
+        $long_value=$vars['entity']->getLongitude();
+               
+}else{
+    $lat_value='';
+    $long_value='';
 }
 
-echo elgg_view('input/submit', array('value' => elgg_echo('save')));
+echo elgg_view('input/hidden', array('name' => 'latitude','id'=>'lat','value' => $lat_value));
+echo elgg_view('input/hidden', array('name' => 'longitude','id'=>'long','value' => $long_value));
 
 if (isset($vars['entity'])) {
 	$delete_url = 'action/restobars/delete?guid=' . $vars['entity']->getGUID();

@@ -263,7 +263,17 @@ or click below to view the restobar's join requests:
 	// ecml
 	'restobar:ecml:discussion' => 'restobar Discussions',
 	'restobar:ecml:restobarprofile' => 'restobar profiles',
-
+        
+        //retobar Map
+        'restobar:street'=>'Rue',
+        'restobar:city'=>'Ville',
+        'restobar:cap'=>'Code Postale',
+        'restobar:prov'=>'Province',
+        'restobar:region'=>'Region',
+        'restobar:nation'=>'Pays',
+        'restobar:latitude'=>'Latitude',
+        'restobar:longitude'=>'Longitude',
+        'restobar:clickmap'=>"Cliquer pour visualiser le plan"
 );
 
 add_translation("fr", $french);

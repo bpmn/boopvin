@@ -146,6 +146,7 @@ function restobar_handle_mine_page() {
 
 	$content = elgg_list_entities_from_relationship_count(array(
 		'type' => 'group',
+                'subtypes'=>'restobar',
 		'relationship' => 'member',
 		'relationship_guid' => elgg_get_page_owner_guid(),
 		'inverse_relationship' => false,
@@ -236,6 +237,9 @@ function restobar_handle_invitations_page() {
  * @param int $guid Group entity GUID
  */
 function restobar_handle_profile_page($guid) {
+       elgg_load_js('elgg.googlemap');
+       elgg_load_js('elgg.restobar');
+       
 	elgg_set_page_owner_guid($guid);
 
 	elgg_push_context('restobar');
@@ -450,7 +454,8 @@ function restobar_handle_cave_page($restobar_guid) {
                             'relationship' => 'incave',
                             'relationship_guid' => $restobar_guid,
                             'inverse_relationship' => FALSE,
-                            'full_view'=>FALSE
+                            'full_view'=>FALSE,
+                            'list_type' => 'gallery'
                     ));
 
         elgg_pop_context('restobar');

@@ -234,8 +234,9 @@ function wine_handle_invitations_page() {
  * @param int $guid Group entity GUID
  */
 function wine_handle_profile_page($guid,$annee) {
-	elgg_set_page_owner_guid($guid);
-
+        elgg_set_page_owner_guid($guid);
+       elgg_load_js('elgg.googlemap');
+       elgg_load_js('elgg.wine');
 	
         
         
@@ -267,7 +268,8 @@ function wine_handle_profile_page($guid,$annee) {
 	} else {
 		$sidebar = '';
 	}
-
+        
+        $sidebar .='<div id="suggestion"></div>';
 	wine_register_profile_buttons($wine);
         
 

@@ -40,7 +40,7 @@ $close = elgg_normalize_url($close);
 	top: -26px;   
 	left: 0;
 	margin: 0;
-    font-size: 1.1em;
+        font-size: 1.1em;
 	color: #ddd;
 }
 .nyroModalCont {
@@ -48,12 +48,11 @@ $close = elgg_normalize_url($close);
 	border: 4px solid #600000;
 	margin: 25px;
 	background: #fffafa;
-        
-        
-}
+ }
+ 
 .nyroModalCont iframe {
-	width: 600px;
-	height: 400px;
+	max-width: 600px;
+	max-height: 400px;
 }
 .nyroModalError {
 	border: 4px solid red;
