@@ -141,10 +141,11 @@ function degust_tab() {
      
  
   $(function() {
+         
+      
+       
         $(".elgg-overlay").nyroModal({
-            
-     //$(".elgg-overlay").nmCall({  
-          
+           
     callbacks: {
         
         initElts: function() {

@@ -320,7 +320,6 @@ div.error a {
 	background: #ffffff;
        	width: 930px;
     border-radius: 0px;
- 
         
 }
 

@@ -8,6 +8,7 @@
 // access check for closed groups
 group_gatekeeper();
 
+
 $owner = elgg_get_page_owner_entity();
 if (!$owner) {
 	forward('file/all');

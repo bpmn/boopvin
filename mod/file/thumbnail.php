@@ -31,8 +31,10 @@ if ($simpletype == "image") {
 			$thumbfile = $file->smallthumb;
 			break;
 		case "large":
+                        $thumbfile = $file->largethumb;
+                        break;
 		default:
-			$thumbfile = $file->largethumb;
+			$contents = $file->grabFile();
 			break;
 	}
 
@@ -43,7 +45,7 @@ if ($simpletype == "image") {
 		$readfile->setFilename($thumbfile);
 		$mime = $file->getMimeType();
 		$contents = $readfile->grabFile();
-
+        }
 		// caching images for 10 days
 		header("Content-type: $mime");
 		header('Expires: ' . date('r',time() + 864000));
@@ -53,5 +55,5 @@ if ($simpletype == "image") {
 
 		echo $contents;
 		exit;
-	}
+//}
 }

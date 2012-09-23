@@ -16,8 +16,8 @@ function file_init() {
 	elgg_register_library('elgg:file', elgg_get_plugins_path() . 'file/lib/file.php');
 
 	// Site navigation
-	$item = new ElggMenuItem('file', elgg_echo('file'), 'file/all');
-	elgg_register_menu_item('site', $item);
+	//$item = new ElggMenuItem('file', elgg_echo('file'), 'file/all');
+	//elgg_register_menu_item('site', $item);
 
 	// Extend CSS
 	elgg_extend_view('css/elgg', 'file/css');
@@ -26,8 +26,11 @@ function file_init() {
 	elgg_extend_view('extensions/item', 'file/enclosure');
 
 	// extend group main page
-	elgg_extend_view('groups/tool_latest', 'file/group_module');
-
+	//elgg_extend_view('groups/tool_latest', 'file/group_module');
+           // register the restobar's JavaScript
+	$file_js = elgg_get_simplecache_url('js', 'file');
+	elgg_register_simplecache_view('js/file');
+	elgg_register_js('elgg.file', $file_js);
 	// Register a page handler, so we can have nice URLs
 	elgg_register_page_handler('file', 'file_page_handler');
 
@@ -84,6 +87,7 @@ function file_init() {
 	));
 
 	elgg_register_menu_item('embed', $item);
+        
 }
 
 /**
@@ -132,15 +136,19 @@ function file_page_handler($page) {
 			set_input('guid', $page[1]);
 			include "$file_dir/edit.php";
 			break;
+               
 		case 'search':
 			file_register_toggle();
 			include "$file_dir/search.php";
 			break;
-		case 'group':
+		case 'wine':
 			file_register_toggle();
 			include "$file_dir/owner.php";
 			break;
 		case 'all':
+                        elgg_load_js('lightbox');
+                        elgg_load_js('elgg.file');
+                        elgg_load_css('lightbox');
 			file_register_toggle();
 			include "$file_dir/world.php";
 			break;
@@ -215,9 +223,9 @@ function file_owner_block_menu($hook, $type, $return, $params) {
 		$item = new ElggMenuItem('file', elgg_echo('file'), $url);
 		$return[] = $item;
 	} else {
-		if ($params['entity']->file_enable != "no") {
-			$url = "file/group/{$params['entity']->guid}/all";
-			$item = new ElggMenuItem('file', elgg_echo('file:group'), $url);
+		if ($params['entity']->file_enable != "no" && elgg_instanceof($params['entity'], 'group','wine' )) {
+			$url = "file/wine/{$params['entity']->guid}/all";
+			$item = new ElggMenuItem('file', elgg_echo('file:wine'), $url);
 			$return[] = $item;
 		}
 	}
@@ -344,6 +352,7 @@ function file_icon_url_override($hook, $type, $returnvalue, $params) {
 	if (elgg_instanceof($file, 'object', 'file')) {
 
 		// thumbnails get first priority
+			// thumbnails get first priority
 		if ($file->thumbnail) {
 			$ts = (int)$file->icontime;
 			return "mod/file/thumbnail.php?file_guid=$file->guid&size=$size&icontime=$ts";

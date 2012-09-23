@@ -48,6 +48,14 @@ if ($url) {
 	if (isset($vars['link_class'])) {
 		$params['class'] = $vars['link_class'];
 	}
+        if (isset($vars['rel'])) {
+		$params['rel'] = $vars['rel'];
+	}
+        
+        if (isset($vars['title'])) {
+		$params['title'] = $vars['title'];
+	}
+        
 	echo elgg_view('output/url', $params);
 } else {
 	echo $img;

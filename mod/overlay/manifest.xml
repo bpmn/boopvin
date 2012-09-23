@@ -3,9 +3,9 @@
 	<name>Overlay</name>
 	<author>Fatxi</author>
 	<version>1.0</version>
-	<description>Lesson 7: Demonstrates how to include external JavaScript files</description>
+	<description>Script Modal pour Avenue Vin</description>
 	<website>http://www.elgg.org/</website>
-	<copyright>Cash Costello 2011</copyright>
+	<copyright>Fabien RETY</copyright>
 	<license>GNU General Public License version 2</license>
 	<requires>
 		<type>elgg_release</type>

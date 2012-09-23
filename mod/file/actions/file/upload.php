@@ -38,6 +38,17 @@ if ($new_file) {
 		register_error($error);
 		forward(REFERER);
 	}
+        
+        $filetypes =  "/^\.(jpg|jpeg|gif|png){1}$/i";
+        if(!$match = preg_match($filetypes, strrchr($_FILES['upload']['name'], '.'))) {
+                register_error(elgg_echo('file:cannotload:notapic'));
+                forward($_SERVER['HTTP_REFERER']);
+        }
+
+        if($_FILES['upload']['size'] / 1024 > 1024) {
+                register_error(elgg_echo('file:cannotload:toobig'));
+                forward($_SERVER['HTTP_REFERER']);
+        }
 
 	$file = new FilePluginFile();
 	$file->subtype = "file";

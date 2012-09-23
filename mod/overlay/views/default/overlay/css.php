@@ -24,6 +24,18 @@ $close = elgg_normalize_url($close);
 	opacity: 0.7;
         //z-index: 0;
 }
+
+.nyroModalBg {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	opacity: 0.7;
+        //z-index: 0;
+}
 .nmReposition {
 	position: absolute;
         z-index: 20000; //z-index de elgg-page-topbar= 9000
