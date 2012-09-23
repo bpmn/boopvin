@@ -34,7 +34,7 @@ function degust_init(){
         
         
         $url = 'mod/degusts/views/default/js/degusts/degust.js';
-	elgg_register_js('elgg.degust', $url, 'footer');
+	elgg_register_js('elgg.degust', $url, 'head');
 	elgg_load_js('elgg.degust');
         //elgg_extend_view('js/elgg', 'degusts/js');
         
