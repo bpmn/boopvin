@@ -2,6 +2,13 @@
 /*
  * css
  */
+
+
+
+$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.jpg';
+$resto_background = elgg_normalize_url($resto_background);
+
+
 ?>
 
 

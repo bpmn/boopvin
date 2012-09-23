@@ -19,8 +19,6 @@ $reflets_rouge = elgg_normalize_url($reflets_rouge);
 $reflets_blanc = '/mod/winetheme/views/default/css/winetheme/images/reflets_blanc.png';
 $reflets_blanc = elgg_normalize_url($reflets_blanc);
 
-$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.jpg';
-$resto_background = elgg_normalize_url($resto_background);
 
 $vigne_separator = '/mod/winetheme/views/default/css/winetheme/images/vigne.png';
 $vigne_separator = elgg_normalize_url($vigne_separator);
