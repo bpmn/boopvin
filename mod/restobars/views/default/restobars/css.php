@@ -8,12 +8,6 @@
 ?>
 
 
-#maps_canvas {
-
-    height: 450px;
-    width:450px;
-}
-
 
 #map_fields {
     width:300px;
@@ -33,6 +27,7 @@
 }
 
 #showmap_pop {
+    overflow: hidden;
     height: 450px;
-    width:450px;
+    width: 450px;
 }

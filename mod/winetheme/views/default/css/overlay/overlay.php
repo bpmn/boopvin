@@ -2,24 +2,26 @@
 /*
  *  css
  */
-$loader = 'mod/overlay/vendors/nyromodal/graphics/ajaxLoader.gif';
+$loader = 'mod/winetheme/vendors/nyromodal/graphics/ajaxLoader.gif';
 $loader = elgg_normalize_url($loader);
 
-$close = 'mod/overlay/vendors/nyromodal/graphics/close21.png';
+$close = 'mod/winetheme/vendors/nyromodal/graphics/close21.png';
 $close = elgg_normalize_url($close);
 ?>
 
 
 
 .nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
-	border: 1px none #00FF00;
-
-	position: relative;
+	
+        border: 1px none #00FF00;
+        position: relative;
 	padding: 5px;
-	min-height: 250px;
-	width: 900px;
-}
+        
+        min-height: 250px;
+	min-width: 250px;
+	max-width: 900px;
 
+}
 
 
 .nyroModalBg {
@@ -31,11 +33,11 @@ $close = elgg_normalize_url($close);
 	width: 100%;
 	background: #ffffff;
 	opacity: 0.7;
-        //z-index: 0;
+       
 }
 .nmReposition {
 	position: absolute;
-        z-index: 20000; //z-index de elgg-page-topbar= 9000
+       
 }
 .nyroModalCloseButton {
 	top: -13px;
@@ -56,22 +58,19 @@ text-shadow:5px 3px 5px #ffffff;
 }
 .nyroModalCont {
 
-       	max-width: 930px;
-
 	position: absolute;
 	border: 4px solid #600000;
         outline: 4px solid #323232;
 
 	margin: 25px;
 	background: rgb(233,224,209);
-  
-        
+       
 }
 .nyroModalCont iframe {
 	width: 600px;
 	height: 400px;
         border: 1px none #0000FF;
-	max-width: 930px;
+	
 }
 .nyroModalError {
 	border: 4px solid red;
@@ -84,17 +83,7 @@ text-shadow:5px 3px 5px #ffffff;
 	min-height: 0;
 	padding: 10px;
 }
-.nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
-	position: relative;
-	padding: 10px;
-        
-        min-height: 250px;
-	min-width: 250px;
-        //min-width: 1000px;
-        //min-height: 500px;
-	//max-width: 1000px;
 
-}
 .nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {
 	position: relative;
 	overflow: hidden;

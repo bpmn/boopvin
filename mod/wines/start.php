@@ -82,7 +82,7 @@ function wine_init() {
         // register the restobar's JavaScript
 	$wine_js = elgg_get_simplecache_url('js', 'wine_map');
 	elgg_register_simplecache_view('js/wine_map');
-	elgg_register_js('elgg.wine', $wine_js);
+	elgg_register_js('elgg.wine', $wine_js,'footer');
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');

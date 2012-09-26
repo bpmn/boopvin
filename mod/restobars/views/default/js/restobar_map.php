@@ -48,6 +48,7 @@ elgg.provide('elgg.restobar');
 					});
                           
                         
+
                     },
                     
                     afterClose: function() {
@@ -92,7 +93,8 @@ elgg.provide('elgg.restobar');
                     afterShowCont: function(){
                         
                         get_restobar_address();   
-                        
+                       
+
                     },
                     
                     afterClose: function() {

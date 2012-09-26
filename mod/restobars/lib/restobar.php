@@ -174,8 +174,10 @@ function restobar_handle_mine_page() {
  */
 function restobar_handle_edit_page($page, $guid = 0) {
         gatekeeper();
-       elgg_load_js('elgg.googlemap');
-       elgg_load_js('elgg.restobar');
+        elgg_load_js('elgg.googlemap');
+        elgg_load_js('elgg.restobar');
+        elgg_load_js('elgg.nm');
+        elgg_load_js('elgg.popup');
 	
 	if ($page == 'add') {
 		elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());
@@ -239,6 +241,8 @@ function restobar_handle_invitations_page() {
 function restobar_handle_profile_page($guid) {
        elgg_load_js('elgg.googlemap');
        elgg_load_js('elgg.restobar');
+       elgg_load_js('elgg.nm');
+       elgg_load_js('elgg.popup');
        
 	elgg_set_page_owner_guid($guid);
 

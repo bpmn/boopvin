@@ -13,8 +13,6 @@ $resto_background = elgg_normalize_url($resto_background);
 
 
 
-
-
 .resto_background {
 background: url(<?php echo $resto_background; ?>) no-repeat;
 background-size: cover;

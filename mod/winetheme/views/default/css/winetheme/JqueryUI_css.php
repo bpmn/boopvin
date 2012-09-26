@@ -62,26 +62,26 @@
 .ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #530000; background: #ffffff url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_75_ffffff_1x100.png) 50% top repeat-x; color: #003232; }
+.ui-widget-content { border: 1px solid #530000; background: #ffffff url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_75_ffffff_1x100.png')?>) 50% top repeat-x; color: #003232; }
 .ui-widget-content a { color: #003232; }
-.ui-widget-header { border: 1px solid #601818; background: #cccccc url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_100_cccccc_1x100.png) 50% 50% repeat-x; color: #031138; font-weight: bold; }
+.ui-widget-header { border: 1px solid #601818; background: #cccccc url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-hard_100_cccccc_1x100.png')?>) 50% 50% repeat-x; color: #031138; font-weight: bold; }
 .ui-widget-header a { color: #031138; }
 
 /* Interaction states
 ----------------------------------*/
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_99bb54_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232; }
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #344e00; background: #99bb54 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_99bb54_1x400.png')?>) 50% 50% repeat-x; font-weight: normal; color: #003232; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #003232; text-decoration: none; }
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_c05656_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #c03030; background: #c05656 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_c05656_1x400.png')?>) 50% 50% repeat-x; font-weight: normal; color: #003232; }
 .ui-state-hover a, .ui-state-hover a:hover { color: #003232; text-decoration: none; }
-.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #530000; background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #530000; background: #800000 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png')?>) 50% 50% repeat-x; font-weight: normal; color: #ffffff; }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #ffffff; text-decoration: none; }
 .ui-widget :active { outline: none; }
 
 /* Interaction Cues
 ----------------------------------*/
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #8cbb2f; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-soft_75_99bb54_1x100.png) 50% top repeat-x; color: #530000; }
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #8cbb2f; background: #99bb54 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_highlight-soft_75_99bb54_1x100.png')?>) 50% top repeat-x; color: #530000; }
 .ui-state-highlight a, .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #530000; }
-.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_inset-soft_95_fef1ec_1x100.png) 50% bottom repeat-x; color: #cd0a0a; }
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_inset-soft_95_fef1ec_1x100.png')?>) 50% bottom repeat-x; color: #cd0a0a; }
 .ui-state-error a, .ui-widget-content .ui-state-error a, .ui-widget-header .ui-state-error a { color: #cd0a0a; }
 .ui-state-error-text, .ui-widget-content .ui-state-error-text, .ui-widget-header .ui-state-error-text { color: #cd0a0a; }
 .ui-priority-primary, .ui-widget-content .ui-priority-primary, .ui-widget-header .ui-priority-primary { font-weight: bold; }
@@ -92,14 +92,14 @@
 ----------------------------------*/
 
 /* states and images */
-.ui-icon { width: 16px; height: 16px; background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
-.ui-widget-content .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
-.ui-widget-header .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_222222_256x240.png); }
-.ui-state-default .ui-icon { background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png); }
-.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_454545_256x240.png); }
-.ui-state-active .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_ffffff_256x240.png); }
-.ui-state-highlight .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_800000_256x240.png); }
-.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-icons_cd0a0a_256x240.png); }
+.ui-icon { width: 16px; height: 16px; background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png')?>); }
+.ui-widget-content .ui-icon {background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png')?>); }
+.ui-widget-header .ui-icon {background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_222222_256x240.png')?>); }
+.ui-state-default .ui-icon { background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_003232_256x240.png')?>); }
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_454545_256x240.png')?>); }
+.ui-state-active .ui-icon {background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_ffffff_256x240.png')?>); }
+.ui-state-highlight .ui-icon {background-image: url(<?php elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_800000_256x240.png')?>); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-icons_cd0a0a_256x240.png')?>); }
 
 /* positioning */
 .ui-icon-carat-1-n { background-position: 0 0; }
@@ -289,9 +289,11 @@
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
 
 /* Overlays */
-.ui-widget-overlay { background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_99bb54_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
-.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #800000 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_800000_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/*!
- * jQuery UI Resizable 1.8.22
+.ui-widget-overlay { background: #99bb54 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_99bb54_40x100.png')?>) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
+.ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #800000 url(<?php echo elgg_normalize_url('/mod/winetheme/views/default/css/winetheme/images/ui-bg_flat_0_800000_40x100.png')?>) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -khtml-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/*!
+ 
+
+* jQuery UI Resizable 1.8.22
  *
  * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -473,7 +475,9 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
 .ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
 .ui-slider-vertical .ui-slider-range-min { bottom: 0; }
-.ui-slider-vertical .ui-slider-range-max { top: 0; }/*!
+.ui-slider-vertical .ui-slider-range-max { top: 0; }
+
+/*!
  * jQuery UI Tabs 1.8.22
  *
  * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)

@@ -38,7 +38,17 @@ $help = elgg_normalize_url($help);
 
 ?>
 
+.degust-layout-one-sidebar{
+width: 900px;
+}
 
+.vigne_separator {
+clear:left;
+height: 33px;
+background: url(<?php echo $vigne_separator; ?>) no-repeat;
+background-position: center bottom;
+margin-bottom: 10px;
+}
 
 #degust-fiche-left {
 padding-top: 10px;
@@ -66,13 +76,7 @@ border-bottom: 1px solid #800000;
 width: 60%;
 }
 
-.vigne_separator {
-clear:left;
-height: 33px;
-background: url(<?php echo $vigne_separator; ?>) no-repeat;
-background-position: center bottom;
-margin-bottom: 10px;
-}
+
 
 
 .degust-feuille-content {

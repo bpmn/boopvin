@@ -5,6 +5,9 @@
 
 $user = elgg_get_page_owner_entity();
 
+elgg_load_js('elgg.nm');
+elgg_load_js('elgg.popup');
+
 if (!$user) {
 	// no user so we quit view
 	echo elgg_echo('viewfailure', array(__FILE__));
