@@ -140,7 +140,7 @@ function degust_tab() {
    
      
  
-  $(function() {
+  $(function(){
         $(".elgg-overlay").nyroModal({
             
      //$(".elgg-overlay").nmCall({  
@@ -215,6 +215,7 @@ function degust_tab() {
                                                              
 
 			} else {
+
 				//$("div.error").hide();
                                 //$("div.validate_error_label label").css("color", "black");
 
@@ -222,7 +223,7 @@ function degust_tab() {
 		}
               });
       
- 
+
    
 }
 

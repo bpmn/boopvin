@@ -8,7 +8,7 @@ elgg.winetheme.init = function() {
 var delay = 3000,
     speed = 1000,
     fade_speed = 1500,
-    showing = 5;
+    showing = 4;
 
     
 function moveLast() {

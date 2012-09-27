@@ -124,15 +124,15 @@ function wine_init() {
 function wine_fields_setup() {
 
 	$profile_defaults = array(
+                'country'=>'dropdown',      //pays
 		'description' => 'text',    //appellation
-                'cuvee'=>'text',            //cuvée
 		'region' => 'text',         //région
+                'cuvee'=>'text',            //cuvée
 		'grapes' => 'text',         //cépage
                 'maker'=>'text',            //vigneron
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
-                'vintage'=>'radio',
-                'country'=>'dropdown'           //pays
+                'vintage'=>'radio'
 		//'website' => 'url',
  
 	);

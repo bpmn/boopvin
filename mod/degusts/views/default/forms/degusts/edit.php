@@ -126,7 +126,7 @@ echo elgg_view('input/hidden', array(
 		'value' => $annee
 	));
 
-echo elgg_view('input/submit', array('value' => elgg_echo('save')));
+echo elgg_view('input/submit', array('value' => elgg_echo('save'), 'id' => 'id_degust_submit'));
 
 
 
