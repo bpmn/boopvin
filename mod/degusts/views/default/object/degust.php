@@ -50,7 +50,7 @@ if ($degust->annee)
 $degust_link = elgg_view('output/url', array(
 	'href' => $degust->getURL(),
 	'text' => elgg_echo('degust:link'),
-        'class'=>'elgg-overlay',
+        'class'=>'degust-view',
         'title'=> $title_link,
 	'is_trusted' => true,
 ));

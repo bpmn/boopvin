@@ -28,4 +28,35 @@ class FilePluginFile extends ElggFile {
 
 		return parent::delete();
 	}
+        
+        public function getThumbnail($size) {
+		switch ($size) {
+			case 'thumb':
+				$thumb = $this->thumbnail;
+				break;
+			case 'small':
+				$thumb = $this->smallthumb;
+				break;
+			case 'large':
+				$thumb = $this->largethumb;
+				break;
+			default:
+				return '';
+				break;
+		}
+
+		if (!$thumb) {
+			return '';
+		}
+
+		$file = new ElggFile();
+		$file->owner_guid = $this->getOwnerGUID();
+		$file->setFilename($thumb);
+		return $file->grabFile();
+	}
+
+	public function getImage() {
+		return $this->grabFile();
+	}
+
 }

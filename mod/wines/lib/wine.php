@@ -235,9 +235,12 @@ function wine_handle_invitations_page() {
  */
 function wine_handle_profile_page($guid,$annee) {
         elgg_set_page_owner_guid($guid);
-       elgg_load_js('elgg.googlemap');
-       elgg_load_js('elgg.wine');
-	
+        elgg_load_js('elgg.googlemap');
+        elgg_load_js('elgg.wine');
+        elgg_load_js('elgg.nm');
+	elgg_load_js('elgg.validate');
+        elgg_load_js('elgg.degust');
+        elgg_load_js('elgg.popup');
         
         
         if (!$annee)
@@ -468,8 +471,8 @@ function wine_register_profile_buttons($wine) {
 
 	// group members
 	if ($wine->isMember(elgg_get_logged_in_user_entity())) {
-            $annee=get_input("annee");
-            $url = elgg_normalize_url("degust/add/{$wine->getGUID()}/{$annee}");
+           
+            $url = elgg_normalize_url("degust/add/{$wine->getGUID()}/");
             $url = elgg_add_action_tokens_to_url($url);
             $actions[$url] = elgg_echo('degust:add');
             
@@ -502,7 +505,7 @@ function wine_register_profile_buttons($wine) {
                     
                     if ($text == 'degust:add'){
                         
-                        $link_class='elgg-button elgg-button-action elgg-overlay';
+                        $link_class='elgg-button elgg-button-action degust-add';
                         
                         
                         elgg_register_menu_item('title', array(

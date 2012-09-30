@@ -37,7 +37,7 @@ $new_link = elgg_view('output/url', array(
 	'is_trusted' => true,
 ));
 
-echo elgg_view('groups/profile/module', array(
+echo elgg_view('wines/profile/module', array(
 	'title' => elgg_echo('file:group'),
 	'content' => $content,
 	'all_link' => $all_link,

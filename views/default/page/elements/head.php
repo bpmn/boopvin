@@ -37,6 +37,8 @@ $version = get_version();
 $release = get_version(true);
 ?>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        
 	<meta name="ElggRelease" content="<?php echo $release; ?>" />
 	<meta name="ElggVersion" content="<?php echo $version; ?>" />
 	<title><?php echo $title; ?></title>

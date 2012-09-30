@@ -42,14 +42,14 @@ $CONFIG->dbuser = 'root';
  *
  * @global string $CONFIG->dbpass
  */
-$CONFIG->dbpass = 'root';
+$CONFIG->dbpass = '';
 
 /**
  * The database name
  *
  * @global string $CONFIG->dbname
  */
-$CONFIG->dbname = 'boopwine_db';
+$CONFIG->dbname = 'boopvin_db';
 
 /**
  * The database host.

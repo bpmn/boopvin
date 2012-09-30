@@ -13,8 +13,7 @@
 
     elgg.wine.init = function() {
         
-        
-        elgg.get_page_owner_guid();
+      
         
         window.onload = getMyLocation;
         

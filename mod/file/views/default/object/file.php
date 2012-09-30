@@ -66,8 +66,9 @@ if ($full && !elgg_in_context('gallery')) {
 	} else if (elgg_view_exists("file/specialcontent/$base_type/default")) {
 		$extra = elgg_view("file/specialcontent/$base_type/default", $vars);
 	}
-
-	$params = array(
+        
+        echo $extra;
+	/*$params = array(
 		'entity' => $file,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
@@ -85,12 +86,20 @@ if ($full && !elgg_in_context('gallery')) {
 		'icon' => $file_icon,
 		'summary' => $summary,
 		'body' => $body,
-	));
+	));*/
 
 } elseif (elgg_in_context('gallery')) {
 	echo '<div class="file-gallery-item">';
 	echo "<h3>" . $file->title . "</h3>";
-	echo elgg_view_entity_icon($file, 'medium');
+        
+        $image_url = $file->getIconURL('');
+        $image_url = elgg_normalize_url($image_url);
+        
+	echo elgg_view_entity_icon($file, 'medium',array('link_class'=>'tidypics-lightbox',
+                                                         'href'=>$image_url,
+                                                         'rel'=>'gal',
+                                                         'title'=>$file->title));
+        
 	echo "<p class='subtitle'>$owner_link $date</p>";
 	echo '</div>';
 } else {

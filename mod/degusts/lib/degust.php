@@ -126,7 +126,10 @@ function degust_handle_edit_page($page, $guid = 0) {
 	} else {
 		//$title = elgg_echo("degust:edit");
 		$degust = get_entity($guid);
-
+                if (!($degust instanceof ElggObject)) {
+			register_error(elgg_echo('object:notfound'));
+			forward();
+		}
 		if ($degust && $degust->canEdit()) {
 			elgg_set_page_owner_guid($guid);
 			//elgg_push_breadcrumb($degust->title, $degust->getURL());
@@ -181,12 +184,12 @@ function degust_handle_profile_page($guid) {
 	//elgg_push_breadcrumb($wine->name);
         
         if ($degust->canEdit()){
-                        $url = elgg_normalize_url("degust/edit/{$degust->getGUID()}");
+                        $url = "edit/{$degust->getGUID()}";
                         elgg_register_menu_item('edit_degust', array(
 				'name' => 'degust:edit',
-				'href' => $url,
+				'data-action' => $url,
 				'text' => elgg_echo('degust:edit'),
-				'link_class' => 'elgg-button elgg-button-action elgg-overlay',
+				'link_class' => 'elgg-button elgg-button-action degust-edit',
                                 
                                 //'rel'=>'#overlay',
 			));}
