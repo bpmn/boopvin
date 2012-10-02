@@ -75,7 +75,7 @@ function wine_init() {
 
 	//extend some views
 	elgg_extend_view('css/elgg', 'wines/css');
-	elgg_extend_view('js/elgg', 'wines/js');
+	//elgg_extend_view('js/elgg', 'wines/js');
         
         elgg_register_ajax_view('wines/ajax/dist_restobar');
         
@@ -83,6 +83,10 @@ function wine_init() {
 	$wine_js = elgg_get_simplecache_url('js', 'wine_map');
 	elgg_register_simplecache_view('js/wine_map');
 	elgg_register_js('elgg.wine', $wine_js,'footer');
+        
+        $wine_edit_js = elgg_get_simplecache_url('js', 'wine_edit');
+	elgg_register_simplecache_view('js/wine_edit');
+	elgg_register_js('elgg.wine_edit', $wine_edit_js,'footer');
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');
@@ -124,15 +128,15 @@ function wine_init() {
 function wine_fields_setup() {
 
 	$profile_defaults = array(
+                'country'=>'dropdown',      //pays
 		'description' => 'text',    //appellation
-                'cuvee'=>'text',            //cuvée
 		'region' => 'text',         //région
+                'cuvee'=>'text',            //cuvée
 		'grapes' => 'text',         //cépage
                 'maker'=>'text',            //vigneron
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
-                'vintage'=>'radio',
-                'country'=>'dropdown'           //pays
+                'vintage'=>'radio'
 		//'website' => 'url',
  
 	);

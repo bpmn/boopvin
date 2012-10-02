@@ -57,7 +57,8 @@ elgg.degust.init = function() {
         });
     });
   
- /*les fonctions*/
+
+//les fonctions
  
  
 function degust_edit (action){
@@ -226,28 +227,7 @@ function degust_edit (action){
                 
     }
               
-    /*
-            var select = $( "#id_note" );
-            var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
-                    min: 1,
-                    max: 20,
-                    range: "min",
-                    value: select[ 0 ].selectedIndex + 1,
-                    slide: function( event, ui ) {
-                            select[ 0 ].selectedIndex = ui.value - 1;
-                    }
-            });
-                
-            $( "#id_note" ).change(function() {
-                    slider.slider( "value", this.selectedIndex + 1 );
-            });
-               
-                
-               
-          }
-     */
-    
-    
+ 
     
     function degust_validate() {     
         jQuery.validator.messages.required = "";
