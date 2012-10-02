@@ -16,7 +16,7 @@ elgg.popup.init = function() {
         
     $(function() { 
             
-        $(".elgg-overlay").nm({
+        $(".elgg-overlay").nyroModal({
             callbacks: {             
                 initElts: function() {
                     $(".elgg-page-topbar").css({

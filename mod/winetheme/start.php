@@ -32,7 +32,7 @@ function winetheme_init() {
 
     elgg_unregister_css('hj.framework.jquitheme');
 
-    // pouvoir réecrire ds le plugin la fonction friends_page_handler sans toucher au core Elgg 
+    // pouvoir rÃ©ecrire ds le plugin la fonction friends_page_handler sans toucher au core Elgg 
     elgg_unregister_page_handler('friends');
     elgg_register_page_handler('friends', 'friends_winetheme_page_handler');
 
@@ -47,18 +47,19 @@ function winetheme_init() {
 
     //vendors
     $url = 'mod/winetheme/vendors/nyromodal/jquery.nyroModal.custom.min.js';
-    elgg_register_js('elgg.nm', $url, 'footer');
-    //elgg_load_js('jquery.nyroModal');
+    elgg_register_js('elgg.modal', $url,'footer');
+    elgg_load_js('elgg.modal');
 
     $url = 'mod/winetheme/vendors/validate/jquery.validate.min.js';
     elgg_register_js('elgg.validate', $url, 'footer');
-    //elgg_load_js('elgg.validate');
-    //script
-    // register the restobar's JavaScript
+    
+
+    
     $popup_js = elgg_get_simplecache_url('js', 'simple_popup');
     elgg_register_simplecache_view('js/simple_popup');
     elgg_register_js('elgg.popup', $popup_js, 'footer');
-
+    
+ 
     // Now, override some default
     // override some default
     //$winetheme_css = elgg_get_simplecache_url('css', 'winetheme/winetheme_css');

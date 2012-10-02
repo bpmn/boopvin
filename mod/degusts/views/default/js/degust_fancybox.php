@@ -29,9 +29,9 @@ elgg.degust.init = function() {
    
     $(function() { 
         
-        $(".degust-view").nyroModal({
-           callbacks: {             
-               initElts: function() {
+        $(".degust-view").fancybox({
+                       
+               onStart: function() {
                     $(".elgg-page-topbar").css({
                         "z-index":" 0"
                     });
@@ -39,19 +39,19 @@ elgg.degust.init = function() {
                         "z-index":" 0"
                     });    
                 },
-               filledContent: function(){
+               onComplete: function(){
                    
                     degust_edit();
                     
                 },
-               beforeClose: function() {
+               onCleanup: function() {
                     $(".elgg-page-topbar").css({
                         "z-index":" 9000"
                     });
                     $(".elgg-menu-site").css({
                         "z-index":" 1"
                     });
-                }
+                
             }
             
         });
@@ -66,7 +66,7 @@ function degust_edit (action){
     
     e.preventDefault();
     var action= $(this).attr('data-action'); 
-    $.nmTop().close();
+    $.fancybox.close();
     edit_overlay_degust(action);
 });
 }
@@ -75,11 +75,11 @@ function degust_edit (action){
          
         var edit_url=elgg.normalize_url('degust/'+action);
        
-        $.nmManual(edit_url,{
+        $.fancybox([{'href':edit_url} ] ,{
            
-            callbacks: {
+           
         
-                initElts: function() {
+                onStart: function() {
                     $(".elgg-page-topbar").css({
                         "z-index":" 0"
                     });
@@ -91,7 +91,7 @@ function degust_edit (action){
        
                 },
         
-                filledContent: function(){
+                onComplete: function(){
                   
                     if ($("#metadatafield_overlay").length > 0){
                         // do something here
@@ -115,7 +115,7 @@ function degust_edit (action){
                 },
        
         
-                beforeClose: function() {
+                onCleanup: function() {
                     $(".elgg-page-topbar").css({
                         "z-index":" 9000"
                     });
@@ -123,7 +123,7 @@ function degust_edit (action){
                         "z-index":" 1"
                     });
                 }
-            }
+            
    
         });
     }   

@@ -28,12 +28,13 @@ if ($simpletype == "image") {
 			$thumbfile = $file->thumbnail;
 			break;
 		case "medium":
-			$thumbfile = $file->smallthumb;
+			$thumbfile = $file->mediumthumb;
 			break;
 		case "large":
                         $thumbfile = $file->largethumb;
                         break;
-		default:
+		
+                default:
 			$contents = $file->grabFile();
 			break;
 	}

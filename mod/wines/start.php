@@ -786,7 +786,7 @@ function wine_discussion_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'wine_discussion_add_to_river_menu');
 
 	// add the forum tool option
-	add_group_tool_option('forum', elgg_echo('wine:enableforum'), true);
+	//add_group_tool_option('forum', elgg_echo('wine:enableforum'), true);
 	elgg_extend_view('wines/tool_latest', 'wine_discussion/module');
 
 	// notifications

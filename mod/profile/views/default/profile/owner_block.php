@@ -5,7 +5,7 @@
 
 $user = elgg_get_page_owner_entity();
 
-elgg_load_js('elgg.nm');
+elgg_load_js('elgg.modal');
 elgg_load_js('elgg.popup');
 
 if (!$user) {

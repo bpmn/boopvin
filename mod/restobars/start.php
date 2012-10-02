@@ -789,7 +789,7 @@ function restobar_news_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'restobar_news_add_to_river_menu');
 
 	// add the forum tool option
-	add_group_tool_option('forum', elgg_echo('restobar:enableforum'), true);
+	//add_group_tool_option('forum', elgg_echo('restobar:enableforum'), true);
 	elgg_extend_view('restobars/tool_latest', 'restobar_news/module');
 
 	// notifications

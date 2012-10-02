@@ -67,30 +67,12 @@ if (!$restobar->name) {
 }
 
 
-// Set restobar tool options
-if (isset($CONFIG->group_tool_options)) {
-	foreach ($CONFIG->group_tool_options as $restobar_option) {
-		$restobar_option_toggle_name = $restobar_option->name . "_enable";
-		if ($restobar_option->default_on) {
-			$restobar_option_default_value = 'yes';
-		} else {
-			$restobar_option_default_value = 'no';
-		}
-		$restobar->$restobar_option_toggle_name = get_input($restobar_option_toggle_name, $restobar_option_default_value);
-	}
-}
 
-// restobar membership - should these be treated with same constants as access permissions?
-switch (get_input('membership')) {
-	case ACCESS_PUBLIC:
-		$restobar->membership = ACCESS_PUBLIC;
-		break;
-	default:
-		$restobar->membership = ACCESS_PRIVATE;
-}
+$restobar->membership = ACCESS_PUBLIC;
+
 
 if ($new_restobar_flag) {
-	$restobar->access_id = ACCESS_PUBLIC;
+	$restobar->access_id = ACCESS_LOGGED_IN;
 }
 
 $restobar->save();

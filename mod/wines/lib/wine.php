@@ -237,12 +237,12 @@ function wine_handle_profile_page($guid,$annee) {
         elgg_set_page_owner_guid($guid);
         elgg_load_js('elgg.googlemap');
         elgg_load_js('elgg.wine');
-        elgg_load_js('elgg.nm');
+        elgg_load_js('elgg.modal');
 	elgg_load_js('elgg.validate');
         elgg_load_js('elgg.degust');
         elgg_load_js('elgg.popup');
-        
-        
+  
+       
         if (!$annee)
             $annee=(int)2009;
         

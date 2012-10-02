@@ -168,7 +168,15 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 			$file->smallthumb = $prefix."smallthumb".$filestorename;
 			unset($thumbsmall);
 		}
-
+                $thumbmedium = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 300, 300, false);
+		if ($thumbmedium) {
+			$thumb->setFilename($prefix."mediumthumb".$filestorename);
+			$thumb->open("write");
+			$thumb->write($thumbmedium);
+			$thumb->close();
+			$file->mediumthumb = $prefix."mediumthumb".$filestorename;
+			unset($thumbmedium);
+		}
 		$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
 		if ($thumblarge) {
 			$thumb->setFilename($prefix."largethumb".$filestorename);
@@ -201,8 +209,8 @@ if ($new_file) {
 	}
 
 	$container = get_entity($container_guid);
-	if (elgg_instanceof($container, 'group')) {
-		forward("file/group/$container->guid/all");
+	if (elgg_instanceof($container, 'group','wine')) {
+		forward("file/wine/$container->guid?list_type=gallery");
 	} else {
 		forward("file/owner/$container->username");
 	}
@@ -214,5 +222,5 @@ if ($new_file) {
 		register_error(elgg_echo("file:uploadfailed"));
 	}
 
-	forward($file->getURL());
+	forward("file/wine/$container->guid?list_type=gallery");
 }	

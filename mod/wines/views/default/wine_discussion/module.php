@@ -5,10 +5,6 @@
  * @uses $vars['entity']
  */
 
-if ($vars['entity']->forum_enable == 'no') {
-	return true;
-}
-
 $wine = $vars['entity'];
 
 

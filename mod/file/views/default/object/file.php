@@ -92,10 +92,10 @@ if ($full && !elgg_in_context('gallery')) {
 	echo '<div class="file-gallery-item">';
 	echo "<h3>" . $file->title . "</h3>";
         
-        $image_url = $file->getIconURL('');
+        $image_url = $file->getIconURL('normal');
         $image_url = elgg_normalize_url($image_url);
         
-	echo elgg_view_entity_icon($file, 'medium',array('link_class'=>'tidypics-lightbox',
+	echo elgg_view_entity_icon($file, 'small',array('link_class'=>'tidypics-lightbox',
                                                          'href'=>$image_url,
                                                          'rel'=>'gal',
                                                          'title'=>$file->title));

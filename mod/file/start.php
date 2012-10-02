@@ -48,7 +48,7 @@ function file_init() {
 	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'file_notify_message');
 
 	// add the group files tool option
-	add_group_tool_option('file', elgg_echo('groups:enablefiles'), true);
+	//add_group_tool_option('file', elgg_echo('groups:enablefiles'), true);
 
 	// Register entity type for search
 	elgg_register_entity_type('object', 'file');
@@ -142,13 +142,15 @@ function file_page_handler($page) {
 			include "$file_dir/search.php";
 			break;
 		case 'wine':
-			file_register_toggle();
-			include "$file_dir/owner.php";
-			break;
-		case 'all':
+                        elgg_set_page_owner_guid($page[1]);
                         elgg_load_js('lightbox');
                         elgg_load_js('elgg.file');
                         elgg_load_css('lightbox');
+			//file_register_toggle();
+			include "$file_dir/owner.php";
+			break;
+		case 'all':
+    
 			file_register_toggle();
 			include "$file_dir/world.php";
 			break;
@@ -218,17 +220,13 @@ function file_notify_message($hook, $entity_type, $returnvalue, $params) {
  * Add a menu item to the user ownerblock
  */
 function file_owner_block_menu($hook, $type, $return, $params) {
-	if (elgg_instanceof($params['entity'], 'user')) {
-		$url = "file/owner/{$params['entity']->username}";
-		$item = new ElggMenuItem('file', elgg_echo('file'), $url);
-		$return[] = $item;
-	} else {
-		if ($params['entity']->file_enable != "no" && elgg_instanceof($params['entity'], 'group','wine' )) {
-			$url = "file/wine/{$params['entity']->guid}/all";
+	
+		if (elgg_instanceof($params['entity'], 'group','wine' )) {
+			$url = "file/wine/{$params['entity']->guid}?list_type=gallery";
 			$item = new ElggMenuItem('file', elgg_echo('file:wine'), $url);
 			$return[] = $item;
 		}
-	}
+	
 
 	return $return;
 }

@@ -51,20 +51,20 @@ $close = elgg_normalize_url($close);
 	top: -26px;   
 	left: 0;
 	margin: 0;
-    font-size: 175%;
-    font-weight:normal;
+        font-size: 175%;
+        font-weight:normal;
 	color: #000000;
-text-shadow:5px 3px 5px #ffffff;
+        text-shadow:5px 3px 5px #ffffff;
 }
+
 .nyroModalCont {
 
 	position: absolute;
 	border: 4px solid #600000;
         outline: 4px solid #323232;
-
-	margin: 25px;
+        margin: 25px;
 	background: rgb(233,224,209);
-       
+              
 }
 .nyroModalCont iframe {
 	width: 600px;

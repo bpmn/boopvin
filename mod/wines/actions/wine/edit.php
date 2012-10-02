@@ -74,14 +74,10 @@ if (isset($CONFIG->group_tool_options)) {
 	}
 }
 
-// wine membership - should these be treated with same constants as access permissions?
-switch (get_input('membership')) {
-	case ACCESS_PUBLIC:
-		$wine->membership = ACCESS_PUBLIC;
-		break;
-	default:
-		$wine->membership = ACCESS_PRIVATE;
-}
+
+$wine->membership = ACCESS_PUBLIC;
+		
+	
 
 if ($new_wine_flag) {
 	$wine->access_id = ACCESS_PUBLIC;
@@ -114,7 +110,7 @@ if ($new_wine_flag) {
 }
 
 // Now see if we have a file icon
-if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))) {
+/*if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))) {
 
 	$icon_sizes = elgg_get_config('icon_sizes');
 
@@ -159,7 +155,7 @@ if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))
 
 		$wine->icontime = time();
 	}
-}
+}*/
 
 system_message(elgg_echo("wine:saved"));
 
