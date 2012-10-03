@@ -15,6 +15,10 @@
     elgg.wine_edit.init = function() {
  	$(function() {
                             
+                            
+                            
+                            
+                            
                 var array_fr = [];
                 var array_es = [];
                 var array_it = [];
@@ -1939,8 +1943,14 @@ array_es[1]=[
 			return ret;
 		};
                 
-               
-                
+
+                 $("#id_country").change(function(){
+                        $('#id_description').val('');
+                        $('#id_region').val('');
+
+                 });
+
+
                 
                 $( "#id_description" ).autocomplete({
 			source: function( request, response ) {
@@ -1959,7 +1969,7 @@ array_es[1]=[
                                         return matcher.test( value ) || matcher.test( normalize( value ) );
 				}) );
                                 }
-                                if ($('#id_country').val() == "Italy") {
+                                if ($('#id_country').val() == "Italia") {
 				response( $.grep( array_it[0], function( value ) {
 					value = value.label || value.value || value;
                                         return matcher.test( value ) || matcher.test( normalize( value ) );
@@ -1976,7 +1986,7 @@ array_es[1]=[
                         
                         close: function(event, ui) {
                             
-                                $('#id_region').val("");
+                                $('#id_region').val('');
                                 
                                 if ($('#id_country').val() == "France") {
                                 var returned = $('#id_description').val();
@@ -1988,7 +1998,7 @@ array_es[1]=[
                                 var index = jQuery.inArray(returned, array_es[0]);
                                 $('#id_region').val($('#id_region').val() + array_es[1][index]);
                                 }
-                                if ($('#id_country').val() == "Italy") {
+                                if ($('#id_country').val() == "Italia") {
                                 var returned = $('#id_description').val();
                                 var index = jQuery.inArray(returned, array_it[0]);
                                 $('#id_region').val($('#id_region').val() + array_it[1][index]);
