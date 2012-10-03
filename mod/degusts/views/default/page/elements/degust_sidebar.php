@@ -25,16 +25,14 @@ echo '<div class="degust-side-head">';
   
 // affichage du millésime     
     
-         if ($owner->vintage=='v'){
-             if (isset($degust->annee)){    // la fiche degust existe déjà (profile ou edit
-                 echo $degust->annee;
-             }else{
-                $annee=get_input('annee');  // cas ou la fiche de degust n'existe pas "add"
-                echo $annee;
-             }
-         }else {
-            echo elgg_echo('wine:nv');
-         }
+  if ($degust->annee){
+    if ($degust->annee != 'nv') {
+        echo elgg_echo("wine:vintage") . ': '. $degust->annee ;
+    } else {
+        echo elgg_echo("wine:vintage") . ': '. elgg_echo("wine:nv");
+    }
+    
+}
          
      
 echo '</div>';

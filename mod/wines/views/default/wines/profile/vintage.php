@@ -8,6 +8,8 @@
 
 $year=date('Y');
 $years=array();
+$years[]=" ";
+$years['nv']=elgg_echo('wine:nv');
 while ($year>1920) {
     
     $years[$year]=$year;
@@ -15,25 +17,13 @@ while ($year>1920) {
    
 }
 
-$entity=  elgg_get_page_owner_entity();
-$url=$entity->getURL();
-$value=  get_input('annee');
-
-    
-
-if ($entity->vintage=='v'){
 echo elgg_view('input/dropdown', array(
-                            'name' => "year",
+                            'name' => "annee",
                             'value' => $value,          
                             'options_values' => $years,
-                            'data-url'=>$url,
-                            'id'=>'vintage'
+                           
                             ));
 
-
-}else {
-   echo elgg_echo('wine:nv');
-}
 ?>
 
 

@@ -34,8 +34,7 @@ $french = array(
         'wine:soil'=>'Composition du sol',     //sol          
         'wine:country'=>'Pays' ,               //pays
     
-        'wine:vintage'=>'',
-        'wine:v'=>'Millésimé (le sélection du millésime se fait dans le profile du vin une fois crée)',
+        'wine:vintage'=>'Millésime',
         'wine:nv'=>'Non Millésimé',
         
         'wine:red'=>'Rouge',             

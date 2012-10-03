@@ -85,6 +85,9 @@ function profile_page_handler($page) {
 
 	$content=elgg_view('profile/wrapper');
         
+        elgg_load_js('elgg.modal');
+	elgg_load_js('elgg.validate');
+        elgg_load_js('elgg.degust');
         
         $options = array(
 	'type' => 'object',

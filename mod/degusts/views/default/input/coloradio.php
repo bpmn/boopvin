@@ -74,13 +74,13 @@ if ($options && count($options) > 0) {
 			elgg_deprecated_notice('$vars[\'options\'] must be an associative array in input/radio', 1.8);
 			
 		}
-                $label = $option;
+                
 		//ANCIEN CODE 
                 //echo "<li><label><input type=\"radio\" $attributes />$label</label></li>";
 
-                echo "<input class=\"required\" id=\"{$myid}-{$label}\" type=\"radio\" $attributes />";               
+                echo "<input class=\"required\" id=\"{$myid}-{$option}\" type=\"radio\" $attributes />";               
                 
-                echo "<label for=\"{$myid}-{$label}\">";
+                echo "<label for=\"{$myid}-{$option}\">";
                 
                 echo "$label</label>";
 
