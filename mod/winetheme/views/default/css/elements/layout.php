@@ -22,7 +22,7 @@
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	width: 990px;
 	margin: 0 auto;
-	height: 90px;
+	height: 130px;
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	width: 990px;
@@ -67,7 +67,7 @@
 	position: relative;
 	background: #4690D6 url(<?php echo elgg_get_site_url(); ?>_graphics/header_shadow.png) repeat-x bottom left;
 background: #800000;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/header_boopwine.png') no-repeat bottom, url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/header_repeat.png') repeat-x bottom left;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/avenue-vin-w1200-130.png') no-repeat bottom;
         }
         
 .elgg-page-header > .elgg-inner {
