@@ -30,6 +30,7 @@ class ElggWine extends ElggGroup {
 		parent::initializeAttributes();
 
 		$this->attributes['subtype'] = "wine";
+                
 	}
 
 

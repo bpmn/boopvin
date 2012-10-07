@@ -98,6 +98,8 @@ function search_wines_hook($hook, $type, $value, $params) {
 
 		$description = search_get_highlighted_relevant_substrings($entity->description, $query);
 		$entity->setVolatileData('search_matched_description', $description);
+                
+             
 	}
 
 	return array(

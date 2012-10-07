@@ -38,3 +38,19 @@ unset($vars['match_owner']);
 elgg_load_js('hj.livesearch.autocomplete');
 ?>
 <input type="text" <?php echo elgg_format_attributes($vars); ?> />
+
+<?php
+        echo elgg_view('input/hidden', array(
+		'name' => 'entity_type',
+		'value' => 'group',
+	));
+        echo elgg_view('input/hidden', array(
+		'name' => 'entity_subtype',
+		'value' => 'wine',
+	));
+        echo elgg_view('input/hidden', array(
+		'name' => 'search_type',
+		'value' => 'entities',
+	));
+        
+        ?>

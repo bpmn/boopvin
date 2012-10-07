@@ -87,7 +87,7 @@ $params = array(
 
 $types = get_registered_entity_types();
 $custom_types = elgg_trigger_plugin_hook('search_types', 'get_types', $params, array());
-
+/*
 // add sidebar items for all and native types
 // @todo should these maintain any existing type / subtype filters or reset?
 $data = htmlspecialchars(http_build_query(array(
@@ -98,6 +98,7 @@ $data = htmlspecialchars(http_build_query(array(
 	'search_type' => 'all',
 	//'friends' => $friends
 )));
+ 
 $url = elgg_get_site_url() . "search?$data";
 $menu_item = new ElggMenuItem('all', elgg_echo('all'), $url);
 elgg_register_menu_item('page', $menu_item);
@@ -152,7 +153,7 @@ foreach ($custom_types as $type) {
 
 	$menu_item = new ElggMenuItem($label, elgg_echo($label), $url);
 	elgg_register_menu_item('page', $menu_item);
-}
+}*/
 
 // start the actual search
 $results_html = '';

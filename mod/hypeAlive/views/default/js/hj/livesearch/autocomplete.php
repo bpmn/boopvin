@@ -7,10 +7,17 @@
         $('.elgg-input-autocomplete')
         .autocomplete({
             source: function(request, response) {
-                var action = 'action/livesearch/parse';
-
+                var action = elgg.security.addToken('action/livesearch/parse?entity_type=group&entity_subtype=wine&search_entity=entities');
+                
                 elgg.action(action, {
-                    data : request,
+                    data : {
+                        term : request.term,
+                        entity_type:'group',
+                        entity_subtype:'wine',
+                        search_type:'entities'
+                    
+                    },
+                             
                     success: function(data) {
                         response($.map(data.output, function(item) {
                             return {
