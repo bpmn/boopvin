@@ -10,6 +10,7 @@ $entity = elgg_extract('entity', $vars, null);
 $form_vars = array(
 	'enctype' => 'multipart/form-data',
 	'class' => 'elgg-form-alt',
+        'id' => 'id_wineform'
         
 );
 $body_vars = array('entity' => $entity);

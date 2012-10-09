@@ -71,4 +71,6 @@ if ($options_values) {
 	}
 }
 ?>
-</select><div id='slider'></div>
+</select>
+
+<!--<div id='slider'></div>-->

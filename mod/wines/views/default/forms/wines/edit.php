@@ -20,12 +20,63 @@ if (isset($vars['entity'])) {
 
 ?>
 
+<script>
+ $(document).ready(function(){
 
+      // jQuery.validator.messages.required = "";
+
+        $("#id_wineform").validate({
+    
+            highlight: function(element, errorClass) {
+                $(element).parent().css({
+                    "border-radius":"5px"
+                });
+                $(element).parent().css({
+                    "box-shadow":"0px 0px 5px #ff0000"
+                });
+
+       
+            },
+        
+            unhighlight: function(element, errorClass) {
+                $(element).parent().css({
+                    "box-shadow":"none"
+                });
+
+        
+            },
+            invalidHandler: function(e, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1
+                        ? 'You missed 1 field. It has been highlighted below'
+                    : 'You missed ' + errors + ' fields.  They have been highlighted below';
+                    alert(message);
+                    //$("div.error span").html(message);
+                    //$("div.error").show();
+                    //$("div.validate_error_label label").css("color", "red");
+                                                             
+
+                } else {
+                     alert("no errors found");
+
+                    //$("div.error").hide();
+                    //$("div.validate_error_label label").css("color", "black");
+
+                }
+            }
+        });
+        
+      
+ }
+
+</script>
 <div>
 	<label><?php echo elgg_echo("wine:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
 		'name' => 'name',
 		'value' => $vars['entity']->name,
+                'class' => "required"
 	));
 	?>
 </div>
@@ -40,9 +91,12 @@ if ($wine_profile_fields > 0) {
 		if ($valtype == 'longtext') {
 			$line_break = '';
 		}
-		echo "<div class=\"ui-widget\"><label for=\"$id\">";
+		echo "<div class=\"ui-widget\">";
+                echo "<div class=\"validate_error_label\">";
+                echo "<label for=\"$id\">";
 		echo elgg_echo("wine:{$shortname}");
 		echo "</label>$line_break";
+                echo "</div>";
                 
               switch ($shortname) {       
                   
@@ -53,6 +107,7 @@ if ($wine_profile_fields > 0) {
                             'name' => $shortname,
                             'value' => $vars['entity']->$shortname,    
                             'id' => $id,
+                            'class' => "required",
                             'options_values' => array(
 'Australia' => elgg_echo('Australia'),
 'France' => elgg_echo('France'),
@@ -120,7 +175,8 @@ if ($wine_profile_fields > 0) {
                             'options_values' => array(
 				'red' => elgg_echo('wine:red'),
 				'white' => elgg_echo('wine:white'),
-                                'rose' => elgg_echo('wine:rose')
+                                'rose' => elgg_echo('wine:rose'),
+                                'class' => "required"
                             )));
                      break;
                  
@@ -129,7 +185,9 @@ if ($wine_profile_fields > 0) {
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
                             'value' => $vars['entity']->$shortname,
-                            'id' => $id
+                            'id' => $id,
+                            'class' => "required"
+
                     ));
                     break;
                 }

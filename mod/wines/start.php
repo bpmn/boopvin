@@ -80,14 +80,19 @@ function wine_init() {
         elgg_register_ajax_view('wines/ajax/dist_restobar');
         
         // register the restobar's JavaScript
-	$wine_js = elgg_get_simplecache_url('js', 'wine_map');
+	$wine_map_js = elgg_get_simplecache_url('js', 'wine_map');
 	elgg_register_simplecache_view('js/wine_map');
-	elgg_register_js('elgg.wine', $wine_js,'footer');
+	elgg_register_js('elgg.wine', $wine_map_js,'footer');
         
         $wine_edit_js = elgg_get_simplecache_url('js', 'wine_edit');
 	elgg_register_simplecache_view('js/wine_edit');
 	elgg_register_js('elgg.wine_edit', $wine_edit_js,'footer');
 
+        $wine_js = elgg_get_simplecache_url('js', 'wine');
+	elgg_register_simplecache_view('js/wine');
+	elgg_register_js('elgg.wine', $wine_js,'footer');
+        
+        
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');
 	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'wine_read_acl_plugin_hook');
