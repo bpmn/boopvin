@@ -23,16 +23,16 @@ if (isset($vars['entity'])) {
 <script>
  $(document).ready(function(){
 
-      // jQuery.validator.messages.required = "";
+       jQuery.validator.messages.required = "";
 
         $("#id_wineform").validate({
     
             highlight: function(element, errorClass) {
                 $(element).parent().css({
-                    "border-radius":"5px"
+                    "border-radius":"0px"
                 });
                 $(element).parent().css({
-                    "box-shadow":"0px 0px 5px #ff0000"
+                    "box-shadow":"0px 0px 10px #ff0000"
                 });
 
        
@@ -68,7 +68,7 @@ if (isset($vars['entity'])) {
         });
         
       
- }
+ });
 
 </script>
 <div>
@@ -171,12 +171,13 @@ if ($wine_profile_fields > 0) {
 		case 'kind':
                      echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
-                            'value' => $vars['entity']->$shortname,          
-                            'options_values' => array(
+                            'value' => $vars['entity']->$shortname, 
+                            'id' => $id,
+                            'class' => "required",
+                            'options_values' => array(''=> elgg_echo(''),
 				'red' => elgg_echo('wine:red'),
 				'white' => elgg_echo('wine:white'),
-                                'rose' => elgg_echo('wine:rose'),
-                                'class' => "required"
+                                'rose' => elgg_echo('wine:rose')
                             )));
                      break;
                  

@@ -93,6 +93,7 @@ function wine_init() {
 	elgg_register_js('elgg.wine', $wine_js,'footer');
         
         
+        
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');
 	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'wine_read_acl_plugin_hook');

@@ -173,6 +173,8 @@ function wine_handle_mine_page() {
  */
 function wine_handle_edit_page($page, $guid = 0) {
         elgg_load_js('elgg.wine_edit');
+        elgg_load_js('elgg.validate');
+
 	gatekeeper();
 	
 	if ($page == 'add') {

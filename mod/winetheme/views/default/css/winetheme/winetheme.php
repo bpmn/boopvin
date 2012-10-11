@@ -6,6 +6,11 @@
 
 ?>
 
+body {
+background: #ff0000;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v3.jpg') repeat-x;
+
+}
 
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {

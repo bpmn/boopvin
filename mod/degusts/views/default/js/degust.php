@@ -236,10 +236,10 @@ function degust_edit (action){
     
             highlight: function(element, errorClass) {
                 $(element).parent().css({
-                    "border-radius":"5px"
+                    "border-radius":"0px"
                 });
                 $(element).parent().css({
-                    "box-shadow":"0px 0px 5px #ff0000"
+                    "box-shadow":"0px 0px 10px #ff0000"
                 });
 
        
