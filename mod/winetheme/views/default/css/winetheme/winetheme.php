@@ -8,7 +8,7 @@
 
 body {
 background: #ff0000;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v3.jpg') repeat-x;
+background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v4.jpg') repeat-x;
 
 }
 
@@ -184,7 +184,7 @@ div#job{
 
 .groups-profile-fields .odd,
 .groups-profile-fields .even {
-	background: #f4f4f4;
+	background: #ffffff;
 	
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;

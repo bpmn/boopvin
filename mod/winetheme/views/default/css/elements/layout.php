@@ -37,8 +37,8 @@
 
 /***** TOPBAR ******/
 .elgg-page-topbar {
-	background: #333333 url(<?php echo elgg_get_site_url(); ?>_graphics/toptoolbar_background.gif) repeat-x top left;
-	border-bottom: 1px solid #000000;
+background: rgb(176,166,148);
+border-bottom: 1px solid #000000;
 	position: relative;
 	height: 24px;
 	z-index: 9000;
@@ -67,7 +67,8 @@
 	position: relative;
 	background: #4690D6 url(<?php echo elgg_get_site_url(); ?>_graphics/header_shadow.png) repeat-x bottom left;
 background: #800000;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/logo.png') no-repeat bottom;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/logo.png') no-repeat;
+background-position: center top;
         }
         
 .elgg-page-header > .elgg-inner {
@@ -79,7 +80,7 @@ background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/win
 	min-height: 360px;
 }
 .elgg-layout-one-sidebar {
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/sidebar_background.gif) repeat-y right top;
+	background: transparent url(<?php echo elgg_get_site_url(); ?>/mod/winetheme/views/default/css/winetheme/images/sidebar_background.png) repeat-y right top;
 }
 .elgg-layout-two-sidebar {
 	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/two_sidebar_background.gif) repeat-y right top;
@@ -93,6 +94,7 @@ background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/win
 	float: right;
 	width: 210px;
 	margin: 0 0 0 10px;
+        
 }
 .elgg-sidebar-alt {
 	position: relative;
@@ -122,3 +124,4 @@ background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/win
 .elgg-page-footer a:hover {
 	color: #666;
 }
+

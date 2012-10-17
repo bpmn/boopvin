@@ -45,8 +45,6 @@ width: 900px;
 .vigne_separator {
 clear:left;
 height: 33px;
-background: url(<?php echo $vigne_separator; ?>) no-repeat;
-background-position: center bottom;
 margin-bottom: 10px;
 }
 
@@ -54,9 +52,7 @@ margin-bottom: 10px;
 padding-top: 10px;
 width: 630px;
 margin: 8px 0 5px 0px;
-background: #ffffff url(<?php echo $fiche; ?>) no-repeat;
-background-position: right top;
-
+background: #ffffff;
 border: 1px none #800000;
 
 }
@@ -278,7 +274,6 @@ margin-right: 0px;
 padding-top:10px;
 height: 110px;
 text-transform:capitalize;  
-background: url(<?php echo $degust_header; ?>) no-repeat;
 background-position: right center;
 }
 
