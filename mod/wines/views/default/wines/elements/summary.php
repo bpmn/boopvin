@@ -21,9 +21,7 @@ $entity = $vars['entity'];
 
 
 	$text = $entity->name;
-        if ($entity->cuvee){         
-            $text .=" \"{$entity->cuvee}\"";
-        }
+       
 	$params = array(
 		'text' => $text,
 		'href' => $entity->getURL(),

@@ -14,8 +14,10 @@
     elgg.wine.init = function() {
         
       
-        
-        window.onload = getMyLocation;
+        $(function() {
+        //window.onload = getMyLocation;
+        getMyLocation();
+        });
         
         function getMyLocation() {
             if (navigator.geolocation) {
@@ -69,7 +71,20 @@
 
 
 
-
+      $("#addtocaveform").live('submit',function(e) {
+            e.preventDefault();
+            var url=$(this).attr('action');
+            var data=$("#addtocaveform :input").serialize();
+            elgg.action(url,{data:data,
+                    success: function(json, success, xhr) {
+                                $.nmTop().close();
+                                
+                            }
+            
+                });
+        
+        
+});   
 
 }
 elgg.register_hook_handler('init', 'system', elgg.wine.init);    

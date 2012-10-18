@@ -27,17 +27,13 @@ if (isset($degust->comment)){
     $excerpt = ($degust->comment).'</br>';
     
     
-    }elseif (isset($degust->arome)) {
-    $excerpt = ($degust->arome).'</br>';
+    }else {
+    $excerpt = "<div class=\"elgg-output\"><p>".elgg_echo('degust:nose')." ".elgg_echo('degust:complexity:'.$degust->complexity)."   ".elgg_echo('degust:longueur')." ".elgg_echo('degust:longueur:'.$degust->longueur).'</p></div></br>';
     
-    }elseif (isset($degust->accord)) {
-    $excerpt = ($degust->accord).'</br>';    
     }
     
    
 $title_link=$wine->name;
-if ($wine->cuvee)
-    $title_link.= "  \"{$wine->cuvee}\"";
 if ($degust->annee){
     if ($degust->annee != 'nv') {
         $title_link.= "  {$degust->annee}";
@@ -154,5 +150,9 @@ HTML;
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
-	echo elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link));
+	$block= elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link));
+        
+   
+        echo $block;
+        
 }

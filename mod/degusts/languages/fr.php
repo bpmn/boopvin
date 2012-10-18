@@ -51,8 +51,8 @@ $french = array(
     'degust:color:cuivre' => 'Cuivre',
     
     
-    'degust:reflet:violace_jeune'=>'Ciolacé Jeune',
-    'degust:reflet:violine' => 'Cioline',
+    'degust:reflet:violace_jeune'=>'Violacé Jeune',
+    'degust:reflet:violine' => 'Violine',
     'degust:reflet:grenat' => 'Grenat',
     'degust:reflet:carmin' => 'Carmin',
     'degust:reflet:brique' => 'Brique',
@@ -67,9 +67,13 @@ $french = array(
 //Olfactif
     'degust:nez_intensity'=>'L\'intensité',
     'degust:nez'=>'Famille d\'arômes',    // résultat des checkboxes sous forme de tableau
+    'degust:nose'=>'Nez',
     'degust:arome'=>'Arômes',        // description texte des arôme
     'degust:complexity'=>'Complexité',   // en fonction du nombres de checkbox cochées.
-    
+    'degust:complexity:1'=>'Simple',
+    'degust:complexity:2'=>'Assez complexe',
+    'degust:complexity:3'=>'Complexe',
+    'degust:complexity:4'=>'Très complexe',
   
     'degust:nez_intensity:ferme'=>'Fermé',
     'degust:nez_intensity:discret' => 'Discret',
@@ -102,7 +106,7 @@ $french = array(
     'degust:acidity:mou'=>'Mou',
     'degust:acidity:frais' => 'Frais',
     'degust:acidity:droit' => 'Droit',
-    'degust:acidity:mineral' => 'Nerveux',
+    'degust:acidity:nerveux' => 'Nerveux',
     'degust:acidity:vert' => 'Vert',
                             
     'degust:alcool:leger'=>'Léger',
@@ -117,11 +121,11 @@ $french = array(
     'degust:tanin:astringent' => 'Astringents',
 
 
-    'degust:longueur:tres_court'=>'Très court',
-    'degust:longueur:court' => 'Court',
-    'degust:longueur:moyen' => 'Moyen',
-    'degust:longueur:long' => 'Long',
-    'degust:longueur:tres_long' => 'Très Long',
+    'degust:longueur:tres_court'=>'Très courte',
+    'degust:longueur:court' => 'Courte',
+    'degust:longueur:moyen' => 'Moyenne',
+    'degust:longueur:long' => 'Longue',
+    'degust:longueur:tres_long' => 'Très Longue',
 
  
 //Gustatif

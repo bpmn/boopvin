@@ -100,7 +100,7 @@ function profile_page_handler($page) {
          
         //des degustations de l'utilisateur encadré d'un div
         $list_user_degust=elgg_list_entities($options);
-        $content.="<div id=\"list_user_degust\">".$list_user_degust."</div>" ;
+        $content.="<div id=\"list_user_degust\" class=\"degust_list\">".$list_user_degust."</div>" ;
         
       
         

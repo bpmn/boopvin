@@ -29,6 +29,16 @@ function search_init() {
 	elgg_register_plugin_hook_handler('search_types', 'get_types', 'search_custom_types_comments_hook');
 	elgg_register_plugin_hook_handler('search', 'comments', 'search_comments_hook');
 
+        
+        
+        
+        $action_base = elgg_get_plugins_path() . 'search/actions/search';    
+        elgg_register_action('search/parse', "$action_base/parse.php", 'public');
+	elgg_extend_view('css/elements/modules', 'css/hj/livesearch/base');
+
+	$js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete');
+	elgg_register_js('hj.livesearch.autocomplete', $js, 'footer');
+        
 	// get server min and max allowed chars for ft searching
 	$CONFIG->search_info = array();
 
@@ -50,6 +60,20 @@ function search_init() {
 
 	// extend view for elgg topbar search box
 	elgg_extend_view('page/elements/header', 'search/header');
+        
+        
+        
+        if (elgg_is_logged_in()) {
+            
+			elgg_register_menu_item('search', array(
+				'name' => 'add',
+				'href' => "wine/add/",
+				'text' => elgg_echo("wine:add"),
+				'link_class' => 'elgg-button elgg-button-action',
+			));
+	}
+        
+        
 }
 
 /**

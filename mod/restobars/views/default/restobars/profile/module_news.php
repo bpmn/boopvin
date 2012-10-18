@@ -11,7 +11,7 @@
 $restobar = elgg_get_page_owner_entity();
 
 if ($restobar->canWriteToContainer() && isset($vars['all_link'])) {
-$header = "<span class=\"groups-widget-viewall\">{$vars['all_link']}</span>";}
+$header = "<span class=\"restobars-widget-viewall\">{$vars['all_link']}</span>";}
 $header .= '<h3>' . $vars['title'] . '</h3>';
 
 

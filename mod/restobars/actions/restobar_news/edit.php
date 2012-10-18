@@ -33,13 +33,18 @@ elgg_clear_sticky_form('restobarnews');
 
 
 // handle results differently for new topics and topic edits
-if ($new_topic) {
-	system_message(elgg_echo('discussion:topic:created'));
-	add_to_river('river/object/restobarforumtopic/create', 'create', elgg_get_logged_in_user_guid(), $topic->guid);
-} else {
-	system_message(elgg_echo('discussion:topic:updated'));
-}
+//if ($new_topic) {
+	//system_message(elgg_echo('discussion:topic:created'));
+	//add_to_river('river/object/restobarforumtopic/create', 'create', elgg_get_logged_in_user_guid(), $topic->guid);
+//} else {
+//	system_message(elgg_echo('discussion:topic:updated'));
+//}
 
-system_message(elgg_echo('restobarnews:updated'));
+add_to_river('river/object/restobarnews/create', 'update', elgg_get_logged_in_user_guid(), $topic->guid);
+//system_message(elgg_echo('restobarnews:updated'));
+
+
+$content= '<p>'.$restobarnews->description.'</p>';
+echo $content;
 
 forward($container->getURL());

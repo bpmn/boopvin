@@ -2,7 +2,7 @@
 /**
  * Remove a user from a group
  *
- * @package ElggGroups
+ * @package Elggwines
  */
 
 $user_guid = get_input('user_guid');

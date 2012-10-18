@@ -65,3 +65,5 @@ Search plugin
 .search-highlight-color5 {
 	background-color: #4690d6;
 }
+
+

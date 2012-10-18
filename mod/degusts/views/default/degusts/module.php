@@ -22,9 +22,10 @@ $options = array(
 	'container_guid' => $wine->getGUID(),
 	'limit' => 10,
 	'full_view' => false,
-	'pagination' => false,
+	'pagination' => true,
+        
 );
-$content = elgg_list_entities($options);
+$content = "<div class=\"degust_list\">".elgg_list_entities($options)."</div>";
 elgg_pop_context();
 
 if (!$content) {
@@ -41,5 +42,6 @@ echo elgg_view('wines/profile/module', array(
 	'title' => elgg_echo('degust:wine'),
 	'content' => $content,
 	'all_link' => $all_link,
-	'add_link' => $new_link,
+	//'add_link' => $new_link,
+       
 ));

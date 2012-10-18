@@ -31,8 +31,8 @@ foreach ($CONFIG->wine as $shortname => $valuetype) {
 	}
 }
 
-$input['name'] = get_input('name');
-$input['name'] = html_entity_decode($input['name'], ENT_COMPAT, 'UTF-8');
+$input['domaine'] = get_input('domaine');
+$input['domaine'] = html_entity_decode($input['domaine'], ENT_COMPAT, 'UTF-8');
 
 $user = elgg_get_logged_in_user_entity();
 
@@ -54,7 +54,7 @@ if (sizeof($input) > 0) {
 }
 
 // Validate create
-if (!$wine->name) {
+if (!$wine->domaine) {
 	register_error(elgg_echo("wine:notitle"));
 
 	forward(REFERER);
@@ -82,6 +82,8 @@ $wine->membership = ACCESS_PUBLIC;
 if ($new_wine_flag) {
 	$wine->access_id = ACCESS_PUBLIC;
 }
+
+$wine->name=$wine->domaine." "."\"$wine->cuvee\"";
 
 $wine->save();
 

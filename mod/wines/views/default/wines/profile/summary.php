@@ -54,13 +54,13 @@ if ($pics) {
 
 
 ?>
-<div class="groups-profile clearfix elgg-image-block">
+<div class="wines-profile clearfix elgg-image-block">
 	<div class="elgg-image">
-		<div class="groups-profile-icon">
+		<div class="wines-profile-icon">
 			<?php //echo elgg_view_entity_icon($wine, 'large', array('href' => '')); 
                               echo $image; ?>
 		</div>
-		<div class="groups-stats">
+		<div class="wines-stats">
 			<p>
 				<b><?php echo elgg_echo("wine:owner"); ?>: </b>
 				<?php
@@ -79,7 +79,7 @@ if ($pics) {
 		</div>
 	</div>
 
-	<div class="groups-profile-fields elgg-body">
+	<div class="wines-profile-fields elgg-body">
 		<?php
 			echo elgg_view('wines/profile/fields', $vars);
                         //echo elgg_view('wines/profile/vintage',$vars);

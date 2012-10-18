@@ -29,6 +29,7 @@ foreach ($CONFIG->degust as $index => $elts) {
 
 $container_guid=get_input('container_guid');
 $annee=get_input('annee');
+//$complexity=get_input('complexity');
 
 
 
@@ -53,32 +54,48 @@ if (sizeof($input) > 0) {
 
 
 }
+$container=  get_entity($container_guid);
+$title= $container->name." ".$container->cuvee." ".$annee;
+
+$description= elgg_get_logged_in_user_entity()->name;
 
 $degust->container_guid=$container_guid;
 $degust->annee=$annee;
 $degust->access_id=ACCESS_PUBLIC;
-
+$degust->title=$title;
+$degust->description=$description;
+//$degust->complexity=$complexity;
 $degust->save();
 
 // wine creator needs to be member of new wine and river entry created
-//if ($new_degust_flag) {
+if ($new_degust_flag) {
 	
-//	add_to_river('river/degust/create', 'create', $user->guid, $wine->guid, $wine->access_id);
-//}
+	add_to_river('river/degust/create', 'create', $user->guid, $wine->guid, $wine->access_id);
+}
 
 system_message(elgg_echo("degust:saved"));
 
-$container=  get_entity($container_guid);
-
-forward($container->getUrl());
-//forward();
+$page_owner_guid=get_input('page_owner_guid');
+$page_owner_entity = get_entity($page_owner_guid);
 
 
+$options = array(
+                 'type' => 'object',
+                 'subtype' => 'degust',
+                 'limit' => 10,
+                 'full_view' => false,
+                 'pagination' => true,
+         );
+if (elgg_instanceof($page_owner_entity,'user')){
+   $options['owner_guid'] =$page_owner_guid;
+}else{
+   $options['container_guid'] =$page_owner_guid; 
+}
 
+echo elgg_list_entities($options);
 
-
-
-
+// Forward to the page the action occurred on
+forward(REFERER);
 
 
 ?>

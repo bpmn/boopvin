@@ -25,9 +25,7 @@ function degust_init(){
 	elgg_extend_view('css/elgg', 'degusts/css');
         
         elgg_extend_view('wines/tool_latest', 'degusts/module');
-        
-	
-        
+       
         
          /*script degust*/
         $degust_js = elgg_get_simplecache_url('js', 'degust');
@@ -71,9 +69,10 @@ function degust_fields_setup() {
  //Olfactif
              'olfactif'=>array(
                     'nez_intensity'=>'coloradio',
-                    'nez'=>'noseboxes',    // résultat des checkboxes sous forme de tableau
+                    'nez'=>'noseboxes', // résultat des checkboxes sous forme de tableau
+                    'complexity'=>'hidden', // en fonction du nombres de checkbox cochées.
                     'arome'=>'text'),        // description texte des arôme
-                    //'complexity'=>'text'),   // en fonction du nombres de checkbox cochées.
+                       
  //Gustatif
              'gustatif'=> array(
                     'rondeur'=>'paletradio',

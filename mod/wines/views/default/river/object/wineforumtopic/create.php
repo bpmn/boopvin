@@ -10,7 +10,7 @@ $excerpt = elgg_get_excerpt($excerpt);
 $responses = '';
 if (elgg_is_logged_in() && $object->canAnnotate(0, 'wine_topic_post')) {
 	// inline comment form
-	$form_vars = array('id' => "groups-reply-{$object->getGUID()}", 'class' => 'hidden');
+	$form_vars = array('id' => "wines-reply-{$object->getGUID()}", 'class' => 'hidden');
 	$body_vars = array('entity' => $object, 'inline' => true);
 	$responses = elgg_view_form('wine_discussion/reply/save', $form_vars, $body_vars);
 }

@@ -175,7 +175,26 @@ elgg.provide('elgg.restobar');
             });
             
         }
-       
+      
+// script restobar_news
+      
+        $("#restobar_news").live('submit',function(e) {
+            e.preventDefault();
+            var url=$(this).attr('action');
+            var data=$("#restobar_news :input").serialize();
+            elgg.action(url,{data:data,
+                    success: function(json, success, xhr) {
+                                $.nmTop().close();
+                                $('#elgg-text-restobarnews').html(json.output);
+                                
+                            }
+            
+                });
+        
+        
+});   
+      
+      
     }
     
 elgg.register_hook_handler('init', 'system', elgg.restobar.init);    

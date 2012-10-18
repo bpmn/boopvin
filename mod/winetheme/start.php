@@ -81,9 +81,7 @@ function winetheme_init() {
     elgg_register_css('winetheme.overlay_css', $overlay_css,'head');
     elgg_load_css('winetheme.overlay_css');
     
-    $restobars_css = elgg_get_simplecache_url('css', 'restobars/restobars');
-    elgg_register_css('winetheme.restobars_css', $restobars_css,'head');
-    elgg_load_css('winetheme.restobars_css');
+    elgg_extend_view('css/elgg', 'css/restobars/restobars');
  
     $search_css = elgg_get_simplecache_url('css', 'search/search');
     elgg_register_css('winetheme.search_css', $search_css,'head');
@@ -94,6 +92,7 @@ function winetheme_init() {
     elgg_load_css('winetheme.winetheme_css');
     
    
+    elgg_extend_view('css/elgg', 'css/wines/wines');
     
     elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
 

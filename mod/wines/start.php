@@ -73,9 +73,8 @@ function wine_init() {
 	// delete and edit annotations for topic replies
 	elgg_register_plugin_hook_handler('register', 'menu:annotation', 'wine_annotation_menu_setup');
 
-	//extend some views
-	elgg_extend_view('css/elgg', 'wines/css');
-	//elgg_extend_view('js/elgg', 'wines/js');
+	
+	//elgg_extend_view('js/elgg', 'js/wine_map');
         
         elgg_register_ajax_view('wines/ajax/dist_restobar');
         
@@ -128,6 +127,7 @@ function wine_init() {
 function wine_fields_setup() {
 
 	$profile_defaults = array(
+            
                 'country'=>'dropdown',      //pays
 		'description' => 'text',    //appellation
 		'region' => 'text',         //région
@@ -249,9 +249,10 @@ function wine_page_handler($page) {
 			wine_handle_edit_page('edit', $page[1]);
 			break;
 		case 'profile':
+                        elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'addtocave_owner_block_menu');
 			wine_handle_profile_page($page[1],$page[3]);
 			break;
-		case 'activity':
+		case 'activity': 
 			wine_handle_activity_page($page[1]);
 			break;
 		case 'members':
@@ -781,7 +782,7 @@ function wine_discussion_init() {
 
 	// add link to owner block
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'wine_discussion_owner_block_menu');
-        elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'addtocave_owner_block_menu');
+        //elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'addtocave_owner_block_menu');
 
 	// Register for search.
 	elgg_register_entity_type('object', 'wineforumtopic');
@@ -876,7 +877,8 @@ function wine_discussion_owner_block_menu($hook, $type, $return, $params) {
 
 function addtocave_owner_block_menu($hook, $type, $return, $params) {
         $user=  elgg_get_logged_in_user_entity();
-	if (elgg_instanceof($params['entity'], 'group','wine')) {
+        $context=elgg_get_context();
+	if (elgg_instanceof($params['entity'], 'group','wine') ) {
 		if ($user->pro != "no") {
 			$url = "wine/addtocave/{$params['entity']->guid}";
                         $text= "addtocave";				

@@ -44,10 +44,11 @@ foreach ($degust_profile_fields as $section => $elts) {
   
      foreach($elts as $shortname=>$valtype){
          echo ('<div class="degust-feuille-content">');
-
+         
+         
 
          eval('$options=$options_'.$shortname.';');
-         if(isset($options) || $valtype=='text' || $valtype=='longtext' || $shortname=='note'){ 
+         if(isset($options) || $valtype=='hidden' || $valtype=='text' || $valtype=='longtext' || $shortname=='note'){ 
             //echo '<label>';
              
             //echo ('<td>');
@@ -80,7 +81,10 @@ foreach ($degust_profile_fields as $section => $elts) {
             $variables=array(
                         'value'=>$value,
                         );
-         
+            
+            if ($valtype=='hidden'){
+             $valtype='text';
+            }
          
             echo elgg_view("output/{$valtype}",$variables);
 

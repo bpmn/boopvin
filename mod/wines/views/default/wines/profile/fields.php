@@ -16,10 +16,7 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 			continue;
 		}
                 
-                // do not show the vintage option.
-                if ($key == 'vintage') {
-			continue;
-		}
+               
            
 
 		$value = $wine->$key;

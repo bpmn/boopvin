@@ -2,7 +2,7 @@
 /**
  * Invite users to join a group
  *
- * @package ElggGroups
+ * @package Elggwines
  */
 
 $logged_in_user = elgg_get_logged_in_user_entity();

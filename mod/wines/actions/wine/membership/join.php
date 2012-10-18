@@ -7,7 +7,7 @@
  * closed group so request sent to group owner
  * closed group with invite so user joins
  * 
- * @package ElggGroups
+ * @package Elggwines
  */
 
 global $CONFIG;
@@ -27,7 +27,7 @@ if (($user instanceof ElggUser) && ($wine instanceof ElggGroup)) {
 	// join or request
 	$join = false;
 	if ($wine->isPublicMembership() || $wine->canEdit($user->guid)) {
-		// anyone can join public groups and admins can join any group
+		// anyone can join public wines and admins can join any group
 		$join = true;
 	} else {
 		if (check_entity_relationship($wine->guid, 'invited', $user->guid)) {

@@ -32,11 +32,24 @@ body {
 	font-size: 80%;
 	line-height: 1.4em;
 	font-family: "Lucida Grande", Arial, Tahoma, Verdana, sans-serif;
-        text-transform:capitalize;
+        
 }
 
 a {
-	text-transform:capitalize;color: #800000;
+	color: #800000;
+}
+
+body:first-letter,
+a:first-letter,
+h1:first-letter,
+h2:first-letter,
+h3:first-letter,
+h4:first-letter,
+h5:first-letter,
+h6:first-letter,
+div:first-letter,
+p:first-letter {
+    text-transform:capitalize;
 }
 
 a:hover,
@@ -100,14 +113,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 200%; text-transform:capitalize; font-size: 1.8em; }
+font-size: 200%; font-size: 1.8em; }
 h2 { font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 175%; text-transform:capitalize;line-height: 1.1em; padding-bottom:5px}
+font-size: 175%; line-height: 1.1em; padding-bottom:5px}
 
-h3 { text-transform:capitalize;font-size: 1.2em; }
-h4 { text-transform:capitalize;font-size: 1.0em; }
-h5 { text-transform:capitalize;font-size: 0.9em; }
-h6 { text-transform:capitalize;font-size: 0.8em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.0em; }
+h5 { font-size: 0.9em; }
+h6 { font-size: 0.8em; }
 
 .elgg-heading-site, .elgg-heading-site:hover {
 font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;

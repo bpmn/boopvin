@@ -82,7 +82,7 @@ HTML;
 
 } else {
 	// brief view
-	$subtitle = "$poster_text $date $replies_link <span class=\"groups-latest-reply\">$reply_text</span>";
+	$subtitle = "$poster_text $date $replies_link <span class=\"restobars-latest-reply\">$reply_text</span>";
 
 	$params = array(
 		'entity' => $topic,

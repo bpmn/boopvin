@@ -20,8 +20,7 @@ echo '<div class="degust-side-head">';
 
 	 echo elgg_view_entity_icon($owner,'medium');
          echo "$owner->name <br/>";
-         if ($owner->cuvee)
-                echo "$owner->cuvee <br/>";
+         
   
 // affichage du millésime     
     

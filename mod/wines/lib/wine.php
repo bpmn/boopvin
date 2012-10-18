@@ -12,7 +12,7 @@ function wine_handle_all_page() {
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('wine'));
 
-	elgg_register_title_button();
+	//elgg_register_title_button();
 
 	$selected_tab = get_input('filter', 'newest');
 
@@ -234,9 +234,9 @@ function wine_handle_invitations_page() {
  *
  * @param int $guid Group entity GUID
  */
-function wine_handle_profile_page($guid,$annee) {
+function wine_handle_profile_page($guid) {
         elgg_set_page_owner_guid($guid);
-        elgg_load_js('elgg.googlemap');
+        //elgg_load_js('elgg.googlemap');
         elgg_load_js('elgg.wine');
         elgg_load_js('elgg.modal');
 	elgg_load_js('elgg.validate');
@@ -244,10 +244,7 @@ function wine_handle_profile_page($guid,$annee) {
         elgg_load_js('elgg.popup');
   
        
-        if (!$annee)
-            $annee=(int)2009;
-        
-        set_input('annee',$annee);
+     
 
 	// turn this into a core function
 	global $autofeed;
@@ -280,7 +277,7 @@ function wine_handle_profile_page($guid,$annee) {
 	$params = array(
 		'content' => $content,
 		'sidebar' => $sidebar,
-		'title' => $wine->name,
+		'title' => $wine->domaine,
 		'filter' => '',
 	);
 	$body = elgg_view_layout('content', $params);
@@ -547,7 +544,7 @@ function wine_handle_addtocave_page($entity_guid){
 	);
 	$body = elgg_view_layout('one_column', $params);
         
-	echo elgg_view_page($title, $body,'overlay');   
+	echo elgg_view_page($title, $content,'overlay');   
     
 }
 

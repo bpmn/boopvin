@@ -24,8 +24,8 @@ if (isset($vars['entity'])) {
 <div>
 	<label><?php echo elgg_echo("wine:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
-		'name' => 'name',
-		'value' => $vars['entity']->name,
+		'name' => 'domaine',
+		'value' => $vars['entity']->domaine,
 	));
 	?>
 </div>

@@ -2,7 +2,7 @@
 /**
  * Add users to a restobar
  *
- * @package ElggGroups
+ * @package Elggwines
  */
 $wine_guid = get_input('wine_guid');
 $restobar_guid = get_input('restobar_guid');

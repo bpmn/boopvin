@@ -189,27 +189,6 @@ div#job{
 	margin-bottom: 7px;
 }
 
-.groups-profile-fields .elgg-output {
-	margin: 0;
-}
 
-#groups-tools > li {
-	width: 48%;
-	min-height: 200px;
-	margin-bottom: 40px;
-}
-
-#groups-tools > li:nth-child(odd) {
-	margin-right: 4%;
-}
-
-.groups-widget-viewall {
-	float: right;
-	font-size: 85%;
-}
-
-.groups-latest-reply {
-	float: right;
-}
 
 

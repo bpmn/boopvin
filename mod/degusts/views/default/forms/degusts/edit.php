@@ -54,8 +54,7 @@ echo '<div class="degust-side-head">';
 
 echo elgg_view_entity_icon($container, 'medium');
 echo "$container->name <br/>";
-if ($container->cuvee)
-    echo "$container->cuvee <br/>";
+
 
 // affichage du millésime     
 
@@ -68,8 +67,8 @@ if (isset($degust->annee)) {    // la fiche degust existe déjà (profile ou edi
     }
 } else {
     $year = date('Y');
-    $years = array();
-    $years[] = " ";
+    
+    $years[''] = "";
     $years['nv'] = elgg_echo('wine:nv');
     while ($year > 1920) {
 
@@ -105,7 +104,7 @@ foreach ($degust_profile_fields as $section => $elts) {
          eval('$options=$options_'.$shortname.';');
          eval('$option_values=$option_values_'.$shortname.';');
          
-         if ($options || $option_values || $valtype=='text' || $valtype=='longtext'){
+         if ($options || $option_values || $valtype=='text' || $valtype=='hidden'|| $valtype=='longtext'){
             
             //echo "<center>" ;
             echo "<div class=\"validate_error_label\">";
@@ -166,7 +165,19 @@ if (isset($vars['entity'])) {
 		'name' => 'annee',
 		'value' => $annee
 	));
-}
+}       
+   /*     echo elgg_view('input/hidden', array(
+		'name' => 'complexity',
+		'value' => $degust->complexity,
+                'id'=>'input_complexity'
+	));
+}else{
+
+        echo elgg_view('input/hidden', array(
+		'name' => 'complexity',
+                'id'=>'input_complexity'
+	));
+}*/
 echo elgg_view('input/hidden', array(
 		'name' => 'container_guid',
 		'value' => $container->getGUID(),
@@ -180,7 +191,7 @@ echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
 if (isset($vars['entity']) && $degust->canEdit()) {
 	$delete_url = 'action/degusts/delete?guid=' . $vars['entity']->getGUID();
-	echo elgg_view('output/confirmlink', array(
+	echo elgg_view('output/degust_confirmlink', array(
 		'text' => elgg_echo('degust:delete'),
 		'href' => $delete_url,
 		'confirm' => elgg_echo('degust:deletewarning'),
