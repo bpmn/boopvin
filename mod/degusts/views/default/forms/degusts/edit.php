@@ -67,7 +67,7 @@ if (isset($degust->annee)) {    // la fiche degust existe déjà (profile ou edi
     }
 } else {
     $year = date('Y');
-    
+
     $years[''] = "";
     $years['nv'] = elgg_echo('wine:nv');
     while ($year > 1920) {
