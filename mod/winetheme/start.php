@@ -25,7 +25,8 @@ function winetheme_init() {
 	//extend some views
 	//elgg_extend_view('css/elgg', 'winetheme/css');
     //$winetheme_jq = elgg_get_simplecache_url('css', 'vendors/jquery/ui/theme');
-    
+    elgg_unregister_menu_item('topbar', 'elgg_logo');
+
     
     elgg_unregister_page_handler('activity');
     elgg_register_page_handler ('activity','winetheme_river_page_handler');

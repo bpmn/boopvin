@@ -6,6 +6,11 @@
 
 ?>
 
+body {
+background: #ff0000;
+background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v4.jpg') repeat-x;
+
+}
 
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
@@ -179,7 +184,7 @@ div#job{
 
 .groups-profile-fields .odd,
 .groups-profile-fields .even {
-	background: #f4f4f4;
+	background: #ffffff;
 	
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;

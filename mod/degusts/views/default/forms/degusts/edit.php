@@ -76,11 +76,18 @@ if (isset($degust->annee)) {    // la fiche degust existe déjà (profile ou edi
         $year--;
     }
 echo '<fielset>';
+echo "<div class=\"validate_error_label\">";
+
+echo '<label for="id_years"></label>';
+
     echo elgg_view('input/dropdown', array(
         'name' => "annee",
         'options_values' => $years,
-        'class'=>'required'
+        'class' => "required",
+        'id' => "id_years"
     ));
+echo '</div>';
+
 echo '</fielset>';
 };
 
@@ -108,7 +115,7 @@ foreach ($degust_profile_fields as $section => $elts) {
             
             //echo "<center>" ;
             echo "<div class=\"validate_error_label\">";
-                
+    
             echo '<label>';
             echo '<h2>';
             echo elgg_echo("degust:{$shortname}");

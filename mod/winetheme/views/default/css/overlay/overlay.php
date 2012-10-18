@@ -66,7 +66,7 @@ $close = elgg_normalize_url($close);
 	border: 4px solid #600000;
         outline: 4px solid #323232;
         margin: 25px;
-	background: rgb(233,224,209);
+	background: rgb(176,166,148);
               
 }
 .nyroModalCont iframe {
