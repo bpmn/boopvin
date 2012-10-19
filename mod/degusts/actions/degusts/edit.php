@@ -55,7 +55,7 @@ if (sizeof($input) > 0) {
 
 }
 $container=  get_entity($container_guid);
-$title= $container->name." ".$container->cuvee." ".$annee;
+$title= $container->name." ".$annee;
 
 $description= elgg_get_logged_in_user_entity()->name;
 

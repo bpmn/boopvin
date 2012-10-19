@@ -87,9 +87,7 @@ function wine_init() {
 	elgg_register_simplecache_view('js/wine_edit');
 	elgg_register_js('elgg.wine_edit', $wine_edit_js,'footer');
 
-        $wine_js = elgg_get_simplecache_url('js', 'wine');
-	elgg_register_simplecache_view('js/wine');
-	elgg_register_js('elgg.wine', $wine_js,'footer');
+        
         
         
         
