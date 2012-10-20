@@ -92,6 +92,8 @@ function wine_init() {
         
         
 	// Access permissions
+        elgg_register_plugin_hook_handler('permissions_check', 'group', 'wine_override_permissions');
+        
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');
 	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'wine_read_acl_plugin_hook');
 
@@ -1030,3 +1032,14 @@ function wine_run_upgrades() {
 		include "$path{$file}";
 	}
 }
+
+
+function wine_override_permissions($hook, $entity_type, $returnvalue, $params){
+    $wine=elgg_extract('entity', $params);
+    $user=elgg_extract('user', $params);
+    if ($wine->getSubtype()== 'wine'){
+            if($wine->isMember())
+			return true;
+	}
+
+    }

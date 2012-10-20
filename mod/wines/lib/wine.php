@@ -264,9 +264,9 @@ function wine_handle_profile_page($guid) {
 	$content = elgg_view('wines/profile/layout', array('entity' => $wine));
 	if (group_gatekeeper(false)) {
 		$sidebar = '';
-		if (elgg_is_active_plugin('search')) {
-			$sidebar .= elgg_view('wines/sidebar/search', array('entity' => $wine));
-		}
+		//if (elgg_is_active_plugin('search')) {
+		//	$sidebar .= elgg_view('wines/sidebar/search', array('entity' => $wine));
+		//}
 		$sidebar .= elgg_view('wines/sidebar/members', array('entity' => $wine));
 	} else {
 		$sidebar = '';
@@ -460,18 +460,22 @@ function wine_register_profile_buttons($wine) {
 	$actions = array();
 
 	// group owners
-	if ($wine->canEdit()) {
+	/*if ($wine->canEdit()) {
 		// edit and invite
 		$url = elgg_get_site_url() . "wine/edit/{$wine->getGUID()}";
 		$actions[$url] = 'wine:edit';
 		
                 $url = elgg_get_site_url() . "wine/invite/{$wine->getGUID()}";
 		$actions[$url] = 'wine:invite';
-	}
+	}*/
 
 	// group members
-	if ($wine->isMember(elgg_get_logged_in_user_entity())) {
-           
+	//if ($wine->isMember(elgg_get_logged_in_user_entity())) {
+        if ($wine->canEdit()) {   
+            // edit and invite
+            $url = elgg_get_site_url() . "wine/edit/{$wine->getGUID()}";
+            $actions[$url] = 'wine:edit';
+            
             $url = elgg_normalize_url("degust/add/{$wine->getGUID()}/");
             $url = elgg_add_action_tokens_to_url($url);
             $actions[$url] = elgg_echo('degust:add');
@@ -550,5 +554,7 @@ function wine_handle_addtocave_page($entity_guid){
     
 }
 
+
+       
 
 ?>

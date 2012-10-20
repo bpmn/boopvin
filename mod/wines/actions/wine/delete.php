@@ -11,7 +11,7 @@ if (!$guid) {
 }
 $entity = get_entity($guid);
 
-if (!$entity->canEdit()) {
+if (!elgg_is_admin_logged_in()) {
 	register_error(elgg_echo('wine:notdeleted'));
 	forward(REFERER);
 }
@@ -39,4 +39,4 @@ if (($entity) && ($entity instanceof ElggGroup)) {
 }
 
 $url_name = elgg_get_logged_in_user_entity()->username;
-forward(elgg_get_site_url() . "wine/member/{$url_name}");
+forward(elgg_get_site_url() . "wine/all");

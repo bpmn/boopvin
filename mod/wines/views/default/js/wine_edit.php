@@ -2017,8 +2017,63 @@ array_es[1]=[
 	});       
         
     
+    
+    
+ //validation
+    
+    jQuery.validator.messages.required = "";
+
+        $("#id_wineform").validate({
+    
+            highlight: function(element, errorClass) {
+                $(element).parent().css({
+                    "border-radius":"0px"
+                });
+                $(element).parent().css({
+                    "box-shadow":"0px 0px 10px #ff0000"
+                });
+
+       
+            },
+        
+            unhighlight: function(element, errorClass) {
+                $(element).parent().css({
+                    "box-shadow":"none"
+                });
+
+        
+            },
+            invalidHandler: function(e, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1
+                        ? 'You missed 1 field. It has been highlighted below'
+                    : 'You missed ' + errors + ' fields.  They have been highlighted below';
+                    alert(message);
+                    //$("div.error span").html(message);
+                    //$("div.error").show();
+                    //$("div.validate_error_label label").css("color", "red");
+                                                             
+
+                } else {
+                     alert("no errors found");
+
+                    //$("div.error").hide();
+                    //$("div.validate_error_label label").css("color", "black");
+
+                }
+            }
+        });
+        
+    
+    
         
   }
+  
+  
+
+
+  
 elgg.register_hook_handler('init', 'system', elgg.wine_edit.init);    
      
 <?php if (FALSE) : ?></script><?php endif; ?>

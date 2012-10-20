@@ -20,57 +20,7 @@ if (isset($vars['entity'])) {
 
 ?>
 
-<script>
- $(document).ready(function(){
 
-       jQuery.validator.messages.required = "";
-
-        $("#id_wineform").validate({
-    
-            highlight: function(element, errorClass) {
-                $(element).parent().css({
-                    "border-radius":"0px"
-                });
-                $(element).parent().css({
-                    "box-shadow":"0px 0px 10px #ff0000"
-                });
-
-       
-            },
-        
-            unhighlight: function(element, errorClass) {
-                $(element).parent().css({
-                    "box-shadow":"none"
-                });
-
-        
-            },
-            invalidHandler: function(e, validator) {
-                var errors = validator.numberOfInvalids();
-                if (errors) {
-                    var message = errors == 1
-                        ? 'You missed 1 field. It has been highlighted below'
-                    : 'You missed ' + errors + ' fields.  They have been highlighted below';
-                    alert(message);
-                    //$("div.error span").html(message);
-                    //$("div.error").show();
-                    //$("div.validate_error_label label").css("color", "red");
-                                                             
-
-                } else {
-                     alert("no errors found");
-
-                    //$("div.error").hide();
-                    //$("div.validate_error_label label").css("color", "black");
-
-                }
-            }
-        });
-        
-      
- });
-
-</script>
 <div>
 	<label><?php echo elgg_echo("wine:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
@@ -171,7 +121,7 @@ if ($wine_profile_fields > 0) {
 
                   
 		case 'kind':
-                     echo elgg_view("input/{$valtype}", array(
+                    $option_kind=array(
                             'name' => $shortname,
                             'value' => $vars['entity']->$shortname, 
                             'id' => $id,
@@ -180,7 +130,11 @@ if ($wine_profile_fields > 0) {
 				'red' => elgg_echo('wine:red'),
 				'white' => elgg_echo('wine:white'),
                                 'rose' => elgg_echo('wine:rose')
-                            )));
+                            ));
+                     if (isset($vars['entity'])&& !elgg_is_admin_logged_in()) {
+                         $option_kind['disabled']="disabled";
+                     }
+                     echo elgg_view("input/{$valtype}",$option_kind );
                      break;
                  
                  
@@ -213,7 +167,7 @@ if (isset($vars['entity'])) {
 
 echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
-if (isset($vars['entity'])) {
+if (isset($vars['entity'])&& elgg_is_admin_logged_in()) {
 	$delete_url = 'action/wines/delete?guid=' . $vars['entity']->getGUID();
 	echo elgg_view('output/confirmlink', array(
 		'text' => elgg_echo('wine:delete'),
