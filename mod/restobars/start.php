@@ -62,6 +62,7 @@ function restobar_init() {
 
        
         elgg_register_ajax_view('restobars/ajax/showmap');
+        elgg_register_ajax_view('restobars/ajax/restobar_around');
         
 	// Add some widgets
 	elgg_register_widget_type('a_users_restobars', elgg_echo('restobar:widget:membership'), elgg_echo('restobar:widgets:description'));

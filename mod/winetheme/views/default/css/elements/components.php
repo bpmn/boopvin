@@ -36,6 +36,20 @@
 	border-bottom: 1px dotted #CCCCCC;
 }
 
+#list-style-all {
+   
+   float:left;
+   width: 350px;
+   display:block; 
+}
+
+#list-style-all-resto {
+
+   float:left;
+   width: 240px;
+   display:block; 
+}
+
 .elgg-item .elgg-subtext {
 	margin-bottom: 5px;
 }

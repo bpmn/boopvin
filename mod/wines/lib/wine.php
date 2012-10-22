@@ -47,6 +47,7 @@ function wine_handle_all_page() {
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('group' => 'wine'),
 				'full_view' => false,
+                                'id'=>'list-style-all'
 			));
 			if (!$content) {
 				$content = elgg_echo('wine:none');
@@ -56,8 +57,8 @@ function wine_handle_all_page() {
 
 	$filter = elgg_view('wines/wine_sort_menu', array('selected' => $selected_tab));
 	
-	$sidebar = elgg_view('wines/sidebar/find');
-	$sidebar .= elgg_view('wines/sidebar/featured');
+	//$sidebar = elgg_view('wines/sidebar/find');
+	//$sidebar .= elgg_view('wines/sidebar/featured');
 
 	$params = array(
 		'content' => $content,

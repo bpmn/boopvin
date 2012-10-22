@@ -7,7 +7,7 @@
  * List all restobar
  */
 function restobar_handle_all_page() {
-
+       
 	// all Restobar doesn't get link to self
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));
@@ -17,36 +17,28 @@ function restobar_handle_all_page() {
 	$selected_tab = get_input('filter', 'newest');
 
 	switch ($selected_tab) {
-		case 'popular':
-			$content = elgg_list_entities_from_relationship_count(array(
+		case 'around':
+			/*$content = elgg_list_entities_from_relationship_count(array(
 				//'type_subtype_pairs' =>array('group' => 'restobar'),
                                 'type'=>'group',
                                 'subtype'=>'restobar',
 				'relationship' => 'member',
 				'inverse_relationship' => false,
 				'full_view' => false,
-			));
-			if (!$content) {
+			));*/
+			elgg_load_js('elgg.restobar');
+                        $content= '<div id="list-around"></div>';
+                        if (!$content) {
 				$content = elgg_echo('restobar:none');
 			}
 			break;
-		case 'discussion':
-			$content = elgg_list_entities(array(
-				'type' => 'object',
-				'subtype' => 'restobarforumtopic',
-				'order_by' => 'e.last_action desc',
-				'limit' => 40,
-				'full_view' => false,
-			));
-			if (!$content) {
-				$content = elgg_echo('discussion:none');
-			}
-			break;
+		
 		case 'newest':
 		default:
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('group' => 'restobar'),
 				'full_view' => false,
+                                'id'=>'list-style-all-resto'
 			));
 			if (!$content) {
 				$content = elgg_echo('restobar:none');

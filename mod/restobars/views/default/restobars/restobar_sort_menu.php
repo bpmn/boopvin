@@ -11,16 +11,12 @@ $tabs = array(
 		'href' => 'restobar/all?filter=newest',
 		'priority' => 200,
 	),
-	'popular' => array(
-		'text' => elgg_echo('restobar:popular'),
-		'href' => 'restobar/all?filter=popular',
+	'around' => array(
+		'text' => elgg_echo('restobar:around'),
+		'href' => 'restobar/all?filter=around',
 		'priority' => 300,
 	),
-	'discussion' => array(
-		'text' => elgg_echo('restobar:latestdiscussion'),
-		'href' => 'restobar/all?filter=discussion',
-		'priority' => 400,
-	),
+	
 );
 
 foreach ($tabs as $name => $tab) {

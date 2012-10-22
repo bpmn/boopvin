@@ -10,7 +10,8 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Bars, Restos, Caves...",
+	'restobar' => "Bars, restos, caves, domaine...",
+    
 	'restobar:owned' => "restobar I own",
 	'restobar:yours' => "My restobar",
 	'restobar:user' => "%s's restobar",
@@ -142,8 +143,9 @@ $french = array(
 	'restobar:addtopic' => 'Add a topic',
 	'restobar:forumlatest' => 'Latest discussion',
 	'restobar:latestdiscussion' => 'Latest discussion',
-	'restobar:newest' => 'Newest',
-	'restobar:popular' => 'Popular',
+	'restobar:newest'=>'les derniers',
+        'restobar:around'=>'dans les environs',
+        
 	'restobarpost:success' => 'Your reply was succesfully posted',
 	'restobar:alldiscussion' => 'Latest discussion',
 	'restobar:edittopic' => 'Edit topic',
