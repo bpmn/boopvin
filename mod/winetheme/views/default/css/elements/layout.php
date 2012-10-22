@@ -37,7 +37,7 @@
 
 /***** TOPBAR ******/
 .elgg-page-topbar {
-background: rgb(176,166,148);
+background: rgb(0,0,0);
 border-bottom: 1px solid #000000;
 	position: relative;
 	height: 24px;
@@ -81,10 +81,18 @@ background-position: center top;
 }
 .elgg-layout-one-sidebar {
 	background: transparent url(<?php echo elgg_get_site_url(); ?>/mod/winetheme/views/default/css/winetheme/images/sidebar_background.png) repeat-y right top;
+-moz-box-shadow: 0px 3px 20px #000000;
+-webkit-box-shadow: 0px 3px 20px #000000;
+box-shadow: 0px 3px 20px #000000;
 }
+
 .elgg-layout-two-sidebar {
 	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/two_sidebar_background.gif) repeat-y right top;
+-moz-box-shadow: 0px 3px 20px #000000;
+-webkit-box-shadow: 0px 3px 20px #000000;
+box-shadow: 0px 3px 20px #000000;
 }
+        
 .elgg-layout-error {
 	margin-top: 20px;
 }
@@ -119,9 +127,10 @@ background-position: center top;
 	position: relative;
 }
 .elgg-page-footer {
-	color: #999;
+	color: white;
 }
+
 .elgg-page-footer a:hover {
-	color: #666;
+	color: #000000;
 }
 

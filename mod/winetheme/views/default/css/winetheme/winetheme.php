@@ -8,7 +8,7 @@
 
 body {
 background: #ff0000;
-background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v4.jpg') repeat-x;
+background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v14.jpg') repeat-y;
 
 }
 
