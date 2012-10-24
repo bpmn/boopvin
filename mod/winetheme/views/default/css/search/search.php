@@ -8,9 +8,16 @@
 
 .elgg-search-header {
 	bottom: 5px;
-	height: 23px;
+	height: 56px;
 	position: absolute;
 	right: 0;
+}
+
+#search_wine h3 {
+color : #ffffff;
+text-shadow:5px 5px 5px #000000;
+display: inline-block;
+
 }
 
 
