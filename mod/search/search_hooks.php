@@ -108,6 +108,52 @@ function search_wines_hook($hook, $type, $value, $params) {
 	);
 }
 
+function search_restobars_hook($hook, $type, $value, $params) {
+	$db_prefix = elgg_get_config('dbprefix');
+
+	$query = sanitise_string($params['query']);
+
+	$join = "JOIN {$db_prefix}groups_entity ge ON e.guid = ge.guid";
+	$params['joins'] = array($join);
+	
+	$fields = array('name', 'description');
+
+	// force into boolean mode because we've having problems with the
+	// "if > 50% match 0 sets are returns" problem.
+	$where = search_get_where_sql('ge', $fields, $params, FALSE);
+
+	$params['wheres'] = array($where);
+
+	// override subtype -- All groups should be returned regardless of subtype.
+	//$params['subtype'] = ELGG_ENTITIES_ANY_VALUE;
+
+	$params['count'] = TRUE;
+	$count = elgg_get_entities($params);
+	
+	// no need to continue if nothing here.
+	if (!$count) {
+		return array('entities' => array(), 'count' => $count);
+	}
+	
+	$params['count'] = FALSE;
+	$entities = elgg_get_entities($params);
+
+	// add the volatile data for why these entities have been returned.
+	foreach ($entities as $entity) {
+		$name = search_get_highlighted_relevant_substrings($entity->name, $query);
+		$entity->setVolatileData('search_matched_title', $name);
+
+		$description = search_get_highlighted_relevant_substrings($entity->description, $query);
+		$entity->setVolatileData('search_matched_description', $description);
+                
+             
+	}
+
+	return array(
+		'entities' => $entities,
+		'count' => $count,
+	);
+}
 /**
  * Return default results for searches on users.
  *

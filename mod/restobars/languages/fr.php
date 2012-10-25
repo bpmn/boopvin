@@ -10,7 +10,7 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Bars, restos, caves, domaine...",
+	'restobar' => "Bars, restos, caves, domaines...",
     
 	'restobar:owned' => "restobar I own",
 	'restobar:yours' => "My restobar",

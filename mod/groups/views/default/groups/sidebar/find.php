@@ -9,6 +9,7 @@ $body = elgg_view_form('groups/find', array(
 	'action' => $url,
 	'method' => 'get',
 	'disable_security' => true,
+        'class' => 'elgg-search elgg-search-header'
 ));
 
 echo elgg_view_module('aside', elgg_echo('groups:searchtag'), $body);

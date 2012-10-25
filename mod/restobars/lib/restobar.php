@@ -11,8 +11,11 @@ function restobar_handle_all_page() {
 	// all Restobar doesn't get link to self
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));
-
-	elgg_register_title_button();
+        elgg_load_js('hj.livesearch.autocomplete_other');
+	//elgg_register_title_button();
+        
+        // extend view for header restobar search box
+	elgg_extend_view('page/layouts/content/header', 'restobars/sidebar/find');
 
 	$selected_tab = get_input('filter', 'newest');
 
@@ -255,9 +258,9 @@ function restobar_handle_profile_page($guid) {
 	$content = elgg_view('restobars/profile/layout', array('entity' => $restobar));
 	if (group_gatekeeper(false)) {
 		$sidebar = '';
-		if (elgg_is_active_plugin('search')) {
+		/*if (elgg_is_active_plugin('search')) {
 			$sidebar .= elgg_view('restobars/sidebar/search', array('entity' => $restobar));
-		}
+		}*/
 		$sidebar .= elgg_view('restobars/sidebar/members', array('entity' => $restobar));
 	} else {
 		$sidebar = '';
@@ -507,8 +510,8 @@ function restobar_register_profile_buttons($restobar) {
 		$url = elgg_get_site_url() . "restobar/edit/{$restobar->getGUID()}";
 		$actions[$url] = 'restobar:edit';
 		
-                $url = elgg_get_site_url() . "restobar/invite/{$restobar->getGUID()}";
-		$actions[$url] = 'restobar:invite';
+              /*  $url = elgg_get_site_url() . "restobar/invite/{$restobar->getGUID()}";
+		$actions[$url] = 'restobar:invite';*/
 	}
 
 	// group members

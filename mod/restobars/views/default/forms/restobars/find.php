@@ -3,14 +3,22 @@
  * Group tag-based search form body
  */
 
-$tag_string = elgg_echo('restobar:search:tags');
 
-$params = array(
-	'name' => 'tag',
-	'class' => 'elgg-input-search mbm',
-	'value' => $tag_string,
-	'onclick' => "if (this.value=='$tag_string') { this.value='' }",
+
+$tag_string = elgg_echo('groups:search:tags');
+
+$params = array(	
+	'class' => 'elgg-input-search-other mbm search-input',
+	'value' => elgg_echo('search'),
+        'onblur' => "if (this.value=='') { this.value='" . elgg_echo('search') . "' };",
+        'onfocus' => "if (this.value=='" . elgg_echo('search') . "') { this.value='' };",
+        'size' => '21',
+        'name' => 'q',
+        'id' => 'hj-autocomplete'
 );
 echo elgg_view('input/text', $params);
 
-echo elgg_view('input/submit', array('value' => elgg_echo('search:go')));
+//echo elgg_view('input/submit', array('value' => elgg_echo('search:go')));
+
+
+
