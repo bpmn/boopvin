@@ -416,7 +416,7 @@
 .elgg-menu-footer > li,
 .elgg-menu-footer > li > a {
 	display: inline-block;
-	color: #999;
+	color: #fff;
 }
 
 .elgg-menu-footer > li:after {
