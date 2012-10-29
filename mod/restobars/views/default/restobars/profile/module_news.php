@@ -16,8 +16,10 @@ $header .= '<h3>' . $vars['title'] . '</h3>';
 
 
 echo '<li>';
+echo '<div class="restobars-news">';
 echo elgg_view_module('info', '', $vars['content'], array(
 	'header' => $header,
 	'class' => 'elgg-module-group',
 ));
+echo '</div>';
 echo '</li>';

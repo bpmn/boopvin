@@ -173,6 +173,10 @@
 	font-weight: bold;
 	padding: 3px 13px 0px 13px;
 	height: 20px;
+        font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+        	font-size: 110%;
+
+
 }
 
 .elgg-menu-site > li > a:hover {
@@ -207,7 +211,7 @@
 .elgg-menu-site-default > .elgg-state-selected > a,
 .elgg-menu-site-default > li:hover > a {
 	background: white;
-	color: #555;
+	color: #000;
 
 	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);

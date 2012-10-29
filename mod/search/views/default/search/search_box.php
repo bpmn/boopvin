@@ -24,7 +24,7 @@ $display_query = mb_convert_encoding($value, 'HTML-ENTITIES', 'UTF-8');
 $display_query = htmlspecialchars($display_query, ENT_QUOTES, 'UTF-8', false);
 ?>
 <form class="elgg-search elgg-search-header" action="<?php echo elgg_get_site_url(); ?>search" method="get">
-    <div id="search_wine"><h3>Cherchez un vin !</h3></div>;
+    <div id="search_wine"><h2>Cherchez un vin !</h2></div>
 	<fieldset>
             <?php
                 echo elgg_view('input/livesearch', array(
