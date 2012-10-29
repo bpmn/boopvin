@@ -82,3 +82,26 @@ float: right;
 
 }
 
+
+
+.elgg-search-entity input[type=text] {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border:1px solid black;
+        float: right;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px 4px 2px 26px;
+	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
+        }
+        
+        
+.elgg-search-entity input[type=text]:focus, .elgg-search-entity input[type=text]:active {
+    
+	background-color: white;
+	background-position: 2px -916px;
+	border: 1px solid black;
+	color: #0054A7;
+}

@@ -39,6 +39,7 @@ Search plugin
 	color: #0054A7;
 }
 
+
 .search-list li {
 	padding: 5px 0 0;
 }
@@ -67,3 +68,21 @@ Search plugin
 }
 
 
+.elgg-search-entity{
+    float:right;
+    color: black;
+}
+
+
+.elgg-search-entity input[type=text] {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	border: 1px solid #71b9f7;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px 4px 2px 26px;
+	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
+}

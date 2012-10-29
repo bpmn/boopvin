@@ -135,21 +135,38 @@ function wine_fields_setup() {
 	$profile_defaults = array(
             
                 'country'=>'dropdown',      //pays
-		'description' => 'text',    //appellation
+		'appellation' => 'text',    //appellation
 		'region' => 'text',         //région
                 'cuvee'=>'text',            //cuvée
 		'grapes' => 'text',         //cépage
                 'maker'=>'text',            //vigneron
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
-              
+                'info'=>'longtext',         //info complémentaires
 		//'website' => 'url',
  
 	);
+        
+        $profile_defaults_display = array(
+                'cuvee'=>'text',            //cuvée
+                'appellation' => 'text',    //appellation
+                'region' => 'text',         //région
+                'country'=>'dropdown',      //pays
+		'grapes' => 'text',         //cépage
+                'maker'=>'text',            //vigneron
+                'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
+                'soil'=>'text',             //sol
+                'info'=>'longtext',         //info complémentaires
+		//'website' => 'url',
+ 
+	);
+        
+        
 
 	$profile_defaults = elgg_trigger_plugin_hook('profile:fields', 'group', NULL, $profile_defaults);
 
 	elgg_set_config('wine', $profile_defaults);
+        elgg_set_config('wine_display', $profile_defaults_display);
 
 	// register any tag metadata names
 	foreach ($profile_defaults as $name => $type) {

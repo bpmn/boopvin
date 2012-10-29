@@ -1949,7 +1949,7 @@ array_fr[0] = [
 
 
                 
-                $( "#id_description" ).autocomplete({
+                $( "#id_appellation" ).autocomplete({
 			source: function( request, response ) {
                                 
 				var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
@@ -1986,22 +1986,22 @@ array_fr[0] = [
                                 $('#id_region').val('');
                                 
                                 if ($('#id_country').val() == "France") {
-                                var returned = $('#id_description').val();
+                                var returned = $('#id_appellation').val();
                                 var index = jQuery.inArray(returned, array_fr[0]);
                                 $('#id_region').val($('#id_region').val() + array_fr[1][index]);
                                 }
                                 if ($('#id_country').val() == "Spain") {
-                                var returned = $('#id_description').val();
+                                var returned = $('#id_appellation').val();
                                 var index = jQuery.inArray(returned, array_es[0]);
                                 $('#id_region').val($('#id_region').val() + array_es[1][index]);
                                 }
                                 if ($('#id_country').val() == "Italia") {
-                                var returned = $('#id_description').val();
+                                var returned = $('#id_appellation').val();
                                 var index = jQuery.inArray(returned, array_it[0]);
                                 $('#id_region').val($('#id_region').val() + array_it[1][index]);
                                 }
                                 if ($('#id_country').val() == "United States") {
-                                var returned = $('#id_description').val();
+                                var returned = $('#id_appellation').val();
                                 var index = jQuery.inArray(returned, array_us[0]);
                                 $('#id_region').val($('#id_region').val() + array_us[1][index]);
                                 }                                

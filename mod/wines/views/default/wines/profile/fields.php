@@ -5,7 +5,7 @@
 
 $wine = $vars['entity'];
 
-$profile_fields = elgg_get_config('wine');
+$profile_fields = elgg_get_config('wine_display');
 
 if (is_array($profile_fields) && count($profile_fields) > 0) {
 

@@ -10,7 +10,7 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Bars, restos, caves, domaine...",
+	'restobar' => "Bars, restos, caves, domaines...",
     
 	'restobar:owned' => "restobar I own",
 	'restobar:yours' => "My restobar",
@@ -61,7 +61,8 @@ $french = array(
 	'restobar:nofriendsatall' => 'You have no friends to invite!',
 	'restobar:viarestobar' => "via restobar",
 	'restobar:restobar' => "restobar",
-	'restobar:search:tags' => "tag",
+	'restobar:search'=>"rechercher un établissement",
+        'restobar:search:tags' => "tag",
 	'restobar:search:title' => "Search for restobar tagged with '%s'",
 	'restobar:search:none' => "No matching restobar were found",
 	'restobar:search_in_restobar' => "Search in this restobar",

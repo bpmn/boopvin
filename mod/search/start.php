@@ -20,6 +20,7 @@ function search_init() {
 	elgg_register_plugin_hook_handler('search', 'object', 'search_objects_hook');
 	elgg_register_plugin_hook_handler('search', 'user', 'search_users_hook');
 	elgg_register_plugin_hook_handler('search', 'group:wine', 'search_wines_hook');
+        elgg_register_plugin_hook_handler('search', 'group:restobar', 'search_restobars_hook');
 
 	// tags and comments are a bit different.
 	// register a search types and a hooks for them.
@@ -38,6 +39,11 @@ function search_init() {
 
 	$js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete');
 	elgg_register_js('hj.livesearch.autocomplete', $js, 'footer');
+        //elgg_load_js('hj.livesearch.autocomplete');
+        
+        $js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete_other');
+	elgg_register_js('hj.livesearch.autocomplete_other', $js, 'footer');
+        
         
 	// get server min and max allowed chars for ft searching
 	$CONFIG->search_info = array();

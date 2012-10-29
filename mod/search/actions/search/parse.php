@@ -159,6 +159,6 @@ if ($search_type != 'entities' || $search_type == 'all') {
         }
     }
 }
-
+//echo $results_html;
 print json_encode($results_html);
 return true;

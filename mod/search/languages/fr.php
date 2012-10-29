@@ -1,6 +1,7 @@
 <?php
 
 $french = array(
+        'search:wine:title'=> 'Chercher un vin',
 	'search:enter_term' => 'Enter a search term:',
 	'search:no_results' => "Aucun résulat ne correspond à la requête.",
         'search:addwine'=>'Recherche infructueuse ? Ajoutez votre vin: ',

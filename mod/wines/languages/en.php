@@ -24,7 +24,7 @@ $english = array(
 	'wine:icon' => 'wine icon (leave blank to leave unchanged)',
 	'wine:name' => 'Name/Chateau/Domain',
 	'wine:username' => 'wine short name (displayed in URLs, alphanumeric characters only)',
-	'wine:description' => 'Appellation',
+	'wine:appellation' => 'Appellation',
         'wine:cuvee'=>'Cuvée',            //cuvée
 	'wine:region' => 'Region',         //région
 	'wine:grapes' => 'Varietals',         //cépage
@@ -32,7 +32,7 @@ $english = array(
         'wine:kind'=>'Type',             //style de vin blanc, rouge, moelleux
         'wine:soil'=>'Soil',             //sol
         'wine:country'=>'Country' ,         //pays
-        
+        'wine:info'=>'Informations complémentaires (élevage, vinification..)' ,         //pays
         'wine:vintage'=>'Vintage',
         'wine:nv'=>'No Vintage',
     

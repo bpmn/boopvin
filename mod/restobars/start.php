@@ -182,7 +182,7 @@ function restobar_setup_sidebar_menus() {
 			));
 
 			$user = elgg_get_logged_in_user_entity();
-			if ($user) {
+			if ($user->pro=='yes' || $user->isAdmin() ) {
 				/*$url =  "restobar/owner/$user->username";
 				$item = new ElggMenuItem('restobar:owned', elgg_echo('restobar:owned'), $url);
 				elgg_register_menu_item('page', $item);*/

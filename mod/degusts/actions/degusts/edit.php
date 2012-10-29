@@ -61,7 +61,7 @@ $description= elgg_get_logged_in_user_entity()->name;
 
 $degust->container_guid=$container_guid;
 $degust->annee=$annee;
-$degust->access_id=ACCESS_PUBLIC;
+$degust->access_id=ACCESS_LOGGED_IN;
 $degust->title=$title;
 $degust->description=$description;
 //$degust->complexity=$complexity;

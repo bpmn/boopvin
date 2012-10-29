@@ -74,6 +74,7 @@ $english = array(
 	'restobar:nofriendsatall' => 'You have no friends to invite!',
 	'restobar:viarestobar' => "via restobar",
 	'restobar:restobar' => "restobar",
+        'restobar:search'=>'search for a business',
 	'restobar:search:tags' => "tag",
 	'restobar:search:title' => "Search for restobar tagged with '%s'",
 	'restobar:search:none' => "No matching restobar were found",

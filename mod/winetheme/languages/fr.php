@@ -3,6 +3,7 @@
 $french = array(
 
 	"item:group:wine"=>"Vins",
+        "item:group:restobar"=>"Bars,restos,caves,domaines...",
 
 );
 
