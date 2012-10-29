@@ -179,8 +179,7 @@ function elgg_disable_filepath_cache() {
  * @see elgg_regenerate_simplecache()
  * @since 1.8.0
  */
-//function elgg_register_simplecache_view($viewname) {
-function elgg_register_simplecache_view($viewname, $vars) {
+function elgg_register_simplecache_view($viewname) {
 	global $CONFIG;
 
 	if (!isset($CONFIG->views)) {
@@ -191,8 +190,7 @@ function elgg_register_simplecache_view($viewname, $vars) {
 		$CONFIG->views->simplecache = array();
 	}
 
-	//$CONFIG->views->simplecache[] = $viewname;
-        $CONFIG->views->simplecache[] = $viewname . '?' . http_build_query($vars);
+	$CONFIG->views->simplecache[] = $viewname;
 }
 
 /**
@@ -267,12 +265,8 @@ function elgg_regenerate_simplecache($viewtype = NULL) {
 
 	foreach ($viewtypes as $viewtype) {
 		elgg_set_viewtype($viewtype);
-		/*foreach ($CONFIG->views->simplecache as $view) {
-			$viewcontents = elgg_view($view);*/
-                 foreach ($CONFIG->views->simplecache as $view_vars) {
-                        list($view, $vars) = explode('?', $view_vars);
-                        $viewcontents = elgg_view($view, parse_str($vars));       
-                        
+		foreach ($CONFIG->views->simplecache as $view) {
+			$viewcontents = elgg_view($view);
 			$viewname = md5(elgg_get_viewtype() . $view);
 			if ($handle = fopen($CONFIG->dataroot . 'views_simplecache/' . $viewname, 'w')) {
 				fwrite($handle, $viewcontents);

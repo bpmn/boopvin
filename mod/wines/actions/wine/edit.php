@@ -84,6 +84,7 @@ if ($new_wine_flag) {
 }
 
 $wine->name=$wine->domaine." "."\"$wine->cuvee\"";
+$wine->description=$wine->appellation." ".$wine->region." ".$wine->maker." ".$wine->country;
 
 $wine->save();
 

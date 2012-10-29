@@ -163,7 +163,14 @@ if (isset($vars['entity'])) {
 		'name' => 'wine_guid',
 		'value' => $vars['entity']->getGUID(),
 	));
+        echo elgg_view('input/hidden', array(
+		'name' => 'kind',
+		'value' => $vars['entity']->kind,
+	));
+
+        
 }
+
 
 echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 

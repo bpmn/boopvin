@@ -9,9 +9,9 @@ $tag_string = elgg_echo('groups:search:tags');
 
 $params = array(	
 	'class' => 'elgg-input-search-other mbm search-input',
-	'value' => elgg_echo('search'),
-        'onblur' => "if (this.value=='') { this.value='" . elgg_echo('search') . "' };",
-        'onfocus' => "if (this.value=='" . elgg_echo('search') . "') { this.value='' };",
+	'value' => elgg_echo('restobar:search'),
+        'onblur' => "if (this.value=='') { this.value='" . elgg_echo('restobar:search') . "' };",
+        'onfocus' => "if (this.value=='" . elgg_echo('restobar:search') . "') { this.value='' };",
         'size' => '21',
         'name' => 'q',
         'id' => 'hj-autocomplete'

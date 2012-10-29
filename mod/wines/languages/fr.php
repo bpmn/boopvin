@@ -24,7 +24,7 @@ $french = array(
 	'wine:icon' => 'wine icon (leave blank to leave unchanged)',
 	'wine:name' => 'Nom/Château/Domaine',
 	'wine:username' => 'wine short name (displayed in URLs, alphanumeric characters only)',
-	'wine:description' => 'Appellation',
+	'wine:appellation' => 'Appellation',
     
         'wine:cuvee'=>'Cuvée',            
 	'wine:region' => 'Région',        
@@ -33,7 +33,8 @@ $french = array(
         'wine:kind'=>'Type',                   //style de vin blanc, rouge, moelleux
         'wine:soil'=>'Composition du sol',     //sol          
         'wine:country'=>'Pays' ,               //pays
-    
+        'wine:info'=>'More information (aging, vinification..)' ,        
+      
         'wine:vintage'=>'Millésime',
         'wine:nv'=>'Non Millésimé',
         

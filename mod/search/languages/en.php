@@ -1,6 +1,7 @@
 <?php
 
 $english = array(
+        'search:wine:title'=> 'search for a wine',
 	'search:enter_term' => 'Enter a search term:',
 	'search:no_results' => 'No results.',
         'search:addwine'=>'',

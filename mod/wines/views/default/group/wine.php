@@ -27,8 +27,8 @@ if ($vars['full_view']) {
 	// brief view
     
     
-        if ($wine->description)
-            $subtitle=$wine->description.", ";
+        if ($wine->appellation)
+            $subtitle=$wine->appellation.", ";
         if ($wine->region)
             $subtitle.=$wine->region.", ";
         $subtitle.=$wine->country;
