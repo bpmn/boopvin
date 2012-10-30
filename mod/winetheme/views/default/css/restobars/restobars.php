@@ -18,8 +18,8 @@ $ardoise_background = elgg_normalize_url($ardoise_background);
 
 
 .resto_background {
-background: rgb(214,152,51);
-border: 1px solid #800000;
+background: #D8B771;
+border: 1px solid #723A08;
 margin-top: 20px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;

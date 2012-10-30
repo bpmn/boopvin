@@ -346,13 +346,13 @@
 	padding: 2px 4px 2px 8px;
 }
 .elgg-menu-page a:hover {
-	background-color: #99BB54;
-	color: white;
+	background-color: #84572E;
+	color: #D8A171;
 	text-decoration: none;
 }
 .elgg-menu-page li.elgg-state-selected > a {
-	background-color: #530000;
-	color: white;
+	background-color: #D87671;
+	color: #720D08;
 }
 .elgg-menu-page .elgg-child-menu {
 	display: none;

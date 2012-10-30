@@ -2,8 +2,8 @@
 
 $french = array(
 
-	"item:group:wine"=>"Vins",
-        "item:group:restobar"=>"Bars,restos,caves,domaines...",
+	"item:group:wine"=>"Les Vins",
+        "item:group:restobar"=>"Les Bars,Restos,Caves,Domaines...",
 
 );
 

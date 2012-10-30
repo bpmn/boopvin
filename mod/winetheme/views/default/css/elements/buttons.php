@@ -37,9 +37,9 @@ a.elgg-button {
 .elgg-button-submit {
 	color: white;
 	text-decoration: none;
-	border: 1px solid #4690d6;
+	border: 1px solid #725008;
 	background: #4690d6 url(<?php echo elgg_get_site_url(); ?>_graphics/button_graduation.png) repeat-x left 10px;
-        border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_99bb54_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232;
+        border: 1px solid #725008; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d8ab4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232;
     
         
         }
@@ -49,7 +49,7 @@ a.elgg-button {
 	text-decoration: none;
 	color: white;
 	background: #0054a7 url(<?php echo elgg_get_site_url(); ?>_graphics/button_graduation.png) repeat-x left 10px;
-        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
+        border: 1px solid #725008; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d88e4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
 
         
 }
@@ -88,14 +88,14 @@ a.elgg-button {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_99bb54_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #003232;
+border: 1px solid #723A08; background: #99bb54 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d8ab4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #723A08;
 
 }
 
 .elgg-button-action:hover,
 .elgg-button-action:focus {
 	text-decoration: none;
-        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
+        border: 1px solid #723A08; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d88e4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #723A08; 
 
 }
 
@@ -144,7 +144,7 @@ border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/m
 .elgg-button-dropdown:hover {
 	background-color:#71B9F7;
 	text-decoration:none;
-        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
+        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d88e4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
 
 }
 
@@ -157,6 +157,6 @@ border: 1px solid #344e00; background: #99bb54 url(<?php echo $vars['url']; ?>/m
 	-webkit-border-radius:0px 0px 0 0;
 	-moz-border-radius:0px 0px 0 0;
 	border-radius:0px 0px 0 0;
-        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_800000_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
+        border: 1px solid #c03030; background: #c05656 url(<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/ui-bg_glass_75_d88e4c_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #ffffff; 
 
 }

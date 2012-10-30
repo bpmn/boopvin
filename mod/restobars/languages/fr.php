@@ -10,10 +10,10 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Bars, restos, caves, domaines...",
+	'restobar' => "Les Bars, Restos, Caves, Domaines...",
     
-	'restobar:owned' => "restobar I own",
-	'restobar:yours' => "My restobar",
+	'restobar:owned' => "Restobar que je possede",
+	'restobar:yours' => "Mon restobar",
 	'restobar:user' => "%s's restobar",
 	'restobar:all' => "Tous les établissements",
 	'restobar:add' => "Ajouter un établissement",
@@ -68,7 +68,7 @@ $french = array(
 	'restobar:search_in_restobar' => "Search in this restobar",
 	'restobar:acl' => "restobar: %s",
 
-	'restobar:activity' => "restobar activity",
+	'restobar:activity' => "Activite Restobar",
 	'restobar:enableactivity' => 'Enable restobar activity',
 	'restobar:activity:none' => "There is no restobar activity yet",
 

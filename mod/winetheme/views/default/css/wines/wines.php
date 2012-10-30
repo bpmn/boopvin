@@ -22,7 +22,7 @@
 
 .wines-profile-fields .odd,
 .wines-profile-fields .even {
-	background: #f4f4f4;
+	background: transparent;
 	
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
