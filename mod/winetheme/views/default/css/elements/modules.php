@@ -16,7 +16,7 @@
 
 /* Info */
 .elgg-module-info > .elgg-head {
-	background: rgb(153,187,84);
+	background: #D87671;
 	padding: 5px;
 	margin-bottom: 10px;
 	
@@ -25,7 +25,7 @@
 	border-radius: 0px;
 }
 .elgg-module-info > .elgg-head * {
-	color: #333;
+	color: #720D08;
 }
 
 /* Popup */

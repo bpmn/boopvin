@@ -10,14 +10,14 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'wine' => "Vins",
-	'wine:owned' => "wine I own",
+	'wine' => "Les Vins",
+	'wine:owned' => "Mes vins",
 	'wine:yours' => "My wine",
 	'wine:user' => "%s's wine",
 	'wine:all' => "Tous les vins",
 	'wine:add' => "Ajouter un vin",
-	'wine:edit' => "Edit wine",
-	'wine:delete' => 'Delete wine',
+	'wine:edit' => "Editer vin",
+	'wine:delete' => 'Supprimer vin',
 	'wine:membershiprequests' => 'Manage join requests',
 	'wine:invitations' => 'wine invitations',
 
@@ -42,7 +42,7 @@ $french = array(
         'wine:white'=>'Blanc',             
         'wine:rose'=>'Rosé' ,         
     
-	'wine:briefdescription' => 'Brief description',
+	'wine:briefdescription' => 'Description breve',
 	'wine:interests' => 'Tags',
 	'wine:website' => 'Website',
 	'wine:members' => 'ceux qui suivent ce vins',
@@ -66,8 +66,8 @@ $french = array(
 	'wine:unfeatured' => '%s has been removed from the featured wine.',
 	'wine:featured_error' => 'Invalid wine.',
 	'wine:joinrequest' => 'Request membership',
-	'wine:join' => 'suivre ce vins',
-        'wine:join:title' => 'Suivre ce vin si vous voulez le déguster et participer',
+	'wine:join' => 'ajouter à mon club dégustation',
+        'wine:join:title' => 'Rejoindre le club si vous voulez le déguster et participer',
 	'wine:leave' => 'Leave wine',
 	'wine:invite' => 'Invite friends',
 	'wine:invite:title' => 'Invite friends to this wine',
@@ -100,7 +100,7 @@ $french = array(
 	'wine:count' => "wine created",
 	'wine:open' => "open wine",
 	'wine:closed' => "closed wine",
-	'wine:member' => "Ceux qui suivent ce vin",
+	'wine:member' => "Membre du club des dégustateurs",
 	'wine:searchtag' => "Search for wine by tag",
 
 	'wine:more' => 'More wine',

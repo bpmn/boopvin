@@ -11,20 +11,15 @@
 /* ***************************************
 	Typography
 *************************************** */
-
 @font-face {
-	font-family: 'TangerineRegular';
-	src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.eot');
-	
-    src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.woff') format('woff'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.ttf') format('truetype'),
-         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Tangerine-fontface/Tangerine_Regular-webfont.svg#TangerineRegular') format('svg');
+    font-family: 'NotethisRegular';
+    src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Note-this-fontfacekit/Note_this-webfont.eot');
+    src: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Note-this-fontfacekit/Note_this-webfont.eot?#iefix') format('embedded-opentype'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Note-this-fontfacekit/Note_this-webfont.woff') format('woff'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Note-this-fontfacekit/Note_this-webfont.ttf') format('truetype'),
+         url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/fonts/Note-this-fontfacekit/Note_this-webfont.svg#NotethisRegular') format('svg');
     font-weight: normal;
     font-style: normal;
-                         
-                         font-weight: normal;
-font-style: normal;
 }
 
 
@@ -109,12 +104,12 @@ blockquote {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	color: #800000;
+	color: #720D08;
 }
 
-h1 { font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+h1 { font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 200%; font-size: 1.8em; }
-h2 { font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+h2 { font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 175%; line-height: 1.1em; padding-bottom:5px}
 
 h3 { font-size: 1.2em; }
@@ -123,7 +118,7 @@ h5 { font-size: 0.9em; }
 h6 { font-size: 0.8em; }
 
 .elgg-heading-site, .elgg-heading-site:hover {
-font-family: TangerineRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 	font-size: 2em;
 	line-height: 1.4em;
 	color: white;

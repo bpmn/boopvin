@@ -63,10 +63,10 @@ $close = elgg_normalize_url($close);
 	max-width: 900px;
         
 	position: absolute;
-	border: 4px solid #600000;
+	border: 4px solid #720D08;
         outline: 4px solid #323232;
         margin: 25px;
-	background: rgb(176,166,148);
+	background: #D8B771;
               
 }
 .nyroModalCont iframe {

@@ -173,6 +173,10 @@
 	font-weight: bold;
 	padding: 3px 13px 0px 13px;
 	height: 20px;
+        font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+        	font-size: 110%;
+
+
 }
 
 .elgg-menu-site > li > a:hover {
@@ -207,7 +211,7 @@
 .elgg-menu-site-default > .elgg-state-selected > a,
 .elgg-menu-site-default > li:hover > a {
 	background: white;
-	color: #555;
+	color: #000;
 
 	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
@@ -342,13 +346,13 @@
 	padding: 2px 4px 2px 8px;
 }
 .elgg-menu-page a:hover {
-	background-color: #99BB54;
-	color: white;
+	background-color: #84572E;
+	color: #D8A171;
 	text-decoration: none;
 }
 .elgg-menu-page li.elgg-state-selected > a {
-	background-color: #530000;
-	color: white;
+	background-color: #D87671;
+	color: #720D08;
 }
 .elgg-menu-page .elgg-child-menu {
 	display: none;

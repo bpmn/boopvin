@@ -13,11 +13,11 @@
 	right: 0;
 }
 
-#search_wine h3 {
+#search_wine h2 {
 color : #ffffff;
 text-shadow:5px 5px 5px #000000;
 display: inline-block;
-
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 }
 
 
@@ -37,11 +37,13 @@ display: inline-block;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 2px 4px 2px 26px;
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
+	background: black url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px; 
+        opacity: 0.5;
 }
 .elgg-search input[type=text]:focus, .elgg-search input[type=text]:active {
     
 	background-color: white;
+        opacity: 1.0;
 	background-position: 2px -916px;
 	border: 1px solid white;
 	color: #0054A7;

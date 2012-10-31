@@ -9,16 +9,21 @@ $resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50o
 $resto_background = elgg_normalize_url($resto_background);
 
 
+$ardoise_background = '/mod/winetheme/views/default/css/winetheme/images/ardoise6.jpg';
+$ardoise_background = elgg_normalize_url($ardoise_background);
+
+
 ?>
 
 
 
 .resto_background {
-background: url(<?php echo $resto_background; ?>) no-repeat;
-background-size: cover;
-border: 1px solid #800000;
+background: #D8B771;
+border: 1px solid #723A08;
 margin-top: 20px;
-  
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;  
 }
 
 
@@ -58,7 +63,7 @@ margin-top: 20px;
 }
 
 .restobars-stats {
-	background: #eeeeee;
+	background: transparent;
 	padding: 5px;
 	margin-top: 10px;
 	
@@ -69,7 +74,7 @@ margin-top: 20px;
 
 .restobars-profile-fields .odd,
 .restobars-profile-fields .even {
-	background: #f4f4f4;
+	background: transparent;
 	
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
@@ -83,6 +88,12 @@ margin-top: 20px;
 	margin: 0;
 }
 
+#restobars-tools {
+background: #fff;
+}
+
+
+
 #restobars-tools > li {
 	width: 48%;
 	min-height: 200px;
@@ -91,6 +102,42 @@ margin-top: 20px;
 
 #restobars-tools > li:nth-child(odd) {
 	margin-right: 4%;
+}
+
+#restobars-tools .elgg-head {
+background: transparent;
+border-bottom: 1px solid #ffffff;
+
+}
+
+.restobars-news {
+background: #ccc url(<?php echo $ardoise_background ?>) no-repeat;
+padding-top: 40px;
+padding-left: 7px;
+padding-right: 5px;
+min-height: 150px;
+}
+
+
+.restobars-news .elgg-head h3 {
+color: white;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-weight: normal;
+
+}
+
+.restobars-news .elgg-head a {
+background: transparent;
+color: white;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+}
+
+.restobars-news .elgg-body p {
+background: transparent;
+padding-left: 7px;
+padding-right: 5px;
+color: white;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 }
 
 .restobars-widget-viewall {
