@@ -1,3 +1,11 @@
+<?php
+/*
+ *  css
+ */
+$label = 'mod/winetheme/views/default/css/winetheme/images/label3.png';
+$label = elgg_normalize_url($label);
+?>
+
 /* ***************************************
 	Modules
 *************************************** */
@@ -8,7 +16,7 @@
 
 /* Aside */
 .elgg-module-aside .elgg-head {
-	border-bottom: 1px solid #CCC;
+	border-bottom: 1px solid #723A08;
 	
 	margin-bottom: 5px;
 	padding-bottom: 5px;
@@ -16,7 +24,9 @@
 
 /* Info */
 .elgg-module-info > .elgg-head {
-	background: #D87671;
+        background: #D8B771;
+        background: url(<?php echo $label ?>) no-repeat center;
+
 	padding: 5px;
 	margin-bottom: 10px;
 	
@@ -25,7 +35,7 @@
 	border-radius: 0px;
 }
 .elgg-module-info > .elgg-head * {
-	color: #720D08;
+	color: #723A08;
 }
 
 /* Popup */
