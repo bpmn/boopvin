@@ -32,7 +32,7 @@ $english = array(
         'wine:kind'=>'Type',             //style de vin blanc, rouge, moelleux
         'wine:soil'=>'Soil',             //sol
         'wine:country'=>'Country' ,         //pays
-        'wine:info'=>'Informations complémentaires (élevage, vinification..)' ,         //pays
+        'wine:info'=>'More information (aging, vinification..)' ,                //pays
         'wine:vintage'=>'Vintage',
         'wine:nv'=>'No Vintage',
     
@@ -43,7 +43,7 @@ $english = array(
         'wine:briefdescription' => 'Brief description',
 	'wine:interests' => 'Tags',
 	'wine:website' => 'Website',
-	'wine:members' => 'wine members',
+	'wine:members' => 'wine followers',
 	'wine:members:title' => 'Members of %s',
 	'wine:members:more' => "View all members",
 	'wine:membership' => "wine membership permissions",
@@ -97,12 +97,13 @@ $english = array(
 	'wine:count' => "wine created",
 	'wine:open' => "open wine",
 	'wine:closed' => "closed wine",
-	'wine:member' => "members",
+	'wine:member' => "wine followers",
 	'wine:searchtag' => "Search for wine by tag",
 
 	'wine:more' => 'More wine',
 	'wine:none' => 'No wine',
-
+        
+        'wine:suggestions'=>'where to find',
 
 	/*
 	 * Access
@@ -276,7 +277,7 @@ or click below to view the wine's join requests:
 	// ecml
 	'wine:ecml:discussion' => 'wine Discussions',
 	'wine:ecml:wineprofile' => 'wine profiles',
-
+        'wine:restobar:nosuggestion'=> 'no suggestion',
 );
 
 add_translation("en", $english);

@@ -113,11 +113,10 @@ function wine_init() {
 	
 	elgg_register_event_handler('join', 'group', 'wine_user_join_event_listener');
 	elgg_register_event_handler('leave', 'group', 'wine_user_leave_event_listener');
-	elgg_register_event_handler('pagesetup', 'system', 'wine_setup_sidebar_menus');
+	//elgg_register_event_handler('pagesetup', 'system', 'wine_setup_sidebar_menus');
 	elgg_register_event_handler('annotate', 'all', 'wine_object_notifications');
 
 	elgg_register_plugin_hook_handler('access:collections:add_user', 'collection', 'wine_access_collection_override');
-
 
 	elgg_register_event_handler('upgrade', 'system', 'wine_run_upgrades');
 }
@@ -475,10 +474,11 @@ function wine_user_entity_menu_setup($hook, $type, $return, $params) {
 			return $return;
 		}
 
-		// Add remove link if we can edit the wine, and if we're not trying to remove the wine owner
-		if ($wine->canEdit() && $wine->getOwnerGUID() != $entity->guid) {
+                $loggedin_user= elgg_get_logged_in_user_entity();
+		// Add remove link if we are an admin
+		if ($loggedin_user->isAdmin()) {
 			$remove = elgg_view('output/confirmlink', array(
-				'href' => "action/wine/remove?user_guid={$entity->guid}&wine_guid={$wine->guid}",
+				'href' => "action/wines/remove?user_guid={$entity->guid}&wine_guid={$wine->guid}",
 				'text' => elgg_echo('wine:removeuser'),
 			));
 

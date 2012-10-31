@@ -7,7 +7,7 @@
  * List all restobar
  */
 function restobar_handle_all_page() {
-       
+        //gatekeeper();
 	// all Restobar doesn't get link to self
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));

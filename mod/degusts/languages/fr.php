@@ -156,6 +156,7 @@ $french = array(
     'degust:post_wine'=>"posté %s par %s",
     
     'degust:link'=>"Voir la fiche",
+    'degust:add'=>"déguster"
     
 );
 

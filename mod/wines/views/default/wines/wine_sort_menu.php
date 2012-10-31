@@ -11,16 +11,16 @@ $tabs = array(
 		'href' => 'wine/all?filter=newest',
 		'priority' => 200,
 	),
-	'popular' => array(
-		'text' => elgg_echo('wine:popular'),
-		'href' => 'wine/all?filter=popular',
+	'mine' => array(
+		'text' => elgg_echo('wine:mine'),
+		'href' => 'wine/all?filter=mine',
 		'priority' => 300,
 	),
-	'discussion' => array(
+	/*'discussion' => array(
 		'text' => elgg_echo('wine:latestdiscussion'),
 		'href' => 'wine/all?filter=discussion',
 		'priority' => 400,
-	),
+	),*/
 );
 
 foreach ($tabs as $name => $tab) {

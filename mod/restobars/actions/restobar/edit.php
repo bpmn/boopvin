@@ -72,7 +72,7 @@ $restobar->membership = ACCESS_PUBLIC;
 
 
 if ($new_restobar_flag) {
-	$restobar->access_id = ACCESS_LOGGED_IN;
+	$restobar->access_id = ACCESS_PUBLIC;
 }
 
 $restobar->save();

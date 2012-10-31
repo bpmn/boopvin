@@ -9,7 +9,7 @@ $body = elgg_view_form('restobars/find', array(
 	'action' => $url,
 	'method' => 'get',
 	'disable_security' => true,
-        'class' => 'elgg-search elgg-search-entity'
+        'class' => 'elgg-search-entity'
 ));
 
 echo $body;
