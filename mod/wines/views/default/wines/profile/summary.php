@@ -60,23 +60,23 @@ if ($pics) {
 			<?php //echo elgg_view_entity_icon($wine, 'large', array('href' => '')); 
                               echo $image; ?>
 		</div>
-		<div class="wines-stats">
+		<!--div class="wines-stats">
 			<p>
-				<b><?php echo elgg_echo("wine:owner"); ?>: </b>
+				<b><?php //echo elgg_echo("wine:owner"); ?>: </b>
 				<?php
-					echo elgg_view('output/url', array(
+					/*echo elgg_view('output/url', array(
 						'text' => $owner->name,
 						'value' => $owner->getURL(),
 						'is_trusted' => true,
-					));
+					));*/
 				?>
 			</p>
 			<p>
 			<?php
-				echo elgg_echo('wine:members') . ": " . $wine->getMembers(0, 0, TRUE);
+				//echo elgg_echo('wine:members') . ": " . $wine->getMembers(0, 0, TRUE);
 			?>
 			</p>
-		</div>
+		</div-->
 	</div>
 
 	<div class="wines-profile-fields elgg-body">

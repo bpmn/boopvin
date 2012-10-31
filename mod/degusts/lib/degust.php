@@ -87,8 +87,7 @@ function degust_handle_owned_page() {
  * @param int $guid
  */
 function degust_handle_edit_page($page, $guid = 0) {
-     
-        
+           
         gatekeeper();
 	$guid=(int)get_input('entity_guid');
 	if ($page == 'add') {
@@ -168,7 +167,9 @@ function degust_handle_edit_page($page, $guid = 0) {
  * @param int $guid Group entity GUID
  */
 function degust_handle_profile_page($guid) {
-	elgg_set_page_owner_guid($guid);
+	
+        gatekeeper();
+        elgg_set_page_owner_guid($guid);
 	elgg_push_context('degust_profile');
 
 	// turn this into a core function

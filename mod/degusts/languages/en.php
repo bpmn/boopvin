@@ -9,6 +9,13 @@ $english = array(
     'degust:complexity:2'=>'Medium complexe',
     'degust:complexity:3'=>'Complexe',
     'degust:complexity:4'=>'Very complexe',
-);
+
+        
+    
+    
+    'degust:add'=>"taste"
+    
+    
+    );
 
 add_translation("en", $english);

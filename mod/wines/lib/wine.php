@@ -17,7 +17,7 @@ function wine_handle_all_page() {
 	$selected_tab = get_input('filter', 'newest');
 
 	switch ($selected_tab) {
-		case 'popular':
+		/*case 'popular':
 			$content = elgg_list_entities_from_relationship_count(array(
 				//'type_subtype_pairs' =>array('group' => 'wine'),
                                 'type'=>'group',
@@ -41,13 +41,31 @@ function wine_handle_all_page() {
 			if (!$content) {
 				$content = elgg_echo('discussion:none');
 			}
+			break;*/
+            
+                case 'mine':
+                    elgg_set_context('my_wine');
+			$content = elgg_list_entities_from_relationship(array(
+                            'types' => 'group',
+                            'subtypes'=>'wine',
+                            'relationship' => 'member',
+                            'relationship_guid' => elgg_get_logged_in_user_guid(),
+                            'inverse_relationship' => false,
+                            'id'=>'list-style-all',
+                            'full_view' => false,
+                            'pagination'=>true
+                        ));
+                        if (!$content) {
+                            $content = elgg_echo('wine:none');
+                        }
 			break;
 		case 'newest':
 		default:
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('group' => 'wine'),
 				'full_view' => false,
-                                'id'=>'list-style-all'
+                                'id'=>'list-style-all',
+                                'pagination'=>true
 			));
 			if (!$content) {
 				$content = elgg_echo('wine:none');
@@ -147,6 +165,7 @@ function wine_handle_mine_page() {
 
 	$content = elgg_list_entities_from_relationship_count(array(
 		'type' => 'group',
+                'subtype'=>'wine',
 		'relationship' => 'member',
 		'relationship_guid' => elgg_get_page_owner_guid(),
 		'inverse_relationship' => false,
@@ -263,8 +282,11 @@ function wine_handle_profile_page($guid) {
 	elgg_push_breadcrumb($wine->name);
 
 	$content = elgg_view('wines/profile/layout', array('entity' => $wine));
-	if (group_gatekeeper(false)) {
-		$sidebar = '';
+	
+        $sidebar = '';
+        $sidebar .= elgg_view('wines/sidebar/suggestions', array());
+        if (group_gatekeeper(false)) {
+		//$sidebar = '';
 		//if (elgg_is_active_plugin('search')) {
 		//	$sidebar .= elgg_view('wines/sidebar/search', array('entity' => $wine));
 		//}
@@ -273,7 +295,7 @@ function wine_handle_profile_page($guid) {
 		$sidebar = '';
 	}
         
-        $sidebar .='<div id="suggestion"></div>';
+        
 	wine_register_profile_buttons($wine);
         
 
@@ -479,14 +501,14 @@ function wine_register_profile_buttons($wine) {
             
             $url = elgg_normalize_url("degust/add/{$wine->getGUID()}/");
             $url = elgg_add_action_tokens_to_url($url);
-            $actions[$url] = elgg_echo('degust:add');
+            $actions[$url] = 'degust:add';
             
-		if ($wine->getOwnerGUID() != elgg_get_logged_in_user_guid()) {
+		/*if ($wine->getOwnerGUID() != elgg_get_logged_in_user_guid()) {
 			// leave
 			$url = elgg_get_site_url() . "action/wines/leave?wine_guid={$wine->getGUID()}";
 			$url = elgg_add_action_tokens_to_url($url);
 			$actions[$url] = 'wine:leave';
-		}
+		}*/
 	} elseif (elgg_is_logged_in()) {
 		// join - admins can always join.
 		$url = elgg_get_site_url() . "action/wines/join?wine_guid={$wine->getGUID()}";
@@ -518,6 +540,7 @@ function wine_register_profile_buttons($wine) {
 				'href' => $url,
 				'text' => elgg_echo($text),
 				'link_class' => $link_class,
+                                //'title'=>$text.':title'
                                 //'target' =>"_blank",
                                 //'rel'=>'#overlay',
 			));}
@@ -528,6 +551,7 @@ function wine_register_profile_buttons($wine) {
 				'href' => $url,
 				'text' => elgg_echo($text),
 				'link_class' => 'elgg-button elgg-button-action',
+                                'title'=>elgg_echo($text.':title')
 			));}
 		}
 	}

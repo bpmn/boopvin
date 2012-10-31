@@ -33,8 +33,8 @@ $french = array(
         'wine:kind'=>'Type',                   //style de vin blanc, rouge, moelleux
         'wine:soil'=>'Composition du sol',     //sol          
         'wine:country'=>'Pays' ,               //pays
-        'wine:info'=>'More information (aging, vinification..)' ,        
-      
+        
+        'wine:info'=>'Informations complémentaires (élevage, vinification..)' , 
         'wine:vintage'=>'Millésime',
         'wine:nv'=>'Non Millésimé',
         
@@ -45,7 +45,7 @@ $french = array(
 	'wine:briefdescription' => 'Brief description',
 	'wine:interests' => 'Tags',
 	'wine:website' => 'Website',
-	'wine:members' => 'wine members',
+	'wine:members' => 'ceux qui suivent ce vins',
 	'wine:members:title' => 'Members of %s',
 	'wine:members:more' => "View all members",
 	'wine:membership' => "wine membership permissions",
@@ -66,7 +66,8 @@ $french = array(
 	'wine:unfeatured' => '%s has been removed from the featured wine.',
 	'wine:featured_error' => 'Invalid wine.',
 	'wine:joinrequest' => 'Request membership',
-	'wine:join' => 'Join wine',
+	'wine:join' => 'suivre ce vins',
+        'wine:join:title' => 'Suivre ce vin si vous voulez le déguster et participer',
 	'wine:leave' => 'Leave wine',
 	'wine:invite' => 'Invite friends',
 	'wine:invite:title' => 'Invite friends to this wine',
@@ -99,12 +100,12 @@ $french = array(
 	'wine:count' => "wine created",
 	'wine:open' => "open wine",
 	'wine:closed' => "closed wine",
-	'wine:member' => "members",
+	'wine:member' => "Ceux qui suivent ce vin",
 	'wine:searchtag' => "Search for wine by tag",
 
 	'wine:more' => 'More wine',
 	'wine:none' => 'No wine',
-
+        'wine:suggestions'=>'Le vin dans les environs',
 
 	/*
 	 * Access
@@ -279,6 +280,7 @@ or click below to view the wine's join requests:
 	'wine:ecml:discussion' => 'wine Discussions',
 	'wine:ecml:wineprofile' => 'wine profiles',
 
+        'wine:restobar:nosuggestion'=> 'pas de suggestion'
 );
 
 add_translation("fr", $french);
