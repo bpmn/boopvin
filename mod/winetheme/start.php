@@ -13,14 +13,21 @@
 elgg_register_event_handler('init', 'system', 'winetheme_init');
 
 
-
+ 
+function new_index() {
+    if (!include_once(dirname(dirname(__FILE__)) . "/winetheme/views/index.php"))
+        return false;
+ 
+    return true;
+}
 
 
 /**
  * Initialize the wine plugin.
  */
 function winetheme_init() {
-    
+   // Replace the default index page
+    //elgg_register_plugin_hook_handler('index', 'system', 'new_index');    
 
 	//extend some views
 	//elgg_extend_view('css/elgg', 'winetheme/css');
@@ -60,7 +67,9 @@ function winetheme_init() {
     $url = 'mod/winetheme/vendors/validate/jquery.validate.min.js';
     elgg_register_js('elgg.validate', $url, 'footer');
     
-
+    $url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
+    elgg_register_js('elgg.nivo', $url,'footer');
+    elgg_load_js('elgg.nivo');
     
     $popup_js = elgg_get_simplecache_url('js', 'simple_popup');
     elgg_register_simplecache_view('js/simple_popup');
@@ -88,6 +97,10 @@ function winetheme_init() {
     $search_css = elgg_get_simplecache_url('css', 'search/search');
     elgg_register_css('winetheme.search_css', $search_css,'head');
     elgg_load_css('winetheme.search_css');
+    
+    $nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
+    elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
+    elgg_load_css('nivoslider.nivoslider_css');
     
     $winetheme_css = elgg_get_simplecache_url('css', 'winetheme/winetheme');
     elgg_register_css('winetheme.winetheme_css', $winetheme_css,'head');

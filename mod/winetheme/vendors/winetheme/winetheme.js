@@ -31,6 +31,8 @@ function shift() {
 
 $(document).ready(function() {
   //alert("Carousel");  
+  $('#avenue_slider').nivoSlider();
+
   $("#avenue_activity > ul > li").each(function(i) {
     if(i < showing) {
       $(this).show();
@@ -38,6 +40,8 @@ $(document).ready(function() {
   });
   setTimeout(shift, delay);
 });
+
+
 
 }
 
