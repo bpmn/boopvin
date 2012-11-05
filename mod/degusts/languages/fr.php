@@ -156,8 +156,8 @@ $french = array(
     'degust:post_wine'=>"posté %s par %s",
     
     'degust:link'=>"Voir la fiche",
-    'degust:add'=>"déguster"
-    
+    'degust:add'=>"déguster",
+    'river:create:object:degust' => '%s a dégusté %s'
 );
 
 add_translation("fr", $french);

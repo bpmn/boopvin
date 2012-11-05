@@ -44,7 +44,7 @@ add_to_river('river/object/restobarnews/create', 'update', elgg_get_logged_in_us
 //system_message(elgg_echo('restobarnews:updated'));
 
 
-$content= '<p>'.$restobarnews->description.'</p>';
+$content= elgg_view('output/longtext',array('value'=>$restobarnews->description));
 echo $content;
 
 forward($container->getURL());

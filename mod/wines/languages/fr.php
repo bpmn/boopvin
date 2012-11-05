@@ -118,8 +118,8 @@ $french = array(
 	'wine:visibility' => 'Who can see this wine?',
 
 	/*
-	wine tools
-	*/
+	 * wine tools
+	 */
 	'wine:enableforum' => 'Enable wine discussion',
 	'wine:yes' => 'yes',
 	'wine:no' => 'no',
@@ -127,8 +127,8 @@ $french = array(
 	'wine:lastcomment' => 'Last comment %s by %s',
 
 	/*
-	wine discussion
-	*/
+	 * wine discussion
+	 */
 	'discussion' => 'Discussion',
 	'discussion:add' => 'Ajouter une brève de comptoir',
 	'discussion:latest' => 'Les dernières brèves de comptoir',
@@ -232,10 +232,10 @@ or click below to view the wine's join requests:
 %s",
 
 	/*
-		Forum river items
-	*/
+	 * Forum river items
+	 */
 
-	'river:create:wine:default' => '%s created the wine %s',
+	'river:create:group:wine' => '%s a ajouté %s',
 	'river:join:wine:default' => '%s joined the wine %s',
 	'river:create:object:wineforumtopic' => '%s added a new discussion topic %s',
 	'river:reply:object:wineforumtopic' => '%s replied on the discussion topic %s',

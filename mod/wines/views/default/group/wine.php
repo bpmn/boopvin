@@ -7,9 +7,10 @@
 
 $wine = $vars['entity'];
 
-$icon = elgg_view_entity_icon($wine, 'small');
+//$icon = elgg_view_entity_icon($wine, 'small');
+  $icon =  elgg_view('output/img',array('src'=>"mod/wines/graphics/glass_".$wine->kind.".jpg"));
 
-$metadata = elgg_view_menu('entity', array(
+  $metadata = elgg_view_menu('entity', array(
 	'entity' => $wine,
 	'handler' => 'wine',
 	'sort_by' => 'priority',
@@ -39,6 +40,8 @@ if ($vars['full_view']) {
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('wines/elements/summary', $params);
-
-	echo elgg_view_image_block($icon, $list_body, $vars);
+        
+      
+        //$vars['image_alt']= $img;
+        echo elgg_view_image_block($icon, $list_body, $vars);
 }

@@ -697,7 +697,7 @@ function restobars_join_restobar($restobar, $user) {
 		remove_entity_relationship($restobar->guid, 'invited', $user->guid);
 		remove_entity_relationship($user->guid, 'membership_request', $restobar->guid);
 
-		add_to_river('river/relationship/member/create', 'join', $user->guid, $restobar->guid);
+		//add_to_river('river/relationship/member/create', 'join', $user->guid, $restobar->guid);
 
 		return true;
 	}

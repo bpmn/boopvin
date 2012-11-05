@@ -182,7 +182,7 @@ elgg.provide('elgg.restobar');
             e.preventDefault();
             var url=$(this).attr('action');
             var data=$("#restobar_news :input").serialize();
-            elgg.action(url,{data:data,
+            elgg.action(url,{data:data,dataType: "html",
                     success: function(json, success, xhr) {
                                 $.nmTop().close();
                                 $('#elgg-text-restobarnews').html(json.output);

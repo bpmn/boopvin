@@ -720,7 +720,7 @@ function wines_join_wine($wine, $user) {
 		remove_entity_relationship($wine->guid, 'invited', $user->guid);
 		remove_entity_relationship($user->guid, 'membership_request', $wine->guid);
 
-		add_to_river('river/relationship/member/create', 'join', $user->guid, $wine->guid);
+		//add_to_river('river/relationship/member/create', 'join', $user->guid, $wine->guid);
 
 		return true;
 	}

@@ -12,7 +12,7 @@ function restobar_handle_all_page() {
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));
         elgg_load_js('hj.livesearch.autocomplete_other');
-	//elgg_register_title_button();
+	elgg_register_title_button();
        
         
         // extend view for header restobar search box
