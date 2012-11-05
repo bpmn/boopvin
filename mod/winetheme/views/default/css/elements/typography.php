@@ -31,7 +31,7 @@ body {
 }
 
 a {
-	color: #800000;
+	color: #723A08;
 }
 
 body:first-letter,
@@ -104,7 +104,7 @@ blockquote {
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
-	color: #720D08;
+	color: #723A08;
 }
 
 h1 { font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;

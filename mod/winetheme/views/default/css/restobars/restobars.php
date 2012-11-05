@@ -5,9 +5,14 @@
 
 
 
-$resto_background = '/mod/winetheme/views/default/css/winetheme/images/resto-50op.jpg';
-$resto_background = elgg_normalize_url($resto_background);
+$resto_background_top = '/mod/winetheme/views/default/css/winetheme/images/layer7.png';
+$resto_background_top = elgg_normalize_url($resto_background_top);
 
+$resto_background_mid = '/mod/winetheme/views/default/css/winetheme/images/middle.png';
+$resto_background_mid = elgg_normalize_url($resto_background_mid);
+
+$resto_background_bot = '/mod/winetheme/views/default/css/winetheme/images/bottom.png';
+$resto_background_bot = elgg_normalize_url($resto_background_bot);
 
 $ardoise_background = '/mod/winetheme/views/default/css/winetheme/images/ardoise6.jpg';
 $ardoise_background = elgg_normalize_url($ardoise_background);
@@ -18,12 +23,13 @@ $ardoise_background = elgg_normalize_url($ardoise_background);
 
 
 .resto_background {
-background: #D8B771;
-border: 1px solid #723A08;
+border: 1px none #723A08;
 margin-top: 20px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;  
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;  
+background: url(<?php echo $resto_background_top ?>) center top no-repeat;
+
 }
 
 
