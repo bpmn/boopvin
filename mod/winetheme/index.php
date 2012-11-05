@@ -5,8 +5,8 @@
  * @package Elgg
  * @subpackage Core
  */
-//elgg_load_js('elgg.nivo');
-//elgg_load_css('nivoslider.nivoslider_css');
+elgg_load_js('elgg.nivo');
+elgg_load_css('nivoslider.nivoslider_css');
 
 $options = array();
 $options['pagination']=FALSE;

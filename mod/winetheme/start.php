@@ -83,7 +83,7 @@ function winetheme_init() {
     
     $url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
     elgg_register_js('elgg.nivo', $url,'footer');
-    elgg_load_js('elgg.nivo');
+    //elgg_load_js('elgg.nivo');
     
     $popup_js = elgg_get_simplecache_url('js', 'simple_popup');
     elgg_register_simplecache_view('js/simple_popup');
@@ -108,7 +108,7 @@ function winetheme_init() {
     $nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
     elgg_register_simplecache_view('css/nivoslider/nivoslider');
     elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
-    elgg_load_css('nivoslider.nivoslider_css');
+    //elgg_load_css('nivoslider.nivoslider_css');
     
     
     
