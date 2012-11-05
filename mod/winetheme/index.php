@@ -7,6 +7,7 @@
  */
 elgg_load_js('elgg.nivo');
 elgg_load_css('nivoslider.nivoslider_css');
+elgg_load_js('jquery.winetheme');
 
 $options = array();
 $options['pagination']=FALSE;

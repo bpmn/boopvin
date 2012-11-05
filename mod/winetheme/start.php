@@ -39,9 +39,7 @@ function winetheme_init() {
     elgg_unregister_page_handler('activity');
     elgg_register_page_handler ('activity','winetheme_river_page_handler');
 
-        $url = 'mod/winetheme/vendors/winetheme/winetheme.js';
-        elgg_register_js('jquery.winetheme', $url,'footer');
-        elgg_load_js('jquery.winetheme');
+     
     
     
     elgg_unregister_css('hj.framework.jquitheme');
@@ -81,14 +79,26 @@ function winetheme_init() {
     $url = 'mod/winetheme/vendors/validate/jquery.validate.min.js';
     elgg_register_js('elgg.validate', $url);
     
+    
+    /* nivo script and css*/
     $url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
     elgg_register_js('elgg.nivo', $url,'footer');
     //elgg_load_js('elgg.nivo');
+    
+    $nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
+    elgg_register_simplecache_view('css/nivoslider/nivoslider');
+    elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
+    //elgg_load_css('nivoslider.nivoslider_css');
+    
     
     $popup_js = elgg_get_simplecache_url('js', 'simple_popup');
     elgg_register_simplecache_view('js/simple_popup');
     elgg_register_js('elgg.popup', $popup_js, 'footer');
     
+    $winetheme_js = elgg_get_simplecache_url('js', 'winetheme');
+    elgg_register_simplecache_view('js/winetheme');
+    elgg_register_js('jquery.winetheme', $winetheme_js,'footer');
+    //elgg_load_js('jquery.winetheme');
  
     // Now, override some default
 
@@ -105,10 +115,7 @@ function winetheme_init() {
     elgg_extend_view('css/elgg', 'css/search/search');
     elgg_extend_view('css/elgg', 'css/winetheme/winetheme');
     
-    $nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
-    elgg_register_simplecache_view('css/nivoslider/nivoslider');
-    elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
-    //elgg_load_css('nivoslider.nivoslider_css');
+
      
     elgg_extend_view('css/elgg', 'css/wines/wines');
     
