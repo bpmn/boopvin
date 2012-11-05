@@ -137,14 +137,22 @@ if ($wine_profile_fields > 0) {
                      echo elgg_view("input/{$valtype}",$option_kind );
                      break;
                  
-                 
-                default:
+
+                case 'appellation':
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
                             'value' => $vars['entity']->$shortname,
                             'id' => $id,
                             'class' => "required"
 
+                    ));
+                    break;    
+                
+                default:
+                    echo elgg_view("input/{$valtype}", array(
+                            'name' => $shortname,
+                            'value' => $vars['entity']->$shortname,
+                            'id' => $id
                     ));
                     break;
                 }
