@@ -109,10 +109,7 @@ function winetheme_init() {
     elgg_register_simplecache_view('css/nivoslider/nivoslider');
     elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
     //elgg_load_css('nivoslider.nivoslider_css');
-    
-    
-    
-   
+     
     elgg_extend_view('css/elgg', 'css/wines/wines');
     
     elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
