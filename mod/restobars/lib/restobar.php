@@ -181,6 +181,9 @@ function restobar_handle_edit_page($page, $guid = 0) {
         elgg_load_js('elgg.restobar');
         //elgg_load_js('elgg.modal');
         elgg_load_js('elgg.popup');
+        
+        elgg_load_js('elgg.restobar_edit');
+        elgg_load_js('elgg.validate');
 	
 	if ($page == 'add') {
 		elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());

@@ -91,6 +91,11 @@ function restobar_init() {
 	$restobar_js = elgg_get_simplecache_url('js', 'restobar_map');
 	elgg_register_simplecache_view('js/restobar_map');
 	elgg_register_js('elgg.restobar', $restobar_js);
+        
+        
+        $restobar_edit_js = elgg_get_simplecache_url('js', 'restobar_edit');
+	elgg_register_simplecache_view('js/restobar_edit');
+	elgg_register_js('elgg.restobar_edit', $restobar_edit_js,'footer');
 
 	// Access permissions
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'restobar_write_acl_plugin_hook');

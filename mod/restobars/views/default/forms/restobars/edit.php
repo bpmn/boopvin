@@ -27,6 +27,7 @@ if (isset($vars['entity'])) {
 	<label><?php echo elgg_echo("restobar:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
 		'name' => 'name',
+                'class' => "required",
 		'value' => $vars['entity']->name,
 	));
 	?>
@@ -36,19 +37,31 @@ if (isset($vars['entity'])) {
 $restobar_profile_fields = elgg_get_config('restobar');
 if ($restobar_profile_fields > 0) {
 	foreach ($restobar_profile_fields as $shortname => $valtype) {
+                $id="id_".$shortname;
+
 		$line_break = '<br />';
 		if ($valtype == 'longtext') {
 			$line_break = '';
 		}
-		echo '<div><label>';
+                
+                echo "<div class=\"ui-widget\">";
+                echo "<div class=\"validate_error_label\">";
+                echo "<label for=\"$id\">";
 		echo elgg_echo("restobar:{$shortname}");
 		echo "</label>$line_break";
+                echo "</div>";
+                
+                
+		//echo '<div><label>';
+		//echo elgg_echo("restobar:{$shortname}");
+		//echo "</label>$line_break";
                 
               switch ($shortname) { 
                 case 'location': 
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
-                            'id'=>$shortname,
+                            'id'=>$$id,
+                            'class' => "required",
                             'value' => $vars['entity']->$shortname,
                     ));
                     
@@ -66,6 +79,8 @@ if ($restobar_profile_fields > 0) {
                 default:
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
+                            'id'=>$$id,
+                            'class' => "required",
                             'value' => $vars['entity']->$shortname,
                     ));
                     break;
