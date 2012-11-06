@@ -235,11 +235,12 @@ or click below to view the wine's join requests:
 	 * Forum river items
 	 */
 
-	'river:create:group:wine' => '%s a ajouté %s',
+	'river:create:group:wine' => '%s a ajouté %s à AvenueVin',
 	'river:join:wine:default' => '%s joined the wine %s',
-	'river:create:object:wineforumtopic' => '%s added a new discussion topic %s',
-	'river:reply:object:wineforumtopic' => '%s replied on the discussion topic %s',
-	
+	'river:create:object:wineforumtopic' => '%s a ajouté une discussion "%s"',
+	'river:reply:object:wineforumtopic' => '%s a participé à la discussion %s',
+        'river:wineforumtopic'=>'sur le vin %s',
+    
 	'wine:nowidgets' => 'No widgets have been defined for this wine.',
 
 

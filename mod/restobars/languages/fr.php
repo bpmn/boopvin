@@ -222,7 +222,7 @@ or click below to view the restobar's join requests:
 		Forum river items
 	*/
 
-	'river:create:restobar:default' => '%s created the restobar %s',
+	'river:update:object:restobarnews' => "%s a actualisé ses nouvelles du moment !",
 	'river:join:restobar:default' => '%s joined the restobar %s',
 	'river:create:object:restobarforumtopic' => '%s added a new discussion topic %s',
 	'river:reply:object:restobarforumtopic' => '%s replied on the discussion topic %s',

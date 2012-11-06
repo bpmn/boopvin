@@ -19,7 +19,6 @@ $content .= elgg_list_river($options);
 $content = "<div id=\"avenue_activity\">".$content."</div>";
 
 
-
 $content = $content."<div id=\"nivo_slider\">";
 
 

@@ -3,6 +3,9 @@
  * Main activity stream list page
  */
 
+elgg_load_js('elgg.nivo');
+elgg_load_css('nivoslider.nivoslider_css');
+elgg_load_js('jquery.winetheme');
 
 $options = array();
 
@@ -22,7 +25,7 @@ if ($type != 'all') {
 	}
 }
 
-switch ($page_type) {
+/*switch ($page_type) {
 	case 'mine':
 		$title = elgg_echo('river:mine');
 		$page_filter = 'mine';
@@ -38,12 +41,18 @@ switch ($page_type) {
 		$title = elgg_echo('river:all');
 		$page_filter = 'all';
 		break;
-}
+}*/
 
+
+/*$options['relationship_guid'] = elgg_get_logged_in_user_guid();
+$options['relationship'] = 'friend';*/
 $options['pagination']=FALSE;
 $options['limit']=20;
 
 $activity = elgg_list_river($options);
+
+
+
 
 if (!$activity) {
 	$activity = elgg_echo('river:none');
