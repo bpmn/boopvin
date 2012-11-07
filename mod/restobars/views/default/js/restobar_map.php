@@ -72,7 +72,7 @@ elgg.provide('elgg.restobar');
       
         $("#GetMaps").click(function(e){
             e.preventDefault();   
-        var input_address = jQuery.trim( $("#location").val() );  
+        var input_address = jQuery.trim( $("#id_location").val() );  
         if( input_address == '' ){
             alert('Compile the field address!');     
             return false;
@@ -126,7 +126,7 @@ elgg.provide('elgg.restobar');
             
             // geocoder
            
-            var input_address = jQuery.trim( $("#location").val() );
+            var input_address = jQuery.trim( $("#id_location").val() );
             var geocoder = new google.maps.Geocoder(); 
             geocoder.geocode( { address: input_address }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
@@ -165,7 +165,7 @@ elgg.provide('elgg.restobar');
                     
                     $("#map_submit").click(function(e){
                         e.preventDefault();
-                        $("#location").val(results[0].formatted_address);
+                        $("#id_location").val(results[0].formatted_address);
                         $("#lat").val(lat);
                         $("#long").val(lng);
                         $.nmTop().close();

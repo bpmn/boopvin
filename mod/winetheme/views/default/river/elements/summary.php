@@ -46,10 +46,14 @@ $subtype = $item->subtype ? $item->subtype : 'default';
 // check summary translation keys.
 // will use the $type:$subtype if that's defined, otherwise just uses $type:default
 $key = "river:$action:$type:$subtype";
-if ($subtype=='restobarnews'){
- $summary = elgg_echo($key, array($subject_link));
-}else{
- $summary = elgg_echo($key, array($subject_link, $object_link));   
+if ($subtype == 'restobarnews') {
+    $summary = elgg_echo($key, array($subject_link));
+} else {
+    if ($action == "incave") {
+        $summary = elgg_echo($key, array($object_link, $subject_link));
+    } else {
+        $summary = elgg_echo($key, array($subject_link, $object_link));
+    }
 }
 if ($summary == $key) {
 	$key = "river:$action:$type:default";

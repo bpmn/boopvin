@@ -51,7 +51,7 @@ function wine_handle_all_page() {
                             'relationship' => 'member',
                             'relationship_guid' => elgg_get_logged_in_user_guid(),
                             'inverse_relationship' => false,
-                            'id'=>'list-style-all',
+                            'list_class'=>'list-style-all',
                             'full_view' => false,
                             'pagination'=>true
                         ));
@@ -64,7 +64,7 @@ function wine_handle_all_page() {
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('group' => 'wine'),
 				'full_view' => false,
-                                'id'=>'list-style-all',
+                                'list_class'=>'list-style-all',
                                 'pagination'=>true
 			));
 			if (!$content) {

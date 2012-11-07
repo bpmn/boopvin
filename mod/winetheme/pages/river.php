@@ -6,11 +6,7 @@ elgg_load_js('elgg.nivo');
 elgg_load_css('nivoslider.nivoslider_css');
 elgg_load_js('jquery.winetheme');
 
-elgg_load_js('elgg.nivo');
-elgg_load_css('nivoslider.nivoslider_css');
-elgg_load_js('jquery.winetheme');
-
-$options = array();
+/*$options = array();
 
 $page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));
 $type = preg_replace('[\W]', '', get_input('type', 'all'));
@@ -26,7 +22,7 @@ if ($type != 'all') {
 	if ($subtype) {
 		$options['subtype'] = $subtype;
 	}
-}
+}*/
 
 /*switch ($page_type) {
 	case 'mine':
@@ -49,13 +45,30 @@ if ($type != 'all') {
 
 /*$options['relationship_guid'] = elgg_get_logged_in_user_guid();
 $options['relationship'] = 'friend';*/
+
+//$activity = elgg_list_river($options);
+
+//$items=array();
+//$items_create=elgg_get_river(array('type_subtype_pairs'=>array('group'=>'wine','group'=>'restobar'),
+                          //  'action_types'=>'create'));
+
+$items_create=elgg_get_river(array('types'=>'group',
+                                   'subtypes'=>array('wine','restobar'),
+                                   'action_types'=>'create'));
+
+
+
+$items_friend=elgg_get_river(array('relationship_guid'=>elgg_get_logged_in_user_guid(),
+                            'relationship'=>'friend',
+                            'action_types'=>array('degust','incave','update')));
+
+$items=array_merge($items_create,$items_friend);
+//$items=$items_create;
 $options['pagination']=FALSE;
-$options['limit']=20;
+$options['limit']=40;
+$options['items']=$items;
 
-$activity = elgg_list_river($options);
-
-
-
+$activity= elgg_view('page/components/list', $options);
 
 if (!$activity) {
 	$activity = elgg_echo('river:none');
@@ -63,7 +76,7 @@ if (!$activity) {
 
 $content = elgg_view('core/river/filter', array('selector' => $selector));
 
-$activity="<div id=\"avenue_activity\">".$activity."</div>";
+//$activity="<div id=\"avenue_activity\">".$activity."</div>";
 
 $content = $content."<div id=\"nivo_slider\">";
 

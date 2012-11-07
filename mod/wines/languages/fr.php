@@ -235,8 +235,9 @@ or click below to view the wine's join requests:
 	 * Forum river items
 	 */
 
-	'river:create:group:wine' => '%s a ajouté %s à AvenueVin',
-	'river:join:wine:default' => '%s joined the wine %s',
+	'river:create:group:wine' => '%s a ajouté le vin %s à AvenueVin',
+	'river:incave:group:wine' => "le vin %s a été ajouté la cave de l'établissement %s",
+        'river:join:wine:default' => '%s joined the wine %s',
 	'river:create:object:wineforumtopic' => '%s a ajouté une discussion "%s"',
 	'river:reply:object:wineforumtopic' => '%s a participé à la discussion %s',
         'river:wineforumtopic'=>'sur le vin %s',

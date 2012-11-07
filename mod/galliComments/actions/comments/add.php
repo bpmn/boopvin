@@ -51,6 +51,7 @@ if ($entity->owner_guid != $user->guid) {
 					$user->getURL()
 				))
 			);
+        add_to_river('river/annotation/generic_comment/create','comment', $user->guid, $entity->guid, "", 0, $annotation);
 }
 
 // list the last comment
@@ -63,10 +64,10 @@ $options = array(
 );
 echo elgg_list_annotations($options);
 
-//system_message(elgg_echo("generic_comment:posted"));
+system_message(elgg_echo("generic_comment:posted"));
 
 //add to river
-add_to_river('river/annotation/generic_comment/create', 'comment', $user->guid, $entity->guid, "", 0, $annotation);
+
 
 // Forward to the page the action occurred on
 forward(REFERER);

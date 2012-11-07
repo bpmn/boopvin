@@ -157,7 +157,8 @@ $french = array(
     
     'degust:link'=>"Voir la fiche",
     'degust:add'=>"déguster",
-    'river:create:object:degust' => '%s a dégusté %s'
+    'river:degust:object:degust' => '%s a dégusté %s',
+    'river:comment:object:degust' => '%s a commenté votre dégustation %s'
 );
 
 add_translation("fr", $french);

@@ -36,18 +36,20 @@
 	border-bottom: 1px dotted #CCCCCC;
 }
 
-#list-style-all {
+
+.list-style-all li {
    
-   float:left;
-   width: 350px;
-   display:block; 
+    float:left;
+    width: 50%;
+   
 }
 
-#list-style-all-resto {
 
-   float:left;
-   width: 240px;
-   display:block; 
+
+.list-style-all-resto li {
+
+    float:left;
+    width: 33%;
 }
 
 .elgg-item .elgg-subtext {

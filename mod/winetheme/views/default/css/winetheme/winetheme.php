@@ -181,33 +181,6 @@ div#job{
 }
 
 
-.groups-profile > .elgg-image {
-	margin-right: 10px;
-}
-
-.groups-stats {
-	background: #eeeeee;
-	padding: 5px;
-	margin-top: 10px;
-	
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-}
-
-.groups-profile-fields .odd,
-.groups-profile-fields .even {
-	background: #ffffff;
-	
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-	
-	padding: 2px 4px;
-	margin-bottom: 7px;
-}
-
-
 
 
 .theme-default .nivoSlider {

@@ -59,7 +59,7 @@ $options_acidity = array(
 				elgg_echo('degust:acidity:mou')=>'mou',
                                 elgg_echo('degust:acidity:frais') => 'frais',
 				elgg_echo('degust:acidity:droit') => 'droit',
-                                elgg_echo('degust:acidity:mineral') => 'nerveux',
+                                elgg_echo('degust:acidity:nerveux') => 'nerveux',
                                 elgg_echo('degust:acidity:vert') => 'vert');
                               
 $options_alcool = array(
