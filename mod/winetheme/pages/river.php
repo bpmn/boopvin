@@ -52,6 +52,8 @@ $options['relationship'] = 'friend';*/
 //$items_create=elgg_get_river(array('type_subtype_pairs'=>array('group'=>'wine','group'=>'restobar'),
                           //  'action_types'=>'create'));
 
+
+
 $items_create=elgg_get_river(array('types'=>'group',
                                    'subtypes'=>array('wine','restobar'),
                                    'action_types'=>'create'));
@@ -63,12 +65,18 @@ $items_friend=elgg_get_river(array('relationship_guid'=>elgg_get_logged_in_user_
                             'action_types'=>array('degust','incave','update')));
 
 $items=array_merge($items_create,$items_friend);
+usort($items, "time_created_cmp");
+
 //$items=$items_create;
 $options['pagination']=FALSE;
-$options['limit']=40;
+$options['limit']=20;
 $options['items']=$items;
 
+
+
+
 $activity= elgg_view('page/components/list', $options);
+usort($activity, "time_created_cmp");
 
 if (!$activity) {
 	$activity = elgg_echo('river:none');
@@ -76,7 +84,7 @@ if (!$activity) {
 
 $content = elgg_view('core/river/filter', array('selector' => $selector));
 
-//$activity="<div id=\"avenue_activity\">".$activity."</div>";
+$activity="<div id=\"avenue_activity\">".$activity."</div>";
 
 $content = $content."<div id=\"nivo_slider\">";
 
@@ -108,3 +116,15 @@ $params = array(
 $body = elgg_view_layout('content', $params);
 
 echo elgg_view_page($title, $body);
+
+
+
+
+function time_created_cmp($a, $b) {
+    $al = (int) $a->posted;
+    $bl = (int) $b->posted;
+    if ($al == $bl) {
+        return 0;
+    }
+    return ($al < $bl) ? +1 : -1;
+}

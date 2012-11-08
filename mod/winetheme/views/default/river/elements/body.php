@@ -11,6 +11,7 @@
 
 $item = $vars['item'];
 
+
 $menu = elgg_view_menu('river', array(
 	'item' => $item,
 	'sort_by' => 'priority',
