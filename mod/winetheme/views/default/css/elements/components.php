@@ -33,7 +33,7 @@
 	clear: both;
 }
 .elgg-list > li {
-	border-bottom: 1px dotted #CCCCCC;
+	border-bottom: 1px none #CCCCCC;
 }
 
 #list-style-all {

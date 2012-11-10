@@ -142,8 +142,8 @@ function degust_handle_edit_page($page, $guid = 0) {
         
         $help=elgg_view('degusts/help');
 	$params = array(
-		'tab1' => $content,
-		'tab2' => $help,
+		'tab1' => $help,
+		'tab2' => $content,
                 
 		'filter' => '',
                 //'class'=>'elgg-overlay'
