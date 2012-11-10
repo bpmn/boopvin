@@ -70,7 +70,7 @@ $degust->save();
 // wine creator needs to be member of new wine and river entry created
 if ($new_degust_flag) {
 	
-	add_to_river('river/object/degust/create', 'create', $user->guid, $degust->guid);
+	add_to_river('river/object/degust/create', 'degust', $user->guid, $degust->guid);
 }
 
 system_message(elgg_echo("degust:saved"));

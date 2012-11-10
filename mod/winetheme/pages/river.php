@@ -6,8 +6,7 @@ elgg_load_js('elgg.nivo');
 elgg_load_css('nivoslider.nivoslider_css');
 elgg_load_js('jquery.winetheme');
 
-
-$options = array();
+/*$options = array();
 
 $page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));
 $type = preg_replace('[\W]', '', get_input('type', 'all'));
@@ -23,9 +22,9 @@ if ($type != 'all') {
 	if ($subtype) {
 		$options['subtype'] = $subtype;
 	}
-}
+}*/
 
-switch ($page_type) {
+/*switch ($page_type) {
 	case 'mine':
 		$title = elgg_echo('river:mine');
 		$page_filter = 'mine';
@@ -41,12 +40,43 @@ switch ($page_type) {
 		$title = elgg_echo('river:all');
 		$page_filter = 'all';
 		break;
-}
+}*/
 
+
+/*$options['relationship_guid'] = elgg_get_logged_in_user_guid();
+$options['relationship'] = 'friend';*/
+
+//$activity = elgg_list_river($options);
+
+//$items=array();
+//$items_create=elgg_get_river(array('type_subtype_pairs'=>array('group'=>'wine','group'=>'restobar'),
+                          //  'action_types'=>'create'));
+
+
+
+$items_create=elgg_get_river(array('types'=>'group',
+                                   'subtypes'=>array('wine','restobar'),
+                                   'action_types'=>'create'));
+
+
+
+$items_friend=elgg_get_river(array('relationship_guid'=>elgg_get_logged_in_user_guid(),
+                            'relationship'=>'friend',
+                            'action_types'=>array('degust','incave','update')));
+
+$items=array_merge($items_create,$items_friend);
+usort($items, "time_created_cmp");
+
+//$items=$items_create;
 $options['pagination']=FALSE;
 $options['limit']=20;
+$options['items']=$items;
 
-$activity = elgg_list_river($options);
+
+
+
+$activity= elgg_view('page/components/list', $options);
+usort($activity, "time_created_cmp");
 
 if (!$activity) {
 	$activity = elgg_echo('river:none');
@@ -86,3 +116,15 @@ $params = array(
 $body = elgg_view_layout('content', $params);
 
 echo elgg_view_page($title, $body);
+
+
+
+
+function time_created_cmp($a, $b) {
+    $al = (int) $a->posted;
+    $bl = (int) $b->posted;
+    if ($al == $bl) {
+        return 0;
+    }
+    return ($al < $bl) ? +1 : -1;
+}

@@ -60,7 +60,7 @@ if ($restobar_profile_fields > 0) {
                 case 'location': 
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
-                            'id'=>$$id,
+                            'id'=>$id,
                             'class' => "required",
                             'value' => $vars['entity']->$shortname,
                     ));
@@ -79,7 +79,7 @@ if ($restobar_profile_fields > 0) {
                 default:
                     echo elgg_view("input/{$valtype}", array(
                             'name' => $shortname,
-                            'id'=>$$id,
+                            'id'=>$id,
                             'class' => "required",
                             'value' => $vars['entity']->$shortname,
                     ));

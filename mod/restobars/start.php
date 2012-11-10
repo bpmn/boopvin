@@ -792,7 +792,7 @@ function restobar_news_init() {
         add_subtype('object', 'restobarnews', 'ElggRestobarnews');
 
 	// because replies are not comments, need of our menu item
-	elgg_register_plugin_hook_handler('register', 'menu:river', 'restobar_news_add_to_river_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:river', 'restobar_news_add_to_river_menu');
 
 	// add the forum tool option
 	//add_group_tool_option('forum', elgg_echo('restobar:enableforum'), true);

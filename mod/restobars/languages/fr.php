@@ -10,7 +10,7 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Les Bars, Restos, Caves, Domaines...",
+	'restobar' => "Les Bars, Restos, Caves, Domaines..",
     
 	'restobar:owned' => "Restobar que je possede",
 	'restobar:yours' => "Mon restobar",
@@ -221,8 +221,8 @@ or click below to view the restobar's join requests:
 	/*
 		Forum river items
 	*/
-
-	'river:create:restobar:default' => '%s created the restobar %s',
+        'river:create:group:restobar' => "%s a ajouté l'établissement %s à AvenueVin",
+	'river:update:object:restobarnews' => "%s a actualisé ses nouvelles du moment !",
 	'river:join:restobar:default' => '%s joined the restobar %s',
 	'river:create:object:restobarforumtopic' => '%s added a new discussion topic %s',
 	'river:reply:object:restobarforumtopic' => '%s replied on the discussion topic %s',

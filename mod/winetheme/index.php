@@ -9,15 +9,18 @@ elgg_load_js('elgg.nivo');
 elgg_load_css('nivoslider.nivoslider_css');
 elgg_load_js('jquery.winetheme');
 
+//elgg_unregister_menu_item('river', 'comment');
+
 $options = array();
 $options['pagination']=FALSE;
 $options['limit']=20;
 
 $content = elgg_view_title(elgg_echo('content:latest'));
+
+
 $content .= elgg_list_river($options);
 
 $content = "<div id=\"avenue_activity\">".$content."</div>";
-
 
 
 $content = $content."<div id=\"nivo_slider\">";

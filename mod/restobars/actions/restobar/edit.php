@@ -98,7 +98,7 @@ $restobar->save();
 if ($new_restobar_flag) {
 	elgg_set_page_owner_guid($restobar->guid);
 	$restobar->join($user);
-	add_to_river('river/restobar/create', 'create', $user->guid, $restobar->guid, $restobar->access_id);
+	add_to_river('river/restobar/create', 'create', $user->guid, $restobar->guid);
 
 // création de l'Objet restobarnews rattaché au restobar.
         $restobarnews=new ElggRestobarnews();

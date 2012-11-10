@@ -40,7 +40,7 @@ elgg_clear_sticky_form('restobarnews');
 //	system_message(elgg_echo('discussion:topic:updated'));
 //}
 
-add_to_river('river/object/restobarnews/create', 'update', elgg_get_logged_in_user_guid(), $topic->guid);
+add_to_river('river/object/restobarnews/create', 'update', $container->getGUID(), $restobarnews->guid);
 //system_message(elgg_echo('restobarnews:updated'));
 
 

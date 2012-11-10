@@ -42,7 +42,7 @@ function restobar_handle_all_page() {
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('group' => 'restobar'),
 				'full_view' => false,
-                                'id'=>'list-style-all-resto'
+                                'list_class'=>'list-style-all-resto'
 			));
 			if (!$content) {
 				$content = elgg_echo('restobar:none');
@@ -182,8 +182,8 @@ function restobar_handle_edit_page($page, $guid = 0) {
         //elgg_load_js('elgg.modal');
         elgg_load_js('elgg.popup');
         
-        elgg_load_js('elgg.restobar_edit');
-        elgg_load_js('elgg.validate');
+        //elgg_load_js('elgg.restobar_edit');
+        //elgg_load_js('elgg.validate');
 	
 	if ($page == 'add') {
 		elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());

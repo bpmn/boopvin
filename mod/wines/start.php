@@ -811,7 +811,7 @@ function wine_discussion_init() {
 	elgg_register_entity_type('object', 'wineforumtopic');
 
 	// because replies are not comments, need of our menu item
-	elgg_register_plugin_hook_handler('register', 'menu:river', 'wine_discussion_add_to_river_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:river', 'wine_discussion_add_to_river_menu');
 
 	// add the forum tool option
 	//add_group_tool_option('forum', elgg_echo('wine:enableforum'), true);

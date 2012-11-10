@@ -109,7 +109,7 @@ $wine->save();
 if ($new_wine_flag) {
 	elgg_set_page_owner_guid($wine->guid);
 	$wine->join($user);
-	add_to_river('river/wine/create', 'create', $user->guid, $wine->guid, $wine->access_id);
+	add_to_river('river/wine/create', 'create', $user->guid, $wine->guid);
 }
 
 // Now see if we have a file icon

@@ -29,7 +29,7 @@ if (sizeof($restobar_guid)) {
 								$restobar->getURL())
 							));*/
                                         /*todo peut être add to river s'inspirer de la fonction join*/
-
+                                        add_to_river('river/wine/incave','incave', $restobar->getGUID(), $wine->guid);
 					system_message(elgg_echo('restobar:addedtocave'));
 				}else{
 					// huh

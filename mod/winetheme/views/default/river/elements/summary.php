@@ -29,22 +29,32 @@ $action = $item->action_type;
 $type = $item->type;
 $subtype = $item->subtype ? $item->subtype : 'default';
 
-$container = $object->getContainerEntity();
-if ($container instanceof ElggGroup) {
-	$params = array(
-		'href' => $container->getURL(),
-		'text' => $container->name,
-		'is_trusted' => true,
-	);
-	$group_link = elgg_view('output/url', $params);
-	$group_string = elgg_echo('river:ingroup', array($group_link));
-}
+//if ($subtype != "degust") {
+    $container = $object->getContainerEntity();
+    if ($container instanceof ElggGroup) {
+        $params = array(
+            'href' => $container->getURL(),
+            'text' => $container->name,
+            'is_trusted' => true,
+        );
+        $group_link = elgg_view('output/url', $params);
 
+        //$group_string = elgg_echo("river:{$container->getSubtype()})", array($group_link));
+        $group_string = elgg_echo("river:ingroup", array($group_link));
+    }
+//}
 // check summary translation keys.
 // will use the $type:$subtype if that's defined, otherwise just uses $type:default
 $key = "river:$action:$type:$subtype";
-$summary = elgg_echo($key, array($subject_link, $object_link));
-
+if ($subtype == 'restobarnews') {
+    $summary = elgg_echo($key, array($subject_link));
+} else {
+    if ($action == "incave") {
+        $summary = elgg_echo($key, array($object_link, $subject_link));
+    } else {
+        $summary = elgg_echo($key, array($subject_link, $object_link));
+    }
+}
 if ($summary == $key) {
 	$key = "river:$action:$type:default";
 	$summary = elgg_echo($key, array($subject_link, $object_link));

@@ -11,6 +11,7 @@
 
 $item = $vars['item'];
 
+
 $menu = elgg_view_menu('river', array(
 	'item' => $item,
 	'sort_by' => 'priority',
@@ -48,15 +49,18 @@ if ($responses) {
 
 $group_string = '';
 $object = $item->getObjectEntity();
-/*$container = $object->getContainerEntity();
-if ($container instanceof ElggGroup && $container->guid != elgg_get_page_owner_guid()) {
-	$group_link = elgg_view('output/url', array(
-		'href' => $container->getURL(),
-		'text' => $container->name,
-		'is_trusted' => true,
-	));
-	$group_string = elgg_echo('river:ingroup', array($group_link));
-}*/
+if ($item->subtype != "degust" && $item->subtype != "restobarnews" ) {
+    $container = $object->getContainerEntity();
+    if ($container instanceof ElggGroup && $container->guid != elgg_get_page_owner_guid()) {
+        $group_link = elgg_view('output/url', array(
+            'href' => $container->getURL(),
+            'text' => $container->name,
+            'is_trusted' => true,
+                ));
+        $group_string = elgg_echo("river:$item->subtype", array($group_link));
+        //$group_string = elgg_echo("river:ingroup", array($group_link));
+    }
+}
 
 echo <<<RIVER
 $menu

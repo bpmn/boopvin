@@ -15,7 +15,7 @@ $lat_user=(float)get_input('latitude');
 $long_user=(float)get_input('longitude');
 $dist_max=60;
 
-$restobars = elgg_get_entities_from_relationship(array(
+$restobars = elgg_get_entities(array(
         'types'=>'group',
         'subtypes'=>'restobar',
 	'limit' => 10000,
@@ -35,7 +35,7 @@ foreach($restobars as $elts){
         echo elgg_echo("wine:restobar:nosuggestion");
     } else {
         usort($list_restobar, "dist_cmp");
-        echo elgg_view_entity_list($list_restobar, array("limit" => 10000, 'full_view' => FALSE, 'pagination' => true,'id'=>'list-style-all-resto'));
+        echo elgg_view_entity_list($list_restobar, array("limit" => 10000, 'full_view' => FALSE, 'pagination' => true,'list_class'=>'list-style-all-resto'));
     }
 
 

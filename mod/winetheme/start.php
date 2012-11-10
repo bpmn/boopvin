@@ -33,8 +33,11 @@ function winetheme_init() {
 	//elgg_extend_view('css/elgg', 'winetheme/css');
     //$winetheme_jq = elgg_get_simplecache_url('css', 'vendors/jquery/ui/theme');
     elgg_unregister_menu_item('topbar', 'elgg_logo');
+    //elgg_unregister_menu_item('river', 'comment');
     
     elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
+    elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
+    elgg_register_plugin_hook_handler('register', 'menu:river', 'winetheme_river_menu_setup');
     
     elgg_unregister_page_handler('activity');
     elgg_register_page_handler ('activity','winetheme_river_page_handler');
@@ -165,6 +168,34 @@ function friends_winetheme_page_handler($page_elements, $handler) {
 			return false;
 	}
 	return true;
+}
+
+/**
+ * Add the comment and like links to river actions menu
+ * @access private
+ */
+function winetheme_river_menu_setup($hook, $type, $return, $params) {
+	if (elgg_is_logged_in()) {
+		$item = $params['item'];
+		$object = $item->getObjectEntity();
+		// comments and non-objects cannot be commented on or liked
+		
+		
+		if (elgg_is_admin_logged_in()) {
+			$options = array(
+				'name' => 'delete',
+				'href' => "action/river/delete?id=$item->id",
+				'text' => elgg_view_icon('delete'),
+				'title' => elgg_echo('delete'),
+				'confirm' => elgg_echo('deleteconfirm'),
+				'is_action' => true,
+				'priority' => 200,
+			);
+			$return[] = ElggMenuItem::factory($options);
+		}
+	}
+
+	return $return;
 }
 
 
