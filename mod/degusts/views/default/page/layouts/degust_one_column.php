@@ -29,18 +29,18 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 
         <div id="vtab">
             <ul>
-                <li class="home"></li>
                 <li class="support"></li>
+                <li class="home"></li>
             </ul>
 
 
-            <div id="vtab-1"><h4><?php echo (elgg_echo('degust')); ?></h4>
+            <div id="vtab-1"><h4><?php echo (elgg_echo('degust:help')); ?></h4>
 
 <?php echo $vars['tab1']; ?>
 
 
             </div> <!-- for Tab 1-->
-            <div id="vtab-2"><h4><?php echo ( elgg_echo('degust:help')); ?></h4>
+            <div id="vtab-2"><h4><?php echo ( elgg_echo('degust')); ?></h4>
 <?php echo $vars['tab2']; ?>
             </div>
         </div> <!-- for Tabs-->
