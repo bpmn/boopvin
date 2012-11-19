@@ -2,7 +2,10 @@
 ?>
 // Profile Manager More Info tooltips
 $(document).ready(function(){
-
+    
+       var init_pro=$("div#pro input:radio:checked").val();
+       if(init_pro == "yes"){
+                    $("div#job").css({"display":"block"}); }
        $("div#pro input:radio").change( function() {
         
               valeur= $('div#pro input:radio:checked').val();

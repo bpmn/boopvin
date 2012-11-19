@@ -18,10 +18,10 @@ else
 
 echo '<div class="degust-side-head">';
 
-	 echo elgg_view_entity_icon($owner,'medium');
-         echo "$owner->name <br/>";
+	// echo elgg_view_entity_icon($owner,'medium');
+         //echo "$owner->name <br/>";
          
-  
+  echo elgg_view_entity($owner);
 // affichage du millésime     
     
   if ($degust->annee){
@@ -32,7 +32,8 @@ echo '<div class="degust-side-head">';
     }
     
 }
-         
+
+
      
 echo '</div>';
 

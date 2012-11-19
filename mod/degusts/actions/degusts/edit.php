@@ -95,7 +95,7 @@ if (elgg_instanceof($page_owner_entity,'user')){
 echo elgg_list_entities($options);
 
 // Forward to the page the action occurred on
-forward(REFERER);
+//forward(REFERER);
 
 
 ?>

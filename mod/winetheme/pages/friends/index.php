@@ -19,7 +19,8 @@ $options = array(
 	'relationship_guid' => $owner->getGUID(),
 	'inverse_relationship' => FALSE,
 	//'type' => 'user',
-	'full_view' => FALSE
+	'full_view' => FALSE,
+        'list_class'=>'list-style-all-resto',
 );
 $content = elgg_list_entities_from_relationship($options);
 if (!$content) {

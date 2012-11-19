@@ -79,12 +79,13 @@ if ($new_file) {
 }
 
 $file->title = $title;
-$file->description = $desc;
-$file->access_id = $access_id;
+//$file->description = $desc;
+//$file->access_id = $access_id;
+$file->access_id = ACCESS_PUBLIC;
 $file->container_guid = $container_guid;
 
-$tags = explode(",", $tags);
-$file->tags = $tags;
+/*$tags = explode(",", $tags);
+$file->tags = $tags;*/
 
 // we have a file upload, so process it
 if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {

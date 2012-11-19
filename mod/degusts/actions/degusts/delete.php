@@ -36,7 +36,7 @@ if (elgg_instanceof($degust, 'object', 'degust') && ($degust->canEdit())) {
                 echo elgg_list_entities($options); 
                 
                 
-                forward(REFERER);
+                //forward(REFERER);
 	} else {
 		register_error(elgg_echo('degust:error:cannot_delete'));
 	}

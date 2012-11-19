@@ -169,7 +169,7 @@ function restobar_setup_sidebar_menus() {
 	// Get the page owner entity
 	$page_owner = elgg_get_page_owner_entity();
         $context=elgg_get_context();
-	if (elgg_get_context() == 'restobar') {
+	if (elgg_get_context() == 'restobar' && elgg_is_logged_in()) {
 		/*if ( elgg_instanceof($page_owner,'group','restobar','ElggRestobar')) {
 			if (elgg_is_logged_in() && $page_owner->canEdit() && !$page_owner->isPublicMembership()) {
 				$url = elgg_get_site_url() . "restobar/requests/{$page_owner->getGUID()}";
@@ -197,7 +197,20 @@ function restobar_setup_sidebar_menus() {
 				/*$url = "restobar/invitations/$user->username";
 				$item = new ElggMenuItem('restobar:user:invites', elgg_echo('restobar:invitations'), $url);
 				elgg_register_menu_item('page', $item);*/
-			}
+			
+                                
+                                if ($user && $user->canWriteToContainer()) {
+                                $guid = $user->getGUID();
+                                elgg_register_menu_item('page', array(
+				'name' => 'add',
+				'href' => "restobar/add/$guid",
+				'text' => elgg_echo("restobar:add"),
+				
+			));
+		}
+                                
+                        }
+                        
 		//}
             }
 }

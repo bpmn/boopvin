@@ -6,11 +6,11 @@
 // Get variables
 $title = get_input("title");
 $desc = get_input("description");
-$status = get_input("status");
+//$status = get_input("status");
 $access_id = (int) get_input("access_id");
 $container_guid = (int) get_input('container_guid');
 $guid = (int) get_input('topic_guid');
-$tags = get_input("tags");
+//$tags = get_input("tags");
 
 elgg_make_sticky_form('topic');
 
@@ -46,12 +46,12 @@ if ($new_topic) {
 
 $topic->title = $title;
 $topic->description = $desc;
-$topic->status = $status;
-$topic->access_id = $access_id;
+//$topic->status = $status;
+$topic->access_id = get_entity($container_guid)->group_acl;
 $topic->container_guid = $container_guid;
 
-$tags = explode(",", $tags);
-$topic->tags = $tags;
+//$tags = explode(",", $tags);
+//$topic->tags = $tags;
 
 $result = $topic->save();
 

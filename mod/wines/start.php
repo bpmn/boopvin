@@ -452,6 +452,22 @@ function wine_entity_menu_setup($hook, $type, $return, $params) {
                 
                 }
                 
+        if (elgg_in_context('my_wine')) {
+                
+                $user_guid=  elgg_get_logged_in_user_guid();
+        // delete link
+		$options = array(
+			'name' => 'removewine',
+			'text' => elgg_view_icon('delete'),
+			'title' => elgg_echo('removewine:this'),
+			'href' => "action/wines/leave?wine_guid={$entity->getGUID()}&user_guid={$user_guid}",
+			'confirm' => elgg_echo('removewineconfirm'),
+			'priority' => 300,
+		);
+		$return[] = ElggMenuItem::factory($options);
+                
+                }
+                
 	return $return;
 }
 

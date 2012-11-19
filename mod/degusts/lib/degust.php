@@ -8,30 +8,20 @@
  */
 
 
-function degust_handle_all_page() {
+function degust_handle_all_page($wine_guid) {
 
 	// all Wine doesn't get link to self
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('degust'));
 
-	elgg_register_title_button();
+	//elgg_register_title_button();
 
-	$selected_tab = get_input('filter', 'newest');
-
-	switch ($selected_tab) {
-		case 'newest':
-		default:
+	
 			$content = elgg_list_entities(array(
 				'type_subtype_pairs' =>array('object' => 'degust'),
 				'full_view' => false,
+                                'container_guid'=>$wine_guid
 			));
-			if (!$content) {
-				$content = elgg_echo('degust:none');
-			}
-			break;
-	}
-
-	$filter = elgg_view('degusts/degust_sort_menu', array('selected' => $selected_tab));
 	
 	$sidebar = elgg_view('degusts/sidebar/find');
 	$sidebar .= elgg_view('degusts/sidebar/featured');
@@ -50,33 +40,73 @@ function degust_handle_all_page() {
 /**
  * List owned Degusts
  */
-function degust_handle_owned_page() {
-
+function degust_handle_wine_page() {
+        elgg_load_js('elgg.modal');
+        elgg_load_js('elgg.degust');
 	$page_owner = elgg_get_page_owner_entity();
+        $owner_guid = elgg_get_logged_in_user_guid();
+  
+        // all Wine doesn't get link to self
+	elgg_pop_breadcrumb();
+	elgg_push_breadcrumb(elgg_echo('degust'));
 
-	$title = elgg_echo('degust:owned');
-	elgg_push_breadcrumb($title);
+	//elgg_register_title_button();
 
-	elgg_register_title_button();
+	$selected_tab = get_input('filter', 'newest');
 
-	$content = elgg_list_entities(array(
-		'type' => 'group',
-		'owner_guid' => elgg_get_page_owner_guid(),
-		'full_view' => false,
-	));
-	if (!$content) {
-		$content = elgg_echo('wine:none');
+	switch ($selected_tab) {
+	
+                case 'mine':
+                           
+                        $options=array( 'types' => 'object',
+                                        'subtypes'=>'degust',
+                                        'owner_guid' => $owner_guid,
+                                        'container_guid'=>$page_owner->getGUID(),
+                                        'list_class'=>'list-style-all',
+                                        'full_view' => false,
+                                        'pagination'=>true);
+                       
+                        $content = "<div class=\"degust_list\">".elgg_list_entities($options)."</div>";
+        
+                        if (!$content) {
+                            $content = elgg_echo('degust:none');
+                        }
+			break;
+		case 'newest':
+		default:
+		   
+                         $options=array('types' => 'object',
+                                        'subtypes'=>'degust',
+                                        'container_guid'=>$page_owner->getGUID(),
+                                        'list_class'=>'list-style-all',
+                                        'full_view' => false,
+                                        'pagination'=>true);
+        
+                       
+                        $content = "<div class=\"degust_list\">".elgg_list_entities($options)."</div>";
+        
+                        if (!$content) {
+                            $content = elgg_echo('degust:none');
+                        }
+                       
+			break;
 	}
+
+	$filter = elgg_view('degusts/degust_sort_menu', array('selected' => $selected_tab,'wine_guid'=>$page_owner->getGUID()));
+	
+	//$sidebar = elgg_view('wines/sidebar/find');
+	//$sidebar .= elgg_view('wines/sidebar/featured');
 
 	$params = array(
 		'content' => $content,
-		'title' => $title,
-		'filter' => '',
+		'sidebar' => $sidebar,
+		'filter' => $filter,
 	);
 	$body = elgg_view_layout('content', $params);
 
-	echo elgg_view_page($title, $body);
+	echo elgg_view_page(elgg_echo('degust:all'), $body);
 }
+
 
 
 
@@ -166,7 +196,7 @@ function degust_handle_edit_page($page, $guid = 0) {
  *
  * @param int $guid Group entity GUID
  */
-function degust_handle_profile_page($guid) {
+function degust_handle_profile_page($guid,$overlay) {
 	
         gatekeeper();
         elgg_set_page_owner_guid($guid);
@@ -208,12 +238,14 @@ function degust_handle_profile_page($guid) {
                 
 	);
         	
-	
-
+	      
 	$body = elgg_view_layout('degust_one_sidebar', $params);
-        //echo $body;
-        echo elgg_view_page($title, $body,'overlay');
-	
+        
+        if ($overlay =="overlay"){
+            echo elgg_view_page($title, $body,'overlay');
+        }else{
+            echo elgg_view_page($title, $body,'degust_normal');
+        }
 }
 
 

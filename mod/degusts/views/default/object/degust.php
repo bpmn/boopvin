@@ -48,7 +48,7 @@ if ($degust->annee){
 /***********************************************************************************************************/
 
 $degust_link = elgg_view('output/url', array(
-	'href' => $degust->getURL(),
+	'href' => $degust->getURL()."/overlay/",
 	'text' => elgg_echo('degust:link'),
         'class'=>'degust-view',
         'title'=> $title_link,

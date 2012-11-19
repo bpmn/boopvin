@@ -35,6 +35,9 @@ function winetheme_init() {
     elgg_unregister_menu_item('topbar', 'elgg_logo');
     //elgg_unregister_menu_item('river', 'comment');
     
+    
+    
+    
     elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
     elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
     elgg_register_plugin_hook_handler('register', 'menu:river', 'winetheme_river_menu_setup');
@@ -159,6 +162,7 @@ function friends_winetheme_page_handler($page_elements, $handler) {
 
 	switch ($handler) {
 		case 'friends':
+                        elgg_unregister_menu_item('page','friends:view:collections');
 			require_once (dirname(__FILE__) . "/pages/friends/index.php");
 			break;
 		case 'friendsof':

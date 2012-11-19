@@ -40,14 +40,14 @@ $content = elgg_list_entities(array(
 	'types' => 'object',
 	'subtypes' => 'file',
 	'container_guid' => $owner->guid,
-	'limit' => 10,
+	'limit' => 1000,
 	'full_view' => FALSE,
 ));
 if (!$content) {
 	$content = elgg_echo("file:none");
 }
 
-$sidebar = file_get_type_cloud(elgg_get_page_owner_guid());
+//$sidebar = file_get_type_cloud(elgg_get_page_owner_guid());
 $sidebar = elgg_view('file/sidebar');
 
 $params['content'] = $content;

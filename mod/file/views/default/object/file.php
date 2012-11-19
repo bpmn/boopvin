@@ -99,8 +99,24 @@ if ($full && !elgg_in_context('gallery')) {
                                                          'href'=>$image_url,
                                                          'rel'=>'gal',
                                                          'title'=>$file->title));
-        
-	echo "<p class='subtitle'>$owner_link $date</p>";
+        		$options = array(
+			'name' => 'file_delete',
+			'text' => elgg_view_icon('delete'),
+			'title' => elgg_echo('file:delete'),
+			'href' => "action/file/delete?guid={$file->getGUID()}",
+			'confirm' => elgg_echo('deletefile'),
+			'priority' => 300,
+		);
+		$item = ElggMenuItem::factory($options);
+                elgg_register_menu_item('file_delete', $item);
+                $delete=elgg_view_menu('file_delete');
+                $user=  elgg_get_logged_in_user_entity();
+                if (($file->getOwnerGUID()== $user->getGUID()) || $user->isAdmin() ) {
+                    //echo "<div class='subtitle'>$date $delete</div>";
+                    echo "<div class='subtitle'>$date $delete</div>";
+                }else{
+                    echo "<p class='subtitle'>$owner_link $date </p>";
+                }
 	echo '</div>';
 } else {
 	// brief view

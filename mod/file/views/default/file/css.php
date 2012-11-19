@@ -13,3 +13,9 @@
 	text-align: center;
 	width: 165px;
 }
+
+.elgg-menu-file-delete  {
+  display: inline-block;
+}
+
+

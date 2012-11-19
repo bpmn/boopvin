@@ -12,7 +12,7 @@ function restobar_handle_all_page() {
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));
         elgg_load_js('hj.livesearch.autocomplete_other');
-	elgg_register_title_button();
+	//elgg_register_title_button();
        
         
         // extend view for header restobar search box
@@ -114,10 +114,11 @@ function restobar_handle_owned_page() {
 	$title = elgg_echo('restobar:owned');
 	elgg_push_breadcrumb($title);
 
-	elgg_register_title_button();
+	//elgg_register_title_button();
 
 	$content = elgg_list_entities(array(
-		'type' => 'group',
+		'types' => 'group',
+                'subtypes' => 'restobar',
 		'owner_guid' => elgg_get_page_owner_guid(),
 		'full_view' => false,
 	));
@@ -179,11 +180,11 @@ function restobar_handle_edit_page($page, $guid = 0) {
         gatekeeper();
         elgg_load_js('elgg.googlemap');
         elgg_load_js('elgg.restobar');
-        //elgg_load_js('elgg.modal');
+        elgg_load_js('elgg.modal');
         elgg_load_js('elgg.popup');
         
-        //elgg_load_js('elgg.restobar_edit');
-        //elgg_load_js('elgg.validate');
+        elgg_load_js('elgg.restobar_edit');
+        elgg_load_js('elgg.validate');
 	
 	if ($page == 'add') {
 		elgg_set_page_owner_guid(elgg_get_logged_in_user_guid());

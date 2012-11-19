@@ -9,11 +9,11 @@
 $wine = $vars['entity'];
 
 
-/*$all_link = elgg_view('output/url', array(
-	'href' => "wine_discussion/owner/".$wine->getGUID(),
+$all_link = elgg_view('output/url', array(
+	'href' => "degust/wine/{$wine->getGUID()}/",
 	'text' => elgg_echo('link:view:all'),
 	'is_trusted' => true,
-));*/
+));
 
 elgg_push_context('widgets');
 $options = array(

@@ -29,10 +29,10 @@ $content = $content."<div id=\"nivo_slider\">";
 
  $content = $content."<div class=\"slider-wrapper theme-default\">";
  $content = $content."           <div id=\"avenue_slider\" class=\"nivoSlider\">";
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/toystory.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/toystory.jpg'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/up.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/up.jpg','data-transition'=>'slideInLeft'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/walle.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/walle.jpg','data-transition'=>'slideInLeft'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/nemo.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/nemo.jpg'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/vigne1.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/toystory.jpg'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/vigne2.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/up.jpg','data-transition'=>'slideInLeft'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/vigne3.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/walle.jpg','data-transition'=>'slideInLeft'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/vigne4.jpg','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/nemo.jpg'));
  $content = $content."           </div>";
  $content = $content."           <div id=\"htmlcaption\" class=\"nivo-html-caption\">";
  $content = $content."               <strong>This</strong> is an example of a <em>HTML</em> caption with <a href=\"#\">a link</a>."; 

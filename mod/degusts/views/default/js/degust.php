@@ -76,10 +76,12 @@
         // });
         
         
+   $(function() {
+        degust_view_bind();
+   });     
         
-        $(function() { 
-            
-            $(".degust-view").nyroModal({
+   function degust_view_bind(){   
+           $(".degust-view").nyroModal({
                 callbacks: {             
                     initElts: function() {
                         $(".elgg-page-topbar").css({
@@ -105,8 +107,8 @@
                 }
                 
             });
-        });
-        
+               
+          }
         
         //les fonctions
         
@@ -322,7 +324,7 @@ function degust_validate() {
                     success: function(resulthtml, success, xhr) {
                                 $.nmTop().close();
                                 $('.degust_list').html(resulthtml.output);
-                                
+                                degust_view_bind();
                             }
             
                 });
@@ -399,7 +401,7 @@ $(".degust-requires-confirmation").click(function(e) {
                     success: function(json, success, xhr) {
                                 $.nmTop().close();
                                 $('.degust_list').html(json.output);
-                                
+                                degust_view_bind();
                             }
             
                 });

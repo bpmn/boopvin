@@ -35,6 +35,7 @@ function degust_init(){
         
         elgg_register_plugin_hook_handler('register', 'menu:entity', 'degust_entity_menu_setup');
         elgg_register_plugin_hook_handler('permissions_check', 'object', 'degust_override_permissions');
+        elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'degust_setup_owner_block_menu');
         
         $action_base = elgg_get_plugins_path() . 'degusts/actions/degusts';
 	elgg_register_action("degusts/edit", "$action_base/edit.php");
@@ -138,7 +139,12 @@ function degust_page_handler($page) {
 			degust_handle_edit_page('edit');
 			break;
 		case 'profile':
-			degust_handle_profile_page($page[1]);
+			degust_handle_profile_page($page[1],$page[2]);
+                        break;
+                case 'wine':
+                        elgg_set_context('wine:degust');
+                        elgg_set_page_owner_guid($page[1]);
+                        degust_handle_wine_page();
 			break;
 
 		default:
@@ -156,9 +162,9 @@ function degust_page_handler($page) {
  * @return string File URL
  */
 function degust_url($entity) {
-	$title = elgg_get_friendly_title($entity->name);
-
-	return "degust/profile/{$entity->guid}/$title";
+	
+            return "degust/profile/{$entity->guid}";
+       
 }
 
 
@@ -244,5 +250,24 @@ function degust_override_permissions($hook, $entity_type, $returnvalue, $params)
     }
     
     
+}
+
+
+function degust_setup_owner_block_menu($hook, $type, $return, $params) {
+
+	// Get the page owner entity
+	
+		if (elgg_instanceof($params['entity'], 'group','wine' )) {
+			if (elgg_is_logged_in()) {
+				$url = elgg_normalize_url("degust/wine/{$params['entity']->getGUID()}");	
+                                $text= 'wine:degust:all';				
+                                $menu_item=array('name' => $text,'text' => elgg_echo($text),'href' => $url);
+                                $item = ElggMenuItem::factory($menu_item);
+                                $return[] = $item;
+			
+			
+		}
+	}
+    return $return;
 }
 ?>

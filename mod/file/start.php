@@ -42,10 +42,10 @@ function file_init() {
 	elgg_register_plugin_hook_handler('entity:icon:url', 'object', 'file_icon_url_override');
 
 	// Register granular notification for this object type
-	register_notification_object('object', 'file', elgg_echo('file:newupload'));
+	//register_notification_object('object', 'file', elgg_echo('file:newupload'));
 
 	// Listen to notification events and supply a more useful message
-	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'file_notify_message');
+	//elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'file_notify_message');
 
 	// add the group files tool option
 	//add_group_tool_option('file', elgg_echo('groups:enablefiles'), true);
@@ -221,12 +221,13 @@ function file_notify_message($hook, $entity_type, $returnvalue, $params) {
  */
 function file_owner_block_menu($hook, $type, $return, $params) {
 	
+        
 		if (elgg_instanceof($params['entity'], 'group','wine' )) {
 			$url = "file/wine/{$params['entity']->guid}?list_type=gallery";
 			$item = new ElggMenuItem('file', elgg_echo('file:wine'), $url);
 			$return[] = $item;
 		}
-	
+        
 
 	return $return;
 }

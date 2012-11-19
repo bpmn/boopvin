@@ -295,8 +295,10 @@ background-position: right center;
     width: 250px;
 }
 
-
-
+.elgg-page-body-degust .elgg-layout {
+    //padding: 25px;
+    background: #D8B771;
+}
 
 
 #list_user_degust {
