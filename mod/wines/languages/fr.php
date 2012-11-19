@@ -40,7 +40,9 @@ $french = array(
         
         'wine:red'=>'Rouge',             
         'wine:white'=>'Blanc',             
-        'wine:rose'=>'Rosé' ,         
+        'wine:rose'=>'Rosé' , 
+        'wine:white_sparkling'=>'Blanc effervescent',
+        'wine:rose_sparkling'=>'Rosé effervescent',
     
 	'wine:briefdescription' => 'Description breve',
 	'wine:interests' => 'Tags',

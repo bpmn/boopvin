@@ -36,6 +36,7 @@ if (isset($vars['entity'])) {
 
 $wine_profile_fields = elgg_get_config('wine');
 
+
 if ($wine_profile_fields > 0) {
 	foreach ($wine_profile_fields as $shortname => $valtype) {
                 $id="id_".$shortname;
@@ -129,9 +130,11 @@ if ($wine_profile_fields > 0) {
                             'options_values' => array(''=> elgg_echo(''),
 				'red' => elgg_echo('wine:red'),
 				'white' => elgg_echo('wine:white'),
-                                'rose' => elgg_echo('wine:rose')
+                                'rose' => elgg_echo('wine:rose'),
+                                'white_sparkling' => elgg_echo('wine:white_sparkling'),
+                                'rose_sparkling' => elgg_echo('wine:rose_sparkling')
                             ));
-                     if (isset($vars['entity'])&& !elgg_is_admin_logged_in()) {
+                     if (isset($vars['entity'])&& (!elgg_is_admin_logged_in() && ($vars['entity']->getOwnerGUID() != elgg_get_logged_in_user_guid()) )) {
                          $option_kind['disabled']="disabled";
                      }
                      echo elgg_view("input/{$valtype}",$option_kind );
@@ -171,10 +174,13 @@ if (isset($vars['entity'])) {
 		'name' => 'wine_guid',
 		'value' => $vars['entity']->getGUID(),
 	));
-        echo elgg_view('input/hidden', array(
-		'name' => 'kind',
-		'value' => $vars['entity']->kind,
-	));
+        if (!elgg_is_admin_logged_in() && ($vars['entity']->getOwnerGUID() != elgg_get_logged_in_user_guid())){
+            echo elgg_view('input/hidden', array(
+                    'name' => 'kind',
+                    'value' => $vars['entity']->kind,
+            ));
+        
+        }
 
         
 }

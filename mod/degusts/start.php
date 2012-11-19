@@ -65,7 +65,7 @@ function degust_fields_setup() {
                     'couleur'=>'coloradio',
                     'reflet'=>'coloradio',
                     'mousse'=>'coloradio',
-                    'nez_bulle'=>'coloradio'),
+                    'bulle'=>'coloradio'),
              
  //Olfactif
              'olfactif'=>array(
@@ -77,8 +77,8 @@ function degust_fields_setup() {
  //Gustatif
              'gustatif'=> array(
                     'rondeur'=>'paletradio',
-                    'palet_bulle'=>'paletradio',
                     'acidity'=>'paletradio',
+                    'palet_bulle'=>'paletradio',
                     'dosage'=>'paletradio',
                     'alcool'=>'paletradio',
                     'tanin'=>'paletradio',

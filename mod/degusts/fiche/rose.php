@@ -12,13 +12,13 @@ $options_couleur_intensity = array (
                                 elgg_echo('degust:couleur_intensity:sombre') => 'sombre');
 
 $options_couleur = array(
-				elgg_echo('degust:color:rose_pale') => 'rose_pale',
-				elgg_echo('degust:color:rose') => 'rose',
-                                elgg_echo('degust:color:rubis') => 'rubis',
-                                elgg_echo('degust:color:saumon') => 'saumon',
-                                elgg_echo('degust:color:oignon') => 'oignon',
-				elgg_echo('degust:color:orange') => 'orange',
-				elgg_echo('degust:color:cuivre') => 'cuivre');
+				elgg_echo('degust:couleur:rose_pale') => 'rose_pale',
+				elgg_echo('degust:couleur:rose') => 'rose',
+                                elgg_echo('degust:couleur:rubis') => 'rubis',
+                                elgg_echo('degust:couleur:saumon') => 'saumon',
+                                elgg_echo('degust:couleur:oignon') => 'oignon',
+				elgg_echo('degust:couleur:orange') => 'orange',
+				elgg_echo('degust:couleur:cuivre') => 'cuivre');
 
 //olfactif
 $options_nez_intensity = array(

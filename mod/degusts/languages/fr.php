@@ -36,19 +36,19 @@ $french = array(
     'degust:couleur:tuile' => 'Tuile',
 
 
-    'degust:color:jaune_pale' => 'Jaune Pâle',
-    'degust:color:or_pale' => 'Or Pâle',
-    'degust:color:or' => 'Or',
-    'degust:color:cuivre' => 'Cuivre',
-    'degust:color:ambre' => 'Ambre',
+    'degust:couleur:jaune_pale' => 'Jaune Pâle',
+    'degust:couleur:or_pale' => 'Or Pâle',
+    'degust:couleur:or' => 'Or',
+    'degust:couleur:cuivre' => 'Cuivre',
+    'degust:couleur:ambre' => 'Ambre',
   
-    'degust:color:rose_pale' => 'Rose Pâle',
-    'degust:color:rose' => 'Rose',
-    'degust:color:saumon'=> 'Saumon',
-    'degust:color:rubis' => 'Rubis',
-    'degust:color:oignon' => 'Oignon',
-    'degust:color:orange' => 'Orange',
-    'degust:color:cuivre' => 'Cuivre',
+    'degust:couleur:rose_pale' => 'Rose Pâle',
+    'degust:couleur:rose' => 'Rose',
+    'degust:couleur:saumon'=> 'Saumon',
+    'degust:couleur:rubis' => 'Rubis',
+    'degust:couleur:oignon' => 'Oignon',
+    'degust:couleur:orange' => 'Orange',
+    'degust:couleur:cuivre' => 'Cuivre',
     
     
     'degust:reflet:violace_jeune'=>'Violacé Jeune',
@@ -62,6 +62,18 @@ $french = array(
     'degust:reflet:gris' => 'Gris',
     'degust:reflet:or' => 'Or',
     'degust:reflet:dore' => 'Doré',
+    
+    
+    'degust:mousse:inexistante'=>'Inexistante',
+    'degust:mousse:faible' => 'Faible',
+    'degust:mousse:abondante' => 'Abondante',
+    'degust:mousse:persistante' => 'Persistante',
+
+    'degust:bulle:tres_fine'=>'Très fines',
+    'degust:bulle:fine' => 'Fines',
+    'degust:bulle:moyenne' => 'Moyennes',
+    'degust:bulle:grossiere' => 'Grossières',
+
     
              
 //Olfactif
@@ -101,6 +113,8 @@ $french = array(
     'degust:rondeur:plein'=> 'Plein',
     'degust:rondeur:volumineux' => 'Volumineux',
     'degust:rondeur:opulent' => 'Opulent',
+    'degust:rondeur:franche' => 'Franche',
+    'degust:rondeur:discrete' => 'Discrète',
      
 
     'degust:acidity:mou'=>'Mou',
@@ -108,7 +122,9 @@ $french = array(
     'degust:acidity:droit' => 'Droit',
     'degust:acidity:nerveux' => 'Nerveux',
     'degust:acidity:vert' => 'Vert',
-                            
+    'degust:acidity:discrete'=>'Discrète',
+    'degust:acidity:elegante' => 'Elégante',
+    
     'degust:alcool:leger'=>'Léger',
     'degust:alcool:integre' => 'Intégré',
     'degust:alcool:genereux' => 'Généreux',
@@ -127,8 +143,13 @@ $french = array(
     'degust:longueur:long' => 'Longue',
     'degust:longueur:tres_long' => 'Très Longue',
 
- 
-//Gustatif
+
+    'degust:palet_bulle:tres_fine'=>'Très fines',
+    'degust:palet_bulle:fine' => 'Fines',
+    'degust:palet_bulle:moyenne' => 'Moyennes',
+    'degust:palet_bulle:grossiere' => 'Grossières',
+    
+    
     'degust:rondeur'=>'Attaque et rondeur',
     'degust:acidity'=>'L\'acidité',
     'degust:alcool'=>'L\'alcool',
@@ -136,6 +157,10 @@ $french = array(
     'degust:moelleux'=>'Le moelleux',
     'degust:retro'=>'Retro olfaction',
     'degust:longueur'=>'Longueur en bouche',
+    'degust:bulle'=>'Les bulles',
+    'degust:mousse'=>'La mousse',
+    'degust:palet_bulle'=>'Les bulles en bouche',
+    
  
  //Commentaire final
     'degust:evolution'=>'L\'évolution',

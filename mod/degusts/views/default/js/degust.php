@@ -114,7 +114,7 @@
         
         
         
-        function degust_edit (action){
+       function degust_edit (action){
             
             $(".degust-edit").click(function(e){    
                 
@@ -195,7 +195,7 @@
                 
                 var index = $items.index($(this));
                 $('#vtab>div').hide().eq(index).show();
-            }).eq(1).click();
+            }).eq(0).click();
         }
         
         

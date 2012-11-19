@@ -141,6 +141,7 @@ function wine_fields_setup() {
                 'maker'=>'text',            //vigneron
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
+           //     'dosage'=>'text',           //dosage pour champagne
                 'info'=>'longtext',         //info complémentaires
 		//'website' => 'url',
  
@@ -155,6 +156,7 @@ function wine_fields_setup() {
                 'maker'=>'text',            //vigneron
                 'kind'=>'dropdown',         //style de vin blanc, rouge, moelleux
                 'soil'=>'text',             //sol
+         //       'dosage'=>'text',           //dosage pour champagne
                 'info'=>'longtext',         //info complémentaires
 		//'website' => 'url',
  
