@@ -1070,7 +1070,11 @@ function _elgg_php_error_handler($errno, $errmsg, $filename, $linenum, $vars) {
 		case E_WARNING :
 		case E_USER_WARNING :
 		case E_RECOVERABLE_ERROR: // (e.g. type hint violation)
-			error_log("PHP WARNING: $error");
+			
+			// check if the error wasn't suppressed by @-functionname
+			if(error_reporting()){
+				error_log("PHP WARNING: $error");
+			}
 			break;
 
 		default:
@@ -1575,7 +1579,7 @@ function elgg_http_url_is_identical($url1, $url2, $ignore_params = array('offset
  * @param bool   $strict  Return array key if it's set, even if empty. If false,
  *                        return $default if the array key is unset or empty.
  *
- * @return void
+ * @return mixed
  * @since 1.8.0
  */
 function elgg_extract($key, array $array, $default = null, $strict = true) {

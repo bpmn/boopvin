@@ -284,7 +284,8 @@ or click below to view the wine's join requests:
 	'wine:ecml:discussion' => 'wine Discussions',
 	'wine:ecml:wineprofile' => 'wine profiles',
 
-        'wine:restobar:nosuggestion'=> 'pas de suggestion'
+        'wine:restobar:nosuggestion'=> 'pas de suggestion',
+        'wine:degust:all'=> 'les dégustations'
 );
 
 add_translation("fr", $french);

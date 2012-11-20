@@ -8,11 +8,13 @@
 // Load configuration
 global $CONFIG;
 
+//elgg_make_sticky_form('groups');
+
 /**
  * wrapper for recursive array walk decoding
  */
 function profile_array_decoder(&$v) {
-	$v = html_entity_decode($v, ENT_COMPAT, 'UTF-8');
+	$v = _elgg_html_decode($v);
 }
 
 // Get restobar fields
@@ -23,7 +25,7 @@ foreach ($CONFIG->restobar as $shortname => $valuetype) {
 	if (is_array($input[$shortname])) {
 		array_walk_recursive($input[$shortname], 'profile_array_decoder');
 	} else {
-		$input[$shortname] = html_entity_decode($input[$shortname], ENT_COMPAT, 'UTF-8');
+		$input[$shortname] = _elgg_html_decode($input[$shortname]);
 	}
 
 	if ($valuetype == 'tags') {
@@ -31,14 +33,12 @@ foreach ($CONFIG->restobar as $shortname => $valuetype) {
 	}
 }
 
-$input['name'] = get_input('name');
-$input['name'] = html_entity_decode($input['name'], ENT_COMPAT, 'UTF-8');
+$input['name'] = htmlspecialchars(get_input('name', '', false), ENT_QUOTES, 'UTF-8');
 
 $input['geo:lat']=get_input('latitude');
-$input['geo:lat'] = (float)html_entity_decode($input['geo:lat'], ENT_COMPAT, 'UTF-8');
-
+$input['geo:lat'] = (float)_elgg_html_decode($input['geo:lat']);
 $input['geo:long']=get_input('longitude');
-$input['geo:long'] = (float)html_entity_decode($input['geo:long'], ENT_COMPAT, 'UTF-8');
+$input['geo:long'] = (float)_elgg_html_decode($input['geo:long']);
 
 $user = elgg_get_logged_in_user_entity();
 
@@ -93,6 +93,9 @@ if (elgg_get_plugin_setting('hidden_groups', 'restobar') == 'yes') {
 }
 
 $restobar->save();
+
+// group saved so clear sticky form
+//elgg_clear_sticky_form('groups');
 
 // restobar creator needs to be member of new restobar and river entry created
 if ($new_restobar_flag) {

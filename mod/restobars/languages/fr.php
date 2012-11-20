@@ -118,7 +118,8 @@ $french = array(
 	
 	'news:add' => 'Ajouter une brève de comptoir',
 	'news:latest' => 'Les dernières brèves de comptoir',
-	'news:restobar' => 'Les dernière News',
+	'news:restobar' => 'Les dernières Nouvelles',
+        'news:restobar:edit'=> 'editer',
 	'news:none' => 'No discussion',
 	'news:reply:title' => 'Reply by %s',
 
@@ -266,6 +267,18 @@ or click below to view the restobar's join requests:
 	// ecml
 	'restobar:ecml:discussion' => 'restobar Discussions',
 	'restobar:ecml:restobarprofile' => 'restobar profiles',
+    
+            //gestion de cave
+        'restobar:cave'=>'La cave de %s ',
+    
+        //module profile
+        'restobar:cave:news'=>'Les nouveautés de la cave',
+        'link:cave:all'=>'toute la cave',
+    
+        'removecave:this' => 'Remove the wine from the cellar',
+        'removecaveconfirm'=> 'Do you want to remove this wine from the cellar ?',
+        'cave:removed' => ' The wine has been removed from the cellar',
+        'cave:cantremove'=> 'This wine cannot be removed from the cellar',
         
         //retobar Map
         'restobar:street'=>'Rue',
@@ -276,7 +289,10 @@ or click below to view the restobar's join requests:
         'restobar:nation'=>'Pays',
         'restobar:latitude'=>'Latitude',
         'restobar:longitude'=>'Longitude',
-        'restobar:clickmap'=>"Cliquer pour visualiser le plan"
+        'restobar:clickmap'=>"Cliquer pour visualiser le plan",
+    
+        'restobar:cave:none'=>'pas de vin en cave',
+       
 );
 
 add_translation("fr", $french);

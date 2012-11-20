@@ -182,6 +182,7 @@ $french = array(
     
     'degust:link'=>"Voir la fiche",
     'degust:add'=>"déguster",
+    'degust:wine'=> "dégustations",
     'river:degust:object:degust' => '%s a dégusté %s',
     'river:comment:object:degust' => '%s a commenté votre dégustation %s'
 );

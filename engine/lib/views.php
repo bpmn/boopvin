@@ -1615,7 +1615,7 @@ function elgg_views_boot() {
 	elgg_register_simplecache_view('js/elgg');
 
 	elgg_register_js('jquery', '/vendors/jquery/jquery-1.8.1.min.js', 'head');
-	elgg_register_js('jquery-ui', '/vendors/jquery/jquery-ui-1.8.23.custom.min.js', 'head');
+	elgg_register_js('jquery-ui', '/vendors/jquery/jquery-ui-1.8.23.min.js', 'head');
 	elgg_register_js('jquery.form', '/vendors/jquery/jquery.form.js');
 	
 	$elgg_js_url = elgg_get_simplecache_url('js', 'elgg');
@@ -1653,7 +1653,7 @@ function elgg_views_boot() {
 	}
 
 	// set default icon sizes - can be overridden in settings.php or with plugin
-	if (!elgg_get_config('icon_sizes')) {
+	if (!$CONFIG->icon_sizes) {
 		$icon_sizes = array(
 			'topbar' => array('w' => 16, 'h' => 16, 'square' => TRUE, 'upscale' => TRUE),
 			'tiny' => array('w' => 25, 'h' => 25, 'square' => TRUE, 'upscale' => TRUE),

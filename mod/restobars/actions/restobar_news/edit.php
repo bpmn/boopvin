@@ -5,8 +5,8 @@
 
 // Get variables
 
-$desc = get_input("description");
-$desc= html_entity_decode($desc, ENT_COMPAT, 'UTF-8');
+
+$desc=_elgg_html_decode(get_input("description"));
 
 $guid = (int) get_input('restobarnews_guid');
 $restobarnews=get_entity($guid);
