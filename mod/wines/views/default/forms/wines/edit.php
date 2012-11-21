@@ -18,7 +18,17 @@ if (isset($vars['entity'])) {
 	$access = ACCESS_PUBLIC;
 }
 
+if (!isset($vars['entity'])){
+echo "<div> <label>";
+echo elgg_echo("wine:photo").'</label><br />';
+echo elgg_view("input/file", array('name' => 'photo')); 
+echo '</div>';
+}
+
+
+
 ?>
+
 
 
 <div>
