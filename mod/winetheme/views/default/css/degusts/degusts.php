@@ -208,7 +208,7 @@ margin-right:auto;
 #vtab > div {
     background-color: #ffffff;
     
-    margin-left: 60px;
+    margin-left: 20px;
     border: 1px solid #ddd;
     min-height: 500px;
     padding: 12px;

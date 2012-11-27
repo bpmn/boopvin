@@ -244,7 +244,7 @@
             $( "#button_selectnez_intensity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectnez_intensity" ).buttonset().css("margin-right", "0px");
             
-            $( "#button_selectnez" ).buttonset().find('label').width("81").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectnez" ).buttonset().find('label').width("20%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectnez" ).buttonset().css("margin-right", "0px");
             $( "#button_selectnez" ).buttonset().find('span').css("padding", "0.4em 0.3em");
             

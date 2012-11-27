@@ -15,12 +15,12 @@ $close = elgg_normalize_url($close);
 	
         border: 1px none #00FF00;
         position: relative;
-	padding: 5px;
+	padding: 15px;
         
-        min-height: 250px;
-	min-width: 250px;
-	max-width: 900px;
-
+        //min-height: 250px;
+	//min-width: 250px;
+	//max-width: 900px;
+        overflow: hidden ; 
 }
 
 
@@ -67,6 +67,7 @@ $close = elgg_normalize_url($close);
         outline: 4px solid #323232;
         margin: 25px;
 	background: #D8B771;
+        //overflow: hidden ; 
               
 }
 .nyroModalCont iframe {

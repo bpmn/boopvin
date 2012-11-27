@@ -95,9 +95,10 @@ if (count($vars['options']) > 0) {
 		//echo "<li><label>$input$label</label></li>";
                 echo "<input type=\"checkbox\" {$attributes} class=\"required\"/>";               
                
+                $tips=elgg_echo("degust:nez_tips:$value");
               
                 //echo "<li>{$input}<label for=\"$id\">$label</label></li>";
-                echo "<label for=\"$id\">$label</label>";
+                echo "<label title=\"$tips\" for=\"$id\">$label</label>";
                  
                  
 	}

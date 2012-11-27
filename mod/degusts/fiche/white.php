@@ -41,6 +41,7 @@ $options_nez = array(
                                 elgg_echo('degust:nez:epice') => 'epice',
                                 elgg_echo('degust:nez:fermentaire') => 'fermentaire',
                                 elgg_echo('degust:nez:animal') => 'animal',
+                                elgg_echo('degust:nez:empyreumatique') => 'empyreumatique',
                                 elgg_echo('degust:nez:bois') =>'bois',
                                 elgg_echo('degust:nez:chimique')=>'chimique');
 

@@ -132,7 +132,8 @@ foreach ($degust_profile_fields as $section => $elts) {
                         'align'=>'horizontal',
                         'options'=>$options,
                         'option_values'=>$option_values,
-                        'class'=>'input-degust'
+                        'class'=>'input-degust',
+                        
               );
             
             

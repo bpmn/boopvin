@@ -102,8 +102,107 @@ $french = array(
     'degust:nez:epice' => 'Epicé',
     'degust:nez:fermentaire' => 'Fermentaire',
     'degust:nez:animal' => 'Animal',
+    'degust:nez:empyreumatique' => 'Empyreumatique',
     'degust:nez:bois' =>'Bois',
     'degust:nez:chimique'=>'Chimique',
+    
+    //liste des arôme pour l'aide à la dégustation
+    'degust:nez_tips:fruit'=>'Pomme
+Pêche
+Poire
+Orange
+Citron
+Abricot
+Fruits exotiques
+Amande
+Coing
+Noisette
+Noix
+Raisin
+Fruits rouges
+Fruits noirs',
+    
+    'degust:nez_tips:floral' =>"Acacia 
+Fleur d'Oranger 
+Lilas 
+Genêt 
+Chèvrefeuille 
+Iris 
+Oeillets 
+fleurs blanches
+Fleurs séchées
+Camomille
+Violette 
+Rose fanée 
+Fleurs séchées",
+    
+    'degust:nez_tips:vegetal' => 'Herbe fraîche 
+Paille 
+Lierre 
+Buis 
+Fougère
+Poivron 
+Humus 
+Bourgeon de cassis 
+Champignon 
+Truffe 
+Sous-bois',
+    
+    'degust:nez_tips:mineral' => 'Pierre à fusil 
+Iode  
+Silex
+Craie
+Pétrole',
+    
+    'degust:nez_tips:epice' => "Cake 
+Miel 
+Nougat 
+Pâte d'amande
+Cannelle 
+Poivre 
+Thym 
+Laurier
+Garrigue
+Réglisse 
+Zan 
+Goudron",
+    
+    'degust:nez_tips:fermentaire' => 'Brioche 
+Mie de pain 
+Biscuit
+Levure
+Beurre
+Lait
+Yaourt',
+    
+    'degust:nez_tips:animal' => 'Cuir 
+fourrure 
+Gibier 
+Venaison 
+Jus de viande',
+    
+    'degust:nez_tips:empyreumatique' => "Cacao 
+Pain grillé 
+Pain d'épice 
+Tabac 
+Café 
+Caramel",
+    
+    'degust:nez_tips:bois' =>"Blasa 
+Pin 
+Cèdre 
+Résine de pin 
+Vanille
+Chêne
+Eucalyptus 
+Bois fumé 
+Bois brûlé 
+Bois neuf",
+    
+    'degust:nez_tips:chimique'=>'Solvant 
+Vernis 
+Peinture',
+    
 
 //gustatif
 
