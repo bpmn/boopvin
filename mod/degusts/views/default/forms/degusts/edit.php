@@ -51,9 +51,10 @@ echo "<div data-overlay=\"overlay_degustation\" id=\"metadatafield_overlay\"></d
 // entête de la dégustation
 
 echo '<div class="degust-side-head">';
+//echo "$container->name <br/>";
+echo elgg_view_entity($container);
+//echo elgg_view_entity_icon($container, 'medium');
 
-echo elgg_view_entity_icon($container, 'medium');
-echo "$container->name <br/>";
 
 
 // affichage du millésime     

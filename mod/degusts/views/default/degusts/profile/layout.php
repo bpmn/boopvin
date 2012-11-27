@@ -100,7 +100,7 @@ foreach ($degust_profile_fields as $section => $elts) {
 
         }
     echo "</div>";
-    //echo '<div class="vigne_separator"></div>';
+    echo '<div class="vigne_separator"></div>';
     
 }
 

@@ -6,7 +6,7 @@
  */
 
 $wine = $vars['entity'];
-
+$degust=$vars['degust'];
 //$icon = elgg_view_entity_icon($wine, 'small');
   $icon =  elgg_view('output/img',array('src'=>"mod/wines/graphics/glass_".$wine->kind.".jpg"));
 
@@ -37,6 +37,7 @@ if ($vars['full_view']) {
 		'entity' => $wine,
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
+                'degust' => $degust,
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('wines/elements/summary', $params);

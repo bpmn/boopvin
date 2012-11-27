@@ -241,6 +241,12 @@ Peinture',
     'degust:longueur:moyen' => 'Moyenne',
     'degust:longueur:long' => 'Longue',
     'degust:longueur:tres_long' => 'Très Longue',
+    
+    'degust:equilibre:parfait'=>'parfait',
+    'degust:equilibre:harmonieux' => 'harmonieux',
+    'degust:equilibre:equilibre' => 'Equilibré',
+    'degust:equilibre:desequilibre' => 'Déséquilibré',
+    
 
 
     'degust:palet_bulle:tres_fine'=>'Très fines',
@@ -259,12 +265,12 @@ Peinture',
     'degust:bulle'=>'Les bulles',
     'degust:mousse'=>'La mousse',
     'degust:palet_bulle'=>'Les bulles en bouche',
-    
+    'degust:equilibre' => 'Equilibre',
  
  //Commentaire final
     'degust:evolution'=>'L\'évolution',
     'degust:comment'=>'Commentaire final',   //commentaire finale
-    'degust:accord'=>'Accord mets et vin',        //proposition accord mets vins
+    'degust:context'=>'Contexte de dégustation (endroit, plat etc..)',        //proposition accord mets vins
     'degust:note'=>'Note générale',
     //comment
                     

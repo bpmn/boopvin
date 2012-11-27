@@ -75,6 +75,13 @@ $options_longueur = array(
                                 elgg_echo('degust:longueur:long') => 'long',
                                 elgg_echo('degust:longueur:tres_long') => 'tres_long');
 
+
+
+$options_equilibre = array(
+                                elgg_echo('degust:equilibre:desequilibre') => 'desequilibre',
+                                elgg_echo('degust:equilibre:equilibre') => 'equilibre',
+                                elgg_echo( 'degust:equilibre:harmonieux') => 'harmonieux',
+                                elgg_echo('degust:equilibre:parfait')=>'parfait');
 //comment
                     
 $options_evolution = array(
