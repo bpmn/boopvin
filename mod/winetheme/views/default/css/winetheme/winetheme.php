@@ -7,7 +7,7 @@
 ?>
 
 body {
-background: #ff0000;
+background: #ffffff;
 background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v15.jpg') repeat-x;
 
 }
@@ -21,8 +21,34 @@ width: 350px;
 
 }
 
+.boopwine_register {
+background: #ffffff;
+}
 
-#avenue_activity {
+
+.register_me{
+background: #ffffff;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/Post-it-note-transparent.png') no-repeat;
+
+height: 214px;
+width: 205px;
+
+
+text-align: center;
+
+
+}
+
+
+.register_me a {
+
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 200%; font-size: 1.8em; 
+
+}
+
+
+#avenue_activity a{
 width: 370px;
 }
 

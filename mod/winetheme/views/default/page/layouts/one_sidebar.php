@@ -25,7 +25,21 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 <div class="<?php echo $class; ?>">
 	<div class="elgg-sidebar">
             <div class="fb-like" data-href="http://blog.boopinn.com" data-send="true" data-layout="button_count" data-width="150" data-show-faces="true" data-font="tahoma"></div>
-		<?php
+            
+            <?php
+                if (!elgg_is_logged_in()) {
+                echo('<div class="register_me"><br><br><br>');
+
+
+		if (elgg_get_config('allow_registration')) {
+			echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register_me') . '</a>';
+		}
+                echo("</div>");
+                }
+                
+            ?>
+            
+            <?php
 			echo elgg_view('page/elements/sidebar', $vars);
 		?>
 	</div>
