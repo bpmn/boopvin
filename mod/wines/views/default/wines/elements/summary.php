@@ -18,9 +18,18 @@
  */
 
 $entity = $vars['entity'];
+$degust = $vars['degust'];
 
 
 	$text = $entity->name;
+        
+        
+         if ($degust){
+            if ($degust->annee != 'nv') {
+                $text .= " ".$degust->annee;
+        }
+    }
+        
        
 	$params = array(
 		'text' => $text,

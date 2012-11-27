@@ -21,17 +21,17 @@ echo '<div class="degust-side-head">';
 	// echo elgg_view_entity_icon($owner,'medium');
          //echo "$owner->name <br/>";
          
-  echo elgg_view_entity($owner);
+  echo elgg_view_entity($owner,array('degust'=>$degust));
 // affichage du millésime     
     
-  if ($degust->annee){
+  /*if ($degust->annee){
     if ($degust->annee != 'nv') {
         echo elgg_echo("wine:vintage") . ': '. $degust->annee ;
     } else {
         echo elgg_echo("wine:vintage") . ': '. elgg_echo("wine:nv");
     }
     
-}
+}*/
 
 
      

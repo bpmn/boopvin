@@ -22,7 +22,7 @@ function degust_init(){
 	elgg_register_page_handler('degust', 'degust_page_handler');
 
         //extend some views
-	elgg_extend_view('css/elgg', 'degusts/css');
+	//elgg_extend_view('css/elgg', 'degusts/css');
         
         elgg_extend_view('wines/tool_latest', 'degusts/module');
        
@@ -84,13 +84,14 @@ function degust_fields_setup() {
                     'tanin'=>'paletradio',
                     'moelleux'=>'paletradio',
                     'retro'=>'text',
-                    'longueur'=>'paletradio'),
+                    'longueur'=>'paletradio',
+                    'equilibre'=>'paletradio'),
  
  //Commentaire final
               'comment'=>array(
                     'evolution'=>'paletradio',
                     'comment'=>'longtext',   //commentaire finale
-                    'accord'=>'text',        //proposition accord mets vins
+                    'context'=>'text',        //proposition accord mets vins
                     'note'=>'notedropdown' )      //note sur 20.        
             
 	);

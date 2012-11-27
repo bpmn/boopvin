@@ -208,7 +208,7 @@ margin-right:auto;
 #vtab > div {
     background-color: #ffffff;
     
-    margin-left: 20px;
+    margin-left: 60px;
     border: 1px solid #ddd;
     min-height: 500px;
     padding: 12px;
@@ -272,7 +272,8 @@ margin-right: 0px;
 
 .degust-side-head {
 padding-top:10px;
-height: 110px;
+height: auto;
+width: auto;
 text-transform:capitalize;  
 background-position: right center;
 }
@@ -309,4 +310,40 @@ background-position: right center;
 
 .elgg-col-2of3 {
     width: 65%;
+}
+
+
+.input-degust { margin:0.6% 0% 1% 0%;}
+
+.elgg-form-degusts-edit .input-degust label{
+               font-family: arial;
+               font-size:95%;
+               font-weight: normal;} 
+
+.elgg-form-degusts-edit label {font-family: Georgia, "Times New Roman", Times, serif;} 
+
+
+
+                        
+.elgg-form-degusts-edit fieldset fieldset {  border-color: black;
+                                    border-width: 1px;
+                                    border-style: solid;
+                                    padding: 2%;
+                                    } 
+ #degust-profile-box {
+ display:inline-block;
+ width:100%;
+        
+ }
+ .degust-profile-sections {    
+         border-color: black;
+         border-width: 1px;
+         border-style: solid;
+         padding: 2%;}
+
+.degust-main{
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+   
 }

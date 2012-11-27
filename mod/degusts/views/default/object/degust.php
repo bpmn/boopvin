@@ -37,9 +37,10 @@ $title_link=$wine->name;
 if ($degust->annee){
     if ($degust->annee != 'nv') {
         $title_link.= "  {$degust->annee}";
-    } else {
-        $title_link.= "  ".elgg_echo("wine:nv");
-    }
+    } 
+   // else {
+   //     $title_link.= "  ".elgg_echo("wine:nv");
+   // }
     
 }
 
@@ -70,8 +71,7 @@ $date = elgg_view_friendly_time($degust->time_updated);
 
 if (elgg_in_context('profile')){
     
-    $poster_icon = elgg_view_entity_icon($wine, 'tiny');
-   
+   $poster_icon=  elgg_view('output/img',array('src'=>"mod/wines/graphics/glass_".$wine->kind.".jpg"));
     
     $title = elgg_view('output/url', array(
 	'href' => $wine->getURL(),
@@ -80,8 +80,8 @@ if (elgg_in_context('profile')){
         'title'=> $title_link,
 	'is_trusted' => true,
 ));
-    $poster_text = elgg_echo('degust:post_profile', array($date)) ;  
-    
+    //$poster_text = elgg_echo('degust:post_profile', array($date)) ;  
+    $poster_text = elgg_echo('degust:post_wine', array($date,$poster_link)) ;
     
     
 }else{
