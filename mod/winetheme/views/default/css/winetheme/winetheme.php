@@ -14,7 +14,7 @@ background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/defa
 
 #nivo_slider{
 position: absolute;
-top: 50px;
+top: 120px;
 left: 400px;
 height: 100px;
 width: 350px;
@@ -47,8 +47,18 @@ font-size: 200%; font-size: 1.8em;
 
 }
 
+#index_welcome {
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 1.4em; 
+width: 720px;
+height: 80px;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/home_subheading.png') no-repeat scroll 50% 0px transparent;
+margin-bottom: 10px;
+}
 
-#avenue_activity a{
+
+
+#avenue_activity {
 width: 370px;
 }
 

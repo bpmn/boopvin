@@ -113,7 +113,7 @@ box-shadow: 0px 3px 20px #000000;
 }
 .elgg-main {
 	position: relative;
-	min-height: 360px;
+	min-height: 430px;
 	//padding: 10px 0 0 350px;
         padding: 10px;
 }

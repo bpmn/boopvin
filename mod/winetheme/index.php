@@ -15,10 +15,24 @@ $options = array();
 $options['pagination']=FALSE;
 $options['limit']=20;
 
+
+$welcome = "<div id=\"index_welcome\">";
+
+$welcome .= "<h4>Bienvenue a Avenue Vin !</h4>";
+$welcome .= "Mais... Avenue Vin, c'est quoi?<br>";
+$welcome .= "C'est un lieu de rencontre pour les amateurs avertis et debutant de vins<br>";
+$welcome .= "ou l'on peut remplire ses fiches de degustations, et trouver bars, restos etc..<br>";
+
+
+//end of index_welcome
+$welcome .= "</div>";
+
+
 $content = elgg_view_title(elgg_echo('content:latest'));
 
 
 $content .= elgg_list_river($options);
+
 
 $content = "<div id=\"avenue_activity\">".$content."</div>";
 
@@ -42,9 +56,11 @@ $content = $content."<div id=\"nivo_slider\">";
 $content = $content."</div>";
 
 
+$content_final = $welcome.$content;
+
 
 $params = array(
-		'content' => $content,
+		'content' => $content_final,
 		'sidebar' => ''
 );
 $body = elgg_view_layout('one_sidebar', $params);
