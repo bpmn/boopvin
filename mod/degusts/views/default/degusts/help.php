@@ -19,9 +19,9 @@ $vin_rouge = elgg_normalize_url($vin_rouge);
 ?>
 <div class ="help_paragraph">
 
-<br>
+</br>
 <h1>Aide a la degustation</h1>
-<br>
+</br>
 <p>Pour faire une degustation, aidez vous des icones representant les differentes couleurs et reflets pour un vin, comme donne par example ci-dessous:</p>
 <div class ="help_picture">
 <img src="<?php echo $couleurs_rouge; ?>" alt="Couleurs rouge"> </img>

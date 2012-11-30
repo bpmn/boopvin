@@ -48,7 +48,7 @@ font-size: 200%; font-size: 1.8em;
 }
 
 
-#avenue_activity a{
+#avenue_activity {
 width: 370px;
 }
 
