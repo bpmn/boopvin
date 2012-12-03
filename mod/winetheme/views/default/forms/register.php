@@ -17,6 +17,8 @@ if (elgg_is_sticky_form('register')) {
 }
 
 ?>
+<div id="register_window">
+    <h4> <?php echo elgg_echo('register_message'); ?></h4>
 <div class="mtm">
 	<label><?php echo elgg_echo('name'); ?></label><br />
 	<?php
@@ -70,6 +72,10 @@ echo elgg_view('register/extend', $vars);
 
 // Add captcha hook
 echo elgg_view('input/captcha', $vars);
+
+// end of div register_window
+echo '</div>';
+
 
 echo '<div class="elgg-foot">';
 echo elgg_view('input/hidden', array('name' => 'friend_guid', 'value' => $vars['friend_guid']));

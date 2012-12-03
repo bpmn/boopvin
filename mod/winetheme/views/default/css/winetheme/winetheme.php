@@ -21,6 +21,28 @@ width: 350px;
 
 }
 
+
+#register_window {
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer8.png') no-repeat;
+
+text-align: center;
+width: 660px;
+
+padding-bottom: 30px;
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 10px;
+
+}
+
+
+#register_window h4 {
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 1.4em; 
+}
+
+
+
 .boopwine_register {
 background: #ffffff;
 }
