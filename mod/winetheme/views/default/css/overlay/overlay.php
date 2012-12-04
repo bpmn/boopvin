@@ -9,21 +9,6 @@ $close = 'mod/winetheme/vendors/nyromodal/graphics/close21.png';
 $close = elgg_normalize_url($close);
 ?>
 
-
-
-.nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
-	
-        border: 1px none #00FF00;
-        //position: relative;
-	padding: 15px;
-        
-        //min-height: 250px;
-	//min-width: 250px;
-	//max-width: 900px;
-        overflow: hidden ; 
-}
-
-
 .nyroModalBg {
 	position: fixed;
 	overflow: hidden;
@@ -33,12 +18,13 @@ $close = elgg_normalize_url($close);
 	width: 100%;
 	background: #ffffff;
 	opacity: 0.7;
-       
 }
+
+
 .nmReposition {
 	position: absolute;
-       
 }
+
 .nyroModalCloseButton {
 	top: -13px;
 	right: -13px;
@@ -47,6 +33,7 @@ $close = elgg_normalize_url($close);
 	text-indent: -9999em;
 	background: url(<?php echo $close ?>);
 }
+
 .nyroModalTitle {
 	top: -26px;   
 	left: 0;
@@ -57,24 +44,24 @@ $close = elgg_normalize_url($close);
         text-shadow:5px 3px 5px #ffffff;
 }
 
+
 .nyroModalCont {
         min-height: 250px;
 	min-width: 250px;
 	max-width: 900px;
         
-	//position: absolute;
+	position: absolute;
 	border: 4px solid #720D08;
         outline: 4px solid #323232;
         margin: 25px;
 	background: #D8B771;
-        //overflow: hidden ; 
-              
+       
 }
+
+
 .nyroModalCont iframe {
 	width: 600px;
 	height: 400px;
-        border: 1px none #0000FF;
-	
 }
 .nyroModalError {
 	border: 4px solid red;
@@ -87,7 +74,14 @@ $close = elgg_normalize_url($close);
 	min-height: 0;
 	padding: 10px;
 }
-
+.nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
+	position: relative;
+	padding: 10px;
+	min-height: 250px;
+	min-width: 250px;
+	max-width: 1000px;
+        //overflow: hidden ; 
+}
 .nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {
 	position: relative;
 	overflow: hidden;
