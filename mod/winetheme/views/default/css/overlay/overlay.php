@@ -14,7 +14,7 @@ $close = elgg_normalize_url($close);
 .nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
 	
         border: 1px none #00FF00;
-        position: relative;
+        //position: relative;
 	padding: 15px;
         
         //min-height: 250px;
@@ -62,7 +62,7 @@ $close = elgg_normalize_url($close);
 	min-width: 250px;
 	max-width: 900px;
         
-	position: absolute;
+	//position: absolute;
 	border: 4px solid #720D08;
         outline: 4px solid #323232;
         margin: 25px;

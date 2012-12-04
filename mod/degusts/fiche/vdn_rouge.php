@@ -1,10 +1,4 @@
 <?php
-
-/*
- * fiche de dégustaion vin rosé $kind='rose'  
- */
-
-
 $options_couleur_intensity = array (
                                 elgg_echo('degust:couleur_intensity:pale') => 'pale',
 				elgg_echo('degust:couleur_intensity:claire') => 'claire',
@@ -12,13 +6,12 @@ $options_couleur_intensity = array (
                                 elgg_echo('degust:couleur_intensity:sombre') => 'sombre');
 
 $options_couleur = array(
-				elgg_echo('degust:couleur:rose_pale') => 'rose_pale',
-				elgg_echo('degust:couleur:rose') => 'rose',
-                                elgg_echo('degust:couleur:rubis') => 'rubis',
-                                elgg_echo('degust:couleur:saumon') => 'saumon',
-                                elgg_echo('degust:couleur:oignon') => 'oignon',
-				elgg_echo('degust:couleur:orange') => 'orange',
-				elgg_echo('degust:couleur:cuivre') => 'cuivre');
+				elgg_echo('degust:couleur:grenat') => 'grenat',
+                                elgg_echo('degust:couleur:pourpre') => 'pourpre',
+				elgg_echo('degust:couleur:carmin') => 'carmin',               
+                                elgg_echo('degust:couleur:acajou') => 'acajou',
+                                elgg_echo('degust:reflet:brun') => 'brun');
+
 
 //olfactif
 $options_nez_intensity = array(
@@ -44,7 +37,6 @@ $options_nez = array(
 //gustatif
 
 $options_rondeur = array(
-				elgg_echo('degust:rondeur:fluide')=>'fluide',
                                 elgg_echo('degust:rondeur:souple') => 'souple',
 				elgg_echo('degust:rondeur:rond') => 'rond',
                                 elgg_echo('degust:rondeur:plein') => 'plein',
@@ -52,22 +44,26 @@ $options_rondeur = array(
                                 elgg_echo('degust:rondeur:opulent') => 'opulent');
      
 
-$options_acidity = array(
-				elgg_echo('degust:acidity:mou')=>'mou',
-                                elgg_echo('degust:acidity:frais') => 'frais',
-				elgg_echo('degust:acidity:droit') => 'droit',
-                                elgg_echo('degust:acidity:nerveux') => 'nerveux',
-                                elgg_echo('degust:acidity:vert') => 'vert');
+$options_douceur=array(
+				elgg_echo('degust:douceur:tendre')=>'tendre',
+                                elgg_echo('degust:douceur:suave') => 'suave',
+				elgg_echo('degust:douceur:onctueux') => 'onctueux',
+                                elgg_echo('degust:douceur:sirupeux') => 'sirupeux',
+                                elgg_echo('degust:douceur:lourd') => 'lourd');
+                               
+
+                                
                               
 $options_alcool = array(
-				elgg_echo('degust:alcool:leger')=>'leger',
                                 elgg_echo('degust:alcool:integre') => 'integre',
 				elgg_echo('degust:alcool:genereux') => 'genereux',
                                 elgg_echo('degust:alcool:chaud') => 'chaud',
                                 elgg_echo('degust:alcool:brulant') => 'brulant');
                                              
-                   
-
+$options_tanin = array(
+				elgg_echo('degust:tanin:souple')=>'souple',           
+                                elgg_echo('degust:tanin:soyeux') => 'soyeux',
+                                elgg_echo('degust:tanin:rustique') => 'rustique');                  
 
 $options_longueur = array(
 				elgg_echo('degust:longueur:tres_court')=>'tres_court',
@@ -83,6 +79,10 @@ $options_equilibre = array(
                                 elgg_echo('degust:equilibre:equilibre') => 'equilibre',
                                 elgg_echo( 'degust:equilibre:harmonieux') => 'harmonieux',
                                 elgg_echo('degust:equilibre:parfait')=>'parfait');
+                                
+                                
+                               
+
 //comment
                     
 $options_evolution = array(
@@ -93,4 +93,4 @@ $options_evolution = array(
                                 elgg_echo('degust:evolution:evolue') => 'evolue',
                                 elgg_echo('degust:evolution:use') => 'use');
 
-?>
+

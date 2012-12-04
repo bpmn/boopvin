@@ -51,7 +51,7 @@ if ($entity->owner_guid != $user->guid) {
 					$user->getURL()
 				))
 			);
-        add_to_river('river/annotation/generic_comment/create','comment', $user->guid, $entity->guid, "", 0, $annotation);
+        //add_to_river('river/annotation/generic_comment/create','comment', $user->guid, $entity->guid, "", 0, $annotation);
 }
 
 // list the last comment

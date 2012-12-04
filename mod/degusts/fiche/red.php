@@ -16,8 +16,8 @@ $options_couleur_intensity = array (
 
 $options_couleur = array(
 				elgg_echo('degust:couleur:grenat') => 'grenat',
-				elgg_echo('degust:couleur:carmin') => 'carmin',
                                 elgg_echo('degust:couleur:pourpre') => 'pourpre',
+				elgg_echo('degust:couleur:carmin') => 'carmin',                           
                                 elgg_echo('degust:couleur:rubis') => 'rubis',
                                 elgg_echo('degust:couleur:tuile') => 'tuile');
 
@@ -72,12 +72,14 @@ $options_alcool = array(
 				elgg_echo('degust:alcool:leger')=>'leger',
                                 elgg_echo('degust:alcool:integre') => 'integre',
 				elgg_echo('degust:alcool:genereux') => 'genereux',
-                                elgg_echo('degust:alcool:trop_genereux') => 'trop_genereux');
+                                elgg_echo('degust:alcool:chaud') => 'chaud',
+                                elgg_echo('degust:alcool:brulant') => 'brulant');
                                              
                    
 $options_tanin = array(
 				elgg_echo('degust:tanin:souple')=>'souple',
                                 elgg_echo('degust:tanin:fondu') => 'fondu',
+                                elgg_echo('degust:tanin:soyeux') => 'soyeux',
 				elgg_echo('degust:tanin:serre') => 'serre',
                                 elgg_echo('degust:tanin:rustique') => 'rustique',
                                 elgg_echo('degust:tanin:astringent') => 'astringent');

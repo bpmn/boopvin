@@ -201,7 +201,8 @@
         
         
         
-        function degust_button() {
+       
+       function degust_button() {
             
             var winefield = document.getElementById('metadatafield');
             var winecolor = winefield.getAttribute('data-winetype'); // winetype = "red"
@@ -218,7 +219,7 @@
                 $( "<div id='couleurs_rouge'></div>" ).insertBefore('#button_selectcouleur');
             }
             if (winecolor == "white"){
-                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectcouleur" ).buttonset().find('label').width("16.67%").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_blanc'></div>" ).insertBefore('#button_selectcouleur');
             }
             
@@ -258,7 +259,7 @@
             $( "#button_selectacidity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectacidity" ).buttonset().css("margin-right", "0px");
             
-            $( "#button_selectalcool" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectalcool" ).buttonset().find('label').width("20.2%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectalcool" ).buttonset().css("margin-right", "0px");
             
             

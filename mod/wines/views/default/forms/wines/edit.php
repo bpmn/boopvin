@@ -142,7 +142,10 @@ if ($wine_profile_fields > 0) {
 				'white' => elgg_echo('wine:white'),
                                 'rose' => elgg_echo('wine:rose'),
                                 'white_sparkling' => elgg_echo('wine:white_sparkling'),
-                                'rose_sparkling' => elgg_echo('wine:rose_sparkling')
+                                'rose_sparkling' => elgg_echo('wine:rose_sparkling'),
+                                'moelleux' => elgg_echo('wine:moelleux'),
+                                'vdn_blanc' => elgg_echo('wine:vdn_blanc'),
+                                'vdn_rouge' => elgg_echo('wine:vdn_rouge')
                             ));
                      if (isset($vars['entity'])&& (!elgg_is_admin_logged_in() && ($vars['entity']->getOwnerGUID() != elgg_get_logged_in_user_guid()) )) {
                          $option_kind['disabled']="disabled";

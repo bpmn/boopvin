@@ -12,11 +12,12 @@ $options_couleur_intensity = array (
                                 elgg_echo('degust:couleur_intensity:sombre') => 'sombre');
 
 $options_couleur = array(
-				elgg_echo('degust:color:jaune_pale') => 'jaune_pale',
-				elgg_echo('degust:color:or_pale') => 'or_pale',
-                                elgg_echo('degust:color:or') => 'or',
-                                elgg_echo('degust:color:ambre') => 'ambre',
-                                elgg_echo('degust:color:cuivre') => 'cuivre');
+				elgg_echo('degust:couleur:jaune_pale') => 'jaune_pale',
+				elgg_echo('degust:couleur:jaune') => 'jaune',
+                                elgg_echo('degust:couleur:paille') => 'paille',
+                                elgg_echo('degust:couleur:or') => 'or',
+                                elgg_echo('degust:couleur:ambre') => 'ambre',
+                                elgg_echo('degust:couleur:cuivre') => 'cuivre');
 
 $options_reflet = array(
 				elgg_echo('degust:reflet:gris') => 'gris',
@@ -67,10 +68,10 @@ $options_alcool = array(
 				elgg_echo('degust:alcool:leger')=>'leger',
                                 elgg_echo('degust:alcool:integre') => 'integre',
 				elgg_echo('degust:alcool:genereux') => 'genereux',
-                                elgg_echo('degust:alcool:trop_genereux') => 'trop_genereux');
+                                elgg_echo('degust:alcool:chaud') => 'chaud',
+                                elgg_echo('degust:alcool:brulant') => 'brulant');
                                              
                    
-
 
 $options_longueur = array(
 				elgg_echo('degust:longueur:tres_court')=>'tres_court',

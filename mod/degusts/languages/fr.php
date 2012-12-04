@@ -34,12 +34,13 @@ $french = array(
     'degust:couleur:pourpre' => 'Pourpre',
     'degust:couleur:rubis'=> 'Rubis',
     'degust:couleur:tuile' => 'Tuile',
-
+    'degust:couleur:brun' => 'brun',
+    'degust:couleur:acajou' => 'acajou',
 
     'degust:couleur:jaune_pale' => 'Jaune Pâle',
-    'degust:couleur:or_pale' => 'Or Pâle',
+    'degust:couleur:jaune' => 'Jaune',
+    'degust:couleur:paille' => 'Jaune paille',
     'degust:couleur:or' => 'Or',
-    'degust:couleur:cuivre' => 'Cuivre',
     'degust:couleur:ambre' => 'Ambre',
   
     'degust:couleur:rose_pale' => 'Rose Pâle',
@@ -214,8 +215,15 @@ Peinture',
     'degust:rondeur:opulent' => 'Opulent',
     'degust:rondeur:franche' => 'Franche',
     'degust:rondeur:discrete' => 'Discrète',
+    
+    
+    'degust:douceur:tendre'=>'Tendre',
+    'degust:douceur:suave' => 'Suave',
+    'degust:douceur:onctueux' => 'Onctueux',
+    'degust:douceur:sirupeux' => 'Sirupeux',
+    'degust:douceur:lourd' => 'Lourd',
      
-
+    'degust:acidity:pateux'=>'Pateux',
     'degust:acidity:mou'=>'Mou',
     'degust:acidity:frais' => 'Frais',
     'degust:acidity:droit' => 'Droit',
@@ -223,18 +231,21 @@ Peinture',
     'degust:acidity:vert' => 'Vert',
     'degust:acidity:discrete'=>'Discrète',
     'degust:acidity:elegante' => 'Elégante',
+    'degust:acidity:vif' => 'Vif',
     
     'degust:alcool:leger'=>'Léger',
     'degust:alcool:integre' => 'Intégré',
     'degust:alcool:genereux' => 'Généreux',
-    'degust:alcool:trop_genereux' => 'Trop Généreux',
+    'degust:alcool:chaud' => 'Chaud',
+    'degust:alcool:brulant' => 'Brûlant',
                                              
     'degust:tanin:souple'=>'Souples',
     'degust:tanin:fondu' => 'Fondus',
+    'degust:tanin:soyeux' => 'Soyeux',
     'degust:tanin:serre' => 'Serrés',
     'degust:tanin:rustique' => 'Rustiques',
     'degust:tanin:astringent' => 'Astringents',
-
+    
 
     'degust:longueur:tres_court'=>'Très courte',
     'degust:longueur:court' => 'Courte',
