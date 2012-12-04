@@ -110,7 +110,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 200%; font-size: 1.8em; }
 h2 { font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 175%; line-height: 1.1em; padding-bottom:5px}
+font-size: 175%; line-height: 1.1em; padding-bottom:5px;
+text-shadow:5px 5px 5px #ffffff;
+}
 
 h3 { font-size: 1.2em; }
 h4 { font-size: 1.0em; }
