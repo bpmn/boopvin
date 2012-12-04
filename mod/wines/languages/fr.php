@@ -43,9 +43,9 @@ $french = array(
         'wine:rose'=>'Rosé' , 
         'wine:white_sparkling'=>'Blanc effervescent',
         'wine:rose_sparkling'=>'Rosé effervescent',
-        'wine:moelleux'=>'Moelleux/Liquoreux Blanc',
-        'wine:vdn_rouge'=>'Vin Doux Naturel rouge',
-        'wine:vdn_blanc'=>'Vin Doux Naturel rouge',
+        'wine:moelleux'=>'Moelleux/Liquoreux Blanc (Jurançon, Sauternes etc..',
+        'wine:vdn_rouge'=>'Vin Doux Naturel rouge (Porto rouge, Banyuls etc..)',
+        'wine:vdn_blanc'=>'Vin Doux Naturel Banc (Porto Blanc, Muscat etc..)',
     
 	'wine:briefdescription' => 'Description breve',
 	'wine:interests' => 'Tags',
