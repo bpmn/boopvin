@@ -210,7 +210,7 @@
             $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
             
-            if (winecolor == "rose") {
+            if (winecolor == "rose" || winecolor == "rose_sparkling") {
                 $( "#button_selectcouleur" ).buttonset().find('label').width("103").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_rose'></div>" ).insertBefore('#button_selectcouleur');
             }
@@ -218,7 +218,7 @@
                 $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_rouge'></div>" ).insertBefore('#button_selectcouleur');
             }
-            if (winecolor == "white"){
+            if (winecolor == "white" || winecolor == "moelleux" || winecolor == "white_sparkling"){
                 $( "#button_selectcouleur" ).buttonset().find('label').width("16.67%").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_blanc'></div>" ).insertBefore('#button_selectcouleur');
             }
@@ -227,12 +227,21 @@
             
             
             
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectmousse" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectmousse" ).buttonset().css("margin-right", "0px");
+            
+            $( "#button_selectbulle" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectbulle" ).buttonset().css("margin-right", "0px");            
+            
+            }
+            
             if (winecolor == "red") {
                 $( "#button_selectreflet" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");
                 $( "<div id='reflets_rouge'></div>" ).insertBefore('#button_selectreflet');
             }
-            if (winecolor == "white"){
+            if (winecolor == "white" || winecolor == "moelleux"){
                 $( "#button_selectreflet" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
                 $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");  
                 $( "<div id='reflets_blanc'></div>" ).insertBefore('#button_selectreflet');
@@ -252,21 +261,35 @@
             
             // gustative
             
+            
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectrondeur" ).buttonset().find('label').width("360").css("font-size", "100%").css("font-weight", "normal");
+
+            } else {
+                
             $( "#button_selectrondeur" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
+    
+            }
             $( "#button_selectrondeur" ).buttonset().css("margin-right", "0px");
-            
-            
+
             $( "#button_selectacidity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectacidity" ).buttonset().css("margin-right", "0px");
+            
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectpalet_bulle" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectpalet_bulle" ).buttonset().css("margin-right", "0px");
+
+            }
             
             $( "#button_selectalcool" ).buttonset().find('label').width("20.2%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectalcool" ).buttonset().css("margin-right", "0px");
             
             
             
-            
-            $( "#button_selecttanin" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selecttanin" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selecttanin" ).buttonset().css("margin-right", "0px");
+            
+            
             
             
             
@@ -276,6 +299,13 @@
             
             $( "#button_selectlongueur" ).buttonset().css("margin-right", "0px");
             $( "#button_selectlongueur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");            
+            
+
+            $( "#button_selectequilibre" ).buttonset().css("margin-right", "0px");
+            $( "#button_selectequilibre" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");            
+               
+            
+            
             // final
             $( "#button_selectevolution" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
