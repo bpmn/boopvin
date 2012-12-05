@@ -8,8 +8,8 @@
 //Visuel
 $options_couleur = array(
 				elgg_echo('degust:couleur:jaune_pale') => 'jaune_pale',
-                                elgg_echo('degust:couleur:jaune') => 'jaune',
-				elgg_echo('degust:couleur:or_pale') => 'or_pale',
+				elgg_echo('degust:couleur:jaune') => 'jaune',
+                                elgg_echo('degust:couleur:paille') => 'paille',
                                 elgg_echo('degust:couleur:or') => 'or',
                                 elgg_echo('degust:couleur:ambre') => 'ambre',
                                 elgg_echo('degust:couleur:cuivre') => 'cuivre');

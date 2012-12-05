@@ -1,23 +1,26 @@
 <?php
 
 $french = array(
-        'search:wine:title'=> 'Chercher un vin',
-	'search:enter_term' => 'Enter a search term:',
-	'search:no_results' => "Aucun résulat ne correspond à la requête.",
+        // recherche vin
         'search:addwine'=>'Recherche infructueuse ? Ajoutez votre vin: ',
-	'search:matched' => 'Matched: ',
-	'search:results' => 'Résultat pour %s',
-	'search:no_query' => 'Please enter a query to search.',
-	'search:search_error' => 'Error',
+        'search:wine:title'=> 'Chercher un vin',
+    
+        //
+	'search:enter_term' => "Entrer un terme de recherche :",
+	'search:no_results' => "Aucun résultat.",
+	'search:matched' => "Correspondant: ",
+	'search:results' => "Résultats pour %s",
+	'search:no_query' => "Veuillez entrer une requête de recherche.",
+	'search:search_error' => "Erreur",
 
-	'search:more' => '+%s more %s',
+	'search:more' => "+%s plus %s",
 
-	'search_types:tags' => 'Tags',
+	'search_types:tags' => "Tags",
 
-	'search_types:comments' => 'Comments',
-	'search:comment_on' => 'Comment on "%s"',
-	'search:comment_by' => 'by',
-	'search:unavailable_entity' => 'Unavailable Entity',
+	'search_types:comments' => "Commentaires",
+	'search:comment_on' => "Commentaire sur '%s'",
+	'search:comment_by' => "par",
+	'search:unavailable_entity' => "Entité indisponible",
 );
 
-add_translation('fr', $french);
+add_translation("fr", $french);

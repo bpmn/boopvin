@@ -27,7 +27,7 @@ $welcome .= "Ici, un slogan catchy et sexy, pour les amateurs de vin !";
 $welcome .= "</div>";
 
 
-$content = elgg_view_title(elgg_echo('content:latest'));
+//$content = elgg_view_title(elgg_echo('content:latest'));
 
 
 $content .= elgg_list_river($options);

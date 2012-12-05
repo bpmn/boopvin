@@ -5,106 +5,106 @@
  * @package ElggFile
  */
 
-$english = array(
-
+$french = array(
+        'file:wine' => "Galerie Photos",
 	/**
 	 * Menu items and titles
 	 */
-	'file' => "Files",
-	'file:user' => "%s's files",
-	'file:friends' => "Friends' files",
-	'file:all' => "All site files",
-	'file:edit' => "Edit file",
-	'file:more' => "More files",
-	'file:list' => "list view",
-	'file:wine' => "Galerie Photos",
-	'file:gallery' => "gallery view",
-	'file:gallery_list' => "Gallery or list view",
-	'file:num_files' => "Number of files to display",
-	'file:user:gallery'=>'View %s gallery',
-	'file:via' => 'via files',
-	'file:upload' => "Upload a file",
-	'file:replace' => 'Replace file content (leave blank to not change file)',
-	'file:list:title' => "%s's %s %s",
-	'file:title:friends' => "Friends'",
+	'file' => "Fichier",
+	'file:user' => "Fichiers de %s",
+	'file:friends' => "Fichiers des amis de %s",
+	'file:all' => "Tous les fichiers du site",
+	'file:edit' => "Editer le fichier",
+	'file:more' => "Plus de fichiers",
+	'file:list' => "Vue liste",
+	'file:group' => "Fichiers du groupe",
+	'file:gallery' => "Vue galerie",
+	'file:gallery_list' => "Vue 'liste' ou 'galerie'",
+	'file:num_files' => "Nombre de fichiers à afficher",
+	'file:user:gallery'=> "Voir la gallerie %s",
+	'file:via' => "via les fichiers",
+	'file:upload' => "Envoyer un fichier",
+	'file:replace' => "Remplacer le contenu du fichier (laisser en blanc pour ne rien changer)",
+	'file:list:title' => "de %s %s %s",
+	'file:title:friends' => "Amis",
 
-	'file:add' => 'Upload a file',
+	'file:add' => "Envoyer un fichier",
 
-	'file:file' => "File",
-	'file:title' => "Title",
+	'file:file' => "Fichier",
+	'file:title' => "Titre",
 	'file:desc' => "Description",
 	'file:tags' => "Tags",
 
-	'file:list:list' => 'Switch to the list view',
-	'file:list:gallery' => 'Switch to the gallery view',
+	'file:list:list' => "Basculer vers la vue en liste",
+	'file:list:gallery' => "Basculer vers la vue en galerie",
 
-	'file:types' => "Uploaded file types",
+	'file:types' => "Type de fichiers téléchargés",
 
-	'file:type:' => 'Files',
-	'file:type:all' => "All files",
-	'file:type:video' => "Videos",
+	'file:type:' => "Fichiers",
+	'file:type:all' => "Tous les fichiers",
+	'file:type:video' => "Vidéos",
 	'file:type:document' => "Documents",
 	'file:type:audio' => "Audio",
-	'file:type:image' => "Pictures",
-	'file:type:general' => "General",
+	'file:type:image' => "Images",
+	'file:type:general' => "Général",
 
-	'file:user:type:video' => "%s's videos",
-	'file:user:type:document' => "%s's documents",
-	'file:user:type:audio' => "%s's audio",
-	'file:user:type:image' => "%s's pictures",
-	'file:user:type:general' => "%s's general files",
+	'file:user:type:video' => "Les documents de %s",
+	'file:user:type:document' => "Les documents de %s",
+	'file:user:type:audio' => "Les fichiers audio de %s",
+	'file:user:type:image' => "Les images de %s",
+	'file:user:type:general' => "Les fichiers généraux de %s",
 
-	'file:friends:type:video' => "Your friends' videos",
-	'file:friends:type:document' => "Your friends' documents",
-	'file:friends:type:audio' => "Your friends' audio",
-	'file:friends:type:image' => "Your friends' pictures",
-	'file:friends:type:general' => "Your friends' general files",
+	'file:friends:type:video' => "Les vidéos de vos contacts",
+	'file:friends:type:document' => "Les documents de vos contacts",
+	'file:friends:type:audio' => "Les enregistrements audio de vos contacts",
+	'file:friends:type:image' => "Les images de vos contacts",
+	'file:friends:type:general' => "Les fichiers généraux de vos contacts",
 
-	'file:widget' => "File widget",
-	'file:widget:description' => "Showcase your latest files",
+	'file:widget' => "Widget fichiers",
+	'file:widget:description' => "Liste de vos derniers fichiers",
 
-	'groups:enablefiles' => 'Enable group files',
+	'groups:enablefiles' => "Activer les fichiers de groupes",
 
-	'file:download' => "Download this",
+	'file:download' => "Télécharger ce",
 
-	'file:delete:confirm' => "Are you sure you want to delete this file?",
+	'file:delete:confirm' => "Etes-vous sûr(e) de vouloir supprimer ce fichier ?",
 
-	'file:tagcloud' => "Tag cloud",
+	'file:tagcloud' => "Nuage de tags",
 
-	'file:display:number' => "Number of files to display",
+	'file:display:number' => "Nombre de fichiers à afficher",
 
-	'river:create:object:file' => '%s uploaded the file %s',
-	'river:comment:object:file' => '%s commented on the file %s',
+	'river:create:object:file' => "%s a téléchargé le fichier %s",
+	'river:comment:object:file' => "%s a commenté le fichier %s",
 
-	'item:object:file' => 'Files',
+	'item:object:file' => "Fichiers",
 
-	'file:newupload' => 'A new file has been uploaded',
+	'file:newupload' => "Un nouveau fichier a été chargé",
 
 	/**
 	 * Embed media
 	 **/
 
-		'file:embed' => "Embed media",
-		'file:embedall' => "All",
+		'file:embed' => "Importer un fichier media",
+		'file:embedall' => "Tout",
 
 	/**
 	 * Status messages
 	 */
 
-		'file:saved' => "Your file was successfully saved.",
-		'file:deleted' => "Your file was successfully deleted.",
+		'file:saved' => "Votre fichier a bien été enregistré.",
+		'file:deleted' => "Votre fichier a bien été supprimé.",
 
 	/**
 	 * Error messages
 	 */
 
-		'file:none' => "No files.",
-		'file:uploadfailed' => "Sorry; we could not save your file.",
-		'file:downloadfailed' => "Sorry; this file is not available at this time.",
-		'file:deletefailed' => "Your file could not be deleted at this time.",
-		'file:noaccess' => "You do not have permissions to change this file",
-		'file:cannotload' => "There was an error uploading the file",
-		'file:nofile' => "You must select a file",
+		'file:none' => "Aucun fichier pour le moment.",
+		'file:uploadfailed' => "Désolé, votre fichier n'a pu être enregistré.",
+		'file:downloadfailed' => "Désolé, ce fichier n'est pas disponible en ce moment.",
+		'file:deletefailed' => "Votre fichier n'a pas pu être effacé en ce moment.",
+		'file:noaccess' => "Vous n'avez pas la permission de modifier ce fichier",
+		'file:cannotload' => "Erreur de chargement du fichier",
+		'file:nofile' => "Vous devez choisir un fichier",
 );
 
-add_translation("en", $english);
+add_translation("fr", $french);

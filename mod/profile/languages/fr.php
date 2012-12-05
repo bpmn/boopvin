@@ -6,8 +6,8 @@
  */
 
 $french=array(
-        'profile' => 'Profile',
-	'profile:notfound' => 'Sorry. We could not find the requested profile.',
+        'profile' => 'Profil',
+	'profile:notfound' => "Désolé, nous n'avons pas pu trouver le profil demandé.",
         'profile:pro'=> 'Travaillez vous dans le milieu du vin ou de la restauration ?',
         'profile:yes'=> 'oui',
         'profile:no'=> 'non',
