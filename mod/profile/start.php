@@ -95,7 +95,7 @@ function profile_page_handler($page) {
 	'type' => 'object',
 	'subtype' => 'degust',
 	'owner_guid' => $user->getGUID(),
-	'limit' => 30,
+	'limit' => 15,
 	'full_view' => false,
 	'pagination' => true
 );

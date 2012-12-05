@@ -20,7 +20,7 @@ $options = array(
 	'type' => 'object',
 	'subtype' => 'degust',
 	'container_guid' => $wine->getGUID(),
-	'limit' => 10,
+	'limit' => 15,
 	'full_view' => false,
 	'pagination' => true,
         

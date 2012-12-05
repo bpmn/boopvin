@@ -30,7 +30,7 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 		}
                 
                 if ($key == 'kind') {
-			$options['value'] = elgg_echo("wine:{$wine->$key}");
+			$options['value'] = elgg_echo("wine:profile:{$wine->$key}");
 		}
 
 		echo "<div class=\"{$even_odd}\">";

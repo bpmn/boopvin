@@ -93,7 +93,7 @@ color: #800000;
 
 .degust-feuille-content-value {
 float:left;
-width: 100px;
+width: 350px;
 display:block;
 text-align: left;
 }
