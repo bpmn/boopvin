@@ -16,8 +16,8 @@ elgg.provide('elgg.winetheme');
 elgg.winetheme.init = function() {
 
 // Animate Recent Activity on Homepage
-var delay = 3000,
-    speed = 1000,
+var delay = 3760,
+    speed = 1250,
     fade_speed = 1500,
     showing = 4;
 

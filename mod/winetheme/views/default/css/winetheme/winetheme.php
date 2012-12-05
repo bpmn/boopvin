@@ -12,6 +12,7 @@ background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/defa
 
 }
 
+
 #nivo_slider{
 position: absolute;
 top: 120px;
@@ -23,10 +24,10 @@ width: 350px;
 
 
 #register_window {
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer8.png') no-repeat;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer9.png') no-repeat;
 
 text-align: center;
-width: 660px;
+width: 670px;
 
 padding-bottom: 30px;
 padding-right: 30px;
@@ -49,10 +50,13 @@ background: #ffffff;
 
 
 .register_me{
-background: #ffffff;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/Post-it-note-transparent.png') no-repeat;
+padding-top: 10px;
+margin-top: 10px;
 
-height: 214px;
+background: #ffffff;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/winelabel.png') no-repeat;
+
+height: 273px;
 width: 205px;
 
 

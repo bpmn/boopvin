@@ -85,16 +85,21 @@ float: right;
 
 
 .elgg-search-entity input[type=text] {
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-	border:1px solid black;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:2px solid #560000;
         float: right;
-	color: black;
+	color: #560000;
 	font-size: 12px;
-	font-weight: bold;
+	font-weight: normal;
 	padding: 2px 4px 2px 26px;
 	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 2px -934px;
+        min-width: 220px;
+        
+-moz-box-shadow: 1px 1px 6px #000000;
+-webkit-box-shadow: 1px 1px 6px #000000;
+box-shadow: 1px 1px 6px #000000;
         }
         
         
@@ -102,6 +107,6 @@ float: right;
     
 	background-color: white;
 	background-position: 2px -916px;
-	border: 1px solid black;
+	border:2px solid #560000;
 	color: #0054A7;
 }

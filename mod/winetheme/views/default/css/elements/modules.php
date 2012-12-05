@@ -72,7 +72,7 @@ $label = elgg_normalize_url($label);
 	
 	display:none;
 	
-	width: 210px;
+	width: 250px;
 	padding: 12px;
 	margin-right: 0px;
 	z-index:100;
