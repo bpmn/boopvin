@@ -207,138 +207,107 @@
             var winefield = document.getElementById('metadatafield');
             var winecolor = winefield.getAttribute('data-winetype'); // winetype = "red"
             // visuelle
-            
-            
-            // intensite couleur
-            var dim =$( "#button_selectcouleur_intensity" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectcouleur_intensity" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectcouleur_intensity" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectcouleur_intensity").buttonset().css("margin-right", "0px");
             
-            
-            
-            
-            //couleur
-            dim =$( "#button_selectcouleur" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectcouleur" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
-            $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
-            
-              
             if (winecolor == "rose" || winecolor == "rose_sparkling") {
+                $( "#button_selectcouleur" ).buttonset().find('label').width("103").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_rose'></div>" ).insertBefore('#button_selectcouleur');
             }
-            
             if (winecolor == "red") {
+                $( "#button_selectcouleur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_rouge'></div>" ).insertBefore('#button_selectcouleur');
             }
             if (winecolor == "white" || winecolor == "moelleux" || winecolor == "white_sparkling"){
-              
+                $( "#button_selectcouleur" ).buttonset().find('label').width("16.67%").css("font-size", "100%").css("font-weight", "normal");
                 $( "<div id='couleurs_blanc'></div>" ).insertBefore('#button_selectcouleur');
             }
             
-         
+            $( "#button_selectcouleur" ).buttonset().css("margin-right", "0px");
             
             
-            //Mousse
-            dim =$( "#button_selectmousse" ).attr('data-dim');
-            dim=100/dim;    
-            $( "#button_selectmousse" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectmousse" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectmousse" ).buttonset().css("margin-right", "0px");
             
-            dim =$( "#button_selectbulle" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectbulle" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectbulle" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectbulle" ).buttonset().css("margin-right", "0px");            
             
-           
-            
-            
-            //Reflets
-            dim =$( "#button_selectreflet" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectreflet" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
-            $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");
+            }
             
             if (winecolor == "red") {
-              
+                $( "#button_selectreflet" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");
                 $( "<div id='reflets_rouge'></div>" ).insertBefore('#button_selectreflet');
             }
             if (winecolor == "white" || winecolor == "moelleux"){
-            
+                $( "#button_selectreflet" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
+                $( "#button_selectreflet" ).buttonset().css("margin-right", "0px");  
                 $( "<div id='reflets_blanc'></div>" ).insertBefore('#button_selectreflet');
                 
             }
             
             
-            // olfactive
+            // offalctive
             
-            // intensite nez      
-            dim =$( "#button_selectnez_intensity" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectnez_intensity" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectnez_intensity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectnez_intensity" ).buttonset().css("margin-right", "0px");
             
-     
             $( "#button_selectnez" ).buttonset().find('label').width("20%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectnez" ).buttonset().css("margin-right", "0px");
-            //$( "#button_selectnez" ).buttonset().find('span').css("padding", "0.4em 0.3em");
+            $( "#button_selectnez" ).buttonset().find('span').css("padding", "0.4em 0.3em");
             
             
             // gustative
-           
-            //Rondeur
-            dim =$( "#button_selectrondeur" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectrondeur" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");   
+            
+            
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectrondeur" ).buttonset().find('label').width("360").css("font-size", "100%").css("font-weight", "normal");
+
+            } else {
+                
+            $( "#button_selectrondeur" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
+    
+            }
             $( "#button_selectrondeur" ).buttonset().css("margin-right", "0px");
-   
-            //acidité
-            dim =$( "#button_selectacidity" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectacidity" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+
+            $( "#button_selectacidity" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectacidity" ).buttonset().css("margin-right", "0px");
             
-            //douceur
-            dim =$( "#button_selectdouceur" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectdouceur" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
-            $( "#button_selectdouceur" ).buttonset().css("margin-right", "0px");
-            
-            //bulle en bouche
-            dim =$( "#button_selectpalet_bulle" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectpalet_bulle" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            if (winecolor == "white_sparkling" || winecolor == "rose_sparkling"){
+            $( "#button_selectpalet_bulle" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectpalet_bulle" ).buttonset().css("margin-right", "0px");
+
+            }
             
-            //Alcool
-            dim =$( "#button_selectalcool" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectalcool" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectalcool" ).buttonset().find('label').width("20.2%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectalcool" ).buttonset().css("margin-right", "0px");
             
-            //Tanin
-            dim =$( "#button_selecttanin" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selecttanin" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
-            $( "#button_selecttanin" ).buttonset().css("margin-right", "0px");
-              
-            dim =$( "#button_selectlongueur" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectlongueur" ).buttonset().css("margin-right", "0px");
-            $( "#button_selectlongueur" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");            
             
-            dim =$( "#button_selectequilibre" ).attr('data-dim');
-            dim=100/dim;
+            
+            $( "#button_selecttanin" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selecttanin" ).buttonset().css("margin-right", "0px");
+            
+            
+            
+            
+            
+            $( "#button_selectretro" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectretro" ).buttonset().css("margin-right", "0px");
+            
+            
+            $( "#button_selectlongueur" ).buttonset().css("margin-right", "0px");
+            $( "#button_selectlongueur" ).buttonset().find('label').width("144").css("font-size", "100%").css("font-weight", "normal");            
+            
+
             $( "#button_selectequilibre" ).buttonset().css("margin-right", "0px");
-            $( "#button_selectequilibre" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");            
+            $( "#button_selectequilibre" ).buttonset().find('label').width("180").css("font-size", "100%").css("font-weight", "normal");            
                
-          
+            
+            
             // final
-            //evolution
-            dim =$( "#button_selectevolution" ).attr('data-dim');
-            dim=100/dim;
-            $( "#button_selectevolution" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
+            $( "#button_selectevolution" ).buttonset().find('label').width("120").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selectevolution" ).buttonset().css("margin-right", "0px");
             
             

@@ -267,6 +267,7 @@ Peinture',
     
     
     'degust:rondeur'=>'Attaque et rondeur',
+    'degust:douceur'=>'La douceur',
     'degust:acidity'=>'L\'acidité',
     'degust:alcool'=>'L\'alcool',
     'degust:tanin'=>'Textute et tannins',
