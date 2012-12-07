@@ -4,7 +4,7 @@
  *
  * @package ElggGroups
  */
-$url = elgg_get_site_url() . 'restobars/search';
+$url = elgg_get_site_url() .'search';
 $body = elgg_view_form('restobars/find', array(
 	'action' => $url,
 	'method' => 'get',

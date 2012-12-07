@@ -5,7 +5,6 @@
 
 
 
-$tag_string = elgg_echo('groups:search:tags');
 
 $params = array(	
 	'class' => 'elgg-input-search-other mbm search-input',
@@ -17,6 +16,22 @@ $params = array(
         'id' => 'hj-autocomplete'
 );
 echo elgg_view('input/text', $params);
+
+
+        echo elgg_view('input/hidden', array(
+		'name' => 'entity_type',
+		'value' => 'group',
+	));
+        echo elgg_view('input/hidden', array(
+		'name' => 'entity_subtype',
+		'value' => 'restobar',
+	));
+        echo elgg_view('input/hidden', array(
+		'name' => 'search_type',
+		'value' => 'entities',
+	));
+        
+   
 
 //echo elgg_view('input/submit', array('value' => elgg_echo('search:go')));
 

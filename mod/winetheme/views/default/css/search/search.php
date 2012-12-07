@@ -1,9 +1,10 @@
-<?php
-/*
- * css
- */
 
+<?php
+
+$indicator = elgg_normalize_url('mod/search/graphics/indicator.gif')
 ?>
+
+
 
 
 .elgg-search-header {
@@ -109,4 +110,10 @@ box-shadow: 1px 1px 6px #000000;
 	background-position: 2px -916px;
 	border:2px solid #560000;
 	color: #0054A7;
+}
+
+
+.elgg-search-entity input[type="text"]:focus.ui-autocomplete-loading {
+    background:white url(<?php echo $indicator?>) no-repeat; 
+    background-position:2px 50%;
 }

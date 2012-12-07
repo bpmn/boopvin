@@ -322,12 +322,13 @@
             dim=100/dim;
             $( "#button_selecttanin" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");
             $( "#button_selecttanin" ).buttonset().css("margin-right", "0px");
-              
+            //Longueur  
             dim =$( "#button_selectlongueur" ).attr('data-dim');
             dim=100/dim;
             $( "#button_selectlongueur" ).buttonset().css("margin-right", "0px");
             $( "#button_selectlongueur" ).buttonset().find('label').width(dim+"%").css("font-size", "100%").css("font-weight", "normal");            
             
+            //Equilibre
             dim =$( "#button_selectequilibre" ).attr('data-dim');
             dim=100/dim;
             $( "#button_selectequilibre" ).buttonset().css("margin-right", "0px");
