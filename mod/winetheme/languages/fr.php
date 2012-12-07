@@ -265,7 +265,7 @@ $french = array(
 	'password' => "Mot de passe",
 	'passwordagain' => "Confirmation du mot de passe",
 	'admin_option' => "Définir cet utilisateur comme administrateur ?",
-
+        
 /**
  * Access
  */

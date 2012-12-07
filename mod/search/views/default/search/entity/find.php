@@ -5,7 +5,7 @@
  * @package ElggGroups
  */
 $url = elgg_get_site_url() .'search';
-$body = elgg_view_form('restobars/find', array(
+$body = elgg_view_form('search/find', array(
 	'action' => $url,
 	'method' => 'get',
 	'disable_security' => true,

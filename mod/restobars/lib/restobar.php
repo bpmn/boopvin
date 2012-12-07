@@ -57,7 +57,10 @@ function restobar_handle_all_page() {
 
 	$title=elgg_echo('restobar');
         
-        $search_box= elgg_view('restobars/sidebar/find');
+        elgg_push_context('restobar');
+        $search_box= elgg_view('search/entity/find');
+        elgg_pop_context();
+        
         $params = array(
 		'content' => $content,
 		'sidebar' => $sidebar,

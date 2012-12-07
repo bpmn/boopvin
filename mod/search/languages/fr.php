@@ -21,6 +21,8 @@ $french = array(
 	'search:comment_on' => "Commentaire sur '%s'",
 	'search:comment_by' => "par",
 	'search:unavailable_entity' => "Entité indisponible",
+        'search:restobar'=>'rechercher un établissement',
+        'search:user'=>'rechercher un utilisateur',
 );
 
 add_translation("fr", $french);

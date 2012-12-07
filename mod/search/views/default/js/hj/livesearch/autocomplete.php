@@ -7,8 +7,8 @@
         $('.elgg-input-autocomplete')
         .autocomplete({
             source: function(request, response) {
-                var action = elgg.security.addToken('action/search/parse?entity_type=group&entity_subtype=wine&search_entity=entities');
-                
+                //var action = elgg.security.addToken('action/search/parse?entity_type=group&entity_subtype=wine&search_entity=entities');
+                var action = elgg.security.addToken('action/search/parse');
                 elgg.action(action, {
                     data : {
                         term : request.term,

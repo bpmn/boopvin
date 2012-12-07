@@ -61,7 +61,6 @@ $french = array(
 	'restobar:nofriendsatall' => 'You have no friends to invite!',
 	'restobar:viarestobar' => "via restobar",
 	'restobar:restobar' => "restobar",
-	'restobar:search'=>"Rechercher un établissement",
         'restobar:search:tags' => "tag",
 	'restobar:search:title' => "Search for restobar tagged with '%s'",
 	'restobar:search:none' => "No matching restobar were found",
