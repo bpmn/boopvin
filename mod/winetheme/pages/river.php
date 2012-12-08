@@ -6,8 +6,9 @@ elgg_load_js('elgg.nivo');
 elgg_load_css('nivoslider.nivoslider_css');
 elgg_load_js('jquery.winetheme');
 
-/*$options = array();
+//$options = array();
 
+/*
 $page_type = preg_replace('[\W]', '', get_input('page_type', 'all'));
 $type = preg_replace('[\W]', '', get_input('type', 'all'));
 $subtype = preg_replace('[\W]', '', get_input('subtype', ''));
@@ -76,15 +77,21 @@ $options['items']=$items;
 
 
 $activity= elgg_view('page/components/list', $options);
+
+
 usort($activity, "time_created_cmp");
 
 if (!$activity) {
 	$activity = elgg_echo('river:none');
 }
 
-$content = elgg_view('core/river/filter', array('selector' => $selector));
 
-$activity="<div id=\"avenue_activity\">".$activity."</div>";
+
+//$content = elgg_view('core/river/filter', array('selector' => $selector));
+
+$content = "<div id=\"avenue_activity2\">".$activity."</div>";
+
+//$content = $activity;
 
 $content = $content."<div id=\"nivo_slider\">";
 
@@ -105,12 +112,11 @@ $content = $content."<div id=\"nivo_slider\">";
  
 $content = $content."</div>";
 
-$activity=$activity.$content;
 
 $sidebar = elgg_view('core/river/sidebar');
 
 $params = array(
-	'content' =>  $activity,
+	'content' => $content,
 	'sidebar' => $sidebar,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',

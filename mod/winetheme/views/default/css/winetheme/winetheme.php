@@ -106,6 +106,24 @@ width: 370px;
 }
 
 
+#avenue_activity2 {
+width: 370px;
+}
+
+#avenue_activity2 ul.elgg-list > li {
+  display: none;
+  margin: 0 0 0px;
+  padding: 0 0 0px;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#avenue_activity2 ul.elgg-list > li:last-child {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 
 
 /* ***************************************
