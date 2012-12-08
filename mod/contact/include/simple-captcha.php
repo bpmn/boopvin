@@ -27,12 +27,22 @@ class FGSimpleCaptcha extends FG_CaptchaHandler
     /*Add more simple questions here.*/
     function GetSimpleCaptcha()
     {
+        
+        if (get_current_language() == 'fr'){
         $arrQuestions = array(
-        "What color is the sky? "=>"blue",
-        "What is 1+1=" => "2",
-        "What is the color of grass?"=>"green",
-        "Are you a robot? "=>"no",
-        "Are you human?"=>"yes");
+        " Résultat de 2+2 "=>"4",
+        " Résultat de 1+1" => "2",
+        " Etes vous un robot ? "=>"non",
+        " Etes vous un humain?"=>"oui");
+        
+            }else{
+                 $arrQuestions = array(
+               
+                "What is 1+1= ?" => "2",
+                "What is 2+2= ?"=>"4",
+                "Are you a robot? "=>"no",
+                "Are you human?"=>"yes");  
+        }
 
         $question = array_rand($arrQuestions);
         $answer = $arrQuestions[$question];
@@ -55,7 +65,7 @@ class FGSimpleCaptcha extends FG_CaptchaHandler
         $ret=false;
         if(empty($_POST[$this->captcha_varname]))
         {
-            $this->error_str = "Please answer the anti-spam question";
+            $this->error_str = elgg_echo('contact:antispam');
             $ret = false;
         }
         else

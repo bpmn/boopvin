@@ -64,28 +64,28 @@ if(isset($_POST['submitted']))
 
 <div><span class='error'><?php echo $formproc->GetErrorMessage(); ?></span></div>
 <div class='container'>
-    <label for='name' >Your Full Name*: </label><br/>
+    <label for='name' ><?php echo elgg_echo('contact:name') ?> </label><br/>
     <input type='text' name='name' id='name' value='<?php echo $formproc->SafeDisplay('name') ?>' maxlength="50" /><br/>
     <span id='contactus_name_errorloc' class='error'></span>
 </div>
 <div class='container'>
-    <label for='email' >Email Address*:</label><br/>
+    <label for='email' ><?php echo elgg_echo('contact:email') ?> </label><br/>
     <input type='text' name='email' id='email' value='<?php echo $formproc->SafeDisplay('email') ?>' maxlength="50" /><br/>
     <span id='contactus_email_errorloc' class='error'></span>
 </div>
-<div class='container'>
+<!--div class='container'>
     <label for='phone' >Phone Number:</label><br/>
-    <input type='text' name='phone' id='phone' value='<?php echo $formproc->SafeDisplay('phone') ?>' maxlength="15" /><br/>
+    <input type='text' name='phone' id='phone' value='<?//php echo $formproc->SafeDisplay('phone') ?>' maxlength="15" /><br/>
     <span id='contactus_phone_errorloc' class='error'></span>
-</div>
+</div-->
 <div class='container'>
-    <label for='message' >Message:</label><br/>
+    <label for='message' ><?php echo elgg_echo('contact:message') ?> </label><br/>
     <span id='contactus_message_errorloc' class='error'></span>
     <textarea rows="10" cols="50" name='message' id='message'><?php echo $formproc->SafeDisplay('message') ?></textarea>
 </div>
 <fieldset id='antispam'>
-<legend >Anti-spam question</legend>
-<span class='short_explanation'>(Please answer the simple question below. This to prevent spam bots from submitting this form)</span>
+<legend ><?php echo elgg_echo('contact:question') ?></legend>
+<span class='short_explanation'><?php echo elgg_echo('contact:antispam') ?></span>
 <div class='container'>
     <label for='scaptcha' ><?php echo $sim_captcha->GetSimpleCaptcha(); ?></label>
     <input type='text' name='scaptcha' id='scaptcha' maxlength="10" /><br/>
@@ -94,7 +94,7 @@ if(isset($_POST['submitted']))
 </fieldset>
 
 <div class='container'>
-    <input type='submit' name='Submit' value='Submit' />
+    <?php echo elgg_view('input/submit'); ?>
 </div>
 
 </fieldset>
@@ -108,16 +108,18 @@ Uses the excellent form validation script from JavaScript-coder.com-->
     var frmvalidator  = new Validator("contactus");
     frmvalidator.EnableOnPageErrorDisplay();
     frmvalidator.EnableMsgsTogether();
-    frmvalidator.addValidation("name","req","Please provide your name");
+    var text=elgg.echo('contact:validate:name');
+   
+    frmvalidator.addValidation("name","req",text);
 
-    frmvalidator.addValidation("email","req","Please provide your email address");
+    frmvalidator.addValidation("email","req",elgg.echo('contact:validate:email'));
 
-    frmvalidator.addValidation("email","email","Please provide a valid email address");
+    frmvalidator.addValidation("email","email",elgg.echo('contact:validate:bad_email'));
 
-    frmvalidator.addValidation("message","maxlen=2048","The message is too long!(more than 2KB!)");
+    frmvalidator.addValidation("message","maxlen=2048",elgg.echo('contact:validate:email'));
 
 
-    frmvalidator.addValidation("scaptcha","req","Please answer the anti-spam question");
+    frmvalidator.addValidation("scaptcha","req",elgg.echo('contact:validate:antispam'));
 
 
 
