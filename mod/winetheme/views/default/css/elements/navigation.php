@@ -137,7 +137,7 @@
 }
 
 .elgg-menu-topbar > li > a:hover {
-	color: #530000;
+	color: #AB2B2B;
 	text-decoration: none;
 }
 
@@ -421,6 +421,12 @@
 .elgg-menu-footer > li > a {
 	display: inline-block;
 	color: #fff;
+}
+
+
+.elgg-menu-footer > li > a:hover {
+	display: inline-block;
+	color: #AB2B2B;
 }
 
 .elgg-menu-footer > li:after {
