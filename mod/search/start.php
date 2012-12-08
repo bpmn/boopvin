@@ -472,7 +472,7 @@ function search_get_where_sql($table, $fields, $params, $use_fulltext = TRUE) {
 		$query = sanitise_string($query);
 
 		$fields_str = implode(',', $fields);
-		$where = "(MATCH ($fields_str) AGAINST ('$query' $options))";
+		$where = "(MATCH ($fields_str) AGAINST ('$query*' $options))";
 	}
 
 	return $where;

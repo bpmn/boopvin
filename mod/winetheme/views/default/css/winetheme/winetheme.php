@@ -15,27 +15,31 @@ background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/defa
 
 #nivo_slider{
 position: absolute;
-top: 120px;
-left: 400px;
+top: 10px;
+left: 405px;
 height: 100px;
-width: 350px;
+width: 340px;
 
 }
 
 
 #register_window {
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer9.png') no-repeat;
+background-position: center top;
 
 text-align: center;
-width: 670px;
+width: 780px;
 
 padding-bottom: 30px;
-padding-right: 30px;
-padding-left: 30px;
-padding-top: 10px;
+padding-right: 50px;
+padding-left: 50px;
+padding-top: 40px;
 
 }
 
+#register_window .elgg-input-text,.elgg-input-password {
+width: 80%;
+}
 
 #register_window h4 {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
@@ -51,13 +55,13 @@ background: #ffffff;
 
 .register_me{
 padding-top: 10px;
-margin-top: 10px;
+margin-top: 0px;
 
 background: #ffffff;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/winelabel.png') no-repeat;
-
-height: 273px;
-width: 205px;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/winelabel7.png') no-repeat;
+background-position: 10px 0px;
+height: 223px;
+width: 215px;
 
 
 text-align: center;
@@ -70,13 +74,12 @@ text-align: center;
 
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 200%; font-size: 1.8em; 
-
 }
 
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 
-width: 720px;
+width: 380px;
 height: 80px;
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/home_subheading.png') no-repeat scroll 50% 0px transparent;
 margin-bottom: 10px;

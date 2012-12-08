@@ -6,8 +6,11 @@
  */
 
 $restobar = $vars['entity'];
-
-$icon = elgg_view_entity_icon($restobar, 'small');
+if (elgg_in_context('friends')){
+ $icon = elgg_view_entity_icon($restobar, 'tiny');
+}else{
+ $icon = elgg_view_entity_icon($restobar, 'small');   
+}
 
 $metadata = elgg_view_menu('entity', array(
 	'entity' => $restobar,
@@ -31,11 +34,17 @@ if ($vars['full_view']) {
 } else {
 	// brief view
 
-	$params = array(
+	if (elgg_in_context('friends')){
+        $params = array(
+		'entity' => $restobar,
+		'metadata' => $metadata,);
+        
+        }else{
+        $params = array(
 		'entity' => $restobar,
 		'metadata' => $metadata,
-		'subtitle' => $restobar->briefdescription,
-	);
+		'subtitle' => $restobar->briefdescription,);   
+        }
 	$params = $params + $vars;
 	$list_body = elgg_view('group/elements/summary', $params);
         $vars['image_alt']=$dist_display;

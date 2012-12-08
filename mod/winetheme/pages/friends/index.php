@@ -22,15 +22,32 @@ $options = array(
 	'full_view' => FALSE,
         'list_class'=>'list-style-all-resto',
 );
+elgg_push_context('friends');
 $content = elgg_list_entities_from_relationship($options);
 if (!$content) {
 	$content = elgg_echo('friends:none');
 }
 
-$params = array(
+/*$params = array(
 	'content' => $content,
 	'title' => $title,
 );
-$body = elgg_view_layout('one_sidebar', $params);
+
+
+$body = elgg_view_layout('one_sidebar', $params);*/
+        elgg_load_js('hj.livesearch.autocomplete_other');
+
+        
+        $search_box= elgg_view('search/entity/find');
+        elgg_pop_context();
+        
+        $params = array(
+		'content' => $content,
+                'title'=> $title,
+                'search_box'=>$search_box
+	);
+	$body = elgg_view_layout('content_with_search', $params);
+        
+
 
 echo elgg_view_page($title, $body);

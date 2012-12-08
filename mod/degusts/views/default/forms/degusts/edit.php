@@ -137,8 +137,8 @@ foreach ($degust_profile_fields as $section => $elts) {
                         
               );
             
-            
-            echo '<div id="button_select'.$shortname.'">';
+            $dim_options=sizeof($options);
+            echo "<div data-dim=\"{$dim_options}\" id=\"button_select{$shortname}\">";
          
             echo elgg_view("input/{$valtype}",$variables);
             

@@ -5,18 +5,18 @@
 
     hj.livesearch.autocomplete_other.init = function() {
        
-        
-        
+     var data_entity_type=$('.elgg-input-search-other').attr('data-entity_type');   
+     var data_entity_subtype=$('.elgg-input-search-other').attr('data-entity_subtype');   
      $('.elgg-input-search-other')
         .autocomplete({
             source: function(request, response) {
-                var action = elgg.security.addToken('action/search/parse?entity_type=group&entity_subtype=wine&search_entity=entities');
+                var action = elgg.security.addToken('action/search/parse');
                 
                 elgg.action(action, {
                     data : {
                         term : request.term,
-                        entity_type:'group',
-                        entity_subtype:'restobar',
+                        entity_type:data_entity_type,
+                        entity_subtype:data_entity_subtype,
                         search_type:'entities'
                     
                     },

@@ -76,20 +76,21 @@ function degust_fields_setup() {
                        
  //Gustatif
              'gustatif'=> array(
-                    'rondeur'=>'paletradio',
-                    'acidity'=>'paletradio',
-                    'palet_bulle'=>'paletradio',
-                    'dosage'=>'paletradio',
-                    'alcool'=>'paletradio',
-                    'tanin'=>'paletradio',
-                    'moelleux'=>'paletradio',
+                    'rondeur'=>'coloradio',
+                    'acidity'=>'coloradio',
+                    'douceur'=>'coloradio',
+                    'palet_bulle'=>'coloradio',
+                    'dosage'=>'coloradio',
+                    'alcool'=>'coloradio',
+                    'tanin'=>'coloradio',
+                    'moelleux'=>'coloradio',
                     'retro'=>'text',
-                    'longueur'=>'paletradio',
-                    'equilibre'=>'paletradio'),
+                    'longueur'=>'coloradio',
+                    'equilibre'=>'coloradio'),
  
  //Commentaire final
               'comment'=>array(
-                    'evolution'=>'paletradio',
+                    'evolution'=>'coloradio',
                     'comment'=>'longtext',   //commentaire finale
                     'context'=>'text',        //proposition accord mets vins
                     'note'=>'notedropdown' )      //note sur 20.        

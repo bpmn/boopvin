@@ -123,8 +123,9 @@ function wine_discussion_handle_edit_page($type, $guid) {
 		elgg_push_breadcrumb($topic->title, $topic->getURL());
 		elgg_push_breadcrumb($title);
 
-		$body_vars = discussion_prepare_form_vars($topic);
-		$content = elgg_view_form('discussion/save', array(), $body_vars);
+		$body_vars = wine_discussion_prepare_form_vars($topic);
+                        
+		$content = elgg_view_form('wine_discussion/save', array(), $body_vars);
 	}
 
 	$params = array(

@@ -268,7 +268,12 @@ if (!$results_html) {
 } else {
 	$body .= $results_html;
 }
-$body .= elgg_echo('search:addwine').elgg_view_menu('search',array('class' => 'elgg-menu-hz'));
+
+
+if ($entity_type == 'group' && $entity_subtype=='wine') {
+    $body .= elgg_echo('search:addwine').elgg_view_menu('search',array('class' => 'elgg-menu-hz'));
+}
+
 // this is passed the original params because we don't care what actually
 // matched (which is out of date now anyway).
 // we want to know what search type it is.
