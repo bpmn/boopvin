@@ -10,7 +10,7 @@ $french = array(
     
         "item:group:wine"=>"Les Vins",
         "item:group:restobar"=>"Les Bars,Restos,Caves,Domaines...",
-        "register_me"=>"Cliquez ici pour s'enregistrer",
+        "register_me"=>"Cliquer ici pour s'enregistrer!",
         "register_message"=>"Formulaire d'enregistrement a Avenue Vin",
 /**
  * Sites

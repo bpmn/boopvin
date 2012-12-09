@@ -137,7 +137,7 @@
 }
 
 .elgg-menu-topbar > li > a:hover {
-	color: #530000;
+	color: #AB2B2B;
 	text-decoration: none;
 }
 
@@ -217,7 +217,7 @@
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 
-	-webkit-border-radius: 0px 0px 0 0;
+	-webkit-border-radius: 0px 5px 0 0;
 	-moz-border-radius: 0px 0px 0 0;
 	border-radius: 0px 0px 0 0;
 }
@@ -421,6 +421,12 @@
 .elgg-menu-footer > li > a {
 	display: inline-block;
 	color: #fff;
+}
+
+
+.elgg-menu-footer > li > a:hover {
+	display: inline-block;
+	color: #AB2B2B;
 }
 
 .elgg-menu-footer > li:after {

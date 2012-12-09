@@ -34,6 +34,7 @@ $content .= elgg_list_river($options);
 
 
 $content = "<div id=\"avenue_activity\">".$content."</div>";
+//$content = $content;
 
 
 $content = $content."<div id=\"nivo_slider\">";
@@ -42,11 +43,11 @@ $content = $content."<div id=\"nivo_slider\">";
 
  $content = $content."<div class=\"slider-wrapper theme-default\">";
  $content = $content."           <div id=\"avenue_slider\" class=\"nivoSlider\">";
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/degust.png', 'title'=>'Fiches de degustations'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/vin.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/vin.png', 'title'=>'Vins','data-transition'=>'slideInLeft'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/bar.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/bar.png','title'=>'Bars a vins, Restos, Caves','data-transition'=>'slideInLeft'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/galerie.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/galerie.png', 'title'=>'Galerie photos',));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/register.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/register.png','title'=>'Enregistrez vous!',));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/search.png', 'title'=>'1: Recherchez un vin'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/degust.png', 'title'=>'2: Fiches de degustation !'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png', 'title'=>'Gerez vos vins'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png', 'title'=>'Visualisez vos degustations','data-transition'=>'slideInLeft'));
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/resto.png','title'=>'Espace Pro: Bars a vins, Restos, Caves, news...'));
  $content = $content."           </div>";
  $content = $content."           <div id=\"htmlcaption\" class=\"nivo-html-caption\">";
  $content = $content."               <strong>This</strong> is an example of a <em>HTML</em> caption with <a href=\"#\">a link</a>."; 
