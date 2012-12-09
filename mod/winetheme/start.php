@@ -85,6 +85,8 @@ function winetheme_init() {
     $url = 'mod/winetheme/vendors/validate/jquery.validate.min.js';
     elgg_register_js('elgg.validate', $url);
     
+    $url = 'mod/winetheme/vendors/validate/gen_validatorv31.js';
+    elgg_register_js('elgg.gen_validatorv31', $url);
     
     /* nivo script and css*/
     $url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
@@ -114,7 +116,7 @@ function winetheme_init() {
     //elgg_load_css('winetheme.winetheme_css');
     //elgg_extend_view('css/elgg', 'winetheme_css/winetheme_css');
     
-
+    elgg_extend_view('css/elgg', 'css/contact/contact');
     elgg_extend_view('css/elgg', 'css/degusts/degusts');
     elgg_extend_view('css/elgg', 'css/overlay/overlay');
     elgg_extend_view('css/elgg', 'css/restobars/restobars');

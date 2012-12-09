@@ -90,6 +90,7 @@ function profile_page_handler($page) {
         elgg_load_js('elgg.modal');
 	elgg_load_js('elgg.validate');
         elgg_load_js('elgg.degust');
+        elgg_load_js('elgg.popup');
         
         $options = array(
 	'type' => 'object',

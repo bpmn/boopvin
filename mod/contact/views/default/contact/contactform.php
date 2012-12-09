@@ -31,9 +31,14 @@ if(isset($_POST['submitted']))
 {
    if($formproc->ProcessForm())
    {
-        $formproc->RedirectToURL("thank-you.php");
+        //$formproc->RedirectToURL("thank-you.php");
+       
+       forward('activity');
+       system_message(elgg_echo("contact:thanks"));
    }
 }
+elgg_load_js('elgg.gen_validatorv31');
+elgg_load_js('elgg.validate_contact');
 
 ?>
 <!--html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -46,9 +51,10 @@ if(isset($_POST['submitted']))
       <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
 </head-->
 
-<link rel="STYLESHEET" type="text/css" href="contact.css" />
-<script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
+<!--link rel="STYLESHEET" type="text/css" href="contact.css" />
+<script type='text/javascript' src='scripts/gen_validatorv31.js'></script-->
 <body>
+   
 <!-- Form Code Start -->
 
 &nbsp;
@@ -102,7 +108,7 @@ if(isset($_POST['submitted']))
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
 
-<script type='text/javascript'>
+<!--script type='text/javascript'>
 // <![CDATA[
 
     var frmvalidator  = new Validator("contactus");
@@ -126,7 +132,7 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 
 
 // ]]>
-</script>
+</script-->
 </body>
-</html>
+
 

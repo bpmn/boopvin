@@ -46,7 +46,7 @@ class FGSimpleCaptcha extends FG_CaptchaHandler
 
         $question = array_rand($arrQuestions);
         $answer = $arrQuestions[$question];
-
+        $answer_test=$this->Md5CaptchaAnswer($answer);
         $_SESSION['FGCF_Captcha_Answer'] = $this->Md5CaptchaAnswer($answer);
 
         return $question;
@@ -79,7 +79,7 @@ class FGSimpleCaptcha extends FG_CaptchaHandler
 
             if($user_answer != $_SESSION['FGCF_Captcha_Answer'])
             {
-                $this->error_str = "Failed the anti-spam check!";
+                $this->error_str = elgg_echo('contact:antispam:error');
                 $ret = false;
             }
             else
