@@ -217,9 +217,9 @@
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 
-	-webkit-border-radius: 0px 0px 0 0;
-	-moz-border-radius: 0px 0px 0 0;
-	border-radius: 0px 0px 0 0;
+	-webkit-border-radius: 0px 5px 0 0;
+	-moz-border-radius: 0px 5px 0 0;
+	border-radius: 0px 5px 0 0;
 }
 
 .elgg-menu-site-more {
