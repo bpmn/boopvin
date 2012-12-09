@@ -75,6 +75,15 @@ if ($restobar_profile_fields > 0) {
                     
              
                     break;
+                
+                case 'website':
+                     echo elgg_view("input/{$valtype}", array(
+                            'name' => $shortname,
+                            'id'=>$id,
+                            'value' => $vars['entity']->$shortname,
+                    ));
+                    break;                   
+                    
                
                 default:
                     echo elgg_view("input/{$valtype}", array(

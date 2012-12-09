@@ -83,6 +83,8 @@ width: 380px;
 height: 80px;
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/home_subheading.png') no-repeat scroll 50% 0px transparent;
 margin-bottom: 10px;
+text-align: center;
+
 }
 
 

@@ -503,7 +503,7 @@
 }
 .elgg-menu-owner-block li.elgg-state-selected > a {
 	background-color: #723A08;
-	color: D8B771;
+	color: #D8B771;
 }
 
 /* ***************************************

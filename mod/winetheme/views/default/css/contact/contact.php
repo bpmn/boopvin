@@ -13,20 +13,22 @@ stylesheet does not affect the other elements at all!*/
 {
    width:320px;
    padding:20px;
-   border:1px solid #ccc;
+   border:1px none #ccc;
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 -khtml-border-radius: 10px;
 border-radius: 10px;   
 }
 
-#contactus legend, h2
+#contactus legend
 {
    font-family : Arial, sans-serif;
    font-size: 1.3em;
    font-weight:bold;
-   color:#333;
+   color:#560000;
+   text-transform:uppercase;
 }
+
 
 #contactus label
 {
