@@ -481,7 +481,7 @@ function wine_user_entity_menu_setup($hook, $type, $return, $params) {
 		$wine = elgg_get_page_owner_entity();
 		
 		// Check for valid wine
-		if (!elgg_instanceof($wine, 'group')) {
+		if (!elgg_instanceof($wine, 'group','wine')) {
 			return $return;
 		}
 	
@@ -561,15 +561,17 @@ function wine_annotation_menu_setup($hook, $type, $return, $params) {
  * wine created so create an access list for it
  */
 function wine_create_event_listener($event, $object_type, $object) {
-	$ac_name = elgg_echo('wine:wine') . ": " . $object->name;
-	$wine_id = create_access_collection($ac_name, $object->guid);
-	if ($wine_id) {
+        
+        if (elgg_instanceof($object, 'group','wine' )){
+            $ac_name = elgg_echo('wine:wine') . ": " . $object->name;
+            $wine_id = create_access_collection($ac_name, $object->guid);
+            if ($wine_id) {
 		$object->group_acl = $wine_id;
-	} else {
+            } else {
 		// delete wine if access creation fails
 		return false;
-	}
-
+            }
+        }
 	return true;
 }
 
@@ -609,8 +611,8 @@ function wine_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) 
 	}
 
 	// only insert wine access for current wine
-	if ($page_owner instanceof ElggGroup) {
-		if ($page_owner->canWriteToContainer($user_guid)) {
+	if (elgg_instanceof($page_owner, 'group')) {
+		if ($page_owner->canWriteToContainer($user_guid)&& elgg_instanceof($page_owner, 'group', 'wine')) {
 			$returnvalue[$page_owner->group_acl] = elgg_echo('wine:wine') . ': ' . $page_owner->name;
 
 			unset($returnvalue[ACCESS_FRIENDS]);
@@ -639,7 +641,8 @@ function wine_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $params) 
  * wine deleted, so remove access lists.
  */
 function wine_delete_event_listener($event, $object_type, $object) {
-	delete_access_collection($object->group_acl);
+	if (elgg_instanceof($wine, 'group','wine'))
+            delete_access_collection($object->group_acl);
 
 	return true;
 }
@@ -653,8 +656,9 @@ function wine_user_join_event_listener($event, $object_type, $object) {
 	$wine = $object['group'];
 	$user = $object['user'];
 	$acl = $wine->group_acl;
-
-	add_user_to_access_collection($user->guid, $acl);
+        
+        if (elgg_instanceof($wine, 'group','wine'))
+	 add_user_to_access_collection($user->guid, $acl);
 
 	return true;
 }
@@ -664,7 +668,7 @@ function wine_user_join_event_listener($event, $object_type, $object) {
  */
 function wine_access_collection_override($hook, $entity_type, $returnvalue, $params) {
 	if (isset($params['collection'])) {
-		if (elgg_instanceof(get_entity($params['collection']->owner_guid), 'group')) {
+		if (elgg_instanceof(get_entity($params['collection']->owner_guid), 'group','wine')) {
 			return true;
 		}
 	}
@@ -679,8 +683,8 @@ function wine_user_leave_event_listener($event, $object_type, $object) {
 	$wine = $object['group'];
 	$user = $object['user'];
 	$acl = $wine->group_acl;
-
-	remove_user_from_access_collection($user->guid, $acl);
+        if (elgg_instanceof($wine, 'group','wine'))
+            remove_user_from_access_collection($user->guid, $acl);
 
 	return true;
 }
@@ -754,13 +758,17 @@ function wines_join_wine($wine, $user) {
  * @return array
  */
 function wine_access_options($wine) {
+    if (elgg_instanceof($wine, 'group', 'wine')){
 	$access_array = array(
 		ACCESS_PRIVATE => 'private',
 		ACCESS_LOGGED_IN => 'logged in users',
 		ACCESS_PUBLIC => 'public',
 		$wine->group_acl => elgg_echo('wine:acl', array($wine->name)),
 	);
-	return $access_array;
+        
+        return $access_array;
+    }
+	
 }
 
 function wine_activity_profile_menu($hook, $entity_type, $return_value, $params) {
@@ -825,6 +833,11 @@ function wine_discussion_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'wine_discussion_owner_block_menu');
         //elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'addtocave_owner_block_menu');
 
+        	// Access permissions
+        elgg_register_plugin_hook_handler('permissions_check', 'object', 'wineforumtopic_override_permissions');
+        // winetopic entity menu
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'wineforumtopic_entity_menu_setup');
+        
 	// Register for search.
 	elgg_register_entity_type('object', 'wineforumtopic');
 
@@ -905,7 +918,7 @@ function wine_discussion_comment_override($hook, $type, $return, $params) {
  * Add owner block link
  */
 function wine_discussion_owner_block_menu($hook, $type, $return, $params) {
-	if (elgg_instanceof($params['entity'], 'group','wine')) {
+	if (elgg_instanceof($params['entity'], 'group','wine') && elgg_is_logged_in()) {
 		if ($params['entity']->forum_enable != "no") {
 			$url = "wine_discussion/owner/{$params['entity']->guid}";
 			$item = new ElggMenuItem('wine_discussion', elgg_echo('discussion:wine'), $url);
@@ -920,13 +933,15 @@ function addtocave_owner_block_menu($hook, $type, $return, $params) {
         $user=  elgg_get_logged_in_user_entity();
         $context=elgg_get_context();
 	if (elgg_instanceof($params['entity'], 'group','wine') ) {
-		if ($user->pro != "no") {
+		if ($user->pro != "no" && elgg_is_logged_in()) {
+              
+                    
 			$url = "wine/addtocave/{$params['entity']->guid}";
                         $text= "addtocave";				
 			$menu_item=array('name' => $text,'text' => elgg_echo($text),'href' => $url,'link_class' => 'elgg-overlay');
 			$item = ElggMenuItem::factory($menu_item);
-                        $return[] = $item;
-		}
+                        $return[] = $item;}
+		
 	}
 
 	return $return;
@@ -1004,6 +1019,35 @@ function wine_object_notifications_intercept($hook, $entity_type, $returnvalue, 
 	return null;
 }
 
+
+/**
+ * Add links/info to entity menu particular to wine entities
+ */
+function wineforumtopic_entity_menu_setup($hook, $type, $return, $params) {
+	if (elgg_in_context('widgets')) {
+		return $return;
+	}
+        
+        $page_owner=  elgg_get_page_owner_entity();
+        
+	$entity = $params['entity'];
+	$handler = elgg_extract('handler', $params, false);
+	if ($handler != 'wine_discussion') {
+		return $return;
+	}
+
+	foreach ($return as $index => $item) {
+		if (in_array($item->getName(), array('access', 'likes'))) {
+			unset($return[$index]);
+		}
+	}
+      return $return;  
+}
+
+
+
+
+
 /**
  * Returns a more meaningful message
  *
@@ -1078,3 +1122,17 @@ function wine_override_permissions($hook, $entity_type, $returnvalue, $params){
 	}
 
     }
+    
+function wineforumtopic_override_permissions($hook, $entity_type, $returnvalue, $params){
+    $wine_discussion=elgg_extract('entity', $params);
+    $user=elgg_extract('user', $params);
+    
+    if ($wine_discussion->getSubtype()== 'wineforumtopic'){
+            if(($wine_discussion->getOwnerGUID()== $user->getGUID()) || $user->isAdmin()){
+                return true;
+	}else{
+                return false;
+        }
+
+    }
+}

@@ -222,7 +222,7 @@ function file_notify_message($hook, $entity_type, $returnvalue, $params) {
 function file_owner_block_menu($hook, $type, $return, $params) {
 	
         
-		if (elgg_instanceof($params['entity'], 'group','wine' )) {
+		if (elgg_instanceof($params['entity'], 'group','wine' ) && elgg_is_logged_in()) {
 			$url = "file/wine/{$params['entity']->guid}?list_type=gallery";
 			$item = new ElggMenuItem('file', elgg_echo('file:wine'), $url);
 			$return[] = $item;

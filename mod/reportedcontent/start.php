@@ -35,7 +35,7 @@ function reportedcontent_init() {
 		));
 	}
 
-	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'reportedcontent_user_hover_menu');
+	//elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'reportedcontent_user_hover_menu');
 
 	// Add admin menu item
 	// @todo Might want to move this to a 'feedback' section. something other than utils

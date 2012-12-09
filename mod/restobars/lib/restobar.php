@@ -538,7 +538,7 @@ function restobar_register_profile_buttons($restobar) {
 			$url = elgg_add_action_tokens_to_url($url);
 			$actions[$url] = 'restobar:leave';
 		}
-	} elseif (elgg_is_logged_in()) {
+	} /*elseif (elgg_is_logged_in()) {
 		// join - admins can always join.
 		$url = elgg_get_site_url() . "action/restobars/join?restobar_guid={$restobar->getGUID()}";
 		$url = elgg_add_action_tokens_to_url($url);
@@ -548,7 +548,7 @@ function restobar_register_profile_buttons($restobar) {
 			// request membership
 			$actions[$url] = 'restobar:joinrequest';
 		}
-	}
+	}*/
         
         
         //elgg_load_js('lightbox');

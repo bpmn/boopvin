@@ -9,9 +9,10 @@
     See this page for more info:
     http://www.html-form-guide.com/contact-form/creating-a-contact-form.html
 */
-
-require_once("./include/fgcontactform.php");
-require_once("./include/simple-captcha.php");
+require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/include/fgcontactform.php");
+require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/include/simple-captcha.php");
+/*require_once("./include/fgcontactform.php");
+require_once("./include/simple-captcha.php");*/
 $email=elgg_get_plugin_setting('email','contact');
 $formproc = new FGContactForm();
 $sim_captcha = new FGSimpleCaptcha('scaptcha');
