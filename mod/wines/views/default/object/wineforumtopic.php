@@ -23,7 +23,7 @@ $poster_link = elgg_view('output/url', array(
 	'text' => $poster->name,
 	'is_trusted' => true,
 ));
-$poster_text = elgg_echo('groups:started', array($poster->name));
+$poster_text = elgg_echo('wine:started', array($poster->name));
 
 $tags = elgg_view('output/tags', array('tags' => $topic->tags));
 $date = elgg_view_friendly_time($topic->time_created);
@@ -39,11 +39,11 @@ if ($num_replies != 0) {
 	$last_reply = $topic->getAnnotations('group_topic_post', 1, 0, 'desc');
 	$poster = $last_reply[0]->getOwnerEntity();
 	$reply_time = elgg_view_friendly_time($last_reply[0]->time_created);
-	$reply_text = elgg_echo('groups:updated', array($poster->name, $reply_time));
+	$reply_text = elgg_echo('wine:updated', array($poster->name, $reply_time));
 	
 	$replies_link = elgg_view('output/url', array(
 		'href' => $topic->getURL() . '#group-replies',
-		'text' => elgg_echo('group:replies') . " ($num_replies)",
+		'text' => elgg_echo('wine:replies') . " ($num_replies)",
 		'is_trusted' => true,
 	));
 }

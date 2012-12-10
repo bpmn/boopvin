@@ -208,7 +208,9 @@ elgg.provide('elgg.restobar');
                 displayError);
             }
             else {
-		alert("Oops, no geolocation support");
+                var msg=elgg.echo('geo:notsupported');
+                alert(msg);
+		//alert("Oops, no geolocation support");
             }
         }
         
@@ -235,16 +237,30 @@ elgg.provide('elgg.restobar');
         
         
         function displayError(error) {
+        
             var errorTypes = {
-		0: "Unknown error",
-		1: "Permission denied",
-		2: "Position is not available",
-		3: "Request timeout"
+		//0: "Unknown error",
+		//1: "Permission denied",
+		//2: "Position is not available",
+		//3: "Request timeout"
+                0: elgg.echo('geo:error:0'),
+		1: elgg.echo('geo:error:1'),
+		2: elgg.echo('geo:error:2'),
+		3: elgg.echo('geo:error:3')
             };
             var errorMessage = errorTypes[error.code];
             if (error.code == 0 || error.code == 2) {
 		errorMessage = errorMessage + " " + error.message;
             }
+             if (error.code == 1 ) {
+		errorMessage = elgg.echo('geo:error:1');
+            }
+            
+               if (error.code == 2 ) {
+		errorMessage = elgg.echo('geo:error:2');
+            }
+            alert(elgg.echo('geo:error:1'));
+            
             var div = document.getElementById("suggestion");
             div.innerHTML = errorMessage;
         }

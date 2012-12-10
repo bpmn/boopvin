@@ -938,7 +938,7 @@ function addtocave_owner_block_menu($hook, $type, $return, $params) {
               
                     
 			$url = "wine/addtocave/{$params['entity']->guid}";
-                        $text= "addtocave";				
+                        $text= elgg_echo('wine:addtocave');				
 			$menu_item=array('name' => $text,'text' => elgg_echo($text),'href' => $url,'link_class' => 'elgg-overlay');
 			$item = ElggMenuItem::factory($menu_item);
                         $return[] = $item;}

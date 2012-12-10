@@ -143,10 +143,14 @@ function restobar_fields_setup() {
 		'website' => 'url',             //lien vers le website de l'établissement
  
 	);
+        
+    
+        
 
 	$profile_defaults = elgg_trigger_plugin_hook('profile:fields', 'group', NULL, $profile_defaults);
 
 	elgg_set_config('restobar', $profile_defaults);
+    
 
 	// register any tag metadata names
 	foreach ($profile_defaults as $name => $type) {
