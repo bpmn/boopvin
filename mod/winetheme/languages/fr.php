@@ -13,7 +13,7 @@ $french = array(
         "item:group:wine"=>"Les Vins",
         "item:group:restobar"=>"Les Bars,Restos,Caves,Domaines...",
         "register_me"=>"Cliquer ici pour s'enregistrer!",
-        "register_message"=>"Formulaire d'enregistrement a Avenue Vin",
+        "register_message"=>"Formulaire d'enregistrement à Avenue Vin",
 /**
  * Sites
  */
@@ -327,8 +327,8 @@ $french = array(
 	'friends' => "Contacts",
 	'friends:yours' => "Vos contacts",
 	'friends:owned' => "Les contacts de %s",
-	'friend:add' => "Ajouter un contact",
-	'friend:remove' => "Supprimer un contact",
+	'friend:add' => "Ajouter à mes contacts",
+	'friend:remove' => "Retirer des mes contact",
 
 	'friends:add:successful' => "Vous avez ajouté %s à vos contacts.",
 	'friends:add:failure' => "%s n'a pas pu être ajouté(e) à vos contacts. Merci de réessayer ultérieurement.",
