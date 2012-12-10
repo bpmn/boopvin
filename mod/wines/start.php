@@ -93,6 +93,7 @@ function wine_init() {
         
 	// Access permissions
         elgg_register_plugin_hook_handler('permissions_check', 'group', 'wine_override_permissions');
+        elgg_register_plugin_hook_handler('container_permissions_check', 'group', 'wine_override_container_permissions');
         
 	elgg_register_plugin_hook_handler('access:collections:write', 'all', 'wine_write_acl_plugin_hook');
 	//elgg_register_plugin_hook_handler('access:collections:read', 'all', 'wine_read_acl_plugin_hook');
@@ -1119,9 +1120,26 @@ function wine_override_permissions($hook, $entity_type, $returnvalue, $params){
     if ($wine->getSubtype()== 'wine'){
             if($wine->isMember())
 			return true;
+            
+            // test pour créer un vin éviter Fatal erreur owner = toujours admin et non login user
+            if (elgg_get_context()=='create_wine')
+                        return true;
 	}
 
     }
+    
+    
+    
+function wine_override_container_permissions($hook, $entity_type, $returnvalue, $params){
+            
+            // test pour créer un vin éviter Fatal erreur owner = toujours admin et non login user
+            if (elgg_get_context()=='create_wine')
+                        return true;
+	
+
+    }
+    
+    
     
 function wineforumtopic_override_permissions($hook, $entity_type, $returnvalue, $params){
     $wine_discussion=elgg_extract('entity', $params);

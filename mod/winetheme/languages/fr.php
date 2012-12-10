@@ -8,6 +8,8 @@
 
 $french = array(
     
+        "bienvenue"=>"bienvenue sur Avenue vin !",
+        "citation"=>"« Le vin est le plus court chemin entre un homme et un autre homme. » C. Baudelaire",
         "item:group:wine"=>"Les Vins",
         "item:group:restobar"=>"Les Bars,Restos,Caves,Domaines...",
         "register_me"=>"Cliquer ici pour s'enregistrer!",

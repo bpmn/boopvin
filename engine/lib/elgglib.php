@@ -671,7 +671,7 @@ function elgg_register_event_handler($event, $object_type, $callback, $priority 
 	global $CONFIG;
 
 	if (empty($event) || empty($object_type)) {
-		return FALSE;
+		return false;
 	}
 
 	if (!isset($CONFIG->events)) {
@@ -684,8 +684,8 @@ function elgg_register_event_handler($event, $object_type, $callback, $priority 
 		$CONFIG->events[$event][$object_type] = array();
 	}
 
-	if (!is_callable($callback)) {
-		return FALSE;
+	if (!is_callable($callback, true)) {
+		return false;
 	}
 
 	$priority = max((int) $priority, 0);
@@ -695,7 +695,7 @@ function elgg_register_event_handler($event, $object_type, $callback, $priority 
 	}
 	$CONFIG->events[$event][$object_type][$priority] = $callback;
 	ksort($CONFIG->events[$event][$object_type]);
-	return TRUE;
+	return true;
 }
 
 /**
@@ -770,14 +770,14 @@ function elgg_trigger_event($event, $object_type, $object = null) {
 	foreach ($events as $callback_list) {
 		if (is_array($callback_list)) {
 			foreach ($callback_list as $callback) {
-				if (call_user_func_array($callback, $args) === FALSE) {
-					return FALSE;
+				if (is_callable($callback) && (call_user_func_array($callback, $args) === false)) {
+					return false;
 				}
 			}
 		}
 	}
 
-	return TRUE;
+	return true;
 }
 
 /**
@@ -850,7 +850,7 @@ function elgg_register_plugin_hook_handler($hook, $type, $callback, $priority = 
 	global $CONFIG;
 
 	if (empty($hook) || empty($type)) {
-		return FALSE;
+		return false;
 	}
 
 	if (!isset($CONFIG->hooks)) {
@@ -863,8 +863,8 @@ function elgg_register_plugin_hook_handler($hook, $type, $callback, $priority = 
 		$CONFIG->hooks[$hook][$type] = array();
 	}
 
-	if (!is_callable($callback)) {
-		return FALSE;
+	if (!is_callable($callback, true)) {
+		return false;
 	}
 
 	$priority = max((int) $priority, 0);
@@ -874,7 +874,7 @@ function elgg_register_plugin_hook_handler($hook, $type, $callback, $priority = 
 	}
 	$CONFIG->hooks[$hook][$type][$priority] = $callback;
 	ksort($CONFIG->hooks[$hook][$type]);
-	return TRUE;
+	return true;
 }
 
 /**
@@ -970,10 +970,12 @@ function elgg_trigger_plugin_hook($hook, $type, $params = null, $returnvalue = n
 	foreach ($hooks as $callback_list) {
 		if (is_array($callback_list)) {
 			foreach ($callback_list as $hookcallback) {
-				$args = array($hook, $type, $returnvalue, $params);
-				$temp_return_value = call_user_func_array($hookcallback, $args);
-				if (!is_null($temp_return_value)) {
-					$returnvalue = $temp_return_value;
+				if (is_callable($hookcallback)) {
+					$args = array($hook, $type, $returnvalue, $params);
+					$temp_return_value = call_user_func_array($hookcallback, $args);
+					if (!is_null($temp_return_value)) {
+						$returnvalue = $temp_return_value;
+					}
 				}
 			}
 		}
@@ -1883,7 +1885,7 @@ function elgg_cacheable_view_page_handler($page, $type) {
 		header("Content-type: $content_type");
 
 		// @todo should js be cached when simple cache turned off
-		//header('Expires: ' . date('r', time() + 864000));
+		//header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', strtotime("+10 days")), true);
 		//header("Pragma: public");
 		//header("Cache-Control: public");
 		//header("Content-Length: " . strlen($return));

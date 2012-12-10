@@ -28,7 +28,9 @@ class ElggWine extends ElggGroup {
 	 */
 	protected function initializeAttributes() {
 		parent::initializeAttributes();
-
+                $admins=elgg_get_admins();
+                $this->attributes['owner_guid'] = $admins[0]->getGUID();
+		$this->attributes['container_guid'] = $admins[0]->getGUID();
 		$this->attributes['subtype'] = "wine";
                 
 	}

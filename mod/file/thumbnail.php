@@ -49,7 +49,7 @@ if ($simpletype == "image") {
         }
 		// caching images for 10 days
 		header("Content-type: $mime");
-		header('Expires: ' . date('r',time() + 864000));
+		header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', strtotime("+10 days")), true);
 		header("Pragma: public", true);
 		header("Cache-Control: public", true);
 		header("Content-Length: " . strlen($contents));

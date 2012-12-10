@@ -9,6 +9,10 @@
     See this page for more info:
     http://www.html-form-guide.com/contact-form/creating-a-contact-form.html
 */
+
+elgg_load_js('elgg.gen_validatorv31');
+elgg_load_js('elgg.validate_contact');
+
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/include/fgcontactform.php");
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . "/include/simple-captcha.php");
 /*require_once("./include/fgcontactform.php");
@@ -38,19 +42,18 @@ if(isset($_POST['submitted']))
        system_message(elgg_echo("contact:thanks"));
    }
 }
-elgg_load_js('elgg.gen_validatorv31');
-elgg_load_js('elgg.validate_contact');
+
 
 ?>
-<!--html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
 
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
       <title>Contact us</title>
-      <link rel="STYLESHEET" type="text/css" href="contact.css" />
-      <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-</head-->
+      <!--link rel="STYLESHEET" type="text/css" href="contact.css" />
+      <script type='text/javascript' src='scripts/gen_validatorv31.js'></script-->
+</head>
 
 <!--link rel="STYLESHEET" type="text/css" href="contact.css" />
 <script type='text/javascript' src='scripts/gen_validatorv31.js'></script-->
@@ -59,7 +62,8 @@ elgg_load_js('elgg.validate_contact');
 <!-- Form Code Start -->
 
 &nbsp;
-<form id='contactus' action='<?php echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<!--form id='contactus' action='<?php //echo $formproc->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'-->
+<form id='contactus' action='<?php echo elgg_normalize_url('contact'); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend><?php echo elgg_echo('contact') ?></legend>
 

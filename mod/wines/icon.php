@@ -18,7 +18,7 @@ if (!($wine instanceof ElggGroup)) {
 
 // If is the same ETag, content didn't changed.
 $etag = $wine->icontime . $wine_guid;
-if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) {
+if (isset($_SERVER['HTTP_IF_NONE_MATCH']) && trim($_SERVER['HTTP_IF_NONE_MATCH']) == "\"$etag\"") {
 	header("HTTP/1.1 304 Not Modified");
 	exit;
 }
@@ -45,10 +45,11 @@ if (!$success) {
 	$contents = @file_get_contents($location);
 }
 
+
 header("Content-type: image/jpeg");
-header('Expires: ' . date('r',time() + 864000));
+header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', strtotime("+10 days")), true);
 header("Pragma: public");
 header("Cache-Control: public");
 header("Content-Length: " . strlen($contents));
-header("ETag: $etag");
+header("ETag: \"$etag\"");
 echo $contents;

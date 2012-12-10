@@ -13,15 +13,15 @@ elgg_load_js('jquery.winetheme');
 
 $options = array();
 $options['pagination']=FALSE;
-$options['limit']=20;
+$options['limit']=40;
 
 
 $welcome = "<div id=\"index_welcome\">";
 
-$welcome .= "<h4>Bienvenue a Avenue Vin !</h4>";
+$welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
 $welcome .= "<br>";
 
-$welcome .= "Ici, un slogan catchy et sexy, pour les amateurs de vin !";
+$welcome .= elgg_echo('citation');
 
 //end of index_welcome
 $welcome .= "</div>";

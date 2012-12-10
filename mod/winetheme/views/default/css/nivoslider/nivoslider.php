@@ -14,7 +14,7 @@
 
 ?>
 
- 
+
 .nivoSlider {
 	position:relative;
 	width:100%;
