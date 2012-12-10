@@ -13,7 +13,7 @@ background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/defa
 }
 
 
-#nivo_slider{
+#images_slider{
 position: absolute;
 top: 10px;
 left: 405px;

@@ -89,14 +89,29 @@ function winetheme_init() {
     elgg_register_js('elgg.gen_validatorv31', $url);
     
     /* nivo script and css*/
-    $url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
-    elgg_register_js('elgg.nivo', $url,'footer');
-    //elgg_load_js('elgg.nivo');
+    //$url = 'mod/winetheme/vendors/nivo-slider/jquery.nivo.slider.js';
+    //elgg_register_js('elgg.nivo', $url,'footer');
+ 
     
-    $nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
-    elgg_register_simplecache_view('css/nivoslider/nivoslider');
-    elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
-    //elgg_load_css('nivoslider.nivoslider_css');
+    //$nivoslider_css = elgg_get_simplecache_url('css', 'nivoslider/nivoslider');
+    //elgg_register_simplecache_view('css/nivoslider/nivoslider');
+    //elgg_register_css('nivoslider.nivoslider_css', $nivoslider_css,'head');
+
+    
+    
+    
+    /* coin script and css*/
+    $url = 'mod/winetheme/vendors/coinslider/coin-slider.min.js';
+    elgg_register_js('elgg.coin', $url,'footer');
+ 
+    
+    $coinslider_css = elgg_get_simplecache_url('css', 'coinslider/coinslider');
+    elgg_register_simplecache_view('css/coinslider/coinslider');
+    elgg_register_css('coinslider.coinslider_css', $coinslider_css,'head');
+    
+    
+    
+    
     
     
     $popup_js = elgg_get_simplecache_url('js', 'simple_popup');

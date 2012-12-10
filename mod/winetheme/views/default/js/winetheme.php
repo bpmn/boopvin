@@ -61,7 +61,14 @@ function shift2() {
 
 
 $(function(){
-    $('#avenue_slider').nivoSlider();
+    
+    
+    //$('#avenue_slider').nivoSlider();
+    
+    $('#coin-slider').coinslider({ width: 325, height: 334, navigation: true, delay: 3000, effect: 'straight' });
+
+    
+    
 });
 
 $(function(){

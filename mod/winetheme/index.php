@@ -5,8 +5,8 @@
  * @package Elgg
  * @subpackage Core
  */
-elgg_load_js('elgg.nivo');
-elgg_load_css('nivoslider.nivoslider_css');
+elgg_load_js('elgg.coin');
+elgg_load_css('coinslider.coinslider_css');
 elgg_load_js('jquery.winetheme');
 
 //elgg_unregister_menu_item('river', 'comment');
@@ -36,6 +36,33 @@ $content .= elgg_list_river($options);
 $content = "<div id=\"avenue_activity\">".$content."</div>";
 //$content = $content;
 
+$content = $content."<div id=\"images_slider\">";
+
+$content = $content."<div id=\"coin-slider\">";
+
+ 
+
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
+ $content.= '<span>1: Recherchez un vin</span>';
+
+ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
+  $content.= '<span>2: Fiches de degustation !</span>';
+  
+$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
+  $content.= '<span>Gerez vos vins</span>';
+  
+$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
+  $content.= '<span>Visualisez vos degustations</span>';
+  
+$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
+  $content.= '<span>Espace Pro: Bars a vins, Restos, Caves, news...</span>';
+  
+$content = $content."           </div>";
+
+
+$content = $content."</div>";
+
+/*
 
 $content = $content."<div id=\"nivo_slider\">";
 
@@ -55,6 +82,9 @@ $content = $content."<div id=\"nivo_slider\">";
  $content = $content."       </div>";
  
 $content = $content."</div>";
+*/
+
+
 
 
 $content_final = $welcome.$content;
