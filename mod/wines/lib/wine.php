@@ -560,7 +560,7 @@ function wine_register_profile_buttons($wine) {
 function wine_handle_addtocave_page($entity_guid){
  
 	elgg_pop_breadcrumb();
-	elgg_push_breadcrumb(elgg_echo('addtocave'));
+	elgg_push_breadcrumb(elgg_echo('wine:addtocave'));
         
         $entity=get_entity($entity_guid);
           
@@ -570,7 +570,7 @@ function wine_handle_addtocave_page($entity_guid){
 
 	$params = array(
 		'content' => $content,
-		'title' => elgg_echo('wines:addtocave'),
+		'title' => elgg_echo('wine:addtocave'),
 		'filter' => '',
 	);
 	$body = elgg_view_layout('one_column', $params);

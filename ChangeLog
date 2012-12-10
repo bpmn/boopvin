@@ -1,3 +1,184 @@
+2012-12-05  Steve Clay <steve@mrclay.org>
+
+  	* CHANGES.txt, version.php: Prep for 1.8.11 release. version/CHANGES updates
+
+  	* mod/groups/views/default/forms/groups/edit.php: Fixes fatal error in
+  groups/add page.
+
+2012-12-04  Brett Profitt <brett.profitt@gmail.com>
+
+  	* CHANGES.txt, version.php: Bumped version to 1.8.10. Updated changes. Refs
+  #4947.
+
+2012-12-01  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggVolatileMetadataCache.php,
+  mod/profile/views/default/profile/details.php: Make metadata prefetch respect
+  access
+
+2012-11-29  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/views.php: views boot: clearer organization
+
+  	* engine/lib/views.php: elgg_view: cut 2 function calls in usual case,
+  consolidated argument checking at top
+
+  	* engine/lib/views.php: Views code/docs cleanup, remove unneeded vars/code
+
+  	* engine/lib/views.php: Don't need htmlawed for ?view, prevent "Array" from
+  being used as view type
+
+2012-11-28  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/entities.php: Fixes #4937: Metadata cache is purged when entity
+  cache item removed
+
+  	* engine/lib/entities.php: Subtype functions cleanup
+
+2012-11-04  Paweł Sroka <srokap@gmail.com>
+
+  	* engine/lib/entities.php: Added caching of all subtypes with single query
+
+2012-11-27  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/configuration.php: elgg_get_config: Don't generate NOTICE if
+  $value not set
+
+2012-11-04  Paweł Sroka <srokap@gmail.com>
+
+  	* engine/lib/configuration.php: Don't hit DB on elgg_get_config after
+  putting all configuration into local object
+
+2012-11-28  Krzysztof Różalski <cristo.rabani@gmail.com>
+
+  	* engine/lib/admin.php, languages/en.php,
+  views/default/admin/users/admins.php: Fixes #4935 - Adds admin listing in
+  admin panel
+
+2012-11-26  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggPlugin.php, engine/lib/plugins.php: Refs #4933: cache
+  in plugin constructor, remove $CONFIG
+
+  	* views/default/js/admin.php, views/default/js/elgg.php,
+  views/default/js/initialize_elgg.php, views/default/js/lightbox.php,
+  views/default/js/walled_garden.php: JS views: enable syntax highlighting and
+  add missing semicolons
+
+2012-11-26  Paweł Sroka <srokap@gmail.com>
+
+  	* js/lib/ui.js, js/tests/ElggLibTest.js, views/default/js/walled_garden.php:
+  Fixes #4927 - Removes obsolete commas in JS code for IE7 compatibility
+
+  	* engine/lib/plugins.php: Fixes #4933 - Adds plugin_id to GUID lookup map
+
+2012-11-26  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/river.php: river prefetch: Don't call elgg_get_entities if no
+  GUIDs to fetch
+
+  	* engine/lib/entities.php: Fixes #4932: Allow plugins to be saved in entity
+  cache
+
+2012-11-25  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/river.php: check entity cache first, and remove limit (from
+  Paweł Sroka's branch)
+
+2012-11-21  Steve Clay <steve@mrclay.org>
+
+  	* engine/lib/river.php: Fixes #4926: prefetches entities to be displayed in
+  river
+
+2012-11-18  Steve Clay <steve@mrclay.org>
+
+  	* mod/groups/actions/groups/edit.php: Group edit action refactoring
+
+2012-07-17  Sem <sembrestels@riseup.net>
+
+  	* mod/groups/actions/groups/edit.php: Refs #1854. Removing old owner icons
+  when changing the owner and changing the icon at the same time.
+
+  	* mod/groups/languages/en.php,
+  mod/groups/views/default/forms/groups/edit.php,
+  mod/groups/views/default/groups/js.php: Refs #1854. Using text to warn of the
+  handover, instead the toggle with javascript.
+
+2012-07-08  Sem <sembrestels@riseup.net>
+
+  	* mod/groups/actions/groups/edit.php, mod/groups/languages/en.php,
+  mod/groups/views/default/forms/groups/edit.php,
+  mod/groups/views/default/groups/js.php: Fixes #1854. Group owners can
+  delegate the ownership to another group member.
+
+2012-10-29  Steve Clay <steve@mrclay.org>
+
+  	* engine/handlers/cache_handler.php, engine/lib/elgglib.php,
+  mod/file/thumbnail.php, mod/groups/icon.php, mod/profile/icondirect.php,
+  pages/avatar/view.php: Fixes #4895: Output valid ETag and Expires headers
+
+2012-10-31  Lars Hærvig <lars@laptus.dk>
+
+  	* .../default/river/object/messageboard/create.php: Limit messageboard posts
+  to excerpts in activity stream
+
+2012-11-15  Steve Clay <steve@mrclay.org>
+
+  	* mod/blog/lib/blog.php: Blog lib cleanup, logic simplification, remove
+  notices & unused code
+
+  	* mod/blog/lib/blog.php: Blog forwarder cleanup & viewtype propagation
+
+2012-11-07  Matt Beckett <beck24@gmail.com>
+
+  	* mod/groups/views/rss/groups/profile/layout.php: Fixes #4896: Limit group
+  profile RSS to seachable object types
+
+2012-11-14  Steve Clay <steve@mrclay.org>
+
+  	* engine/tests/api/metadata.php: Prevent false testElggDeleteMetadata()
+  failures
+
+  	* engine/lib/access.php, engine/lib/elgglib.php, engine/lib/entities.php,
+  engine/lib/extender.php, engine/lib/pagehandler.php, engine/lib/views.php,
+  engine/lib/web_services.php: Style cleanup
+
+2012-09-17  Steve Clay <steve@mrclay.org>
+
+  	* engine/classes/ElggPAM.php, engine/lib/elgglib.php,
+  engine/lib/entities.php, engine/lib/extender.php,
+  engine/lib/notification.php, engine/lib/pagehandler.php, engine/lib/pam.php,
+  engine/lib/relationships.php, engine/lib/views.php,
+  engine/lib/web_services.php: Fixes #4861: allow lazy-loading for static
+  method callbacks, allow more callables
+
+2012-11-14  Steve Clay <steve@mrclay.org>
+
+  	* mod/uservalidationbyemail/start.php: Style cleanup
+
+2012-11-08  Jerome Bakker <jeabakker@coldtrick.com>
+
+  	* languages/en.php: Added missing language key for LoginException:Unknown
+
+2012-11-15  Sem <sembrestels@riseup.net>
+
+  	* mod/blog/lib/blog.php: Refs #4904. Checking if page has segments before
+  using them.
+
+2012-11-14  RiverVanRain <river.vanrain@gmail.com>
+
+  	* mod/twitter_api/vendors/twitteroauth/OAuth.php,
+  .../vendors/twitteroauth/twitterOAuth.php: Fixes #4916: Twitter API request
+  token
+
+  	* .../views/default/widgets/twitter/content.php: Fixes #4890: Correct URL
+  for requesting a timeline
+
+2012-11-12  German Bortoli <germanazo@gmail.com>
+
+  	* mod/blog/views/default/forms/blog/save.php: Removed unnecessary disabled
+  class from blog delete button
+
 2012-11-11  Steve Clay <steve@mrclay.org>
 
   	* CHANGES.txt, CONTRIBUTORS.txt, version.php: Prepare for 1.8.9 release
@@ -7,6 +188,16 @@
   	* mod/messages/pages/messages/read.php: Fixes typo in messages permissions
   check
 
+2012-11-10  Sem <sembrestels@riseup.net>
+
+  	* actions/register.php: Fixes #4911. Cleaning register form after last
+  check.
+
+2012-11-08  Jerome Bakker <jeabakker@coldtrick.com>
+
+  	* mod/uservalidationbyemail/start.php: fixes missing error message on manual
+  login of an unvalidated user
+
 2012-10-11  Steve Clay <steve@mrclay.org>
 
   	* actions/profile/edit.php, engine/lib/output.php,
@@ -14,6 +205,16 @@
   mod/blog/views/default/forms/blog/save.php,
   mod/groups/actions/groups/edit.php, views/default/output/email.php: Better
   HTML decoding and output/email encoding
+
+2012-11-06  Sem <sembrestels@riseup.net>
+
+  	* mod/blog/lib/blog.php, mod/blog/start.php: Refs #4904. Forwarding pre and
+  post-1.7.5 blog urls.
+
+2012-11-05  Sem <sembrestels@riseup.net>
+
+  	* mod/blog/lib/blog.php: Fixes #4904. Elgg 1.7 group blog RSS links forward
+  correctly now.
 
 2012-10-29  Evan Winslow <evan@elgg.org>
 
@@ -23,6 +224,11 @@
 
   	* .../object/plugin/elements/dependencies.php: Fixes #3465. Unmet
   suggestions are marked as warnings instead of errors in plugins.
+
+2012-10-22  Matt Beckett <beck24@gmail.com>
+
+  	* mod/messages/pages/messages/read.php: adds parentheses to clarify
+  comparison logic
 
 2012-10-19  Brett Profitt <brett.profitt@gmail.com>
 
@@ -246,6 +452,11 @@
   	* engine/lib/navigation.php: Fixes #4774. Added tokens insted is_action
   param in delete river menu item.
 
+2012-07-29  Sem <sembrestels@riseup.net>
+
+  	* views/default/css/admin.php: Refs #4008. Modified CSS selector to be more
+  specific.
+
 2012-07-28  Sem <sembrestels@riseup.net>
 
   	* views/default/js/languages.php: Fixes #4740. Added language fallback in
@@ -421,6 +632,9 @@
   Repository, Bugtracker and Donations in manifest.
 
 2012-07-07  Sem <sembrestels@riseup.net>
+
+  	* views/default/css/admin.php: Fixes #4008. Sets a vertical align for admin
+  icons consistent with the text, and set it as before (baseline) for heads.
 
   	* actions/river/delete.php, engine/lib/navigation.php, engine/lib/river.php,
   languages/en.php: Fixes #4631. Admins are now able to delete river items.

@@ -11,17 +11,17 @@ $french = array(
 	 * Menu items and titles
 	 */
 	'wine' => "Les Vins",
-	'wine:owned' => "Mes vins",
+	'wine:mine' => "Mes vins",
 	'wine:yours' => "My wine",
 	'wine:user' => "%s's wine",
 	'wine:all' => "Tous les vins",
 	'wine:add' => "Ajouter un vin",
-	'wine:edit' => "Editer vin",
-	'wine:delete' => 'Supprimer vin',
+	'wine:edit' => "Editer le vin",
+	'wine:delete' => 'Supprimer',
 	'wine:membershiprequests' => 'Manage join requests',
 	'wine:invitations' => 'wine invitations',
 
-	'wine:icon' => 'wine icon (leave blank to leave unchanged)',
+	'wine:icon' => 'Photo',
 	'wine:name' => 'Nom/Château/Domaine',
 	'wine:username' => 'wine short name (displayed in URLs, alphanumeric characters only)',
 	'wine:appellation' => 'Appellation',
@@ -75,53 +75,19 @@ $french = array(
 	'wine:permissions:error' => 'You do not have the permissions for this',
 	'wine:inwine' => 'in the wine',
 	'wine:cantedit' => 'You can not edit this wine',
-	'wine:saved' => 'wine saved',
-	'wine:featured' => 'Featured wine',
-	'wine:makeunfeatured' => 'Unfeature',
-	'wine:makefeatured' => 'Make featured',
-	'wine:featuredon' => '%s is now a featured wine.',
-	'wine:unfeatured' => '%s has been removed from the featured wine.',
-	'wine:featured_error' => 'Invalid wine.',
-	'wine:joinrequest' => 'Request membership',
+	'wine:saved' => 'Vin enregistré',
+
 	'wine:join' => 'ajouter à mon club dégustation',
         'wine:join:title' => 'Rejoindre le club si vous voulez le déguster et participer',
-	'wine:leave' => 'Leave wine',
-	'wine:invite' => 'Invite friends',
-	'wine:invite:title' => 'Invite friends to this wine',
-	'wine:inviteto' => "Invite friends to '%s'",
-	'wine:nofriends' => "You have no friends left who have not been invited to this wine.",
-	'wine:nofriendsatall' => 'You have no friends to invite!',
-	'wine:viawine' => "via wine",
-	'wine:wine' => "wine",
-	'wine:search:tags' => "tag",
-	'wine:search:title' => "Search for wine tagged with '%s'",
-	'wine:search:none' => "No matching wine were found",
-	'wine:search_in_wine' => "Search in this wine",
+	'wine:leave' => 'Retirer de mes vins',
+
 	'wine:acl' => "wine: %s",
 
-	'wine:activity' => "wine activity",
-	'wine:enableactivity' => 'Enable wine activity',
-	'wine:activity:none' => "There is no wine activity yet",
 
-	'wine:notfound' => "wine not found",
-	'wine:notfound:details' => "The requested wine either does not exist or you do not have access to it",
 
-	'wine:requests:none' => 'There are no current membership requests.',
+	'item:object:wineforumtopic' => "Brèves de comptoir",
 
-	'wine:invitations:none' => 'There are no current invitations.',
 
-	'item:object:wineforumtopic' => "Discussion topics",
-
-	'wineforumtopic:new' => "Ajouter une nouvelle brève de comptoire",
-
-	'wine:count' => "wine created",
-	'wine:open' => "open wine",
-	'wine:closed' => "closed wine",
-	'wine:member' => "Membre du club des dégustateurs",
-	'wine:searchtag' => "Search for wine by tag",
-
-	'wine:more' => 'More wine',
-	'wine:none' => 'No wine',
         'wine:suggestions'=>'Le vin dans les environs',
 
 	/*
@@ -166,25 +132,24 @@ $french = array(
 	'discussion:reply:deleted' => 'Discussion reply has been deleted.',
 	'discussion:reply:error:notdeleted' => 'Could not delete the discussion reply',
 
-	'reply:this' => 'Reply to this',
+	'reply:this' => 'Répondre',
 
-	'wine:replies' => 'Replies',
+	'wine:replies' => 'Réponses',
 	'wine:forum:created' => 'Created %s with %d comments',
 	'wine:forum:created:single' => 'Created %s with %d reply',
 	'wine:forum' => 'Discussion',
-	'wine:addtopic' => 'Add a topic',
+	'wine:addtopic' => 'Ajouter une brève de comptoir',
 	'wine:forumlatest' => 'Latest discussion',
 	'wine:latestdiscussion' => 'Latest discussion',
-	'wine:newest' => 'Newest',
-	'wine:popular' => 'Popular',
+	'wine:newest' => 'Tous les Vins',
 	'winepost:success' => 'Your reply was succesfully posted',
 	'wine:alldiscussion' => 'Latest discussion',
-	'wine:edittopic' => 'Edit topic',
+	'wine:edittopic' => 'Editer le sujet',
 	'wine:topicmessage' => 'Topic message',
 	'wine:topicstatus' => 'Topic status',
 	'wine:reply' => 'Post a comment',
-	'wine:topic' => 'Topic',
-	'wine:posts' => 'Posts',
+	'wine:topic' => 'Sujet',
+	'wine:posts' => 'message',
 	'wine:lastperson' => 'Last person',
 	'wine:when' => 'When',
 	'winetopic:notcreated' => 'No topics have been created.',
@@ -220,8 +185,8 @@ $french = array(
 	'wine:usernotinvited' => 'User could not be invited.',
 	'wine:useralreadyinvited' => 'User has already been invited',
 	'wine:invite:subject' => "%s you have been invited to join %s!",
-	'wine:updated' => "Last reply by %s %s",
-	'wine:started' => "Started by %s",
+	'wine:updated' => "dernière réponse de %s %s",
+	'wine:started' => "lancée par %s",
 	'wine:joinrequest:remove:check' => 'Are you sure you want to remove this join request?',
 	'wine:invite:remove:check' => 'Are you sure you want to remove this invite?',
 	'wine:invite:body' => "Hi %s,
@@ -253,7 +218,7 @@ or click below to view the wine's join requests:
 	 */
 
 	'river:create:group:wine' => '%s a ajouté le vin %s à AvenueVin',
-	'river:incave:group:wine' => "le vin %s a été ajouté la cave de l'établissement %s",
+	'river:incave:group:wine' => "le vin %s a été ajouté à la cave de l'établissement %s",
         'river:join:wine:default' => '%s joined the wine %s',
 	'river:create:object:wineforumtopic' => '%s a ajouté une discussion "%s"',
 	'river:reply:object:wineforumtopic' => '%s a participé à la discussion %s',
@@ -300,7 +265,8 @@ or click below to view the wine's join requests:
 	'wine:ecml:wineprofile' => 'wine profiles',
 
         'wine:restobar:nosuggestion'=> 'pas de suggestion',
-        'wine:degust:all'=> 'les dégustations'
+        'wine:degust:all'=> 'les dégustations',
+        'wine:addtocave'=>'Ajouter à mes établissements'
 );
 
 add_translation("fr", $french);

@@ -143,10 +143,14 @@ function restobar_fields_setup() {
 		'website' => 'url',             //lien vers le website de l'établissement
  
 	);
+        
+    
+        
 
 	$profile_defaults = elgg_trigger_plugin_hook('profile:fields', 'group', NULL, $profile_defaults);
 
 	elgg_set_config('restobar', $profile_defaults);
+    
 
 	// register any tag metadata names
 	foreach ($profile_defaults as $name => $type) {
@@ -538,6 +542,8 @@ function restobar_annotation_menu_setup($hook, $type, $return, $params) {
  * restobar created so create an access list for it
  */
 function restobar_create_event_listener($event, $object_type, $object) {
+    
+    if (elgg_instanceof($object, 'group','restobar' )){
 	$ac_name = elgg_echo('restobar:restobar') . ": " . $object->name;
 	$restobar_id = create_access_collection($ac_name, $object->guid);
 	if ($restobar_id) {
@@ -546,7 +552,7 @@ function restobar_create_event_listener($event, $object_type, $object) {
 		// delete restobar if access creation fails
 		return false;
 	}
-
+    }
 	return true;
 }
 
@@ -586,8 +592,8 @@ function restobar_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
 	}
 
 	// only insert restobar access for current restobar
-	if ($page_owner instanceof ElggGroup) {
-		if ($page_owner->canWriteToContainer($user_guid)) {
+	if (elgg_instanceof($page_owner, 'group')) {
+		if (($page_owner->canWriteToContainer($user_guid)) && (elgg_instanceof($page_owner, 'group', 'restobar'))) {
 			$returnvalue[$page_owner->group_acl] = elgg_echo('restobar:restobar') . ': ' . $page_owner->name;
 
 			unset($returnvalue[ACCESS_FRIENDS]);
@@ -616,7 +622,8 @@ function restobar_write_acl_plugin_hook($hook, $entity_type, $returnvalue, $para
  * restobar deleted, so remove access lists.
  */
 function restobar_delete_event_listener($event, $object_type, $object) {
-	delete_access_collection($object->group_acl);
+	if (elgg_instanceof($object, 'group','restobar'))
+         delete_access_collection($object->group_acl);
 
 	return true;
 }
@@ -630,8 +637,8 @@ function restobar_user_join_event_listener($event, $object_type, $object) {
 	$restobar = $object['group'];
 	$user = $object['user'];
 	$acl = $restobar->group_acl;
-
-	add_user_to_access_collection($user->guid, $acl);
+        if (elgg_instanceof($restobar, 'group','restobar'))
+	 add_user_to_access_collection($user->guid, $acl);
 
 	return true;
 }
@@ -641,7 +648,7 @@ function restobar_user_join_event_listener($event, $object_type, $object) {
  */
 function restobar_access_collection_override($hook, $entity_type, $returnvalue, $params) {
 	if (isset($params['collection'])) {
-		if (elgg_instanceof(get_entity($params['collection']->owner_guid), 'group')) {
+		if (elgg_instanceof(get_entity($params['collection']->owner_guid), 'group','restobar')) {
 			return true;
 		}
 	}
@@ -656,8 +663,8 @@ function restobar_user_leave_event_listener($event, $object_type, $object) {
 	$restobar = $object['group'];
 	$user = $object['user'];
 	$acl = $restobar->group_acl;
-
-	remove_user_from_access_collection($user->guid, $acl);
+        if (elgg_instanceof($restobar, 'group','restobar'))
+	 remove_user_from_access_collection($user->guid, $acl);
 
 	return true;
 }
@@ -731,15 +738,16 @@ function restobars_join_restobar($restobar, $user) {
  * @return array
  */
 function restobar_access_options($restobar) {
-	$access_array = array(
+  if (elgg_instanceof($restobar, 'group', 'resobar')){	
+        $access_array = array(
 		ACCESS_PRIVATE => 'private',
 		ACCESS_LOGGED_IN => 'logged in users',
 		ACCESS_PUBLIC => 'public',
 		$restobar->group_acl => elgg_echo('restobar:acl', array($restobar->name)),
 	);
 	return $access_array;
+    }
 }
-
 function restobar_activity_profile_menu($hook, $entity_type, $return_value, $params) {
  
 	if ($params['owner'] instanceof ElggGroup) {
@@ -1020,13 +1028,27 @@ function restobar_user_hover_menu($hook, $type, $return, $params) {
         $login_user=  elgg_get_logged_in_user_entity();
         
 	if (elgg_is_logged_in() && ($login_user->getGUID() != $user->getGUID()) && ($login_user->pro == "yes" )) {
-		          
-                $url = "restobar/addmember/{$user->getGUID()}";
-                $text= 'restobar:addmember';				
-		$menu_item=array('name' => 'addmember','text' => elgg_echo($text,array("{$user->name}")),'href' => $url,'link_class' => 'elgg-overlay');
-		$item = ElggMenuItem::factory($menu_item);
-                $item->setSection('action');
-		$return[] = $item;
+	
+            $options=array('type_subtype_pairs' => (array('group' => 'restobar')),'owner_guids'=>array($login_user->getGUID()));
+                    $list_restobars= elgg_get_entities($options);
+                    $list_empty=TRUE;
+    
+                    if (count($list_restobars) != 0){
+                        foreach($list_restobars as $restobar){
+                            if (!$restobar->isMember($user))
+                                $list_empty=FALSE;
+                                }
+                    }
+                                      
+                if(!$list_empty){	          
+                    $url = "restobar/addmember/{$user->getGUID()}";
+                    $text= 'restobar:addmember';				
+                    $menu_item=array('name' => 'addmember','text' => elgg_echo($text,array("{$user->name}")),'href' => $url,'link_class' => 'elgg-overlay');
+                    $item = ElggMenuItem::factory($menu_item);
+                    $item->setSection('action');
+                    $return[] = $item;
+                
+                }
 	}
 
 	return $return;

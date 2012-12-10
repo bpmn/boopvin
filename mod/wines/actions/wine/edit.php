@@ -10,13 +10,15 @@
 /**
  * wrapper for recursive array walk decoding
  */
+
+elgg_push_context('create_wine');
 function profile_array_decoder(&$v) {
 	$v = _elgg_html_decode($v);
 }
 
 // Get wine fields
 $input = array();
-foreach ($CONFIG->wine as $shortname => $valuetype) {
+foreach (elgg_get_config('wine') as $shortname => $valuetype) {
 	// another work around for Elgg's encoding problems: #561, #1963
 	$input[$shortname] = get_input($shortname);
 	if (is_array($input[$shortname])) {
@@ -37,7 +39,20 @@ $input['domaine'] = _elgg_html_decode($input['domaine']);
 $user = elgg_get_logged_in_user_entity();
 
 $wine_guid = (int)get_input('wine_guid');
-$new_wine_flag = $wine_guid == 0;
+
+
+$is_new_wine = $wine_guid == 0;
+
+if ($is_new_wine
+		&& (elgg_get_plugin_setting('limited_groups', 'wine') == 'yes')
+		&& !$user->isAdmin()) {
+	register_error(elgg_echo("groups:cantcreate"));
+	forward(REFERER);
+}
+
+
+
+/*$new_wine_flag = $wine_guid == 0;*/
 
 $wine = new ElggWine($wine_guid); // load if present, if not create a new wine
 if (($wine_guid) && (!$wine->canEdit())) {
@@ -61,28 +76,31 @@ if (!$wine->domaine) {
 }
 
 
-// Set wine tool options
-if (isset($CONFIG->group_tool_options)) {
-	foreach ($CONFIG->group_tool_options as $wine_option) {
-		$wine_option_toggle_name = $wine_option->name . "_enable";
-		if ($wine_option->default_on) {
-			$wine_option_default_value = 'yes';
-		} else {
-			$wine_option_default_value = 'no';
-		}
-		$wine->$wine_option_toggle_name = get_input($wine_option_toggle_name, $wine_option_default_value);
+
+
+
+
+
+// Set group tool options
+$tool_options = elgg_get_config('group_tool_options');
+if ($tool_options) {
+	foreach ($tool_options as $wine_option) {
+		$option_toggle_name = $wine_option->name . "_enable";
+		$option_default = $wine_option->default_on ? 'yes' : 'no';
+		$wine->$option_toggle_name = get_input($option_toggle_name, $option_default);
 	}
+}
+
+
+
+if ($is_new_wine) {
+	$wine->access_id = ACCESS_PUBLIC;
 }
 
 
 $wine->membership = ACCESS_PUBLIC;
 		
 	
-
-if ($new_wine_flag) {
-	$wine->access_id = ACCESS_PUBLIC;
-}
-
 $wine->name=$wine->domaine;
 if ($wine->cuvee){
     $wine->name.=" "."\"$wine->cuvee\"";
@@ -90,6 +108,8 @@ if ($wine->cuvee){
 $wine->description=$wine->appellation." ".$wine->region." ".$wine->maker." ".$wine->country;
 
 $wine->save();
+
+elgg_pop_context();
 
 // Invisible wine support
 // @todo this requires save to be called to create the acl for the wine. This
@@ -105,100 +125,67 @@ if (elgg_get_plugin_setting('hidden_groups', 'wine') == 'yes') {
 		$wine->access_id = $visibility;
 	}
 }
-
+/*if ($is_new_wine) { 
+ $admins=  elgg_get_admins();
+ $admin=$admins[0];
+ $wine->owner_guid=$admin->getGUID();
+ $wine->container_guid=$admin->getGUID();
+ 
+}*/
 $wine->save();
 // group saved so clear sticky form
 //elgg_clear_sticky_form('groups');
 
 // wine creator needs to be member of new wine and river entry created
-if ($new_wine_flag) {
+if ($is_new_wine) {
 	elgg_set_page_owner_guid($wine->guid);
 	$wine->join($user);
 	add_to_river('river/wine/create', 'create', $user->guid, $wine->guid);
 }
 
-// Now see if we have a file icon
-if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'))) {
-        
-        if($_FILES['photo']['size'] / 1024 > 1024) {
-             register_error(elgg_echo('file:cannotload:toobig'));
-             forward($_SERVER['HTTP_REFERER']);
-        }
+$has_uploaded_icon = (!empty($_FILES['icon']['type']) && substr_count($_FILES['icon']['type'], 'image/'));
 
-	$file = new FilePluginFile();
-	$file->subtype = "file";
-	$file->access_id = ACCESS_PUBLIC;
-        $file->container_guid = $wine->guid;
-	
-        $prefix = "file/";
-        
-        $filestorename = elgg_strtolower(time().$_FILES['photo']['name']);
-        
-	$file->setFilename($prefix . $filestorename);
-	$mime_type = ElggFile::detectMimeType($_FILES['photo']['tmp_name'], $_FILES['photo']['type']);
+if ($has_uploaded_icon) {
 
-	
-	
-	$file->setMimeType($mime_type);
-	$file->originalfilename = $_FILES['photo']['name'];
-	$file->simpletype = file_get_simple_type($mime_type);
+	$icon_sizes = elgg_get_config('icon_sizes');
 
-	// Open the file to guarantee the directory exists
-	$file->open("write");
-	$file->close();
-	move_uploaded_file($_FILES['photo']['tmp_name'], $file->getFilenameOnFilestore());
+	$prefix = "wines/" . $wine->guid;
 
-	$guid = $file->save();
+	$filehandler = new ElggFile();
+	$filehandler->owner_guid = $wine->owner_guid;
+	$filehandler->setFilename($prefix . ".jpg");
+	$filehandler->open("write");
+	$filehandler->write(get_uploaded_file('icon'));
+	$filehandler->close();
+	$filename = $filehandler->getFilenameOnFilestore();
 
-	// if image, we need to create thumbnails (this should be moved into a function)
-	if ($guid && $file->simpletype == "image") {
-		$file->icontime = time();
-		
-		$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 60, 60, true);
-		if ($thumbnail) {
-			$thumb = new ElggFile();
-			$thumb->setMimeType($_FILES['photo']['type']);
+	$sizes = array('tiny', 'small', 'medium', 'large');
 
-			$thumb->setFilename($prefix."thumb".$filestorename);
-			$thumb->open("write");
-			$thumb->write($thumbnail);
-			$thumb->close();
-
-			$file->thumbnail = $prefix."thumb".$filestorename;
-			unset($thumbnail);
-		}
-
-		$thumbsmall = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 153, 153, true);
-		if ($thumbsmall) {
-			$thumb->setFilename($prefix."smallthumb".$filestorename);
-			$thumb->open("write");
-			$thumb->write($thumbsmall);
-			$thumb->close();
-			$file->smallthumb = $prefix."smallthumb".$filestorename;
-			unset($thumbsmall);
-		}
-                $thumbmedium = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 300, 300, false);
-		if ($thumbmedium) {
-			$thumb->setFilename($prefix."mediumthumb".$filestorename);
-			$thumb->open("write");
-			$thumb->write($thumbmedium);
-			$thumb->close();
-			$file->mediumthumb = $prefix."mediumthumb".$filestorename;
-			unset($thumbmedium);
-		}
-		$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
-		if ($thumblarge) {
-			$thumb->setFilename($prefix."largethumb".$filestorename);
-			$thumb->open("write");
-			$thumb->write($thumblarge);
-			$thumb->close();
-			$file->largethumb = $prefix."largethumb".$filestorename;
-			unset($thumblarge);
-		}
+	$thumbs = array();
+	foreach ($sizes as $size) {
+		$thumbs[$size] = get_resized_image_from_existing_file(
+			$filename,
+			$icon_sizes[$size]['w'],
+			$icon_sizes[$size]['h'],
+			$icon_sizes[$size]['square']
+		);
 	}
-    }
 
+	if ($thumbs['tiny']) { // just checking if resize successful
+		$thumb = new ElggFile();
+		$thumb->owner_guid = $wine->owner_guid;
+		$thumb->setMimeType('image/jpeg');
 
+		foreach ($sizes as $size) {
+			$thumb->setFilename("{$prefix}{$size}.jpg");
+			$thumb->open("write");
+			$thumb->write($thumbs[$size]);
+			$thumb->close();
+		}
+
+		$wine->icontime = time();
+	}
+}
 
 system_message(elgg_echo("wine:saved"));
 

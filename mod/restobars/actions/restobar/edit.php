@@ -6,7 +6,7 @@
  */
 
 // Load configuration
-global $CONFIG;
+//global $CONFIG;
 
 //elgg_make_sticky_form('groups');
 
@@ -19,7 +19,7 @@ function profile_array_decoder(&$v) {
 
 // Get restobar fields
 $input = array();
-foreach ($CONFIG->restobar as $shortname => $valuetype) {
+foreach (elgg_get_config('restobar') as $shortname => $valuetype) {
 	// another work around for Elgg's encoding problems: #561, #1963
 	$input[$shortname] = get_input($shortname);
 	if (is_array($input[$shortname])) {
@@ -43,7 +43,17 @@ $input['geo:long'] = (float)_elgg_html_decode($input['geo:long']);
 $user = elgg_get_logged_in_user_entity();
 
 $restobar_guid = (int)get_input('restobar_guid');
-$new_restobar_flag = $restobar_guid == 0;
+$is_new_restobar = $restobar_guid == 0;
+
+if ($is_new_restobar
+		&& (elgg_get_plugin_setting('limited_groups', 'groups') == 'yes')
+		&& !$user->isAdmin()) {
+	register_error(elgg_echo("groups:cantcreate"));
+	forward(REFERER);
+}
+
+
+
 
 $restobar = new ElggRestobar($restobar_guid); // load if present, if not create a new restobar
 if (($restobar_guid) && (!$restobar->canEdit())) {
@@ -71,7 +81,7 @@ if (!$restobar->name) {
 $restobar->membership = ACCESS_PUBLIC;
 
 
-if ($new_restobar_flag) {
+if ($is_new_restobar) {
 	$restobar->access_id = ACCESS_PUBLIC;
 }
 
@@ -98,7 +108,7 @@ $restobar->save();
 //elgg_clear_sticky_form('groups');
 
 // restobar creator needs to be member of new restobar and river entry created
-if ($new_restobar_flag) {
+if ($is_new_restobar) {
 	elgg_set_page_owner_guid($restobar->guid);
 	$restobar->join($user);
 	add_to_river('river/restobar/create', 'create', $user->guid, $restobar->guid);
@@ -111,8 +121,9 @@ if ($new_restobar_flag) {
         
 }
 
-// Now see if we have a file icon
-if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))) {
+$has_uploaded_icon = (!empty($_FILES['icon']['type']) && substr_count($_FILES['icon']['type'], 'image/'));
+
+if ($has_uploaded_icon) {
 
 	$icon_sizes = elgg_get_config('icon_sizes');
 
@@ -124,36 +135,31 @@ if ((isset($_FILES['icon'])) && (substr_count($_FILES['icon']['type'],'image/'))
 	$filehandler->open("write");
 	$filehandler->write(get_uploaded_file('icon'));
 	$filehandler->close();
+	$filename = $filehandler->getFilenameOnFilestore();
 
-	$thumbtiny = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), $icon_sizes['tiny']['w'], $icon_sizes['tiny']['h'], $icon_sizes['tiny']['square']);
-	$thumbsmall = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), $icon_sizes['small']['w'], $icon_sizes['small']['h'], $icon_sizes['small']['square']);
-	$thumbmedium = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), $icon_sizes['medium']['w'], $icon_sizes['medium']['h'], $icon_sizes['medium']['square']);
-	$thumblarge = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), $icon_sizes['large']['w'], $icon_sizes['large']['h'], $icon_sizes['large']['square']);
-	if ($thumbtiny) {
+	$sizes = array('tiny', 'small', 'medium', 'large');
 
+	$thumbs = array();
+	foreach ($sizes as $size) {
+		$thumbs[$size] = get_resized_image_from_existing_file(
+			$filename,
+			$icon_sizes[$size]['w'],
+			$icon_sizes[$size]['h'],
+			$icon_sizes[$size]['square']
+		);
+	}
+
+	if ($thumbs['tiny']) { // just checking if resize successful
 		$thumb = new ElggFile();
 		$thumb->owner_guid = $restobar->owner_guid;
 		$thumb->setMimeType('image/jpeg');
 
-		$thumb->setFilename($prefix."tiny.jpg");
-		$thumb->open("write");
-		$thumb->write($thumbtiny);
-		$thumb->close();
-
-		$thumb->setFilename($prefix."small.jpg");
-		$thumb->open("write");
-		$thumb->write($thumbsmall);
-		$thumb->close();
-
-		$thumb->setFilename($prefix."medium.jpg");
-		$thumb->open("write");
-		$thumb->write($thumbmedium);
-		$thumb->close();
-
-		$thumb->setFilename($prefix."large.jpg");
-		$thumb->open("write");
-		$thumb->write($thumblarge);
-		$thumb->close();
+		foreach ($sizes as $size) {
+			$thumb->setFilename("{$prefix}{$size}.jpg");
+			$thumb->open("write");
+			$thumb->write($thumbs[$size]);
+			$thumb->close();
+		}
 
 		$restobar->icontime = time();
 	}
