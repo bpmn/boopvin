@@ -385,8 +385,6 @@ $french = array(
 	'avatar:revert:fail' => "Retour à l'avatar échoué",
 
 	'profile:edit' => "Modifier mon profil",
-	'profile:aboutme' => "A propos de moi",
-	'profile:description' => "A propos de moi",
 	'profile:briefdescription' => "Brève description",
 	'profile:location' => "Lieu",
 	'profile:skills' => "Compétences",
