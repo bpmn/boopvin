@@ -95,7 +95,7 @@ if(isset($_POST['submitted']))
     <textarea rows="10" cols="50" name='message' id='message'><?php echo $formproc->SafeDisplay('message') ?></textarea>
 </div>
 <fieldset id='antispam'>
-<legend ><?php echo elgg_echo('contact:question') ?></legend>
+<legend ><?php echo elgg_echo('contact:question') ?></legend><br>
 <span class='short_explanation'><?php echo elgg_echo('contact:antispam') ?></span>
 <div class='container'>
     <label for='scaptcha' ><?php echo $sim_captcha->GetSimpleCaptcha(); ?></label>
