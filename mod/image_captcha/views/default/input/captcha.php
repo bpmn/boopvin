@@ -22,14 +22,16 @@
 	
 	shuffle($values); // randomize icons on every reload
 	
-	$s3Capcha = "<label>" . elgg_echo("image_captcha:label", array(elgg_echo("image_captcha:icon_types:" . $icon_types . ":" . $values[$rand]))) ."</label>";
-	$s3Capcha .= "<div>";
-	
+	$s3Capcha = "<label>" . elgg_echo("image_captcha:label", array(elgg_echo("image_captcha:icon_types:" . $icon_types . ":" . $values[$rand]))) ."</label><br>";
+	//$s3Capcha .= "<div>";
+	$s3Capcha .= '<div id="captcha_images_id">';
+
 	for($i=0; $i < sizeof($values); $i++){
 	    $value2[$i] = mt_rand();
 	    $image_url = $imagePath . $values[$i] . '.' . $imageExt;
 	    
-	    $s3Capcha .= "<div>";
+            $s3Capcha .= '<div>';
+
 	    $s3Capcha .= "<span>" . $values[$i] . " <input type='radio' name='image_captcha' value='" . $value2[$i] . "'></span>";
 	    $s3Capcha .= "<div style='background: url(\"" . $image_url . "\") bottom left no-repeat;' class='img'></div>";
 	    $s3Capcha .= "</div>";

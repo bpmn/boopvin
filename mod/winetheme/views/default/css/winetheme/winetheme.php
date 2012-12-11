@@ -13,6 +13,16 @@ background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/defa
 }
 
 
+
+#captcha_images_id {
+}
+
+#image_captcha {
+text-align: left;
+width: 80%;
+}
+
+
 #images_slider{
 position: absolute;
 top: 10px;
@@ -25,14 +35,14 @@ width: 340px;
 
 #register_window {
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer9.png') no-repeat;
-background-position: center top;
+background-position: left top;
 
-text-align: center;
+text-align: left;
 width: 780px;
 
 padding-bottom: 30px;
-padding-right: 50px;
-padding-left: 50px;
+padding-right: 0px;
+padding-left: 70px;
 padding-top: 40px;
 
 }
