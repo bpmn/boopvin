@@ -58,3 +58,7 @@
 .elgg-form-wines-cave-addtocave{
 	max-width: 250px;
 }
+
+.image_block_wine{
+height: 50px;
+}

@@ -43,7 +43,7 @@ if ($vars['full_view']) {
 	$params = $params + $vars;
 	$list_body = elgg_view('wines/elements/summary', $params);
         
-      
+        $vars['class']='image_block_wine';
         //$vars['image_alt']= $img;
         echo elgg_view_image_block($icon, $list_body, $vars);
 }
