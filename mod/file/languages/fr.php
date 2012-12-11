@@ -10,8 +10,8 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
-	'file' => "Fichier",
-	'file:user' => "Fichiers de %s",
+	'file' => "Photo",
+	'file:user' => "Album photos: %s",
 	'file:friends' => "Fichiers des amis de %s",
 	'file:all' => "Tous les fichiers du site",
 	'file:edit' => "Editer le fichier",
@@ -23,12 +23,12 @@ $french = array(
 	'file:num_files' => "Nombre de fichiers à afficher",
 	'file:user:gallery'=> "Voir la gallerie %s",
 	'file:via' => "via les fichiers",
-	'file:upload' => "Envoyer un fichier",
+	'file:upload' => "télécharger une photo",
 	'file:replace' => "Remplacer le contenu du fichier (laisser en blanc pour ne rien changer)",
 	'file:list:title' => "de %s %s %s",
 	'file:title:friends' => "Amis",
 
-	'file:add' => "Envoyer un fichier",
+	'file:add' => "télécharger une photo",
 
 	'file:file' => "Fichier",
 	'file:title' => "Titre",

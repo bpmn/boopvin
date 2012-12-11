@@ -38,6 +38,7 @@ if ($vars['full_view']) {
 		'metadata' => $metadata,
 		'subtitle' => $subtitle,
                 'degust' => $degust,
+                
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('wines/elements/summary', $params);
