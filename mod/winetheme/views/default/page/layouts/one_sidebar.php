@@ -37,6 +37,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
                 }
                 
             ?>
+            
             <div class="fb-like" data-href="http://www.avenuevin.com" data-send="true" data-layout="button_count" data-width="150" data-show-faces="true" data-font="tahoma"></div>
 
             <?php
