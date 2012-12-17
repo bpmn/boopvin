@@ -11,7 +11,7 @@ function wine_handle_all_page() {
 	// all Wine doesn't get link to self
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('wine'));
-
+        gatekeeper();
 	//elgg_register_title_button();
 
 	$selected_tab = get_input('filter', 'newest');

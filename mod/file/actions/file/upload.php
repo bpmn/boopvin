@@ -45,7 +45,7 @@ if ($new_file) {
                 forward($_SERVER['HTTP_REFERER']);
         }
 
-        if($_FILES['upload']['size'] / 1024 > 1024) {
+        if($_FILES['upload']['size'] / 1024 > 2048) {
                 register_error(elgg_echo('file:cannotload:toobig'));
                 forward($_SERVER['HTTP_REFERER']);
         }

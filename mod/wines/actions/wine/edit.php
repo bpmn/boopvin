@@ -143,49 +143,91 @@ if ($is_new_wine) {
 	add_to_river('river/wine/create', 'create', $user->guid, $wine->guid);
 }
 
-$has_uploaded_icon = (!empty($_FILES['icon']['type']) && substr_count($_FILES['icon']['type'], 'image/'));
+// Now see if we have a file icon
+if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'))) {
+        
+        if($_FILES['photo']['size'] /1024 > 2048) {
+             register_error(elgg_echo('file:cannotload:toobig'));
+             forward($_SERVER['HTTP_REFERER']);
+        }
 
-if ($has_uploaded_icon) {
+	$file = new FilePluginFile();
+	$file->subtype = "file";
+	$file->access_id = ACCESS_PUBLIC;
+        $file->container_guid = $wine->guid;
 
-	$icon_sizes = elgg_get_config('icon_sizes');
+        $prefix = "file/";
+        
+        $filestorename = elgg_strtolower(time().$_FILES['photo']['name']);
+        
+	$file->setFilename($prefix . $filestorename);
+	$mime_type = ElggFile::detectMimeType($_FILES['photo']['tmp_name'], $_FILES['photo']['type']);
 
-	$prefix = "wines/" . $wine->guid;
 
-	$filehandler = new ElggFile();
-	$filehandler->owner_guid = $wine->owner_guid;
-	$filehandler->setFilename($prefix . ".jpg");
-	$filehandler->open("write");
-	$filehandler->write(get_uploaded_file('icon'));
-	$filehandler->close();
-	$filename = $filehandler->getFilenameOnFilestore();
 
-	$sizes = array('tiny', 'small', 'medium', 'large');
+	$file->setMimeType($mime_type);
+	$file->originalfilename = $_FILES['photo']['name'];
+	$file->simpletype = file_get_simple_type($mime_type);
 
-	$thumbs = array();
-	foreach ($sizes as $size) {
-		$thumbs[$size] = get_resized_image_from_existing_file(
-			$filename,
-			$icon_sizes[$size]['w'],
-			$icon_sizes[$size]['h'],
-			$icon_sizes[$size]['square']
-		);
-	}
+	// Open the file to guarantee the directory exists
+	$file->open("write");
+	$file->close();
+	move_uploaded_file($_FILES['photo']['tmp_name'], $file->getFilenameOnFilestore());
 
-	if ($thumbs['tiny']) { // just checking if resize successful
-		$thumb = new ElggFile();
-		$thumb->owner_guid = $wine->owner_guid;
-		$thumb->setMimeType('image/jpeg');
+	$guid = $file->save();
 
-		foreach ($sizes as $size) {
-			$thumb->setFilename("{$prefix}{$size}.jpg");
+	// if image, we need to create thumbnails (this should be moved into a function)
+	if ($guid && $file->simpletype == "image") {
+		$file->icontime = time();
+
+		$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 60, 60, true);
+		if ($thumbnail) {
+			$thumb = new ElggFile();
+			$thumb->setMimeType($_FILES['photo']['type']);
+
+			$thumb->setFilename($prefix."thumb".$filestorename);
 			$thumb->open("write");
-			$thumb->write($thumbs[$size]);
+			$thumb->write($thumbnail);
 			$thumb->close();
+
+			$file->thumbnail = $prefix."thumb".$filestorename;
+			unset($thumbnail);
 		}
 
-		$wine->icontime = time();
+		$thumbsmall = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 153, 153, true);
+		if ($thumbsmall) {
+			$thumb->setFilename($prefix."smallthumb".$filestorename);
+			$thumb->open("write");
+			$thumb->write($thumbsmall);
+			$thumb->close();
+			$file->smallthumb = $prefix."smallthumb".$filestorename;
+			unset($thumbsmall);
+		}
+                $thumbmedium = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 300, 300, false);
+		if ($thumbmedium) {
+			$thumb->setFilename($prefix."mediumthumb".$filestorename);
+			$thumb->open("write");
+			$thumb->write($thumbmedium);
+			$thumb->close();
+			$file->mediumthumb = $prefix."mediumthumb".$filestorename;
+			unset($thumbmedium);
+		}
+		$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
+		if ($thumblarge) {
+			$thumb->setFilename($prefix."largethumb".$filestorename);
+			$thumb->open("write");
+			$thumb->write($thumblarge);
+			$thumb->close();
+			$file->largethumb = $prefix."largethumb".$filestorename;
+			unset($thumblarge);
+		}
 	}
-}
+    }
+
+
+
+
+
 
 system_message(elgg_echo("wine:saved"));
 

@@ -14,7 +14,7 @@
  *                          - 'limit'       Number of results per page
  *                          - 'pagination'  Display pagination?
  */
-
+gatekeeper();
 $entities = $vars['results']['entities'];
 $count = $vars['results']['count'] - count($entities);
 
