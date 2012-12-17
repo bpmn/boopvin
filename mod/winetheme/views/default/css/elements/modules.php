@@ -25,7 +25,7 @@ $label = elgg_normalize_url($label);
 /* Info */
 .elgg-module-info > .elgg-head {
         background: #D8B771;
-        background: url(<?php echo $label ?>) no-repeat center;
+        background: url(<?php echo $label ?>) no-repeat;
 
 	padding: 5px;
 	margin-bottom: 10px;
