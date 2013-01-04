@@ -60,5 +60,5 @@
 }
 
 .image_block_wine{
-height: 50px;
+height: auto;
 }

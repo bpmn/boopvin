@@ -16,7 +16,7 @@ class FilePluginFile extends ElggFile {
 
 	public function delete() {
 
-		$thumbnails = array($this->thumbnail, $this->smallthumb, $this->largethumb);
+		$thumbnails = array($this->thumbnail, $this->smallthumb,$this->mediumthumb, $this->largethumb);
 		foreach ($thumbnails as $thumbnail) {
 			if ($thumbnail) {
 				$delfile = new ElggFile();

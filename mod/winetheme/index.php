@@ -13,7 +13,7 @@ elgg_load_js('jquery.winetheme');
 
 $options = array();
 $options['pagination']=FALSE;
-$options['limit']=40;
+$options['limit']=20;
 
 
 $welcome = "<div id=\"index_welcome\">";

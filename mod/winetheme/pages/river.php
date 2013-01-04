@@ -70,8 +70,8 @@ usort($items, "time_created_cmp");
 
 //$items=$items_create;
 $options['pagination']=FALSE;
-$options['limit']=20;
-$options['items']=$items;
+$options['limit']=30;
+$options['items']=array_slice($items , 0 ,30);
 
 
 

@@ -26,8 +26,9 @@ if (!$file->delete()) {
 	system_message(elgg_echo("file:deleted"));
 }
 
-if (elgg_instanceof($container, 'group')) {
-	forward("file/group/$container->guid/all");
+if (elgg_instanceof($container, 'group','wine')) {
+	forward("file/wine/{$container->guid}?list_type=gallery");
+        
 } else {
-	forward("file/owner/$container->username");
+	forward();
 }

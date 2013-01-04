@@ -31,7 +31,7 @@ if ($pics) {
          $pic=array_rand($pics,1);
          $pic=$pics[$pic];
          $image= elgg_view_entity_icon($pic,'medium');
-         change_wine_icone($wine,$pic); //mise à jour de l'icone du vin
+         //change_wine_icone($wine,$pic); //mise à jour de l'icone du vin
 }else{
     // Photo des autres utilisateurs sinon
         $pics = elgg_get_entities(array(
@@ -44,7 +44,7 @@ if ($pics) {
                $pic=array_rand($pics,1);
                $pic=$pics[$pic];
                $image= elgg_view_entity_icon($pic,'medium');
-               change_wine_icone($wine,$pic); //mise à jour de l'icone du vin
+               //change_wine_icone($wine,$pic); //mise à jour de l'icone du vin
         }else{
                $image=elgg_view_entity_icon($wine, 'large', array('href' => ''));
         }

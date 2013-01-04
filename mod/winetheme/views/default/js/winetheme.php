@@ -19,7 +19,7 @@ elgg.winetheme.init = function() {
 var delay = 3500,
     speed = 1000,
     fade_speed = 1500,
-    showing = 10;
+    showing = 5;
 
     
 function moveLast() {
@@ -41,7 +41,6 @@ function shift() {
   $("#avenue_activity > ul > li:visible").last().slideUp(speed, moveLast());
   $("#avenue_activity > ul > li:first-child").slideDown(speed);
 
-  
   setTimeout(shift, delay);
 }
 

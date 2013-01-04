@@ -7,7 +7,7 @@
 
 $file = $vars['entity'];
 
-$image_url = $file->getIconURL('');
+$image_url = $file->getIconURL('large');
 $image_url = elgg_normalize_url($image_url);
 //$download_url = elgg_get_site_url() . "file/download/{$file->getGUID()}";
 

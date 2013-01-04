@@ -21,7 +21,8 @@ if (!$icon) {
 	// @todo allow an option to switch to displaying the entity's icon instead.
 	$type = $entity->getType();
 	if ($type == 'user' || $type == 'group') {
-		$icon = elgg_view_entity_icon($entity, 'tiny');
+                $icon =  elgg_view('output/img',array('src'=>"mod/wines/graphics/glass_".$entity->kind.".jpg"));
+		//$icon = elgg_view_entity_icon($entity, 'tiny');
 	} elseif ($owner = $entity->getOwnerEntity()) {
 		$icon = elgg_view_entity_icon($owner, 'tiny');
 	} else {

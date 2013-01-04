@@ -1,4 +1,4 @@
-<?php
+²<?php
 /**
  * Elgg file uploader/edit action
  *
@@ -24,13 +24,7 @@ if (!empty($_FILES['upload']['name']) && $_FILES['upload']['error'] != 0) {
 	register_error(elgg_echo('file:cannotload'));
 	forward(REFERER);
 }
-
-// check whether this is a new file or an edit
 $new_file = true;
-if ($guid > 0) {
-	$new_file = false;
-}
-
 if ($new_file) {
 	// must have a file if a new file upload
 	if (empty($_FILES['upload']['name'])) {
@@ -44,21 +38,20 @@ if ($new_file) {
                 register_error(elgg_echo('file:cannotload:notapic'));
                 forward($_SERVER['HTTP_REFERER']);
         }
-
-        if($_FILES['upload']['size'] / 1024 > 2048) {
-                register_error(elgg_echo('file:cannotload:toobig'));
-                forward($_SERVER['HTTP_REFERER']);
+        
+        if($_FILES['photo']['size'] /1024 > 4096) {
+             register_error(elgg_echo('file:cannotload:toobig'));
+             forward($_SERVER['HTTP_REFERER']);
         }
-
-	$file = new FilePluginFile();
-	$file->subtype = "file";
-
+             
+        $file = new FilePluginFile();
+	
 	// if no title on new upload, grab filename
 	if (empty($title)) {
 		$title = htmlspecialchars($_FILES['upload']['name'], ENT_QUOTES, 'UTF-8');
 	}
 
-} else {
+}/* else {
 	// load original file object
 	$file = new FilePluginFile($guid);
 	if (!$file) {
@@ -76,7 +69,7 @@ if ($new_file) {
 		// user blanked title, but we need one
 		$title = $file->title;
 	}
-}
+}*/
 
 $file->title = $title;
 //$file->description = $desc;
@@ -84,49 +77,44 @@ $file->title = $title;
 $file->access_id = ACCESS_PUBLIC;
 $file->container_guid = $container_guid;
 
-/*$tags = explode(",", $tags);
-$file->tags = $tags;*/
+
 
 // we have a file upload, so process it
 if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 
 	$prefix = "file/";
 
-	// if previous file, delete it
-	if ($new_file == false) {
-		$filename = $file->getFilenameOnFilestore();
-		if (file_exists($filename)) {
-			unlink($filename);
-		}
-
-		// use same filename on the disk - ensures thumbnails are overwritten
-		$filestorename = $file->getFilename();
-		$filestorename = elgg_substr($filestorename, elgg_strlen($prefix));
-	} else {
-		$filestorename = elgg_strtolower(time().$_FILES['upload']['name']);
-	}
+	
+	$filestorename = elgg_strtolower(time().$_FILES['upload']['name']);
+	
 
 	$file->setFilename($prefix . $filestorename);
 	$mime_type = ElggFile::detectMimeType($_FILES['upload']['tmp_name'], $_FILES['upload']['type']);
-
-	
 	
 	$file->setMimeType($mime_type);
 	$file->originalfilename = $_FILES['upload']['name'];
 	$file->simpletype = file_get_simple_type($mime_type);
 
 	// Open the file to guarantee the directory exists
-	$file->open("write");
-	$file->close();
-	move_uploaded_file($_FILES['upload']['tmp_name'], $file->getFilenameOnFilestore());
+	//$file->open("write");
+	//$file->close();
+	//move_uploaded_file($_FILES['upload']['tmp_name'], $file->getFilenameOnFilestore());
 
 	$guid = $file->save();
+        
+        $filehandler = new ElggFile();
+	$filehandler->setFilename($prefix . $filestorename);
+	$filehandler->open("write");
+	$filehandler->write(get_uploaded_file('upload'));
+	$filehandler->close();
+        
+        
 
 	// if image, we need to create thumbnails (this should be moved into a function)
-	if ($guid && $file->simpletype == "image") {
+if ($guid && $file->simpletype == "image") {
 		$file->icontime = time();
 		
-		$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 60, 60, true);
+		$thumbnail = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 60, 60, true);
 		if ($thumbnail) {
 			$thumb = new ElggFile();
 			$thumb->setMimeType($_FILES['upload']['type']);
@@ -140,7 +128,7 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 			unset($thumbnail);
 		}
 
-		$thumbsmall = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 153, 153, true);
+		$thumbsmall = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 153, 153, true);
 		if ($thumbsmall) {
 			$thumb->setFilename($prefix."smallthumb".$filestorename);
 			$thumb->open("write");
@@ -149,7 +137,7 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 			$file->smallthumb = $prefix."smallthumb".$filestorename;
 			unset($thumbsmall);
 		}
-                $thumbmedium = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 300, 300, false);
+                $thumbmedium = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 300, 300, false);
 		if ($thumbmedium) {
 			$thumb->setFilename($prefix."mediumthumb".$filestorename);
 			$thumb->open("write");
@@ -158,7 +146,7 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 			$file->mediumthumb = $prefix."mediumthumb".$filestorename;
 			unset($thumbmedium);
 		}
-		$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
+		$thumblarge = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 600, 600, false);
 		if ($thumblarge) {
 			$thumb->setFilename($prefix."largethumb".$filestorename);
 			$thumb->open("write");
@@ -172,7 +160,7 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 	// not saving a file but still need to save the entity to push attributes to database
 	$file->save();
 }
-
+$filehandler->delete();
 // file saved so clear sticky form
 elgg_clear_sticky_form('file');
 

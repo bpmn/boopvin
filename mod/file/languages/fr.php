@@ -23,14 +23,14 @@ $french = array(
 	'file:num_files' => "Nombre de fichiers à afficher",
 	'file:user:gallery'=> "Voir la gallerie %s",
 	'file:via' => "via les fichiers",
-	'file:upload' => "télécharger une photo",
+	'file:upload' => "ajouter une photo",
 	'file:replace' => "Remplacer le contenu du fichier (laisser en blanc pour ne rien changer)",
 	'file:list:title' => "de %s %s %s",
 	'file:title:friends' => "Amis",
 
-	'file:add' => "télécharger une photo",
+	'file:add' => "Ajouter une photo",
 
-	'file:file' => "Fichier",
+	'file:file' => "Photo",
 	'file:title' => "Titre",
 	'file:desc' => "Description",
 	'file:tags' => "Tags",
@@ -76,9 +76,9 @@ $french = array(
 	'river:create:object:file' => "%s a téléchargé le fichier %s",
 	'river:comment:object:file' => "%s a commenté le fichier %s",
 
-	'item:object:file' => "Fichiers",
+	'item:object:file' => "Photos",
 
-	'file:newupload' => "Un nouveau fichier a été chargé",
+	'file:newupload' => "Une nouvelle photo a été ajoutée",
 
 	/**
 	 * Embed media
@@ -91,8 +91,8 @@ $french = array(
 	 * Status messages
 	 */
 
-		'file:saved' => "Votre fichier a bien été enregistré.",
-		'file:deleted' => "Votre fichier a bien été supprimé.",
+		'file:saved' => "Votre photo a bien été enregistrée.",
+		'file:deleted' => "Votre photo a bien été supprimée.",
 
 	/**
 	 * Error messages

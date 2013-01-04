@@ -146,13 +146,13 @@ if ($is_new_wine) {
 // Now see if we have a file icon
 if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'))) {
         
-        if($_FILES['photo']['size'] /1024 > 2048) {
+        if($_FILES['photo']['size'] /1024 > 4096) {
              register_error(elgg_echo('file:cannotload:toobig'));
              forward($_SERVER['HTTP_REFERER']);
         }
 
 	$file = new FilePluginFile();
-	$file->subtype = "file";
+	
 	$file->access_id = ACCESS_PUBLIC;
         $file->container_guid = $wine->guid;
 
@@ -170,17 +170,23 @@ if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'
 	$file->simpletype = file_get_simple_type($mime_type);
 
 	// Open the file to guarantee the directory exists
-	$file->open("write");
+	/*$file->open("write");
 	$file->close();
-	move_uploaded_file($_FILES['photo']['tmp_name'], $file->getFilenameOnFilestore());
+	move_uploaded_file($_FILES['photo']['tmp_name'], $file->getFilenameOnFilestore());*/
 
 	$guid = $file->save();
+        
+        $filehandler = new ElggFile();
+	$filehandler->setFilename($prefix . $filestorename);
+	$filehandler->open("write");
+	$filehandler->write(get_uploaded_file('photo'));
+	$filehandler->close();
 
 	// if image, we need to create thumbnails (this should be moved into a function)
 	if ($guid && $file->simpletype == "image") {
 		$file->icontime = time();
 
-		$thumbnail = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 60, 60, true);
+		$thumbnail = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 60, 60, true);
 		if ($thumbnail) {
 			$thumb = new ElggFile();
 			$thumb->setMimeType($_FILES['photo']['type']);
@@ -194,7 +200,7 @@ if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'
 			unset($thumbnail);
 		}
 
-		$thumbsmall = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 153, 153, true);
+		$thumbsmall = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 153, 153, true);
 		if ($thumbsmall) {
 			$thumb->setFilename($prefix."smallthumb".$filestorename);
 			$thumb->open("write");
@@ -203,7 +209,7 @@ if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'
 			$file->smallthumb = $prefix."smallthumb".$filestorename;
 			unset($thumbsmall);
 		}
-                $thumbmedium = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 300, 300, false);
+                $thumbmedium = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 300, 300, false);
 		if ($thumbmedium) {
 			$thumb->setFilename($prefix."mediumthumb".$filestorename);
 			$thumb->open("write");
@@ -212,7 +218,7 @@ if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'
 			$file->mediumthumb = $prefix."mediumthumb".$filestorename;
 			unset($thumbmedium);
 		}
-		$thumblarge = get_resized_image_from_existing_file($file->getFilenameOnFilestore(), 600, 600, false);
+		$thumblarge = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(), 600, 600, false);
 		if ($thumblarge) {
 			$thumb->setFilename($prefix."largethumb".$filestorename);
 			$thumb->open("write");
@@ -222,6 +228,7 @@ if ((isset($_FILES['photo'])) && (substr_count($_FILES['photo']['type'],'image/'
 			unset($thumblarge);
 		}
 	}
+        $filehandler->delete();
     }
 
 
