@@ -36,7 +36,7 @@ $content .= elgg_list_river($options);
 $content = "<div id=\"avenue_activity\">".$content."</div>";
 //$content = $content;
 
-$content = $content."<div id=\"images_slider\">";
+$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
 
 $content = $content."<div id=\"coin-slider\">";
 
