@@ -1005,13 +1005,13 @@ function restobar_can_edit_news($entity, $restobar_owner) {
 /**
  * Process upgrades for the restobar plugin
  */
-function restobar_run_upgrades() {
-	$path = elgg_get_plugins_path() . 'restobar/upgrades/';
+/*function restobar_run_upgrades() {
+	$path = elgg_get_plugins_path() . 'restobars/upgrades/';
 	$files = elgg_get_upgrade_files($path);
 	foreach ($files as $file) {
 		include "$path{$file}";
 	}
-}
+}*/
 
 function restobar_override_permissions($hook, $entity_type, $returnvalue, $params){
     $restobar=elgg_extract('entity', $params);

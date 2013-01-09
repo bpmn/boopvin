@@ -14,12 +14,7 @@ elgg_register_event_handler('init', 'system', 'winetheme_init');
 
 
  
-function new_index() {
-    if (!include_once(dirname(dirname(__FILE__)) . "/winetheme/views/index.php"))
-        return false;
- 
-    return true;
-}
+
 
 
 /**

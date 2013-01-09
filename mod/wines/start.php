@@ -1106,7 +1106,7 @@ function wine_can_edit_discussion($entity, $wine_owner) {
  * Process upgrades for the wine plugin
  */
 function wine_run_upgrades() {
-	$path = elgg_get_plugins_path() . 'wine/upgrades/';
+	$path = elgg_get_plugins_path() . 'wines/upgrades/';
 	$files = elgg_get_upgrade_files($path);
 	foreach ($files as $file) {
 		include "$path{$file}";

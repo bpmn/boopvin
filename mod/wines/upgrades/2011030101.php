@@ -7,7 +7,7 @@
 
 $topics = elgg_get_entities(array(
 	'type' => 'object',
-	'subtype' => 'groupforumtopic',
+	'subtype' => 'wineforumtopic',
 	'limit' => 5,
 	'order_by' => 'e.time_created asc',
 ));
@@ -37,7 +37,7 @@ function groups_2011030101($topic) {
 		return true;
 	}
 
-	$annotation = $topic->getAnnotations('group_topic_post', 1);
+	$annotation = $topic->getAnnotations('wine_topic_post', 1);
 	if (!$annotation) {
 		// no text for this forum post so we delete (probably caused by #2624)
 		return $topic->delete();
@@ -52,14 +52,14 @@ function groups_2011030101($topic) {
 $previous_access = elgg_set_ignore_access(true);
 $options = array(
 	'type' => 'object',
-	'subtype' => 'groupforumtopic',
+	'subtype' => 'wineforumtopic',
 	'limit' => 0,
 );
 $batch = new ElggBatch('elgg_get_entities', $options, 'groups_2011030101', 100);
 elgg_set_ignore_access($previous_access);
 
 if ($batch->callbackResult) {
-	error_log("Elgg Groups upgrade (2011030101) succeeded");
+	error_log("Elgg wines upgrade (2011030101) succeeded");
 } else {
-	error_log("Elgg Groups upgrade (2011030101) failed");
+	error_log("Elgg wines upgrade (2011030101) failed");
 }
