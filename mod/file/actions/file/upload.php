@@ -1,4 +1,4 @@
-²<?php
+<?php
 /**
  * Elgg file uploader/edit action
  *

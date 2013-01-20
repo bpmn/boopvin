@@ -29,13 +29,16 @@ class FilePluginFile extends ElggFile {
 		return parent::delete();
 	}
         
-        public function getThumbnail($size) {
+         public function getThumbnail($size) {
 		switch ($size) {
 			case 'thumb':
 				$thumb = $this->thumbnail;
 				break;
 			case 'small':
 				$thumb = $this->smallthumb;
+				break;
+			case 'medium':
+				$thumb = $this->mediumthumb;
 				break;
 			case 'large':
 				$thumb = $this->largethumb;
