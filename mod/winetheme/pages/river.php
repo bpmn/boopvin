@@ -93,7 +93,7 @@ $content = "<div id=\"avenue_activity2\">".$activity."</div>";
 
 //$content = $activity;
 
-$content = $content."<div id=\"images_slider\">";
+$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
 
 $content = $content."<div id=\"coin-slider\">";
 
