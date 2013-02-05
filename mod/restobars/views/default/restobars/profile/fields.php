@@ -28,7 +28,7 @@ if (is_array($profile_fields) && count($profile_fields) > 0) {
 		}
                 
                 if ($key == 'location'){
-                    $options=array( 'url'=>'#',
+                    $options=array( 'href'=>'#',
                                     'data-lat'=>$restobar->getLatitude(),
                                     'data-lng'=>$restobar->getLongitude(),
                                     'text'=>$restobar->getLocation(),

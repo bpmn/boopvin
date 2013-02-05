@@ -163,6 +163,7 @@ if ($has_uploaded_icon) {
 
 		$restobar->icontime = time();
 	}
+   $filehandler->delete();
 }
 
 system_message(elgg_echo("restobar:saved"));

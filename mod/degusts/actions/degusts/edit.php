@@ -18,7 +18,7 @@ foreach ($CONFIG->degust as $index => $elts) {
 	if (is_array($input[$shortname])) {
 		array_walk_recursive($input[$shortname], 'profile_array_decoder');
 	} else {
-		$input[$shortname] = html_entity_decode($input[$shortname], ENT_COMPAT, 'UTF-8');
+		$input[$shortname] = _elgg_html_decode($input[$shortname]);
 	}
 
 	if ($valuetype == 'tags') {
@@ -31,6 +31,8 @@ $container_guid=get_input('container_guid');
 $annee=get_input('annee');
 //$complexity=get_input('complexity');
 
+$price = _elgg_html_decode(get_input('price'));
+$currency=_elgg_html_decode(get_input('currency'));
 
 
 $user = elgg_get_logged_in_user_entity();
@@ -64,6 +66,8 @@ $degust->annee=$annee;
 $degust->access_id=ACCESS_LOGGED_IN;
 $degust->title=$title;
 $degust->description=$description;
+$degust->price=$price;
+$degust->currency=$currency;
 //$degust->complexity=$complexity;
 $degust->save();
 

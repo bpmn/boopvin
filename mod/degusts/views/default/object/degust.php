@@ -57,6 +57,8 @@ $degust_link = elgg_view('output/url', array(
 ));
 
 $degust_link .='</br>'.elgg_view('output/notedropdown',array('value'=>$degust->note));
+if($degust->price)
+    $degust_link .='</br><div class="elgg-subtext">'.$degust->price.'</div>';
 
 /* date*/
 $date = elgg_view_friendly_time($degust->time_updated);

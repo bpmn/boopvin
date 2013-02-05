@@ -7,7 +7,7 @@
 
 
 
-$degust_profile_fields = elgg_get_config('degust');
+$degust_profile_fields = elgg_get_config('degust_profile');
 
 /*initialisation des options pour les couleurs en fonction du type de vins (blanc, rouge etc..)*/
 $degust=$vars['entity'];
@@ -37,66 +37,67 @@ foreach ($degust_profile_fields as $section => $elts) {
     echo ('<div class="degust-feuille-header">');
                // echo ('<td>');
 
-     echo ('<h1>'.elgg_echo("degust:{$section}").'</h1>');
+    echo ('<h1>'.elgg_echo("degust:{$section}").'</h1>');
      //echo "<div class='degust-profile-fiche'>";
                 // echo ('</td>');
 
   
      foreach($elts as $shortname=>$valtype){
-         echo ('<div class="degust-feuille-content">');
-         
-         
-
-         eval('$options=$options_'.$shortname.';');
-         if(isset($options) || $valtype=='hidden' || $valtype=='text' || $valtype=='longtext' || $shortname=='note'){ 
-            //echo '<label>';
+         $val=$degust->$shortname;
+         if ($val){
+            echo ('<div class="degust-feuille-content">');
+            eval('$options=$options_'.$shortname.';');
+            if(isset($options) || $valtype=='hidden' || $valtype=='text' || $valtype=='longtext' || $shortname=='note' || $shortname=='price'){ 
+            //if(isset($options)|| $valtype=='text' || $valtype=='longtext' || $shortname=='note'){ 
+                //echo '<label>';
              
-            //echo ('<td>');
-            echo ('<div class="degust-feuille-content-title">');
+                //echo ('<td>');
+                echo ('<div class="degust-feuille-content-title">');
 
-            echo elgg_echo("degust:{$shortname}").': ';
-            //echo '</label>';
-            //echo ('</td>');
-             echo ('</div>');
-            echo ('<div class="degust-feuille-content-value">');
-
-            //echo ('<td>');
-
-            $val=$degust->$shortname;
+                echo elgg_echo("degust:{$shortname}").': ';
+                //echo '</label>';
+                //echo ('</td>');
+                echo ('</div>');
             
-            if ($valtype=='text' || $valtype=='longtext' || $shortname=='note'){
-              $value=$val;  
-            }else{
-                if(is_array($val)){
-                    $value=array();
-                     foreach($val as $elt){
-                        $value[]=elgg_echo("degust:$shortname:$elt");
-                     }
-            }else{
-                    $value=elgg_echo("degust:$shortname:$val");
-                 }
-            }
+
+                //echo ('<td>');
+
+
+                echo ('<div class="degust-feuille-content-value">');
+            
+                if ($valtype=='text' || $valtype=='longtext' || $shortname=='note' || $shortname=='price'){
+                    $value=$val;  
+                }else{
+                    if(is_array($val)){
+                        $value=array();
+                        foreach($val as $elt){
+                            $value[]=elgg_echo("degust:$shortname:$elt");
+                        }
+                    }else{
+                        $value=elgg_echo("degust:$shortname:$val");
+                    }
+                }
                             
             
-            $variables=array(
+                $variables=array(
                         'value'=>$value,
                         );
             
-            if ($valtype=='hidden'){
-             $valtype='text';
-            }
+                /* complexité*/
+                if ($valtype=='hidden'){
+                    $valtype='text';
+                } 
          
-            echo elgg_view("output/{$valtype}",$variables);
+                echo elgg_view("output/{$valtype}",$variables);
 
-            echo ('</div>');
-            echo ('<div class="degust-feuille-content-clear"></div>');
+                echo ('</div>');
+                echo ('<div class="degust-feuille-content-clear"></div>');
 
-            //echo ('</td>');
-
+                //echo ('</td>');
+                  
+                echo ('</div>');
             }
-            
-            echo ('</div>');
-
+         }  
 
         }
     echo "</div>";

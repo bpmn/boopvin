@@ -27,20 +27,43 @@ $degust_profile_fields = elgg_get_config('degust');
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . "/fiche/{$container->kind}.php");
 
 $notes[]=" ";
-for ($note=1;$note<=20;$note++) {   
+for ($note=1;$note<=20;$note=$note+0.5) {   
     $notes[]=$note;
  }
 
  $options_note=$notes;
  
+ /***init des tableaux pour les prix*/
  
- ?>
+$options_currency=array('â‚¬'=>'euro','$'=>'dollar','Â£'=>'livre');
+$array_euro=array('','<5â‚¬','5â‚¬-10â‚¬','10â‚¬-15â‚¬','15â‚¬-20â‚¬','20â‚¬-25â‚¬','25â‚¬-30â‚¬','30â‚¬-40â‚¬','40â‚¬-50â‚¬','60â‚¬-70â‚¬','70â‚¬-80â‚¬','80â‚¬-100â‚¬','>100â‚¬');
+$array_dollar=array('','<$10','$10-$15','$15-$20','$20-$25','$25-$30','$30-$40','$40-$50','$60-$70','$70-$80','$80-$100','>$100');
+$array_livre=array('','<Â£10','Â£10-Â£15','Â£15-Â£20','Â£20-$25','Â£25-Â£30','Â£30-Â£40','Â£40-Â£50','Â£60-Â£70','Â£70-Â£80','Â£80-Â£100','>Â£100');
+ 
+ if ($degust->currency){
+     $currency_value=$degust->currency;
+     eval('$options_price=$array_'.$degust->currency.';');
+     
+     }
+ else {
+     $currency_value='euro';
+     $options_price=$array_euro;
+}
+ 
+
+ 
+?>
+
+
+
+
+
 
    
 <?php
 // groups and other users get owner block
-// si la fiche degust n'existe pas elgg_get_page_owner_entity(); renvoie l'entité vin cas création d'une degust
-// dans le cas où la fiche degust existe déjà elgg_get_page_owner_entity(); renvoie l'entité degust
+// si la fiche degust n'existe pas elgg_get_page_owner_entity(); renvoie l'entitÃ© vin cas crÃ©ation d'une degust
+// dans le cas oÃ¹ la fiche degust existe dÃ©jÃ  elgg_get_page_owner_entity(); renvoie l'entitÃ© degust
 
 
 $metadata=$container->kind;
@@ -48,7 +71,7 @@ $metadata=$container->kind;
 echo "<div data-winetype=\"{$metadata}\" id=\"metadatafield\"></div>";
 echo "<div data-overlay=\"overlay_degustation\" id=\"metadatafield_overlay\"></div>";
 
-// entête de la dégustation
+// entÃªte de la dÃ©gustation
 
 echo '<div class="degust-side-head">';
 //echo "$container->name <br/>";
@@ -57,10 +80,10 @@ echo elgg_view_entity($container);
 
 
 
-// affichage du millésime     
+// affichage du millÃ©sime     
 
 echo elgg_echo("wine:vintage") . ': ' ;
-if (isset($degust->annee)) {    // la fiche degust existe déjà (profile ou edit
+if (isset($degust->annee)) {    // la fiche degust existe dÃ©jÃ  (profile ou edit
     if ($degust->annee != 'nv') {
         echo $degust->annee;
     } else {
@@ -140,11 +163,32 @@ foreach ($degust_profile_fields as $section => $elts) {
             $dim_options=sizeof($options);
             echo "<div data-dim=\"{$dim_options}\" id=\"button_select{$shortname}\">";
          
+            //rajout du prix dans le paragraphe de la note
+            if ($shortname =="note"){
+                
+                       echo"<div id=\"degust-price\">";
+                       echo elgg_echo('degust:price')." ";
+                       echo elgg_view("input/dropdown",array(
+                                                        'value'=>$degust->price,
+                                                        'name'=>'price',
+                                                        'align'=>'horizontal',
+                                                        'options'=>$options_price));
+                       echo elgg_view("input/radio",array(
+                                                        'value'=>$currency_value,
+                                                        'name'=>'currency',
+                                                        'align'=>'horizontal',
+                                                        'options'=>$options_currency));
+                       echo"</div>";
+                }  
+            
+            
             echo elgg_view("input/{$valtype}",$variables);
             
+     
             echo "</div>";
 
-
+            /*** le prix **/
+     
             
             
             }

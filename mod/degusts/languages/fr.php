@@ -293,6 +293,10 @@ Peinture',
     'degust:evolution:evolue' => 'Evolué',
     'degust:evolution:use' => 'Usé',
     
+    'degust:price'=>'prix',
+    
+    
+    
     'degust:module:title'=> "Millésime %s",
     'degust:post_profile'=>"posté %s",
     'degust:post_wine'=>"posté %s par %s",

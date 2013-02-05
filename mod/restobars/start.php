@@ -140,7 +140,7 @@ function restobar_fields_setup() {
                 'briefdescription' => 'text',
 		'description' => 'longtext',    //description de l'activité
                 'location'=>'url',              //adresse de l'établissement lien google map
-		'website' => 'url',             //lien vers le website de l'établissement
+		'website' =>'url',             //lien vers le website de l'établissement
  
 	);
         
@@ -231,7 +231,7 @@ function restobar_setup_sidebar_menus() {
  *  Edit restobar:           restobar/edit/<guid>
  *  restobar invitations:    restobar/invitations/<username>
  *  Invite to restobar:      restobar/invite/<guid>
- *  Membership requests:  restobar/requests/<guid>
+ *  Membership requests:     restobar/requests/<guid>
  *  restobar activity:       restobar/activity/<guid>
  *  restobar members:        restobar/members/<guid>
  *

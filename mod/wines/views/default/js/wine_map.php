@@ -54,11 +54,18 @@
         
         
         function displayError(error) {
-            var errorTypes = {
+            /*var errorTypes = {
 		0: "Unknown error",
 		1: "Permission denied",
 		2: "Position is not available",
 		3: "Request timeout"
+            };*/
+            
+            var errorTypes = {
+		0: elgg.echo('geo:error:0'),
+		1: elgg.echo('geo:error:1'),
+		2: elgg.echo('geo:error:2'),
+		3: elgg.echo('geo:error:3')
             };
             var errorMessage = errorTypes[error.code];
             if (error.code == 0 || error.code == 2) {

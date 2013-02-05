@@ -41,7 +41,7 @@
    
     float:left;
     width: 50%;
-   
+    
 }
 
 
@@ -50,6 +50,7 @@
 
     float:left;
     width: 33%;
+    padding-left: 2px;
 }
 
 .elgg-item .elgg-subtext {

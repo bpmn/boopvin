@@ -12,13 +12,15 @@
 
 </script>
 
+
+
 <?php
 /**
  * The standard HTML head
  *
  * @uses $vars['title'] The page title
  */
-if($_SERVER['SERVER_NAME']=="avenuevin.com"){header( 'Location: http://www.avenuevin.com');exit;} 
+//if($_SERVER['SERVER_NAME']=="avenuevin.com"){header( 'Location: http://www.avenuevin.com');exit;} 
 // Set title
 if (empty($vars['title'])) {
 	$title = elgg_get_config('sitename');

@@ -93,13 +93,62 @@ function degust_fields_setup() {
                     'evolution'=>'coloradio',
                     'comment'=>'longtext',   //commentaire finale
                     'context'=>'text',        //proposition accord mets vins
-                    'note'=>'notedropdown' )      //note sur 20.        
+                    'note'=>'notedropdown', //note sur 20.
+                    )              
             
 	);
 
+        
+        $profile_defaults_view = array(
+		
+            
+ // MetaData
+ // Visuel
+             'visuel'=>array(  
+                    'couleur_intensity'=>'coloradio',             
+                    'couleur'=>'coloradio',
+                    'reflet'=>'coloradio',
+                    'mousse'=>'coloradio',
+                    'bulle'=>'coloradio'),
+             
+ //Olfactif
+             'olfactif'=>array(
+                    'nez_intensity'=>'coloradio',
+                    'nez'=>'noseboxes', // résultat des checkboxes sous forme de tableau
+                    'complexity'=>'hidden', // en fonction du nombres de checkbox cochées.
+                    'arome'=>'text'),        // description texte des arôme
+                       
+ //Gustatif
+             'gustatif'=> array(
+                    'rondeur'=>'coloradio',
+                    'acidity'=>'coloradio',
+                    'douceur'=>'coloradio',
+                    'palet_bulle'=>'coloradio',
+                    'dosage'=>'coloradio',
+                    'alcool'=>'coloradio',
+                    'tanin'=>'coloradio',
+                    'moelleux'=>'coloradio',
+                    'retro'=>'text',
+                    'longueur'=>'coloradio',
+                    'equilibre'=>'coloradio'),
+ 
+ //Commentaire final
+              'comment'=>array(
+                    'evolution'=>'coloradio',
+                    'comment'=>'longtext',   //commentaire finale
+                    'context'=>'text',        //proposition accord mets vins
+                    'note'=>'notedropdown', //note sur 20.
+                    'price'=>'dropdown')              
+            
+	);
+        
+        
+        
+        
 	$profile_defaults = elgg_trigger_plugin_hook('profile:fields', 'object', NULL, $profile_defaults);
 
 	elgg_set_config('degust', $profile_defaults);
+        elgg_set_config('degust_profile', $profile_defaults_view);
 
 	
 }

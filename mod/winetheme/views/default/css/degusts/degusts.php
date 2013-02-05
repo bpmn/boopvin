@@ -347,3 +347,7 @@ background-position: right center;
     margin-right: 10px;
    
 }
+
+#degust-price{
+ float: right;
+}

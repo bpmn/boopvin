@@ -48,6 +48,7 @@
                                 degust_tab();
                                 degust_button();
                                 degust_validate();
+                                option_price();
                                 degust_event();
                             } else {
                                 alert("not degust");
@@ -125,6 +126,7 @@
             });
         }
         
+        
         function edit_overlay_degust(action) {
             
             var edit_url=elgg.normalize_url('degust/'+action);
@@ -156,6 +158,7 @@
                                 degust_tab();
                                 degust_button();
                                 degust_validate();
+                                option_price();
                                 degust_event();
                                 
                                 
@@ -472,7 +475,26 @@ $(".degust-requires-confirmation").click(function(e) {
     });
 
 
+}
 
+function option_price(){
+var array_euro=new Array('','<6€','6€-10€','10€-15€','15€-20€','20€-25€','25€-30€','30€-40€','40€-50€','60€-70€','70€-80€','80€-100€','>100€');
+var array_dollar=new Array('','<$10','$10-$15','$15-$20','$20-$25','$25-$30','$30-$40','$40-$50','$60-$70','$70-$80','$80-$100','>$100');
+var array_livre=new Array('','<£10','£10-£15','£15-£20','£20-$25','£25-£30','£30-£40','£40-£50','£60-£70','£70-£80','£80-£100','>£100');
+    $('input[name$="currency"]').change(function(){
+        var monnaie=$(this).val();
+        var list_option;
+        if (monnaie == 'euro')
+            list_option=array_euro;
+        if (monnaie == 'dollar')
+            list_option=array_dollar;
+        if (monnaie == 'livre')
+            list_option=array_livre;
+            
+        $('select[name$="price"]').empty();
+        $.each(list_option, function(key,value) {
+            $('select[name$="price"]').append($("<option></option>").text(value));});
+    });
 }
 
         
