@@ -478,9 +478,9 @@ $(".degust-requires-confirmation").click(function(e) {
 }
 
 function option_price(){
-var array_euro=new Array('','<6€','6€-10€','10€-15€','15€-20€','20€-25€','25€-30€','30€-40€','40€-50€','60€-70€','70€-80€','80€-100€','>100€');
-var array_dollar=new Array('','<$10','$10-$15','$15-$20','$20-$25','$25-$30','$30-$40','$40-$50','$60-$70','$70-$80','$80-$100','>$100');
-var array_livre=new Array('','<£10','£10-£15','£15-£20','£20-$25','£25-£30','£30-£40','£40-£50','£60-£70','£70-£80','£80-£100','>£100');
+var array_euro=new Array("","&lt;6€","6€-10€","10€-15€","15€-20€","20€-25€","25€-30€","30€-40€","40€-50€","60€-70€","70€-80€","80€-100€","&gt;100€");
+var array_dollar=new Array("","&lt;$10","$10-$15","$15-$20","$20-$25","$25-$30","$30-$40","$40-$50","$60-$70","$70-$80","$80-$100","&gt;$100");
+var array_livre=new Array("","&lt;£10","£10-£15","£15-£20","£20-£25","£25-£30","£30-£40","£40-£50","£60-£70","£70-£80","£80-£100","&gt;£100");
     $('input[name$="currency"]').change(function(){
         var monnaie=$(this).val();
         var list_option;
@@ -493,7 +493,7 @@ var array_livre=new Array('','<£10','£10-£15','£15-£20','£20-$25','£25-£
             
         $('select[name$="price"]').empty();
         $.each(list_option, function(key,value) {
-            $('select[name$="price"]').append($("<option></option>").text(value));});
+            $('select[name$="price"]').append($("<option></option>").html(value));});
     });
 }
 

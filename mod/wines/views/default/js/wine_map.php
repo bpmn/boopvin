@@ -14,7 +14,7 @@
     elgg.wine.init = function() {
         
       
-        $(function() {
+       $(function() {
         //window.onload = getMyLocation;
         getMyLocation();
         });

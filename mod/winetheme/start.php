@@ -30,8 +30,7 @@ function winetheme_init() {
     elgg_unregister_menu_item('topbar', 'elgg_logo');
     //elgg_unregister_menu_item('river', 'comment');
     
-    
-    
+   
     
     elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
     elgg_unregister_plugin_hook_handler('register', 'menu:river', 'elgg_river_menu_setup');
@@ -139,8 +138,16 @@ function winetheme_init() {
     elgg_extend_view('css/elgg', 'css/wines/wines');
     
     elgg_register_plugin_hook_handler('index', 'system', 'custom_index');
-
+    elgg_register_event_handler('create','user', 'add_notification_site');
 }
+
+//Activer par default les notifications sur le site pour les utilisateurs
+function add_notification_site($event,$type,$entity){
+    	// Turn on site notifications by default
+	set_user_notification_setting($entity->getGUID(), 'site', true);
+        return true;
+}
+
 
 function custom_index($hook, $type, $return, $params) {
 	if ($return == true) {
