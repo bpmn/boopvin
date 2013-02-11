@@ -1,8 +1,8 @@
 <?php
 /**
- * Elgg wine plugin language pack
+ *  Wines 1.8 plugin language pack
  *
- * @package Wines 1.8
+ * @package Wine
  */
 
 $english = array(
@@ -10,40 +10,59 @@ $english = array(
 	/**
 	 * Menu items and titles
 	 */
-	'wine' => "Wines",
-	'wine:owned' => "wine I own",
+	'wine' => "The Wines",
+	'wine:mine' => "My wines",
 	'wine:yours' => "My wine",
 	'wine:user' => "%s's wine",
-	'wine:all' => "All wine",
+	'wine:all' => "All the wines",
 	'wine:add' => "Add a new wine",
 	'wine:edit' => "Edit wine",
-	'wine:delete' => 'Delete wine',
+	'wine:delete' => 'Delete',
 	'wine:membershiprequests' => 'Manage join requests',
 	'wine:invitations' => 'wine invitations',
 
-	'wine:icon' => 'wine icon (leave blank to leave unchanged)',
-	'wine:name' => 'Name/Chateau/Domain',
+	'wine:icon' => 'Photo',
+	'wine:name' => 'Name/Château/Domain',
 	'wine:username' => 'wine short name (displayed in URLs, alphanumeric characters only)',
 	'wine:appellation' => 'Appellation',
-        'wine:cuvee'=>'Cuvée',            //cuvée
-	'wine:region' => 'Region',         //région
-	'wine:grapes' => 'Varietals',         //cépage
-        'wine:maker'=>'Winemaker',            //vigneron
-        'wine:kind'=>'Type',             //style de vin blanc, rouge, moelleux
-        'wine:soil'=>'Soil',             //sol
-        'wine:country'=>'Country' ,         //pays
-        'wine:info'=>'More information (aging, vinification..)' ,                //pays
+    
+        'wine:cuvee'=>'Cuvée',            
+	'wine:region' => 'Region',        
+	'wine:grapes' => 'Varietals',         
+        'wine:maker'=>'Winemaker',            
+        'wine:kind'=>'Type',                   //style de vin blanc, rouge, moelleux
+        'wine:soil'=>'Soil',     //sol          
+        'wine:country'=>'Country' ,               //pays
+        
+        'wine:info'=>'Additional informations (aging, vinification..)' , 
         'wine:vintage'=>'Vintage',
-        'wine:nv'=>'No Vintage',
+        'wine:nv'=>'No vintage',
+        
+        'wine:red'=>'Red',             
+        'wine:white'=>'White',             
+        'wine:rose'=>'Rosé' , 
+        'wine:white_sparkling'=>'Sparkling white',
+        'wine:rose_sparkling'=>'Sparkling rosé',
+        'wine:moelleux'=>'Mellow/Sweet White (Jurançon, Sauternes etc..)',
+        'wine:vdn_rouge'=>'Sweet natural red (Red Port, Banyuls etc..)',
+        'wine:vdn_blanc'=>'Sweet natural white (White Port, Muscat etc..)',
     
-        'wine:red'=>'Red',             //style de vin blanc, rouge, moelleux
-        'wine:white'=>'White',             //sol
-        'wine:rose'=>'Rosé' ,         //pays
     
-        'wine:briefdescription' => 'Brief description',
+        'wine:profile:red'=>'Red',             
+        'wine:profile:white'=>'White',             
+        'wine:profile:rose'=>'Rosé' , 
+        'wine:profile:white_sparkling'=>'Sparkling white',
+        'wine:profile:rose_sparkling'=>'Sparkling rosé',
+        'wine:profile:moelleux'=>'Mellow/Sweet White',
+        'wine:profile:vdn_rouge'=>'Sweet natural red',
+        'wine:profile:vdn_blanc'=>'Sweet natural white',
+    
+    
+    
+	'wine:briefdescription' => 'Brief description',
 	'wine:interests' => 'Tags',
 	'wine:website' => 'Website',
-	'wine:members' => 'wine followers',
+	'wine:members' => 'The wine tasters',
 	'wine:members:title' => 'Members of %s',
 	'wine:members:more' => "View all members",
 	'wine:membership' => "wine membership permissions",
@@ -56,54 +75,20 @@ $english = array(
 	'wine:permissions:error' => 'You do not have the permissions for this',
 	'wine:inwine' => 'in the wine',
 	'wine:cantedit' => 'You can not edit this wine',
-	'wine:saved' => 'wine saved',
-	'wine:featured' => 'Featured wine',
-	'wine:makeunfeatured' => 'Unfeature',
-	'wine:makefeatured' => 'Make featured',
-	'wine:featuredon' => '%s is now a featured wine.',
-	'wine:unfeatured' => '%s has been removed from the featured wine.',
-	'wine:featured_error' => 'Invalid wine.',
-	'wine:joinrequest' => 'Request membership',
-	'wine:join' => 'Join wine',
-	'wine:leave' => 'Leave wine',
-	'wine:invite' => 'Invite friends',
-	'wine:invite:title' => 'Invite friends to this wine',
-	'wine:inviteto' => "Invite friends to '%s'",
-	'wine:nofriends' => "You have no friends left who have not been invited to this wine.",
-	'wine:nofriendsatall' => 'You have no friends to invite!',
-	'wine:viawine' => "via wine",
-	'wine:wine' => "wine",
-	'wine:search:tags' => "tag",
-	'wine:search:title' => "Search for wine tagged with '%s'",
-	'wine:search:none' => "No matching wine were found",
-	'wine:search_in_wine' => "Search in this wine",
+	'wine:saved' => 'Vin enregistré',
+
+	'wine:join' => 'Add to my tasting club',
+        'wine:join:title' => 'Join the club if you want to taste it and contribute',
+	'wine:leave' => 'Remove from my wines',
+
 	'wine:acl' => "wine: %s",
 
-	'wine:activity' => "wine activity",
-	'wine:enableactivity' => 'Enable wine activity',
-	'wine:activity:none' => "There is no wine activity yet",
 
-	'wine:notfound' => "wine not found",
-	'wine:notfound:details' => "The requested wine either does not exist or you do not have access to it",
 
-	'wine:requests:none' => 'There are no current membership requests.',
+	'item:object:wineforumtopic' => "Bar chats",
 
-	'wine:invitations:none' => 'There are no current invitations.',
 
-	'item:object:wineforumtopic' => "Discussion topics",
-
-	'wineforumtopic:new' => "Add discussion post",
-
-	'wine:count' => "wine created",
-	'wine:open' => "open wine",
-	'wine:closed' => "closed wine",
-	'wine:member' => "wine followers",
-	'wine:searchtag' => "Search for wine by tag",
-
-	'wine:more' => 'More wine',
-	'wine:none' => 'No wine',
-        
-        'wine:suggestions'=>'where to find',
+        'wine:suggestions'=>'This wine around',
 
 	/*
 	 * Access
@@ -116,8 +101,8 @@ $english = array(
 	'wine:visibility' => 'Who can see this wine?',
 
 	/*
-	wine tools
-	*/
+	 * wine tools
+	 */
 	'wine:enableforum' => 'Enable wine discussion',
 	'wine:yes' => 'yes',
 	'wine:no' => 'no',
@@ -125,14 +110,14 @@ $english = array(
 	'wine:lastcomment' => 'Last comment %s by %s',
 
 	/*
-	wine discussion
-	*/
+	 * wine discussion
+	 */
 	'discussion' => 'Discussion',
-	'discussion:add' => 'Add discussion topic',
-	'discussion:latest' => 'Latest discussion',
-	'discussion:wine' => 'Bar Chats',
+	'discussion:add' => 'Add a bar chat',
+	'discussion:latest' => 'The latest Bar chats',
+	'discussion:wine' => 'Bar chats',
 	'discussion:none' => 'No discussion',
-	'discussion:reply:title' => 'Reply by %s',
+	'discussion:reply:title' => 'Answer from %s',
 
 	'discussion:topic:created' => 'The discussion topic was created.',
 	'discussion:topic:updated' => 'The discussion topic was updated.',
@@ -147,25 +132,24 @@ $english = array(
 	'discussion:reply:deleted' => 'Discussion reply has been deleted.',
 	'discussion:reply:error:notdeleted' => 'Could not delete the discussion reply',
 
-	'reply:this' => 'Reply to this',
+	'reply:this' => 'Reply',
 
 	'wine:replies' => 'Replies',
 	'wine:forum:created' => 'Created %s with %d comments',
 	'wine:forum:created:single' => 'Created %s with %d reply',
 	'wine:forum' => 'Discussion',
-	'wine:addtopic' => 'Add a topic',
+	'wine:addtopic' => 'Add a bar chat',
 	'wine:forumlatest' => 'Latest discussion',
 	'wine:latestdiscussion' => 'Latest discussion',
-	'wine:newest' => 'Newest',
-	'wine:popular' => 'Popular',
+	'wine:newest' => 'All the wines',
 	'winepost:success' => 'Your reply was succesfully posted',
 	'wine:alldiscussion' => 'Latest discussion',
-	'wine:edittopic' => 'Edit topic',
+	'wine:edittopic' => 'Edit the subject',
 	'wine:topicmessage' => 'Topic message',
 	'wine:topicstatus' => 'Topic status',
 	'wine:reply' => 'Post a comment',
-	'wine:topic' => 'Topic',
-	'wine:posts' => 'Posts',
+	'wine:topic' => 'Subject',
+	'wine:posts' => 'message',
 	'wine:lastperson' => 'Last person',
 	'wine:when' => 'When',
 	'winetopic:notcreated' => 'No topics have been created.',
@@ -201,8 +185,8 @@ $english = array(
 	'wine:usernotinvited' => 'User could not be invited.',
 	'wine:useralreadyinvited' => 'User has already been invited',
 	'wine:invite:subject' => "%s you have been invited to join %s!",
-	'wine:updated' => "Last reply by %s %s",
-	'wine:started' => "Started by %s",
+	'wine:updated' => "last reply from %s %s",
+	'wine:started' => "started by %s",
 	'wine:joinrequest:remove:check' => 'Are you sure you want to remove this join request?',
 	'wine:invite:remove:check' => 'Are you sure you want to remove this invite?',
 	'wine:invite:body' => "Hi %s,
@@ -230,14 +214,16 @@ or click below to view the wine's join requests:
 %s",
 
 	/*
-		Forum river items
-	*/
+	 * Forum river items
+	 */
 
-	'river:create:wine:default' => '%s created the wine %s',
-	'river:join:wine:default' => '%s joined the wine %s',
-	'river:create:object:wineforumtopic' => '%s added a new discussion topic %s',
-	'river:reply:object:wineforumtopic' => '%s replied on the discussion topic %s',
-	
+	'river:create:group:wine' => '%s has added the wine %s to AvenueVin',
+	'river:incave:group:wine' => "the wine %s was added to the cellar of %s",
+        'river:join:wine:default' => '%s joined the wine %s',
+	'river:create:object:wineforumtopic' => '%s has added a discussion topic "%s"',
+	'river:reply:object:wineforumtopic' => '%s contributed to the discussion %s',
+        'river:wineforumtopic'=>'on the wine %s',
+    
 	'wine:nowidgets' => 'No widgets have been defined for this wine.',
 
 
@@ -277,7 +263,13 @@ or click below to view the wine's join requests:
 	// ecml
 	'wine:ecml:discussion' => 'wine Discussions',
 	'wine:ecml:wineprofile' => 'wine profiles',
-        'wine:restobar:nosuggestion'=> 'no suggestion',
+
+        'wine:restobar:nosuggestion'=> 'no suggestions',
+        'wine:degust:all'=> 'the wine tastings',
+        'wine:addtocave'=>'Add to my places'
 );
 
 add_translation("en", $english);
+
+?>
+

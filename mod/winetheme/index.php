@@ -43,19 +43,20 @@ $content = $content."<div id=\"coin-slider\">";
  
 
  $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
- $content.= '<span>1: Recherchez un vin</span>';
+ $content.= '<span>'.elgg_echo('post1').'</span>';
+ 
 
  $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
-  $content.= '<span>2: Fiches de degustation !</span>';
+  $content.= '<span>'.elgg_echo('post2').'</span>';
   
 $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
-  $content.= '<span>Gerez vos vins</span>';
+  $content.= '<span>'.elgg_echo('post3').'</span>';
   
 $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
-  $content.= '<span>Visualisez vos degustations</span>';
+  $content.= '<span>'.elgg_echo('post4').'</span>';
   
 $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
-  $content.= '<span>Espace Pro: Bars a vins, Restos, Caves, news...</span>';
+  $content.= '<span>'.elgg_echo('post5').'</span>';
   
 $content = $content."           </div>";
 

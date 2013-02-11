@@ -10,6 +10,7 @@ $french = array(
 	/**
 	 * Menu items and titles
 	 */
+         'search:restobar' => "Rechercher un établissement",
 	'restobar' => "Les Bars, Restos, Caves, Domaines..",
     
 	'restobar:yours' => "Mes établissements",

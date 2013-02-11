@@ -1,8 +1,8 @@
 <?php
 /**
- * Elgg restobar plugin language pack
+ *  Restobars 1.8 plugin language pack
  *
- * @package restobars 1.8
+ * @package Restobar
  */
 
 $english = array(
@@ -10,111 +10,61 @@ $english = array(
 	/**
 	 * Menu items and titles
 	 */
-	'restobar' => "Bars, Restos, Caves...",
-	'restobar:owned' => "restobar I own",
-	'restobar:yours' => "My restobar",
-	'restobar:user' => "%s's restobar",
-	'restobar:all' => "All restobar",
-	'restobar:add' => "Add a new restobar",
-	'restobar:edit' => "Edit restobar",
-	'restobar:delete' => 'Delete restobar',
-	'restobar:membershiprequests' => 'Manage join requests',
-	'restobar:invitations' => 'restobar invitations',
+         'search:restobar' => "Search for an establishment",
 
-	'restobar:icon' => 'restobar icon (leave blank to leave unchanged)',
-	'restobar:name' => 'Name/Chateau/Domain',
-	'restobar:username' => 'restobar short name (displayed in URLs, alphanumeric characters only)',
-	'restobar:description' => 'Appellation',
-        'restobar:cuvee'=>'Cuvée',            //cuvée
-	'restobar:region' => 'Region',         //région
-	'restobar:grapes' => 'Varietals',         //cépage
-        'restobar:maker'=>'restobarmaker',            //vigneron
-        'restobar:kind'=>'Type',             //style de vin blanc, rouge, moelleux
-        'restobar:soil'=>'Soil',             //sol
-        'restobar:country'=>'Country' ,         //pays
-        
-        'restobar:vintage'=>'',
-        'restobar:v'=>'Millésimé (le sélection du millésime se fait dans le profile du vin une fois crée)',
-        'restobar:nv'=>'Non Millésimé',
+	'restobar' => "The Bars, Restaurants, Cellars, Domains..",
     
-        'restobar:red'=>'Red',             //style de vin blanc, rouge, moelleux
-        'restobar:white'=>'White',             //sol
-        'restobar:rose'=>'Rosé' ,         //pays
+	'restobar:yours' => "My establishements",
+	'restobar:user' => "Establishements of %s",
+	'restobar:all' => "All the establishements",
+	'restobar:add' => "Add a establishement",
+	'restobar:edit' => "Edit",
+	'restobar:delete' => 'Delete',
+
+
+	'restobar:icon' => 'Establishement\'s icon (leave empty to stay as is)',
+	'restobar:name' => 'Establishement\'s name ',
+	'restobar:briefdescription' => 'Activity (wine cellar, wine bar, domain, restaurant etc..)',
+	'restobar:description' => 'Description',
+        'restobar:location'=>'Enter your address, then validate and register in the pop up window',
+        'restobar:address'=>'validate',
+        'restobar:website' => 'Website',
     
-        'restobar:briefdescription' => 'Brief description',
-	'restobar:interests' => 'Tags',
-	'restobar:website' => 'Website',
-	'restobar:members' => 'restobar members',
+        'restobar:profile:icon' => 'Establishement\'s icon (leave empty to stay as is)',
+	'restobar:profile:name' => 'Establishement\'s name ',
+	'restobar:profile:briefdescription' => 'Activity',
+	'restobar:profile:description' => 'Description',
+        'restobar:profile:location'=>'Address',
+        'restobar:profile:address'=>'validate',
+        'restobar:profile:website' => 'Website',
+    
+    
+    
+	
+        'restobar:interests' => 'Tags',
+	
+	'restobar:members' => 'Establishement\'s members',
 	'restobar:members:title' => 'Members of %s',
 	'restobar:members:more' => "View all members",
 	'restobar:membership' => "restobar membership permissions",
 	'restobar:access' => "Access permissions",
 	'restobar:owner' => "Owner",
-	'restobar:widget:num_display' => 'Number of restobar to display',
-	'restobar:widget:membership' => 'restobar membership',
-	'restobar:widgets:description' => 'Display the restobar you are a member of on your profile',
-	'restobar:noaccess' => 'No access to restobar',
-	'restobar:permissions:error' => 'You do not have the permissions for this',
-	'restobar:inrestobar' => 'in the restobar',
+	
 	'restobar:cantedit' => 'You can not edit this restobar',
-	'restobar:saved' => 'restobar saved',
-	'restobar:featured' => 'Featured restobar',
-	'restobar:makeunfeatured' => 'Unfeature',
-	'restobar:makefeatured' => 'Make featured',
-	'restobar:featuredon' => '%s is now a featured restobar.',
-	'restobar:unfeatured' => '%s has been removed from the featured restobar.',
-	'restobar:featured_error' => 'Invalid restobar.',
-	'restobar:joinrequest' => 'Request membership',
-	'restobar:join' => 'Join restobar',
-	'restobar:leave' => 'Leave restobar',
-	'restobar:invite' => 'Invite friends',
-	'restobar:invite:title' => 'Invite friends to this restobar',
-	'restobar:inviteto' => "Invite friends to '%s'",
-	'restobar:nofriends' => "You have no friends left who have not been invited to this restobar.",
-	'restobar:nofriendsatall' => 'You have no friends to invite!',
-	'restobar:viarestobar' => "via restobar",
-	'restobar:restobar' => "restobar",
-        'restobar:search'=>'search for a business',
-	'restobar:search:tags' => "tag",
-	'restobar:search:title' => "Search for restobar tagged with '%s'",
-	'restobar:search:none' => "No matching restobar were found",
-	'restobar:search_in_restobar' => "Search in this restobar",
+	'restobar:saved' => 'Establishement registered',
+	
+	'restobar:leave' => 'quit',
+	
 	'restobar:acl' => "restobar: %s",
 
-	'restobar:activity' => "restobar activity",
-	'restobar:enableactivity' => 'Enable restobar activity',
-	'restobar:activity:none' => "There is no restobar activity yet",
+	
 
-	'restobar:notfound' => "restobar not found",
-	'restobar:notfound:details' => "The requested restobar either does not exist or you do not have access to it",
-
-	'restobar:requests:none' => 'There are no current membership requests.',
-
-	'restobar:invitations:none' => 'There are no current invitations.',
-
-	'item:object:restobarforumtopic' => "Discussion topics",
-
-	'restobarforumtopic:new' => "Add discussion post",
-
-	'restobar:count' => "restobar created",
-	'restobar:open' => "open restobar",
-	'restobar:closed' => "closed restobar",
-	'restobar:member' => "members",
-	'restobar:searchtag' => "Search for restobar by tag",
-
-	'restobar:more' => 'More restobar',
+	'restobar:count' => "number of establishments",
+	
 	'restobar:none' => 'No restobar',
 
 
-	/*
-	 * Access
-	 */
-	'restobar:access:private' => 'Closed - Users must be invited',
-	'restobar:access:public' => 'Open - Any user may join',
-	'restobar:access:restobar' => 'restobar members only',
-	'restobar:closedrestobar' => 'This restobar has a closed membership.',
-	'restobar:closedrestobar:request' => 'To ask to be added, click the "request membership" menu link.',
-	'restobar:visibility' => 'Who can see this restobar?',
+
 
 	/*
 	restobar tools
@@ -126,68 +76,27 @@ $english = array(
 	'restobar:lastcomment' => 'Last comment %s by %s',
 
 	/*
-	restobar discussion
+	restobar News
 	*/
-	'news' => 'Discussion',
-	'news:add' => 'Add discussion topic',
-	'news:latest' => 'Latest discussion',
-	'news:restobar' => 'Bar Chats',
-	'news:none' => 'No discussion',
-	'news:reply:title' => 'Reply by %s',
+	
 
-	'news:topic:created' => 'The discussion topic was created.',
-	'news:topic:updated' => 'The discussion topic was updated.',
-	'news:topic:deleted' => 'Discussion topic has been deleted.',
+	'news:restobar' => 'Latest news',
+        'news:restobar:edit'=> 'edit',
 
-	'news:topic:notfound' => 'Discussion topic not found',
-	'news:error:notsaved' => 'Unable to save this topic',
-	'news:error:missing' => 'Both title and message are required fields',
-	'news:error:permissions' => 'You do not have permissions to perform this action',
-	'news:error:notdeleted' => 'Could not delete the discussion topic',
 
-	'news:reply:deleted' => 'Discussion reply has been deleted.',
-	'news:reply:error:notdeleted' => 'Could not delete the discussion reply',
 
-	'reply:this' => 'Reply to this',
 
-	'restobar:replies' => 'Replies',
-	'restobar:forum:created' => 'Created %s with %d comments',
-	'restobar:forum:created:single' => 'Created %s with %d reply',
-	'restobar:forum' => 'Discussion',
-	'restobar:addtopic' => 'Add a topic',
-	'restobar:forumlatest' => 'Latest discussion',
-	'restobar:latestdiscussion' => 'Latest discussion',
-	'restobar:newest' => 'Newest',
-	'restobar:popular' => 'Popular',
-	'restobarpost:success' => 'Your reply was succesfully posted',
-	'restobar:alldiscussion' => 'Latest discussion',
-	'restobar:edittopic' => 'Edit topic',
-	'restobar:topicmessage' => 'Topic message',
-	'restobar:topicstatus' => 'Topic status',
-	'restobar:reply' => 'Post a comment',
-	'restobar:topic' => 'Topic',
-	'restobar:posts' => 'Posts',
-	'restobar:lastperson' => 'Last person',
-	'restobar:when' => 'When',
-	'restobartopic:notcreated' => 'No topics have been created.',
-	'restobar:topicopen' => 'Open',
-	'restobar:topicclosed' => 'Closed',
-	'restobar:topicresolved' => 'Resolved',
-	'restobartopic:created' => 'Your topic was created.',
-	'restobartopic:deleted' => 'The topic has been deleted.',
-	'restobar:topicsticky' => 'Sticky',
-	'restobar:topicisclosed' => 'This discussion is closed.',
-	'restobar:topiccloseddesc' => 'This discussion is closed and is not accepting new comments.',
-	'restobartopic:error' => 'Your restobar topic could not be created. Please try again or contact a system administrator.',
-	'restobar:forumpost:edited' => "You have successfully edited the forum post.",
-	'restobar:forumpost:error' => "There was a problem editing the forum post.",
+	'restobar:newest'=>' the establishement',
+        'restobar:around'=>'around',
+        
+
 
 
 	'restobar:privaterestobar' => 'This restobar is closed. Requesting membership.',
-	'restobar:notitle' => 'restobar must have a title',
+	'restobar:notitle' => 'The establishment must have a name',
 	'restobar:cantjoin' => 'Can not join restobar',
 	'restobar:cantleave' => 'Could not leave restobar',
-	'restobar:removeuser' => 'Remove from restobar',
+	'restobar:removeuser' => 'remove from the establishement',
 	'restobar:cantremove' => 'Cannot remove user from restobar',
 	'restobar:removed' => 'Successfully removed %s from restobar',
 	'restobar:addedtorestobar' => 'Successfully added the user to the restobar',
@@ -212,10 +121,10 @@ $english = array(
 
 %s",
 
-	'restobar:welcome:subject' => "Welcome to the %s restobar!",
-	'restobar:welcome:body' => "Hi %s!
+	'restobar:welcome:subject' => "welcome to %s !",
+	'restobar:welcome:body' => "hello %s!
 
-You are now a member of the '%s' restobar! Click below to begin posting!
+You are now a member of the establishement '%s' ! Click on the link below to go the profile!
 
 %s",
 
@@ -233,8 +142,8 @@ or click below to view the restobar's join requests:
 	/*
 		Forum river items
 	*/
-
-	'river:create:restobar:default' => '%s created the restobar %s',
+        'river:create:group:restobar' => "%s has added the establishement %s to AvenueVin",
+	'river:update:object:restobarnews' => "%s has actualised the latest news !",
 	'river:join:restobar:default' => '%s joined the restobar %s',
 	'river:create:object:restobarforumtopic' => '%s added a new discussion topic %s',
 	'river:reply:object:restobarforumtopic' => '%s replied on the discussion topic %s',
@@ -279,32 +188,32 @@ or click below to view the restobar's join requests:
 	'restobar:ecml:discussion' => 'restobar Discussions',
 	'restobar:ecml:restobarprofile' => 'restobar profiles',
     
-        //gestion de cave
-        'restobar:cave'=>'%s\'s cellar',
+            //gestion de cave
+        'restobar:cave'=>'The cellar of %s ',
     
         //module profile
-        'restobar:cave:news'=>'News wines in our cellar',
-        'link:cave:all'=>'All the cellar',
+        'restobar:cave:news'=>'The lastest from the cellar',
+        'link:cave:all'=>'all the cellar',
     
-        'removecave:this' => 'Remove the wine from the cellar',
-        'removecaveconfirm'=> 'Do you want to remove this wine from the cellar ?',
-        'cave:removed' => ' The wine has been removed from the cellar',
-        'cave:cantremove'=> 'This wine cannot be removed from the cellar',
+        'removecave:this' => 'Remove this wine from the cellar',
+        'removecaveconfirm'=> 'Do you really want to remove this wine from the cellar?',
+        'cave:removed' => ' This wine was removed from the cellar',
+        'cave:cantremove'=> 'This wine could not be removedß',
+        
+        //retobar Map
     
-        'restobar:addmember'=>'Add %s to my business',
-        'restobar:addmember:inallbusiness'=>'This user is already a member of all your businesses',
-        'restobar:addmember:nobusiness'=>"you haven't create any page business",
-    
-        //restobar Map
         'restobar:street'=>'Street',
         'restobar:city'=>'City',
-        'restobar:cap'=>'CAP',
+        'restobar:cap'=>'Postcode',
         'restobar:prov'=>'Province',
         'restobar:region'=>'Region',
         'restobar:nation'=>'Country',
         'restobar:latitude'=>'Latitude',
         'restobar:longitude'=>'Longitude',
-        'restobar:clickmap'=>"Click to see the map"
+        'restobar:clickmap'=>"Click here to visualise the map",
+    
+        'restobar:cave:none'=>'no wine in the cellar',
+       
 );
 
 add_translation("en", $english);
