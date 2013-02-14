@@ -266,7 +266,30 @@ or click below to view the wine's join requests:
 
         'wine:restobar:nosuggestion'=> 'pas de suggestion',
         'wine:degust:all'=> 'les dégustations',
-        'wine:addtocave'=>'Ajouter à mes établissements'
+        'wine:addtocave'=>'Ajouter à mes établissements',
+    
+        //notification
+        
+	'discussion:notification:topic:subject' => 'Nouveau sujet de discussion',
+	'wine:notification' =>
+"%s a ajouté un nouveau sujet de discussion au sujet du vin %s:
+
+%s
+%s
+
+Voir et participer à la discussion:
+%s
+",
+
+	'discussion:notification:reply:body' =>
+"%s a posté une réponse sur la discussion %s au sujet du vin %s:
+
+%s
+
+Voir la discussion:
+%s
+",
+        'discussion:notification:reply:subject' =>"a posté une réponse"
 );
 
 add_translation("fr", $french);

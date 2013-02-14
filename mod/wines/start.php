@@ -115,7 +115,7 @@ function wine_init() {
 	elgg_register_event_handler('join', 'group', 'wine_user_join_event_listener');
 	elgg_register_event_handler('leave', 'group', 'wine_user_leave_event_listener');
 	//elgg_register_event_handler('pagesetup', 'system', 'wine_setup_sidebar_menus');
-	elgg_register_event_handler('annotate', 'all', 'wine_object_notifications');
+	//elgg_register_event_handler('annotate', 'all', 'wine_object_notifications');
 
 	elgg_register_plugin_hook_handler('access:collections:add_user', 'collection', 'wine_access_collection_override');
 
@@ -660,7 +660,8 @@ function wine_user_join_event_listener($event, $object_type, $object) {
         
         if (elgg_instanceof($wine, 'group','wine'))
 	 add_user_to_access_collection($user->guid, $acl);
-
+         add_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
+         add_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());
 	return true;
 }
 
@@ -686,7 +687,8 @@ function wine_user_leave_event_listener($event, $object_type, $object) {
 	$acl = $wine->group_acl;
         if (elgg_instanceof($wine, 'group','wine'))
             remove_user_from_access_collection($user->guid, $acl);
-
+            remove_entity_relationship($user->guid, 'notify'.'site',$wine->getGuid());
+            remove_entity_relationship($user->guid, 'notify'.'email',$wine->getGuid());
 	return true;
 }
 
@@ -849,10 +851,13 @@ function wine_discussion_init() {
 	//add_group_tool_option('forum', elgg_echo('wine:enableforum'), true);
 	elgg_extend_view('wines/tool_latest', 'wine_discussion/module');
 
+	
 	// notifications
-	register_notification_object('object', 'wineforumtopic', elgg_echo('wineforumtopic:new'));
-	elgg_register_plugin_hook_handler('object:notifications', 'object', 'wine_object_notifications_intercept');
+	register_notification_object('object', 'wineforumtopic', elgg_echo('discussion:notification:topic:subject'));
 	elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'wineforumtopic_notify_message');
+	elgg_register_event_handler('create', 'annotation', 'wine_discussion_reply_notifications');
+	elgg_register_plugin_hook_handler('notify:annotation:message', 'wine_topic_post', 'wine_discussion_create_reply_notification');
+        
 }
 
 /**
@@ -976,49 +981,9 @@ function wine_discussion_add_to_river_menu($hook, $type, $return, $params) {
 	return $return;
 }
 
-/**
- * Event handler for wine forum posts
- *
- */
-function wine_object_notifications($event, $object_type, $object) {
 
-	static $flag;
-	if (!isset($flag))
-		$flag = 0;
 
-	if (is_callable('object_notifications'))
-		if ($object instanceof ElggObject) {
-			if ($object->getSubtype() == 'wineforumtopic') {
-				//if ($object->countAnnotations('wine_topic_post') > 0) {
-				if ($flag == 0) {
-					$flag = 1;
-					object_notifications($event, $object_type, $object);
-				}
-				//}
-			}
-		}
-}
 
-/**
- * Intercepts the notification on wine topic creation and prevents a notification from going out
- * (because one will be sent on the annotation)
- *
- * @param unknown_type $hook
- * @param unknown_type $entity_type
- * @param unknown_type $returnvalue
- * @param unknown_type $params
- * @return unknown
- */
-function wine_object_notifications_intercept($hook, $entity_type, $returnvalue, $params) {
-	if (isset($params)) {
-		if ($params['event'] == 'create' && $params['object'] instanceof ElggObject) {
-			if ($params['object']->getSubtype() == 'wineforumtopic') {
-				return true;
-			}
-		}
-	}
-	return null;
-}
 
 
 /**
@@ -1046,44 +1011,131 @@ function wineforumtopic_entity_menu_setup($hook, $type, $return, $params) {
 }
 
 
-
-
-
 /**
- * Returns a more meaningful message
+ * Create winediscussion notification body
  *
- * @param unknown_type $hook
- * @param unknown_type $entity_type
- * @param unknown_type $returnvalue
- * @param unknown_type $params
+ * @todo namespace method with 'discussion'
+ *
+ * @param string $hook
+ * @param string $type
+ * @param string $message
+ * @param array  $params
  */
-function wineforumtopic_notify_message($hook, $entity_type, $returnvalue, $params) {
+function wineforumtopic_notify_message($hook, $type, $message, $params) {
 	$entity = $params['entity'];
 	$to_entity = $params['to_entity'];
 	$method = $params['method'];
-	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'wineforumtopic')) {
 
+	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'wineforumtopic')) {
 		$descr = $entity->description;
 		$title = $entity->title;
 		$url = $entity->getURL();
+		$owner = $entity->getOwnerEntity();
+		$group = $entity->getContainerEntity();
 
-		$msg = get_input('topicmessage');
-		if (empty($msg))
-			$msg = get_input('topic_post');
-		if (!empty($msg))
-			$msg = $msg . "\n\n"; else
-			$msg = '';
-
-		$owner = get_entity($entity->container_guid);
-		if ($method == 'sms') {
-			return elgg_echo("wineforumtopic:new") . ': ' . $url . " ({$owner->name}: {$title})";
-		} else {
-			return elgg_get_logged_in_user_entity()->name . ' ' . elgg_echo("wine:viawine") . ': ' . $title . "\n\n" . $msg . "\n\n" . $entity->getURL();
-		}
+		return elgg_echo('wine:notification', array(
+			$owner->name,
+			$group->name,
+			$entity->title,
+			$entity->description,
+			$entity->getURL()
+		));
 	}
+
 	return null;
 }
 
+/**
+ * Create discussion reply notification body
+ *
+ * @param string $hook
+ * @param string $type
+ * @param string $message
+ * @param array  $params
+ */
+function wine_discussion_create_reply_notification($hook, $type, $message, $params) {
+	$reply = $params['annotation'];
+	$method = $params['method'];
+	$topic = $reply->getEntity();
+	$poster = $reply->getOwnerEntity();
+	$group = $topic->getContainerEntity();
+
+	return elgg_echo('discussion:notification:reply:body', array(
+		$poster->name,
+		$topic->title,
+		$group->name,
+		$reply->value,
+		$topic->getURL(),
+	));
+}
+
+/**
+ * Catch reply to discussion topic and generate notifications
+ *
+ * @todo this will be replaced in Elgg 1.9 and is a clone of object_notifications()
+ *
+ * @param string         $event
+ * @param string         $type
+ * @param ElggAnnotation $annotation
+ * @return void
+ */
+function wine_discussion_reply_notifications($event, $type, $annotation) {
+	global $CONFIG, $NOTIFICATION_HANDLERS;
+
+	if ($annotation->name !== 'wine_topic_post') {
+		return;
+	}
+
+	// Have we registered notifications for this type of entity?
+	$object_type = 'object';
+	$object_subtype = 'wineforumtopic';
+
+	$topic = $annotation->getEntity();
+	if (!$topic) {
+		return;
+	}
+
+	$poster = $annotation->getOwnerEntity();
+	if (!$poster) {
+		return;
+	}
+
+	if (isset($CONFIG->register_objects[$object_type][$object_subtype])) {
+		$subject = $CONFIG->register_objects[$object_type][$object_subtype];
+		$string = $subject . ": " . $topic->getURL();
+                $subject =elgg_echo('discussion:notification:reply:subject');
+		// Get users interested in content from this person and notify them
+		// (Person defined by container_guid so we can also subscribe to groups if we want)
+		foreach ($NOTIFICATION_HANDLERS as $method => $foo) {
+			$interested_users = elgg_get_entities_from_relationship(array(
+				'relationship' => 'notify' . $method,
+				'relationship_guid' => $topic->getContainerGUID(),
+				'inverse_relationship' => true,
+				'types' => 'user',
+				'limit' => 0,
+			));
+
+			if ($interested_users && is_array($interested_users)) {
+				foreach ($interested_users as $user) {
+					if ($user instanceof ElggUser && !$user->isBanned()) {
+						if (($user->guid != $poster->guid) && has_access_to_entity($topic, $user) && $topic->access_id != ACCESS_PRIVATE) {
+							$body = elgg_trigger_plugin_hook('notify:annotation:message', $annotation->getSubtype(), array(
+								'annotation' => $annotation,
+								'to_entity' => $user,
+								'method' => $method), $string);
+							if (empty($body) && $body !== false) {
+								$body = $string;
+							}
+							if ($body !== false) {
+								notify_user($user->guid, $poster->guid, $subject, $body, null, array($method));
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 /**
  * A simple function to see who can edit a wine discussion post
  * @param the comment $entity

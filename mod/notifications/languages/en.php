@@ -12,7 +12,7 @@ $english = array(
 	'notifications:subscriptions:collections:edit' => 'To edit your shared access notifications, click here.',
 
 	'notifications:subscriptions:changesettings' => 'Notifications',
-	'notifications:subscriptions:changesettings:groups' => 'Group notifications',
+	'notifications:subscriptions:changesettings:groups' => 'Wines notifications',
 
 	'notifications:subscriptions:title' => 'Notifications per user',
 	'notifications:subscriptions:description' => 'To receive notifications from your friends (on an individual basis) when they create new content, find them below and select the notification method you would like to use.',

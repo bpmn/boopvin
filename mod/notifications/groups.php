@@ -29,6 +29,7 @@ $groupmemberships = elgg_get_entities_from_relationship(array(
 	'relationship' => 'member',
 	'relationship_guid' => elgg_get_logged_in_user_guid(),
 	'types' => 'group',
+        'subtypes'=>'wine',
 	'limit' => 9999,
 ));
 

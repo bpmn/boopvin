@@ -145,6 +145,11 @@ function winetheme_init() {
 function add_notification_site($event,$type,$entity){
     	// Turn on site notifications by default
 	set_user_notification_setting($entity->getGUID(), 'site', true);
+        $metaname = 'collections_notifications_preferences_site' ;
+	$entity->$metaname = -1;
+        $metaname = 'collections_notifications_preferences_email' ;
+	$entity->$metaname = -1;
+        
         return true;
 }
 

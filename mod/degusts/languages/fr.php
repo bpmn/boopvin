@@ -304,8 +304,18 @@ Peinture',
     'degust:link'=>"Voir la fiche",
     'degust:add'=>"déguster",
     'degust:wine'=> "dégustations",
-    'river:degust:object:degust' => '%s a dégusté %s',
-    'river:comment:object:degust' => '%s a commenté votre dégustation %s'
+    'river:degust:object:degust' => "%s a dégusté %s",
+    'river:comment:object:degust' => "%s a commenté votre dégustation %s",
+    
+    'degust:notification:topic:subject'=>"a posté une nouvelle dégustation",
+    
+    'degust:notification' =>
+"%s a dégusté %s
+
+
+Voir la fiche de dégustation:
+%s
+",
 );
 
 add_translation("fr", $french);

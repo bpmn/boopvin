@@ -75,9 +75,9 @@ function notifications_plugin_pagesetup() {
 		);
 		elgg_register_menu_item('page', $params);
 		
-		if (elgg_is_active_plugin('groups')) {
+		if (elgg_is_active_plugin('wines')) {
 			$params = array(
-				'name' => '2_group_notify',
+				'name' => '2_wine_notify',
 				'text' => elgg_echo('notifications:subscriptions:changesettings:groups'),
 				'href' => "notifications/group",
 			);
