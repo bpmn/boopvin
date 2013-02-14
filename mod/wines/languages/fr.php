@@ -44,8 +44,8 @@ $french = array(
         'wine:white_sparkling'=>'Blanc effervescent',
         'wine:rose_sparkling'=>'Rosé effervescent',
         'wine:moelleux'=>'Moelleux/Liquoreux Blanc (Jurançon, Sauternes etc..)',
-        'wine:vdn_rouge'=>'Vin Doux Naturel rouge (Porto rouge, Banyuls etc..)',
-        'wine:vdn_blanc'=>'Vin Doux Naturel Banc (Porto Blanc, Muscat etc..)',
+        'wine:vdn_rouge'=>'Vin Doux Naturel Rouge (Porto rouge, Banyuls etc..)',
+        'wine:vdn_blanc'=>'Vin Doux Naturel Blanc (Porto Blanc, Muscat etc..)',
     
     
         'wine:profile:red'=>'Rouge',             
@@ -55,7 +55,7 @@ $french = array(
         'wine:profile:rose_sparkling'=>'Rosé effervescent',
         'wine:profile:moelleux'=>'Moelleux/Liquoreux blanc',
         'wine:profile:vdn_rouge'=>'Vin Doux Naturel rouge',
-        'wine:profile:vdn_blanc'=>'Vin Doux Naturel banc',
+        'wine:profile:vdn_blanc'=>'Vin Doux Naturel blanc',
     
     
     

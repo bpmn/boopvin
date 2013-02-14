@@ -14,6 +14,11 @@ $french = array(
         "item:group:restobar"=>"Les Bars,Restos,Caves,Domaines...",
         "register_me"=>"Cliquer ici pour s'enregistrer!",
         "register_message"=>"Formulaire d'enregistrement à Avenue Vin",
+        "post1"=>"1: Recherchez un vin",
+        "post2"=>"2: Fiches de degustation !",
+        "post3"=>"Gerez vos vin",
+        "post4"=>"Visualisez vos degustations",
+        "post5"=>"Espace Pro: Bars a vins, Restos, Caves, news...",
 /**
  * Sites
  */

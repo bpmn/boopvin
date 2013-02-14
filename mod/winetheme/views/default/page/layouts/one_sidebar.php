@@ -38,8 +38,19 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
                 
             ?>
             
-            <div class="fb-like" data-href="http://www.avenuevin.com" data-send="false" data-width="225" data-show-faces="true" data-font="tahoma"></div>
-            <?php
+            
+            <?php 
+            if (!elgg_is_logged_in()) {
+            echo('<div class="fb-like-box fb_iframe_widget" data-header="false" data-stream="false" data-show-faces="true" data-width="205" data-href="http://www.facebook.com/AvenueVin" fb-xfbml-state="rendered">');
+            echo("</div>");
+            } else {
+            
+            }
+            ?>    
+                
+                
+                
+                <?php
 			echo elgg_view('page/elements/sidebar', $vars);
 		?>
 	</div>
