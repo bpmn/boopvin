@@ -30,4 +30,3 @@ function contact_page_handler($page) {
 }
 		
         elgg_register_event_handler('init','system','contact_init');
-?>

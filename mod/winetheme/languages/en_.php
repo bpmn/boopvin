@@ -1,11 +1,8 @@
 <?php
 
 $english = array(
-
-	"item:group:wine"=>"Wines",
-
+    "item:group:wine" => "Wines",
 );
 
-	add_translation("en", $english);
+add_translation("en", $english);
 
-?>

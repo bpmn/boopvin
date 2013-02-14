@@ -426,4 +426,3 @@ function degust_notify_message($hook, $type, $message, $params) {
 	return null;
 }
 
-?>

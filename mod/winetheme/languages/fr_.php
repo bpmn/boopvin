@@ -1349,4 +1349,3 @@ Ne répondez pas à cet e-mail.",
 );
 
 add_translation("fr",$french);
-?>
