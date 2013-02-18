@@ -1103,7 +1103,7 @@ function wine_discussion_reply_notifications($event, $type, $annotation) {
 	if (isset($CONFIG->register_objects[$object_type][$object_subtype])) {
 		$subject = $CONFIG->register_objects[$object_type][$object_subtype];
 		$string = $subject . ": " . $topic->getURL();
-                $subject =elgg_echo('discussion:notification:reply:subject');
+                $subject =elgg_echo('discussion:notification:reply:subject',array($poster->name));
 		// Get users interested in content from this person and notify them
 		// (Person defined by container_guid so we can also subscribe to groups if we want)
 		foreach ($NOTIFICATION_HANDLERS as $method => $foo) {

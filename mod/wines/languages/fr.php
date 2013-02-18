@@ -247,7 +247,7 @@ Voir et participer à la discussion:
 Voir la discussion:
 %s
 ",
-    'discussion:notification:reply:subject' => "a posté une réponse"
+    'discussion:notification:reply:subject' => "%s a posté une réponse",
 );
 
 add_translation("fr", $french);

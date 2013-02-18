@@ -36,6 +36,9 @@ if (!$annotation) {
 	forward(REFERER);
 }
 
+
+
+
 // notify if poster wasn't owner
 if ($entity->owner_guid != $user->guid) {
 
@@ -52,6 +55,31 @@ if ($entity->owner_guid != $user->guid) {
 				))
 			);
         //add_to_river('river/annotation/generic_comment/create','comment', $user->guid, $entity->guid, "", 0, $annotation);
+}
+
+// notifier les participants qui ont commenté la même dégustation
+
+$comments = $entity->getAnnotations('generic_comment', 1000);
+if ($comments) {
+    $participants = array();
+    foreach ($comments as $comment) {
+        if (!in_array($comment->owner_guid, $posters) && ($comment->owner_guid != $entity->owner_guid ) && ($comment->owner_guid != $user->getGUID() )) {
+            $participants[] = $comment->owner_guid;
+        }
+    }
+    if ($participants) {
+        foreach ($participants as $participant) {
+            notify_user($participant, $user->guid, elgg_echo('generic_comment:email:subject'), elgg_echo('generic_comment:email:body', array(
+                        $entity->title,
+                        $user->name,
+                        $comment_text,
+                        $entity->getURL(),
+                        $user->name,
+                        $user->getURL()
+                    ))
+            );
+        }
+    }
 }
 
 // list the last comment

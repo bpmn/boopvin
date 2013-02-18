@@ -360,7 +360,7 @@ function degust_notifications($event, $type, $return, $param) {
 	}
 
 	if (isset($CONFIG->register_objects[$object_type][$object_subtype])) {
-		$subject = $CONFIG->register_objects[$object_type][$object_subtype];
+		$subject = $poster->name." ".$CONFIG->register_objects[$object_type][$object_subtype];
 		$string = $subject . ": " . $degust->getURL();
 
 		// Get users interested in content from this person and notify them
