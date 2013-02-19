@@ -164,6 +164,10 @@ or click below to view the restobar's join requests:
     'restobar:longitude' => 'Longitude',
     'restobar:clickmap' => "Cliquer pour visualiser le plan",
     'restobar:cave:none' => 'pas de vin en cave',
+    
+    'restobarnews:email:subject'=>'%s a actualisé ses nouvelles du moment ! ',
+    'restobarnews:email:body'=>'Voir les nouvelles du moment concernant %s:
+%s',
 );
 
 add_translation("fr", $french);

@@ -69,7 +69,8 @@ if ($comments) {
     }
     if ($participants) {
         foreach ($participants as $participant) {
-            notify_user($participant, $user->guid, elgg_echo('generic_comment:email:subject'), elgg_echo('generic_comment:email:body', array(
+            notify_user($participant, $user->guid, elgg_echo('generic_comment:email:subject'),
+                        elgg_echo('generic_comment:email:body', array(
                         $entity->title,
                         $user->name,
                         $comment_text,

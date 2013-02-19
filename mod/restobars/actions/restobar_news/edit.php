@@ -11,6 +11,7 @@ $desc=_elgg_html_decode(get_input("description"));
 $guid = (int) get_input('restobarnews_guid');
 $restobarnews=get_entity($guid);
 $container=$restobarnews->getContainerEntity();
+$container_guid=$container->getGUID();
 
 elgg_make_sticky_form('restobarnews');
 
@@ -40,8 +41,31 @@ elgg_clear_sticky_form('restobarnews');
 //	system_message(elgg_echo('discussion:topic:updated'));
 //}
 
-add_to_river('river/object/restobarnews/create', 'update', $container->getGUID(), $restobarnews->guid);
+add_to_river('river/object/restobarnews/create', 'update', $container_guid, $restobarnews->guid);
 //system_message(elgg_echo('restobarnews:updated'));
+
+// notifications
+
+$contacts = elgg_get_entities_from_relationship(array(
+	'relationship' => 'friend',
+	'relationship_guid' => $container_guid,
+	'inverse_relationship' => true,
+	'types' => 'user',
+	'limit' => 100000,
+	
+));
+
+
+if ($contacts) {
+    foreach ($contacts as $contact) {
+        notify_user($contact->getGUID(),$container_guid, elgg_echo('restobarnews:email:subject',array($container->name)), elgg_echo('restobarnews:email:body', array(
+                    $container->name,
+                    $container->getURL()
+                ))
+        );
+    }
+}
+
 
 
 $content= elgg_view('output/longtext',array('value'=>$restobarnews->description));

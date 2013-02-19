@@ -164,6 +164,9 @@ or click below to view the restobar's join requests:
     'restobar:longitude' => 'Longitude',
     'restobar:clickmap' => "Click here to visualise the map",
     'restobar:cave:none' => 'no wine in the cellar',
+    
+    'restobarnews:email:subject'=>'',
+    'restobarnews:email:body'=>'',
 );
 
 add_translation("en", $english);
