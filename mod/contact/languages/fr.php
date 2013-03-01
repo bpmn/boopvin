@@ -6,7 +6,7 @@
  */
 
 $french = array(
-    'contact' => 'contactez nous',
+    'contact' => 'contactez nous', 
     'contact:thanks' => " Merci de nous avoir contacté",
     'contact:merci' => " Merci !",
     'contact:required' => 'champs obligatoires',
