@@ -70,4 +70,4 @@ elgg_register_event_handler('init','system','mobile_init');
 elgg_register_action("mobile/login",$CONFIG->pluginspath . "mobile/actions/login.php",'public');
 		
 
-?>
+

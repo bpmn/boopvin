@@ -13,6 +13,8 @@ function expages_init() {
 	elgg_register_page_handler('privacy', 'expages_page_handler');
 	elgg_register_page_handler('expages', 'expages_page_handler');
 	
+        
+        
 	// Register public external pages
 	elgg_register_plugin_hook_handler('public_pages', 'walled_garden', 'expages_public');
 
@@ -40,7 +42,7 @@ function expages_public($hook, $handler, $return, $params){
  * Setup the links to site pages
  */
 function expages_setup_footer_menu() {
-	$pages = array('about', 'terms', 'privacy');
+	$pages = array('about', 'terms', 'privacy','contact');
 	foreach ($pages as $page) {
 		$url = "$page";
 		$wg_item = new ElggMenuItem($page, elgg_echo("expages:$page"), $url);

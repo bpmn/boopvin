@@ -43,6 +43,11 @@ function degust_init(){
         
         // Register URL handlers for wine
 	elgg_register_entity_url_handler('object', 'degust', 'degust_url');
+        register_notification_object('object', 'degust', elgg_echo('degust:notification:topic:subject'));
+        
+        elgg_register_plugin_hook_handler('object:notifications', 'object', 'degust_notifications');
+        elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'degust_notify_message');
+        
 };
 
 /**
@@ -321,4 +326,103 @@ function degust_setup_owner_block_menu($hook, $type, $return, $params) {
 	}
     return $return;
 }
-?>
+
+
+/**
+ * Catch reply to discussion topic and generate notifications
+ *
+ * @todo this will be replaced in Elgg 1.9 and is a clone of object_notifications()
+ *
+ * @param string         $event
+ * @param string         $type
+ * @param ElggAnnotation $annotation
+ * @return void
+ */
+function degust_notifications($event, $type, $return, $param) {
+	
+        global $CONFIG, $NOTIFICATION_HANDLERS;
+        $degust=$param['object'];
+        
+
+	if ($degust->getSubtype() !== 'degust') {
+		return ;
+	}
+
+	// Have we registered notifications for this type of entity?
+	$object_type = 'object';
+	$object_subtype = 'degust';
+
+	
+
+	$poster = $degust->getOwnerEntity();
+	if (!$poster) {
+		return $return;
+	}
+
+	if (isset($CONFIG->register_objects[$object_type][$object_subtype])) {
+		$subject = $poster->name." ".$CONFIG->register_objects[$object_type][$object_subtype];
+		$string = $subject . ": " . $degust->getURL();
+
+		// Get users interested in content from this person and notify them
+		// (Person defined by container_guid so we can also subscribe to groups if we want)
+	foreach ($NOTIFICATION_HANDLERS as $method => $foo) {
+			$interested_users = elgg_get_entities_from_relationship(array(
+				'relationship' => 'notify' . $method,
+				'relationship_guid' => $degust->getOwnerGUID(),
+				'inverse_relationship' => true,
+				'types' => 'user',
+				'limit' => 999999,
+			));
+                        
+                       
+
+	if ($interested_users && is_array($interested_users)) {
+					foreach ($interested_users as $user) {
+						if ($user instanceof ElggUser && !$user->isBanned()) {
+							if (($user->guid != $SESSION['user']->guid) && has_access_to_entity($degust, $user)
+							&& $degust->access_id != ACCESS_PRIVATE) {
+								$body = elgg_trigger_plugin_hook('notify:entity:message', $degust->getType(), array(
+									'entity' => $degust,
+									'to_entity' => $user,
+									'method' => $method), $string);
+								if (empty($body) && $body !== false) {
+									$body = $string;
+								}
+								if ($body !== false) {
+									notify_user($user->guid, $degust->owner_guid, $subject, $body,
+										null, array($method));
+								}
+							}
+						}
+					}
+				}
+		}
+	
+         $return=true;
+        }
+
+return $return;
+}
+
+function degust_notify_message($hook, $type, $message, $params) {
+	$entity = $params['entity'];
+	$to_entity = $params['to_entity'];
+	$method = $params['method'];
+
+	if (($entity instanceof ElggEntity) && ($entity->getSubtype() == 'degust')) {
+		$descr = $entity->description;
+		$title = $entity->title;
+		$url = $entity->getURL();
+		$owner = $entity->getOwnerEntity();
+		$wine = $entity->getContainerEntity();
+
+		return elgg_echo('degust:notification', array(
+			$owner->name,
+			$entity->title,
+			$entity->getURL()
+		));
+	}
+
+	return null;
+}
+

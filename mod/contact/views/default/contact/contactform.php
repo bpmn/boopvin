@@ -105,7 +105,7 @@ if(isset($_POST['submitted']))
 </fieldset>
 
 <div class='container'>
-    <?php echo elgg_view('input/submit'); ?>
+    <?php echo elgg_view('input/submit',array('value'=>elgg_echo('send'))); ?>
 </div>
 
 </fieldset>

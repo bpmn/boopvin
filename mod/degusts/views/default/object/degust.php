@@ -21,6 +21,10 @@ $poster_link = elgg_view('output/url', array(
 	'is_trusted' => true,
 ));
 
+if ($poster->pro == "yes") {
+    $poster_link .= elgg_view('output/img',array('src'=>"mod/profile/graphics/pro.jpg",'title'=>$poster->job)); ;
+    }
+
 //résumé de la degustation sinon un apercu des aromes sinon accord met/vin
 
 if (isset($degust->comment)){
