@@ -12,7 +12,7 @@ $english = array(
     'degust:olfactif' => "Olfactory analysis",
     'degust:gustatif' => "Taste analysis",
     'degust:comment' => "Comments and notes",
-    'degust:couleur_intensity' => 'Intensity of the robe',
+    'degust:couleur_intensity' => 'Robe intensity',
     'degust:couleur' => 'The color',
     'degust:reflet' => 'The reflections',
     'degust:bulle' => 'The bubbles',
@@ -246,11 +246,19 @@ Paint',
     'degust:module:title' => "Vintage %s",
     'degust:post_profile' => "posted %s",
     'degust:post_wine' => "posted %s by %s",
-    'degust:link' => "See the wine tasting form",
-    'degust:add' => "wine tasting",
+    'degust:link' => "Tasting notes",
+    'degust:add' => "Add wine tasting",
     'degust:wine' => "wine tastings",
     'river:degust:object:degust' => '%s did taste %s',
-    'river:comment:object:degust' => '%s commented on your wine tasting %s'
+    'river:comment:object:degust' => '%s commented on your wine tasting %s',
+    'degust:notification:topic:subject' => "posted a new wine tasting",
+    'degust:notification' =>
+    "%s tasted '%s'
+
+
+View the wine tasting notes:
+%s
+",
 );
 
 add_translation("en", $english);
