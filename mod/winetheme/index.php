@@ -38,7 +38,7 @@ $content = "<div id=\"avenue_activity\">".$content."</div>";
 
 $content = $content."<div id=\"images_slider\" style=\"display:none;\">";
 
-$content = $content."<div id=\"coin-slider\">";
+/*$content = $content."<div id=\"coin-slider\">";
 
  
 
@@ -61,8 +61,11 @@ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/
 $content = $content."           </div>";
 
 
-$content = $content."</div>";
+$content = $content."</div>";*/
+$user_list=elgg_view('ranking/users',array());
 
+$content.=$user_list;
+$content.=elgg_view('ranking/restobars',array())."</div>";
 /*
 
 $content = $content."<div id=\"nivo_slider\">";

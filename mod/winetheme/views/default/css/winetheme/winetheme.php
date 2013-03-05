@@ -3,7 +3,8 @@
  * Winetheme css
  */
 
-
+$verre_score = '/mod/winetheme/views/default/css/winetheme/images/score.jpg';
+$verre_score = elgg_normalize_url($verre_score);
 ?>
 
 body {
@@ -275,8 +276,24 @@ div#job{
     width: 65%;
 }
 
+/* ***************************************
+	Ranking
+*************************************** */
+#score {
+    font-family:NotethisRegular;
+    font-size: 1.1em; 
+    background: url(<?php echo $verre_score; ?>) no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 40px;
+    text-align: right;
+    vertical-align: middle;
+    
+}
 
-
+.list-ranking{
+    width: 70%;
+}
 
 .theme-default .nivoSlider {
 	position:relative;
