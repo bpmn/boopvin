@@ -165,8 +165,9 @@ or click below to view the restobar's join requests:
     'restobar:clickmap' => "Click here to visualise the map",
     'restobar:cave:none' => 'no wine in the cellar',
     
-    'restobarnews:email:subject'=>'',
-    'restobarnews:email:body'=>'',
+    'restobarnews:email:subject'=>'%s updated its latest news ! ',
+    'restobarnews:email:body'=>'View the latest news about %s:
+%s',
 );
 
 add_translation("en", $english);

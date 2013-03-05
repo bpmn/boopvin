@@ -225,8 +225,30 @@ or click below to view the wine's join requests:
     'wine:ecml:discussion' => 'wine Discussions',
     'wine:ecml:wineprofile' => 'wine profiles',
     'wine:restobar:nosuggestion' => 'no suggestions',
-    'wine:degust:all' => 'the wine tastings',
-    'wine:addtocave' => 'Add to my places'
+    'wine:degust:all' => 'Wine tastings list',
+    'wine:addtocave' => 'Add to my places',
+    
+    //notification
+
+    'discussion:notification:topic:subject' => 'New discussion topic',
+    'wine:notification' =>
+    "%s added a new discussion topic on the wine '%s':
+
+%s
+%s
+
+View and contribute to the discussion:
+%s
+",
+    'discussion:notification:reply:body' =>
+    "%s posted a reply on the discussion '%s' about the wine '%s':
+
+%s
+
+View the discussion:
+%s
+",
+    'discussion:notification:reply:subject' => "%s posted a reply",
 );
 
 add_translation("en", $english);
