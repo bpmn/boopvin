@@ -259,6 +259,7 @@ Peinture',
 Voir la fiche de dégustation:
 %s
 ",
+    "item:object:degust"=>'Dégustations'
 );
 
 add_translation("fr", $french);

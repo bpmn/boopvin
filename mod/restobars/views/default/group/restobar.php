@@ -47,6 +47,9 @@ if ($vars['full_view']) {
         }
 	$params = $params + $vars;
 	$list_body = elgg_view('group/elements/summary', $params);
-        $vars['image_alt']=$dist_display;
+        if($dist_display)
+            $vars['image_alt']=$dist_display;
+        if (elgg_in_context("ranking"))
+            $vars['image_alt']= "<div id=\"score2\">$restobar->score</div>";
 	echo elgg_view_image_block($icon, $list_body, $vars);
 }

@@ -259,6 +259,7 @@ Paint',
 View the wine tasting notes:
 %s
 ",
+    "item:object:degust"=>'Tasting notes'
 );
 
 add_translation("en", $english);

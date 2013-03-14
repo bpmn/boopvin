@@ -16,6 +16,49 @@ $options['pagination']=FALSE;
 $options['limit']=20;
 
 
+/*$slider = "<div id=\"images_slider\" style=\"display:none;\">";
+
+$slider = $slider."<div id=\"coin-slider\">";
+
+ 
+
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
+ $slider.= '<span>'.elgg_echo('post1').'</span>';
+ 
+
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
+  $slider.= '<span>'.elgg_echo('post2').'</span>';
+  
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
+  $slider.= '<span>'.elgg_echo('post3').'</span>';
+  
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
+  $slider.= '<span>'.elgg_echo('post4').'</span>';
+  
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
+  $slider.= '<span>'.elgg_echo('post5').'</span>';
+  
+$slider = $slider."           </div>";
+
+
+$slider = $slider."</div>";*/
+
+
+/* Module classement */
+elgg_push_context("ranking");
+$rank = "<div id=\"ranking\" >";
+$rank .= "<div id=\"ranking_list\" >";
+
+$user_list = elgg_view('ranking/users', array('class' => 'list-ranking'));
+if ($user_list)
+    $rank.="<h3>" . elgg_echo("ranking:users") . "</h3>" . $user_list;
+$restobar_list = elgg_view('ranking/restobars', array('class' => 'list-ranking'));
+if ($restobar_list)
+    $rank.="<h3>" . elgg_echo("ranking:restobars") . "</h3>" . $restobar_list;
+$rank.="</div></div>"; //fermeture div id ranking
+elgg_pop_context();
+
+
 $welcome = "<div id=\"index_welcome\">";
 
 $welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
@@ -30,68 +73,19 @@ $welcome .= "</div>";
 //$content = elgg_view_title(elgg_echo('content:latest'));
 
 
-$content .= elgg_list_river($options);
+$list_river = elgg_list_river($options);
 
 
-$content = "<div id=\"avenue_activity\">".$content."</div>";
+$content .= "<div id=\"avenue_activity\">".$list_river."</div>";
 //$content = $content;
 
-$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
-
-/*$content = $content."<div id=\"coin-slider\">";
-
- 
-
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
- $content.= '<span>'.elgg_echo('post1').'</span>';
- 
-
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
-  $content.= '<span>'.elgg_echo('post2').'</span>';
-  
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
-  $content.= '<span>'.elgg_echo('post3').'</span>';
-  
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
-  $content.= '<span>'.elgg_echo('post4').'</span>';
-  
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
-  $content.= '<span>'.elgg_echo('post5').'</span>';
-  
-$content = $content."           </div>";
-
-
-$content = $content."</div>";*/
-$user_list=elgg_view('ranking/users',array());
-
-$content.=$user_list;
-$content.=elgg_view('ranking/restobars',array())."</div>";
-/*
-
-$content = $content."<div id=\"nivo_slider\">";
-
-
-
- $content = $content."<div class=\"slider-wrapper theme-default\">";
- $content = $content."           <div id=\"avenue_slider\" class=\"nivoSlider\">";
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/search.png', 'title'=>'1: Recherchez un vin'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/degust.png', 'title'=>'2: Fiches de degustation !'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png', 'title'=>'Gerez vos vins'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png', 'title'=>'Visualisez vos degustations','data-transition'=>'slideInLeft'));
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png','data-thumb'=>'mod/winetheme/views/default/css/winetheme/images/resto.png','title'=>'Espace Pro: Bars a vins, Restos, Caves, news...'));
- $content = $content."           </div>";
- $content = $content."           <div id=\"htmlcaption\" class=\"nivo-html-caption\">";
- $content = $content."               <strong>This</strong> is an example of a <em>HTML</em> caption with <a href=\"#\">a link</a>."; 
- $content = $content."           </div>";
- $content = $content."       </div>";
- 
-$content = $content."</div>";
-*/
 
 
 
 
-$content_final = $welcome.$content;
+
+
+$content_final = $slider.$rank.$welcome.$content;
 
 
 $params = array(

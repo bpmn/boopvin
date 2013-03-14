@@ -52,6 +52,7 @@ if (elgg_get_context() == 'gallery') {
 	}
 
 	$list_body = elgg_view('user/elements/summary', $params);
-        $vars['image_alt']= "<div id=\"score\">$entity->score</div>";
+        if (elgg_get_context()=="ranking")
+            $vars['image_alt']= "<div id=\"score\">$entity->score</div>";
 	echo elgg_view_image_block($icon, $list_body, $vars);
 }
