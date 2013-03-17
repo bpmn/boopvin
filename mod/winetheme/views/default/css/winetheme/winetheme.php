@@ -3,7 +3,11 @@
  * Winetheme css
  */
 
+$verre_score = '/mod/winetheme/views/default/css/winetheme/images/score.jpg';
+$verre_score = elgg_normalize_url($verre_score);
 
+$verre_score2 = '/mod/winetheme/views/default/css/winetheme/images/score2.jpg';
+$verre_score2 = elgg_normalize_url($verre_score2);
 ?>
 
 body {
@@ -24,11 +28,11 @@ width: 80%;
 
 
 #images_slider{
-position: absolute;
+/*position: absolute;
 top: 10px;
-left: 405px;
-height: 100px;
-width: 340px;
+left: 405px;*/
+height: 30px;
+width: auto;
 
 }
 
@@ -102,6 +106,8 @@ text-align: center;
 #avenue_activity {
 width: 370px;
 }
+
+
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
   display: none;
@@ -275,6 +281,65 @@ div#job{
     width: 65%;
 }
 
+/* ***************************************
+	Ranking
+*************************************** */
+#score {
+    font-family:NotethisRegular;
+    font-size: 1.1em; 
+    background: url(<?php echo $verre_score; ?>) no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 40px;
+    text-align: right;
+    vertical-align: middle;
+    
+}
+#score2 {
+    font-family:NotethisRegular;
+    font-size: 1.1em; 
+    background: url(<?php echo $verre_score2; ?>) no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 40px;
+    text-align: right;
+    vertical-align: middle;
+    
+}
+
+
+#ranking{
+   position: absolute;
+   top: 10px;
+   left: 405px;
+   height: auto;
+   width: 340px;
+   
+}
+
+
+#ranking_list{
+   float: right;
+   width: 250px;
+   }
+
+#ranking .elgg-image-block{
+    padding:0px;
+}
+
+#ranking_list>h3{
+    text-align: center;
+    font-family:NotethisRegular;
+}
+
+/*.list-ranking{
+    width: 70%;
+    float: right;
+    clear:both;
+}*/
+
+
+/***************************************************************/
 
 
 

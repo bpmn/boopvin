@@ -21,4 +21,3 @@
 
 	echo  elgg_view_page($title, $body);
 
-?>

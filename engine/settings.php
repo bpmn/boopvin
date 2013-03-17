@@ -49,7 +49,7 @@ $CONFIG->dbpass = 'root';
  *
  * @global string $CONFIG->dbname
  */
-$CONFIG->dbname = 'boopwine_db';
+$CONFIG->dbname = 'avenue_data';
 
 /**
  * The database host.
