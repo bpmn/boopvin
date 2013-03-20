@@ -46,7 +46,7 @@ $slider = $slider."</div>";*/
 
 /* Module classement */
 elgg_push_context("ranking");
-$rank = "<div id=\"ranking\" >";
+$rank = "<div id=\"ranking\" class=\"clearfix\">";
 $rank .= "<div id=\"ranking_list\" >";
 
 $user_list = elgg_view('ranking/users', array('class' => 'list-ranking'));
@@ -59,7 +59,7 @@ $rank.="</div></div>"; //fermeture div id ranking
 elgg_pop_context();
 
 
-$welcome = "<div id=\"index_welcome\">";
+$welcome = "<div id=\"index_welcome\" >";
 
 $welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
 $welcome .= "<br>";
@@ -76,7 +76,7 @@ $welcome .= "</div>";
 $list_river = elgg_list_river($options);
 
 
-$content .= "<div id=\"avenue_activity\">".$list_river."</div>";
+$content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 //$content = $content;
 
 

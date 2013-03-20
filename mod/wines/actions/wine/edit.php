@@ -68,6 +68,21 @@ if (sizeof($input) > 0) {
 	}
 }
 
+$error_auto=get_input('error_autocomplete');
+if ($error_auto=="-1") {
+    $admins=elgg_get_admins();
+    foreach($admins as $admin) {
+        notify_user($admin->getGUID(),
+				elgg_get_logged_in_user_guid(),
+				elgg_echo('error_auto:email:subject'),
+				elgg_echo('error_auto:email:body', array($wine->getURL()))
+			);
+    }
+    
+}
+
+
+
 // Validate create
 if (!$wine->domaine) {
 	register_error(elgg_echo("wine:notitle"));

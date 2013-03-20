@@ -11,6 +11,7 @@ $english = array(
     'profile:no' => 'no',
     'profile:job' => 'Job Title',
     'profile:aboutme' => 'About me...',
+    'profile:degust:count'=>"%s tasting notes"
 );
 
 add_translation('en', $english);

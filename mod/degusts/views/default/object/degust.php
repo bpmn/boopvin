@@ -22,7 +22,7 @@ $poster_link = elgg_view('output/url', array(
 ));
 
 if ($poster->pro == "yes") {
-    $poster_link .= elgg_view('output/img',array('src'=>"mod/profile/graphics/pro.jpg",'title'=>$poster->job)); ;
+    $poster_link .= elgg_view('output/img',array('src'=>"mod/profile/graphics/pro.jpg",'title'=>$poster->job)) ;
     }
 
 //résumé de la degustation sinon un apercu des aromes sinon accord met/vin
@@ -88,7 +88,7 @@ if (elgg_in_context('profile')){
 ));
     //$poster_text = elgg_echo('degust:post_profile', array($date)) ;  
     $poster_text = elgg_echo('degust:post_wine', array($date,$poster_link)) ;
-    
+    $excerpt ='';
     
 }else{
      $poster_icon = elgg_view_entity_icon($poster, 'tiny');
@@ -156,7 +156,7 @@ HTML;
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
-	$block= elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link));
+	$block= elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link,'class'=>'degust-image-block'));
         
    
         echo $block;

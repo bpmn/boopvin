@@ -92,23 +92,11 @@ function profile_page_handler($page) {
         elgg_load_js('elgg.degust');
         elgg_load_js('elgg.popup');
         
-        $options = array(
-	'type' => 'object',
-	'subtype' => 'degust',
-	'owner_guid' => $user->getGUID(),
-	'limit' => 15,
-	'full_view' => false,
-	'pagination' => true
-);
-         
-        //des degustations de l'utilisateur encadré d'un div
-        $list_user_degust=elgg_list_entities($options);
-        $content.="<div id=\"list_user_degust\" class=\"degust_list\">".$list_user_degust."</div>" ;
+     
         
-      
+        $content.=elgg_view("profile/degust",array('owner_guid'=>$user->getGUID()));
         
         $body = elgg_view_layout('one_column', array('content' => $content));
-        $dummy=0;
 	$body= elgg_view_page($user->name, $body);
         echo $body;
 	return true;

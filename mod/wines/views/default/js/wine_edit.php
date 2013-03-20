@@ -24,6 +24,7 @@
                 var array_it = [];
                 var array_us = [];
                 
+                
 array_us[0] = [
 
 "Alexander Valley",
@@ -2184,9 +2185,9 @@ array_fr[0] = [
 "Nuits-Saint-Georges premier cru Clos des Argillières",
 "Nuits-Saint-Georges premier cru Clos des Corvées",
 "Nuits-Saint-Georges premier cru Clos des Corvées Pagets",
-"Nuits-Saint-Georges premier cru Clos des Forêts Saint-...",
+"Nuits-Saint-Georges premier cru Clos des Forêts",
 "Nuits-Saint-Georges premier cru Clos des Grandes Vignes",
-"Nuits-Saint-Georges premier cru Clos des Porrets-Saint...",
+"Nuits-Saint-Georges premier cru Clos des Porrets",
 "Nuits-Saint-Georges premier cru Clos Saint-Marc",
 "Nuits-Saint-Georges premier cru En la Perrière Noblot",
 "Nuits-Saint-Georges premier cru La Richemone",
@@ -2320,7 +2321,7 @@ array_fr[0] = [
 "Rully premier cru Champs Cloux",
 "Rully premier cru Chapitre",
 "Rully premier cru Clos du Chaigne",
-"Rully premier cru Clos St Jacques",
+"Rully premier cru Clos Saint Jacques",
 "Rully premier cru Cloux",
 "Rully premier cru Grésigny",
 "Rully premier cru La Bressande",
@@ -3803,7 +3804,8 @@ array_fr[1] = [
 
                 
                 $( "#id_appellation" ).autocomplete({
-			source: function( request, response ) {
+
+                            source: function( request, response ) {
                                 
 				var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
                                 if ($('#id_country').val() == "France") {
@@ -3859,6 +3861,7 @@ array_fr[1] = [
                                 $('#id_region').val($('#id_region').val() + array_us[1][index]);
                                 }                                
                                 
+                                $('input[name="error_autocomplete"]').val(index);
                             }
 		});
 

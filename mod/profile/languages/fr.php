@@ -13,6 +13,7 @@ $french = array(
     'profile:no' => 'non',
     'profile:job' => 'Profession',
     'profile:aboutme' => 'A mon sujet...',
+    'profile:degust:count'=>"%s dégustations"
 );
 
 add_translation('fr', $french);
