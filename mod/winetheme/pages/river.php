@@ -135,7 +135,7 @@ $rank.="</div></div>"; //fermeture div id ranking
 elgg_pop_context();
 
 
-$content.=$rank;
+$content=$rank.$content;
 
 
 $sidebar = elgg_view('core/river/sidebar');

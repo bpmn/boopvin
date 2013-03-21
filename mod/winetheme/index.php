@@ -76,7 +76,7 @@ $welcome .= "</div>";
 $list_river = elgg_list_river($options);
 
 
-$content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
+$content = "<div id=\"avenue_activity\" >".$list_river."</div>";
 //$content = $content;
 
 
@@ -85,8 +85,8 @@ $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 
 
 
-$content_final = $slider.$rank.$welcome.$content;
-
+//$content_final = $slider.$rank.$welcome.$content;
+$content_final = $rank.$welcome.$content;
 
 $params = array(
 		'content' => $content_final,

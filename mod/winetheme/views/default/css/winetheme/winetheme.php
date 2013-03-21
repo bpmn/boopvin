@@ -109,11 +109,12 @@ width: 370px;
 
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
-  display: none;
+  display: none; 
   margin: 0 0 0px;
   padding: 0 0 0px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
+  clear:left
 }
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li:last-child {
@@ -133,6 +134,7 @@ width: 370px;
   padding: 0 0 0px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
+  clear:left
 }
 
 #avenue_activity2 ul.elgg-list > li:last-child {
@@ -141,7 +143,21 @@ width: 370px;
   border: none;
 }
 
+#avenue_activity2 *{
+    clear: none;
+}
 
+#avenue_activity2 .elgg-image-block:after{
+    clear: none;
+}
+
+#avenue_activity *{
+    clear: none;
+}
+
+#avenue_activity .elgg-image-block:after{
+    clear: none;
+}
 
 /* ***************************************
 	Profile
@@ -318,12 +334,13 @@ div#job{
 
 
 #ranking{
-   position: absolute;
-   top: 10px;
-   left: 405px;
+  // position: absolute;
+   //top: 10px;
+   //left: 405px;
    height: auto;
    width: 340px;
-   z-index:20000;
+   float: right; 
+   
  
 }
 
