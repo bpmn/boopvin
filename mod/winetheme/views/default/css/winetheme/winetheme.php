@@ -28,14 +28,13 @@ width: 80%;
 
 
 #images_slider{
-/*position: absolute;
+position: absolute;
 top: 10px;
-left: 405px;*/
-height: 30px;
-width: auto;
+left: 405px;
+height: 100px;
+width: 340px;
 
 }
-
 
 #register_window {
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/layer9.png') no-repeat;
@@ -110,11 +109,12 @@ width: 370px;
 
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li {
-  display: none;
+  display: none; 
   margin: 0 0 0px;
   padding: 0 0 0px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
+  clear:left
 }
 
 #avenue_activity ul.elgg-list.elgg-list-river.elgg-river > li:last-child {
@@ -134,6 +134,7 @@ width: 370px;
   padding: 0 0 0px;
   border: none;
   border-bottom: 1px solid #e7e7e7;
+  clear:left
 }
 
 #avenue_activity2 ul.elgg-list > li:last-child {
@@ -142,7 +143,21 @@ width: 370px;
   border: none;
 }
 
+#avenue_activity2 *{
+    clear: none;
+}
 
+#avenue_activity2 .elgg-image-block:after{
+    clear: none;
+}
+
+#avenue_activity *{
+    clear: none;
+}
+
+#avenue_activity .elgg-image-block:after{
+    clear: none;
+}
 
 /* ***************************************
 	Profile
@@ -272,9 +287,18 @@ div#job{
 
 
 #list_user_degust {
-        width: 35%;
-        float: left;
+        width: auto;
+        //float: left;
         
+}
+
+#list_user_degust .elgg-item{
+        width: 50%;
+        float: left;
+        height:60px;
+}
+#list_user_degust .elgg-pagination{
+        clear:left;
 }
 
 .elgg-col-2of3 {
@@ -289,8 +313,8 @@ div#job{
     font-size: 1.1em; 
     background: url(<?php echo $verre_score; ?>) no-repeat;
     background-position: center;
-    width: 45px;
-    height: 40px;
+    min-width: 45px;
+    min-height: 40px;
     text-align: right;
     vertical-align: middle;
     
@@ -308,19 +332,22 @@ div#job{
 }
 
 
+
 #ranking{
-   position: absolute;
-   top: 10px;
-   left: 405px;
+  // position: absolute;
+   //top: 10px;
+   //left: 405px;
    height: auto;
    width: 340px;
+   float: right; 
    
+ 
 }
 
 
 #ranking_list{
    float: right;
-   width: 250px;
+   width: 270px;
    }
 
 #ranking .elgg-image-block{
@@ -332,11 +359,7 @@ div#job{
     font-family:NotethisRegular;
 }
 
-/*.list-ranking{
-    width: 70%;
-    float: right;
-    clear:both;
-}*/
+
 
 
 /***************************************************************/

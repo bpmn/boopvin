@@ -24,6 +24,7 @@
                 var array_it = [];
                 var array_us = [];
                 
+                
 array_us[0] = [
 
 "Alexander Valley",
@@ -2184,9 +2185,9 @@ array_fr[0] = [
 "Nuits-Saint-Georges premier cru Clos des Argillières",
 "Nuits-Saint-Georges premier cru Clos des Corvées",
 "Nuits-Saint-Georges premier cru Clos des Corvées Pagets",
-"Nuits-Saint-Georges premier cru Clos des Forêts Saint-...",
+"Nuits-Saint-Georges premier cru Clos des Forêts",
 "Nuits-Saint-Georges premier cru Clos des Grandes Vignes",
-"Nuits-Saint-Georges premier cru Clos des Porrets-Saint...",
+"Nuits-Saint-Georges premier cru Clos des Porrets",
 "Nuits-Saint-Georges premier cru Clos Saint-Marc",
 "Nuits-Saint-Georges premier cru En la Perrière Noblot",
 "Nuits-Saint-Georges premier cru La Richemone",
@@ -2320,7 +2321,7 @@ array_fr[0] = [
 "Rully premier cru Champs Cloux",
 "Rully premier cru Chapitre",
 "Rully premier cru Clos du Chaigne",
-"Rully premier cru Clos St Jacques",
+"Rully premier cru Clos Saint Jacques",
 "Rully premier cru Cloux",
 "Rully premier cru Grésigny",
 "Rully premier cru La Bressande",
@@ -3775,11 +3776,14 @@ array_fr[1] = [
 
         ];
                 
-             
                 var accentMap = {
-            "à": "a", "â": "a", "é": "e", "è": "e", "ê": "e", "ë": "e",
-            "ï": "i", "î": "i", "ô": "o", "ö": "o", "û": "u", "ù": "u"
-            };
+			"é": "e",
+			"è": "e",
+                        "î": "i",
+                        "â": "a"
+
+		};
+                
          
                 
                 var normalize = function( term ) {
@@ -3792,89 +3796,47 @@ array_fr[1] = [
                 
 
                  $("#id_country").change(function(){
-                        $('#id_description').val('');
+                        $('#id_appellation').val('');
                         $('#id_region').val('');
 
                  });
 
-    function split( val ) {
-      return val.split( / \s*/ );
-    }
-    function extractLast( term ) {
-      return split( term ).pop();
-    }
-    function extractFirst( term ) {
-      return split( term ).shift();
-    }
-                
-                $( "#id_appellation" )
-                
-                      // don't navigate away from the field on tab when selecting an item
-                        .bind( "keydown", function( event ) {
-                            if ( event.keyCode === $.ui.keyCode.TAB &&
-                                $( this ).data( "ui-autocomplete" ).menu.active ) {
-                            event.preventDefault();
-                            }
-                        })
 
-                        .autocomplete({
-			        minLength: 0,
-                                source: function( request, response ) {
-                                    
-                                    
-                                var matcher = new RegExp( $.ui.autocomplete.escapeRegex( extractLast(request.term) ), "i" );
-                                var matcher2 = new RegExp( $.ui.autocomplete.escapeRegex( extractFirst(request.term) ), "i" );
-                                var search_array = [];
+                
+                $( "#id_appellation" ).autocomplete({
 
+                            source: function( request, response ) {
+                                
+				var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
                                 if ($('#id_country').val() == "France") {
-                                    search_array = array_fr[0];
-                                }
-                                if ($('#id_country').val() == "Spain") {
-                                    search_array = array_es[0];
+				response( $.grep( array_fr[0], function( value ) {
+					value = value.label || value.value || value;
+                                        return matcher.test( value ) || matcher.test( normalize( value ) );
+				}) );
                                 }
                                 
+                                if ($('#id_country').val() == "Spain") {
+				response( $.grep( array_es[0], function( value ) {
+					value = value.label || value.value || value;
+                                        return matcher.test( value ) || matcher.test( normalize( value ) );
+				}) );
+                                }
                                 if ($('#id_country').val() == "Italia") {
-                                    search_array = array_it[0];
+				response( $.grep( array_it[0], function( value ) {
+					value = value.label || value.value || value;
+                                        return matcher.test( value ) || matcher.test( normalize( value ) );
+				}) );
                                 }
                                 if ($('#id_country').val() == "United States") {
-                                    
-                                    search_array = array_us[0];
+				response( $.grep( array_us[0], function( value ) {
+					value = value.label || value.value || value;
+                                        return matcher.test( value ) || matcher.test( normalize( value ) );
+				}) );
                                 }
-
-
-                                response( $.grep( search_array, function( value ) {
-                                    value = value.truc || value.value || value;
-                                    // multi search returns everything it finds
-                                    // return matcher.test( value ) || matcher.test( normalize( value ) ) || matcher2.test( value ) || matcher2.test( normalize( value )) ;
-                                    // last only, works well
-                                    return matcher.test( value ) || matcher.test( normalize( value ) );
-                                }) );
-                                
-                                                             
-                                
-                                },
-                                // delegate back to autocomplete, but extract the last term
-                                //response( $.ui.autocomplete.filter(
-                                //    array_fr[0], extractLast( request.term ) ) );
-                               // },
-                                focus: function() {
-                                 //prevent value inserted on focus
-                                    return false;
-                                },
-                                select: function( event, ui ) {
-                                //var terms = split( this.value );
-
-                                // remove the current input
-                                //terms.pop();
-                                // add the selected item
-                                //terms.push( ui.item.value );
-                                // add placeholder to get the comma-and-space at the end
-                                //terms.push( "" );
-                                //this.value = terms.join( ", " );
-                                this.value=ui.item.value;
-                                return false;
-                                },
-                                close: function(event, ui) {
+                               
+			},
+                        
+                        close: function(event, ui) {
                             
                                 $('#id_region').val('');
                                 
@@ -3899,28 +3861,11 @@ array_fr[1] = [
                                 $('#id_region').val($('#id_region').val() + array_us[1][index]);
                                 }                                
                                 
+                                $('input[name="error_autocomplete"]').val(index);
                             }
-                            }
-                            
-                            
-                        )
-                        /*.data('autocomplete')._renderItem = function( ul, item ) {
+		});
 
-        var srchTerm = $.trim(this.term).split(/\s+/).join ('|');
-
-        var strNewLabel = item.label;
-
-            regexp = new RegExp ('(' + srchTerm + ')', "ig");
-
-            var strNewLabel = strNewLabel.replace(regexp,"<span style='font-weight:bold;color:Blue;'>$1</span>");
-
-      return $( "<li></li>" )
-          .data( "item.autocomplete", item )
-          .append( "<a>" + strNewLabel + "</a>" )
-          .appendTo( ul );
-
-   }*/;
-                            
+                
                 
 	});       
         

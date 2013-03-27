@@ -302,16 +302,6 @@ background-position: right center;
 }
 
 
-#list_user_degust {
-        width: 35%;
-        float: left;
-        
-}
-
-.elgg-col-2of3 {
-    width: 65%;
-}
-
 
 .input-degust { margin:0.6% 0% 1% 0%;}
 
@@ -350,4 +340,9 @@ background-position: right center;
 
 #degust-price{
  float: right;
+}
+
+/* texte du résumé de la degust in line*/
+.degust-image-block .elgg-body {
+    display:inline;
 }

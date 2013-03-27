@@ -93,7 +93,7 @@ $content = "<div id=\"avenue_activity2\">".$activity."</div>";
 
 //$content = $activity;
 
-$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
+/*$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
 
 $content = $content."<div id=\"coin-slider\">";
 
@@ -118,10 +118,24 @@ $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/
 $content = $content."           </div>";
 
 
-$content = $content."</div>";
+$content = $content."</div>";*/
+
+/* Module classement */
+elgg_push_context("ranking");
+$rank = "<div id=\"ranking\" class=\"clearfix\">";
+$rank .= "<div id=\"ranking_list\" >";
+
+$user_list = elgg_view('ranking/users', array('class' => 'list-ranking'));
+if ($user_list)
+    $rank.="<h3>" . elgg_echo("ranking:users") . "</h3>" . $user_list;
+$restobar_list = elgg_view('ranking/restobars', array('class' => 'list-ranking'));
+if ($restobar_list)
+    $rank.="<h3>" . elgg_echo("ranking:restobars") . "</h3>" . $restobar_list;
+$rank.="</div></div>"; //fermeture div id ranking
+elgg_pop_context();
 
 
-
+$content=$rank.$content;
 
 
 $sidebar = elgg_view('core/river/sidebar');

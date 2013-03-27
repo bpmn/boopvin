@@ -186,6 +186,13 @@ if ($wine_profile_fields > 0) {
 <div class="elgg-foot">
 <?php
 
+// variable pour détecter si l'appellation a été rentrée  " à la main"
+echo elgg_view('input/hidden', array(
+		'name' => 'error_autocomplete',
+		'value' => '',
+	));
+
+
 if (isset($vars['entity'])) {
 	echo elgg_view('input/hidden', array(
 		'name' => 'wine_guid',
