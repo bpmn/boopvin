@@ -68,18 +68,7 @@ if (sizeof($input) > 0) {
 	}
 }
 
-$error_auto=get_input('error_autocomplete');
-if ($error_auto=="-1") {
-    $admins=elgg_get_admins();
-    foreach($admins as $admin) {
-        notify_user($admin->getGUID(),
-				elgg_get_logged_in_user_guid(),
-				elgg_echo('error_auto:email:subject'),
-				elgg_echo('error_auto:email:body', array($wine->getURL()))
-			);
-    }
-    
-}
+
 
 
 
@@ -123,6 +112,21 @@ if ($wine->cuvee){
 $wine->description=$wine->appellation." ".$wine->region." ".$wine->maker." ".$wine->country;
 
 $wine->save();
+
+
+$error_auto=get_input('error_autocomplete');
+if ($error_auto=="-1") {
+    $admins=elgg_get_admins();
+    foreach($admins as $admin) {
+        notify_user($admin->getGUID(),
+				elgg_get_logged_in_user_guid(),
+				elgg_echo('error_auto:email:subject'),
+				elgg_echo('error_auto:email:body', array($wine->getURL()))
+			);
+    }
+    
+}
+
 
 elgg_pop_context();
 

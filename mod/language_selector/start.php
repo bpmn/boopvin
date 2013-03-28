@@ -37,6 +37,8 @@
 		}
 		
 		elgg_extend_view("css/elgg", "language_selector/css/site");
+                
+                
 	}
 	
 	function language_selector_invalidate_setting(){
@@ -45,7 +47,7 @@
 	
 	function language_selector_pagesetup(){
 		if(elgg_get_plugin_setting("show_in_header", "language_selector") == "yes"){
-			elgg_extend_view("page/elements/header", "language_selector/default");
+			elgg_extend_view("page/elements/topbar", "language_selector/default");
 		}
 	}
 	

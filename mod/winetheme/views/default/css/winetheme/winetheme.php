@@ -285,11 +285,13 @@ div#job{
 }
 
 
+/*******************************************/
+/* liste dégust sous le profil utilisateur */
+/*******************************************/
 
 #list_user_degust {
         width: auto;
-        //float: left;
-        
+        clear:left;
 }
 
 #list_user_degust .elgg-item{
@@ -299,6 +301,14 @@ div#job{
 }
 #list_user_degust .elgg-pagination{
         clear:left;
+}
+
+#list_user_degust h2{
+    font-family:NotethisRegular;
+    font-size: 1.5em; 
+    background: url(<?php echo $verre_score; ?>) no-repeat;
+    height: 40px;
+    padding: 0 0 0 25px;
 }
 
 .elgg-col-2of3 {
@@ -344,6 +354,10 @@ div#job{
  
 }
 
+.item-ranking h3 {
+    font-weight:normal;
+    font-size: 1.1em ;
+}
 
 #ranking_list{
    float: right;

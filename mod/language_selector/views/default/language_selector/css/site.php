@@ -2,8 +2,10 @@
 ?>
 .language_selector {
 	position: absolute;
-	right: 0px;
-	top: 42px;
+	right: 240px;
+	top: 5px;
+        //display: inline;
+        //floating: right;
 	color: white;
 }
 

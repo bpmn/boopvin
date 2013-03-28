@@ -17,9 +17,14 @@
          
         //des degustations de l'utilisateur encadré d'un div
         $list_user_degust=elgg_list_entities($options);
+        if (!elgg_is_logged_in()) {
+           $list_user_degust=elgg_echo('degust:connect'); 
+        }
         $options['count']=true;
-        $count_user_degust="<sup>".elgg_get_entities($options)."</sup>";?>
+        elgg_set_ignore_access(true);
+        $count_user_degust=elgg_get_entities($options);
+        elgg_set_ignore_access(false);?>
         <div id=list_user_degust class=degust_list>
-        <h2 id="score"> <?php echo (elgg_echo("profile:degust:count",array($count_user_degust))) ;?></h2>
-        <?php echo "$list_user_degust" ?></div>;
+        <h2><sup><?php echo (elgg_echo("profile:degust:count",array($count_user_degust)));?></sup></h2>
+        <?php echo "$list_user_degust" ?></div>
        
