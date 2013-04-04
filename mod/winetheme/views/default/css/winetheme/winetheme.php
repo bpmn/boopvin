@@ -8,12 +8,27 @@ $verre_score = elgg_normalize_url($verre_score);
 
 $verre_score2 = '/mod/winetheme/views/default/css/winetheme/images/score2.jpg';
 $verre_score2 = elgg_normalize_url($verre_score2);
+
+$loading_image = '/mod/winetheme/views/default/css/winetheme/images/ajax_loader.gif';
+$loading_image = elgg_normalize_url($loading_image);
+
+
 ?>
 
 body {
 background: #ffffff;
 background: rgb(0,0,0) url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/woodtexture_v15.jpg') repeat-x;
 
+}
+
+#loading_image {
+    position:absolute;
+    width:31px; /*image width */
+    height:31px; /*image height */
+    left:50%; 
+    top:50%;
+    margin-left:-16px; /*image width/2 */
+    margin-top:-16px; /*image height/2 */
 }
 
 
@@ -28,12 +43,9 @@ width: 80%;
 
 
 #images_slider{
-position: absolute;
-top: 10px;
-left: 405px;
-height: 100px;
-width: 340px;
 
+   height: 120px;
+   width: 735px;
 }
 
 #register_window {
@@ -92,11 +104,28 @@ font-size: 200%; font-size: 1.8em;
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 
-width: 380px;
+width: 735px;
 height: 80px;
 background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/home_subheading.png') no-repeat scroll 50% 0px transparent;
 margin-bottom: 10px;
 text-align: center;
+
+}
+
+#index_welcome_header {
+color:#ffffff;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 1.4em; 
+width: 500px;
+height: 40px;
+margin-left: 200px;
+padding-top: 40px;
+text-align: center;
+
+}
+
+#index_welcome_header > h4{
+color:#ffffff;
 
 }
 
@@ -338,12 +367,31 @@ div#job{
    //top: 10px;
    //left: 405px;
    height: auto;
-   width: 340px;
+   width: 280px;
    float: right; 
-   
- 
+
+   border-left:solid 1px #560000;
+   padding: 0 40px 0 20px;
+
 }
 
+#ranking_list {
+
+}
+
+#ranking_list .elgg-list {
+border-top: 1px none #e7e7e7;
+
+}
+
+#ranking_list .elgg-list > li {
+  display: block; 
+  margin: 0 0 0px;
+  padding: 7px 0 0px 0;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+  clear:left
+}
 
 #ranking_list{
    float: right;
@@ -354,9 +402,10 @@ div#job{
     padding:0px;
 }
 
+
 #ranking_list>h3{
-    text-align: center;
-    font-family:NotethisRegular;
+    text-align: left;
+
 }
 
 

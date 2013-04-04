@@ -8,7 +8,8 @@
  */
 $english = array(
     "bienvenue" => "Welcome to Avenue vin !",
-    "citation" => "« The fine wine is the one that makes you want to talk » Jean-Louis Chave",
+    "citation" => "« The fine wine is the one that makes you want to talk »",
+    "citation2" => "Jean-Louis Chave",
     "item:group:wine" => "The Wines",
     "item:group:restobar" => "The Bars, Restaurants, Cellars, Domains...",
     "register_me" => "Click here <br> to register!",

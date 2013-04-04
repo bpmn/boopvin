@@ -10,5 +10,19 @@
 // drop-down login
 echo elgg_view('core/account/login_dropdown');
 
-// insert site-wide navigation
+$welcome = "<div id=\"index_welcome_header\" >";
+
+//$welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
+//$welcome .= "<br>";
+
+$welcome .= elgg_echo('citation');
+$welcome .= "<br>";
+$welcome .= elgg_echo('citation2');
+
+//end of index_welcome
+$welcome .= "</div>";
+
+echo $welcome;
+//
+//// insert site-wide navigation
 echo elgg_view_menu('site');

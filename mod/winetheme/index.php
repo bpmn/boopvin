@@ -16,32 +16,29 @@ $options['pagination']=FALSE;
 $options['limit']=20;
 
 
-/*$slider = "<div id=\"images_slider\" style=\"display:none;\">";
+$slider = "<div id=\"images_slider\" style=\"display:none;\">";
 
 $slider = $slider."<div id=\"coin-slider\">";
 
  
 
- $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search_wide.png'));
  $slider.= '<span>'.elgg_echo('post1').'</span>';
  
 
- $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust_wide.png'));
   $slider.= '<span>'.elgg_echo('post2').'</span>';
   
-$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2_wide.png'));
   $slider.= '<span>'.elgg_echo('post3').'</span>';
-  
-$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
-  $slider.= '<span>'.elgg_echo('post4').'</span>';
-  
-$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
+    
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto_wide.png'));
   $slider.= '<span>'.elgg_echo('post5').'</span>';
   
 $slider = $slider."           </div>";
 
 
-$slider = $slider."</div>";*/
+$slider = $slider."</div>";
 
 
 /* Module classement */
@@ -75,18 +72,17 @@ $welcome .= "</div>";
 
 $list_river = elgg_list_river($options);
 
+$content = '<h3>'.elgg_echo("Latest activity").'</h3>';
 
-$content = "<div id=\"avenue_activity\" >".$list_river."</div>";
+$content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 //$content = $content;
 
 
 
 
-
-
-
 //$content_final = $slider.$rank.$welcome.$content;
-$content_final = $rank.$welcome.$content;
+//$content_final = $welcome.$rank.$content;
+$content_final = $slider.$rank.$content;
 
 $params = array(
 		'content' => $content_final,

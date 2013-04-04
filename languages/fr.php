@@ -8,7 +8,8 @@
  */
 $french = array(
     "bienvenue" => "bienvenue sur Avenue vin !",
-    "citation" => "« Le beau vin est celui qui donne envie de parler » Jean-Louis Chave",
+    "citation" => "« Le beau vin est celui qui donne envie de parler »",
+    "citation2" => "Jean-Louis Chave",
     "item:group:wine" => "Les Vins",
     "item:group:restobar" => "Les Bars,Restos,Caves,Domaines...",
     "register_me" => "Cliquer ici pour s'enregistrer!",
