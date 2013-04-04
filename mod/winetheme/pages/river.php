@@ -93,32 +93,29 @@ $content = "<div id=\"avenue_activity2\">".$activity."</div>";
 
 //$content = $activity;
 
-/*$content = $content."<div id=\"images_slider\" style=\"display:none;\">";
+$slider = "<div id=\"images_slider\" style=\"display:none;\">";
 
-$content = $content."<div id=\"coin-slider\">";
+$slider = $slider."<div id=\"coin-slider\">";
 
  
 
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search.png'));
- $content.= '<span>'.elgg_echo('post1').'</span>';
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/search_wide.png'));
+ $slider.= '<span>'.elgg_echo('post1').'</span>';
  
 
- $content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust.png'));
-  $content.= '<span>'.elgg_echo('post2').'</span>';
+ $slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/degust_wide.png'));
+  $slider.= '<span>'.elgg_echo('post2').'</span>';
   
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2.png'));
-  $content.= '<span>'.elgg_echo('post3').'</span>';
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine2_wide.png'));
+  $slider.= '<span>'.elgg_echo('post3').'</span>';
+    
+$slider.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto_wide.png'));
+  $slider.= '<span>'.elgg_echo('post5').'</span>';
   
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/wine1.png'));
-  $content.= '<span>'.elgg_echo('post4').'</span>';
-  
-$content.=elgg_view('output/img', array('src'=>'mod/winetheme/views/default/css/winetheme/images/resto.png'));
-  $content.= '<span>'.elgg_echo('post5').'</span>';
-  
-$content = $content."           </div>";
+$slider = $slider."           </div>";
 
 
-$content = $content."</div>";*/
+$slider = $slider."</div>";
 
 /* Module classement */
 elgg_push_context("ranking");
@@ -135,7 +132,7 @@ $rank.="</div></div>"; //fermeture div id ranking
 elgg_pop_context();
 
 
-$content=$rank.$content;
+$content = $slider.$rank.$content;
 
 
 $sidebar = elgg_view('core/river/sidebar');
