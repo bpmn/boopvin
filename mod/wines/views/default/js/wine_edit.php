@@ -3792,7 +3792,7 @@ array_fr[1] = [
                 
 
                  $("#id_country").change(function(){
-                        $('#id_description').val('');
+                        $('#id_appellation').val('');
                         $('#id_region').val('');
 
                  });
@@ -3899,6 +3899,7 @@ array_fr[1] = [
                                 $('#id_region').val($('#id_region').val() + array_us[1][index]);
                                 }                                
                                 
+                                $('input[name="error_autocomplete"]').val(index);
                             }
                             }
                             
