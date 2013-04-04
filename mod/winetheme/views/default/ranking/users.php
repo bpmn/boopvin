@@ -11,4 +11,4 @@ $users=elgg_get_entities_from_metadata(array('types' => 'user',
 'direction' => 'DESC', 
 'as' => integer) ));
 
-echo elgg_view_entity_list($users,array('size'=>'small','list_class'=>'list-ranking'));
+echo elgg_view_entity_list($users,array('size'=>'small','item_class'=>'item-ranking'));

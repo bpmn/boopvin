@@ -259,7 +259,8 @@ Paint',
 View the wine tasting notes:
 %s
 ",
-    "item:object:degust"=>'Tasting notes'
+    "item:object:degust"=>'Tasting notes',
+    'degust:connect'=>'You need to be connected to see the tasting notes',
 );
 
 add_translation("en", $english);

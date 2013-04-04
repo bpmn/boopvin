@@ -342,7 +342,7 @@ background-position: right center;
  float: right;
 }
 
-/* texte du résumé de la degust in line*/
+/* texte du résumé de la degust in line
 .degust-image-block .elgg-body {
     display:inline;
-}
+}*/

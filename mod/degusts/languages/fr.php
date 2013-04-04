@@ -259,7 +259,8 @@ Peinture',
 Voir la fiche de dégustation:
 %s
 ",
-    "item:object:degust"=>'Dégustations'
+    "item:object:degust"=>'Dégustations',
+    'degust:connect'=>'connectez vous pour voir les fiches de dégustation',
 );
 
 add_translation("fr", $french);

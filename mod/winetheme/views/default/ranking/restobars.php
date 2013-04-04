@@ -12,4 +12,9 @@ $restobars=elgg_get_entities_from_metadata(array('types' => 'group',
 'direction' => 'DESC', 
 'as' => integer) ));
 
-echo elgg_view_entity_list($restobars,array('full_view'=>false));
+foreach ($restobars as $resto) {
+    if ($resto->score == 0)
+        array_pop($restobars);
+}  
+
+echo elgg_view_entity_list($restobars,array('full_view'=>false,'item_class'=>'item-ranking'));

@@ -37,21 +37,31 @@
 }
 
 
-.list-style-all li {
+.list-style-all .elgg-item {
    
     float:left;
     width: 50%;
     
 }
 
-
-
-.list-style-all-resto li {
+.list-style-all-resto .elgg-item {
 
     float:left;
     width: 33%;
     padding-left: 2px;
 }
+
+.list-style-all-resto + .elgg-pagination {
+    clear: left;
+}
+
+.elgg-item-contact {
+    height: 40px;
+
+}
+
+
+
 
 .elgg-item .elgg-subtext {
 	margin-bottom: 5px;

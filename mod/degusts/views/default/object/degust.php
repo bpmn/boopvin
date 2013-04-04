@@ -156,8 +156,10 @@ HTML;
 	);
 	$params = $params + $vars;
 	$list_body = elgg_view('object/elements/summary', $params);
-	$block= elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link,'class'=>'degust-image-block'));
         
+        elgg_push_context('degust');
+        $block= elgg_view_image_block($poster_icon, $list_body,array('image_alt'=>$degust_link,'class'=>'degust-image-block'));
+        elgg_pop_context();
    
         echo $block;
         

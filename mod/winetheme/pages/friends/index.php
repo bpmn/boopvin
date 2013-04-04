@@ -21,6 +21,8 @@ $options = array(
 	//'type' => 'user',
 	'full_view' => FALSE,
         'list_class'=>'list-style-all-resto',
+        'item_class'=>'elgg-item-contact',
+        'limit'=>50,
 );
 elgg_push_context('friends');
 $content = elgg_list_entities_from_relationship($options);
