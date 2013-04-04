@@ -42,7 +42,7 @@ $CONFIG->dbuser = 'root';
  *
  * @global string $CONFIG->dbpass
  */
-$CONFIG->dbpass = '';
+$CONFIG->dbpass = 'root';
 
 /**
  * The database name
