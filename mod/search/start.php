@@ -35,7 +35,7 @@ function search_init() {
         
         $action_base = elgg_get_plugins_path() . 'search/actions/search';    
         elgg_register_action('search/parse', "$action_base/parse.php", 'public');
-	elgg_extend_view('css/elements/modules', 'css/hj/livesearch/base');
+	//elgg_extend_view('css/elements/modules', 'css/hj/livesearch/base');
 
 	$js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete');
 	elgg_register_js('hj.livesearch.autocomplete', $js, 'footer');
@@ -62,7 +62,7 @@ function search_init() {
 	}
 
 	// add in CSS for search elements
-	elgg_extend_view('css/elgg', 'search/css');
+	//elgg_extend_view('css/elgg', 'search/css');
 
 	// extend view for elgg topbar search box
 	elgg_extend_view('page/elements/header', 'search/header');

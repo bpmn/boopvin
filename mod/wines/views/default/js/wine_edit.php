@@ -15,10 +15,7 @@
     elgg.wine_edit.init = function() {
  	$(function() {
                             
-                            
-                            
-                            
-                            
+                                                    
                 var array_fr = [];
                 var array_es = [];
                 var array_it = [];
@@ -3835,7 +3832,7 @@ array_fr[1] = [
                                 }
                                
 			},
-                        
+   
                         close: function(event, ui) {
                             
                                 $('#id_region').val('');
