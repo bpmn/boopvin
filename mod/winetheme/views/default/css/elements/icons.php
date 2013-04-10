@@ -184,7 +184,8 @@
 	background-position: 0 -972px;
 }
 .elgg-icon-settings {
-	background-position: 0 -990px;
+        background: transparent url(<?php echo elgg_get_site_url(); ?>mod/winetheme/_graphics/tire-bouchon-icon.png) no-repeat left;
+	//background-position: 0 -990px;
 }
 .elgg-icon-share:hover {
 	background-position: 0 -1008px;

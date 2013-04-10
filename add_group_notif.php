@@ -14,9 +14,10 @@ foreach ($users as $user) {
 	
         foreach ($wines as $wine) {
          echo $wine->name;   
-         echo add_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
+         //echo add_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
+         echo remove_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
          echo add_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());
-            
+         //echo remove_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());   
         }
 }
 ?>

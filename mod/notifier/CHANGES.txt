@@ -1,0 +1,41 @@
+Version 1.8.3 (2012-02-26):
+
+ Enhancements:
+  * Added support for group discussions
+  * Added support for message board
+  * Added support for notifications about new friends
+  * Added built-in support for comment_tracker plugin
+  * Added "Dismiss all" link to popup module
+  * Added possibility to delete individual notifications
+
+ Bugfixes:
+  * Notifications about new annotations now respect personal notification settings
+  * Added missing translations and fixed some typos
+  * Plugins extending full_view do not mess up the notification lists
+  * Plugin isn't anymore depending on the css of the messages plugin
+
+
+Version 1.8.2 (2013-01-09):
+
+ Bugfixes:
+  * Fixes fatal error when deleting some objects not instances of ElggEntity
+  * Fixes the title of notification page
+  * Non-logged-in users are forwarded away from notifications page
+
+
+Version 1.8.1 (2013-01-07):
+
+ Enhancements:
+  * Marking contents as read supports more entity types
+  * Notification gets deleted when notification subject or target is deleted
+  * Added button for dismissing all unread notifications
+  * Added button for clearing the notification list
+
+ Bugfixes:
+  * Entities missing a title are displayed correctly in notification list
+  * Notifications related to The wire now get marked as read correctly
+
+
+Version 1.8.0 (2013-01-04):
+
+ First release

@@ -45,11 +45,15 @@
 		elgg_unset_plugin_setting("allowed_languages", "language_selector");
 	}
 	
-	function language_selector_pagesetup(){
-		if(elgg_get_plugin_setting("show_in_header", "language_selector") == "yes"){
-			elgg_extend_view("page/elements/topbar", "language_selector/default");
-		}
-	}
+	function language_selector_pagesetup() {
+            if (elgg_get_plugin_setting("show_in_header", "language_selector") == "yes") {
+            if (elgg_is_logged_in()) {
+                 elgg_extend_view("page/elements/topbar", "language_selector/default");
+                }else{
+                 elgg_extend_view("page/elements/header", "language_selector/default");   
+                }
+            }
+        }
 	
 	// register hooks
 	elgg_register_plugin_hook_handler("all", "plugin", "language_selector_invalidate_setting");

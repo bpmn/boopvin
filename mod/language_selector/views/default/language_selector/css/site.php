@@ -1,11 +1,22 @@
 <?php
 ?>
+.language_selector_top {
+	color: white;
+        margin-top: 4px;
+        margin-bottom: auto 
+}
+
+
+
+.language_selector_top > a {
+	color: white;
+}
+
+
 .language_selector {
 	position: absolute;
-	right: 240px;
-	top: 5px;
-        //display: inline;
-        //floating: right;
+	right: 0px;
+	top: 42px;
 	color: white;
 }
 

@@ -73,7 +73,7 @@ $welcome .= "</div>";
 
 $list_river = elgg_list_river($options);
 
-$content = '<h3>'.elgg_echo("Latest activity").'</h3>';
+$content = '<h3>'.elgg_echo("content:latest").'</h3>';
 
 $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 //$content = $content;

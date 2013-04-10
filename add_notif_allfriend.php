@@ -13,9 +13,10 @@ foreach ($users as $user) {
 	
         foreach ($entities as $entitie) {
          echo $entitie->name." ,";   
-         echo add_entity_relationship($user->guid, 'notify'.'email', $entitie->getGuid());
-         echo add_entity_relationship($user->guid, 'notify'.'site', $entitie->getGuid());
-            
+         //echo add_entity_relationship($user->guid, 'notify'.'email', $entitie->getGuid());
+         echo remove_entity_relationship($user->guid, 'notify'.'email', $entitie->getGuid());
+         //echo add_entity_relationship($user->guid, 'notify'.'site', $entitie->getGuid());
+         echo remove_entity_relationship($user->guid, 'notify'.'site', $entitie->getGuid());
         }
         echo '</br>';
 }

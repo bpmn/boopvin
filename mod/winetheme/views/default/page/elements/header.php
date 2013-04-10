@@ -15,9 +15,9 @@ $welcome = "<div id=\"index_welcome_header\" >";
 //$welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
 //$welcome .= "<br>";
 
-$welcome .= elgg_echo('citation');
+$welcome .= '<h2>'.elgg_echo('citation');
 $welcome .= "<br>";
-$welcome .= elgg_echo('citation2');
+$welcome .= elgg_echo('citation2').'</h2>';
 
 //end of index_welcome
 $welcome .= "</div>";

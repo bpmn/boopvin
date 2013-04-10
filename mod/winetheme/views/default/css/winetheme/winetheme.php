@@ -112,7 +112,7 @@ text-align: center;
 
 }
 
-#index_welcome_header {
+/*#index_welcome_header {
 color:#ffffff;
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 
@@ -127,7 +127,28 @@ text-align: center;
 #index_welcome_header > h4{
 color:#ffffff;
 
+}*/
+#index_welcome_header {
+
+color:#ffffff;
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+font-size: 1.0em; 
+width: 500px;
+height: 40px;
+margin-left: 200px;
+padding-top: 40px;
+text-align: center;
+
 }
+
+#index_welcome_header > h2{
+text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
+color: #00000;
+opacity: 0.9;
+}
+
+
+
 
 
 
@@ -315,10 +336,13 @@ div#job{
 
 
 
+/*******************************************/
+/* liste dégust sous le profil utilisateur */
+/*******************************************/
+
 #list_user_degust {
         width: auto;
-        //float: left;
-        
+        clear:left;
 }
 
 #list_user_degust .elgg-item{
@@ -328,6 +352,14 @@ div#job{
 }
 #list_user_degust .elgg-pagination{
         clear:left;
+}
+
+#list_user_degust h2{
+    font-family:NotethisRegular;
+    font-size: 1.5em; 
+    background: url(<?php echo $verre_score; ?>) no-repeat;
+    height: 40px;
+    padding: 0 0 0 25px;
 }
 
 .elgg-col-2of3 {

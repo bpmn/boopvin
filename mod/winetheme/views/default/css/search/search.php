@@ -1,4 +1,3 @@
-
 <?php
 
 $indicator = elgg_normalize_url('mod/search/graphics/indicator.gif')
@@ -50,16 +49,6 @@ font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif
 	color: #0054A7;
 }
 
-.ui-autocomplete {
-        overflow-y:auto;
-}
-
-.elgg-search input[type="text"]:focus.ui-autocomplete-loading {
-    background:white url(<?php echo $indicator?>) no-repeat; 
-    background-position:2px 50%;
-}
-
-
 .search-list li {
 	padding: 5px 0 0;
 }
@@ -94,6 +83,10 @@ float: right;
 }
 
 
+.elgg-search-entity{
+    float:right;
+    color: black;
+}
 
 .elgg-search-entity input[type=text] {
 	-webkit-border-radius: 5px;
@@ -127,6 +120,8 @@ box-shadow: 1px 1px 6px #000000;
     background:white url(<?php echo $indicator?>) no-repeat; 
     background-position:2px 50%;
 }
+
+
 
 .elgg-module-livesearch {
         font-size:0.8em;

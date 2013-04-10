@@ -33,9 +33,11 @@
 				$flag_file = "mod/language_selector/_graphics/flags/" . $lang_id . ".gif";
 				
 				if(file_exists($CONFIG->path . $flag_file)){
-					$text = "<img src='" . $vars["url"] . $flag_file . "' alt='" . $lang_name . "' title='" . $lang_name . "'>";
+					//$text = "<img src='" . $vars["url"] . $flag_file . "' alt='" . $lang_name . "' title='" . $lang_name . "'>";
+                                        $text = "<img src='" .  elgg_normalize_url($flag_file) . "' alt='" . $lang_name . "' title='" . $lang_name . "'>";
 				}
 			}
+                        
 			
 			if(empty($text)){
 				$text = $lang_id;
@@ -48,10 +50,12 @@
 			}				
 		}
 		
-		$result = "<div class='language_selector'>" . $result . "</div>";
+                // on place le sélecteur dans la liste des menus elgg-menu-topbar-alt
+		$result = "<ul class='language_selector_top elgg-menu elgg-menu-topbar elgg-menu-topbar-alt'>" . $result . "</ul>";
 
 		if(!elgg_is_logged_in()){
-?>
+                    $result = "<div class='language_selector elgg-menu elgg-menu-topbar elgg-menu-topbar-alt'>" . $result . "</div>";
+?>              
 		<script type="text/javascript">
 			function setLanguage(lang_id){
 				setCookie("client_language", lang_id, 30);
