@@ -46,7 +46,7 @@ function degust_init(){
         register_notification_object('object', 'degust', elgg_echo('degust:notification:topic:subject'));
         
         elgg_register_plugin_hook_handler('object:notifications', 'object', 'degust_notifications');
-        elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'degust_notify_message');
+        //elgg_register_plugin_hook_handler('notify:entity:message', 'object', 'degust_notify_message');
         
 };
 
@@ -329,7 +329,7 @@ function degust_setup_owner_block_menu($hook, $type, $return, $params) {
 
 
 /**
- * Catch reply to discussion topic and generate notifications
+ * Catch object notif for degust and generate notifications
  *
  * @todo this will be replaced in Elgg 1.9 and is a clone of object_notifications()
  *
@@ -365,26 +365,44 @@ function degust_notifications($event, $type, $return, $param) {
 
 		// Get users interested in content from this person and notify them
 		// (Person defined by container_guid so we can also subscribe to groups if we want)
-	foreach ($NOTIFICATION_HANDLERS as $method => $foo) {
+                // on adapte les notifications de degust qu'au notifier
+                //foreach ($NOTIFICATION_HANDLERS as $method => $foo) {
 			$interested_users = elgg_get_entities_from_relationship(array(
-				'relationship' => 'notify' . $method,
+				//'relationship' => 'notify' . $method,
+                                'relationship' => 'notify' . 'notifier',
 				'relationship_guid' => $degust->getOwnerGUID(),
 				'inverse_relationship' => true,
 				'types' => 'user',
 				'limit' => 999999,
 			));
                         
-                       
+                        $interested_users_bis = elgg_get_entities_from_relationship(array(
+					'site_guids' => ELGG_ENTITIES_ANY_VALUE,
+					'relationship' => 'notify' . 'notifier',					
+                                        'relationship_guid' => $degust->container_guid,
+  					'inverse_relationship' => TRUE,
+					'types' => 'user',
+					'limit' => 99999
+				));
+                        
+                        
+                       if ($interested_users_bis && is_array($interested_users_bis)) {
+                           if ($interested_users && is_array($interested_users))
+                               $interested_users=array_merge($interested_users,$interested_users_bis);
+                           else {
+                               $interested_users=$interested_users_bis;
+                           }
+                       }
 
 	if ($interested_users && is_array($interested_users)) {
 					foreach ($interested_users as $user) {
 						if ($user instanceof ElggUser && !$user->isBanned()) {
-							if (($user->guid != $SESSION['user']->guid) && has_access_to_entity($degust, $user)
+							if (($user->guid != elgg_get_logged_in_user_guid()) && has_access_to_entity($degust, $user)
 							&& $degust->access_id != ACCESS_PRIVATE) {
 								$body = elgg_trigger_plugin_hook('notify:entity:message', $degust->getType(), array(
 									'entity' => $degust,
 									'to_entity' => $user,
-									'method' => $method), $string);
+									'method' => 'notifier'), $string);
 								if (empty($body) && $body !== false) {
 									$body = $string;
 								}
@@ -396,7 +414,7 @@ function degust_notifications($event, $type, $return, $param) {
 						}
 					}
 				}
-		}
+		//}
 	
          $return=true;
         }
@@ -404,6 +422,7 @@ function degust_notifications($event, $type, $return, $param) {
 return $return;
 }
 
+/* le message est crée dans le notifier
 function degust_notify_message($hook, $type, $message, $params) {
 	$entity = $params['entity'];
 	$to_entity = $params['to_entity'];
@@ -424,5 +443,5 @@ function degust_notify_message($hook, $type, $message, $params) {
 	}
 
 	return null;
-}
+}*/
 

@@ -19,11 +19,11 @@
 }
 
 #notificationstable td.notifiertogglefield a.notifiertoggleOff {
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 25px -72px;
+	background: transparent url(<?php echo elgg_get_site_url(); ?>mod/winetheme/_graphics/sonnette.png) no-repeat 25px;
 }
 
 #notificationstable td.notifiertogglefield a.notifiertoggleOn {
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/elgg_sprites.png) no-repeat 25px -54px;
+	background: transparent url(<?php echo elgg_get_site_url(); ?>mod/winetheme/_graphics/sonnette2.png) no-repeat 25px;
 }
 
 /* Style the popup module */

@@ -208,8 +208,8 @@ function notifier_friend_notifications ($hook, $type, $return, $params) {
  * @param ElggAnnotation $annotation
  * @return boolean
  */
-function notifier_annotation_notifications($event, $type, $annotation) {
-	$supported_types = array('generic_comment', 'group_topic_post', 'likes', 'messageboard');
+/*function notifier_annotation_notifications($event, $type, $annotation) {
+	$supported_types = array('generic_comment', 'wine_topic_post', 'likes', 'messageboard');
 
 	if (!in_array($annotation->name, $supported_types)) {
 		return true;
@@ -263,7 +263,71 @@ function notifier_annotation_notifications($event, $type, $annotation) {
 	notifier_handle_group_topic_replies($annotation);
 
 	return TRUE;
+}*/
+
+
+/**
+ * Handle annotation notifications pour les wine discussion et les commentaires de degust
+ *
+ * @param string         $event
+ * @param string         $type
+ * @param ElggAnnotation $annotation
+ * @return boolean
+ */
+function notifier_annotation_notifications($event, $type, $annotation) {
+	$supported_types = array('generic_comment', 'wine_topic_post');
+
+	if (!in_array($annotation->name, $supported_types)) {
+		return true;
+	}
+
+	$entity = $annotation->getEntity();
+	$owner_guid = $entity->getOwnerGUID();
+
+	$subject_guid = $annotation->owner_guid;
+        $target_guid = $entity->getGUID();
+	$type = $entity->getType();
+	$subtype = $entity->getSubtype();
+	$title = "river:comment:$type:$subtype";
+					
+			
+
+	// Do not notify about own annotations
+	if ($subject_guid != $owner_guid) {
+		// Check if user has enabled notifier for personal notifications
+		$metadata = elgg_get_metadata(array(
+			'metadata_name' => 'notification:method:notifier',
+			'guid' => $owner_guid
+		));
+
+		if (!empty($metadata[0]->value)) {
+	
+
+			notifier_add_notification(array(
+				'title' => $title,
+				'user_guid' => $owner_guid,
+				'target_guid' => $target_guid,
+				'subject_guid' => $subject_guid
+			));
+		}
+	}
+        
+        
+   
+	notifier_handle_mentions($annotation, 'annotation');
+
+	notifier_handle_comment_tracker($annotation);
+
+	notifier_handle_group_topic_replies($annotation);
+        
+        notifier_handle_degust_topic_replies($annotation);
+
+	return TRUE;
 }
+
+
+
+
 
 /**
  * Create a notification for each @username tag
@@ -403,6 +467,58 @@ function notifier_handle_comment_tracker ($annotation) {
 	}
 }
 
+
+
+/**
+ * notifier les participants qui ont commenté la même dégustation
+ * 
+ * @param $annotation The reply that was posted
+ * 
+ */
+
+function notifier_handle_degust_topic_replies($annotation){
+    
+    	$entity = $annotation->getEntity();
+	$owner_guid = $entity->getOwnerGUID();
+        $subject_guid = $annotation->owner_guid;
+        $target_guid = $entity->getGUID();
+	$type = $entity->getType();
+	$subtype = $entity->getSubtype();
+	$title = "river:comment:$type:$subtype";
+        // notifier les participants qui ont commenté la même dégustation
+
+    $comments = $entity->getAnnotations($annotation->name, 1000);
+    if ($comments) {
+        $participants = array();
+        foreach ($comments as $comment) {
+            if (!in_array($comment->owner_guid, $participants) && ($comment->owner_guid != $owner_guid ) && ($comment->owner_guid != $subject_guid )) {
+                $participants[] = $comment->owner_guid;
+            }
+        }
+        if ($participants) {
+            foreach ($participants as $participant) {
+
+                // Check if user has enabled notifier for personal notifications
+                $metadata = elgg_get_metadata(array(
+                    'metadata_name' => 'notification:method:notifier',
+                    'guid' => $participant
+                        ));
+
+                if (!empty($metadata[0]->value)) {
+                    notifier_add_notification(array(
+                        'title' => $title,
+                        'user_guid' => $participant,
+                        'target_guid' => $target_guid,
+                        'subject_guid' => $subject_guid
+                    ));
+                }
+            }
+        }
+    }
+}
+
+
+
 /**
  * Create notifications of group discussion replies.
  * 
@@ -412,7 +528,7 @@ function notifier_handle_comment_tracker ($annotation) {
  * @param object $reply The reply that was posted
  */
 function notifier_handle_group_topic_replies ($reply) {
-	if ($reply->name != 'group_topic_post') {
+	if ($reply->name != 'wine_topic_post') {
 		return false;
 	}
 
@@ -439,7 +555,7 @@ function notifier_handle_group_topic_replies ($reply) {
 			}
 
 			notifier_add_notification(array(
-				'title' => 'river:reply:object:groupforumtopic',
+				'title' => 'river:reply:object:wineforumtopic',
 				'user_guid' => $user->getGUID(),
 				'target_guid' => $topic->getGUID(),
 				'subject_guid' => $reply->owner_guid
@@ -507,6 +623,7 @@ function notifier_add_notification ($options) {
  * Remove over week old notifications that have been read
  */
 function notifier_cron ($hook, $entity_type, $returnvalue, $params) {
+        set_time_limit(0);
 	// One week ago
 	$time = time() - 60 * 60 * 24 * 7;
 
@@ -532,9 +649,79 @@ function notifier_cron ($hook, $entity_type, $returnvalue, $params) {
 	}
 
 	echo "<p>Removed $count notifications.</p>";
+        
 
 	elgg_set_ignore_access($ia);
 }
+
+
+function notifier_email ($user){
+    
+   	$notifications = elgg_get_entities_from_metadata(array(
+		'type' => 'object',
+		'subtype' => 'notification',
+		'owner_guid' => $user->getGUID(),
+		'metadata_name_value_pairs' => array(
+			array(
+				'name' => 'status',
+				'value' => 'unread'
+			),
+			array(
+				'name' => 'status_email',
+				'value' => 'unsent'
+			)
+		)
+	)); 
+        
+        $count=elgg_get_entities_from_metadata(array(
+		'type' => 'object',
+		'subtype' => 'notification',
+		'owner_guid' => $user->getGUID(),
+                'count'=>true,
+		'metadata_name_value_pairs' => array(
+			array(
+				'name' => 'status',
+				'value' => 'unread'
+			),
+			array(
+				'name' => 'status_email',
+				'value' => 'unsent'
+			)
+		)
+            ));   
+    
+    
+        if ($notifications && is_array($notifications)){
+            
+            $mail_content="";
+            foreach($notifications as $notification){
+                $target = $notification->getTargetEntity();
+                $subject = $notification->getSubjectEntity();
+                
+                if (!empty($target->title)) {
+                    $text = $target->title;
+                } elseif (!empty($target->name)) {
+                    $text = $target->name;
+                } 
+                
+                
+                $subtitle = elgg_echo($notification->title, array($subject->name,$text));
+                //$time = elgg_view('output/date',array('value'=>$notification->time_created));
+                //$mail_content.=$time."   ".$subtitle."\n".$target->getURL()."\n\n";
+                $mail_content.=$subtitle."\n".$target->getURL()."\n\n";
+                $notification->markSent();
+                }
+                
+             
+            $subject=elgg_echo('notifier:email:subject',array($count));
+            echo $user->name." ".$subject;
+            notify_user($user->getGUID(), elgg_get_site_entity()->getGUID(), $subject, $mail_content,NULL,"email");
+            
+      }
+         
+}
+
+
 
 /**
  * Add view listener to views that may be the targets of notifications
@@ -556,6 +743,7 @@ function notifier_set_view_listener () {
 
 	// Some manual additions
 	elgg_extend_view('profile/wrapper', 'notifier/view_listener');
+        elgg_extend_view('degusts/profile/layout', 'notifier/view_listener');
 }
 
 /**

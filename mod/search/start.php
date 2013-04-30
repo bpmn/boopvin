@@ -37,12 +37,15 @@ function search_init() {
         elgg_register_action('search/parse', "$action_base/parse.php", 'public');
 	//elgg_extend_view('css/elements/modules', 'css/hj/livesearch/base');
 
-	$js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete');
-	elgg_register_js('hj.livesearch.autocomplete', $js, 'footer');
+	
+        $js = elgg_get_simplecache_url('js', 'search_auto');
+        elgg_register_simplecache_view('js/search_auto');
+	elgg_register_js('search.auto', $js, 'footer');
         //elgg_load_js('hj.livesearch.autocomplete');
         
-        $js = elgg_get_simplecache_url('js', 'hj/livesearch/autocomplete_other');
-	elgg_register_js('hj.livesearch.autocomplete_other', $js, 'footer');
+        $js = elgg_get_simplecache_url('js', 'search_auto_other');
+        elgg_register_simplecache_view('js/search_auto_other');
+	elgg_register_js('search.auto_other', $js, 'footer');
         
         
 	// get server min and max allowed chars for ft searching

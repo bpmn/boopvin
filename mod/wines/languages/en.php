@@ -192,8 +192,10 @@ or click below to view the wine's join requests:
     'river:incave:group:wine' => "the wine %s was added to the cellar of %s",
     'river:join:wine:default' => '%s joined the wine %s',
     'river:create:object:wineforumtopic' => '%s has added a discussion topic "%s"',
-    'river:reply:object:wineforumtopic' => '%s contributed to the discussion %s',
+    'river:comment:object:wineforumtopic' => '%s replied on the discussion topic %s',
+    'river:reply:object:wineforumtopic' => '%s replied on the discussion topic %s',
     'river:wineforumtopic' => 'on the wine %s',
+   
     'wine:nowidgets' => 'No widgets have been defined for this wine.',
     'wine:widgets:members:title' => 'wine members',
     'wine:widgets:members:description' => 'List the members of a wine.',

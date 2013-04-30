@@ -37,7 +37,7 @@ if (!$content) {
 
 
 $body = elgg_view_layout('one_sidebar', $params);*/
-        elgg_load_js('hj.livesearch.autocomplete_other');
+        elgg_load_js('search.auto_other');
 
         
         $search_box= elgg_view('search/entity/find');

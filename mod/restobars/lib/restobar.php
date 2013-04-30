@@ -12,7 +12,7 @@ function restobar_handle_all_page() {
 	elgg_pop_breadcrumb();
 	elgg_push_breadcrumb(elgg_echo('restobar'));
         gatekeeper();
-        elgg_load_js('hj.livesearch.autocomplete_other');
+        elgg_load_js('search.auto_other');
 	//elgg_register_title_button();
        
         

@@ -57,12 +57,20 @@ class ElggNotification extends ElggObject {
 	public function markRead() {
 		$this->status = 'read';
 	}
+        
+        public function markSent() {
+		$this->status_email = 'sent';
+	}
 
 	/**
 	 * Mark this notification as unread
 	 */
 	public function markUnread() {
 		$this->status = 'unread';
+	}
+        
+        public function markUnsent() {
+		$this->status_email = 'unsent';
 	}
 
 	/** Override */
@@ -71,6 +79,7 @@ class ElggNotification extends ElggObject {
 		$ia = elgg_set_ignore_access(true);
 		$this->access_id = ACCESS_PRIVATE;
 		$this->status = 'unread';
+                $this->status_email = 'unsent';
 
 		parent::save();
 

@@ -17,6 +17,9 @@ foreach ($users as $user) {
          echo remove_entity_relationship($user->guid, 'notify'.'email', $entitie->getGuid());
          //echo add_entity_relationship($user->guid, 'notify'.'site', $entitie->getGuid());
          echo remove_entity_relationship($user->guid, 'notify'.'site', $entitie->getGuid());
+         echo add_entity_relationship($user->guid, 'notify'.'notifier', $entitie->getGuid());
+         //echo remove_entity_relationship($user->guid, 'notify'.'notifier', $entitie->getGuid());
+         
         }
         echo '</br>';
 }

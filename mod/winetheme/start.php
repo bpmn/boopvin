@@ -146,8 +146,8 @@ function winetheme_init() {
 //Activer par default les notifications sur le site pour les utilisateurs
 function add_notification_site($event,$type,$entity){
     	// Turn on site notifications by default
-	set_user_notification_setting($entity->getGUID(), 'site', true);
-        $metaname = 'collections_notifications_preferences_site' ;
+	set_user_notification_setting($entity->getGUID(), 'notifier', true);
+        $metaname = 'collections_notifications_preferences_notifier' ;
 	$entity->$metaname = -1;
         $metaname = 'collections_notifications_preferences_email' ;
 	$entity->$metaname = -1;
@@ -245,17 +245,30 @@ function ranking_cron($hook, $type, $return, $params) {
 
 // du score de chaque user
 function update_score_user($object, $getter, $options) {
+    $ia=elgg_set_ignore_access(true);
+    
+    //par souci de performance et de limiter les accès à la base, nous profitons du
+    //Elgg_batch sur les 'users' pour envoyer les notifications par emails notifer_email est défini
+    //dans le start du plugin notifier
+    
+    
+    $metadata = elgg_get_metadata(array(
+			'metadata_name' => 'notification:method:email',
+			'guid' => $object->getGUID()
+		));
+
+    if (!empty($metadata[0]->value))
+                notifier_email($object);
 
     $opts = array('types' => 'object',
         'subtypes' => 'degust',
         'owner_guids' => $object->getGUID(),
         'count' => true);
 
-    elgg_set_ignore_access(true);
     $score = elgg_get_entities($opts);
     $object->score = $score;
     print_r("$object->name: $object->score </br>");
-    elgg_set_ignore_access(false);
+    elgg_set_ignore_access($ia);
 }
 
 // pour chaque restobar on récupère les vins de la cave
@@ -267,10 +280,10 @@ function grab_wine_restobar($restobar, $getter, $options) {
         'relationship_guid' => $restobar->getGUID()
     );
 
-    elgg_set_ignore_access(true);
+    $ia=elgg_set_ignore_access(true);
     $wines = new ElggBatch('elgg_get_entities_from_relationship', $opts, 'update_score_restobar');
     print_r("$restobar->name: $restobar->score </br>");
-    elgg_set_ignore_access(false);
+    elgg_set_ignore_access($ia);
 }
 
 // pour chaque vins de la caves on compte le nombre de degust de la part des membres
@@ -286,7 +299,7 @@ function update_score_restobar($wine, $getter, $options) {
     );
 
 
-    elgg_set_ignore_access(true);
+    $ia=elgg_set_ignore_access(true);
     $members = elgg_get_entities_from_relationship($opts);
 
     foreach ($members as $member) {
@@ -301,6 +314,6 @@ function update_score_restobar($wine, $getter, $options) {
         $resto->score += $score;
     }
 
-    elgg_set_ignore_access(false);
+    elgg_set_ignore_access($ia);
 }
 

@@ -12,7 +12,8 @@ $verre_score2 = elgg_normalize_url($verre_score2);
 $loading_image = '/mod/winetheme/views/default/css/winetheme/images/ajax_loader.gif';
 $loading_image = elgg_normalize_url($loading_image);
 
-
+$test_gravure = '/mod/winetheme/views/default/css/winetheme/images/gravure.png';
+$test_gravure = elgg_normalize_url($test_gravure);
 ?>
 
 body {
@@ -79,18 +80,18 @@ background: #ffffff;
 
 
 .register_me{
-padding-top: 10px;
-margin-top: 0px;
+//padding-top: 10px;
+margin-bottom: 100px;
 
-background: #ffffff;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/winelabel7.png') no-repeat;
-background-position: 10px 0px;
-height: 223px;
-width: 215px;
+//background: #ffffff;
+background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/plaque2.png') no-repeat;
+background-position: center;
+
+height: 100px;
+width: 210px;
 
 
 text-align: center;
-
 
 }
 
@@ -129,7 +130,7 @@ color:#ffffff;
 
 }*/
 #index_welcome_header {
-
+//background: url(<?php echo $test_gravure; ?>) no-repeat;
 color:#ffffff;
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.0em; 
@@ -142,9 +143,10 @@ text-align: center;
 }
 
 #index_welcome_header > h2{
-text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
-color: #00000;
-opacity: 0.9;
+
+/*text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
+//color: #00000;
+//opacity: 0.9;*/
 }
 
 

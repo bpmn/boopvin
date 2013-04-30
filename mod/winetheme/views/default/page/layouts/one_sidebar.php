@@ -27,11 +27,12 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
             
             <?php
                 if (!elgg_is_logged_in()) {
-                echo('<div class="register_me"><br><br><br>');
-
+                //echo('<div class="register_me"><br><br><br>');
+                  echo('<div class="register_me">');
 
 		if (elgg_get_config('allow_registration')) {
-			echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">' . elgg_echo('register_me') . '</a>';
+                        //$text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/text_metal024.png"));
+			echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">'.$text .'</a>'; //elgg_echo('register_me') . '</a>';
 		}
                 echo("</div>");
                 }

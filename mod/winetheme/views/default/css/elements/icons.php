@@ -28,10 +28,12 @@
 	background-position: 0 -36px;
 }
 .elgg-icon-attention:hover {
-	background-position: 0 -54px;
+	//background-position: 0 -54px;
+        background: transparent url(<?php echo elgg_get_site_url(); ?>mod/winetheme/_graphics/sonnette2.png) no-repeat;
 }
 .elgg-icon-attention {
-	background-position: 0 -72px;
+	//background-position: 0 -72px;
+        background: transparent url(<?php echo elgg_get_site_url(); ?>mod/winetheme/_graphics/sonnette.png) no-repeat;
 }
 .elgg-icon-calendar {
 	background-position: 0 -90px;

@@ -148,6 +148,11 @@ box-shadow: 1px 1px 6px #000000;
         padding:0;
 }
 
+.elgg-search input[type="text"]:focus.ui-autocomplete-loading {
+    background:white url(<?php echo $indicator?>) no-repeat; 
+    background-position:2px 50%;
+}
+
 .ac_results li {
 font-size:0.9em;
 line-height:12px;

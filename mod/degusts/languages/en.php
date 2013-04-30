@@ -180,11 +180,11 @@ Paint',
     'degust:rondeur:franche' => 'Sharp',
     'degust:rondeur:discrete' => 'Discreet',
     'degust:douceur:tendre' => 'Tender',
-    'degust:douceur:suave' => 'Sweet',
-    'degust:douceur:onctueux' => 'Smooth',
+    'degust:douceur:suave' => 'Smooth',
+    'degust:douceur:onctueux' => 'Unctuous',
     'degust:douceur:sirupeux' => 'Syrupy',
     'degust:douceur:lourd' => 'Heavy',
-    'degust:acidity:pateux' => 'Pasty',
+    'degust:acidity:pateux' => 'Dull',
     'degust:acidity:mou' => 'Weak',
     'degust:acidity:frais' => 'Fresh',
     'degust:acidity:droit' => 'Crisp',
@@ -249,8 +249,10 @@ Paint',
     'degust:link' => "Tasting notes",
     'degust:add' => "Add wine tasting",
     'degust:wine' => "wine tastings",
-    'river:degust:object:degust' => '%s did taste %s',
-    'river:comment:object:degust' => '%s commented on your wine tasting %s',
+    'river:create:object:degust' => '%s tasted %s',
+    'river:degust:object:default'=> '%s tasted %s',
+    'river:comment:object:degust' => '%s commented on the wine tasting %s',
+    
     'degust:notification:topic:subject' => "posted a new wine tasting",
     'degust:notification' =>
     "%s tasted '%s'
@@ -259,6 +261,8 @@ Paint',
 View the wine tasting notes:
 %s
 ",
+    'degust:generic_comment:email:body'=>"You have a new comment on the wine tasting \"%s\" from %s.
+%s",
     "item:object:degust"=>'Tasting notes',
     'degust:connect'=>'You need to be connected to see the tasting notes',
 );

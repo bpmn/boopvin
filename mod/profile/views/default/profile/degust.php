@@ -21,9 +21,9 @@
            $list_user_degust=elgg_echo('degust:connect'); 
         }
         $options['count']=true;
-        elgg_set_ignore_access(true);
+        $ia = elgg_set_ignore_access(true);
         $count_user_degust=elgg_get_entities($options);
-        elgg_set_ignore_access(false);?>
+        elgg_set_ignore_access($ia);?>
         <div id=list_user_degust class=degust_list>
         <h2><sup><?php echo (elgg_echo("profile:degust:count",array($count_user_degust)));?></sup></h2>
         <?php echo "$list_user_degust" ?></div>

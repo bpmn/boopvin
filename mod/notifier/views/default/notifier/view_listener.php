@@ -12,7 +12,7 @@ $user_guid = elgg_get_logged_in_user_guid();
 
 $override = false;
 
-if (elgg_in_context('profile')) {
+if (elgg_in_context('profile') || elgg_in_context('degust_profile')) {
 	// User profile doesn't have a full view so override the full_view check
 	$override = true;
 	// Parameters are not available so use page owner as target

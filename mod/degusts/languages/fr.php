@@ -249,8 +249,9 @@ Peinture',
     'degust:link' => "Voir la fiche",
     'degust:add' => "déguster",
     'degust:wine' => "dégustations",
-    'river:degust:object:degust' => "%s a dégusté %s",
-    'river:comment:object:degust' => "%s a commenté votre dégustation %s",
+    'river:create:object:degust' => "%s a dégusté %s",
+    'river:degust:object:default'=> '%s a dégusté %s',
+    'river:comment:object:degust' => "%s a commenté la dégustation %s",
     'degust:notification:topic:subject' => "a posté une nouvelle dégustation",
     'degust:notification' =>
     "%s a dégusté %s
@@ -259,6 +260,8 @@ Peinture',
 Voir la fiche de dégustation:
 %s
 ",
+    'degust:generic_comment:email:body'=>"Vous avez un nouveau commentaire sur la dégustation '%s' de %s.
+%s",
     "item:object:degust"=>'Dégustations',
     'degust:connect'=>'connectez vous pour voir les fiches de dégustation',
 );

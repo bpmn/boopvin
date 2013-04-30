@@ -35,7 +35,7 @@ unset($vars['match_on']);
 unset($vars['match_owner']);
 
 //elgg_load_js('elgg.autocomplete');
-elgg_load_js('hj.livesearch.autocomplete');
+elgg_load_js('search.auto');
 ?>
 <input type="text" <?php echo elgg_format_attributes($vars); ?> />
 

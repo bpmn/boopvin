@@ -3964,7 +3964,7 @@ array_fr[1] = [
                     //$("div.validate_error_label label").css("color", "red");
                                                              
 
-                } else {
+               } else {
                      alert("no errors found");
 
                     //$("div.error").hide();
@@ -3977,7 +3977,7 @@ array_fr[1] = [
     
     
         
-  }
+ }
   
   
 

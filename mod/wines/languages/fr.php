@@ -192,8 +192,10 @@ or click below to view the wine's join requests:
     'river:incave:group:wine' => "le vin %s a été ajouté à la cave de l'établissement %s",
     'river:join:wine:default' => '%s joined the wine %s',
     'river:create:object:wineforumtopic' => '%s a ajouté une discussion "%s"',
-    'river:reply:object:wineforumtopic' => '%s a participé à la discussion %s',
+    'river:comment:object:wineforumtopic' => '%s a commenté la discussion %s',
+    'river:reply:object:wineforumtopic' => '%s a commenté la discussion %s',
     'river:wineforumtopic' => 'sur le vin %s',
+    
     'wine:nowidgets' => 'No widgets have been defined for this wine.',
     'wine:widgets:members:title' => 'wine members',
     'wine:widgets:members:description' => 'List the members of a wine.',

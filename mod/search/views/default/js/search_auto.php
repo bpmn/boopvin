@@ -1,22 +1,19 @@
 <?php if (FALSE) : ?>
     <script type="text/javascript">
 <?php endif; ?>
-    elgg.provide('hj.livesearch.autocomplete_other');
+    elgg.provide('search.auto');
 
-    hj.livesearch.autocomplete_other.init = function() {
-       
-     var data_entity_type=$('.elgg-input-search-other').attr('data-entity_type');   
-     var data_entity_subtype=$('.elgg-input-search-other').attr('data-entity_subtype');   
-     $('.elgg-input-search-other')
+    search.auto.init = function() {
+        $('.elgg-input-autocomplete')
         .autocomplete({
             source: function(request, response) {
+                //var action = elgg.security.addToken('action/search/parse?entity_type=group&entity_subtype=wine&search_entity=entities');
                 var action = elgg.security.addToken('action/search/parse');
-                
                 elgg.action(action, {
                     data : {
                         term : request.term,
-                        entity_type:data_entity_type,
-                        entity_subtype:data_entity_subtype,
+                        entity_type:'group',
+                        entity_subtype:'wine',
                         search_type:'entities'
                     
                     },
@@ -40,8 +37,11 @@
             .data("item.autocomplete", item)
             .append(r)
             .appendTo(ul);
-        };
+        }
         
+        
+        
+     
         
     };
 
@@ -50,6 +50,6 @@
 
 
 
-    elgg.register_hook_handler('init', 'system', hj.livesearch.autocomplete_other.init);
+    elgg.register_hook_handler('init', 'system', search.auto.init);
    // elgg.register_hook_handler('success', 'hj:framework:ajax', hj.livesearch.autocomplete.init, 500);
 <?php if (FALSE) : ?></script><?php endif; ?>

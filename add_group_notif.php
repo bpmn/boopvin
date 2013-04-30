@@ -16,8 +16,8 @@ foreach ($users as $user) {
          echo $wine->name;   
          //echo add_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
          echo remove_entity_relationship($user->guid, 'notify'.'email', $wine->getGuid());
-         echo add_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());
-         //echo remove_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());   
+         echo add_entity_relationship($user->guid, 'notify'.'notifier', $wine->getGuid());
+         echo remove_entity_relationship($user->guid, 'notify'.'site', $wine->getGuid());   
         }
 }
 ?>
