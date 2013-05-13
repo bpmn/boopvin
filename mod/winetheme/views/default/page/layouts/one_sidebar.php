@@ -31,8 +31,13 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
                   echo('<div class="register_me">');
 
 		if (elgg_get_config('allow_registration')) {
-                        //$text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/text_metal024.png"));
-			echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">'.$text .'</a>'; //elgg_echo('register_me') . '</a>';
+                    $lang=get_current_language();    
+                    
+                    if ($lang == "fr")
+                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_fr.jpg"));
+                    else 
+                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_en.jpg"));
+                    echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">'.$text .'</a>'; //elgg_echo('register_me') . '</a>';
 		}
                 echo("</div>");
                 }

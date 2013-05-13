@@ -26,6 +26,7 @@ function moveLast() {
   $("#avenue_activity > ul > li:last-child").remove().prependTo("#avenue_activity > ul");
 }
 
+
 function moveLast2() {
   $("#avenue_activity2 > ul > li:last-child").remove().prependTo("#avenue_activity2 > ul");
 }

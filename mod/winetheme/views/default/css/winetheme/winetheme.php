@@ -80,16 +80,14 @@ background: #ffffff;
 
 
 .register_me{
-//padding-top: 10px;
 margin-bottom: 100px;
+margin-left: 24px;
 
-//background: #ffffff;
-background: url('<?php echo $vars['url']; ?>/mod/winetheme/views/default/css/winetheme/images/plaque2.png') no-repeat;
-background-position: center;
-
-height: 100px;
-width: 210px;
-
+height: 188px;
+width: 160px;
+-webkit-box-shadow: -4px -4px 15px rgba(51, 50, 50, 0.75);
+-moz-box-shadow:    -4px -4px 15px rgba(51, 50, 50, 0.75);
+box-shadow:         -4px -4px 15px rgba(51, 50, 50, 0.75);
 
 text-align: center;
 
@@ -102,6 +100,8 @@ font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif
 font-size: 200%; font-size: 1.8em; 
 }
 
+
+
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 
@@ -113,45 +113,16 @@ text-align: center;
 
 }
 
-/*#index_welcome_header {
-color:#ffffff;
-font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 1.4em; 
-width: 500px;
-height: 40px;
-margin-left: 200px;
-padding-top: 40px;
-text-align: center;
 
-}
 
-#index_welcome_header > h4{
-color:#ffffff;
-
-}*/
 #index_welcome_header {
-//background: url(<?php echo $test_gravure; ?>) no-repeat;
-color:#ffffff;
-font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 1.0em; 
-width: 500px;
-height: 40px;
-margin-left: 200px;
-padding-top: 40px;
-text-align: center;
+
+width: auto;
+height: auto;
+margin-left: 140px;
+padding-top: 10px;
 
 }
-
-#index_welcome_header > h2{
-
-/*text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
-//color: #00000;
-//opacity: 0.9;*/
-}
-
-
-
-
 
 
 #avenue_activity {
@@ -339,7 +310,7 @@ div#job{
 
 
 /*******************************************/
-/* liste dégust sous le profil utilisateur */
+/* liste dÃ©gust sous le profil utilisateur */
 /*******************************************/
 
 #list_user_degust {

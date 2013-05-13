@@ -174,7 +174,7 @@
 	padding: 3px 13px 0px 13px;
 	height: 20px;
         font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-        	font-size: 110%;
+        font-size: 115%;
 
 
 }

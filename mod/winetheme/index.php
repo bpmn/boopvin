@@ -83,8 +83,8 @@ $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 
 //$content_final = $slider.$rank.$welcome.$content;
 //$content_final = $welcome.$rank.$content;
-$content_final = $slider.$rank.$content;
-
+//$content_final = $slider.$rank.$content;
+$content_final = $rank.$content;
 $params = array(
 		'content' => $content_final,
 		'sidebar' => ''
