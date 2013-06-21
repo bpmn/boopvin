@@ -197,8 +197,10 @@ function degust_handle_edit_page($page, $guid = 0) {
  * @param int $guid Group entity GUID
  */
 function degust_handle_profile_page($guid,$overlay) {
-	
-        gatekeeper();
+    
+	if ($overlay != "overlay"){
+         gatekeeper();
+        }
         elgg_set_page_owner_guid($guid);
 	elgg_push_context('degust_profile');
 

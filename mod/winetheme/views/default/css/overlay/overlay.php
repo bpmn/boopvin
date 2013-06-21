@@ -49,8 +49,7 @@ $close = elgg_normalize_url($close);
         min-height: 250px;
 	min-width: 250px;
 	max-width: 900px;
-        
-	position: absolute;
+        position: absolute;
 	border: 4px solid #720D08;
         outline: 4px solid #323232;
         margin: 25px;
@@ -80,7 +79,7 @@ $close = elgg_normalize_url($close);
 	min-height: 250px;
 	min-width: 250px;
 	max-width: 1000px;
-        //overflow: hidden ; 
+        
 }
 .nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {
 	position: relative;

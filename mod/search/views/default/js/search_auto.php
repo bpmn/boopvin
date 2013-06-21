@@ -28,16 +28,18 @@
                 });
             },
             minLength: 1
-            //,appendTo: '#my-suggestions'
+          
         })
         
-        .data("autocomplete")._renderItem = function(ul, item) {
-            r = item.label;		
-            return $("<div></div>")
-            .data("item.autocomplete", item)
+       
+       .data("autocomplete")._renderItem = function(ul, data) {
+            r = data.label;
+            
+            return $("<div>")
+            .data("item.autocomplete", data)
             .append(r)
             .appendTo(ul);
-        }
+        };
         
         
         

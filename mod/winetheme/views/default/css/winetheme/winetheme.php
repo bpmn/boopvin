@@ -310,7 +310,7 @@ div#job{
 
 
 /*******************************************/
-/* liste dÃ©gust sous le profil utilisateur */
+/* liste dégust sous le profil utilisateur */
 /*******************************************/
 
 #list_user_degust {
@@ -368,9 +368,7 @@ div#job{
 
 
 #ranking{
-  // position: absolute;
-   //top: 10px;
-   //left: 405px;
+ 
    height: auto;
    width: 280px;
    float: right; 
@@ -389,28 +387,36 @@ border-top: 1px none #e7e7e7;
 
 }
 
-#ranking_list .elgg-list > li {
+/*#ranking_list .elgg-list > li {
   display: block; 
   margin: 0 0 0px;
   padding: 7px 0 0px 0;
   border: none;
   border-bottom: 1px solid #e7e7e7;
   clear:left
-}
+}*/
 
 #ranking_list{
    float: right;
    width: 270px;
    }
-
+   
+#ranking_list .elgg-list{
+  padding: 7px 0 7px 0;
+}
+   
 #ranking .elgg-image-block{
     padding:0px;
 }
 
+.item-ranking h3 {
+    font-weight:normal;
+    font-size: 1.1em ;
+}
 
 #ranking_list>h3{
     text-align: left;
-
+    
 }
 
 

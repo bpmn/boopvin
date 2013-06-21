@@ -25,7 +25,9 @@ $options = array(
 	'pagination' => true,
         
 );
+$ia=elgg_set_ignore_access(true);
 $content = "<div class=\"degust_list\">".elgg_list_entities($options)."</div>";
+elgg_set_ignore_access($ia);
 elgg_pop_context();
 
 if (!$content) {

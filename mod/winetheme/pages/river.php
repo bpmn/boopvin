@@ -132,8 +132,8 @@ $rank.="</div></div>"; //fermeture div id ranking
 elgg_pop_context();
 
 
-$content = $slider.$rank.$content;
-
+//$content = $slider.$rank.$content;
+$content = $rank.$content;
 
 $sidebar = elgg_view('core/river/sidebar');
 
@@ -142,6 +142,7 @@ $params = array(
 	'sidebar' => $sidebar,
 	'filter_context' => $page_filter,
 	'class' => 'elgg-river-layout',
+        'header'=>''
 );
 
 $body = elgg_view_layout('content', $params);

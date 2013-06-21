@@ -11,14 +11,14 @@ $english = array(
     "citation" => "« The fine wine is the one that makes you want to talk »",
     "citation2" => "Jean-Louis Chave",
     "item:group:wine" => "The Wines",
-    "item:group:restobar" => "The Bars, Restaurants, Cellars, Domains...",
+    "item:group:restobar" => "The Bars, Restaurants, Wine shops, Domains...",
     "register_me" => "Click here <br> to register!",
     "register_message" => "Registration form for Avenue Vin",
     "post1" => "1: Search for a wine",
     "post2" => "2: Wine tasting forms !",
     "post3" => "Manage your wines",
     "post4" => "Visualize your wine tastings",
-    "post5" => "Pro area: Wine bars, Restaurants, Cellars, news...",
+    "post5" => "Pro area: Wine bars, Restaurants, Wine shops, news...",
     /**
      * Sites
      */

@@ -77,14 +77,29 @@
         // });
         
         
-   $(function() {
-        degust_view_bind();
+   $( function() {
+    degust_view_bind();
    });     
         
-   function degust_view_bind(){   
+   function degust_view_bind(){
+            
+      
+       
+       
            $(".degust-view").nyroModal({
                 callbacks: {             
                     initElts: function() {
+                        if (!elgg.is_logged_in()) {
+		
+                
+                
+                            elgg.register_error(elgg.echo('loggedinrequired'));
+                            $.nmTop().close();
+                    //e.preventDefault();
+                    //elgg.register_error(elgg.echo('loggedinrequired'))
+                    //elgg.forward('');
+                            };
+                        
                         $(".elgg-page-topbar").css({
                             "z-index":" 0"
                         });
@@ -109,7 +124,8 @@
                 
             });
                
-          }
+          
+   }
         
         //les fonctions
         

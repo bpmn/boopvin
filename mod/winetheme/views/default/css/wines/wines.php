@@ -72,14 +72,14 @@
 $indicator = elgg_normalize_url('mod/search/graphics/indicator.gif')
 ?>
 
-input[type="text"]:focus#id_appellation.ui-autocomplete-loading {
+/*input[type="text"]:focus#id_appellation.ui-autocomplete-loading {
     background:white url(<?php echo $indicator?>) no-repeat; 
     background-position:2px 50%;
-}
+}*/
 
 
 .wines-profile-fields {
 
-    display:inline;
+    //display:inline;
 
 }

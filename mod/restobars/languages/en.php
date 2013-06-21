@@ -10,7 +10,7 @@ $english = array(
      * Menu items and titles
      */
     'search:restobar' => "Search for an establishment",
-    'restobar' => "The Bars, Restaurants, Cellars, Domains..",
+    'restobar' => "The Bars, Restaurants, Wine shops, Domains..",
     'restobar:yours' => "My establishements",
     'restobar:user' => "Establishements of %s",
     'restobar:all' => "All the establishements",
@@ -19,7 +19,7 @@ $english = array(
     'restobar:delete' => 'Delete',
     'restobar:icon' => 'Establishement\'s icon (leave empty to stay as is)',
     'restobar:name' => 'Establishement\'s name ',
-    'restobar:briefdescription' => 'Activity (wine cellar, wine bar, domain, restaurant etc..)',
+    'restobar:briefdescription' => 'Activity (wine shop, wine bar, domain, restaurant etc..)',
     'restobar:description' => 'Description',
     'restobar:location' => 'Enter your address, then validate and register in the pop up window',
     'restobar:address' => 'validate',

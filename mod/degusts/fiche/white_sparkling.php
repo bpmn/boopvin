@@ -78,3 +78,12 @@ $options_longueur = array(
                                 elgg_echo('degust:longueur:tres_long') => 'tres_long');
 
 
+//comment
+                    
+$options_evolution = array(
+				elgg_echo('degust:evolution:tres_jeune')=>'tres_jeune',
+                                elgg_echo('degust:evolution:jeune') => 'jeune',
+				elgg_echo('degust:evolution:amorce') => 'amorce',
+                                elgg_echo('degust:evolution:mature') => 'mature',
+                                elgg_echo('degust:evolution:evolue') => 'evolue',
+                                elgg_echo('degust:evolution:use') => 'use');

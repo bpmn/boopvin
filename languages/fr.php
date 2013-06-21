@@ -738,7 +738,7 @@ $french = array(
     'total' => "Total",
     'learnmore' => "Cliquer ici pour en apprendre plus.",
     'content' => "contenu",
-    'content:latest' => "Dernière activité",
+    'content:latest' => "Dernières activités",
     'content:latest:blurb' => "Vous pouvez également cliquer ici pour voir les dernières modifications effectuées sur le site.",
     'link:text' => "voir le lien",
     /**
