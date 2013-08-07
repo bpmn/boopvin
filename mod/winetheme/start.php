@@ -277,7 +277,8 @@ function grab_wine_restobar($restobar, $getter, $options) {
     $opts = array('types' => 'group',
         'subtypes' => 'wine',
         'relationship' => 'incave',
-        'relationship_guid' => $restobar->getGUID()
+        'relationship_guid' => $restobar->getGUID(),
+        'limit'=>0
     );
 
     $ia=elgg_set_ignore_access(true);

@@ -10,15 +10,30 @@
 
 echo elgg_view_menu('footer', array('sort_by' => 'priority', 'class' => 'elgg-menu-hz'));
 
-/*
-$powered_url = elgg_get_site_url() . "_graphics/powered_by_elgg_badge_drk_bckgnd.gif";
 
-echo '<div class="mts clearfloat float-alt">';
+
+
+//echo '<div class="mts clearfloat float-alt">';
+
+//liste des partenaires
+
+
+echo elgg_echo("sponsors")."<br/>";
+
+echo '<div class="mts">';
+/* wineshop-biarritz */
+$wineshop_url= elgg_view('output/img', array(
+        "src" => "mod/winetheme/_graphics/wineshop.jpg",
+        "alt"=> "wineshop-biarritz",
+        "width"=>"45",
+        "height"=>"45"
+    ));
 echo elgg_view('output/url', array(
-	'href' => 'http://elgg.org',
-	'text' => "<img src=\"$powered_url\" alt=\"Powered by Elgg\" width=\"106\" height=\"15\" />",
+	'href' => 'http://www.wineshop-biarritz.fr/',
+	'text' => $wineshop_url,
 	'class' => '',
+        'target'=>'_blank',
+        'title'=>'wineshop-biarritz',
 	'is_trusted' => true,
 ));
 echo '</div>';
-*/

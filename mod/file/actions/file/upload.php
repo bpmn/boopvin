@@ -90,8 +90,14 @@ if (isset($_FILES['upload']['name']) && !empty($_FILES['upload']['name'])) {
 
 	$file->setFilename($prefix . $filestorename);
 	$mime_type = ElggFile::detectMimeType($_FILES['upload']['tmp_name'], $_FILES['upload']['type']);
+       
+        /*en attendant Fileinfo*/
+        if(($mime_type=="application/octet-stream") && ($info = getimagesize($_FILES['upload']['tmp_name']))) 
+        	$mime_type= image_type_to_mime_type($info[2]);
+    	
 	
-	$file->setMimeType($mime_type);
+        
+        $file->setMimeType($mime_type);
 	$file->originalfilename = $_FILES['upload']['name'];
 	$file->simpletype = file_get_simple_type($mime_type);
 
