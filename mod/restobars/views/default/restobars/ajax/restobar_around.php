@@ -13,7 +13,7 @@ $long_user=$vars['longitude'];
 $wine_guid=$vars['guid'];*/
 $lat_user=(float)get_input('latitude');
 $long_user=(float)get_input('longitude');
-$dist_max=60;
+//$dist_max=60;
 
 $restobars = elgg_get_entities(array(
         'types'=>'group',
@@ -25,7 +25,8 @@ $restobars = elgg_get_entities(array(
 $list_restobar=array();
 foreach($restobars as $elts){
     //todo rajouter le test paiement effectué
-    if(($dist=$elts->distance($lat_user,$long_user))<$dist_max){
+    //if(($dist=$elts->distance($lat_user,$long_user))<$dist_max){
+    if($dist=$elts->distance($lat_user,$long_user)){
         $elts->dist=$dist; // on crée une metadata temporelle (dist) pour l'affichage de la distance ds la vue de l'entité, elle est ensuite supprimée
         $list_restobar[]=$elts;     
     }

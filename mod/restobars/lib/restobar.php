@@ -19,7 +19,7 @@ function restobar_handle_all_page() {
         // extend view for header restobar search box
 	//elgg_extend_view('page/layouts/content/header', 'restobars/sidebar/find');
 
-	$selected_tab = get_input('filter', 'newest');
+	$selected_tab = get_input('filter', 'around');
 
 	switch ($selected_tab) {
 		case 'around':
@@ -464,13 +464,13 @@ function restobar_handle_cave_page($restobar_guid) {
              $content = elgg_list_entities_from_relationship(array(
                             'types'=>'group',
                             'subtypes'=>'wine',
-                            'limit' => 100,
+                            'limit' => 1000,
                             'pagination' => true,
                             'relationship' => 'incave',
                             'relationship_guid' => $restobar_guid,
                             'inverse_relationship' => FALSE,
                             'full_view'=>FALSE,
-                            'list_type' => 'gallery'
+                            'list_class'=>'list-style-all',
                     ));
 
         elgg_pop_context('restobar');

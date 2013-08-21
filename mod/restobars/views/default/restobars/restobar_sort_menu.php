@@ -9,12 +9,12 @@ $tabs = array(
 	'newest' => array(
 		'text' => elgg_echo('restobar:newest'),
 		'href' => 'restobar/all?filter=newest',
-		'priority' => 200,
+		'priority' => 300,
 	),
 	'around' => array(
 		'text' => elgg_echo('restobar:around'),
 		'href' => 'restobar/all?filter=around',
-		'priority' => 300,
+		'priority' => 200,
 	),
 	
 );
