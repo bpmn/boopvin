@@ -60,12 +60,13 @@
 }
 
 .image_block_wine{
-    min-height: 67px;
+    min-height: 60px;
     height: auto;
-
 }
 
-
+.image_block_wine h3 {
+    font-size:12px;
+}
 
 <?php
 

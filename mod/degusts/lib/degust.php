@@ -229,25 +229,28 @@ function degust_handle_profile_page($guid,$overlay) {
 
 	$content = elgg_view('degusts/profile/layout', array('entity' => $degust));
         $sidebar = elgg_view('degusts/profile/sidebar', array('entity' => $degust));
-
+        
 		
 
 	$params = array(
 		'content' => $content,
-		'title' => $title,
+		//'title' => '',
                 'sidebar'=>$sidebar,
 		'filter' => ''
                 
 	);
         	
 	      
-	$body = elgg_view_layout('degust_one_sidebar', $params);
+	$body ="<div class='elgg-page-body-degust'>". elgg_view_layout('degust_one_sidebar', $params)."</div>";
+        //$body = elgg_view_layout('content', $params);
         
         if ($overlay =="overlay"){
             echo elgg_view_page($title, $body,'overlay');
         }else{
-            echo elgg_view_page($title, $body,'degust_normal');
-        }
+        //echo elgg_view_page($title, $body,'degust_normal');
+         $title=$degust->title;
+         echo elgg_view_page($title, $body);
+    }
 }
 
 

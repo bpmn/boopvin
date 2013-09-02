@@ -47,6 +47,7 @@ if ($vars['full_view']) {
         }
 	$params = $params + $vars;
 	$list_body = elgg_view('group/elements/summary', $params);
+        $vars['class']="image_block_restobars";
         if($dist_display)
             $vars['image_alt']=$dist_display;
         if (elgg_in_context("ranking"))

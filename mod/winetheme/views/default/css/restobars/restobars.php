@@ -154,3 +154,12 @@ font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif
 .restobars-latest-reply {
 	float: right;
 }
+
+.image_block_restobars{
+    min-height: 60px;
+    height: auto;
+}
+
+.image_block_restobars h3 {
+    font-size:12px;
+}

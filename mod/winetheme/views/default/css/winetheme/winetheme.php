@@ -94,14 +94,6 @@ text-align: center;
 }
 
 
-.register_me a {
-
-font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-font-size: 200%; font-size: 1.8em; 
-}
-
-
-
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 
