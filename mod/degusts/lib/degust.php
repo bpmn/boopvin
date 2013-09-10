@@ -229,7 +229,7 @@ function degust_handle_profile_page($guid,$overlay) {
 
 	$content = elgg_view('degusts/profile/layout', array('entity' => $degust));
         $sidebar = elgg_view('degusts/profile/sidebar', array('entity' => $degust));
-        
+       
 		
 
 	$params = array(

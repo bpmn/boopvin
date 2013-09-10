@@ -19,14 +19,6 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 <div class="<?php echo $class; ?>">
     <div class="degust-main">
 
-
-        <div class="error" style="display:none;">
-            <img src="images/warning.gif" alt="Warning!" width="24" height="24" style="float:left; margin: -5px 10px 0px 0px; " />
-
-            <span></span>.<br clear="all"/>
-        </div>
-
-
         <div id="vtab">
             <ul>    
                 <li class="home"></li>
