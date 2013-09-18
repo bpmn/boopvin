@@ -250,7 +250,7 @@ Peinture',
     'degust:add' => "déguster",
     'degust:wine' => "dégustations",
     'river:create:object:degust' => "%s a dégusté %s",
-    'river:degust:object:default'=> '%s a dégusté %s',
+    //'river:degust:object:default'=> '%s a dégusté %s',
     'river:comment:object:degust' => "%s a commenté la dégustation %s",
     'degust:notification:topic:subject' => "a posté une nouvelle dégustation",
     'degust:notification' =>

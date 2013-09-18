@@ -14,7 +14,7 @@ elgg_load_js('jquery.winetheme');
 $options = array();
 $options['pagination']=FALSE;
 $options['limit']=20;
-
+$options['action_types']=array("create",'degust');
 
 $slider = "<div id=\"images_slider\" style=\"display:none;\">";
 

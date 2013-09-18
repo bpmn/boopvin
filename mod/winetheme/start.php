@@ -266,14 +266,15 @@ function update_score_user($object, $getter, $options) {
         'count' => true);
 
     $score = elgg_get_entities($opts);
-    $object->score = $score;
+    if ($object->score != $score)
+     $object->score = $score;
     print_r("$object->name: $object->score </br>");
     elgg_set_ignore_access($ia);
 }
 
 // pour chaque restobar on récupère les vins de la cave
 function grab_wine_restobar($restobar, $getter, $options) {
-    $restobar->score = 0;
+    $score = 0;
     $opts = array('types' => 'group',
         'subtypes' => 'wine',
         'relationship' => 'incave',
@@ -282,23 +283,28 @@ function grab_wine_restobar($restobar, $getter, $options) {
     );
 
     $ia=elgg_set_ignore_access(true);
-    $wines = new ElggBatch('elgg_get_entities_from_relationship', $opts, 'update_score_restobar');
+    //$wines = new ElggBatch('elgg_get_entities_from_relationship', $opts, 'update_score_restobar');
+    $wines=elgg_get_entities_from_relationship($opts);
+    foreach ($wines as $wine) {
+      $score+= update_score_restobar($wine,$restobar);      
+    }
+    
+    if ($restobar->score != $score)
+     $restobar->score = $score;
     print_r("$restobar->name: $restobar->score </br>");
     elgg_set_ignore_access($ia);
 }
 
 // pour chaque vins de la caves on compte le nombre de degust de la part des membres
-function update_score_restobar($wine, $getter, $options) {
-
-    $resto = get_entity($options['relationship_guid']);
-
+function update_score_restobar($wine, $resto) {
+    //$resto = get_entity($options['relationship_guid']);
+    $score=0;
     $opts = array('types' => 'user',
         'relationship' => 'member',
-        'relationship_guid' => $options['relationship_guid'],
+        'relationship_guid' => $resto->getGUID(),
         'inverse_relationship' => true,
         'limit' => 100
     );
-
 
     $ia=elgg_set_ignore_access(true);
     $members = elgg_get_entities_from_relationship($opts);
@@ -311,10 +317,11 @@ function update_score_restobar($wine, $getter, $options) {
             'limit' => 9999999,
             'count' => true
         );
-        $score = elgg_get_entities($op);
-        $resto->score += $score;
+        $score_temp = elgg_get_entities($op);
+        $score += $score_temp;
+         
     }
-
     elgg_set_ignore_access($ia);
+    return $score;
 }
 

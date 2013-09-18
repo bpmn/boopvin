@@ -63,7 +63,7 @@ $items_create=elgg_get_river(array('types'=>'group',
 
 $items_friend=elgg_get_river(array('relationship_guid'=>elgg_get_logged_in_user_guid(),
                             'relationship'=>'friend',
-                            'action_types'=>array('degust','incave','update')));
+                            'action_types'=>array('incave','update')));
 
 $items=array_merge($items_create,$items_friend);
 usort($items, "time_created_cmp");

@@ -49,8 +49,8 @@ elgg_pop_context();
 
 
 function dist_cmp($a, $b) {
-    $al = (int) $a->dist;
-    $bl = (int) $b->dist;
+    $al = (float) $a->dist;
+    $bl = (float) $b->dist;
     if ($al == $bl) {
         return 0;
     }
