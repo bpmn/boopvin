@@ -11,10 +11,7 @@ elgg_load_js('jquery.winetheme');
 
 //elgg_unregister_menu_item('river', 'comment');
 
-$options = array();
-$options['pagination']=FALSE;
-$options['limit']=20;
-$options['action_types']=array("create",'degust');
+
 
 $slider = "<div id=\"images_slider\" style=\"display:none;\">";
 
@@ -70,9 +67,14 @@ $welcome .= "</div>";
 
 //$content = elgg_view_title(elgg_echo('content:latest'));
 
-
+$ia=elgg_set_ignore_access(true);
+$options['action_types']=array("create");
+$options = array();
+$options['pagination']=FALSE;
+$options['limit']=20;
+$options['type_subtype_pairs']=array('group'=>array('wine','restobar'),'object'=>'degust');
 $list_river = elgg_list_river($options);
-
+elgg_set_ignore_access($ia);
 $content = '<h3>'.elgg_echo("content:latest").'</h3>';
 
 $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";

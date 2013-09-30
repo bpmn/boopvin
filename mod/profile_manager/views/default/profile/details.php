@@ -5,14 +5,31 @@
  */
 
 	$user = elgg_get_page_owner_entity();
-	
+	$about = "";
 	if ($user->isBanned()) {
 		$about .= "<p class='profile-banned-user'>";
 		$about .= elgg_echo('banned');
 		$about .= "</p>";
 	} else {
 		if ($user->description) {
-			$about .= "<p class='profile-aboutme-title'><b>" . elgg_echo("profile:aboutme") . "</b></p>";
+			// see if we have a custom title
+            $description_field = elgg_get_entities_from_metadata(array(
+                'type' => 'object',
+                'subtype' => 'custom_profile_field',
+                'metadata_name_value_pairs' => array(
+                    'name' => 'metadata_name',
+                    'value' => 'description'
+                ),
+                'limit' => 1
+            ));
+            
+            if ($description_field) {
+                $title = $description_field[0]->getTitle();
+            }
+            else {
+                $title = elgg_echo('profile:aboutme');
+            }
+			$about .= "<p class='profile-aboutme-title'><b>{$title}</b></p>";
 			$about .= "<div class='profile-aboutme-contents'>";
 			$about .= elgg_view('output/longtext', array('value' => $user->description, 'class' => 'mtn'));
 			$about .= "</div>";
@@ -34,6 +51,8 @@
 	$categorized_fields = profile_manager_get_categorized_fields($user);
 	$cats = $categorized_fields['categories'];
 	$fields = $categorized_fields['fields'];
+	
+	$details_result = "";
 	
 	if($show_profile_type_on_profile != "no"){
 		if($profile_type_guid = $user->custom_profile_type){
@@ -86,8 +105,8 @@
 			
 			foreach($fields[$cat_guid] as $field){
 				
-                            
-                                //on affiche pas la question Ãªtes vous un pro
+                //AVENUEVIN            
+                                //on affiche pas la question êtes vous un pro
 				$metadata_name = $field->metadata_name;
                                 if ($metadata_name == 'pro')
                                     continue;
@@ -113,19 +132,25 @@
 					// adjust output type
 					if($field->output_as_tags == "yes"){
 						$output_type = "tags";
-						$value = string_to_tag_array($value);
+						if(!is_array($value)){
+							$value = string_to_tag_array($value);
+						}
 					} else {
 						$output_type = $field->metadata_type;
 					}
 					
 					if($field->metadata_type == "url"){
 						$target = "_blank";
+						// validate urls
+						if (!preg_match('~^https?\://~i', $value)) {
+							$value = "http://$value";
+						}
 					} else {
 						$target = null;
 					}
 					
 					// build result
-					$field_result .= "<div  class='" . $even_odd . "'>";
+					$field_result .= "<div class='" . $even_odd . "'>";
 					$field_result .= "<b>" . $title . "</b>:&nbsp;";
 					$field_result .= elgg_view("output/" . $output_type, array("value" =>  $value, "target" => $target));
 					$field_result .= "</div>\n";

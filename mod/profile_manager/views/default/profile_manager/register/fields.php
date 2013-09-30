@@ -18,11 +18,11 @@
 		$tabbed = true;
 	}
 	
-	echo "<fieldset>";
+	$result = "";
 	
 	// mandatory profile icon
 	if($profile_icon == "yes"){
-		echo elgg_view("input/profile_icon");
+		$result .= elgg_view("input/profile_icon");
 	}
 
 	$categorized_fields = profile_manager_get_categorized_fields(null, true, true);
@@ -45,8 +45,12 @@
 		if($types = elgg_get_entities($types_options)){
 			
 			$types_options_values = array();
-			$types_options_values[""] = elgg_echo("profile_manager:profile:edit:custom_profile_type:default");
+			if(elgg_get_plugin_setting("hide_profile_type_default", "profile_manager") !== "yes"){
+				$types_options_values[""] = elgg_echo("profile_manager:profile:edit:custom_profile_type:default");
+			}
 			
+			// Generate type descriptions for all profile types
+			$types_description = "";
 			foreach($types as $type){
 				$types_options_values[$type->guid] = $type->getTitle();
 				
@@ -70,18 +74,20 @@
 											"name" => "custom_profile_fields_custom_profile_type",
 											"id" => "custom_profile_fields_custom_profile_type",
 											"options_values" => $types_options_values,
-											"js" => "onchange='changeProfileType();'",
+											"js" => "onchange='elgg.profile_manager.change_profile_type_register();'",
 											"value" => $custom_profile_fields_custom_profile_type)
 										);
 			
 			$types_result .= $types_description;
 			$types_result .= "</div>";
+			
+			$result .= $types_result;
 		}	
-	
-		echo $types_result;
 	}
 	
 	if(count($fields) > 0){
+		$tabbed_cat_titles = "";
+		$tabbed_cat_content = "";
 		
 		foreach($cats as $cat_guid => $cat){
 			
@@ -93,8 +99,6 @@
 			$fields_result = "";
 			foreach($fields[$cat_guid] as $field){
 				$metadata_type = $field->metadata_type;
-                                $metadata_name = $field->metadata_name;
-                                
 				if($metadata_type == "longtext"){
 					// bug when showing tinymce on register page (when moving) newer versions of tinymce are working correctly
 					$metadata_type = "plaintext";
@@ -102,7 +106,10 @@
 				
 				$sticky_name = "custom_profile_fields_". $field->metadata_name;
 				
-				$value = $$sticky_name;
+				$value = "";
+				if(isset($$sticky_name)){
+					$value = $$sticky_name;
+				}
 				
 				if(is_array($value)){
 					$value = implode(", ", $value);
@@ -111,8 +118,9 @@
 				if($field->mandatory == "yes"){
 					$class = " class='mandatory'";
 				} 
-				
-				$fields_result .= "<div" . $class . " id=\"{$metadata_name}\">";
+				//AVENUEVIN
+				//$fields_result .= "<div" . $class . ">";
+                                $fields_result .= "<div" . $class . " id=\"{$field->metadata_name}\">";
 				$fields_result .= "<label>" . $field->getTitle() . "</label>";
 				
 				if($hint = $field->getHint()){ 
@@ -144,7 +152,7 @@
 					$title = $cat->getTitle();
 				}
 				if($tabbed){
-					$tabbed_cat_titles .= "<li class='" . $class . "'><a href='javascript:void(0);' onclick='toggle_tabbed_nav(\"" . $cat_guid . "\", this);'>" . $title . "</a></li>";
+					$tabbed_cat_titles .= "<li class='" . $class . "'><a href='javascript:void(0);' onclick='elgg.profile_manager.toggle_tabbed_nav(\"" . $cat_guid . "\", this);'>" . $title . "</a></li>";
 				} else {
 					$cat_result .= "<h3 class='settings'>" . $title . "</h3>";
 				} 
@@ -156,22 +164,25 @@
 			if($tabbed){
 				$tabbed_cat_content .= $cat_result;
 			} else {
-				echo $cat_result;
+				$result .= $cat_result;
 			}
 		}
 		if($tabbed){
 			if($tabbed_cat_titles){
 				
-				echo "<ul class='elgg-tabs elgg-htabs' id='profile_manager_register_tabbed'>";
-				echo $tabbed_cat_titles;
-				echo "</ul>";
+				$result .= "<ul class='elgg-tabs elgg-htabs' id='profile_manager_register_tabbed'>";
+				$result .= $tabbed_cat_titles;
+				$result .= "</ul>";
 				
-				echo "<div>";
-				echo $tabbed_cat_content;
-				echo "</div>";
+				$result .= "<div>";
+				$result .= $tabbed_cat_content;
+				$result .= "</div>";
 			} else {
-				echo $tabbed_cat_content;
+				$result .= $tabbed_cat_content;
 			}
 		}
 	} 	
-	echo "</fieldset>";
+	
+	if(!empty($result)){
+		echo "<fieldset>" . $result . "</fieldset>";
+	}
