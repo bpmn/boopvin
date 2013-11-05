@@ -11,35 +11,36 @@ $english = array(
      */
     'search:restobar' => "Search for an establishment",
     'restobar' => "The Bars, Restaurants, Wine shops, Domains..",
-    'restobar:yours' => "My establishements",
-    'restobar:user' => "Establishements of %s",
-    'restobar:all' => "All the establishements",
-    'restobar:add' => "Add a establishement",
+    'restobar:yours' => "My establishments",
+    'restobar:user' => "Establishments of %s",
+    'restobar:all' => "All the establishments",
+    'restobar:add' => "Add an establishment",
     'restobar:edit' => "Edit",
     'restobar:delete' => 'Delete',
-    'restobar:icon' => 'Establishement\'s icon (leave empty to stay as is)',
-    'restobar:name' => 'Establishement\'s name ',
+    'restobar:icon' => 'Establishment\'s icon (leave empty to stay as is)',
+    'restobar:name' => 'Establishment\'s name ',
     'restobar:briefdescription' => 'Activity (wine shop, wine bar, domain, restaurant etc..)',
     'restobar:description' => 'Description',
     'restobar:location' => 'Enter your address, then validate and register in the pop up window',
     'restobar:address' => 'validate',
     'restobar:website' => 'Website',
-    'restobar:profile:icon' => 'Establishement\'s icon (leave empty to stay as is)',
-    'restobar:profile:name' => 'Establishement\'s name ',
+    'restobar:profile:icon' => 'Establishment\'s icon (leave empty to stay as is)',
+    'restobar:profile:name' => 'Establishment\'s name ',
     'restobar:profile:briefdescription' => 'Activity',
     'restobar:profile:description' => 'Description',
     'restobar:profile:location' => 'Address',
     'restobar:profile:address' => 'validate',
     'restobar:profile:website' => 'Website',
     'restobar:interests' => 'Tags',
-    'restobar:members' => 'Establishement\'s members',
+    'restobar:members' => 'Establishment\'s members',
+    'restobar:addmember'=> 'Add to my establishments',
     'restobar:members:title' => 'Members of %s',
     'restobar:members:more' => "View all members",
     'restobar:membership' => "restobar membership permissions",
     'restobar:access' => "Access permissions",
     'restobar:owner' => "Owner",
     'restobar:cantedit' => 'You can not edit this restobar',
-    'restobar:saved' => 'Establishement registered',
+    'restobar:saved' => 'Establishment registered',
     'restobar:leave' => 'quit',
     'restobar:acl' => "restobar: %s",
     'restobar:count' => "number of establishments",
@@ -59,13 +60,13 @@ $english = array(
 
     'news:restobar' => 'Latest news',
     'news:restobar:edit' => 'edit',
-    'restobar:newest' => ' the establishement',
+    'restobar:newest' => ' the establishment',
     'restobar:around' => 'around',
     'restobar:privaterestobar' => 'This restobar is closed. Requesting membership.',
     'restobar:notitle' => 'The establishment must have a name',
     'restobar:cantjoin' => 'Can not join restobar',
     'restobar:cantleave' => 'Could not leave restobar',
-    'restobar:removeuser' => 'remove from the establishement',
+    'restobar:removeuser' => 'remove from the establishment',
     'restobar:cantremove' => 'Cannot remove user from restobar',
     'restobar:removed' => 'Successfully removed %s from restobar',
     'restobar:addedtorestobar' => 'Successfully added the user to the restobar',
@@ -92,7 +93,7 @@ $english = array(
     'restobar:welcome:subject' => "welcome to %s !",
     'restobar:welcome:body' => "hello %s!
 
-You are now a member of the establishement '%s' ! Click on the link below to go the profile!
+You are now a member of the establishment '%s' ! Click on the link below to go the profile!
 
 %s",
     'restobar:request:subject' => "%s has requested to join %s",
@@ -108,7 +109,7 @@ or click below to view the restobar's join requests:
     /*
       Forum river items
      */
-    'river:create:group:restobar' => "%s has added the establishement %s to AvenueVin",
+    'river:create:group:restobar' => "%s has added the establishment %s to AvenueVin",
     'river:update:object:restobarnews' => "%s has actualised the latest news !",
     'river:join:restobar:default' => '%s joined the restobar %s',
     'river:create:object:restobarforumtopic' => '%s added a new discussion topic %s',
@@ -168,6 +169,8 @@ or click below to view the restobar's join requests:
     'restobarnews:email:subject'=>'%s updated its latest news ! ',
     'restobarnews:email:body'=>'View the latest news about %s:
 %s',
+    'restobar:addcave:inallbusiness'=> "This wine is already in all your businesses cellar",
+    'restobar:addcave:nobusiness'=> "You have not registered any business in Avenuevin yet"
 );
 
 add_translation("en", $english);

@@ -5,6 +5,8 @@
 elgg_load_js('elgg.coin');
 elgg_load_css('coinslider.coinslider_css');
 elgg_load_js('jquery.winetheme');
+elgg_load_js('elgg.modal');
+elgg_load_js('elgg.popup');
 
 //$options = array();
 

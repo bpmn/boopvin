@@ -15,7 +15,8 @@ $list_restobars= elgg_get_entities_from_relationship($options);
 $list_empty=TRUE;
 //echo '<div id="addcave">';
 
-if (is_array($list_restobars)){
+//if (is_array($list_restobars)){
+if(!empty($list_restobars)){
     foreach($list_restobars as $restobar){
         if (! $restobar->isIncave($wine))
             $checkboxes_options[$restobar->name]=$restobar->getGUID();

@@ -1,0 +1,1 @@
+<h2> the Help section will be available in English very soon !</h2>

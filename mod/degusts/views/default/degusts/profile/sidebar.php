@@ -5,6 +5,10 @@
  * and open the template in the editor.
  */
 
+/*désactiver le tinymce pour les comments*/
+elgg_unextend_view('input/longtext', 'tinymce/init');
+elgg_unregister_plugin_hook_handler('register', 'menu:longtext', 'tinymce_longtext_menu');
+
 $user=$vars['entity']->getOwnerEntity();
 $degust=$vars['entity'];
 

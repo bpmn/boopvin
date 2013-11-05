@@ -19,7 +19,7 @@ if (isset($vars['entity'])) {
 }
 
 if (!isset($vars['entity'])){
-echo "<div> <label>";
+echo "<div class=\"ui-widget\"> <label>";
 echo elgg_echo("wine:photo").'</label><br />';
 echo elgg_view("input/file", array('name' => 'photo')); 
 echo '</div>';
@@ -31,7 +31,7 @@ echo '</div>';
 
 
 
-<div>
+<div class="ui-widget">
 	<label><?php echo elgg_echo("wine:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
 

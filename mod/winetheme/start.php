@@ -141,6 +141,15 @@ function winetheme_init() {
     elgg_register_event_handler('create','user', 'add_notification_site');
     
     elgg_register_plugin_hook_handler('cron','daily','ranking_cron');
+    
+    
+    //Gestion de la page d'aide
+    // Set up the menu help
+        $item = new ElggMenuItem('help', elgg_echo('help'), 'help');
+	elgg_register_menu_item('site', $item);
+
+	// Register a page handler, so we can have nice URLs
+	elgg_register_page_handler('help', 'help_page_handler');
 }
 
 //Activer par default les notifications sur le site pour les utilisateurs
@@ -177,6 +186,11 @@ function winetheme_river_page_handler() {
 	return true;
 }
 
+function help_page_handler() {
+        require_once (dirname(__FILE__) . "/pages/help.php");
+        return true;
+}
+
 function friends_winetheme_page_handler($page_elements, $handler) {
 	elgg_set_context('friends');
 	
@@ -190,9 +204,13 @@ function friends_winetheme_page_handler($page_elements, $handler) {
 	switch ($handler) {
 		case 'friends':
                         elgg_unregister_menu_item('page','friends:view:collections');
+                        elgg_load_js('elgg.modal');
+                        elgg_load_js('elgg.popup');
 			require_once (dirname(__FILE__) . "/pages/friends/index.php");
 			break;
 		case 'friendsof':
+                        elgg_load_js('elgg.modal');
+                        elgg_load_js('elgg.popup');
 			require_once(dirname(dirname(dirname(__FILE__))) . "/pages/friends/of.php");
 			break;
 		default:
@@ -266,6 +284,10 @@ function update_score_user($object, $getter, $options) {
         'count' => true);
 
     $score = elgg_get_entities($opts);
+   
+    if (!isset($object->score))
+        $object->score=0; //initialisation du score ds le cas d'un nouvel utilisateur
+   
     if ($object->score != $score)
      $object->score = $score;
     print_r("$object->name: $object->score </br>");

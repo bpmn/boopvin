@@ -39,7 +39,13 @@ $help = elgg_normalize_url($help);
 ?>
 
 .degust-layout-one-sidebar{
-width: 900px;
+ text-align: center;
+//width: 900px;
+}
+
+.degust-layout-one-sidebar table {
+margin-left: auto;
+margin-right: auto;
 }
 
 .vigne_separator {
@@ -48,14 +54,7 @@ height: 33px;
 margin-bottom: 10px;
 }
 
-#degust-fiche-left {
-padding-top: 10px;
-width: 630px;
-margin: 8px 0 5px 0px;
-background: #ffffff;
-border: 1px none #800000;
 
-}
 
 .degust-feuille-header {
 border-bottom: 1px none #800000;
@@ -93,7 +92,7 @@ color: #800000;
 
 .degust-feuille-content-value {
 float:left;
-width: 350px;
+width: 390px;
 display:block;
 text-align: left;
 }
@@ -264,11 +263,6 @@ text-align: center;
 
 
 
-.degust-main {
-
-margin-right: 0px;
-
-}
 
 .degust-side-head {
 padding-top:10px;
@@ -278,10 +272,18 @@ text-transform:capitalize;
 background-position: right center;
 }
 
+#degust-fiche-left {
+padding-top: 10px;
+width: 610px;
+//width: 200px;
+margin: 8px 0 5px 0px;
+background: #ffffff;
+border: 1px none #800000;
 
+}
 
 .degust-sidebar {
-    float: right;
+    //float: right;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 0px;
@@ -293,10 +295,12 @@ background-position: right center;
     position: relative;
     border-width: 1px;
     border-style: none;
-    width: 250px;
+    //width: 250px;
+    //width: auto;
+    max-width: 250px;
 }
 
-.elgg-page-body-degust .elgg-layout {
+.elgg-page-body-degust {
     //padding: 25px;
     background: #D8B771;
 }
@@ -346,3 +350,4 @@ background-position: right center;
 .degust-image-block .elgg-body {
     display:inline;
 }*/
+

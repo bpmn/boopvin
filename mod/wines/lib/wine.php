@@ -559,12 +559,12 @@ function wine_register_profile_buttons($wine) {
 
 function wine_handle_addtocave_page($entity_guid){
  
-	elgg_pop_breadcrumb();
-	elgg_push_breadcrumb(elgg_echo('wine:addtocave'));
+	//elgg_pop_breadcrumb();
+	
         
         $entity=get_entity($entity_guid);
-          
-        $restobarnews= get_entity($guid);
+        elgg_push_breadcrumb($entity->name); 
+        
 	$content = elgg_view('wines/addtocave',array('entity'=>$entity));
 	
 
@@ -575,7 +575,7 @@ function wine_handle_addtocave_page($entity_guid){
 	);
 	$body = elgg_view_layout('one_column', $params);
         
-	echo elgg_view_page($title, $content,'overlay');   
+	echo elgg_view_page($title, $body,'overlay');   
     
 }
 

@@ -78,7 +78,7 @@ $close = elgg_normalize_url($close);
 	padding: 10px;
 	min-height: 250px;
 	min-width: 250px;
-	max-width: 1000px;
+	max-width: 900px;
         
 }
 .nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {

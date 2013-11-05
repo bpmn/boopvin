@@ -33,6 +33,7 @@ $french = array(
     'restobar:profile:website' => 'Site internet',
     'restobar:interests' => 'Tags',
     'restobar:members' => 'Membres de l\'établissement',
+    'restobar:addmember'=> 'Ajouter à mes établissements',
     'restobar:members:title' => 'Members of %s',
     'restobar:members:more' => "View all members",
     'restobar:membership' => "restobar membership permissions",
@@ -168,6 +169,8 @@ or click below to view the restobar's join requests:
     'restobarnews:email:subject'=>'%s a actualisé ses nouvelles du moment ! ',
     'restobarnews:email:body'=>'Voir les nouvelles du moment concernant %s:
 %s',
+    'restobar:addcave:inallbusiness'=> "Ce vin est déjà rattaché à tous vos établissements",
+    'restobar:addcave:nobusiness'=> "Vous n'avez crée actuellement aucun établissement sur Avenuevin"
 );
 
 add_translation("fr", $french);

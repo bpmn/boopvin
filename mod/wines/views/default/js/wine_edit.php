@@ -4423,12 +4423,13 @@ array_fr[1] = [
                         })
 
                         .autocomplete({
-			        minLength: 0,
+			        minLength:4,
+                                delay:0,
                                 source: function( request, response ) {
                                     
                                     
                                 var matcher = new RegExp( $.ui.autocomplete.escapeRegex( extractLast(request.term) ), "i" );
-                                var matcher2 = new RegExp( $.ui.autocomplete.escapeRegex( extractFirst(request.term) ), "i" );
+                                //var matcher2 = new RegExp( $.ui.autocomplete.escapeRegex( extractFirst(request.term) ), "i" );
                                 var search_array = [];
 
                                 if ($('#id_country').val() == "France") {
@@ -4448,7 +4449,7 @@ array_fr[1] = [
 
 
                                 response( $.grep( search_array, function( value ) {
-                                    value = value.truc || value.value || value;
+                                    //value = value.truc || value.value || value;
                                     // multi search returns everything it finds
                                     // return matcher.test( value ) || matcher.test( normalize( value ) ) || matcher2.test( value ) || matcher2.test( normalize( value )) ;
                                     // last only, works well

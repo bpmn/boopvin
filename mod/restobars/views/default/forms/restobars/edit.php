@@ -19,11 +19,14 @@ if (isset($vars['entity'])) {
 }
 
 ?>
-<div>
+ <div class="ui-widget">
+ 
 	<label><?php echo elgg_echo("restobar:icon"); ?></label><br />
 	<?php echo elgg_view("input/file", array('name' => 'icon')); ?>
+
 </div>
-<div>
+<div class="ui-widget">
+<div class="validate_error_label">
 	<label><?php echo elgg_echo("restobar:name"); ?></label><br />
 	<?php echo elgg_view("input/text", array(
 		'name' => 'name',
@@ -31,6 +34,7 @@ if (isset($vars['entity'])) {
 		'value' => $vars['entity']->name,
 	));
 	?>
+</div>
 </div>
 <?php
 
