@@ -34,11 +34,16 @@
         Si vous ne recevez aucun email, pensez à vérifier votre boîte de Spams.</p>
 
     <div style="text-align:center">    
-        <video height="360" width="640" controls>
-            <source src="<?php echo elgg_normalize_url("mod/winetheme/video/enregistrer_fr.mp4"); ?>" type="video/mp4">
+        <!--video height="360" width="640" controls>
+            <source src="<?php// echo elgg_normalize_url("mod/winetheme/video/enregistrer_fr.mp4"); ?>" type="video/mp4">
             Your browser does not support the html5 video tag.
-        </video>
+        </video-->
+       
+   
+        <iframe width="420" height="315" src="//www.youtube.com/embed/ulldCXExTAQ/?vq=hd720" frameborder="0" allowfullscreen></iframe>
     </div>
+    
+    
     <br>
 
     <h3 id="help3">Rechercher un vin</h3>
@@ -50,10 +55,12 @@
         Vous serez alors redirigé vers une page qui vous proposera la liste dans son intégralité ou d'enregistrer le profil d'un vin.</p>
 
     <div style="text-align:center">    
-        <video height="360" width="640" controls>
-            <source src="<?php echo elgg_normalize_url("mod/winetheme/video/recherchevin_fr.mp4"); ?>" type="video/mp4">
+        <!--video height="360" width="640" controls>
+            <source src="<?php //echo elgg_normalize_url("mod/winetheme/video/recherchevin_fr.mp4"); ?>" type="video/mp4">
             Your browser does not support the html5 video tag.
-        </video>
+        </video-->
+        
+         <iframe width="420" height="315" src="//www.youtube.com/embed/f8rgGc5mfmU/?vq=hd720" frameborder="0" allowfullscreen></iframe>
     </div>
     <br>
 
@@ -68,10 +75,12 @@
     </p>
 
     <div style="text-align:center">    
-        <video height="360" width="640" controls>
-            <source src="<?php echo elgg_normalize_url("mod/winetheme/video/creer_fr.mp4"); ?>" type="video/mp4">
+        <!--video height="360" width="640" controls>
+            <source src="<?//php echo elgg_normalize_url("mod/winetheme/video/creer_fr.mp4"); ?>" type="video/mp4">
             Your browser does not support the html5 video tag.
-        </video>
+        </video-->
+        
+        <iframe width="420" height="315" src="//www.youtube.com/embed/H3XxUuZrH2I/?vq=hd720" frameborder="0" allowfullscreen></iframe>
     </div>
     <br>
 
@@ -83,10 +92,14 @@
         Pour visualiser les dégustations des utilisateurs, cliquez sur le lien intitulé "voir la fiche".
     </p>
     <div style="text-align:center">    
-        <video height="360" width="640" controls>
-            <source src="<?php echo elgg_normalize_url("mod/winetheme/video/deguster_fr.mp4"); ?>" type="video/mp4">
+        <!--video height="360" width="640" controls>
+            <source src="<?php //echo elgg_normalize_url("mod/winetheme/video/deguster_fr.mp4"); ?>" type="video/mp4">
             Your browser does not support the html5 video tag.
-        </video>
+        </video-->
+        
+       <iframe width="420" height="315" src="//www.youtube.com/embed/e1ylWE5zBgo/?vq=hd720" frameborder="0" allowfullscreen></iframe>
+        
+        
     </div>
     <br>
     <h3 id="help6">Suivre un dégustateur</h3>
@@ -129,10 +142,11 @@
         Sous l'onglet du menu principal "Les Bars, Restos, Caves, Domaines.." vous trouverez tous les établissements dans les alentours de votre point de connexion à internet.
 
     <div style="text-align:center">    
-        <video height="360" width="640" controls>
-            <source src="<?php echo elgg_normalize_url("mod/winetheme/video/geo_fr.mp4"); ?>" type="video/mp4">
+        <!--video height="360" width="640" controls>
+            <source src="<?//php echo elgg_normalize_url("mod/winetheme/video/geo_fr.mp4"); ?>" type="video/mp4">
             Your browser does not support the html5 video tag.
-        </video>
+        </video-->
+        <iframe width="420" height="315" src="//www.youtube.com/embed/J4dEOTzbffA/?vq=hd720" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <p>

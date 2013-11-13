@@ -4423,7 +4423,7 @@ array_fr[1] = [
                         })
 
                         .autocomplete({
-			        minLength:4,
+			        minLength:3,
                                 delay:0,
                                 source: function( request, response ) {
                                     

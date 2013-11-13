@@ -8,6 +8,8 @@
 elgg_load_js('elgg.coin');
 elgg_load_css('coinslider.coinslider_css');
 elgg_load_js('jquery.winetheme');
+elgg_load_js('elgg.modal');
+elgg_load_js('elgg.popup');
 
 //elgg_unregister_menu_item('river', 'comment');
 
@@ -69,6 +71,7 @@ $welcome .= "</div>";
 
 $ia=elgg_set_ignore_access(true);
 $options['action_types']=array("create");
+
 $options = array();
 $options['pagination']=FALSE;
 $options['limit']=20;
