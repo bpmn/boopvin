@@ -16,17 +16,18 @@
  *                               $vars['options'] when defined.
  * @uses $vars['class']          Additional CSS class
  */
+
 if (isset($vars['class'])) {
-    $vars['class'] = "elgg-input-dropdown {$vars['class']}";
+	$vars['class'] = "elgg-input-dropdown {$vars['class']}";
 } else {
-    $vars['class'] = "elgg-input-dropdown";
+	$vars['class'] = "elgg-input-dropdown";
 }
 
 $defaults = array(
-    'disabled' => false,
-    'value' => '',
-    'options_values' => array(),
-    'options' => array(),
+	'disabled' => false,
+	'value' => '',
+	'options_values' => array(),
+	'options' => array(),
 );
 
 $vars = array_merge($defaults, $vars);
@@ -39,31 +40,32 @@ unset($vars['options']);
 
 $value = $vars['value'];
 unset($vars['value']);
+
 ?>
 <select <?php echo elgg_format_attributes($vars); ?>>
-    <?php
-    if ($options_values) {
-        foreach ($options_values as $opt_value => $option) {
+<?php
 
-            $option_attrs = elgg_format_attributes(array(
-                'value' => $opt_value,
-                'selected' => (string) $opt_value == (string) $value,
-                    ));
+if ($options_values) {
+	foreach ($options_values as $opt_value => $option) {
 
-            echo "<option $option_attrs>$option</option>";
-        }
-    } else {
-        if (is_array($options)) {
-            foreach ($options as $option) {
+		$option_attrs = elgg_format_attributes(array(
+			'value' => $opt_value,
+			'selected' => (string)$opt_value == (string)$value,
+		));
 
-                $option_attrs = elgg_format_attributes(array(
-                    'selected' => (string) $option == (string) $value
-                        ));
+		echo "<option $option_attrs>$option</option>";
+	}
+} else {
+	if (is_array($options)) {
+		foreach ($options as $option) {
 
-       
-                echo "<option $option_attrs>$option</option>";
-            }
-        }
-    }
-    ?>
+			$option_attrs = elgg_format_attributes(array(
+				'selected' => (string)$option == (string)$value
+			));
+
+			echo "<option $option_attrs>$option</option>";
+		}
+	}
+}
+?>
 </select>

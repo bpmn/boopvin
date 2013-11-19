@@ -1236,6 +1236,15 @@ function elgg_view_river_item($item, array $vars = array()) {
 		// subject is disabled or subject/object deleted
 		return '';
 	}
+	// Don't hide objects in closed groups that a user can see.
+	// see http://trac.elgg.org/ticket/4789
+//	else {
+//		// hide based on object's container
+//		$visibility = ElggGroupItemVisibility::factory($object->container_guid);
+//		if ($visibility->shouldHideItems) {
+//			return '';
+//		}
+//	}
 
 	$vars['item'] = $item;
 
@@ -1591,7 +1600,6 @@ function elgg_views_boot() {
 	elgg_register_js('jquery', '/vendors/jquery/jquery-1.8.3.min.js', 'head');
 	elgg_register_js('jquery-ui', '/vendors/jquery/jquery-ui-1.8.23.min.js', 'head');
 	elgg_register_js('jquery.form', '/vendors/jquery/jquery.form.js');
-        //elgg_register_js('jquery-migrate', '/vendors/jquery/jquery-migrate-1.2.1.js');//avenuevin
 
 	elgg_register_simplecache_view('js/elgg');
 	$elgg_js_url = elgg_get_simplecache_url('js', 'elgg');
@@ -1599,7 +1607,6 @@ function elgg_views_boot() {
 
 	elgg_load_js('jquery');
 	elgg_load_js('jquery-ui');
-        //elgg_load_js('jquery-migrate'); //avenuevin
 	elgg_load_js('elgg');
 
 	elgg_register_simplecache_view('js/lightbox');

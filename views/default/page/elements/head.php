@@ -1,5 +1,3 @@
-
-
 <?php
 /**
  * The standard HTML head
