@@ -68,6 +68,11 @@ background: url(<?php echo $resto_background_top ?>) center top no-repeat;
 	margin-right: 10px;
 }
 
+.restobars-profile img {
+	width: 100%;
+	height: auto;
+}
+
 .restobars-stats {
 	background: transparent;
 	padding: 5px;

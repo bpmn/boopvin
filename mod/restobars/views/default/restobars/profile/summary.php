@@ -22,7 +22,14 @@ $owner = $restobar->getOwnerEntity();
 	<div class="elgg-image">
 		<div class="restobars-profile-icon">
                     <div class="resto_icon">
-			<?php echo elgg_view_entity_icon($restobar, 'large', array('href' => '')); ?>
+                        <?php
+				// we don't force icons to be square so don't set width/height
+				echo elgg_view_entity_icon($restobar, 'large', array(
+					'href' => '',
+					'width' => '',
+					'height' => '',
+				)); 
+			?>
                     </div>
                 </div>
 		<div class="restobars-stats">

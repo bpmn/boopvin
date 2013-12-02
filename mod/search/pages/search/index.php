@@ -63,7 +63,7 @@ switch ($sort) {
 		break;
 }
 
-$order = get_input('sort', 'desc');
+$order = get_input('order', 'desc');
 if ($order != 'asc' && $order != 'desc') {
 	$order = 'desc';
 }
@@ -258,7 +258,11 @@ if ($search_type != 'entities' || $search_type == 'all') {
 }
 
 // highlight search terms
-$searched_words = search_remove_ignored_words($display_query, 'array');
+if ($search_type == 'tags') {
+	$searched_words = array($display_query);
+} else {
+	$searched_words = search_remove_ignored_words($display_query, 'array');
+}
 $highlighted_query = search_highlight_words($searched_words, $display_query);
 
 $body = elgg_view_title(elgg_echo('search:results', array("\"$highlighted_query\"")));

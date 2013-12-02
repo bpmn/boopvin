@@ -12,9 +12,7 @@ function expages_init() {
 	elgg_register_page_handler('terms', 'expages_page_handler');
 	elgg_register_page_handler('privacy', 'expages_page_handler');
 	elgg_register_page_handler('expages', 'expages_page_handler');
-	
-        
-        
+
 	// Register public external pages
 	elgg_register_plugin_hook_handler('public_pages', 'walled_garden', 'expages_public');
 
@@ -42,7 +40,7 @@ function expages_public($hook, $handler, $return, $params){
  * Setup the links to site pages
  */
 function expages_setup_footer_menu() {
-	$pages = array('about', 'terms', 'privacy','contact');
+	$pages = array('about', 'terms', 'privacy');
 	foreach ($pages as $page) {
 		$url = "$page";
 		$wg_item = new ElggMenuItem($page, elgg_echo("expages:$page"), $url);
@@ -67,7 +65,7 @@ function expages_page_handler($page, $handler) {
 	$type = strtolower($handler);
 
 	$title = elgg_echo("expages:$type");
-	$content = elgg_view_title($title);
+	$header = elgg_view_title($title);
 
 	$object = elgg_get_entities(array(
 		'type' => 'object',
@@ -82,11 +80,11 @@ function expages_page_handler($page, $handler) {
 	$content = elgg_view('expages/wrapper', array('content' => $content));
 
 	if (elgg_is_logged_in() || !elgg_get_config('walled_garden')) {
-		$body = elgg_view_layout('one_sidebar', array('content' => $content));
+		$body = elgg_view_layout('one_sidebar', array('title' => $title, 'content' => $content));
 		echo elgg_view_page($title, $body);
 	} else {
 		elgg_load_css('elgg.walled_garden');
-		$body = elgg_view_layout('walled_garden', array('content' => $content));
+		$body = elgg_view_layout('walled_garden', array('content' => $header . $content));
 		echo elgg_view_page($title, $body, 'walled_garden');
 	}
 	return true;

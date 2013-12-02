@@ -51,7 +51,7 @@ $contacts = elgg_get_entities_from_relationship(array(
 	'relationship_guid' => $container_guid,
 	'inverse_relationship' => true,
 	'types' => 'user',
-	'limit' => 100000,
+	'limit' => false,
 	
 ));
 
