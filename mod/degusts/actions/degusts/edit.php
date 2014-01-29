@@ -34,13 +34,16 @@ $annee=get_input('annee');
 $price = _elgg_html_decode(get_input('price'));
 $currency=_elgg_html_decode(get_input('currency'));
 
-
-$user = elgg_get_logged_in_user_entity();
-
 $degust_guid = (int)get_input('degust_guid');
 $new_degust_flag = $degust_guid == 0;
 
 $degust = new ElggDegust($degust_guid); // load if present, if not create a new wine
+
+if ($new_degust_flag) {
+    $user = elgg_get_logged_in_user_entity();
+} else {
+    $user = $degust->getOwnerEntity(); 
+}
 if (($degust_guid) && (!$degust->canEdit())) {
 	register_error(elgg_echo("degust:cantedit"));
 
@@ -59,7 +62,7 @@ if (sizeof($input) > 0) {
 $container=  get_entity($container_guid);
 $title= $container->name." ".$annee;
 
-$description= elgg_get_logged_in_user_entity()->name;
+$description= $user->name;
 
 $degust->container_guid=$container_guid;
 $degust->annee=$annee;

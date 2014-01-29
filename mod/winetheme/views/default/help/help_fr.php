@@ -133,14 +133,14 @@
         A l'affichage d'une flèche cliquez dessus pour faire apparaitre un menu déroulant qui vous proposera différentes actions possibles concernant l'utilisateur concerné.
         A tout moment vous pouvez retirer un utilisateur des membres de votre établissement. Sur la page de l'établissement concerné, dans la colonne de droite,
         déroulez les menus d'action à partir de l'icone du membre que vous voulez retirer et cliquez sur "retirer de l'établissement".
-    <p>
+    </p>
 
     <h3 id="help8">La géolocalisation</h3>
     <p>Pour bénéficier des services de cette fonctionnalité vous devez activer le module localisation
         de votre navigateur et accepter d'être localisé lorsque la question vous est posée. 
         Dans la page du profil d'un vin, vous trouverez des suggestions dans la colonne de droite pour savoir où acheter ou consommer le vin en question.
         Sous l'onglet du menu principal "Les Bars, Restos, Caves, Domaines.." vous trouverez tous les établissements dans les alentours de votre point de connexion à internet.
-
+    </p>
     <div style="text-align:center">    
         <!--video height="360" width="640" controls>
             <source src="<?//php echo elgg_normalize_url("mod/winetheme/video/geo_fr.mp4"); ?>" type="video/mp4">
@@ -149,5 +149,4 @@
         <iframe width="420" height="315" src="//www.youtube.com/embed/J4dEOTzbffA/?vq=hd720" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <p>
 </div>

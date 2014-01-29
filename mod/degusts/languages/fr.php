@@ -39,6 +39,7 @@ $french = array(
     'degust:couleur:oignon' => 'Oignon',
     'degust:couleur:orange' => 'Orange',
     'degust:couleur:cuivre' => 'Cuivre',
+    'degust:couleur:roux' => 'Roux',
     'degust:reflet:violace_jeune' => 'Violacé Jeune',
     'degust:reflet:violine' => 'Violine',
     'degust:reflet:grenat' => 'Grenat',

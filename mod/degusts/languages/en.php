@@ -39,6 +39,7 @@ $english = array(
     'degust:couleur:oignon' => 'Onion',
     'degust:couleur:orange' => 'Orange',
     'degust:couleur:cuivre' => 'Copper',
+    'degust:couleur:roux' => 'Reddish-brown',
     'degust:reflet:violace_jeune' => 'Pale purple',
     'degust:reflet:violine' => 'Violine',
     'degust:reflet:grenat' => 'Garnet',

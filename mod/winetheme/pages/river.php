@@ -147,6 +147,10 @@ $content = $rank.$content;
 
 $sidebar = elgg_view('core/river/sidebar');
 
+$sidebar.=  '<div id="citation">';
+$sidebar.= elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/citation_ec.png"));                    
+$sidebar.= "</div>";
+
 $params = array(
 	'content' => $content,
 	'sidebar' => $sidebar,

@@ -9,7 +9,7 @@ $english = array(
     /**
      * Menu items and titles
      */
-    'wine' => "The Wines",
+    'wine' => "Wines",
     'wine:mine' => "My wines",
     'wine:yours' => "My wine",
     'wine:user' => "%s's wine",

@@ -10,8 +10,8 @@
 // drop-down login
 echo elgg_view('core/account/login_dropdown');
 
-$welcome = "<div id=\"index_welcome_header\" >";
-$welcome .=elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/citation.png"));
+//$welcome = "<div id=\"index_welcome_header\" >";
+//$welcome .=elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/citation.png"));
 //$welcome .= '<h4>'.elgg_echo('bienvenue').'</h4>';
 //$welcome .= "<br>";
 
@@ -20,9 +20,9 @@ $welcome .=elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css
 //$welcome .= elgg_echo('citation2').'</h2>';
 
 //end of index_welcome
-$welcome .= "</div>";
+//$welcome .= "</div>";
 
-echo $welcome;
+//echo $welcome;
 //
 //// insert site-wide navigation
 echo elgg_view_menu('site');

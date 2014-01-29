@@ -12,8 +12,6 @@ $verre_score2 = elgg_normalize_url($verre_score2);
 $loading_image = '/mod/winetheme/views/default/css/winetheme/images/ajax_loader.gif';
 $loading_image = elgg_normalize_url($loading_image);
 
-$test_gravure = '/mod/winetheme/views/default/css/winetheme/images/gravure.png';
-$test_gravure = elgg_normalize_url($test_gravure);
 ?>
 
 body {
@@ -79,21 +77,23 @@ background: #ffffff;
 }
 
 
-.register_me{
-margin-bottom: 100px;
+#register_me{
+margin-bottom: 30px;
 margin-left: 24px;
-
-height: 188px;
+//height: 188px;
 width: 160px;
--webkit-box-shadow: -4px -4px 15px rgba(51, 50, 50, 0.75);
--moz-box-shadow:    -4px -4px 15px rgba(51, 50, 50, 0.75);
-box-shadow:         -4px -4px 15px rgba(51, 50, 50, 0.75);
+//-webkit-box-shadow: -4px -4px 15px rgba(51, 50, 50, 0.75);
+//-moz-box-shadow:    -4px -4px 15px rgba(51, 50, 50, 0.75);
+//box-shadow:         -4px -4px 15px rgba(51, 50, 50, 0.75);
 
 text-align: center;
-
+ 
 }
-
-
+#citation{
+  //margin: 10px;
+  margin-left: 14px;
+  margin-bottom: 100px;
+}
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
 font-size: 1.4em; 

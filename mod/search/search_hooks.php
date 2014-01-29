@@ -71,8 +71,12 @@ function search_wines_hook($hook, $type, $value, $params) {
     $params['joins'] = array($join);
 
     $fields = array('name', 'description');
+    
+    // force into boolean mode because we've having problems with the
+    // "if > 50% match 0 sets are returns" problem.
+    $where = search_get_where_sql('ge', $fields, $params, FALSE);
 
-    $where = search_get_where_sql('ge', $fields, $params);
+    //$where = search_get_where_sql('ge', $fields, $params);
 
     $params['wheres'] = array($where);
 
@@ -116,8 +120,10 @@ function search_restobars_hook($hook, $type, $value, $params) {
 
     $fields = array('name', 'description');
 
-    $where = search_get_where_sql('ge', $fields, $params);
-
+    //$where = search_get_where_sql('ge', $fields, $params);
+    // force into boolean mode because we've having problems with the
+    // "if > 50% match 0 sets are returns" problem.
+    $where = search_get_where_sql('ge', $fields, $params, FALSE);
     $params['wheres'] = array($where);
 
     // override subtype -- All groups should be returned regardless of subtype.
@@ -449,14 +455,19 @@ function search_comments_hook($hook, $type, $value, $params) {
 	
 	// don't continue if nothing there...
 	if (!$count) {
-		return array ('entities' => array(), 'count' => 0);
+		return array('entities' => array(), 'count' => 0);
 	}
-	
-	$order_by = search_get_order_by_sql('e', null, $params['sort'], $params['order']);
+
+	// no full text index on metastrings table
+	if ($params['sort'] == 'relevance') {
+		$params['sort'] = 'created';
+	}
+
+	$order_by = search_get_order_by_sql('a', null, $params['sort'], $params['order']);
 	if ($order_by) {
 		$order_by = "ORDER BY $order_by";
 	}
-	
+
 	$q = "SELECT DISTINCT a.*, msv.string as comment FROM {$db_prefix}annotations a
 		JOIN {$db_prefix}metastrings msn ON a.name_id = msn.id
 		JOIN {$db_prefix}metastrings msv ON a.value_id = msv.id
@@ -494,10 +505,17 @@ function search_comments_hook($hook, $type, $value, $params) {
 		}
 
 		$comment_str = search_get_highlighted_relevant_substrings($comment->comment, $query);
-		$entity->setVolatileData('search_match_annotation_id', $comment->id);
-		$entity->setVolatileData('search_matched_comment', $comment_str);
-		$entity->setVolatileData('search_matched_comment_owner_guid', $comment->owner_guid);
-		$entity->setVolatileData('search_matched_comment_time_created', $comment->time_created);
+		$comments_data = $entity->getVolatileData('search_comments_data');
+		if (!$comments_data) {
+			$comments_data = array();
+		}
+		$comments_data[] = array(
+			'annotation_id' => $comment->id,
+			'text' => $comment_str,
+			'owner_guid' => $comment->owner_guid,
+			'time_created' => $comment->time_created,
+		);
+		$entity->setVolatileData('search_comments_data', $comments_data);
 		$entities[] = $entity;
 	}
 
@@ -506,7 +524,6 @@ function search_comments_hook($hook, $type, $value, $params) {
 		'count' => $count,
 	);
 }
-
 /**
  * Register comments as a custom search type.
  *

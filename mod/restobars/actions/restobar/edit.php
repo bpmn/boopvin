@@ -124,7 +124,24 @@ if ($is_new_restobar) {
 $has_uploaded_icon = (!empty($_FILES['icon']['type']) && substr_count($_FILES['icon']['type'], 'image/'));
 
 if ($has_uploaded_icon) {
-
+         $exif = exif_read_data($_FILES['icon']['tmp_name'], 'IFDO', true);
+      $orientation = $exif['IFD0']['Orientation'];;
+      if($orientation != 0) {
+      ini_set('memory_limit', '128M');
+      $image = imagecreatefromstring(file_get_contents($_FILES['icon']['tmp_name']));
+      switch($orientation) {
+          case 8:
+             $image = imagerotate($image,90,0);
+             break;
+          case 3:
+             $image = imagerotate($image,180,0);
+             break;
+          case 6:
+             $image = imagerotate($image,-90,0);
+             break;
+       }
+       imagejpeg($image, $_FILES['icon']['tmp_name']);
+}
 	$icon_sizes = elgg_get_config('icon_sizes');
 
 	$prefix = "restobars/" . $restobar->guid;

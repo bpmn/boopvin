@@ -167,6 +167,7 @@
 *************************************** */
 .elgg-menu-site {
 	z-index: 1;
+        
 }
 
 .elgg-menu-site > li > a {
@@ -174,7 +175,7 @@
 	padding: 3px 13px 0px 13px;
 	height: 20px;
         font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-        font-size: 115%;
+        font-size: 125%;
 
 
 }
@@ -187,12 +188,13 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	height: 23px;
+	height: 25px;
 }
 
 .elgg-menu-site-default > li {
 	float: left;
 	margin-right: 1px;
+        
 }
 
 .elgg-menu-site-default > li > a {
@@ -210,9 +212,9 @@
 
 .elgg-menu-site-default > .elgg-state-selected > a,
 .elgg-menu-site-default > li:hover > a {
-	background: white;
-	color: #000;
-
+	//background: white;
+	//color: #000;
+        background-color: #723a08;
 	-webkit-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);
 	box-shadow: 2px -1px 1px rgba(0, 0, 0, 0.25);

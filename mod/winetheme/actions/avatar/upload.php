@@ -16,6 +16,27 @@ if ($_FILES['avatar']['error'] != 0) {
 	forward(REFERER);
 }
 
+
+      $exif = exif_read_data($_FILES['avatar']['tmp_name'], 'IFDO', true);
+      $orientation = $exif['IFD0']['Orientation'];;
+      if($orientation != 0) {
+      ini_set('memory_limit', '128M');
+      $image = imagecreatefromstring(file_get_contents($_FILES['avatar']['tmp_name']));
+      switch($orientation) {
+          case 8:
+             $image = imagerotate($image,90,0);
+             break;
+          case 3:
+             $image = imagerotate($image,180,0);
+             break;
+          case 6:
+             $image = imagerotate($image,-90,0);
+             break;
+       }
+       imagejpeg($image, $_FILES['avatar']['tmp_name']);
+}
+
+
 $icon_sizes = elgg_get_config('icon_sizes');
 
 // get the images and save their file handlers into an array

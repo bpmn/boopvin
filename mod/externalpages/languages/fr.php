@@ -12,7 +12,7 @@ $french = array(
     'expages:about' => "A propos",
     'expages:terms' => "Mentions légales",
     'expages:privacy' => "Informations personnelles",
-    'expages:contact' => "Contact",
+    'expages:contact' => "Contactez nous",
     'expages:notset' => "Cette page n'a pas été définie pour le moment.",
     /**
      * Status messages

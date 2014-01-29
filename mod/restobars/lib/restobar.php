@@ -80,7 +80,8 @@ function restobar_search_page() {
 	elgg_push_breadcrumb(elgg_echo('search'));
 
 	$tag = get_input("tag");
-	$title = elgg_echo('groups:search:title', array($tag));
+	$display_query = _elgg_get_display_query($tag);
+	$title = elgg_echo('groups:search:title', array($display_query));
 
 	// groups plugin saves tags as "interests" - see groups_fields_setup() in start.php
 	$params = array(
@@ -265,8 +266,8 @@ function restobar_handle_profile_page($guid) {
 	$autofeed = true;
 
 	$restobar = get_entity($guid);
-	if (!$restobar) {
-		forward('restobar/all');
+	if (!elgg_instanceof($restobar, 'group','restobar')) {
+		forward('', '404');
 	}
 
 	elgg_push_breadcrumb($restobar->name);
@@ -357,13 +358,16 @@ function restobar_handle_members_page($guid) {
 
 	elgg_push_breadcrumb($group->name, $group->getURL());
 	elgg_push_breadcrumb(elgg_echo('groups:members'));
-
+        
+        $db_prefix = elgg_get_config('dbprefix');
 	$content = elgg_list_entities_from_relationship(array(
 		'relationship' => 'member',
 		'relationship_guid' => $group->guid,
 		'inverse_relationship' => true,
 		'types' => 'user',
 		'limit' => 20,
+        'joins' => array("JOIN {$db_prefix}users_entity u ON e.guid=u.guid"),
+		'order_by' => 'u.name ASC',
 	));
 
 	$params = array(

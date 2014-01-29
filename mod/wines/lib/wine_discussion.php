@@ -39,9 +39,9 @@ function wine_discussion_handle_list_page($guid) {
 	elgg_set_page_owner_guid($guid);
 
 	$wine = get_entity($guid);
-	if (!$wine) {
-		register_error(elgg_echo('wine:notfound'));
-		forward();
+        
+        if (!elgg_instanceof($wine, 'group','wine')) {
+		forward('', '404');
 	}
 	elgg_push_breadcrumb($wine->name);
 

@@ -83,7 +83,9 @@ $content = '<h3>'.elgg_echo("content:latest").'</h3>';
 $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 //$content = $content;
 
-
+$sidebar=  '<div id="citation">';
+$sidebar.= elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/citation_ec.png"));                    
+$sidebar.= "</div>";
 
 
 //$content_final = $slider.$rank.$welcome.$content;
@@ -92,7 +94,7 @@ $content .= "<div id=\"avenue_activity\" >".$list_river."</div>";
 $content_final = $rank.$content;
 $params = array(
 		'content' => $content_final,
-		'sidebar' => ''
+		'sidebar' => $sidebar
 );
 $body = elgg_view_layout('one_sidebar', $params);
 echo elgg_view_page(null, $body);

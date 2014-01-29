@@ -12,7 +12,7 @@ $english = array(
     'expages:about' => "About",
     'expages:terms' => "Terms",
     'expages:privacy' => "Privacy",
-    'expages:contact' => "Contact",
+    'expages:contact' => "Contact us",
     'expages:notset' => "This page has not been set up yet.",
     /**
      * Status messages

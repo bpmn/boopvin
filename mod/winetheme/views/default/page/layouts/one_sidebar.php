@@ -28,23 +28,27 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
             <?php
                 if (!elgg_is_logged_in()) {
                 //echo('<div class="register_me"><br><br><br>');
-                  echo('<div class="register_me">');
+                  echo('<div id="register_me">');
 
 		if (elgg_get_config('allow_registration')) {
                     $lang=get_current_language();    
                     
                     if ($lang == "fr")
-                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_fr.jpg"));
+                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_fr.png"));
                     else 
-                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_en.jpg"));
+                        $text =  elgg_view('output/img',array('src'=>"/mod/winetheme/views/default/css/winetheme/images/plaque_en.png"));
                     echo '<a class="registration_link" href="' . elgg_get_site_url() . 'register">'.$text .'</a>'; //elgg_echo('register_me') . '</a>';
 		}
-                echo("</div>");
+                   
+                 echo("</div>");
+                 
                 }
                 
             ?>
             
-            
+             <?php
+			echo elgg_view('page/elements/sidebar', $vars);
+		?>
             <?php 
             if (!elgg_is_logged_in()) {
             echo('<div class="fb-like-box fb_iframe_widget" data-header="false" data-stream="false" data-show-faces="true" data-width="205" data-href="http://www.facebook.com/AvenueVin" fb-xfbml-state="rendered">');
@@ -57,9 +61,7 @@ $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
                 
                 
                 
-                <?php
-			echo elgg_view('page/elements/sidebar', $vars);
-		?>
+               
 	</div>
 
 	<div class="elgg-main elgg-body">
