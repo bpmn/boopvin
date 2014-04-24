@@ -258,7 +258,7 @@ function restobar_handle_profile_page($guid) {
        
 	elgg_set_page_owner_guid($guid);
 
-	elgg_push_context('restobar');
+	elgg_set_context('restobar_profile');
        
 
 	// turn this into a core function
@@ -462,23 +462,43 @@ function restobar_handle_requests_page($guid) {
 
 	echo elgg_view_page($title, $body);
 }
+
+
 function restobar_handle_cave_page($restobar_guid) {
+        $restobar=get_entity($restobar_guid);
+	elgg_push_breadcrumb($restobar->name);
+        elgg_push_breadcrumb(elgg_echo('cave'));
+        gatekeeper();
+        elgg_set_context('restobar_cave');
+        
         elgg_set_page_owner_guid($restobar_guid);
-        elgg_push_context('restobar');
+        
              $content = elgg_list_entities_from_relationship(array(
                             'types'=>'group',
                             'subtypes'=>'wine',
-                            'limit' => 1000,
+                            'limit' => 10,
                             'pagination' => true,
                             'relationship' => 'incave',
                             'relationship_guid' => $restobar_guid,
                             'inverse_relationship' => FALSE,
                             'full_view'=>FALSE,
                             'list_class'=>'list-style-all',
+                            'base_url'=>'action/restobars/cave_filter?guid='.$restobar_guid,
+                    ));
+             
+             $count = elgg_get_entities_from_relationship(array(
+                            'types'=>'group',
+                            'subtypes'=>'wine',
+                            'count' => true,
+                            'relationship' => 'incave',
+                            'relationship_guid' => $restobar_guid,
+                            'inverse_relationship' => FALSE,
+                            
                     ));
 
-        elgg_pop_context('restobar');
-        $restobar=get_entity($restobar_guid);
+        $content='<div class="filter_ajax">'.$content.'</div>';
+        
+        $sidebar = elgg_view('restobars/sidebar/cave_filter',array('entity_guid'=>$restobar_guid,'wine_number'=>$count));
         $title=elgg_echo('restobar:cave',array("{$restobar->name}"));
         $params = array(
 		'content' => $content,

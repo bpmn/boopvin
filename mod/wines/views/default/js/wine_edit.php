@@ -14,10 +14,7 @@
 
     elgg.wine_edit.init = function() {
  	$(function() {
-                            
-                            
-                            
-                            
+                                           
                             
                 var array_fr = [];
                 var array_es = [];
@@ -1618,7 +1615,6 @@ array_es[0]=[
 "Abona DO",
 "Alella DO",
 "Alicante DO",
-"Alicante DO",
 "Almansa DO",
 "Altiplano de Sierra Nevada VdlT",
 "Ampurdán (o Empordà) DO",
@@ -1644,13 +1640,6 @@ array_es[0]=[
 "Castilla y León VdlT",
 "Cataluña DO",
 "Cava DO",
-"Cava DO",
-"Cava DO",
-"Cava DO",
-"Cava DO",
-"Cava DO",
-"Cava DO",
-"Cava DO",
 "Cigales DO",
 "Conca de Barberá DO",
 "Condado de Huelva DO",
@@ -1674,7 +1663,6 @@ array_es[0]=[
 "Illes Balears  VdlT",
 "Isla de Menorca  VdlT",
 "Jerez-Xérès-Sherry DO",
-"Jumilla DO",
 "Jumilla DO",
 "La Gomera DO",
 "La Mancha DO",
@@ -1717,10 +1705,6 @@ array_es[0]=[
 "Ribera del Jiloca VdlT",
 "Ribera del Júcar DO",
 "Ribera del Queiles VdlT",
-"Ribera del Queiles VdlT",
-"Rioja DOC",
-"Rioja DO",
-"Rioja DOC",
 "Rioja DOC",
 "Rueda DO",
 "Serra de Tramuntana-Costa Nord VdlT",
@@ -1756,21 +1740,11 @@ array_es[0]=[
 "Valles de Sadacia VdlT",
 "Valtiendas VC",
 "Villaviciosa de Córdoba VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
-"Viñedos de España VdlT",
 "Vino Naranja del Condado de Huelva DO",
 "Vinos de Madrid DO",
 "Ycoden-Daute-Isora DO",
 "Yecla DO"
+
 ];
 
 
@@ -1778,8 +1752,7 @@ array_es[1]=[
 "Región de Murcia",
 "Islas Canarias",
 "Cataluña",
-"Región de Murcia",
-"Comunidad Valenciana",
+"Provincia de Alicante",
 "Castilla-La Mancha",
 "Andalucía",
 "Cataluña",
@@ -1805,13 +1778,6 @@ array_es[1]=[
 "Castilla y León",
 "Cataluña",
 "Cataluña",
-"Aragón",
-"Castilla y León",
-"Extremadura",
-"Navarra",
-"País Vasco",
-"La Rioja",
-"Comunidad Valenciana",
 "Castilla y León",
 "Cataluña",
 "Andalucía",
@@ -1835,7 +1801,6 @@ array_es[1]=[
 "Islas Baleares",
 "Islas Baleares",
 "Andalucía",
-"Castilla-La Mancha",
 "Región de Murcia",
 "Islas Canarias",
 "Castilla-La Mancha",
@@ -1878,11 +1843,7 @@ array_es[1]=[
 "Aragón",
 "Castilla-La Mancha",
 "Aragón",
-"Navarra",
 "La Rioja",
-"Castilla y León",
-"Navarra",
-"País Vasco",
 "Castilla y León",
 "Islas Baleares",
 "Castilla-La Mancha",
@@ -1917,21 +1878,11 @@ array_es[1]=[
 "La Rioja",
 "Castilla y León",
 "Andalucía",
-"Cataluña",
-"Islas Baleares",
-"Islas Canarias",
 "Andalucía",
-"Aragón",
-"Castilla-La Mancha",
-"Extremadura",
 "Comunidad de Madrid",
+"Islas Canarias",
 "Región de Murcia",
-"Navarra",
-"Comunidad Valenciana",
-"Andalucía",
-"Comunidad de Madrid",
-"Islas Canarias",
-"Región de Murcia"
+
 ];
 
 
@@ -2079,7 +2030,6 @@ array_fr[0] = [
 "Bourgogne Vézelay",
 "Bourgogne-Ordinaire Ou Bourgogne Grand Ordinaire",
 "Bourgueil",
-"Bouzeron",
 "Bouzeron",
 "Brand, Alsace Grand Cru",
 "Brouilly",
@@ -2253,7 +2203,6 @@ array_fr[0] = [
 "Chinon",
 "Chiroubles",
 "Chorey-lès-Beaune",
-"Chorey-lès-Beaune Côte de Beaune",
 "Cité de Carcassonne  IGP",
 "Clairette de Bellegarde",
 "Clairette de Die",
@@ -2263,7 +2212,6 @@ array_fr[0] = [
 "Clos de Vougeot Ou Clos-Vougeot",
 "Clos des Lambrays",
 "Clos Saint-Denis",
-"Clos-Saint-Denis",
 "Collines Rhodaniennes  IGP",
 "Collioure",
 "Comté Tolosan  IGP",
@@ -2789,9 +2737,9 @@ array_fr[0] = [
 "Nuits-Saint-Georges premier cru Clos des Argillières",
 "Nuits-Saint-Georges premier cru Clos des Corvées",
 "Nuits-Saint-Georges premier cru Clos des Corvées Pagets",
-"Nuits-Saint-Georges premier cru Clos des Forêts",
+"Nuits-Saint-Georges premier cru Clos des Forêts Saint-…",
 "Nuits-Saint-Georges premier cru Clos des Grandes Vignes",
-"Nuits-Saint-Georges premier cru Clos des Porrets",
+"Nuits-Saint-Georges premier cru Clos des Porrets-Saint...",
 "Nuits-Saint-Georges premier cru Clos Saint-Marc",
 "Nuits-Saint-Georges premier cru En la Perrière Noblot",
 "Nuits-Saint-Georges premier cru La Richemone",
@@ -2881,7 +2829,6 @@ array_fr[0] = [
 "Premières-Côtes-de-Bordeaux",
 "Puisseguin-Saint-Émilion",
 "Puligny-Montrachet",
-"Puligny-Montrachet Côte de Beaune",
 "Puligny-Montrachet premier cru",
 "Puligny-Montrachet premier cru Champ Canet",
 "Puligny-Montrachet premier cru Champ Gain",
@@ -2925,7 +2872,7 @@ array_fr[0] = [
 "Rully premier cru Champs Cloux",
 "Rully premier cru Chapitre",
 "Rully premier cru Clos du Chaigne",
-"Rully premier cru Clos Saintt Jacques",
+"Rully premier cru Clos St Jacques",
 "Rully premier cru Cloux",
 "Rully premier cru Grésigny",
 "Rully premier cru La Bressande",
@@ -2948,7 +2895,6 @@ array_fr[0] = [
 "Saering, Alsace Grand Cru",
 "Saint-Amour",
 "Saint-Aubin",
-"Saint-Aubin Côte de Beaune",
 "Saint-Aubin premier cru",
 "Saint-Aubin premier cru Bas de Vermarain à l'Est",
 "Saint-Aubin premier cru Derrière Chez Edouard",
@@ -3022,7 +2968,6 @@ array_fr[0] = [
 "Sauternes",
 "Savennières",
 "Savigny-lès-Beaune",
-"Savigny-lès-Beaune Côte de Beaune",
 "Savigny-lès-Beaune premier cru",
 "Savigny-lès-Beaune premier cru Aux Clous",
 "Savigny-lès-Beaune premier cru Aux Fourneaux",
@@ -3155,9 +3100,7 @@ array_fr[0] = [
 "Yonne IGP",
 "Zinnkoepflé, Alsace Grand Cru",
 "Zotzenberg, Alsace Grand Cru"
-
-
-               ];
+];
                
 array_fr[1] = [
 "Sud-Ouest",
@@ -3301,7 +3244,6 @@ array_fr[1] = [
 "Bourgogne",
 "vallée de la Loire",
 "Bourgogne, côte chalonnaise",
-"",
 "Alsace",
 "Beaujolais",
 "Alsace",
@@ -3474,12 +3416,10 @@ array_fr[1] = [
 "vallée de la Loire",
 "Beaujolais",
 "Bourgogne, côte de Beaune",
-"Bourgogne, côte de Beaune",
 "Languedoc",
 "vallée du Rhône",
 "vallée du Rhône",
 "Languedoc",
-"Bourgogne, côte de Nuits",
 "Bourgogne, côte de Nuits",
 "Bourgogne, côte de Nuits",
 "Bourgogne, côte de Nuits",
@@ -4120,7 +4060,6 @@ array_fr[1] = [
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
-"Bourgogne, côte de Beaune",
 "vallée de la Loire",
 "vallée de la Loire",
 "vallée de la Loire",
@@ -4200,7 +4139,6 @@ array_fr[1] = [
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
-"Bourgogne, côte de Beaune",
 "Bourgogne, Basse-Bourgogne",
 "Languedoc",
 "Bordeaux",
@@ -4242,7 +4180,6 @@ array_fr[1] = [
 "Sud-Ouest",
 "Bordeaux, Sauternais",
 "vallée de la Loire, Anjou",
-"Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
 "Bourgogne, côte de Beaune",
@@ -4376,14 +4313,13 @@ array_fr[1] = [
 "Bourgogne",
 "Alsace",
 "Alsace"
-
-
-        ];
+  ];
                 
              
                 var accentMap = {
             "à": "a", "â": "a", "é": "e", "è": "e", "ê": "e", "ë": "e",
-            "ï": "i", "î": "i", "ô": "o", "ö": "o", "û": "u", "ù": "u"
+            "ï": "i", "î": "i", "ô": "o", "ö": "o", "û": "u", "ù": "u",
+            "É":"e","È":"e","Ë":"e"
             };
          
                 
@@ -4395,12 +4331,29 @@ array_fr[1] = [
 			return ret;
 		};
                 
-
+                
+                
+                
                  $("#id_country").change(function(){
                         $('#id_appellation').val('');
                         $('#id_region').val('');
 
                  });
+                 
+                 
+       $.ui.autocomplete.filter = function (array, term) {
+            var matcher = new RegExp("(^|\-| )"+$.ui.autocomplete.escapeRegex(term),"i");
+            return $.grep(array, function (value) {
+                return matcher.test(value) || matcher.test(normalize(value));
+            });
+        }
+        
+        $.ui.autocomplete.filter2 = function (array, term) {
+            var matcher = new RegExp("(^|\-| )"+$.ui.autocomplete.escapeRegex(term)+"($|\-| )","i");
+            return $.grep(array, function (value) {
+                return matcher.test(value) || matcher.test(normalize(value));
+            });
+        }
 
     function split( val ) {
       return val.split( / \s*/ );
@@ -4427,9 +4380,9 @@ array_fr[1] = [
                                 delay:0,
                                 source: function( request, response ) {
                                     
-                                    
+                                var searchwords = request.term.split(/ \s*/);    
                                 var matcher = new RegExp( $.ui.autocomplete.escapeRegex( extractLast(request.term) ), "i" );
-                                //var matcher2 = new RegExp( $.ui.autocomplete.escapeRegex( extractFirst(request.term) ), "i" );
+                                //var matcher = new RegExp( $.ui.autocomplete.escapeRegex( extractFirst(request.term) ), "i" );
                                 var search_array = [];
 
                                 if ($('#id_country').val() == "France") {
@@ -4439,7 +4392,7 @@ array_fr[1] = [
                                     search_array = array_es[0];
                                 }
                                 
-                                if ($('#id_country').val() == "Italia") {
+                                if ($('#id_country').val() == "Italy") {
                                     search_array = array_it[0];
                                 }
                                 if ($('#id_country').val() == "United States") {
@@ -4447,14 +4400,32 @@ array_fr[1] = [
                                     search_array = array_us[0];
                                 }
 
-
-                                response( $.grep( search_array, function( value ) {
+                                var searchwords = $.makeArray(searchwords);
+   
+                                $.each(searchwords, function(i, val) {
+                
+                                
+                                //recherche global pour le dernier mot, pour les autres correspondance exacte avec un mot
+                                if (searchwords.length == (i+1)){ 
+                                    if($.ui.autocomplete.filter(search_array, this).length != 0){
+                                    search_array=$.ui.autocomplete.filter(search_array, this);
+                                    }  
+                                }else{
+                                    if($.ui.autocomplete.filter2(search_array, this).length != 0){
+                                    search_array=$.ui.autocomplete.filter(search_array, this);
+                                
+                                    }
+                                }
+                                });
+                 
+                                response(search_array);   
+                                //response( $.grep( search_array, function( value ) {
                                     //value = value.truc || value.value || value;
                                     // multi search returns everything it finds
                                     // return matcher.test( value ) || matcher.test( normalize( value ) ) || matcher2.test( value ) || matcher2.test( normalize( value )) ;
                                     // last only, works well
-                                    return matcher.test( value ) || matcher.test( normalize( value ) );
-                                }) );
+                                    //return matcher.test( value ) || matcher.test( normalize( value ) );
+                               // }) );
                                 
                                                              
                                 
@@ -4494,7 +4465,7 @@ array_fr[1] = [
                                 var index = jQuery.inArray(returned, array_es[0]);
                                 $('#id_region').val($('#id_region').val() + array_es[1][index]);
                                 }
-                                if ($('#id_country').val() == "Italia") {
+                                if ($('#id_country').val() == "Italy") {
                                 var returned = $('#id_appellation').val();
                                 var index = jQuery.inArray(returned, array_it[0]);
                                 $('#id_region').val($('#id_region').val() + array_it[1][index]);

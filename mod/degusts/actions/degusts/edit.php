@@ -41,6 +41,11 @@ $degust = new ElggDegust($degust_guid); // load if present, if not create a new 
 
 if ($new_degust_flag) {
     $user = elgg_get_logged_in_user_entity();
+    $degust->container_guid=$container_guid;
+    $degust->annee=$annee;
+    $degust->access_id=ACCESS_LOGGED_IN;
+ 
+    
 } else {
     $user = $degust->getOwnerEntity(); 
 }
@@ -64,9 +69,16 @@ $title= $container->name." ".$annee;
 
 $description= $user->name;
 
-$degust->container_guid=$container_guid;
+/*$degust->container_guid=$container_guid;
 $degust->annee=$annee;
-$degust->access_id=ACCESS_LOGGED_IN;
+$degust->access_id=ACCESS_LOGGED_IN;*/
+$degust->kind=$container->kind;
+$degust->country=$container->country;
+$degust->region=$container->region;
+$degust->appellation=$container->appellation;
+   
+    
+    
 $degust->title=$title;
 $degust->description=$description;
 $degust->price=$price;

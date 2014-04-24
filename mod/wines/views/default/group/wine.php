@@ -32,7 +32,7 @@ if ($vars['full_view']) {
             $subtitle.=$wine->appellation.", ";
         if ($wine->region)
             $subtitle.=$wine->region.", ";
-        $subtitle.=$wine->country;
+        $subtitle.=elgg_echo($wine->country);
 	$params = array(
 		'entity' => $wine,
 		'metadata' => $metadata,

@@ -145,7 +145,7 @@ or click below to view the restobar's join requests:
     'restobar:ecml:discussion' => 'restobar Discussions',
     'restobar:ecml:restobarprofile' => 'restobar profiles',
     //gestion de cave
-    'restobar:cave' => 'The cellar of %s ',
+    'restobar:cave' => '%s\'s cellar  ',
     //module profile
     'restobar:cave:news' => 'The lastest from the cellar',
     'link:cave:all' => 'all the cellar',

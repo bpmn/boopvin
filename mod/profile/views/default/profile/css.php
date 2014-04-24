@@ -143,3 +143,4 @@ div#job{
 .elgg-col-2of3 {
     width: 65%;
 }
+

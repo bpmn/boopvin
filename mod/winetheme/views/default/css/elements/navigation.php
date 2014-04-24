@@ -44,6 +44,13 @@
 	border-color: #555555;
 }
 
+.list-style-all+.elgg-pagination {
+
+ clear: left;
+
+}
+
+
 /* ***************************************
 	TABS
 *************************************** */
@@ -175,7 +182,7 @@
 	padding: 3px 13px 0px 13px;
 	height: 20px;
         font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
-        font-size: 125%;
+        font-size: 135%;
 
 
 }

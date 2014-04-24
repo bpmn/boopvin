@@ -53,7 +53,7 @@
                             } else {
                                 alert("not degust");
                             }
-                        } else {
+                        }else{
                             $( ".degust-side-head").css("background", "#ffffff");
                             
                         }
@@ -77,16 +77,17 @@
         // });
         
         
-   $( function() {
-    degust_view_bind();
-   });     
-        
-   function degust_view_bind(){
-            
+
+//degust_view_bind();
       
-       
-       
-           $(".degust-view").nyroModal({
+        
+ //function degust_view_bind(){
+      
+ $(".elgg-main").on('click',".degust-view",function(e){
+          e.preventDefault();
+          var url=$(this).attr('href');
+          //$(".degust-view").nyroModal({
+          $.nmManual(url,{
                 callbacks: {             
                     initElts: function() {
                         if (!elgg.is_logged_in()) {
@@ -122,16 +123,16 @@
                     }
                 }
                 
-            });
+      }) });
                
           
-   }
+  
         
         //les fonctions
         
         
         
-       function degust_edit (action){
+  function degust_edit (action){
             
             $(".degust-edit").click(function(e){    
                 
@@ -396,6 +397,7 @@ function degust_validate() {
     
     $("#degustform").validate({
         submitHandler: function(form){
+            $("#degustform .elgg-button-submit").prop('disabled',true).attr('value',"        "); 
             var url=$('#degustform').attr('action');
             var data=$("#degustform :input").serialize();
             var page_guid=elgg.get_page_owner_guid();
@@ -406,7 +408,7 @@ function degust_validate() {
                     success: function(resulthtml, success, xhr) {
                                 $.nmTop().close();
                                 $('.degust_list').html(resulthtml.output);
-                                degust_view_bind();
+                                //degust_view_bind();
                             }
             
                 });
@@ -483,7 +485,7 @@ $(".degust-requires-confirmation").click(function(e) {
                     success: function(json, success, xhr) {
                                 $.nmTop().close();
                                 $('.degust_list').html(json.output);
-                                degust_view_bind();
+                                
                             }
             
                 });
@@ -494,7 +496,7 @@ $(".degust-requires-confirmation").click(function(e) {
 }
 
 function option_price(){
-var array_euro=new Array("","&lt;6€","6€-10€","10€-15€","15€-20€","20€-25€","25€-30€","30€-40€","40€-50€","40€-50€","60€-70€","70€-80€","80€-100€","&gt;100€");
+var array_euro=new Array("","&lt;6€","6€-10€","10€-15€","15€-20€","20€-25€","25€-30€","30€-40€","40€-50€","50€-60€","60€-70€","70€-80€","80€-100€","&gt;100€");
 var array_dollar=new Array("","&lt;$10","$10-$15","$15-$20","$20-$25","$25-$30","$30-$40","$40-$50","$50-$60","$60-$70","$70-$80","$80-$100","&gt;$100");
 var array_livre=new Array("","&lt;£10","£10-£15","£15-£20","£20-£25","£25-£30","£30-£40","£40-£50","£50-£60","£60-£70","£70-£80","£80-£100","&gt;£100");
     $('input[name$="currency"]').change(function(){

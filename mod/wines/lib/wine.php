@@ -53,8 +53,21 @@ function wine_handle_all_page() {
                             'inverse_relationship' => false,
                             'list_class'=>'list-style-all',
                             'full_view' => false,
-                            'pagination'=>true
+                            'pagination'=>true,
+                            'base_url'=>'action/wines/filter?filter=mine',
                         ));
+                        
+                        
+                        $count=elgg_get_entities_from_relationship(array(
+                            'types' => 'group',
+                            'subtypes'=>'wine',
+                            'relationship' => 'member',
+                            'relationship_guid' => elgg_get_logged_in_user_guid(),
+                            'count'=>true,
+                        ));
+                        
+                       $title=elgg_echo('wine:mine');
+                       
                         if (!$content) {
                             $content = elgg_echo('wine:none');
                         }
@@ -65,8 +78,17 @@ function wine_handle_all_page() {
 				'type_subtype_pairs' =>array('group' => 'wine'),
 				'full_view' => false,
                                 'list_class'=>'list-style-all',
+                                'base_url'=>'action/wines/filter',
                                 'pagination'=>true
 			));
+                    
+                        $count = elgg_get_entities(array(
+				'type_subtype_pairs' =>array('group' => 'wine'),
+				'count'=>true,
+			));
+                        
+                        $title=elgg_echo('wine:all');
+                        
 			if (!$content) {
 				$content = elgg_echo('wine:none');
 			}
@@ -75,17 +97,18 @@ function wine_handle_all_page() {
 
 	$filter = elgg_view('wines/wine_sort_menu', array('selected' => $selected_tab));
 	
-	//$sidebar = elgg_view('wines/sidebar/find');
+	$sidebar = elgg_view('wines/sidebar/wine_filter',array('selected' => $selected_tab,'wine_number'=>$count));
 	//$sidebar .= elgg_view('wines/sidebar/featured');
-
+        
 	$params = array(
 		'content' => $content,
 		'sidebar' => $sidebar,
 		'filter' => $filter,
+                'title'=>$title
 	);
 	$body = elgg_view_layout('content', $params);
 
-	echo elgg_view_page(elgg_echo('wines:all'), $body);
+	echo elgg_view_page(elgg_echo('wine:all'), $body);
 }
 
 function wine_search_page() {

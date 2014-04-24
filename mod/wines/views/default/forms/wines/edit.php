@@ -73,9 +73,9 @@ if ($wine_profile_fields > 0) {
                             'class' => "required",
                             'options_values' => array(
 
- '' => elgg_echo(''),                               
+'' => elgg_echo(''),                               
 'France' => elgg_echo('France'),
-'Italia' => elgg_echo('Italia'),
+'Italy' => elgg_echo('Italy'),
 'Spain' => elgg_echo('Spain'),
 'Germany' => elgg_echo('Germany'),
 'Portugal' => elgg_echo('Portugal'),                                
@@ -88,8 +88,6 @@ if ($wine_profile_fields > 0) {
 'Austria' => elgg_echo('Austria'),
 'Hungary' => elgg_echo('Hungary'),                                
 'Switzerland' => elgg_echo('Switzerland'),
-                                
-//'' => elgg_echo(''),
 'Algeria' => elgg_echo('Algeria'),
 'Uruguay' => elgg_echo('Uruguay'),
 'Belgium' => elgg_echo('Belgium'),

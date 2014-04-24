@@ -23,8 +23,10 @@ function profile_init() {
 	elgg_register_plugin_hook_handler('entity:icon:url', 'user', 'profile_override_avatar_url');
 	elgg_unregister_plugin_hook_handler('entity:icon:url', 'user', 'user_avatar_hook');
 
-
-	elgg_register_simplecache_view('icon/user/default/tiny');
+        $action_base = elgg_get_plugins_path() . 'profile/actions/profile';
+	elgg_register_action("profile/degust_filter", "$action_base/degust_filter.php");
+	
+        elgg_register_simplecache_view('icon/user/default/tiny');
 	elgg_register_simplecache_view('icon/user/default/topbar');
 	elgg_register_simplecache_view('icon/user/default/small');
 	elgg_register_simplecache_view('icon/user/default/medium');
@@ -53,10 +55,12 @@ function profile_init() {
 function profile_page_handler($page) {
 
 	if (isset($page[0])) {
+                elgg_load_js('elgg.wine_filter');
 		$username = $page[0];
 		$user = get_user_by_username($username);
 		elgg_set_page_owner_guid($user->guid);
 	} elseif (elgg_is_logged_in()) {
+                elgg_load_js('elgg.wine_filter');
 		forward(elgg_get_logged_in_user_entity()->getURL());
 	}
 

@@ -69,7 +69,7 @@ function winetheme_init() {
     elgg_load_css('winetheme.jqueryUI_css');
 
     //$googlemap_url = "https://maps.google.com/maps/api/js?sensor=true";
-    $googlemap_url = elgg_normalize_url("https://maps.google.com/maps/api/js?sensor=true");
+    $googlemap_url = elgg_normalize_url("https://maps.google.com/maps/api/js?sensor=false");
     elgg_register_js('elgg.googlemap', $googlemap_url);
 
     //vendors

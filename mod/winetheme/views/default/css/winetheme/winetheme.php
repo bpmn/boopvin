@@ -3,7 +3,7 @@
  * Winetheme css
  */
 
-$verre_score = '/mod/winetheme/views/default/css/winetheme/images/score.jpg';
+$verre_score = '/mod/winetheme/views/default/css/winetheme/images/score.png';
 $verre_score = elgg_normalize_url($verre_score);
 
 $verre_score2 = '/mod/winetheme/views/default/css/winetheme/images/score2.jpg';
@@ -11,7 +11,6 @@ $verre_score2 = elgg_normalize_url($verre_score2);
 
 $loading_image = '/mod/winetheme/views/default/css/winetheme/images/ajax_loader.gif';
 $loading_image = elgg_normalize_url($loading_image);
-
 ?>
 
 body {
@@ -87,12 +86,12 @@ width: 160px;
 //box-shadow:         -4px -4px 15px rgba(51, 50, 50, 0.75);
 
 text-align: center;
- 
+
 }
 #citation{
-  //margin: 10px;
-  margin-left: 14px;
-  margin-bottom: 100px;
+//margin: 10px;
+margin-left: 14px;
+margin-bottom: 100px;
 }
 #index_welcome {
 font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
@@ -299,7 +298,10 @@ div#job{
 display:none;
 }
 
-
+.degust_filter {
+float: left;
+margin-right: 10px;
+}
 
 /*******************************************/
 /* liste dégust sous le profil utilisateur */
@@ -319,12 +321,20 @@ height:60px;
 clear:left;
 }
 
+#list_user_degust>div {
+padding:10px;
+background-color: #D8B771;
+}
+
+
 #list_user_degust h2{
 font-family:NotethisRegular;
 font-size: 1.5em; 
 background: url(<?php echo $verre_score; ?>) no-repeat;
 height: 40px;
 padding: 0 0 0 25px;
+float:left;
+margin-right: 80px;
 }
 
 .elgg-col-2of3 {

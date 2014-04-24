@@ -38,6 +38,7 @@ function wine_init() {
 	// Register some actions
 	$action_base = elgg_get_plugins_path() . 'wines/actions/wine';
 	elgg_register_action("wines/edit", "$action_base/edit.php");
+        elgg_register_action("wines/filter", "$action_base/filter.php");
 	elgg_register_action("wines/delete", "$action_base/delete.php");
 	elgg_register_action("wines/featured", "$action_base/featured.php", 'admin');
         
@@ -87,7 +88,9 @@ function wine_init() {
 	elgg_register_simplecache_view('js/wine_edit');
 	elgg_register_js('elgg.wine_edit', $wine_edit_js,'footer');
 
-        
+        $wine_filter_js = elgg_get_simplecache_url('js', 'wine_filter');
+	elgg_register_simplecache_view('js/wine_filter');
+	elgg_register_js('elgg.wine_filter', $wine_filter_js,'footer');
         
         
         
@@ -251,6 +254,7 @@ function wine_page_handler($page) {
 
 	switch ($page[0]) {
 		case 'all':
+                        elgg_load_js('elgg.wine_filter');
 			wine_handle_all_page();
 			break;
 		case 'search':
@@ -440,12 +444,13 @@ function wine_entity_menu_setup($hook, $type, $return, $params) {
 		);
 		$return[] = ElggMenuItem::factory($options);
 	}*/
-       if (elgg_in_context('restobar')&& $page_owner->canEdit()) {
-
+       
+       if ((elgg_in_context('restobar_profile') || elgg_in_context('restobar_cave'))&& $page_owner->canEdit()) {
+        
         // delete link
 		$options = array(
 			'name' => 'removecave',
-			'text' => elgg_view_icon('delete'),
+			'text' => elgg_view_icon('delete'),             
 			'title' => elgg_echo('removecave:this'),
 			'href' => "action/wines/cave/remove_cave?wine_guid={$entity->getGUID()}&restobar_guid={$page_owner->getGUID()}",
 			'confirm' => elgg_echo('removecaveconfirm'),

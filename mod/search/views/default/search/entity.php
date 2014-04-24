@@ -21,11 +21,11 @@ if (!$icon) {
 	// @todo allow an option to switch to displaying the entity's icon instead.
 	$type = $entity->getType();
         $subtype = $entity->getSubtype();
-	if ($type == 'group'&& $subtype='wine' ) {
+	if ($type == 'group'&& $subtype=='wine' ) {
                 $icon =  elgg_view('output/img',array('src'=>"mod/wines/graphics/glass_".$entity->kind.".jpg"));
 		//$icon = elgg_view_entity_icon($entity, 'tiny');
-	} elseif ($owner = $entity->getOwnerEntity()) {
-		$icon = elgg_view_entity_icon($owner, 'tiny');
+	//} //elseif ($owner = $entity->getOwnerEntity()) {
+	//	$icon = elgg_view_entity_icon($owner, 'tiny');
 	} else {
 		// display a generic icon if no owner, though there will probably be
 		// other problems if the owner can't be found.

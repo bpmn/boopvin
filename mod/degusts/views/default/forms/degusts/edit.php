@@ -190,50 +190,50 @@ foreach ($degust_profile_fields as $section => $elts) {
 
 
 <div class="elgg-foot">
-<?php
-if (isset($vars['entity'])) {
+    <?php
+    if (isset($vars['entity'])) {
+        echo elgg_view('input/hidden', array(
+            'name' => 'degust_guid',
+            'value' => $degust->getGUID(),
+        ));
+
+        echo elgg_view('input/hidden', array(
+            'name' => 'annee',
+            'value' => $annee
+        ));
+    }
+    /*     echo elgg_view('input/hidden', array(
+      'name' => 'complexity',
+      'value' => $degust->complexity,
+      'id'=>'input_complexity'
+      ));
+      }else{
+
+      echo elgg_view('input/hidden', array(
+      'name' => 'complexity',
+      'id'=>'input_complexity'
+      ));
+      } */
     echo elgg_view('input/hidden', array(
-        'name' => 'degust_guid',
-        'value' => $degust->getGUID(),
+        'name' => 'container_guid',
+        'value' => $container->getGUID(),
     ));
 
-    echo elgg_view('input/hidden', array(
-        'name' => 'annee',
-        'value' => $annee
-    ));
-}
-/*     echo elgg_view('input/hidden', array(
-  'name' => 'complexity',
-  'value' => $degust->complexity,
-  'id'=>'input_complexity'
-  ));
-  }else{
 
-  echo elgg_view('input/hidden', array(
-  'name' => 'complexity',
-  'id'=>'input_complexity'
-  ));
-  } */
-echo elgg_view('input/hidden', array(
-    'name' => 'container_guid',
-    'value' => $container->getGUID(),
-));
+
+    echo elgg_view('input/submit', array('value' => elgg_echo('save')));
 
 
 
-echo elgg_view('input/submit', array('value' => elgg_echo('save')));
-
-
-
-if (isset($vars['entity']) && $degust->canEdit()) {
-    $delete_url = 'action/degusts/delete?guid=' . $vars['entity']->getGUID();
-    echo elgg_view('output/degust_confirmlink', array(
-        'text' => elgg_echo('degust:delete'),
-        'href' => $delete_url,
-        'confirm' => elgg_echo('degust:deletewarning'),
-        'class' => 'elgg-button elgg-button-delete float-alt',
-    ));
-}
-?>
+    if (isset($vars['entity']) && $degust->canEdit()) {
+        $delete_url = 'action/degusts/delete?guid=' . $vars['entity']->getGUID();
+        echo elgg_view('output/degust_confirmlink', array(
+            'text' => elgg_echo('degust:delete'),
+            'href' => $delete_url,
+            'confirm' => elgg_echo('degust:deletewarning'),
+            'class' => 'elgg-button elgg-button-delete float-alt',
+        ));
+    }
+    ?>
 </div>
 

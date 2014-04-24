@@ -48,11 +48,11 @@ margin-left: auto;
 margin-right: auto;
 }
 
-.vigne_separator {
+/*.vigne_separator {
 clear:left;
 height: 33px;
 margin-bottom: 10px;
-}
+} to be deleted*/
 
 
 
@@ -344,6 +344,17 @@ border: 1px none #800000;
 
 #degust-price{
  float: right;
+}
+
+
+
+<?php
+$load = elgg_normalize_url('mod/search/graphics/indicator.gif')
+?>
+
+#degustform input[type=submit]:disabled{
+    background: #D8B771 url(<?php echo $load?>) no-repeat; 
+    background-position:center;
 }
 
 /* texte du résumé de la degust in line

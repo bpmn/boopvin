@@ -6,6 +6,16 @@
  */
 
 ?>
+
+<?php
+
+//$load = elgg_normalize_url('mod/search/graphics/indicator.gif')
+?>
+
+/*.elgg-search-entity input[type="text"]:focus.ui-autocomplete-loading {
+    background:white url(<?php echo $indicator?>) no-repeat; 
+    background-position:2px 50%;
+}*/
 .wines-profile > .elgg-image {
 	margin-right: 10px;
 }
@@ -84,3 +94,50 @@ $indicator = elgg_normalize_url('mod/search/graphics/indicator.gif')
     //display:inline;
 
 }
+
+#filter label{
+    font-size: 90%;
+    color: #723A08;
+}
+
+
+#filter fieldset {
+
+  margin-left: 30px;
+  
+  }
+  
+#wine_search_filter{
+
+font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+text-align: center;
+margin-bottom:10px;
+
+}
+  
+.wine_filter {
+    width: 150px; //taille de select input
+    height: auto;
+    font-size: 95%;
+  }
+  
+ 
+  
+#box_region{
+    display:none;
+}
+
+#box_appellation{
+    display:none;
+    }
+
+.wine_count {
+
+
+//font-family: NotethisRegular, "Lucida Sans Unicode", "Lucida Granve", sans-serif;
+text-align: center;
+margin-top:20px;
+//font-size: 200%;
+}
+    
+    

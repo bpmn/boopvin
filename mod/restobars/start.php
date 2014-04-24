@@ -45,6 +45,7 @@ function restobar_init() {
 	$action_base = elgg_get_plugins_path() . 'restobars/actions/restobar';
 	elgg_register_action("restobars/edit", "$action_base/edit.php");
 	elgg_register_action("restobars/delete", "$action_base/delete.php");
+        elgg_register_action("restobars/cave_filter", "$action_base/cave_filter.php");
 	elgg_register_action("restobars/featured", "$action_base/featured.php", 'admin');
         
         $action_friends = $action_base.'/friends';
@@ -217,6 +218,14 @@ function restobar_setup_sidebar_menus() {
                         
 		//}
             }
+            if (elgg_get_context() == 'restobar_profile') {
+                
+                    elgg_register_menu_item('page', array(
+				'name' => 'restobar:cave',
+				'text' => elgg_echo('link:cave:all'),
+				'href' => 'restobar/cave/'.elgg_get_page_owner_guid(),
+			));
+            }
 }
 
 /**
@@ -284,6 +293,7 @@ function restobar_page_handler($page) {
 			restobar_handle_requests_page($page[1]);
 			break;
                 case 'cave':
+                        elgg_load_js('elgg.wine_filter');
                         restobar_handle_cave_page($page[1]);
 			break;
                 case 'addmember':

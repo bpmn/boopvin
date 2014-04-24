@@ -14,7 +14,6 @@ if (!$restobar) {
 	return true;
 }
 
-
 $options=array('types'=>'group',
         'subtypes'=>'wine',
 	'pagination' => false,

@@ -14,6 +14,9 @@ $french = array(
     'wine:yours' => "My wine",
     'wine:user' => "%s's wine",
     'wine:all' => "Tous les vins",
+    'wine:count'=>"%s Vins",
+    'wine:filter'=>"Filtres de recherche",
+    'wine:none'=>"Aucun vin",
     'wine:add' => "Ajouter un vin",
     'wine:edit' => "Editer le vin",
     'wine:delete' => 'Supprimer',
@@ -90,6 +93,7 @@ $french = array(
     'wine:no' => 'no',
     'wine:lastupdated' => 'Last updated %s by %s',
     'wine:lastcomment' => 'Last comment %s by %s',
+    
     /*
      * wine discussion
      */
