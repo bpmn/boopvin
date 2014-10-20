@@ -26,7 +26,7 @@ function profile_init() {
         $action_base = elgg_get_plugins_path() . 'profile/actions/profile';
 	elgg_register_action("profile/degust_filter", "$action_base/degust_filter.php");
 	
-        elgg_register_simplecache_view('icon/user/default/tiny');
+    elgg_register_simplecache_view('icon/user/default/tiny');
 	elgg_register_simplecache_view('icon/user/default/topbar');
 	elgg_register_simplecache_view('icon/user/default/small');
 	elgg_register_simplecache_view('icon/user/default/medium');

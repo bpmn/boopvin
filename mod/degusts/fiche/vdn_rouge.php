@@ -10,7 +10,7 @@ $options_couleur = array(
                                 elgg_echo('degust:couleur:pourpre') => 'pourpre',
 				elgg_echo('degust:couleur:carmin') => 'carmin',               
                                 elgg_echo('degust:couleur:acajou') => 'acajou',
-                                elgg_echo('degust:reflet:brun') => 'brun');
+                                elgg_echo('degust:couleur:brun') => 'brun');
 
 
 //olfactif

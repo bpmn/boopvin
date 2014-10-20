@@ -22,7 +22,8 @@ echo elgg_view('input/dropdown',array(
                                 'rose_sparkling' => elgg_echo('wine:profile:rose_sparkling'),
                                 'moelleux' => elgg_echo('wine:profile:moelleux'),
                                 'vdn_blanc' => elgg_echo('wine:profile:vdn_blanc'),
-                                'vdn_rouge' => elgg_echo('wine:profile:vdn_rouge'))));
+                                'vdn_rouge' => elgg_echo('wine:profile:vdn_rouge'),
+                                'brandy' => elgg_echo('wine:profile:brandy'))));
 
 echo "</div>";
 

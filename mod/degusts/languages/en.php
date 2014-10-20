@@ -20,6 +20,7 @@ $english = array(
     'degust:couleur_intensity:claire' => 'Clear',
     'degust:couleur_intensity:soutenue' => 'Deep',
     'degust:couleur_intensity:sombre' => 'Dark',
+    'degust:couleur:transparent' => 'Transparent',
     'degust:couleur:grenat' => 'Garnet',
     'degust:couleur:carmin' => 'Carmine',
     'degust:couleur:pourpre' => 'Purple',
@@ -31,6 +32,7 @@ $english = array(
     'degust:couleur:jaune' => 'Yellow',
     'degust:couleur:paille' => 'Straw',
     'degust:couleur:or' => 'Gold',
+    'degust:couleur:vieil_or' => 'Old gold',
     'degust:couleur:ambre' => 'Amber',
     'degust:couleur:rose_pale' => 'Pale pink',
     'degust:couleur:rose' => 'Pink',
@@ -39,6 +41,7 @@ $english = array(
     'degust:couleur:oignon' => 'Onion',
     'degust:couleur:orange' => 'Orange',
     'degust:couleur:cuivre' => 'Copper',
+    'degust:couleur:brun' => 'Brown',
     'degust:couleur:roux' => 'Reddish-brown',
     'degust:reflet:violace_jeune' => 'Pale purple',
     'degust:reflet:violine' => 'Violine',
@@ -60,10 +63,10 @@ $english = array(
     'degust:bulle:grossiere' => 'Coarse',
 //Olfactif
     'degust:nez_intensity' => 'The intensity',
-    'degust:nez' => 'Flavor family', // résultat des checkboxes sous forme de tableau
+    'degust:nez' => 'Flavor family', // rÃ©sultat des checkboxes sous forme de tableau
     'degust:nose' => 'Nose',
-    'degust:arome' => 'Flavors', // description texte des arôme
-    'degust:complexity' => 'Complexity', // en fonction du nombres de checkbox cochées.
+    'degust:arome' => 'Flavors', // description texte des arÃ´me
+    'degust:complexity' => 'Complexity', // en fonction du nombres de checkbox cochÃ©es.
     'degust:complexity:1' => 'Simple',
     'degust:complexity:2' => 'Medium complex',
     'degust:complexity:3' => 'Complexe',
@@ -72,6 +75,9 @@ $english = array(
     'degust:nez_intensity:discret' => 'Discreet',
     'degust:nez_intensity:ouvert' => 'Open',
     'degust:nez_intensity:expressif' => 'Aromatic',
+    'degust:nez_intensity:alcooleux' => 'Alcoholic',
+    'degust:nez_intensity:intense' => 'Intense',
+    'degust:nez_intensity:elegant' => 'Elegant',
     'degust:nez_intensity:exuberant' => 'Exuberant',
     'degust:nez:fruit' => 'Fruity',
     'degust:nez:floral' => 'Floral',
@@ -83,7 +89,7 @@ $english = array(
     'degust:nez:empyreumatique' => 'Empyreumatic',
     'degust:nez:bois' => 'Woody',
     'degust:nez:chimique' => 'Chemical',
-    //liste des arôme pour l'aide à la dégustation
+    //liste des arÃ´me pour l'aide Ã  la dÃ©gustation
     'degust:nez_tips:fruit' => 'Apple
 Peach
 Pear
@@ -180,6 +186,11 @@ Paint',
     'degust:rondeur:opulent' => 'Fat',
     'degust:rondeur:franche' => 'Fresh',
     'degust:rondeur:discrete' => 'Discreet',
+    'degust:rondeur:ample' => 'Full',
+    'degust:rondeur:gras' => 'Fat',
+    
+    'degust:douceur:apre' => 'Rough',
+    'degust:douceur:sec' => 'Dry',
     'degust:douceur:tendre' => 'Tender',
     'degust:douceur:suave' => 'Smooth',
     'degust:douceur:onctueux' => 'Unctuous',
@@ -196,7 +207,10 @@ Paint',
     'degust:acidity:vif' => 'Lively',
     'degust:alcool:leger' => 'Light',
     'degust:alcool:integre' => 'Balanced',
+    'degust:alcool:fondu' => 'Smooth',
+    'degust:alcool:sec' => 'Dry',
     'degust:alcool:genereux' => 'Generous',
+    'degust:alcool:puissant' => 'Generous',
     'degust:alcool:chaud' => 'Hot',
     'degust:alcool:brulant' => 'Alcoholic',
     'degust:tanin:souple' => 'Soft',
